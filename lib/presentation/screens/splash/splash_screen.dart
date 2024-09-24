@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:watt_hub/data/locator/service_locator.dart';
+import 'package:watt_hub/presentation/screens/splash/my_service.dart';
 
 @RoutePage()
 class SplashScreen extends StatelessWidget {
@@ -8,6 +10,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final myService = getIt<MyService>();
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -23,7 +27,10 @@ class SplashScreen extends StatelessWidget {
               height: 40.0,
             ),
             ElevatedButton(
-              onPressed: () => AutoRouter.of(context).back(),
+              onPressed: () => {
+                myService.doSomething(),
+                AutoRouter.of(context).back(),
+              },
               child: const Text('Back'),
             )
           ],
