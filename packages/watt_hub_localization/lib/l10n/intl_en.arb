@@ -1,0 +1,7 @@
+{
+  "helloWorld": "Hello World",
+  "description": "The greeting message displayed in the app",
+  "@helloWorld": {
+    "description": "The greeting message displayed in the app"
+  }
+}

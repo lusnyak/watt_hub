@@ -3,6 +3,7 @@ import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/data/locator/service_locator.dart';
 import 'package:watt_hub/presentation/screens/splash/my_service.dart';
+import 'package:watt_hub_localization/generated/l10n.dart';
 
 @RoutePage()
 class SplashScreen extends StatelessWidget {
@@ -31,7 +32,7 @@ class SplashScreen extends StatelessWidget {
                 myService.doSomething(),
                 AutoRouter.of(context).back(),
               },
-              child: const Text('Back'),
+              child: Text(S.of(context).description),
             )
           ],
         ).paddingAll(20.0),

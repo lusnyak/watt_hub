@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  watt_hub_localization:
+    path: packages/watt_hub_localization
   bloc: ^8.1.4
   flutter_bloc: ^8.1.6
   freezed: ^2.5.7
