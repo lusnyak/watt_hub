@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
@@ -21,7 +23,7 @@ class SplashScreen extends StatelessWidget {
               height: 40.0,
             ),
             ElevatedButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => AutoRouter.of(context).back(),
               child: const Text('Back'),
             )
           ],
