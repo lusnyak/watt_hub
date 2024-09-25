@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
+import 'package:watt_hub_localization/generated/l10n.dart';
 
 @RoutePage()
 class WattHubAppScreen extends StatelessWidget {
@@ -24,8 +25,10 @@ class WattHubAppScreen extends StatelessWidget {
               height: 40.0,
             ),
             ElevatedButton(
-              onPressed: () => AutoRouter.of(context).push(const SplashRoute()),
-              child: const Text('Next page!'),
+              onPressed: () => {
+                AutoRouter.of(context).push(const SplashRoute()),
+              },
+              child: Text(S.of(context).nextPage),
             ),
           ],
         ).paddingAll(20.0),

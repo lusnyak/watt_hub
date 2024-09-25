@@ -1,0 +1,5 @@
+arb-dir: lib/l10n
+output_dir: lib/src
+template-arb-file: intl_en.arb
+# preferred-supported-locales: ["en_US", "am_AM"]
+output-localization-file: app_localizations.dart

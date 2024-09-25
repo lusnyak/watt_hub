@@ -1,7 +1,5 @@
 {
-  "helloWorld": "բարև աշխարհ",
-  "description": "Հավելվածում ցուցադրված ողջույնի",
-  "@helloWorld": {
-    "description": "Հավելվածում ցուցադրված ողջույնի"
-  }
+  "back": "Հետ",
+  "nextPage": "Հաջորդ էջ",
+  "el": "dsfsdf"
 }

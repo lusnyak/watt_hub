@@ -22,8 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "description": MessageLookupByLibrary.simpleMessage(
-            "Հավելվածում ցուցադրված ողջույնի"),
-        "helloWorld": MessageLookupByLibrary.simpleMessage("բարև աշխարհ")
+        "back": MessageLookupByLibrary.simpleMessage("Հետ"),
+        "nextPage": MessageLookupByLibrary.simpleMessage("Հաջորդ էջ")
       };
 }

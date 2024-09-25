@@ -50,21 +50,21 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Hello World`
-  String get helloWorld {
+  /// `Back`
+  String get back {
     return Intl.message(
-      'Hello World',
-      name: 'helloWorld',
-      desc: 'The greeting message displayed in the app',
+      'Back',
+      name: 'back',
+      desc: '',
       args: [],
     );
   }
 
-  /// `The greeting message displayed in the app`
-  String get description {
+  /// `Next Page`
+  String get nextPage {
     return Intl.message(
-      'The greeting message displayed in the app',
-      name: 'description',
+      'Next Page',
+      name: 'nextPage',
       desc: '',
       args: [],
     );

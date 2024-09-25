@@ -29,6 +29,25 @@ class SplashRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [UsersListScreen]
+class UsersListRoute extends PageRouteInfo<void> {
+  const UsersListRoute({List<PageRouteInfo>? children})
+      : super(
+          UsersListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'UsersListRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const UsersListScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [WattHubAppScreen]
 class WattHubAppRoute extends PageRouteInfo<void> {
   const WattHubAppRoute({List<PageRouteInfo>? children})
