@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:watt_hub/data/locator/service_locator.dart';
+import 'package:watt_hub/config/locator/service_locator.dart';
 import 'package:watt_hub/presentation/screens/splash/my_service.dart';
 import 'package:watt_hub_localization/generated/l10n.dart';
 
