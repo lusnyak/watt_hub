@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
-import 'package:watt_hub_localization/generated/l10n.dart';
+import 'package:watt_hub_localization/watt_hub_localization.dart';
 
 @RoutePage()
 class WattHubAppScreen extends StatelessWidget {
@@ -28,7 +28,7 @@ class WattHubAppScreen extends StatelessWidget {
               onPressed: () => {
                 AutoRouter.of(context).push(const SplashRoute()),
               },
-              child: Text(S.of(context).nextPage),
+              child: Text(AppLocalizations.of(context).nextPage),
             ),
           ],
         ).paddingAll(20.0),
