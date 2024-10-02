@@ -3,14 +3,21 @@ import 'package:flutter/material.dart';
 
 @RoutePage()
 class AddCarScreen extends StatelessWidget {
-  const AddCarScreen ({super.key});
+  const AddCarScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
+    return Scaffold(
+      appBar: AppBar(),
+      body: const SafeArea(
         child: Center(
-          child: Text("Add Car Screen!"),
+          child: Text(
+            "Add Car Screen!",
+            style: TextStyle(
+              fontSize: 24.0,
+              color: Colors.blue,
+            ),
+          ),
         ),
       ),
     );

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:watt_hub/presentation/screens/add_car/add_car_screen.dart';
 import 'package:watt_hub/presentation/screens/add_station/add_station_screen.dart';
 import 'package:watt_hub/presentation/screens/choose_station_address/choose_station_address_screen.dart';
+import 'package:watt_hub/presentation/screens/dashboard/dashboard_screen.dart';
 import 'package:watt_hub/presentation/screens/detail/detail_screen.dart';
 import 'package:watt_hub/presentation/screens/filter/filter_screen.dart';
 import 'package:watt_hub/presentation/screens/home/home_screen.dart';
@@ -14,7 +15,6 @@ import 'package:watt_hub/presentation/screens/splash/splash_screen.dart';
 import 'package:watt_hub/presentation/screens/station_info/station_info_screen.dart';
 import 'package:watt_hub/presentation/screens/tip/tip_screen.dart';
 import 'package:watt_hub/presentation/screens/verification/verification_screen.dart';
-import 'package:watt_hub/watt_hub_app.dart';
 
 part 'app_router.gr.dart';
 
@@ -22,20 +22,21 @@ part 'app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: WattHubAppRoute.page, initial: true),
-        AutoRoute(page: SplashRoute.page),
+        AutoRoute(page: SplashRoute.page, initial: true),
         AutoRoute(page: OnboardingRoute.page),
+        AutoRoute(page: DashboardRoute.page, children: [
+          AutoRoute(page: HomeRoute.page),
+          AutoRoute(page: RequestStationRoute.page),
+          AutoRoute(page: ProfileRoute.page),
+        ]),
         AutoRoute(page: SignUpRoute.page),
         AutoRoute(page: VerificationRoute.page),
-        AutoRoute(page: HomeRoute.page),
         AutoRoute(page: TipRoute.page),
         AutoRoute(page: FilterRoute.page),
         AutoRoute(page: StationInfoRoute.page),
         AutoRoute(page: DetailRoute.page),
         AutoRoute(page: AddStationRoute.page),
         AutoRoute(page: ChooseStationAddressRoute.page),
-        AutoRoute(page: ProfileRoute.page),
-        AutoRoute(page: RequestStationRoute.page),
         AutoRoute(page: RequestUserRoute.page),
         AutoRoute(page: AddCarRoute.page),
       ];

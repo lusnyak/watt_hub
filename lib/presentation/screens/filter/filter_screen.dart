@@ -7,10 +7,17 @@ class FilterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
+    return Scaffold(
+      appBar: AppBar(),
+      body: const SafeArea(
         child: Center(
-          child: Text("Filter Screen!"),
+          child: Text(
+            "Filter Screen!",
+            style: TextStyle(
+              fontSize: 24.0,
+              color: Colors.blue,
+            ),
+          ),
         ),
       ),
     );

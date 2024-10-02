@@ -67,6 +67,25 @@ class ChooseStationAddressRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [DashboardScreen]
+class DashboardRoute extends PageRouteInfo<void> {
+  const DashboardRoute({List<PageRouteInfo>? children})
+      : super(
+          DashboardRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DashboardRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const DashboardScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [DetailScreen]
 class DetailRoute extends PageRouteInfo<void> {
   const DetailRoute({List<PageRouteInfo>? children})
@@ -290,25 +309,6 @@ class VerificationRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const VerificationScreen();
-    },
-  );
-}
-
-/// generated route for
-/// [WattHubAppScreen]
-class WattHubAppRoute extends PageRouteInfo<void> {
-  const WattHubAppRoute({List<PageRouteInfo>? children})
-      : super(
-          WattHubAppRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'WattHubAppRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const WattHubAppScreen();
     },
   );
 }

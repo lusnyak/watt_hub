@@ -10,7 +10,13 @@ class VerificationScreen extends StatelessWidget {
     return const Scaffold(
       body: SafeArea(
         child: Center(
-          child: Text("Verification Screen!"),
+          child: Text(
+            "Verification Screen!",
+            style: TextStyle(
+              fontSize: 24.0,
+              color: Colors.blue,
+            ),
+          ),
         ),
       ),
     );
