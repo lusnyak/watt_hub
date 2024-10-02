@@ -13,6 +13,8 @@ dependencies:
 
   watt_hub_localization:
     path: packages/watt_hub_localization
+  watt_hub_uikit:
+    path: packages/watt_hub_uikit
   bloc: ^8.1.4
   flutter_bloc: ^8.1.6
   freezed: ^2.5.7

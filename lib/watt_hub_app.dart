@@ -3,6 +3,7 @@ import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
+import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
 class WattHubAppScreen extends StatelessWidget {
@@ -30,6 +31,7 @@ class WattHubAppScreen extends StatelessWidget {
               },
               child: Text(AppLocalizations.of(context).nextPage),
             ),
+            const CustomButton()
           ],
         ).paddingAll(20.0),
       ),
