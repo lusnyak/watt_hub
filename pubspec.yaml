@@ -2,7 +2,7 @@ name: watt_hub
 description: "A new Flutter project."
 publish_to: "none"
 
-version: 1.0.0+1
+version: 3.24.3
 
 environment:
   sdk: ^3.5.3
