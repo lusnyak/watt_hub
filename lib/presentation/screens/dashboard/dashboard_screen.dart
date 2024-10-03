@@ -21,7 +21,7 @@ class DashboardScreen extends StatelessWidget {
           items: const [
             BottomNavigationBarItem(
               label: 'Home',
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.map),
             ),
             BottomNavigationBarItem(
               label: 'Requests',

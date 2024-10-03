@@ -4,5 +4,5 @@ import 'package:watt_hub/watt_hub_app.dart';
 
 void main() {
   configureDependencies();
-  runApp(MyApp());
+  runApp(WattHubApp());
 }

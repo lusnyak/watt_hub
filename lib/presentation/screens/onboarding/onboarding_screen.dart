@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
+import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
 class OnboardingScreen extends StatelessWidget {
@@ -20,7 +20,9 @@ class OnboardingScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 24.0,
-                color: Colors.blue,
+                color: WattHubColors.primaryColor,
+                fontFamily: FontFamily.urbanist,
+                fontWeight: FontWeight.w600,
               ),
             ),
             20.heightBox,
@@ -28,11 +30,9 @@ class OnboardingScreen extends StatelessWidget {
               onPressed: () {
                 AutoRouter.of(context).push(const DashboardRoute());
               },
-              child: const Text(
+              child: Text(
                 'Guest',
-                style: TextStyle(
-                  color: Colors.blue,
-                ),
+                style: exampleTextStyle,
               ),
             ),
             ElevatedButton(
