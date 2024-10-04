@@ -13,6 +13,7 @@ dependencies:
   awesome_extensions: ^2.0.17
   flutter_screenutil: ^5.9.3
   cupertino_icons: ^1.0.8
+  dropdown_button2: ^2.3.9
 
 dev_dependencies:
   flutter_test:
