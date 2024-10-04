@@ -7,6 +7,7 @@ ThemeData get lightTheme => ThemeData(
           secondary: WattHubColors.primaryLightGreenColor),
       primaryColor: WattHubColors.primaryGreenColor,
       elevatedButtonTheme: elevatedButtonStyle,
+
     );
 
 /// TODO: - dark theme property
