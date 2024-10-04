@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 abstract class WattHubColors {
   static const primaryGreenColor = Color(0xFF01B763);
+  static const primaryLightGreenColor = Color(0xFFE7F8F0);
   static const primaryBlackColor = Color(0xFF212121);
   static const darkMoodColor = Color(0xFF1F222A);
   static const whiteColor = Color(0xFFFFFFFF);

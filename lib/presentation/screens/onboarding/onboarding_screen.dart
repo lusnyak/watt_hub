@@ -26,25 +26,17 @@ class OnboardingScreen extends StatelessWidget {
               ),
             ),
             20.heightBox,
-            ElevatedButton(
+            WHElevatedButton.secondary(
               onPressed: () {
                 AutoRouter.of(context).push(const DashboardRoute());
               },
-              child: Text(
-                'Guest',
-                style: exampleTextStyle,
-              ),
+              title: 'Guest',
             ),
-            ElevatedButton(
+            WHElevatedButton.primary(
               onPressed: () {
                 AutoRouter.of(context).push(const SignUpRoute());
               },
-              child: const Text(
-                'Sign Up',
-                style: TextStyle(
-                  color: Colors.blue,
-                ),
-              ),
+              title: 'Sign Up',
             )
           ],
         ).paddingAll(20.0),
