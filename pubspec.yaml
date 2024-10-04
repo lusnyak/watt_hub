@@ -2,7 +2,7 @@ name: watt_hub
 description: "A new Flutter project."
 publish_to: "none"
 
-version: 1.0.0+1
+version: 3.24.3
 
 environment:
   sdk: ^3.5.3
@@ -13,18 +13,17 @@ dependencies:
 
   watt_hub_localization:
     path: packages/watt_hub_localization
+  watt_hub_uikit:
+    path: packages/watt_hub_uikit
   bloc: ^8.1.4
   flutter_bloc: ^8.1.6
   freezed: ^2.5.7
   freezed_annotation: ^2.4.4
   injectable: ^2.4.4
-  cupertino_icons: ^1.0.8
-  awesome_extensions: ^2.0.17
   dio: ^5.7.0
   shared_preferences: ^2.3.2
   auto_route: ^9.2.2
   get_it: 7.7.0
-  flutter_screenutil: ^5.9.3
   json_annotation: ^4.9.0
   equatable: ^2.0.5
 

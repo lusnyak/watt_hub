@@ -1,0 +1,83 @@
+name: watt_hub_uikit
+description: "A new Flutter package project."
+version: 0.0.1
+# homepage:
+
+environment:
+  sdk: ^3.5.3
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  awesome_extensions: ^2.0.17
+  flutter_screenutil: ^5.9.3
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_gen: ^5.7.0
+  flutter_gen_runner: ^5.7.0
+  build_runner: ^2.4.13
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/fonts/urbanist/
+    - assets/icons/
+    - assets/images/
+#
+# For details regarding assets in packages, see
+# https://flutter.dev/to/asset-from-package
+#
+# An image asset can refer to one or more resolution-specific "variants", see
+# https://flutter.dev/to/resolution-aware-images
+
+# To add custom fonts to your package, add a fonts section here,
+# in this "flutter" section. Each entry in this list should have a
+# "family" key with the font family name, and a "fonts" key with a
+# list giving the asset and other descriptors for the font. For
+# example:
+  fonts:
+    - family: Urbanist
+      fonts:
+        - asset: assets/fonts/urbanist/Urbanist-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/urbanist/Urbanist-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/urbanist/Urbanist-Light.ttf
+          weight: 300
+        - asset: assets/fonts/urbanist/Urbanist-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/urbanist/Urbanist-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/urbanist/Urbanist-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/urbanist/Urbanist-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/urbanist/Urbanist-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/urbanist/Urbanist-Black.ttf
+          weight: 900
+#
+# For details regarding fonts in packages, see
+# https://flutter.dev/to/font-from-package
+
+flutter_gen:
+  output: lib/src/assets
+  line_length: 100
+
+  assets:
+    enabled: true
+    outputs:
+      package_parameter_enabled: true
+      class_name: WattHubAssets
+
+  integrations:
+    flutter_svg: true
