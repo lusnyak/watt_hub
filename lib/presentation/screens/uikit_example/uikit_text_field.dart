@@ -10,10 +10,12 @@ class UikitTextField extends StatefulWidget {
 
 class _UikitTextFieldState extends State<UikitTextField> {
   final myController = TextEditingController();
+  final commentController = TextEditingController();
 
   @override
   void dispose() {
     myController.dispose();
+    commentController.dispose();
     super.dispose();
   }
 
@@ -32,6 +34,15 @@ class _UikitTextFieldState extends State<UikitTextField> {
           label: 'Email',
           hintText: 'Email',
           controller: myController,
+          onChanged: (value) => debugPrint(value),
+        ),
+        40.heightBox,
+        WHTextField(
+          label: 'Comment',
+          hintText: 'Comment',
+          minLines: 3,
+          maxLines: null,
+          controller: commentController,
           onChanged: (value) => debugPrint(value),
         ),
       ],
