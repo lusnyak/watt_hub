@@ -20,7 +20,7 @@ class OnboardingScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 24.0,
-                color: WattHubColors.primaryColor,
+                color: WattHubColors.primaryGreenColor,
                 fontFamily: FontFamily.urbanist,
                 fontWeight: FontWeight.w600,
               ),
