@@ -5,7 +5,7 @@ class WHElevatedButton extends StatelessWidget {
   const WHElevatedButton._({
     required this.title,
     this.onPressed,
-     required this.style,
+    required this.style,
   });
 
   factory WHElevatedButton.primary({
@@ -14,7 +14,7 @@ class WHElevatedButton extends StatelessWidget {
   }) =>
       WHElevatedButton._(
         title: title,
-         style: primaryElevatedButtonStyle,
+        style: primaryIconButtonStyle,
         onPressed: onPressed,
       );
 
@@ -24,19 +24,18 @@ class WHElevatedButton extends StatelessWidget {
   }) =>
       WHElevatedButton._(
         title: title,
-         style: secondaryElevatedButtonStyle,
+        style: secondaryElevatedButtonStyle,
         onPressed: onPressed,
       );
 
   final String title;
   final VoidCallback? onPressed;
-   final ButtonStyle style;
+  final ButtonStyle style;
 
   @override
-  Widget build(BuildContext context) =>
-      ElevatedButton(
-      onPressed: onPressed,
-      style: style,
-      child:  Text(title),
-    );
+  Widget build(BuildContext context) => ElevatedButton(
+        onPressed: onPressed,
+        style: style,
+        child: Text(title),
+      );
 }
