@@ -14,6 +14,7 @@ import 'package:watt_hub/presentation/screens/sign_up/sign_up_screen.dart';
 import 'package:watt_hub/presentation/screens/splash/splash_screen.dart';
 import 'package:watt_hub/presentation/screens/station_info/station_info_screen.dart';
 import 'package:watt_hub/presentation/screens/tip/tip_screen.dart';
+import 'package:watt_hub/presentation/screens/uikit_example/uikit_example.dart';
 import 'package:watt_hub/presentation/screens/verification/verification_screen.dart';
 
 part 'app_router.gr.dart';
@@ -22,7 +23,8 @@ part 'app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: SplashRoute.page, initial: true),
+        AutoRoute(page: SplashRoute.page, /*initial: true*/),
+        AutoRoute(page: UikitExampleRoute.page, initial: true),
         AutoRoute(page: OnboardingRoute.page),
         AutoRoute(page: DashboardRoute.page, children: [
           AutoRoute(page: HomeRoute.page),

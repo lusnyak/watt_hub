@@ -295,6 +295,25 @@ class TipRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [UikitExamplePage]
+class UikitExampleRoute extends PageRouteInfo<void> {
+  const UikitExampleRoute({List<PageRouteInfo>? children})
+      : super(
+          UikitExampleRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'UikitExampleRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const UikitExamplePage();
+    },
+  );
+}
+
+/// generated route for
 /// [VerificationScreen]
 class VerificationRoute extends PageRouteInfo<void> {
   const VerificationRoute({List<PageRouteInfo>? children})
