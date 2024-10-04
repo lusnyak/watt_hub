@@ -22,7 +22,7 @@ class WHIconButton extends StatelessWidget {
   }) =>
       WHIconButton._(
         icon: icon,
-        style: greyIconButtonStyle,
+        style: secondaryIconButtonStyle,
         onPressed: onPressed,
       );
   final Widget icon;
@@ -32,7 +32,13 @@ class WHIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => IconButton(
         onPressed: onPressed,
-        icon: icon,
+        icon:
+        SizedBox.fromSize(
+          size: const Size.fromRadius(10),
+          child: FittedBox(
+            child: icon,
+          ),
+        ),
         style: style,
       );
 }

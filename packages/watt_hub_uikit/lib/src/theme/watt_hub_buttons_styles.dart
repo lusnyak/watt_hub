@@ -4,8 +4,8 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 ButtonStyle get primaryElevatedButtonStyle => const ButtonStyle(
       backgroundColor: WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
       foregroundColor: WidgetStatePropertyAll(WattHubColors.whiteColor),
-      elevation: WidgetStatePropertyAll(15),
-
+      shadowColor: WidgetStatePropertyAll(WattHubColors.primaryLightGreenColor),
+      elevation: WidgetStatePropertyAll(6),
     );
 
 ButtonStyle get secondaryElevatedButtonStyle => const ButtonStyle(
@@ -15,19 +15,19 @@ ButtonStyle get secondaryElevatedButtonStyle => const ButtonStyle(
       elevation: WidgetStatePropertyAll(0),
     );
 
-ButtonStyle get outlinedButtonStyle =>  ButtonStyle(
+ButtonStyle get outlinedButtonStyle => ButtonStyle(
     side: WidgetStateProperty.all(const BorderSide(
         color: WattHubColors.primaryGreenColor,
         width: 1.0,
-        style: BorderStyle.solid))
-);
+        style: BorderStyle.solid)));
 
 ButtonStyle get primaryIconButtonStyle => const ButtonStyle(
       backgroundColor: WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
-
+      shadowColor: WidgetStatePropertyAll(WattHubColors.primaryLightGreenColor),
+      elevation: WidgetStatePropertyAll(6),
     );
 
-ButtonStyle get greyIconButtonStyle => const ButtonStyle(
+ButtonStyle get secondaryIconButtonStyle => const ButtonStyle(
       backgroundColor: WidgetStatePropertyAll(WattHubColors.grayColor),
     );
 

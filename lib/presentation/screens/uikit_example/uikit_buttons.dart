@@ -6,17 +6,44 @@ class UikitButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Scaffold(
+    return Scaffold(
       body: SafeArea(
           child: Column(
+        children: [
+          const WHOutlinedButton(title: "submit"),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const WHOutlinedButton(title: "submit"),
               WHElevatedButton.primary(title: "title"),
-              WHIconButton.primary(icon: Icon(Icons.image),),
-              WHIconButton.secondary(icon: Icon(Icons.image),),
+              const SizedBox(
+                width: 20,
+              ),
+              WHElevatedButton.secondary(title: "title"),
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+
+            children: [
+              WHIconButton.primary(
+                icon: const Icon(Icons.image),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              WHIconButton.secondary(
+                icon: const Icon(Icons.image),
+              ),
             ],
           )
-     ),
+        ],
+      )),
     );
   }
 }

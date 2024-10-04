@@ -15,6 +15,11 @@ class WHOutlinedButton extends StatelessWidget {
   Widget build(BuildContext context) => OutlinedButton(
         onPressed: onPressed,
         style: outlinedButtonStyle,
-        child: Text(title),
+        child: Text(
+          title,
+          style: body16MediumTextStyle.copyWith(
+            color: WattHubColors.primaryGreenColor,
+          ),
+        ),
       );
 }

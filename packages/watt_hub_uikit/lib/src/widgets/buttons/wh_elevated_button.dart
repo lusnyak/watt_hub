@@ -4,6 +4,7 @@ import 'package:watt_hub_uikit/src/theme/theme.dart';
 class WHElevatedButton extends StatelessWidget {
   const WHElevatedButton._({
     required this.title,
+    this.textStyle,
     this.onPressed,
     required this.style,
   });
@@ -14,6 +15,9 @@ class WHElevatedButton extends StatelessWidget {
   }) =>
       WHElevatedButton._(
         title: title,
+        textStyle: body16MediumTextStyle.copyWith(
+          color: WattHubColors.whiteColor,
+        ),
         style: primaryIconButtonStyle,
         onPressed: onPressed,
       );
@@ -24,11 +28,15 @@ class WHElevatedButton extends StatelessWidget {
   }) =>
       WHElevatedButton._(
         title: title,
+        textStyle: body16MediumTextStyle.copyWith(
+          color: WattHubColors.primaryGreenColor,
+        ),
         style: secondaryElevatedButtonStyle,
         onPressed: onPressed,
       );
 
   final String title;
+  final TextStyle? textStyle;
   final VoidCallback? onPressed;
   final ButtonStyle style;
 
@@ -36,6 +44,6 @@ class WHElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) => ElevatedButton(
         onPressed: onPressed,
         style: style,
-        child: Text(title),
+        child: Text(title, style: textStyle),
       );
 }
