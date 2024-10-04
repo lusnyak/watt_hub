@@ -8,10 +8,14 @@ class WHTextField extends StatelessWidget {
     required this.hintText,
     required this.controller,
     this.onChanged,
+    this.minLines,
+    this.maxLines,
   });
 
   final String label;
   final String hintText;
+  final int? minLines;
+  final int? maxLines;
   final TextEditingController controller;
   final ValueChanged<String>? onChanged;
 
@@ -23,6 +27,8 @@ class WHTextField extends StatelessWidget {
         labelText: label,
         hintText: hintText,
       ),
+      minLines: minLines,
+      maxLines: maxLines,
       onChanged: onChanged,
     );
   }
