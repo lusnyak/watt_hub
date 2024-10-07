@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../watt_hub_uikit.dart';
 
 class WHIconButton extends StatelessWidget {
-  const WHIconButton._(
-      {required this.icon, this.onPressed, required this.style});
+  const WHIconButton._({
+    required this.icon,
+    this.onPressed,
+    required this.style,
+  });
 
   factory WHIconButton.primary({
     required Widget icon,
@@ -12,7 +15,7 @@ class WHIconButton extends StatelessWidget {
   }) =>
       WHIconButton._(
         icon: icon,
-        style: primaryElevatedButtonStyle,
+        style: primaryIconButtonStyle,
         onPressed: onPressed,
       );
 
@@ -32,8 +35,7 @@ class WHIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => IconButton(
         onPressed: onPressed,
-        icon:
-        SizedBox.fromSize(
+        icon: SizedBox.fromSize(
           size: const Size.fromRadius(10),
           child: FittedBox(
             child: icon,
