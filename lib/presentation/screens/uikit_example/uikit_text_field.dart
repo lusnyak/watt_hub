@@ -26,7 +26,10 @@ class _UikitTextFieldState extends State<UikitTextField> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         WHPinPut(
-          onCompleted: (pin) => debugPrint(pin),
+          onCompleted: (pin) {
+            debugPrint("onCompleted");
+            debugPrint(pin);
+          },
           onChanged: (value) => debugPrint(value),
         ),
         80.heightBox,

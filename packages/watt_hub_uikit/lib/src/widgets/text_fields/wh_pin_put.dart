@@ -19,7 +19,7 @@ class WHPinPut extends StatelessWidget {
       focusedPinTheme: defaultPinTheme.copyDecorationWith(
         border: Border.all(color: WattHubColors.primaryGreenColor),
         color: WattHubColors.primaryLightGreenColor,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
       ),
       onChanged: onChanged,
       onCompleted: onCompleted,
