@@ -21,6 +21,11 @@ class UikitButtons extends StatelessWidget {
               const SizedBox(
                 width: 20,
               ),
+              WHElevatedButton.primary(title: "title",shadow : false),
+
+              const SizedBox(
+                width: 20,
+              ),
               WHElevatedButton.secondary(title: "title"),
             ],
           ),

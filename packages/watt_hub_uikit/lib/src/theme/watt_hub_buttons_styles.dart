@@ -8,14 +8,16 @@ ButtonStyle get primaryElevatedButtonStyle => const ButtonStyle(
       backgroundColor: WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
       foregroundColor: WidgetStatePropertyAll(WattHubColors.whiteColor),
       shadowColor: WidgetStatePropertyAll(WattHubColors.primaryLightGreenColor),
+      shape: WidgetStatePropertyAll(StadiumBorder()),
       elevation: WidgetStatePropertyAll(6),
     );
 
 ButtonStyle get secondaryElevatedButtonStyle => const ButtonStyle(
-      backgroundColor:
-          WidgetStatePropertyAll(WattHubColors.primaryLightGreenColor),
+      backgroundColor: WidgetStatePropertyAll(WattHubColors.primaryLightGreenColor),
       foregroundColor: WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
+      shape: WidgetStatePropertyAll(StadiumBorder()),
       elevation: WidgetStatePropertyAll(0),
+      // alignment: Alignment.center,
     );
 
 ButtonStyle get outlinedButtonStyle => const ButtonStyle(
@@ -27,20 +29,25 @@ ButtonStyle get outlinedButtonStyle => const ButtonStyle(
           style: BorderStyle.solid,
         ),
       ),
+      shape: WidgetStatePropertyAll(StadiumBorder()),
+      elevation: WidgetStatePropertyAll(0),
     );
 
 ButtonStyle get primaryIconButtonStyle => const ButtonStyle(
-      foregroundColor: WidgetStatePropertyAll(WattHubColors.whiteColor),
       backgroundColor: WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
+      foregroundColor: WidgetStatePropertyAll(WattHubColors.whiteColor),
       shadowColor: WidgetStatePropertyAll(WattHubColors.primaryLightGreenColor),
+      shape: WidgetStatePropertyAll(CircleBorder()),
       elevation: WidgetStatePropertyAll(6),
+      alignment: FractionalOffset(0.0, 0.0),
     );
-
 
 ButtonStyle get secondaryIconButtonStyle => const ButtonStyle(
       foregroundColor: WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
       backgroundColor: WidgetStatePropertyAll(WattHubColors.grayColor),
       shape: WidgetStatePropertyAll(CircleBorder()),
+      elevation: WidgetStatePropertyAll(0),
+      alignment: FractionalOffset(0.0, 0.0),
     );
 
 ElevatedButtonThemeData get elevatedButtonStyle =>

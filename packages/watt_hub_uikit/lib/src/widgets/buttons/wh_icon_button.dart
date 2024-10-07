@@ -37,9 +37,7 @@ class WHIconButton extends StatelessWidget {
         onPressed: onPressed,
         icon: SizedBox.fromSize(
           size: const Size.fromRadius(10),
-          child: FittedBox(
-            child: icon,
-          ),
+          child: icon,
         ),
         style: style,
       );

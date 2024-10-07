@@ -12,13 +12,16 @@ class WHElevatedButton extends StatelessWidget {
   factory WHElevatedButton.primary({
     required String title,
     VoidCallback? onPressed,
+    bool shadow = true,
   }) =>
       WHElevatedButton._(
         title: title,
         textStyle: body16MediumTextStyle.copyWith(
           color: WattHubColors.whiteColor,
         ),
-        style: primaryIconButtonStyle,
+        style: primaryElevatedButtonStyle.copyWith(
+          elevation: WidgetStatePropertyAll(shadow ? 6 : 0),
+        ),
         onPressed: onPressed,
       );
 
@@ -44,6 +47,9 @@ class WHElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) => ElevatedButton(
         onPressed: onPressed,
         style: style,
-        child: Text(title, style: textStyle),
+        child: Text(
+          title,
+          style: textStyle,
+        ),
       );
 }
