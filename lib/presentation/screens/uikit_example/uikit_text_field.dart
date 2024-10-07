@@ -30,18 +30,17 @@ class _UikitTextFieldState extends State<UikitTextField> {
           onChanged: (value) => debugPrint(value),
         ),
         80.heightBox,
-        WHTextField(
+        WHTextField.singleLine(
           label: 'Email',
           hintText: 'Email',
           controller: myController,
           onChanged: (value) => debugPrint(value),
         ),
         40.heightBox,
-        WHTextField(
+        WHTextField.multiLine(
           label: 'Comment',
           hintText: 'Comment',
-          minLines: 3,
-          maxLines: null,
+          maxLines: 5,
           controller: commentController,
           onChanged: (value) => debugPrint(value),
         ),
