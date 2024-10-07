@@ -7,10 +7,12 @@ class WHPinPut extends StatelessWidget {
     super.key,
     this.onCompleted,
     this.onChanged,
+    this.onTapOutside,
   });
 
   final ValueChanged<String>? onCompleted;
   final ValueChanged<String>? onChanged;
+  final TapRegionCallback? onTapOutside;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class WHPinPut extends StatelessWidget {
       ),
       onChanged: onChanged,
       onCompleted: onCompleted,
+      onTapOutside: onTapOutside,
     );
   }
 }
