@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:watt_hub_uikit/src/theme/watt_input_decorations.dart';
 
+/// TODO: - separate single and multiline use factory constructors
+///
 class WHTextField extends StatelessWidget {
   const WHTextField({
     super.key,

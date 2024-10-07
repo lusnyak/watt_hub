@@ -26,7 +26,10 @@ class _UikitTextFieldState extends State<UikitTextField> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         WHPinPut(
-          onCompleted: (pin) => debugPrint(pin),
+          onCompleted: (pin) {
+            debugPrint("onCompleted");
+            debugPrint(pin);
+          },
           onChanged: (value) => debugPrint(value),
         ),
         80.heightBox,
@@ -40,8 +43,7 @@ class _UikitTextFieldState extends State<UikitTextField> {
         WHTextField(
           label: 'Comment',
           hintText: 'Comment',
-          minLines: 3,
-          maxLines: null,
+          // maxLines: null,
           controller: commentController,
           onChanged: (value) => debugPrint(value),
         ),
