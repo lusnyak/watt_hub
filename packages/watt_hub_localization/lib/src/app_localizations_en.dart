@@ -11,4 +11,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get back => 'Back';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get requests => 'Requests';
+
+  @override
+  String get profile => 'Profile';
 }
