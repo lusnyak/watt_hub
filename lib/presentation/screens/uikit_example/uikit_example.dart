@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:watt_hub/presentation/screens/uikit_example/uikit_buttons.dart';
+import 'package:watt_hub/presentation/screens/uikit_example/uikit_date_picker.dart';
 
 @RoutePage()
 class UikitExamplePage extends StatelessWidget {
@@ -10,7 +9,7 @@ class UikitExamplePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(child: UikitButtons()),
+      body: SafeArea(child: UikitDatePicker()),
     );
   }
 }
