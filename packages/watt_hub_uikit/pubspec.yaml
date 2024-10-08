@@ -13,10 +13,7 @@ dependencies:
   awesome_extensions: ^2.0.17
   flutter_screenutil: ^5.9.3
   cupertino_icons: ^1.0.8
-<<<<<<< HEAD
   pinput: ^5.0.0
-=======
->>>>>>> 1b3e75c77e4e5502602f5e1504a1e2a555981f65
   dropdown_button2: ^2.3.9
 
 dev_dependencies:
