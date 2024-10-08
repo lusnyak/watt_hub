@@ -150,5 +150,13 @@ TextStyle get body48SemiBoldTextStyle => TextStyle(
   color: WattHubColors.primaryBlackColor,
 );
 
+TextStyle get green16RegularTextStyle => TextStyle(
+  fontFamily: FontFamily.urbanist,
+  fontWeight: FontWeight.w400,
+  height: 25.6 / 16.0,
+  fontSize: 16.sp,
+  color: WattHubColors.primaryGreenColor,
+);
+
 
 

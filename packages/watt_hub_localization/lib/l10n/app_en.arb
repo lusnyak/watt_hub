@@ -1,4 +1,8 @@
 {
   "nextPage": "Next Page",
-  "back": "Back"
+  "back": "Back",
+  "helloThere": "Hello there",
+  "enterYourEmail": "Please enter your email address. You will receive an OTP code in the next step for the verification process.",
+  "emailAddress": "Email Address",
+  "continueText": "Continue"
 }

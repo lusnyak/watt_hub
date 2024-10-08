@@ -11,4 +11,17 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get back => 'Հետ';
+
+  @override
+  String get helloThere => 'Բարև ձեզ';
+
+  @override
+  String get enterYourEmail =>
+      'Խնդրում ենք մուտքագրել ձեր էլփոստի հասցեն: Ստուգման գործընթացի համար հաջորդ քայլում կստանաք OTP կոդը:';
+
+  @override
+  String get emailAddress => 'Էլփոստի հասցե';
+
+  @override
+  String get continueText => 'Շարունակել';
 }
