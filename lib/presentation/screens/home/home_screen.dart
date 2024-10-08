@@ -10,9 +10,14 @@ import 'package:watt_hub/presentation/screens/home/widgets/stations_list.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
