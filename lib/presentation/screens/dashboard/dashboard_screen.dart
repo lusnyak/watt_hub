@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
+import 'package:watt_hub_localization/watt_hub_localization.dart';
+import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
 class DashboardScreen extends StatelessWidget {
@@ -18,17 +20,21 @@ class DashboardScreen extends StatelessWidget {
         return BottomNavigationBar(
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
-          items: const [
+          unselectedLabelStyle: body14RegularTextStyle,
+          selectedLabelStyle: body14RegularTextStyle,
+          items: [
             BottomNavigationBarItem(
-              label: 'Home',
-              icon: Icon(Icons.map),
+              label: AppLocalizations.of(context).home,
+              icon: const Icon(Icons.home),
             ),
             BottomNavigationBarItem(
-              label: 'Requests',
-              icon: Icon(Icons.request_quote),
+              label: AppLocalizations.of(context).requests,
+              icon: const Icon(Icons.horizontal_split_rounded),
             ),
             BottomNavigationBarItem(
-                label: 'Profile', icon: Icon(Icons.settings)),
+              label: AppLocalizations.of(context).profile,
+              icon: const Icon(Icons.person),
+            ),
           ],
         );
       },
