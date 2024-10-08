@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Timer(const Duration(seconds: 3), () {
-      AutoRouter.of(context).push(const UikitExampleRoute());
+      AutoRouter.of(context).push(const OnboardingRoute());
     });
   }
 

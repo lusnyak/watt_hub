@@ -30,7 +30,7 @@ flutter:
   assets:
     - assets/fonts/urbanist/
 #    - assets/icons/
-#    - assets/images/
+    - assets/images/
 #
 
   fonts:
