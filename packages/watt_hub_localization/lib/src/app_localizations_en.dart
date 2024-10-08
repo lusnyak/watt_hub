@@ -11,4 +11,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get back => 'Back';
+
+  @override
+  String get helloThere => 'Hello there';
+
+  @override
+  String get enterYourEmail =>
+      'Please enter your email address. You will receive an OTP code in the next step for the verification process.';
+
+  @override
+  String get emailAddress => 'Email Address';
+
+  @override
+  String get continueText => 'Continue';
 }

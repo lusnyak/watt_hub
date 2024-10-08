@@ -109,6 +109,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back'**
   String get back;
+
+  /// No description provided for @helloThere.
+  ///
+  /// In en, this message translates to:
+  /// **'Hello there'**
+  String get helloThere;
+
+  /// No description provided for @enterYourEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your email address. You will receive an OTP code in the next step for the verification process.'**
+  String get enterYourEmail;
+
+  /// No description provided for @emailAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Address'**
+  String get emailAddress;
+
+  /// No description provided for @continueText.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueText;
 }
 
 class _AppLocalizationsDelegate
