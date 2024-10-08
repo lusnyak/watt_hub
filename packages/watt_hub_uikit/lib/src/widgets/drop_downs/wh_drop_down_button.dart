@@ -6,7 +6,7 @@ class WhDropDownButton<T> extends StatelessWidget {
     super.key,
     required this.items,
     required this.itemLabel,
-    required this.suffixText,
+    this.suffixText,
     this.hintText,
     this.onChanged,
     this.value,
@@ -17,20 +17,28 @@ class WhDropDownButton<T> extends StatelessWidget {
   final String? hintText;
   final ValueChanged<T?>? onChanged;
   final T? value;
-  final String suffixText;
+  final String? suffixText;
 
   @override
   Widget build(BuildContext context) {
     return DropdownButton2<T>(
       iconStyleData: IconStyleData(
-        icon: Row(
-          children: [
-            Text(suffixText),
-            const Icon(
-              Icons.keyboard_arrow_down,
-            ),
-          ],
-        ),
+        icon: suffixText != null
+            ? Row(
+                children: [
+                  Text(
+                    suffixText!,
+                    style: body16MediumTextStyle.copyWith(
+                        color: WattHubColors.primaryGreenColor),
+                  ),
+                  const Icon(
+                    Icons.keyboard_arrow_down,
+                  ),
+                ],
+              )
+            : const Icon(
+                Icons.keyboard_arrow_down,
+              ),
         iconSize: 20,
         iconEnabledColor: WattHubColors.darkMoodColor,
         iconDisabledColor: WattHubColors.darkMoodColor,
