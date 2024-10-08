@@ -15,40 +15,49 @@ class WHTextField extends StatelessWidget {
     this.onTapOutside,
   });
 
-  factory WHTextField.singleLine(
-          {required String label,
-          required String hintText,
-          required TextEditingController controller,
-          ValueChanged<String>? onChanged,
-          TextInputType? keyboardType,
-          FormFieldValidator<String>? validator,
-          TapRegionCallback? onTapOutside}) =>
+  factory WHTextField.singleLine({
+    required String label,
+    required String hintText,
+    required TextEditingController controller,
+    ValueChanged<String>? onChanged,
+    TextInputType? keyboardType,
+    FormFieldValidator<String>? validator,
+    TapRegionCallback? onTapOutside,
+  }) =>
       WHTextField._(
         label: label,
         hintText: hintText,
         controller: controller,
         onChanged: onChanged,
+        maxLines: 1,
         keyboardType: keyboardType,
         validator: validator,
         onTapOutside: onTapOutside,
+
+        /// hanel
       );
 
-  factory WHTextField.multiLine(
-          {required String label,
-          required String hintText,
-          required TextEditingController controller,
-          ValueChanged<String>? onChanged,
-          int? minLines,
-          int? maxLines,
-          TextInputType? keyboardType,
-          FormFieldValidator<String>? validator,
-          TapRegionCallback? onTapOutside}) =>
+  factory WHTextField.multiLine({
+    required String label,
+    required String hintText,
+    required TextEditingController controller,
+    ValueChanged<String>? onChanged,
+    int? minLines,
+
+    /// hanel
+    int? maxLines,
+
+    /// hanel
+    TextInputType? keyboardType,
+    FormFieldValidator<String>? validator,
+    TapRegionCallback? onTapOutside,
+  }) =>
       WHTextField._(
         label: label,
         hintText: hintText,
         controller: controller,
         onChanged: onChanged,
-        maxLines: maxLines,
+        maxLines: null,
         keyboardType: keyboardType,
         validator: validator,
         onTapOutside: onTapOutside,
@@ -61,6 +70,8 @@ class WHTextField extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final TextInputType? keyboardType;
   final FormFieldValidator<String>? validator;
+
+  /// TODO: - petq che hanel durs , actioni depqum pakel keyboardy
   final TapRegionCallback? onTapOutside;
 
   @override
@@ -71,7 +82,12 @@ class WHTextField extends StatelessWidget {
         labelText: label,
         hintText: hintText,
       ),
+
+      /// TODO: - inputFormatters vorpes parameter durs hanel
+      inputFormatters: [],
       minLines: 1,
+
+      /// TODO:-
       maxLines: maxLines ?? 1,
       keyboardType: keyboardType,
       onChanged: onChanged,
