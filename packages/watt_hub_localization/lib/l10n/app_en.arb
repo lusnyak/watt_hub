@@ -1,4 +1,7 @@
 {
   "nextPage": "Next Page",
-  "back": "Back"
+  "back": "Back",
+  "home": "Home",
+  "requests": "Requests",
+  "profile": "Profile"
 }
