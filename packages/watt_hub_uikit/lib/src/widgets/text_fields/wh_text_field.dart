@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:watt_hub_uikit/src/theme/watt_input_decorations.dart';
 
 /// TODO: - separate single and multiline use factory constructors
@@ -12,7 +13,8 @@ class WHTextField extends StatelessWidget {
     this.onChanged,
     this.keyboardType,
     this.validator,
-    this.onTapOutside,
+    this.inputFormatters,
+    this.multiLine = false,
   });
 
   factory WHTextField.singleLine({
@@ -22,19 +24,17 @@ class WHTextField extends StatelessWidget {
     ValueChanged<String>? onChanged,
     TextInputType? keyboardType,
     FormFieldValidator<String>? validator,
-    TapRegionCallback? onTapOutside,
+    List<TextInputFormatter>? inputFormatters,
   }) =>
       WHTextField._(
         label: label,
         hintText: hintText,
         controller: controller,
         onChanged: onChanged,
-        maxLines: 1,
         keyboardType: keyboardType,
         validator: validator,
-        onTapOutside: onTapOutside,
-
-        /// hanel
+        maxLines: 1,
+        inputFormatters: inputFormatters,
       );
 
   factory WHTextField.multiLine({
@@ -42,15 +42,11 @@ class WHTextField extends StatelessWidget {
     required String hintText,
     required TextEditingController controller,
     ValueChanged<String>? onChanged,
-    int? minLines,
-
-    /// hanel
     int? maxLines,
-
-    /// hanel
     TextInputType? keyboardType,
     FormFieldValidator<String>? validator,
-    TapRegionCallback? onTapOutside,
+    List<TextInputFormatter>? inputFormatters,
+    bool? multiLine,
   }) =>
       WHTextField._(
         label: label,
@@ -60,7 +56,8 @@ class WHTextField extends StatelessWidget {
         maxLines: null,
         keyboardType: keyboardType,
         validator: validator,
-        onTapOutside: onTapOutside,
+        inputFormatters: inputFormatters,
+        multiLine: true,
       );
 
   final String label;
@@ -70,12 +67,12 @@ class WHTextField extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final TextInputType? keyboardType;
   final FormFieldValidator<String>? validator;
+  final List<TextInputFormatter>? inputFormatters;
+  final bool? multiLine;
 
-  /// TODO: - petq che hanel durs , actioni depqum pakel keyboardy
-  final TapRegionCallback? onTapOutside;
+  /// TODO: - petq che hanel durs , actioni depqum pakel keyboardy - done
 
-  @override
-  Widget build(BuildContext context) {
+  Widget _singleLine(BuildContext context) {
     return TextFormField(
       controller: controller,
       decoration: mainInputDecoration.copyWith(
@@ -83,16 +80,41 @@ class WHTextField extends StatelessWidget {
         hintText: hintText,
       ),
 
-      /// TODO: - inputFormatters vorpes parameter durs hanel
-      inputFormatters: [],
-      minLines: 1,
-
-      /// TODO:-
-      maxLines: maxLines ?? 1,
+      /// TODO: - inputFormatters vorpes parameter durs hanel - done
+      inputFormatters: inputFormatters,
+      minLines: maxLines,
+      maxLines: maxLines,
       keyboardType: keyboardType,
       onChanged: onChanged,
       validator: validator,
-      onTapOutside: onTapOutside,
+      onTapOutside: (evt) => FocusScope.of(context).unfocus(),
     );
+  }
+
+  Widget _multileLine(BuildContext context) {
+    return SizedBox(
+      height: 100.0,
+      child: TextFormField(
+        controller: controller,
+        decoration: mainInputDecoration.copyWith(
+          labelText: label,
+          hintText: hintText,
+        ),
+
+        /// TODO: - inputFormatters vorpes parameter durs hanel - done
+        inputFormatters: inputFormatters,
+        minLines: maxLines,
+        maxLines: maxLines,
+        keyboardType: keyboardType,
+        onChanged: onChanged,
+        validator: validator,
+        onTapOutside: (evt) => FocusScope.of(context).unfocus(),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return multiLine == true ? _multileLine(context) : _singleLine(context);
   }
 }

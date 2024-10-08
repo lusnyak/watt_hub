@@ -32,47 +32,45 @@ class _UikitTextFieldState extends State<UikitTextField> {
             debugPrint(pin);
           },
           onChanged: (value) => debugPrint(value),
-          onTapOutside: (evt) => FocusScope.of(context).unfocus(),
         ),
         80.heightBox,
         Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                WHTextField.singleLine(
-                  label: 'Email',
-                  hintText: 'Email',
-                  controller: myController,
-                  onChanged: (value) => debugPrint(value),
-                  keyboardType: TextInputType.emailAddress,
-                  onTapOutside: (evt) => FocusScope.of(context).unfocus(),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter email';
-                    }
-                    if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                      return 'Please enter a valid email';
-                    }
-                    return null;
-                  },
-                ),
-                40.heightBox,
-                WHTextField.multiLine(
-                  label: 'Comment',
-                  hintText: 'Comment',
-                  maxLines: 5,
-                  controller: commentController,
-                  onChanged: (value) => debugPrint(value),
-                  onTapOutside: (evt) => FocusScope.of(context).unfocus(),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter comment';
-                    }
-                    return null;
-                  },
-                ),
-              ],
-            )),
+          key: _formKey,
+          child: Column(
+            children: [
+              WHTextField.singleLine(
+                label: 'Email',
+                hintText: 'Email',
+                controller: myController,
+                onChanged: (value) => debugPrint(value),
+                keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter email';
+                  }
+                  if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                    return 'Please enter a valid email';
+                  }
+                  return null;
+                },
+              ),
+              40.heightBox,
+              WHTextField.multiLine(
+                label: 'Comment',
+                hintText: 'Comment',
+                maxLines: 5,
+                controller: commentController,
+                onChanged: (value) => debugPrint(value),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter comment';
+                  }
+                  return null;
+                },
+              ),
+            ],
+          ),
+        ),
         40.heightBox,
         ElevatedButton(
           onPressed: () {
