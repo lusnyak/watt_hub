@@ -11,6 +11,7 @@ class UikitTextField extends StatefulWidget {
 class _UikitTextFieldState extends State<UikitTextField> {
   final myController = TextEditingController();
   final commentController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
@@ -31,20 +32,55 @@ class _UikitTextFieldState extends State<UikitTextField> {
             debugPrint(pin);
           },
           onChanged: (value) => debugPrint(value),
+          onTapOutside: (evt) => FocusScope.of(context).unfocus(),
         ),
         80.heightBox,
-        WHTextField.singleLine(
-          label: 'Email',
-          hintText: 'Email',
-          controller: myController,
-          onChanged: (value) => debugPrint(value),
-        ),
+        Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                WHTextField.singleLine(
+                  label: 'Email',
+                  hintText: 'Email',
+                  controller: myController,
+                  onChanged: (value) => debugPrint(value),
+                  keyboardType: TextInputType.emailAddress,
+                  onTapOutside: (evt) => FocusScope.of(context).unfocus(),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter email';
+                    }
+                    if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                      return 'Please enter a valid email';
+                    }
+                    return null;
+                  },
+                ),
+                40.heightBox,
+                WHTextField.multiLine(
+                  label: 'Comment',
+                  hintText: 'Comment',
+                  maxLines: 5,
+                  controller: commentController,
+                  onChanged: (value) => debugPrint(value),
+                  onTapOutside: (evt) => FocusScope.of(context).unfocus(),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter comment';
+                    }
+                    return null;
+                  },
+                ),
+              ],
+            )),
         40.heightBox,
-        WHTextField.multiLine(
-          label: 'Comment',
-          hintText: 'Comment',
-          controller: commentController,
-          onChanged: (value) => debugPrint(value),
+        ElevatedButton(
+          onPressed: () {
+            if (_formKey.currentState!.validate()) {
+              debugPrint('Form is valid');
+            }
+          },
+          child: const Text('Submit'),
         ),
       ],
     );
