@@ -13,9 +13,11 @@ InputDecoration get mainInputDecoration => InputDecoration(
         color: WattHubColors.primaryBlackColor,
       ),
       enabledBorder: underLineInputBorder,
+      errorStyle:
+          body14RegularTextStyle.copyWith(color: WattHubColors.redColor),
     );
 
-InputDecorationTheme get inputDecorationTheme => InputDecorationTheme(
+ InputDecorationTheme get inputDecorationTheme => InputDecorationTheme(
       alignLabelWithHint: false,
       hintStyle: body16RegularTextStyle.copyWith(
         color: WattHubColors.lightGray,
