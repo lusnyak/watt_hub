@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/data/local/onboarding_data/onboarding_data.dart';
+import 'package:watt_hub/presentation/widgets/onboarding/onboarding_widget.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -28,28 +29,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             Expanded(
               child: PageView(
                 controller: _controller,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      children: [
-                        const Spacer(),
-                        Image.asset(
-                          onboardingData[page].image,
-                        ),
-                        const Spacer(),
-                        Text(
-                          onboardingData[page].title,
-                          style: body32MediumTextStyle,
-                        ),
-                        Text(
-                          onboardingData[page].description,
-                          style: body18RegularTextStyle,
-                        ),
-                        const Spacer(),
-                      ],
-                    ),
-                  ),
+                onPageChanged: _onPageViewChange,
+                children: const [
+                  OnboardingWidget(index: 0,),
+                  OnboardingWidget(index: 1,),
+                  OnboardingWidget(index: 2,),
                 ],
               ),
             ),
@@ -98,13 +82,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                   Expanded(
                       child: WHElevatedButton.primary(
-                    onPressed: () {
-                      if (page != onboardingData.length - 1) {
-                        setState(() {
-                          page++;
-                        });
+                    onPressed: (){
+                      if (page < onboardingData.length - 1) {
+                        _controller.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.decelerate);
+                        page++;
                       } else {
+                        _controller.jumpToPage(0);
                         AutoRouter.of(context).push(const SignUpRoute());
+
                       }
                     },
                     title: 'Next',
@@ -117,9 +102,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
     );
   }
+  _onPageViewChange(int index) {
+    page= index;
+  }
 }
-//
-
-//divaider
-
-//buttons
