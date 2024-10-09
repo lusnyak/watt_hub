@@ -41,6 +41,50 @@ class _HomeViewState extends State<HomeView> {
     }
   }
 
+  void show(ChargingStationModel station) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    station.name,
+                    style: body16SemiBoldTextStyle,
+                  ),
+                  Text(
+                    station.address,
+                    style: body14RegularTextStyle,
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  WHOutlinedButton(
+                    title: 'View',
+                    onPressed: () {},
+                  ),
+                  20.widthBox,
+                  WHElevatedButton.primary(
+                    title: 'Book',
+                    onPressed: () {},
+                  )
+                ],
+              )
+            ],
+          ).paddingAll(16.w),
+        );
+      },
+    );
+  }
+
   Widget _mapContainer(List<ChargingStationModel> chargingStations) {
     return Container(
       child: currentLocation != null
@@ -65,11 +109,18 @@ class _HomeViewState extends State<HomeView> {
                   MarkerLayer(markers: [
                     for (var item in chargingStations)
                       Marker(
+                        width: 56.0,
+                        height: 56.0,
                         point: LatLng(item.latitude, item.longitude),
-                        child: const Icon(
-                          Icons.location_on_outlined,
-                          size: 56.0,
-                          color: WattHubColors.primaryGreenColor,
+                        child: GestureDetector(
+                          onTap: () => {
+                            show(item),
+                          },
+                          child: const Icon(
+                            Icons.charging_station,
+                            size: 56.0,
+                            color: WattHubColors.primaryGreenColor,
+                          ),
                         ),
                       ),
                     Marker(
