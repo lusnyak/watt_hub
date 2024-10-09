@@ -44,62 +44,45 @@ class _HomeViewState extends State<HomeView> {
   Widget _mapContainer(List<ChargingStationModel> chargingStations) {
     return Container(
       child: currentLocation != null
-          ? Stack(
+          ? FlutterMap(
+              mapController: mapController,
+              options: MapOptions(
+                initialCenter:
+                    currentLocation ?? const LatLng(40.7942, 43.84528),
+                initialZoom: 18.0,
+                onMapReady: () {
+                  setState(() {
+                    isMapReady = true;
+                  });
+                },
+              ),
               children: [
-                FlutterMap(
-                  mapController: mapController,
-                  options: MapOptions(
-                    initialCenter:
-                        currentLocation ?? const LatLng(40.7942, 43.84528),
-                    initialZoom: 18.0,
-                    onMapReady: () {
-                      setState(() {
-                        isMapReady = true;
-                      });
-                    },
-                  ),
-                  children: [
-                    TileLayer(
-                      urlTemplate:
-                          'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                      userAgentPackageName: 'com.example.app',
-                    ),
-                    if (isMapReady)
-                      MarkerLayer(markers: [
-                        for (var item in chargingStations)
-                          Marker(
-                            point: LatLng(item.latitude, item.longitude),
-                            child: const Icon(
-                              Icons.location_on_outlined,
-                              size: 56.0,
-                              color: WattHubColors.primaryGreenColor,
-                            ),
-                          ),
-                        Marker(
-                          width: 80.0,
-                          height: 80.0,
-                          point: currentLocation ??
-                              const LatLng(40.7942, 43.84528),
-                          child: const Icon(
-                            Icons.location_on_outlined,
-                            size: 56.0,
-                            color: WattHubColors.primaryGreenColor,
-                          ),
-                        )
-                      ])
-                  ],
+                TileLayer(
+                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  userAgentPackageName: 'com.example.app',
                 ),
-                Positioned(
-                  top: 20.0,
-                  right: 20.0,
-                  child: WHIconButton.secondary(
-                    icon: const Icon(
-                      Icons.filter_alt,
-                    ),
-                    onPressed: () =>
-                        AutoRouter.of(context).push(const FilterRoute()),
-                  ),
-                ),
+                if (isMapReady)
+                  MarkerLayer(markers: [
+                    for (var item in chargingStations)
+                      Marker(
+                        point: LatLng(item.latitude, item.longitude),
+                        child: const Icon(
+                          Icons.location_on_outlined,
+                          size: 56.0,
+                          color: WattHubColors.primaryGreenColor,
+                        ),
+                      ),
+                    Marker(
+                      width: 80.0,
+                      height: 80.0,
+                      point: currentLocation ?? const LatLng(40.7942, 43.84528),
+                      child: const Icon(
+                        Icons.location_on_outlined,
+                        size: 56.0,
+                        color: WattHubColors.primaryGreenColor,
+                      ),
+                    )
+                  ])
               ],
             )
           : const Center(
@@ -118,6 +101,20 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        leading: nil,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          WHIconButton.secondary(
+            icon: const Icon(
+              Icons.filter_alt,
+            ),
+            onPressed: () => AutoRouter.of(context).push(const FilterRoute()),
+          ).paddingOnly(right: 20.0)
+        ],
+      ),
       body: SafeArea(
         child: BlocBuilder<ChargingStationBloc, ChargingStationState>(
           builder: (context, state) {
@@ -147,18 +144,9 @@ class _HomeViewState extends State<HomeView> {
           },
         ),
       ),
-      floatingActionButton: Column(
+      floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FloatingActionButton(
-            onPressed: () {
-              setState(() {
-                isList = !isList;
-              });
-            },
-            child: Icon(isList ? Icons.list : Icons.map),
-          ),
-          20.heightBox,
           if (isList)
             FloatingActionButton(
               onPressed: () {
@@ -167,7 +155,16 @@ class _HomeViewState extends State<HomeView> {
                 }
               },
               child: const Icon(Icons.my_location_outlined),
-            )
+            ),
+          20.widthBox,
+          FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                isList = !isList;
+              });
+            },
+            child: Icon(isList ? Icons.list : Icons.map),
+          ),
         ],
       ),
     );
