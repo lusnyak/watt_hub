@@ -25,13 +25,6 @@ class _HomeViewState extends State<HomeView> {
   bool isMapReady = false;
   bool isList = true;
 
-  @override
-  void initState() {
-    super.initState();
-    _getCurrentLocation();
-    BlocProvider.of<ChargingStationBloc>(context).add(LoadChargingStations());
-  }
-
   Future<void> _getCurrentLocation() async {
     LocationPermission permission = await Geolocator.requestPermission();
     if (permission == LocationPermission.denied) {
@@ -49,7 +42,6 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Widget _mapContainer(List<ChargingStationModel> chargingStations) {
-    debugPrint('$chargingStations');
     return Container(
       child: currentLocation != null
           ? Stack(
@@ -117,6 +109,13 @@ class _HomeViewState extends State<HomeView> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _getCurrentLocation();
+    BlocProvider.of<ChargingStationBloc>(context).add(LoadChargingStations());
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -130,7 +129,19 @@ class _HomeViewState extends State<HomeView> {
               final stations = state.chargingStations;
               return isList
                   ? _mapContainer(stations)
-                  : StationsList(stationsList: stations);
+                  : StationsList(
+                      stationsList: stations,
+                      onStationSelected: (selectedStation) {
+                        setState(() {
+                          mapController.move(
+                            LatLng(selectedStation.latitude,
+                                selectedStation.longitude),
+                            18.0,
+                          );
+                          isList = true;
+                        });
+                      },
+                    );
             }
             return const Center(child: Text('No Data'));
           },
