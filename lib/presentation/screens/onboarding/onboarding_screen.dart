@@ -1,10 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/data/local/onboarding_data/onboarding_data.dart';
 import 'package:watt_hub/presentation/widgets/onboarding/onboarding_widget.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../../../data/services/shared_preferences_service.dart';
 
 @RoutePage()
 class OnboardingScreen extends StatefulWidget {
@@ -16,7 +19,15 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   int page = 0;
-  PageController _controller = PageController();
+
+  Future<void> _storeData() async {
+    await SharedPreferencesService().setBool(
+      'isOnBoard',
+      true,
+    );
+  }
+
+  final PageController _controller = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +42,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 controller: _controller,
                 onPageChanged: _onPageViewChange,
                 children: const [
-                  OnboardingWidget(index: 0,),
-                  OnboardingWidget(index: 1,),
-                  OnboardingWidget(index: 2,),
+                  OnboardingWidget(
+                    index: 0,
+                  ),
+                  OnboardingWidget(
+                    index: 1,
+                  ),
+                  OnboardingWidget(
+                    index: 2,
+                  ),
                 ],
               ),
             ),
@@ -46,13 +63,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   activeDotColor: WattHubColors.primaryGreenColor,
                   dotColor: WattHubColors.primaryLightGreenColor,
                   dotHeight: 16,
-                  dotWidth: 35,
-                  spacing: 24,
+                  dotWidth: 16,
+                  spacing: 8,
                 ),
               ),
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 20.0),
+              padding: EdgeInsets.symmetric(vertical: 8.0),
               child: Divider(
 // height: 20,
                 thickness: 1.8,
@@ -72,6 +89,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   Expanded(
                     child: WHElevatedButton.secondary(
                       onPressed: () {
+                        _storeData();
                         AutoRouter.of(context).push(const DashboardRoute());
                       },
                       title: 'Skip',
@@ -82,14 +100,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                   Expanded(
                       child: WHElevatedButton.primary(
-                    onPressed: (){
+                    onPressed: () async {
                       if (page < onboardingData.length - 1) {
-                        _controller.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.decelerate);
+                        _controller.nextPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.decelerate);
                         page++;
                       } else {
                         _controller.jumpToPage(0);
-                        AutoRouter.of(context).push(const SignUpRoute());
-
+                        _storeData();
+                        AutoRouter.of(context).replace(const SignUpRoute());
                       }
                     },
                     title: 'Next',
@@ -102,7 +122,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
     );
   }
+
   _onPageViewChange(int index) {
-    page= index;
+    page = index;
   }
 }

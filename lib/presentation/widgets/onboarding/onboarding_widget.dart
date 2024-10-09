@@ -10,14 +10,14 @@ class OnboardingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          const Spacer(),
+          // const Spacer(),
           Image.asset(
             onboardingData[index].image,
           ),
-          const Spacer(),
+          // const Spacer(),
           Text(
             onboardingData[index].title,
             style: body32MediumTextStyle,
@@ -26,7 +26,7 @@ class OnboardingWidget extends StatelessWidget {
             onboardingData[index].description,
             style: body18RegularTextStyle,
           ),
-          const Spacer(),
+          // const Spacer(),
         ],
       ),
     );

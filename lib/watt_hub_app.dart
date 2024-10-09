@@ -4,7 +4,9 @@ import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class WattHubApp extends StatelessWidget {
-  WattHubApp({super.key});
+  WattHubApp({
+    super.key,
+  });
 
   final _appRouter = AppRouter();
 
