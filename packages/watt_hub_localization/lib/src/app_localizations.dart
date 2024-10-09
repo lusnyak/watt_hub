@@ -133,6 +133,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continue'**
   String get continueText;
+
+  /// No description provided for @otpCodeVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'OTP code verification '**
+  String get otpCodeVerification;
+
+  /// No description provided for @sentAnOtpCode.
+  ///
+  /// In en, this message translates to:
+  /// **'We have sent an OTP code to email address. Enter the OTP code below to continue.'**
+  String get sentAnOtpCode;
+
+  /// No description provided for @didntReceiveEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t receive email?'**
+  String get didntReceiveEmail;
 }
 
 class _AppLocalizationsDelegate
