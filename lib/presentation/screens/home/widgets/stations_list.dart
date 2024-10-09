@@ -15,7 +15,7 @@ class StationsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (stationsList.isEmpty) {
-      return Center(child: Text('No charging stations available.'));
+      return const Center(child: Text('No charging stations available.'));
     }
 
     return Padding(
