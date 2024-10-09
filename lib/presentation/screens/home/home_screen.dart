@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   MapController mapController = MapController();
   LatLng? currentLocation;
   bool isMapReady = false;
+  bool isList = false;
 
   @override
   void initState() {
@@ -41,30 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: null,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20.0),
-            child: IconButton(
-                onPressed: () => AutoRouter.of(context).push(
-                  
-                      const FilterRoute(),
-                    ),
-                icon: const Icon(
-                  Icons.filter_list,
-                  size: 30.0,
-                )),
-          ),
-        ],
-      ),
-      body: SafeArea(
-        child: Container(
-          child: currentLocation != null
-              ? FlutterMap(
+  Widget _mapContainer() {
+    return Container(
+      child: currentLocation != null
+          ? Stack(
+              children: [
+                FlutterMap(
                   mapController: mapController,
                   options: MapOptions(
                     initialCenter:
@@ -97,15 +80,58 @@ class _HomeScreenState extends State<HomeScreen> {
                         )
                       ])
                   ],
-                )
-              : const Center(
-                  child: CircularProgressIndicator(),
                 ),
-        ),
+                Positioned(
+                  top: 20.0,
+                  right: 20.0,
+                  child: WHIconButton.secondary(
+                    icon: const Icon(
+                      Icons.filter_alt,
+                    ),
+                    onPressed: () =>
+                        AutoRouter.of(context).push(const FilterRoute()),
+                  ),
+                ),
+              ],
+            )
+          : const Center(
+              child: CircularProgressIndicator(),
+            ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: isList
+            ? _mapContainer()
+            : const Center(
+                child: Text('List'),
+              ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.list),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                isList = !isList;
+              });
+            },
+            child: Icon(isList ? Icons.list : Icons.map),
+          ),
+          20.heightBox,
+          if (isList)
+            FloatingActionButton(
+              onPressed: () {
+                if (currentLocation != null) {
+                  mapController.move(currentLocation!, 18.0);
+                }
+              },
+              child: const Icon(Icons.my_location_outlined),
+            )
+        ],
       ),
     );
   }
