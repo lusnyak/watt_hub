@@ -13,4 +13,5 @@ cd packages/watt_hub_uikit && fvm flutter pub get && fvm flutter packages pub ru
 ## WattHub localizations codes generates commands:
 cd packages/watt_hub_localization && fvm flutter pub get && fvm flutter gen-l10n
 
+
  

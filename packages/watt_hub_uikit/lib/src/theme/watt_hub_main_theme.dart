@@ -15,6 +15,12 @@ ThemeData get lightTheme => ThemeData(
       dividerTheme: const DividerThemeData(
         color: WattHubColors.grayColor,
       ),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.transparent,
+      ),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        shape: StadiumBorder(),
+      ),
     );
 
 /// TODO: - dark theme property

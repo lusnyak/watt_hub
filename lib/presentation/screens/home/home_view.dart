@@ -46,6 +46,7 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     super.initState();
     _getCurrentLocation();
+    // context.read<ChargingStationBloc>().
     BlocProvider.of<ChargingStationBloc>(context).add(LoadChargingStations());
   }
 
@@ -109,7 +110,6 @@ class _HomeViewState extends State<HomeView> {
         children: [
           if (isList)
             FloatingActionButton(
-              shape: const StadiumBorder(),
               onPressed: () {
                 if (currentLocation != null) {
                   mapController.move(currentLocation!, 18.0);
@@ -119,7 +119,6 @@ class _HomeViewState extends State<HomeView> {
             ),
           20.widthBox,
           FloatingActionButton(
-            shape: const StadiumBorder(),
             onPressed: () {
               setState(() {
                 isList = !isList;
