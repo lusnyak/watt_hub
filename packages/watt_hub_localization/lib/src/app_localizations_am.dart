@@ -34,4 +34,8 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get didntReceiveEmail => 'Էլփոստին չե՞ք ստացել:';
+
+  @override
+  String get pleaseAgree =>
+      'Խնդրում ենք համաձայնել պայմաններին և մուտքագրել վավեր էլ.փոստ։';
 }
