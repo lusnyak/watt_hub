@@ -6,8 +6,15 @@ import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
+
+  @override
+  _SignUpScreenState createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  bool _isChecked = false; // Checkbox state
 
   String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
@@ -34,7 +41,7 @@ class SignUpScreen extends StatelessWidget {
                     AppLocalizations.of(context).helloThere,
                     style: body24SemiBoldTextStyle,
                   ),
-                  const Text("👋")
+                  const Text("👋"),
                 ],
               ),
               20.heightBox,
@@ -50,25 +57,55 @@ class SignUpScreen extends StatelessWidget {
                 keyboardType: TextInputType.emailAddress,
               ),
               20.heightBox,
-              RichText(
-                  text: TextSpan(
-                text: 'I agree to EvPoint ',
-                style: body16RegularTextStyle,
-                children: <TextSpan>[
-                  TextSpan(
-                      recognizer: TapGestureRecognizer()..onTap,
-                      text: 'Public Agreement. Terms. Privacy Policy ',
-                      style: green16RegularTextStyle),
-                  const TextSpan(
-                      text: 'and confirm that I am over 17 years old.'),
+
+              // Checkbox and Privacy Policy text
+              Row(
+                children: [
+                  Checkbox(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    value: _isChecked,
+                    onChanged: (bool? value) {
+                      setState(
+                        () {
+                          _isChecked = value!;
+                        },
+                      );
+                    },
+                  ),
+                  Expanded(
+                    child: RichText(
+                      text: TextSpan(
+                        text: 'I agree to EvPoint ',
+                        style: body16RegularTextStyle,
+                        children: <TextSpan>[
+                          TextSpan(
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  // Handle "Public Agreement" tap here
+                                },
+                              text: 'Public Agreement. Terms. Privacy Policy ',
+                              style: green16RegularTextStyle),
+                          const TextSpan(
+                              text: 'and confirm that I am over 17 years old.'),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
-              )),
+              ),
+
               80.heightBox,
               WHElevatedButton.primary(
                 title: AppLocalizations.of(context).continueText,
-                onPressed: () => AutoRouter.of(context).push(
-                  const VerificationRoute(),
-                ),
+                onPressed: _isChecked
+                    ? () {
+                        AutoRouter.of(context).push(
+                          const VerificationRoute(),
+                        );
+                      }
+                    : null, // Disable the button if not checked
               ),
             ],
           ),
