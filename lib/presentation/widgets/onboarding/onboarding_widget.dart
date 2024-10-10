@@ -1,32 +1,30 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:watt_hub/data/local/onboarding_data/onboarding_data.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
-class OnboardingWidget extends StatelessWidget {
-  const OnboardingWidget({super.key, required this.index});
+import '../../../domain/models/onboarding/onboarding_model.dart';
 
-  final int index;
+class OnboardingWidget extends StatelessWidget {
+  final OnboardingModel model;
+
+  const OnboardingWidget({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // const Spacer(),
-          Image.asset(
-            onboardingData[index].image,
-          ),
-          // const Spacer(),
+          Image.asset(model.image),
           Text(
-            onboardingData[index].title,
+            model.title,
             style: body32MediumTextStyle,
           ),
           Text(
-            onboardingData[index].description,
+            model.description,
             style: body18RegularTextStyle,
           ),
-          // const Spacer(),
         ],
       ),
     );
