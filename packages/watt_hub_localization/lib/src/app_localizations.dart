@@ -151,6 +151,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Didn\'t receive email?'**
   String get didntReceiveEmail;
+
+  /// No description provided for @pleaseAgree.
+  ///
+  /// In en, this message translates to:
+  /// **'Please agree to the terms and enter a valid email.'**
+  String get pleaseAgree;
 }
 
 class _AppLocalizationsDelegate

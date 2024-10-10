@@ -34,4 +34,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get didntReceiveEmail => 'Didn\'t receive email?';
+
+  @override
+  String get pleaseAgree =>
+      'Please agree to the terms and enter a valid email.';
 }
