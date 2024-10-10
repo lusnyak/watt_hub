@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 import 'package:geolocator/geolocator.dart';
@@ -181,8 +182,9 @@ class _HomeViewState extends State<HomeView> {
                     builder: (context, markers) {
                       return Container(
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.blue),
+                          borderRadius: BorderRadius.circular(20),
+                          color: WattHubColors.primaryGreenColor,
+                        ),
                         child: Center(
                           child: Text(
                             markers.length.toString(),
@@ -213,12 +215,13 @@ class _HomeViewState extends State<HomeView> {
       backgroundColor: Colors.transparent,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        leading: nil,
-        backgroundColor: Colors.transparent,
-        surfaceTintColor: Colors.transparent,
-        elevation: 0,
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.dark,
+        ),
+        leading: null,
         actions: [
-          WHIconButton.secondary(
+          WHIconButton.primary(
             icon: const Icon(
               Icons.filter_alt,
             ),
@@ -226,34 +229,36 @@ class _HomeViewState extends State<HomeView> {
           ).paddingOnly(right: 20.0)
         ],
       ),
-      body: SafeArea(
-        child: BlocBuilder<ChargingStationBloc, ChargingStationState>(
-          builder: (context, state) {
-            if (state is ChargingStationLoading) {
-              return const Center(child: CircularProgressIndicator());
-            } else if (state is ChargingStationError) {
-              return Center(child: Text(state.message));
-            } else if (state is ChargingStationLoaded) {
-              final stations = state.chargingStations;
-              return isList
-                  ? _mapContainer(stations)
-                  : StationsList(
-                      stationsList: stations,
-                      onStationSelected: (selectedStation) {
-                        setState(() {
-                          mapController.move(
-                            LatLng(selectedStation.latitude,
-                                selectedStation.longitude),
-                            18.0,
-                          );
-                          isList = true;
-                        });
-                      },
-                    );
-            }
-            return const Center(child: Text('No Data'));
-          },
-        ),
+      body: Stack(
+        children: [
+          BlocBuilder<ChargingStationBloc, ChargingStationState>(
+            builder: (context, state) {
+              if (state is ChargingStationLoading) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (state is ChargingStationError) {
+                return Center(child: Text(state.message));
+              } else if (state is ChargingStationLoaded) {
+                final stations = state.chargingStations;
+                return isList
+                    ? _mapContainer(stations)
+                    : StationsList(
+                        stationsList: stations,
+                        onStationSelected: (selectedStation) {
+                          setState(() {
+                            mapController.move(
+                              LatLng(selectedStation.latitude,
+                                  selectedStation.longitude),
+                              18.0,
+                            );
+                            isList = true;
+                          });
+                        },
+                      );
+              }
+              return const Center(child: Text('No Data'));
+            },
+          )
+        ],
       ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
