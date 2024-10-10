@@ -15,6 +15,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   bool _isChecked = false; // Checkbox state
+  TextEditingController emailController = TextEditingController();
 
   String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
@@ -99,13 +100,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
               80.heightBox,
               WHElevatedButton.primary(
                 title: AppLocalizations.of(context).continueText,
-                onPressed: _isChecked
+                onPressed: (_isChecked &&
+                        validateEmail(emailController.text) != null)
                     ? () {
-                        AutoRouter.of(context).push(
-                          const VerificationRoute(),
-                        );
+                        AutoRouter.of(context).push(const VerificationRoute());
                       }
-                    : null, // Disable the button if not checked
+                    : () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(backgroundColor: Colors.red,
+                            content: Text(
+                                'Please agree to the terms and enter a valid email.'),
+                          ),
+                        );
+                      },
               ),
             ],
           ),
