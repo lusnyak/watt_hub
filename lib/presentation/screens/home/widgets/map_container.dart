@@ -24,7 +24,6 @@ class MapContainer extends StatelessWidget {
             mapController: context.read<HomeBloc>().mapController,
             options: MapOptions(
               initialCenter: context.read<HomeBloc>().currentLocation ??
-              
                   const LatLng(40.7942, 43.84528),
               initialZoom: 18.0,
             ),

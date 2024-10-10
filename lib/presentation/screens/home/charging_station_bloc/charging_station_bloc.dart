@@ -12,7 +12,9 @@ class ChargingStationBloc
   }
 
   Future<void> _onLoadChargingStations(
-      LoadChargingStations event, Emitter<ChargingStationState> emit) async {
+    LoadChargingStations event,
+    Emitter<ChargingStationState> emit,
+  ) async {
     emit(ChargingStationLoading());
     await Future.delayed(const Duration(seconds: 1));
     try {
