@@ -55,24 +55,19 @@ void showStationInfo(BuildContext context, ChargingStationModel station) {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  child: WHOutlinedButton(
-                    title: 'View',
-                    onPressed: () =>
-                        AutoRouter.of(context).push(const StationInfoRoute()),
-                  ),
-                ),
+                WHOutlinedButton(
+                  title: 'View',
+                  onPressed: () =>
+                      AutoRouter.of(context).push(const StationInfoRoute()),
+                ).expanded(),
                 10.widthBox,
-                Expanded(
-                  child: WHElevatedButton.primary(
-                    title: 'Book',
-                    onPressed: () =>
-                        AutoRouter.of(context).push(const DetailRoute()),
-                  ),
-                )
+                WHElevatedButton.primary(
+                  title: 'Book',
+                  onPressed: () =>
+                      AutoRouter.of(context).push(const DetailRoute()),
+                ).expanded(),
               ],
             ),
-            
           ],
         ),
       ).paddingAll(20.0);
