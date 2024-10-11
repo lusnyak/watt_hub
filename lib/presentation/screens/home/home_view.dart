@@ -69,41 +69,40 @@ class _HomeViewState extends State<HomeView> {
           ).paddingOnly(right: 20.0)
         ],
       ),
-      body: Stack(
-        children: [
-          BlocBuilder<ChargingStationBloc, ChargingStationState>(
-            builder: (context, state) {
-              if (state is ChargingStationLoading) {
-                return const Center(child: CircularProgressIndicator());
-              } else if (state is ChargingStationError) {
-                return Center(child: Text(state.message));
-              } else if (state is ChargingStationLoaded) {
-                final stations = state.chargingStations;
-                return isList
-                    ? MapContainer(
-                        mapController: mapController,
-                        chargingStations: stations,
-                        currentLocation: currentLocation,
-                        isMapReady: isMapReady,
-                      )
-                    : StationsList(
-                        stationsList: stations,
-                        onStationSelected: (selectedStation) {
-                          setState(() {
-                            mapController.move(
-                              LatLng(selectedStation.latitude,
-                                  selectedStation.longitude),
-                              18.0,
-                            );
-                            isList = true;
-                          });
-                        },
-                      );
-              }
-              return const Center(child: Text('No Data'));
-            },
-          )
-        ],
+      body: SafeArea(
+        top: false,
+        child: BlocBuilder<ChargingStationBloc, ChargingStationState>(
+          builder: (context, state) {
+            if (state is ChargingStationLoading) {
+              return const Center(child: CircularProgressIndicator());
+            } else if (state is ChargingStationError) {
+              return Center(child: Text(state.message));
+            } else if (state is ChargingStationLoaded) {
+              final stations = state.chargingStations;
+              return isList
+                  ? MapContainer(
+                      mapController: mapController,
+                      chargingStations: stations,
+                      currentLocation: currentLocation,
+                      isMapReady: isMapReady,
+                    )
+                  : StationsList(
+                      stationsList: stations,
+                      onStationSelected: (selectedStation) {
+                        setState(() {
+                          mapController.move(
+                            LatLng(selectedStation.latitude,
+                                selectedStation.longitude),
+                            18.0,
+                          );
+                          isList = true;
+                        });
+                      },
+                    );
+            }
+            return const Center(child: Text('No Data'));
+          },
+        ),
       ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
