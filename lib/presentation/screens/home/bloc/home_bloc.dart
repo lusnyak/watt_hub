@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+// import 'package:watt_hub/data/fake_data/stations_map.dart';
 import 'package:watt_hub/data/local/stations_data/stations_data.dart';
 import 'package:watt_hub/domain/models/charging_station/charging_station_model.dart';
 
