@@ -11,13 +11,12 @@ abstract class OnboardingState extends Equatable {
 class OnboardingInitial extends OnboardingState {}
 
 class OnboardingLoaded extends OnboardingState {
-  final int currentIndex;
   final OnboardingModel currentModel;
 
-  const OnboardingLoaded(this.currentIndex, this.currentModel);
+  const OnboardingLoaded(this.currentModel);
 
   @override
-  List<Object?> get props => [currentIndex, currentModel];
+  List<Object?> get props => [currentModel];
 }
 
 class OnboardingComplete extends OnboardingState {}

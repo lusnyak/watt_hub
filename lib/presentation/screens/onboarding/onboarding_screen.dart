@@ -4,13 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/data/local/onboarding_data/onboarding_data.dart';
 import 'package:watt_hub/data/services/shared_preferences_service.dart';
-import 'package:watt_hub/presentation/screens/onboarding/onboarding_bloc/onboarding_state.dart';
-import 'package:watt_hub/presentation/widgets/onboarding/onboarding_widget.dart';
+import 'package:watt_hub/presentation/screens/onboarding/bloc/onboarding_state.dart';
+import 'package:watt_hub/presentation/screens/onboarding/sub_widget/onboarding_widget.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-import 'onboarding_bloc/onboarding_bloc.dart';
-import 'onboarding_bloc/onboarding_event.dart';
+import 'bloc/onboarding_bloc.dart';
+import 'bloc/onboarding_event.dart';
 
 @RoutePage()
 class OnboardingScreen extends StatefulWidget {
@@ -21,7 +19,6 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  // int page = 0;
 
   Future<void> _storeData() async {
     await SharedPreferencesService().setBool(
@@ -48,7 +45,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     PageView.builder(
-                      controller: _controller,
+                      controller: context.read<OnboardingBloc>().pageController,
                       onPageChanged: (index) {
                         context
                             .read<OnboardingBloc>()
@@ -63,7 +60,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ).expanded(),
                     Center(
                       child: SmoothPageIndicator(
-                        controller: _controller,
+                        controller: context.read<OnboardingBloc>().pageController,
                         count: 3,
                         onDotClicked: (index) {},
                         effect: const ExpandingDotsEffect(
@@ -78,8 +75,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       /// TODO: - use ScreenUtils tools and extensions expanded(), 8.h, r
                       Padding(
                       padding: EdgeInsets.symmetric(vertical: 8.h),
-                      child: Divider(
-                        // height: 20,
+                      child: const Divider(
                         thickness: 1.8,
                         indent: 10,
                         endIndent: 10,
@@ -105,9 +101,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               },
                               title: 'Skip',
                             ),
-                          ),
-                          const SizedBox(
-                            width: 20,
                           ),
                           20.w.widthBox,
                           Expanded(

@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:watt_hub/domain/models/onboarding/onboarding_model.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
-
-import '../../../domain/models/onboarding/onboarding_model.dart';
 
 class OnboardingWidget extends StatelessWidget {
   final OnboardingModel model;
