@@ -3,5 +3,11 @@
   "back": "Back",
   "home": "Home",
   "requests": "Requests",
-  "profile": "Profile"
+  "profile": "Profile",
+  "noData": "No Data",
+  "reviews": "reviews",
+  "view": "View",
+  "book": "Book",
+  "kilowatt": "kw",
+  "hourlyRate": "hr"
 }

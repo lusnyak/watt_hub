@@ -127,6 +127,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Profile'**
   String get profile;
+
+  /// No description provided for @noData.
+  ///
+  /// In en, this message translates to:
+  /// **'No Data'**
+  String get noData;
+
+  /// No description provided for @reviews.
+  ///
+  /// In en, this message translates to:
+  /// **'reviews'**
+  String get reviews;
+
+  /// No description provided for @view.
+  ///
+  /// In en, this message translates to:
+  /// **'View'**
+  String get view;
+
+  /// No description provided for @book.
+  ///
+  /// In en, this message translates to:
+  /// **'Book'**
+  String get book;
+
+  /// No description provided for @kilowatt.
+  ///
+  /// In en, this message translates to:
+  /// **'kw'**
+  String get kilowatt;
+
+  /// No description provided for @hourlyRate.
+  ///
+  /// In en, this message translates to:
+  /// **'hr'**
+  String get hourlyRate;
 }
 
 class _AppLocalizationsDelegate
