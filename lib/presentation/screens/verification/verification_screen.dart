@@ -12,7 +12,8 @@ class VerificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: SafeArea(
+       // bottomSheet: Container(height: 200, color: Colors.yellow,),
+       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -41,6 +42,7 @@ class VerificationScreen extends StatelessWidget {
                 ),
               ),
               15.heightBox,
+              /// TODO: - TextButton - create UIKIt element
               Center(
                 child: TextButton(
                   child: Text(
@@ -58,7 +60,7 @@ class VerificationScreen extends StatelessWidget {
               ),
             ],
           ),
-        ),
+        ).expanded(),
       ).paddingAll(20.0),
     );
   }
