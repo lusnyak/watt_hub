@@ -25,6 +25,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
         }
       }
     });
+
     on<OnboardingPageChanged>((event, emit) {
       emit(OnboardingLoaded(event.pageIndex, onboardingData[event.pageIndex]));
     });

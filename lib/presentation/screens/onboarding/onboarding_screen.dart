@@ -21,7 +21,7 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  int page = 0;
+  // int page = 0;
 
   Future<void> _storeData() async {
     await SharedPreferencesService().setBool(
@@ -34,6 +34,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return BlocProvider(
       create: (context) =>
           OnboardingBloc(onboardingData)..add(LoadOnboarding()),
@@ -46,22 +47,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Expanded(
-                      child: PageView.builder(
-                        controller: _controller,
-                        onPageChanged: (index) {
-                          context
-                              .read<OnboardingBloc>()
-                              .add(OnboardingPageChanged(index));
-                        },
-                        itemCount: onboardingData.length,
-                        itemBuilder: (context, index) {
-                          return OnboardingWidget(
-                            model: onboardingData[index],
-                          );
-                        },
-                      ),
-                    ),
+                    PageView.builder(
+                      controller: _controller,
+                      onPageChanged: (index) {
+                        context
+                            .read<OnboardingBloc>()
+                            .add(OnboardingPageChanged(index));
+                      },
+                      itemCount: onboardingData.length,
+                      itemBuilder: (context, index) {
+                        return OnboardingWidget(
+                          model: onboardingData[index],
+                        );
+                      },
+                    ).expanded(),
                     Center(
                       child: SmoothPageIndicator(
                         controller: _controller,
@@ -76,8 +75,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      /// TODO: - use ScreenUtils tools and extensions expanded(), 8.h, r
+                      Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.h),
                       child: Divider(
                         // height: 20,
                         thickness: 1.8,
@@ -109,9 +109,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           const SizedBox(
                             width: 20,
                           ),
+                          20.w.widthBox,
                           Expanded(
                               child: WHElevatedButton.primary(
                             onPressed: () {
+                              // _controller.jumpToPage(page)
                               context
                                   .read<OnboardingBloc>()
                                   .add(NextOnboarding());
