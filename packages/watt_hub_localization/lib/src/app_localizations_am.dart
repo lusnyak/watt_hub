@@ -20,4 +20,22 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get profile => 'Profile';
+
+  @override
+  String get noData => 'No Data';
+
+  @override
+  String get reviews => 'reviews';
+
+  @override
+  String get view => 'View';
+
+  @override
+  String get book => 'Book';
+
+  @override
+  String get kilowatt => 'kw';
+
+  @override
+  String get hourlyRate => 'hr';
 }
