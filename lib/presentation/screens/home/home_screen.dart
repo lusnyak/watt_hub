@@ -7,10 +7,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
+import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:watt_hub/presentation/screens/home/widgets/map_container.dart';
-import 'package:watt_hub/presentation/screens/home/charging_station_bloc/charging_station_bloc.dart';
-import 'package:watt_hub/presentation/screens/home/charging_station_bloc/charging_station_event.dart';
-import 'package:watt_hub/presentation/screens/home/charging_station_bloc/charging_station_state.dart';
 import 'package:watt_hub/presentation/screens/home/widgets/stations_list.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
@@ -21,7 +19,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<ChargingStationBloc>(),
+      create: (_) => getIt<HomeBloc>(),
       child: const _HomeView(),
     );
   }
@@ -60,8 +58,7 @@ class _HomeViewState extends State<_HomeView> {
   void initState() {
     super.initState();
     _getCurrentLocation();
-    // context.read<ChargingStationBloc>().
-    BlocProvider.of<ChargingStationBloc>(context).add(LoadChargingStations());
+    BlocProvider.of<HomeBloc>(context).add(const LoadStation());
   }
 
   @override
@@ -80,41 +77,40 @@ class _HomeViewState extends State<_HomeView> {
               Icons.filter_alt,
             ),
             onPressed: () => AutoRouter.of(context).push(const FilterRoute()),
-          ).paddingOnly(right: 20.0)
+          ).paddingOnly(right: 20.w)
         ],
       ),
       body: SafeArea(
         top: false,
-        child: BlocBuilder<ChargingStationBloc, ChargingStationState>(
+        child: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
-            if (state is ChargingStationLoading) {
-              return const Center(child: CircularProgressIndicator());
-            } else if (state is ChargingStationError) {
-              return Center(child: Text(state.message));
-            } else if (state is ChargingStationLoaded) {
-              final stations = state.chargingStations;
-              return isList
-                  ? MapContainer(
-                      mapController: mapController,
-                      chargingStations: stations,
-                      currentLocation: currentLocation,
-                      isMapReady: isMapReady,
-                    )
-                  : StationsList(
-                      stationsList: stations,
-                      onStationSelected: (selectedStation) {
-                        setState(() {
-                          mapController.move(
-                            LatLng(selectedStation.latitude,
-                                selectedStation.longitude),
-                            18.0,
-                          );
-                          isList = true;
-                        });
-                      },
-                    );
-            }
-            return const Center(child: Text('No Data'));
+            return state.when(
+              initial: () => nil,
+              loading: () => const Center(child: CircularProgressIndicator()),
+              error: (message) => Center(child: Text(message)),
+              loaded: (stations) {
+                return isList
+                    ? MapContainer(
+                        mapController: mapController,
+                        chargingStations: stations,
+                        currentLocation: currentLocation,
+                        isMapReady: isMapReady,
+                      )
+                    : StationsList(
+                        stationsList: stations,
+                        onStationSelected: (selectedStation) {
+                          setState(() {
+                            mapController.move(
+                              LatLng(selectedStation.latitude,
+                                  selectedStation.longitude),
+                              18.0,
+                            );
+                            isList = true;
+                          });
+                        },
+                      );
+              },
+            );
           },
         ),
       ),
