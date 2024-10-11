@@ -13,7 +13,8 @@ ButtonStyle get primaryElevatedButtonStyle => const ButtonStyle(
     );
 
 ButtonStyle get secondaryElevatedButtonStyle => const ButtonStyle(
-      backgroundColor: WidgetStatePropertyAll(WattHubColors.primaryLightGreenColor),
+      backgroundColor:
+          WidgetStatePropertyAll(WattHubColors.primaryLightGreenColor),
       foregroundColor: WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
       shape: WidgetStatePropertyAll(StadiumBorder()),
       elevation: WidgetStatePropertyAll(0),
@@ -33,21 +34,26 @@ ButtonStyle get outlinedButtonStyle => const ButtonStyle(
       elevation: WidgetStatePropertyAll(0),
     );
 
-ButtonStyle get primaryIconButtonStyle => const ButtonStyle(
-      backgroundColor: WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
-      foregroundColor: WidgetStatePropertyAll(WattHubColors.whiteColor),
-      shadowColor: WidgetStatePropertyAll(WattHubColors.primaryLightGreenColor),
-      shape: WidgetStatePropertyAll(CircleBorder()),
-      elevation: WidgetStatePropertyAll(6),
-      alignment: FractionalOffset(0.0, 0.0),
+ButtonStyle get primaryIconButtonStyle => ButtonStyle(
+      backgroundColor:
+          const WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
+      foregroundColor: const WidgetStatePropertyAll(WattHubColors.whiteColor),
+      shadowColor:
+          const WidgetStatePropertyAll(WattHubColors.primaryLightGreenColor),
+      shape: const WidgetStatePropertyAll(CircleBorder()),
+      elevation: const WidgetStatePropertyAll(6),
+      alignment: Alignment.center,
+      minimumSize: WidgetStatePropertyAll(Size.square(48.r)),
     );
 
-ButtonStyle get secondaryIconButtonStyle => const ButtonStyle(
-      foregroundColor: WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
-      backgroundColor: WidgetStatePropertyAll(WattHubColors.grayColor),
-      shape: WidgetStatePropertyAll(CircleBorder()),
-      elevation: WidgetStatePropertyAll(0),
-      alignment: FractionalOffset(0.0, 0.0),
+ButtonStyle get secondaryIconButtonStyle => ButtonStyle(
+      foregroundColor:
+          const WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
+      backgroundColor: const WidgetStatePropertyAll(WattHubColors.grayColor),
+      shape: const WidgetStatePropertyAll(CircleBorder()),
+      elevation: const WidgetStatePropertyAll(0),
+      alignment: Alignment.center,
+      minimumSize: WidgetStatePropertyAll(Size.square(48.r)),
     );
 
 ElevatedButtonThemeData get elevatedButtonStyle =>
