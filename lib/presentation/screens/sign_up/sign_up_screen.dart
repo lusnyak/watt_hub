@@ -21,6 +21,7 @@ class SignUpScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: BlocConsumer<SignUpBloc, SignUpState>(
               listener: (context, state) {
+
                 if (state is SignUpSuccess) {
                   AutoRouter.of(context).push(const VerificationRoute());
                 } else if (state is SignUpFailure) {
@@ -39,14 +40,9 @@ class SignUpScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Row(
-                      children: [
-                        Text(
-                          AppLocalizations.of(context).helloThere,
-                          style: body24SemiBoldTextStyle,
-                        ),
-                        const Text("👋"),
-                      ],
+                    Text(
+                      "${AppLocalizations.of(context).helloThere} \u{1f44b}",
+                      style: body24SemiBoldTextStyle,
                     ),
                     20.heightBox,
                     Text(
@@ -54,7 +50,9 @@ class SignUpScreen extends StatelessWidget {
                       style: body16RegularTextStyle,
                     ),
                     20.heightBox,
+                    /// TODO: - add validation
                     WHTextField.singleLine(
+                      controller: context.read<SignUpBloc>().emailController,
                       onChanged: (value) {
                         context.read<SignUpBloc>().add(EmailChanged(value));
                       },
@@ -79,7 +77,7 @@ class SignUpScreen extends StatelessWidget {
                         Expanded(
                           child: RichText(
                             text: TextSpan(
-                              text: 'I agree to EvPoint ',
+                              text: 'I agree to WattHub ',
                               style: body16RegularTextStyle,
                               children: <TextSpan>[
                                 TextSpan(
@@ -113,7 +111,7 @@ class SignUpScreen extends StatelessWidget {
               },
             ),
           ),
-        ).paddingAll(20.0),
+        ).paddingAll(20.w),
       ),
     );
   }
