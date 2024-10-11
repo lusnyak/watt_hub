@@ -3,9 +3,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
-import 'package:watt_hub/presentation/screens/sign_up/sign_up_bloc/sign_up_bloc.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
+
+import 'bloc/sign_up_bloc.dart';
 
 @RoutePage()
 class SignUpScreen extends StatelessWidget {
@@ -102,7 +103,9 @@ class SignUpScreen extends StatelessWidget {
                     WHElevatedButton.primary(
                       title: AppLocalizations.of(context).continueText,
                       onPressed: () {
-                        context.read<SignUpBloc>().add(SubmitSignUp());
+                        context.read<SignUpBloc>().add(
+                              const SubmitSignUp(),
+                            );
                       },
                     ),
                   ],
