@@ -38,41 +38,40 @@ class MapContainer extends StatelessWidget {
                 MarkerClusterLayerWidget(
                   options: MarkerClusterLayerOptions(
                     maxClusterRadius: 45,
-                    size: const Size(40, 40),
+                    size: Size(40.w, 40.h),
                     alignment: Alignment.center,
-                    padding: EdgeInsets.all(50.r),
                     maxZoom: 15,
                     markers: [
                       for (var station in chargingStations)
                         Marker(
-                          width: 56.0,
-                          height: 56.0,
+                          width: 56.w,
+                          height: 56.h,
                           point: LatLng(station.latitude, station.longitude),
                           child: GestureDetector(
                             onTap: () => showStationInfo(context, station),
-                            child: const Icon(
+                            child: Icon(
                               Icons.charging_station,
-                              size: 56.0,
+                              size: 56.r,
                               color: WattHubColors.primaryGreenColor,
                             ),
                           ),
                         ),
                       Marker(
-                        width: 80.0,
-                        height: 80.0,
+                        width: 80.w,
+                        height: 80.h,
                         point:
                             currentLocation ?? const LatLng(40.7942, 43.84528),
-                        child: const Icon(
+                        child: Icon(
                           Icons.location_on_outlined,
-                          size: 56.0,
+                          size: 56.r,
                           color: WattHubColors.primaryGreenColor,
                         ),
-                      )
+                      ),
                     ],
                     builder: (context, markers) {
                       return Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(20.r),
                           color: WattHubColors.primaryGreenColor,
                         ),
                         child: Center(
@@ -84,7 +83,7 @@ class MapContainer extends StatelessWidget {
                       );
                     },
                   ),
-                ),
+                ).paddingAll(50.r),
             ],
           )
         : const Center(child: CircularProgressIndicator());

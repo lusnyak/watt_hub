@@ -9,8 +9,8 @@ void showStationInfo(BuildContext context, ChargingStationModel station) {
   showModalBottomSheet(
     context: context,
     builder: (BuildContext context) {
-      return Container(
-        height: 220,
+      return SizedBox(
+        height: 220.h,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -34,7 +34,7 @@ void showStationInfo(BuildContext context, ChargingStationModel station) {
                   '${station.averageRate}',
                   style: body14RegularTextStyle,
                 ),
-                10.widthBox,
+                10.w.widthBox,
                 RatingBarIndicator(
                   rating: station.averageRate,
                   itemBuilder: (context, index) => const Icon(
@@ -42,14 +42,14 @@ void showStationInfo(BuildContext context, ChargingStationModel station) {
                     color: Colors.amber,
                   ),
                   itemCount: 5,
-                  itemSize: 25.0,
+                  itemSize: 25.r,
                   direction: Axis.horizontal,
                 ),
-                10.widthBox,
+                10.w.widthBox,
                 Text(
                   '(${station.reviews.length} reviews)',
                   style: body14RegularTextStyle.copyWith(color: Colors.grey),
-                )
+                ),
               ],
             ),
             Row(
@@ -60,7 +60,7 @@ void showStationInfo(BuildContext context, ChargingStationModel station) {
                   onPressed: () =>
                       AutoRouter.of(context).push(const StationInfoRoute()),
                 ).expanded(),
-                10.widthBox,
+                10.w.widthBox,
                 WHElevatedButton.primary(
                   title: 'Book',
                   onPressed: () =>
@@ -70,7 +70,7 @@ void showStationInfo(BuildContext context, ChargingStationModel station) {
             ),
           ],
         ),
-      ).paddingAll(20.0);
+      ).paddingAll(20.r);
     },
   );
 }
