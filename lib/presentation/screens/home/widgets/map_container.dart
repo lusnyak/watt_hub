@@ -38,7 +38,6 @@ class MapContainer extends StatelessWidget {
                     maxClusterRadius: 45,
                     size: Size(40.w, 40.h),
                     alignment: Alignment.center,
-                    padding: EdgeInsets.all(50.r),
                     maxZoom: 15,
                     markers: [
                       for (var station in chargingStations)
