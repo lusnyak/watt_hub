@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:watt_hub/domain/models/charging_station/charging_station_model.dart';
+import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class StationsList extends StatelessWidget {
@@ -58,7 +59,7 @@ class StationsList extends StatelessWidget {
                         const Icon(Icons.electric_car, color: Colors.green),
                         4.w.widthBox,
                         Text(
-                          '${station.kwt} kW',
+                          '${station.kwt} ${context.localized.kilowatt}',
                           style: const TextStyle(color: Colors.grey),
                         ),
                       ],
@@ -68,7 +69,7 @@ class StationsList extends StatelessWidget {
                         const Icon(Icons.attach_money, color: Colors.grey),
                         4.w.widthBox,
                         Text(
-                          '\$${station.hourlyRate}/hr',
+                          '\$${station.hourlyRate}/${context.localized.hourlyRate}',
                           style: const TextStyle(color: Colors.grey),
                         ),
                       ],
