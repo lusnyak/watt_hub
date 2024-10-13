@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:watt_hub/presentation/screens/home/widgets/map_container.dart';
 import 'package:watt_hub/presentation/screens/home/widgets/stations_list.dart';
+import 'package:watt_hub/utils/helpers/location_helper.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<HomeBloc>(),
+      create: (_) => getIt<HomeBloc>()..add(const LoadStation()),
       child: const _HomeView(),
     );
   }
@@ -33,31 +33,29 @@ class _HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<_HomeView> {
-  MapController mapController = MapController();
+  final LocationManager _locationManager = LocationManager();
+  final MapController mapController = MapController();
+
   LatLng? currentLocation;
   bool isMapReady = false;
   bool isList = true;
 
-  Future<void> _getCurrentLocation() async {
-    LocationPermission permission = await Geolocator.requestPermission();
-    if (permission == LocationPermission.denied) {
-      return;
-    }
-
-    Position position = await Geolocator.getCurrentPosition();
-    setState(() {
-      currentLocation = LatLng(position.latitude, position.longitude);
-    });
-
-    if (currentLocation != null) {
-      mapController.move(currentLocation!, 18.0);
+  Future<void> _initializeLocation() async {
+    LatLng? location = await _locationManager.getCurrentLocation();
+    if (location != null) {
+      setState(() {
+        currentLocation = location;
+      });
+      if (isMapReady) {
+        mapController.move(location, 18.0);
+      }
     }
   }
 
   @override
   void initState() {
     super.initState();
-    _getCurrentLocation();
+    _initializeLocation();
     BlocProvider.of<HomeBloc>(context).add(const LoadStation());
   }
 
