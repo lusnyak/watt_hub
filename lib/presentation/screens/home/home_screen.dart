@@ -52,7 +52,6 @@ class _HomeView extends StatelessWidget {
                 error: (message) => Center(child: Text(message)),
                 viewChanged: (isList) => nil,
                 loaded: (stations, isList) {
-                  debugPrint('$isList isList');
                   return isList
                       ? MapContainer(
                           chargingStations: stations,
