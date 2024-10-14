@@ -2,11 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 import '../../../config/locator/service_locator.dart';
+import '../../../config/routes/app_router.dart';
 import 'bloc/sign_up_bloc.dart';
 
 @RoutePage()
@@ -17,38 +17,34 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => getIt<SignUpBloc>(),
-      child: const _SignUpView(),
+      child: _SignUpView(),
     );
   }
 }
 
 class _SignUpView extends StatelessWidget {
-  const _SignUpView();
+  _SignUpView();
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => SignUpBloc(),
-      child: Scaffold(
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: BlocConsumer<SignUpBloc, SignUpState>(
-              listener: (context, state) {
-                if (state is SignUpSuccess) {
-                  AutoRouter.of(context).push(const VerificationRoute());
-                } else if (state is SignUpFailure) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      backgroundColor: WattHubColors.redColor,
-                      content: Text(state.message),
-                    ),
-                  );
-                }
-              },
-              builder: (context, state) {
-                final emailState = state is SignUpFormState;
+    return Scaffold(
+      appBar: AppBar(),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: BlocConsumer<SignUpBloc, SignUpState>(
+            listener: (context, state) {
+              if (state is SignUpSuccess) {
+                AutoRouter.of(context).push(const VerificationRoute());
+              }
+            },
+            builder: (context, state) {
+              final emailState = state is SignUpFormState;
 
-                return Column(
+              return Form(
+                key: _formKey,
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -63,7 +59,7 @@ class _SignUpView extends StatelessWidget {
                     ),
                     20.heightBox,
 
-                    /// TODO: - add validation
+                    // Email input field with validation
                     WHTextField.singleLine(
                       controller: context.read<SignUpBloc>().emailController,
                       onChanged: (value) {
@@ -72,6 +68,9 @@ class _SignUpView extends StatelessWidget {
                       label: AppLocalizations.of(context).emailAddress,
                       hintText: 'johndoe@gmail.com',
                       keyboardType: TextInputType.emailAddress,
+                      validator: (value) {
+                        return _validateEmail(value);
+                      },
                     ),
                     20.heightBox,
                     Row(
@@ -98,8 +97,8 @@ class _SignUpView extends StatelessWidget {
                                     ..onTap = () {},
                                   text:
                                       'Public Agreement. Terms. Privacy Policy ',
-                                  style: body12RegularTextStyle.copyWith(color: WattHubColors.primaryGreenColor),
-
+                                  style: body12RegularTextStyle.copyWith(
+                                      color: WattHubColors.primaryGreenColor),
                                 ),
                                 const TextSpan(
                                   text:
@@ -115,18 +114,29 @@ class _SignUpView extends StatelessWidget {
                     WHElevatedButton.primary(
                       title: AppLocalizations.of(context).continueText,
                       onPressed: () {
-                        context.read<SignUpBloc>().add(
-                              const SubmitSignUp(),
-                            );
+                        if (_formKey.currentState?.validate() ?? false) {
+                          context.read<SignUpBloc>().add(const SubmitSignUp());
+                        }
                       },
                     ),
                   ],
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
         ).paddingAll(20.w),
       ),
     );
+  }
+
+  // Method to validate email
+  String? _validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter email';
+    }
+    if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+      return 'Please enter a valid email';
+    }
+    return null;
   }
 }
