@@ -1,11 +1,9 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:latlong2/latlong.dart';
-// import 'package:watt_hub/data/fake_data/stations_map.dart';
-import 'package:watt_hub/data/local/stations_data/stations_data.dart';
+import 'package:watt_hub/data/fake_data/stations_data/stations_map.dart';
 import 'package:watt_hub/domain/models/charging_station/charging_station_model.dart';
 import 'package:watt_hub/utils/helpers/location_helper.dart';
 
@@ -30,7 +28,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   Future<void> _initializeLocation() async {
-    debugPrint('_initializeLocation');
     final location = await _locationManager.getCurrentLocation();
     if (location != null) {
       currentLocation = location;
@@ -48,13 +45,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     try {
       await _initializeLocation();
       await Future.delayed(const Duration(seconds: 1));
-      debugPrint('Loading stations...');
 
-      final stations = sampleChargingStations;
+      final stations = sampleStations
+          .map((stationJson) => ChargingStationModel.fromJson(stationJson))
+          .toList();
+
       emit(HomeState.loaded(stations, isList: isList));
-      debugPrint('Loaded ${stations.length} stations');
     } catch (e) {
-      debugPrint('Error loading stations: $e');
       emit(const HomeState.error("Failed to load stations"));
     }
   }
@@ -87,6 +84,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
     mapController.move(stationLocation, 18.0);
 
-    emit(HomeState.loaded(sampleChargingStations, isList: isList));
+    final stations = sampleStations
+        .map((stationJson) => ChargingStationModel.fromJson(stationJson))
+        .toList();
+
+    emit(HomeState.loaded(stations, isList: isList));
   }
 }
