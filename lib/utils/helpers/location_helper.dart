@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 
@@ -20,7 +19,6 @@ class LocationManager {
       Position position = await Geolocator.getCurrentPosition();
       return LatLng(position.latitude, position.longitude);
     } catch (e) {
-      debugPrint('Failed to get location: $e');
       return null;
     }
   }
