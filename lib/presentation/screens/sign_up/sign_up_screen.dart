@@ -6,11 +6,24 @@ import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
+import '../../../config/locator/service_locator.dart';
 import 'bloc/sign_up_bloc.dart';
 
 @RoutePage()
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => getIt<SignUpBloc>(),
+      child: const _SignUpView(),
+    );
+  }
+}
+
+class _SignUpView extends StatelessWidget {
+  const _SignUpView();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +34,6 @@ class SignUpScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: BlocConsumer<SignUpBloc, SignUpState>(
               listener: (context, state) {
-
                 if (state is SignUpSuccess) {
                   AutoRouter.of(context).push(const VerificationRoute());
                 } else if (state is SignUpFailure) {
@@ -50,6 +62,7 @@ class SignUpScreen extends StatelessWidget {
                       style: body16RegularTextStyle,
                     ),
                     20.heightBox,
+
                     /// TODO: - add validation
                     WHTextField.singleLine(
                       controller: context.read<SignUpBloc>().emailController,

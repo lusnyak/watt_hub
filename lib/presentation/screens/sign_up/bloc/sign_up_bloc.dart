@@ -1,23 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 part 'sign_up_bloc.freezed.dart';
-
 part 'sign_up_event.dart';
-
 part 'sign_up_state.dart';
 
 /// TODO: - inject bloc
 ///
+@injectable
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   final TextEditingController emailController = TextEditingController();
-
 
   SignUpBloc()
       : super(const SignUpState.form(isEmailValid: false, isChecked: false)) {
     on<EmailChanged>(validateEmail);
-
 
     on<CheckboxChanged>((event, emit) {
       emailController.clear();
@@ -62,6 +60,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       ),
     ));
   }
+
   void disposeController() {
     emailController.dispose();
   }
