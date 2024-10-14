@@ -4,7 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 
-import '../../../data/services/shared_preferences_service.dart';
+import '../../../data/local/shared_preferences/shared_preferences_service.dart';
 
 @RoutePage()
 class SplashScreen extends StatefulWidget {

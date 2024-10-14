@@ -7,14 +7,14 @@ abstract class OnboardingEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class NextOnboarding extends OnboardingEvent {}
+class NextOnboardingEvent extends OnboardingEvent {}
 
-class LoadOnboarding extends OnboardingEvent {}
+class LoadOnboardingEvent extends OnboardingEvent {}
 
-class OnboardingPageChanged extends OnboardingEvent {
+class OnboardingPageChangedEvent extends OnboardingEvent {
   final int pageIndex;
 
-  const OnboardingPageChanged(this.pageIndex);
+  const OnboardingPageChangedEvent(this.pageIndex);
 
   @override
   List<Object> get props => [pageIndex];

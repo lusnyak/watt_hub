@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/data/local/onboarding_data/onboarding_data.dart';
-import 'package:watt_hub/data/services/shared_preferences_service.dart';
 import 'package:watt_hub/presentation/screens/onboarding/bloc/onboarding_state.dart';
 import 'package:watt_hub/presentation/screens/onboarding/sub_widget/onboarding_widget.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
@@ -11,34 +10,23 @@ import 'bloc/onboarding_bloc.dart';
 import 'bloc/onboarding_event.dart';
 
 @RoutePage()
-class OnboardingScreen extends StatefulWidget {
+class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
-}
-
-class _OnboardingScreenState extends State<OnboardingScreen> {
-
-  Future<void> _storeData() async {
-    await SharedPreferencesService().setBool(
-      'isOnBoard',
-      true,
-    );
-  }
-
-  final PageController _controller = PageController();
-
-  @override
   Widget build(BuildContext context) {
-
     return BlocProvider(
       create: (context) =>
-          OnboardingBloc(onboardingData)..add(LoadOnboarding()),
+          OnboardingBloc(onboardingData)..add(LoadOnboardingEvent()),
       child: Scaffold(
-        body: BlocBuilder<OnboardingBloc, OnboardingState>(
+        body: BlocConsumer<OnboardingBloc, OnboardingState>(
+          listener: (context, state) {
+            if (state is OnboardingCompleteState) {
+              AutoRouter.of(context).replace(const SignUpRoute());
+            }
+          },
           builder: (context, state) {
-            if (state is OnboardingLoaded) {
+            if (state is OnboardingLoadedState) {
               return SafeArea(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -49,7 +37,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       onPageChanged: (index) {
                         context
                             .read<OnboardingBloc>()
-                            .add(OnboardingPageChanged(index));
+                            .add(OnboardingPageChangedEvent(index));
                       },
                       itemCount: onboardingData.length,
                       itemBuilder: (context, index) {
@@ -60,7 +48,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ).expanded(),
                     Center(
                       child: SmoothPageIndicator(
-                        controller: context.read<OnboardingBloc>().pageController,
+                        controller:
+                            context.read<OnboardingBloc>().pageController,
                         count: 3,
                         onDotClicked: (index) {},
                         effect: const ExpandingDotsEffect(
@@ -72,8 +61,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                       ),
                     ),
-                      /// TODO: - use ScreenUtils tools and extensions expanded(), 8.h, r
-                      Padding(
+                    Padding(
                       padding: EdgeInsets.symmetric(vertical: 8.h),
                       child: const Divider(
                         thickness: 1.8,
@@ -92,27 +80,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Expanded(
-                            child: WHElevatedButton.secondary(
-                              onPressed: () {
-                                _storeData();
-                                AutoRouter.of(context)
-                                    .push(const DashboardRoute());
-                              },
-                              title: 'Skip',
-                            ),
-                          ),
-                          20.w.widthBox,
-                          Expanded(
-                              child: WHElevatedButton.primary(
+                          WHElevatedButton.secondary(
                             onPressed: () {
-                              // _controller.jumpToPage(page)
+                              AutoRouter.of(context)
+                                  .push(const DashboardRoute());
+                            },
+                            title: 'Skip',
+                          ).expanded(),
+                          20.w.widthBox,
+                          WHElevatedButton.primary(
+                            onPressed: () {
                               context
                                   .read<OnboardingBloc>()
-                                  .add(NextOnboarding());
+                                  .add(NextOnboardingEvent());
                             },
                             title: 'Next',
-                          )),
+                          ).expanded(),
                         ],
                       ),
                     ),

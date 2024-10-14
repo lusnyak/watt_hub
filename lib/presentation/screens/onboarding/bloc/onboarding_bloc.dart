@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../data/local/shared_preferences/shared_preferences_service.dart';
 import 'onboarding_event.dart';
 import 'onboarding_state.dart';
 import 'package:watt_hub/domain/models/onboarding/onboarding_model.dart';
@@ -10,39 +11,37 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
 
   OnboardingBloc(this.onboardingData)
       : pageController = PageController(),
-        super(OnboardingInitial()) {
-    on<LoadOnboarding>((event, emit) {
-      emit(OnboardingLoaded(onboardingData[0]));
+        super(OnboardingInitialState()) {
+    on<LoadOnboardingEvent>((event, emit) {
+      SharedPreferencesService().setBool(
+        'isOnBoard',
+        true,
+      );
+      emit(OnboardingLoadedState(onboardingData[0]));
     });
 
-    on<NextOnboarding>((event, emit) async {
-      if (state is OnboardingLoaded)  {
+    on<NextOnboardingEvent>((event, emit) {
+      if (state is OnboardingLoadedState) {
         final currentPage = pageController.page!.toInt();
         if (currentPage < onboardingData.length - 1) {
-          // emit(const OnboardingLoaded());
-           await pageController.nextPage(
+          pageController.nextPage(
             duration: const Duration(milliseconds: 300),
             curve: Curves.easeInOut,
-          );if (!emit.isDone) {
-             emit(OnboardingLoaded(onboardingData[currentPage + 1]));
-           }
+          );
+        } else {
+          emit(OnboardingCompleteState());
         }
-        on<OnboardingPageChanged>((event, emit) {
-          emit(OnboardingLoaded(onboardingData[event.pageIndex]));
-        });
-        pageController.addListener(() {
-          final currentPage = pageController.page!.toInt();
-          emit(OnboardingLoaded(onboardingData[currentPage]));
-        });
-
       }
     });
-    @override
-    Future<void> close() {
-      pageController.dispose();
-      return super.close();
-    }
 
-    
+    on<OnboardingPageChangedEvent>((event, emit) {
+      emit(OnboardingLoadedState(onboardingData[event.pageIndex]));
+    });
+  }
+
+  @override
+  Future<void> close() {
+    pageController.dispose();
+    return super.close();
   }
 }

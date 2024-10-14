@@ -8,15 +8,15 @@ abstract class OnboardingState extends Equatable {
   List<Object?> get props => [];
 }
 
-class OnboardingInitial extends OnboardingState {}
+class OnboardingInitialState extends OnboardingState {}
 
-class OnboardingLoaded extends OnboardingState {
+class OnboardingLoadedState extends OnboardingState {
   final OnboardingModel currentModel;
 
-  const OnboardingLoaded(this.currentModel);
+  const OnboardingLoadedState(this.currentModel);
 
   @override
   List<Object?> get props => [currentModel];
 }
 
-class OnboardingComplete extends OnboardingState {}
+class OnboardingCompleteState extends OnboardingState {}
