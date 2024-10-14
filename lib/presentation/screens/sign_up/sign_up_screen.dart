@@ -30,6 +30,7 @@ class _SignUpView extends StatelessWidget {
     return BlocProvider(
       create: (_) => SignUpBloc(),
       child: Scaffold(
+        appBar: AppBar(),
         body: SafeArea(
           child: SingleChildScrollView(
             child: BlocConsumer<SignUpBloc, SignUpState>(
@@ -96,8 +97,7 @@ class _SignUpView extends StatelessWidget {
                                 TextSpan(
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {},
-                                  text:
-                                      'Privacy Policy ',
+                                  text: 'Privacy Policy ',
                                   style: green16RegularTextStyle,
                                 ),
                                 const TextSpan(
@@ -110,7 +110,8 @@ class _SignUpView extends StatelessWidget {
                         ),
                       ],
                     ),
-                    80.heightBox,
+                    230.heightBox,
+                    const Divider(color: WattHubColors.primaryLightGreenColor),
                     WHElevatedButton.primary(
                       title: AppLocalizations.of(context).continueText,
                       onPressed: () {
