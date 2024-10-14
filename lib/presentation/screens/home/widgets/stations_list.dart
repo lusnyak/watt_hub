@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/domain/models/charging_station/charging_station_model.dart';
+import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class StationsList extends StatelessWidget {
   final List<ChargingStationModel> stationsList;
-  final Function(ChargingStationModel) onStationSelected;
 
   const StationsList({
     super.key,
     required this.stationsList,
-    required this.onStationSelected,
   });
 
   @override
@@ -25,7 +25,7 @@ class StationsList extends StatelessWidget {
             borderRadius: BorderRadius.circular(15.r),
           ),
           child: InkWell(
-            onTap: () => onStationSelected(station),
+            onTap: () => context.read<HomeBloc>().add(CenterOnStation(station)),
             borderRadius: BorderRadius.circular(15.r),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
