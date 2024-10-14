@@ -1,10 +1,11 @@
 part of 'home_bloc.dart';
 
 @freezed
-abstract class HomeState with _$HomeState {
-  const factory HomeState.initial() = HomeInitial;
-  const factory HomeState.loading() = HomeLoading;
-  const factory HomeState.loaded(List<ChargingStationModel> stations) =
-      HomeLoaded;
-  const factory HomeState.error(String message) = HomeError;
+class HomeState with _$HomeState {
+  const factory HomeState.initial() = InitialState;
+  const factory HomeState.loading() = LoadingState;
+  const factory HomeState.error(String message) = ErrorState;
+  const factory HomeState.viewChanged(bool isList) = ViewChangedState;
+  const factory HomeState.loaded(List<ChargingStationModel> stations, {required bool isList}) = LoadedState;
 }
+
