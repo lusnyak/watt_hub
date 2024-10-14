@@ -55,19 +55,10 @@ class _HomeView extends StatelessWidget {
                   debugPrint('$isList isList');
                   return isList
                       ? MapContainer(
-                          mapController: context.read<HomeBloc>().mapController,
                           chargingStations: stations,
-                          currentLocation:
-                              context.read<HomeBloc>().currentLocation,
-                          isMapReady: context.read<HomeBloc>().isMapReady,
                         )
                       : StationsList(
                           stationsList: stations,
-                          onStationSelected: (selectedStation) {
-                            context
-                                .read<HomeBloc>()
-                                .add(const CenterLocation());
-                          },
                         );
                 },
               );
