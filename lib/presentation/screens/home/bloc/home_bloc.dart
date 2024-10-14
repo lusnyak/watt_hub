@@ -26,9 +26,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<LoadStation>(_onLoadStation);
     on<ToggleView>(_onToggleView);
     on<CenterLocation>(_onCenterLocation);
-    on<CenterOnStation>((event, emit) {
-      centerOnStation(event.station);
-    });
+    on<CenterOnStation>(_onCenterOnStation);
   }
 
   Future<void> _initializeLocation() async {
@@ -77,8 +75,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
   }
 
-  void centerOnStation(ChargingStationModel station) {
-    final stationLocation = LatLng(station.latitude, station.longitude);
+  void _onCenterOnStation(
+    CenterOnStation event,
+    Emitter<HomeState> emit,
+  ) {
+    isList = true;
+    final stationLocation = LatLng(
+      event.station.latitude,
+      event.station.longitude,
+    );
+
     mapController.move(stationLocation, 18.0);
+
+    emit(HomeState.loaded(sampleChargingStations, isList: isList));
   }
 }

@@ -9,26 +9,22 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'station_info_modal.dart';
 
 class MapContainer extends StatelessWidget {
-  final MapController mapController;
-  final LatLng? currentLocation;
-  final bool isMapReady;
   final List<ChargingStationModel> chargingStations;
 
   const MapContainer({
     super.key,
-    required this.mapController,
     required this.chargingStations,
-    required this.currentLocation,
-    required this.isMapReady,
   });
 
   @override
   Widget build(BuildContext context) {
+    final currentLocation = context.read<HomeBloc>().currentLocation;
     return currentLocation != null
         ? FlutterMap(
-            mapController: mapController,
+            mapController: context.read<HomeBloc>().mapController,
             options: MapOptions(
               initialCenter: context.read<HomeBloc>().currentLocation ??
+              
                   const LatLng(40.7942, 43.84528),
               initialZoom: 18.0,
             ),
@@ -37,7 +33,7 @@ class MapContainer extends StatelessWidget {
                 urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                 userAgentPackageName: 'com.example.app',
               ),
-              if (!isMapReady)
+              if (!context.read<HomeBloc>().isMapReady)
                 MarkerClusterLayerWidget(
                   options: MarkerClusterLayerOptions(
                     maxClusterRadius: 45,
@@ -62,8 +58,7 @@ class MapContainer extends StatelessWidget {
                       Marker(
                         width: 80.w,
                         height: 80.h,
-                        point:
-                            currentLocation ?? const LatLng(40.7942, 43.84528),
+                        point: currentLocation,
                         child: Icon(
                           Icons.location_on_outlined,
                           size: 56.r,
