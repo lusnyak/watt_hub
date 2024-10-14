@@ -28,6 +28,7 @@ void showStationInfo(BuildContext context, ChargingStationModel station) {
               ),
             ],
           ),
+          10.h.heightBox,
           Row(
             children: [
               Text(
@@ -52,19 +53,18 @@ void showStationInfo(BuildContext context, ChargingStationModel station) {
               ),
             ],
           ),
+          20.h.heightBox,
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               WHOutlinedButton(
                 title: context.localized.view,
-                onPressed: () =>
-                    AutoRouter.of(context).push(const StationInfoRoute()),
+                onPressed: () => context.router.push(const StationInfoRoute()),
               ).expanded(),
               10.w.widthBox,
               WHElevatedButton.primary(
                 title: context.localized.book,
-                onPressed: () =>
-                    AutoRouter.of(context).push(const DetailRoute()),
+                onPressed: () => context.router.push(const DetailRoute()),
               ).expanded(),
             ],
           ),
