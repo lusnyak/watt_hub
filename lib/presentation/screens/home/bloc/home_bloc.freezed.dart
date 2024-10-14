@@ -19,32 +19,50 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStation,
+    required TResult Function() toggleView,
+    required TResult Function() centerLocation,
+    required TResult Function(ChargingStationModel station) centerOnStation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStation,
+    TResult? Function()? toggleView,
+    TResult? Function()? centerLocation,
+    TResult? Function(ChargingStationModel station)? centerOnStation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStation,
+    TResult Function()? toggleView,
+    TResult Function()? centerLocation,
+    TResult Function(ChargingStationModel station)? centerOnStation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadStation value) loadStation,
+    required TResult Function(ToggleView value) toggleView,
+    required TResult Function(CenterLocation value) centerLocation,
+    required TResult Function(CenterOnStation value) centerOnStation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoadStation value)? loadStation,
+    TResult? Function(ToggleView value)? toggleView,
+    TResult? Function(CenterLocation value)? centerLocation,
+    TResult? Function(CenterOnStation value)? centerOnStation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadStation value)? loadStation,
+    TResult Function(ToggleView value)? toggleView,
+    TResult Function(CenterLocation value)? centerLocation,
+    TResult Function(CenterOnStation value)? centerOnStation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,6 +130,9 @@ class _$LoadStationImpl implements LoadStation {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStation,
+    required TResult Function() toggleView,
+    required TResult Function() centerLocation,
+    required TResult Function(ChargingStationModel station) centerOnStation,
   }) {
     return loadStation();
   }
@@ -120,6 +141,9 @@ class _$LoadStationImpl implements LoadStation {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStation,
+    TResult? Function()? toggleView,
+    TResult? Function()? centerLocation,
+    TResult? Function(ChargingStationModel station)? centerOnStation,
   }) {
     return loadStation?.call();
   }
@@ -128,6 +152,9 @@ class _$LoadStationImpl implements LoadStation {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStation,
+    TResult Function()? toggleView,
+    TResult Function()? centerLocation,
+    TResult Function(ChargingStationModel station)? centerOnStation,
     required TResult orElse(),
   }) {
     if (loadStation != null) {
@@ -140,6 +167,9 @@ class _$LoadStationImpl implements LoadStation {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadStation value) loadStation,
+    required TResult Function(ToggleView value) toggleView,
+    required TResult Function(CenterLocation value) centerLocation,
+    required TResult Function(CenterOnStation value) centerOnStation,
   }) {
     return loadStation(this);
   }
@@ -148,6 +178,9 @@ class _$LoadStationImpl implements LoadStation {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoadStation value)? loadStation,
+    TResult? Function(ToggleView value)? toggleView,
+    TResult? Function(CenterLocation value)? centerLocation,
+    TResult? Function(CenterOnStation value)? centerOnStation,
   }) {
     return loadStation?.call(this);
   }
@@ -156,6 +189,9 @@ class _$LoadStationImpl implements LoadStation {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadStation value)? loadStation,
+    TResult Function(ToggleView value)? toggleView,
+    TResult Function(CenterLocation value)? centerLocation,
+    TResult Function(CenterOnStation value)? centerOnStation,
     required TResult orElse(),
   }) {
     if (loadStation != null) {
@@ -170,54 +206,461 @@ abstract class LoadStation implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$ToggleViewImplCopyWith<$Res> {
+  factory _$$ToggleViewImplCopyWith(
+          _$ToggleViewImpl value, $Res Function(_$ToggleViewImpl) then) =
+      __$$ToggleViewImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ToggleViewImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$ToggleViewImpl>
+    implements _$$ToggleViewImplCopyWith<$Res> {
+  __$$ToggleViewImplCopyWithImpl(
+      _$ToggleViewImpl _value, $Res Function(_$ToggleViewImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ToggleViewImpl implements ToggleView {
+  const _$ToggleViewImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.toggleView()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ToggleViewImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadStation,
+    required TResult Function() toggleView,
+    required TResult Function() centerLocation,
+    required TResult Function(ChargingStationModel station) centerOnStation,
+  }) {
+    return toggleView();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadStation,
+    TResult? Function()? toggleView,
+    TResult? Function()? centerLocation,
+    TResult? Function(ChargingStationModel station)? centerOnStation,
+  }) {
+    return toggleView?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadStation,
+    TResult Function()? toggleView,
+    TResult Function()? centerLocation,
+    TResult Function(ChargingStationModel station)? centerOnStation,
+    required TResult orElse(),
+  }) {
+    if (toggleView != null) {
+      return toggleView();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadStation value) loadStation,
+    required TResult Function(ToggleView value) toggleView,
+    required TResult Function(CenterLocation value) centerLocation,
+    required TResult Function(CenterOnStation value) centerOnStation,
+  }) {
+    return toggleView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoadStation value)? loadStation,
+    TResult? Function(ToggleView value)? toggleView,
+    TResult? Function(CenterLocation value)? centerLocation,
+    TResult? Function(CenterOnStation value)? centerOnStation,
+  }) {
+    return toggleView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadStation value)? loadStation,
+    TResult Function(ToggleView value)? toggleView,
+    TResult Function(CenterLocation value)? centerLocation,
+    TResult Function(CenterOnStation value)? centerOnStation,
+    required TResult orElse(),
+  }) {
+    if (toggleView != null) {
+      return toggleView(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ToggleView implements HomeEvent {
+  const factory ToggleView() = _$ToggleViewImpl;
+}
+
+/// @nodoc
+abstract class _$$CenterLocationImplCopyWith<$Res> {
+  factory _$$CenterLocationImplCopyWith(_$CenterLocationImpl value,
+          $Res Function(_$CenterLocationImpl) then) =
+      __$$CenterLocationImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CenterLocationImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$CenterLocationImpl>
+    implements _$$CenterLocationImplCopyWith<$Res> {
+  __$$CenterLocationImplCopyWithImpl(
+      _$CenterLocationImpl _value, $Res Function(_$CenterLocationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CenterLocationImpl implements CenterLocation {
+  const _$CenterLocationImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.centerLocation()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CenterLocationImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadStation,
+    required TResult Function() toggleView,
+    required TResult Function() centerLocation,
+    required TResult Function(ChargingStationModel station) centerOnStation,
+  }) {
+    return centerLocation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadStation,
+    TResult? Function()? toggleView,
+    TResult? Function()? centerLocation,
+    TResult? Function(ChargingStationModel station)? centerOnStation,
+  }) {
+    return centerLocation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadStation,
+    TResult Function()? toggleView,
+    TResult Function()? centerLocation,
+    TResult Function(ChargingStationModel station)? centerOnStation,
+    required TResult orElse(),
+  }) {
+    if (centerLocation != null) {
+      return centerLocation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadStation value) loadStation,
+    required TResult Function(ToggleView value) toggleView,
+    required TResult Function(CenterLocation value) centerLocation,
+    required TResult Function(CenterOnStation value) centerOnStation,
+  }) {
+    return centerLocation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoadStation value)? loadStation,
+    TResult? Function(ToggleView value)? toggleView,
+    TResult? Function(CenterLocation value)? centerLocation,
+    TResult? Function(CenterOnStation value)? centerOnStation,
+  }) {
+    return centerLocation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadStation value)? loadStation,
+    TResult Function(ToggleView value)? toggleView,
+    TResult Function(CenterLocation value)? centerLocation,
+    TResult Function(CenterOnStation value)? centerOnStation,
+    required TResult orElse(),
+  }) {
+    if (centerLocation != null) {
+      return centerLocation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CenterLocation implements HomeEvent {
+  const factory CenterLocation() = _$CenterLocationImpl;
+}
+
+/// @nodoc
+abstract class _$$CenterOnStationImplCopyWith<$Res> {
+  factory _$$CenterOnStationImplCopyWith(_$CenterOnStationImpl value,
+          $Res Function(_$CenterOnStationImpl) then) =
+      __$$CenterOnStationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ChargingStationModel station});
+
+  $ChargingStationModelCopyWith<$Res> get station;
+}
+
+/// @nodoc
+class __$$CenterOnStationImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$CenterOnStationImpl>
+    implements _$$CenterOnStationImplCopyWith<$Res> {
+  __$$CenterOnStationImplCopyWithImpl(
+      _$CenterOnStationImpl _value, $Res Function(_$CenterOnStationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? station = null,
+  }) {
+    return _then(_$CenterOnStationImpl(
+      null == station
+          ? _value.station
+          : station // ignore: cast_nullable_to_non_nullable
+              as ChargingStationModel,
+    ));
+  }
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChargingStationModelCopyWith<$Res> get station {
+    return $ChargingStationModelCopyWith<$Res>(_value.station, (value) {
+      return _then(_value.copyWith(station: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$CenterOnStationImpl implements CenterOnStation {
+  const _$CenterOnStationImpl(this.station);
+
+  @override
+  final ChargingStationModel station;
+
+  @override
+  String toString() {
+    return 'HomeEvent.centerOnStation(station: $station)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CenterOnStationImpl &&
+            (identical(other.station, station) || other.station == station));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, station);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CenterOnStationImplCopyWith<_$CenterOnStationImpl> get copyWith =>
+      __$$CenterOnStationImplCopyWithImpl<_$CenterOnStationImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadStation,
+    required TResult Function() toggleView,
+    required TResult Function() centerLocation,
+    required TResult Function(ChargingStationModel station) centerOnStation,
+  }) {
+    return centerOnStation(station);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadStation,
+    TResult? Function()? toggleView,
+    TResult? Function()? centerLocation,
+    TResult? Function(ChargingStationModel station)? centerOnStation,
+  }) {
+    return centerOnStation?.call(station);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadStation,
+    TResult Function()? toggleView,
+    TResult Function()? centerLocation,
+    TResult Function(ChargingStationModel station)? centerOnStation,
+    required TResult orElse(),
+  }) {
+    if (centerOnStation != null) {
+      return centerOnStation(station);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadStation value) loadStation,
+    required TResult Function(ToggleView value) toggleView,
+    required TResult Function(CenterLocation value) centerLocation,
+    required TResult Function(CenterOnStation value) centerOnStation,
+  }) {
+    return centerOnStation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoadStation value)? loadStation,
+    TResult? Function(ToggleView value)? toggleView,
+    TResult? Function(CenterLocation value)? centerLocation,
+    TResult? Function(CenterOnStation value)? centerOnStation,
+  }) {
+    return centerOnStation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadStation value)? loadStation,
+    TResult Function(ToggleView value)? toggleView,
+    TResult Function(CenterLocation value)? centerLocation,
+    TResult Function(CenterOnStation value)? centerOnStation,
+    required TResult orElse(),
+  }) {
+    if (centerOnStation != null) {
+      return centerOnStation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CenterOnStation implements HomeEvent {
+  const factory CenterOnStation(final ChargingStationModel station) =
+      _$CenterOnStationImpl;
+
+  ChargingStationModel get station;
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CenterOnStationImplCopyWith<_$CenterOnStationImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ChargingStationModel> stations) loaded,
     required TResult Function(String message) error,
+    required TResult Function(bool isList) viewChanged,
+    required TResult Function(List<ChargingStationModel> stations, bool isList)
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ChargingStationModel> stations)? loaded,
     TResult? Function(String message)? error,
+    TResult? Function(bool isList)? viewChanged,
+    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ChargingStationModel> stations)? loaded,
     TResult Function(String message)? error,
+    TResult Function(bool isList)? viewChanged,
+    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeInitial value) initial,
-    required TResult Function(HomeLoading value) loading,
-    required TResult Function(HomeLoaded value) loaded,
-    required TResult Function(HomeError value) error,
+    required TResult Function(InitialState value) initial,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(ViewChangedState value) viewChanged,
+    required TResult Function(LoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HomeInitial value)? initial,
-    TResult? Function(HomeLoading value)? loading,
-    TResult? Function(HomeLoaded value)? loaded,
-    TResult? Function(HomeError value)? error,
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(ViewChangedState value)? viewChanged,
+    TResult? Function(LoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeInitial value)? initial,
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeLoaded value)? loaded,
-    TResult Function(HomeError value)? error,
+    TResult Function(InitialState value)? initial,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(ErrorState value)? error,
+    TResult Function(ViewChangedState value)? viewChanged,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -244,18 +687,18 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
 }
 
 /// @nodoc
-abstract class _$$HomeInitialImplCopyWith<$Res> {
-  factory _$$HomeInitialImplCopyWith(
-          _$HomeInitialImpl value, $Res Function(_$HomeInitialImpl) then) =
-      __$$HomeInitialImplCopyWithImpl<$Res>;
+abstract class _$$InitialStateImplCopyWith<$Res> {
+  factory _$$InitialStateImplCopyWith(
+          _$InitialStateImpl value, $Res Function(_$InitialStateImpl) then) =
+      __$$InitialStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$HomeInitialImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$HomeInitialImpl>
-    implements _$$HomeInitialImplCopyWith<$Res> {
-  __$$HomeInitialImplCopyWithImpl(
-      _$HomeInitialImpl _value, $Res Function(_$HomeInitialImpl) _then)
+class __$$InitialStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$InitialStateImpl>
+    implements _$$InitialStateImplCopyWith<$Res> {
+  __$$InitialStateImplCopyWithImpl(
+      _$InitialStateImpl _value, $Res Function(_$InitialStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HomeState
@@ -264,8 +707,8 @@ class __$$HomeInitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeInitialImpl implements HomeInitial {
-  const _$HomeInitialImpl();
+class _$InitialStateImpl implements InitialState {
+  const _$InitialStateImpl();
 
   @override
   String toString() {
@@ -275,7 +718,7 @@ class _$HomeInitialImpl implements HomeInitial {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HomeInitialImpl);
+        (other.runtimeType == runtimeType && other is _$InitialStateImpl);
   }
 
   @override
@@ -286,8 +729,10 @@ class _$HomeInitialImpl implements HomeInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ChargingStationModel> stations) loaded,
     required TResult Function(String message) error,
+    required TResult Function(bool isList) viewChanged,
+    required TResult Function(List<ChargingStationModel> stations, bool isList)
+        loaded,
   }) {
     return initial();
   }
@@ -297,8 +742,9 @@ class _$HomeInitialImpl implements HomeInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ChargingStationModel> stations)? loaded,
     TResult? Function(String message)? error,
+    TResult? Function(bool isList)? viewChanged,
+    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
   }) {
     return initial?.call();
   }
@@ -308,8 +754,9 @@ class _$HomeInitialImpl implements HomeInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ChargingStationModel> stations)? loaded,
     TResult Function(String message)? error,
+    TResult Function(bool isList)? viewChanged,
+    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -321,10 +768,11 @@ class _$HomeInitialImpl implements HomeInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeInitial value) initial,
-    required TResult Function(HomeLoading value) loading,
-    required TResult Function(HomeLoaded value) loaded,
-    required TResult Function(HomeError value) error,
+    required TResult Function(InitialState value) initial,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(ViewChangedState value) viewChanged,
+    required TResult Function(LoadedState value) loaded,
   }) {
     return initial(this);
   }
@@ -332,10 +780,11 @@ class _$HomeInitialImpl implements HomeInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HomeInitial value)? initial,
-    TResult? Function(HomeLoading value)? loading,
-    TResult? Function(HomeLoaded value)? loaded,
-    TResult? Function(HomeError value)? error,
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(ViewChangedState value)? viewChanged,
+    TResult? Function(LoadedState value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -343,10 +792,11 @@ class _$HomeInitialImpl implements HomeInitial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeInitial value)? initial,
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeLoaded value)? loaded,
-    TResult Function(HomeError value)? error,
+    TResult Function(InitialState value)? initial,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(ErrorState value)? error,
+    TResult Function(ViewChangedState value)? viewChanged,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -356,23 +806,23 @@ class _$HomeInitialImpl implements HomeInitial {
   }
 }
 
-abstract class HomeInitial implements HomeState {
-  const factory HomeInitial() = _$HomeInitialImpl;
+abstract class InitialState implements HomeState {
+  const factory InitialState() = _$InitialStateImpl;
 }
 
 /// @nodoc
-abstract class _$$HomeLoadingImplCopyWith<$Res> {
-  factory _$$HomeLoadingImplCopyWith(
-          _$HomeLoadingImpl value, $Res Function(_$HomeLoadingImpl) then) =
-      __$$HomeLoadingImplCopyWithImpl<$Res>;
+abstract class _$$LoadingStateImplCopyWith<$Res> {
+  factory _$$LoadingStateImplCopyWith(
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$HomeLoadingImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$HomeLoadingImpl>
-    implements _$$HomeLoadingImplCopyWith<$Res> {
-  __$$HomeLoadingImplCopyWithImpl(
-      _$HomeLoadingImpl _value, $Res Function(_$HomeLoadingImpl) _then)
+class __$$LoadingStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$LoadingStateImpl>
+    implements _$$LoadingStateImplCopyWith<$Res> {
+  __$$LoadingStateImplCopyWithImpl(
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HomeState
@@ -381,8 +831,8 @@ class __$$HomeLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeLoadingImpl implements HomeLoading {
-  const _$HomeLoadingImpl();
+class _$LoadingStateImpl implements LoadingState {
+  const _$LoadingStateImpl();
 
   @override
   String toString() {
@@ -392,7 +842,7 @@ class _$HomeLoadingImpl implements HomeLoading {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HomeLoadingImpl);
+        (other.runtimeType == runtimeType && other is _$LoadingStateImpl);
   }
 
   @override
@@ -403,8 +853,10 @@ class _$HomeLoadingImpl implements HomeLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ChargingStationModel> stations) loaded,
     required TResult Function(String message) error,
+    required TResult Function(bool isList) viewChanged,
+    required TResult Function(List<ChargingStationModel> stations, bool isList)
+        loaded,
   }) {
     return loading();
   }
@@ -414,8 +866,9 @@ class _$HomeLoadingImpl implements HomeLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ChargingStationModel> stations)? loaded,
     TResult? Function(String message)? error,
+    TResult? Function(bool isList)? viewChanged,
+    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
   }) {
     return loading?.call();
   }
@@ -425,8 +878,9 @@ class _$HomeLoadingImpl implements HomeLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ChargingStationModel> stations)? loaded,
     TResult Function(String message)? error,
+    TResult Function(bool isList)? viewChanged,
+    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -438,10 +892,11 @@ class _$HomeLoadingImpl implements HomeLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeInitial value) initial,
-    required TResult Function(HomeLoading value) loading,
-    required TResult Function(HomeLoaded value) loaded,
-    required TResult Function(HomeError value) error,
+    required TResult Function(InitialState value) initial,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(ViewChangedState value) viewChanged,
+    required TResult Function(LoadedState value) loaded,
   }) {
     return loading(this);
   }
@@ -449,10 +904,11 @@ class _$HomeLoadingImpl implements HomeLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HomeInitial value)? initial,
-    TResult? Function(HomeLoading value)? loading,
-    TResult? Function(HomeLoaded value)? loaded,
-    TResult? Function(HomeError value)? error,
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(ViewChangedState value)? viewChanged,
+    TResult? Function(LoadedState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -460,10 +916,11 @@ class _$HomeLoadingImpl implements HomeLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeInitial value)? initial,
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeLoaded value)? loaded,
-    TResult Function(HomeError value)? error,
+    TResult Function(InitialState value)? initial,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(ErrorState value)? error,
+    TResult Function(ViewChangedState value)? viewChanged,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -473,185 +930,25 @@ class _$HomeLoadingImpl implements HomeLoading {
   }
 }
 
-abstract class HomeLoading implements HomeState {
-  const factory HomeLoading() = _$HomeLoadingImpl;
+abstract class LoadingState implements HomeState {
+  const factory LoadingState() = _$LoadingStateImpl;
 }
 
 /// @nodoc
-abstract class _$$HomeLoadedImplCopyWith<$Res> {
-  factory _$$HomeLoadedImplCopyWith(
-          _$HomeLoadedImpl value, $Res Function(_$HomeLoadedImpl) then) =
-      __$$HomeLoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<ChargingStationModel> stations});
-}
-
-/// @nodoc
-class __$$HomeLoadedImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$HomeLoadedImpl>
-    implements _$$HomeLoadedImplCopyWith<$Res> {
-  __$$HomeLoadedImplCopyWithImpl(
-      _$HomeLoadedImpl _value, $Res Function(_$HomeLoadedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of HomeState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? stations = null,
-  }) {
-    return _then(_$HomeLoadedImpl(
-      null == stations
-          ? _value._stations
-          : stations // ignore: cast_nullable_to_non_nullable
-              as List<ChargingStationModel>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$HomeLoadedImpl implements HomeLoaded {
-  const _$HomeLoadedImpl(final List<ChargingStationModel> stations)
-      : _stations = stations;
-
-  final List<ChargingStationModel> _stations;
-  @override
-  List<ChargingStationModel> get stations {
-    if (_stations is EqualUnmodifiableListView) return _stations;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_stations);
-  }
-
-  @override
-  String toString() {
-    return 'HomeState.loaded(stations: $stations)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HomeLoadedImpl &&
-            const DeepCollectionEquality().equals(other._stations, _stations));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_stations));
-
-  /// Create a copy of HomeState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$HomeLoadedImplCopyWith<_$HomeLoadedImpl> get copyWith =>
-      __$$HomeLoadedImplCopyWithImpl<_$HomeLoadedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<ChargingStationModel> stations) loaded,
-    required TResult Function(String message) error,
-  }) {
-    return loaded(stations);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<ChargingStationModel> stations)? loaded,
-    TResult? Function(String message)? error,
-  }) {
-    return loaded?.call(stations);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<ChargingStationModel> stations)? loaded,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (loaded != null) {
-      return loaded(stations);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(HomeInitial value) initial,
-    required TResult Function(HomeLoading value) loading,
-    required TResult Function(HomeLoaded value) loaded,
-    required TResult Function(HomeError value) error,
-  }) {
-    return loaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HomeInitial value)? initial,
-    TResult? Function(HomeLoading value)? loading,
-    TResult? Function(HomeLoaded value)? loaded,
-    TResult? Function(HomeError value)? error,
-  }) {
-    return loaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeInitial value)? initial,
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeLoaded value)? loaded,
-    TResult Function(HomeError value)? error,
-    required TResult orElse(),
-  }) {
-    if (loaded != null) {
-      return loaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class HomeLoaded implements HomeState {
-  const factory HomeLoaded(final List<ChargingStationModel> stations) =
-      _$HomeLoadedImpl;
-
-  List<ChargingStationModel> get stations;
-
-  /// Create a copy of HomeState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HomeLoadedImplCopyWith<_$HomeLoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$HomeErrorImplCopyWith<$Res> {
-  factory _$$HomeErrorImplCopyWith(
-          _$HomeErrorImpl value, $Res Function(_$HomeErrorImpl) then) =
-      __$$HomeErrorImplCopyWithImpl<$Res>;
+abstract class _$$ErrorStateImplCopyWith<$Res> {
+  factory _$$ErrorStateImplCopyWith(
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$HomeErrorImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$HomeErrorImpl>
-    implements _$$HomeErrorImplCopyWith<$Res> {
-  __$$HomeErrorImplCopyWithImpl(
-      _$HomeErrorImpl _value, $Res Function(_$HomeErrorImpl) _then)
+class __$$ErrorStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$ErrorStateImpl>
+    implements _$$ErrorStateImplCopyWith<$Res> {
+  __$$ErrorStateImplCopyWithImpl(
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HomeState
@@ -661,7 +958,7 @@ class __$$HomeErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$HomeErrorImpl(
+    return _then(_$ErrorStateImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -672,8 +969,8 @@ class __$$HomeErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeErrorImpl implements HomeError {
-  const _$HomeErrorImpl(this.message);
+class _$ErrorStateImpl implements ErrorState {
+  const _$ErrorStateImpl(this.message);
 
   @override
   final String message;
@@ -687,7 +984,7 @@ class _$HomeErrorImpl implements HomeError {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HomeErrorImpl &&
+            other is _$ErrorStateImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -699,16 +996,18 @@ class _$HomeErrorImpl implements HomeError {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$HomeErrorImplCopyWith<_$HomeErrorImpl> get copyWith =>
-      __$$HomeErrorImplCopyWithImpl<_$HomeErrorImpl>(this, _$identity);
+  _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
+      __$$ErrorStateImplCopyWithImpl<_$ErrorStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ChargingStationModel> stations) loaded,
     required TResult Function(String message) error,
+    required TResult Function(bool isList) viewChanged,
+    required TResult Function(List<ChargingStationModel> stations, bool isList)
+        loaded,
   }) {
     return error(message);
   }
@@ -718,8 +1017,9 @@ class _$HomeErrorImpl implements HomeError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ChargingStationModel> stations)? loaded,
     TResult? Function(String message)? error,
+    TResult? Function(bool isList)? viewChanged,
+    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
   }) {
     return error?.call(message);
   }
@@ -729,8 +1029,9 @@ class _$HomeErrorImpl implements HomeError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ChargingStationModel> stations)? loaded,
     TResult Function(String message)? error,
+    TResult Function(bool isList)? viewChanged,
+    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -742,10 +1043,11 @@ class _$HomeErrorImpl implements HomeError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeInitial value) initial,
-    required TResult Function(HomeLoading value) loading,
-    required TResult Function(HomeLoaded value) loaded,
-    required TResult Function(HomeError value) error,
+    required TResult Function(InitialState value) initial,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(ViewChangedState value) viewChanged,
+    required TResult Function(LoadedState value) loaded,
   }) {
     return error(this);
   }
@@ -753,10 +1055,11 @@ class _$HomeErrorImpl implements HomeError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HomeInitial value)? initial,
-    TResult? Function(HomeLoading value)? loading,
-    TResult? Function(HomeLoaded value)? loaded,
-    TResult? Function(HomeError value)? error,
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(ViewChangedState value)? viewChanged,
+    TResult? Function(LoadedState value)? loaded,
   }) {
     return error?.call(this);
   }
@@ -764,10 +1067,11 @@ class _$HomeErrorImpl implements HomeError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeInitial value)? initial,
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeLoaded value)? loaded,
-    TResult Function(HomeError value)? error,
+    TResult Function(InitialState value)? initial,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(ErrorState value)? error,
+    TResult Function(ViewChangedState value)? viewChanged,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -777,14 +1081,352 @@ class _$HomeErrorImpl implements HomeError {
   }
 }
 
-abstract class HomeError implements HomeState {
-  const factory HomeError(final String message) = _$HomeErrorImpl;
+abstract class ErrorState implements HomeState {
+  const factory ErrorState(final String message) = _$ErrorStateImpl;
 
   String get message;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HomeErrorImplCopyWith<_$HomeErrorImpl> get copyWith =>
+  _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ViewChangedStateImplCopyWith<$Res> {
+  factory _$$ViewChangedStateImplCopyWith(_$ViewChangedStateImpl value,
+          $Res Function(_$ViewChangedStateImpl) then) =
+      __$$ViewChangedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isList});
+}
+
+/// @nodoc
+class __$$ViewChangedStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$ViewChangedStateImpl>
+    implements _$$ViewChangedStateImplCopyWith<$Res> {
+  __$$ViewChangedStateImplCopyWithImpl(_$ViewChangedStateImpl _value,
+      $Res Function(_$ViewChangedStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isList = null,
+  }) {
+    return _then(_$ViewChangedStateImpl(
+      null == isList
+          ? _value.isList
+          : isList // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ViewChangedStateImpl implements ViewChangedState {
+  const _$ViewChangedStateImpl(this.isList);
+
+  @override
+  final bool isList;
+
+  @override
+  String toString() {
+    return 'HomeState.viewChanged(isList: $isList)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ViewChangedStateImpl &&
+            (identical(other.isList, isList) || other.isList == isList));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isList);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ViewChangedStateImplCopyWith<_$ViewChangedStateImpl> get copyWith =>
+      __$$ViewChangedStateImplCopyWithImpl<_$ViewChangedStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function(bool isList) viewChanged,
+    required TResult Function(List<ChargingStationModel> stations, bool isList)
+        loaded,
+  }) {
+    return viewChanged(isList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function(bool isList)? viewChanged,
+    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
+  }) {
+    return viewChanged?.call(isList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function(bool isList)? viewChanged,
+    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    required TResult orElse(),
+  }) {
+    if (viewChanged != null) {
+      return viewChanged(isList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialState value) initial,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(ViewChangedState value) viewChanged,
+    required TResult Function(LoadedState value) loaded,
+  }) {
+    return viewChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(ViewChangedState value)? viewChanged,
+    TResult? Function(LoadedState value)? loaded,
+  }) {
+    return viewChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialState value)? initial,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(ErrorState value)? error,
+    TResult Function(ViewChangedState value)? viewChanged,
+    TResult Function(LoadedState value)? loaded,
+    required TResult orElse(),
+  }) {
+    if (viewChanged != null) {
+      return viewChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ViewChangedState implements HomeState {
+  const factory ViewChangedState(final bool isList) = _$ViewChangedStateImpl;
+
+  bool get isList;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ViewChangedStateImplCopyWith<_$ViewChangedStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadedStateImplCopyWith<$Res> {
+  factory _$$LoadedStateImplCopyWith(
+          _$LoadedStateImpl value, $Res Function(_$LoadedStateImpl) then) =
+      __$$LoadedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<ChargingStationModel> stations, bool isList});
+}
+
+/// @nodoc
+class __$$LoadedStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$LoadedStateImpl>
+    implements _$$LoadedStateImplCopyWith<$Res> {
+  __$$LoadedStateImplCopyWithImpl(
+      _$LoadedStateImpl _value, $Res Function(_$LoadedStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? stations = null,
+    Object? isList = null,
+  }) {
+    return _then(_$LoadedStateImpl(
+      null == stations
+          ? _value._stations
+          : stations // ignore: cast_nullable_to_non_nullable
+              as List<ChargingStationModel>,
+      isList: null == isList
+          ? _value.isList
+          : isList // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadedStateImpl implements LoadedState {
+  const _$LoadedStateImpl(final List<ChargingStationModel> stations,
+      {required this.isList})
+      : _stations = stations;
+
+  final List<ChargingStationModel> _stations;
+  @override
+  List<ChargingStationModel> get stations {
+    if (_stations is EqualUnmodifiableListView) return _stations;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_stations);
+  }
+
+  @override
+  final bool isList;
+
+  @override
+  String toString() {
+    return 'HomeState.loaded(stations: $stations, isList: $isList)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadedStateImpl &&
+            const DeepCollectionEquality().equals(other._stations, _stations) &&
+            (identical(other.isList, isList) || other.isList == isList));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_stations), isList);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadedStateImplCopyWith<_$LoadedStateImpl> get copyWith =>
+      __$$LoadedStateImplCopyWithImpl<_$LoadedStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function(bool isList) viewChanged,
+    required TResult Function(List<ChargingStationModel> stations, bool isList)
+        loaded,
+  }) {
+    return loaded(stations, isList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function(bool isList)? viewChanged,
+    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
+  }) {
+    return loaded?.call(stations, isList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function(bool isList)? viewChanged,
+    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(stations, isList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialState value) initial,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(ViewChangedState value) viewChanged,
+    required TResult Function(LoadedState value) loaded,
+  }) {
+    return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(ViewChangedState value)? viewChanged,
+    TResult? Function(LoadedState value)? loaded,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialState value)? initial,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(ErrorState value)? error,
+    TResult Function(ViewChangedState value)? viewChanged,
+    TResult Function(LoadedState value)? loaded,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadedState implements HomeState {
+  const factory LoadedState(final List<ChargingStationModel> stations,
+      {required final bool isList}) = _$LoadedStateImpl;
+
+  List<ChargingStationModel> get stations;
+  bool get isList;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadedStateImplCopyWith<_$LoadedStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
