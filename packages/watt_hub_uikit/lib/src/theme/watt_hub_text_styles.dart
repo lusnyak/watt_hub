@@ -2,6 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
+/// 12 size
+TextStyle get body12RegularTextStyle =>  GoogleFonts.urbanist (
+  fontWeight: FontWeight.w400,
+  height: 16.0 / 12.0,
+  fontSize: 12.sp,
+  color: WattHubColors.primaryBlackColor,
+);
+
+TextStyle get body12MediumTextStyle =>  GoogleFonts.urbanist (
+  fontWeight: FontWeight.w500,
+  height: 16.0 / 12.0,
+  fontSize: 12.sp,
+  color: WattHubColors.primaryBlackColor,
+);
+
+TextStyle get body12SemiBoldTextStyle =>  GoogleFonts.urbanist (
+  fontWeight: FontWeight.w600,
+  height: 16.0 / 12.0,
+  fontSize: 12.sp,
+  color: WattHubColors.primaryBlackColor,
+);
+
+
 /// 14 size
 TextStyle get body14RegularTextStyle =>  GoogleFonts.urbanist (
   fontWeight: FontWeight.w400,

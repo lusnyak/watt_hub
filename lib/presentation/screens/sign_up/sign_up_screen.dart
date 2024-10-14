@@ -70,7 +70,7 @@ class _SignUpView extends StatelessWidget {
                         context.read<SignUpBloc>().add(EmailChanged(value));
                       },
                       label: AppLocalizations.of(context).emailAddress,
-                      hintText: '',
+                      hintText: 'johndoe@gmail.com',
                       keyboardType: TextInputType.emailAddress,
                     ),
                     20.heightBox,
@@ -91,14 +91,15 @@ class _SignUpView extends StatelessWidget {
                           child: RichText(
                             text: TextSpan(
                               text: 'I agree to WattHub ',
-                              style: body16RegularTextStyle,
+                              style: body12RegularTextStyle,
                               children: <TextSpan>[
                                 TextSpan(
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {},
                                   text:
                                       'Public Agreement. Terms. Privacy Policy ',
-                                  style: body16RegularTextStyle.copyWith(color: WattHubColors.primaryGreenColor),
+                                  style: body12RegularTextStyle.copyWith(color: WattHubColors.primaryGreenColor),
+
                                 ),
                                 const TextSpan(
                                   text:
