@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -52,6 +53,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       emit(HomeState.loaded(stations, isList: isList));
     } catch (e) {
+      debugPrint('Error loading stations: $e');
       emit(const HomeState.error("Failed to load stations"));
     }
   }
