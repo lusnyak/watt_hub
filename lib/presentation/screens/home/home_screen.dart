@@ -38,7 +38,7 @@ class _HomeView extends StatelessWidget {
           actions: [
             WHIconButton.primary(
               icon: const Icon(Icons.filter_alt),
-              onPressed: () => AutoRouter.of(context).push(const FilterRoute()),
+              onPressed: () => context.router.push(const FilterRoute()),
             ).paddingOnly(right: 20.w),
           ],
         ),
