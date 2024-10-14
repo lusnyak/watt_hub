@@ -70,7 +70,7 @@ class _SignUpView extends StatelessWidget {
                         context.read<SignUpBloc>().add(EmailChanged(value));
                       },
                       label: AppLocalizations.of(context).emailAddress,
-                      hintText: '',
+                      hintText: 'johndoe@gmail.com',
                       keyboardType: TextInputType.emailAddress,
                     ),
                     20.heightBox,
@@ -97,7 +97,7 @@ class _SignUpView extends StatelessWidget {
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {},
                                   text:
-                                      'Public Agreement. Terms. Privacy Policy ',
+                                      'Privacy Policy ',
                                   style: green16RegularTextStyle,
                                 ),
                                 const TextSpan(
