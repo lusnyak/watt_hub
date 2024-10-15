@@ -1,4 +1,4 @@
-Map<String, dynamic> station = {
+Map<String, dynamic> stationData = {
   "id": 1,
   "latitude": 40.1792,
   "longitude": 44.4991,
@@ -27,7 +27,7 @@ Map<String, dynamic> station = {
   },
 };
 
-List<Map<String, dynamic>> sampleStations = [
+List<Map<String, dynamic>> stationsData = [
   {
     "id": 1,
     "latitude": 40.1792,
