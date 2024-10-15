@@ -9,5 +9,7 @@
   "view": "View",
   "book": "Book",
   "kilowatt": "kw",
-  "hourlyRate": "hr"
+  "hourlyRate": "hr",
+  "filter": "Filter",
+  "rating": "Rating"
 }
