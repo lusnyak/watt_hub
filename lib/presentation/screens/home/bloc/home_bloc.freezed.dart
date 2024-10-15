@@ -21,7 +21,7 @@ mixin _$HomeEvent {
     required TResult Function() loadStation,
     required TResult Function() toggleView,
     required TResult Function() centerLocation,
-    required TResult Function(ChargingStationModel station) centerOnStation,
+    required TResult Function(StationModel station) centerOnStation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$HomeEvent {
     TResult? Function()? loadStation,
     TResult? Function()? toggleView,
     TResult? Function()? centerLocation,
-    TResult? Function(ChargingStationModel station)? centerOnStation,
+    TResult? Function(StationModel station)? centerOnStation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$HomeEvent {
     TResult Function()? loadStation,
     TResult Function()? toggleView,
     TResult Function()? centerLocation,
-    TResult Function(ChargingStationModel station)? centerOnStation,
+    TResult Function(StationModel station)? centerOnStation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -132,7 +132,7 @@ class _$LoadStationImpl implements LoadStation {
     required TResult Function() loadStation,
     required TResult Function() toggleView,
     required TResult Function() centerLocation,
-    required TResult Function(ChargingStationModel station) centerOnStation,
+    required TResult Function(StationModel station) centerOnStation,
   }) {
     return loadStation();
   }
@@ -143,7 +143,7 @@ class _$LoadStationImpl implements LoadStation {
     TResult? Function()? loadStation,
     TResult? Function()? toggleView,
     TResult? Function()? centerLocation,
-    TResult? Function(ChargingStationModel station)? centerOnStation,
+    TResult? Function(StationModel station)? centerOnStation,
   }) {
     return loadStation?.call();
   }
@@ -154,7 +154,7 @@ class _$LoadStationImpl implements LoadStation {
     TResult Function()? loadStation,
     TResult Function()? toggleView,
     TResult Function()? centerLocation,
-    TResult Function(ChargingStationModel station)? centerOnStation,
+    TResult Function(StationModel station)? centerOnStation,
     required TResult orElse(),
   }) {
     if (loadStation != null) {
@@ -249,7 +249,7 @@ class _$ToggleViewImpl implements ToggleView {
     required TResult Function() loadStation,
     required TResult Function() toggleView,
     required TResult Function() centerLocation,
-    required TResult Function(ChargingStationModel station) centerOnStation,
+    required TResult Function(StationModel station) centerOnStation,
   }) {
     return toggleView();
   }
@@ -260,7 +260,7 @@ class _$ToggleViewImpl implements ToggleView {
     TResult? Function()? loadStation,
     TResult? Function()? toggleView,
     TResult? Function()? centerLocation,
-    TResult? Function(ChargingStationModel station)? centerOnStation,
+    TResult? Function(StationModel station)? centerOnStation,
   }) {
     return toggleView?.call();
   }
@@ -271,7 +271,7 @@ class _$ToggleViewImpl implements ToggleView {
     TResult Function()? loadStation,
     TResult Function()? toggleView,
     TResult Function()? centerLocation,
-    TResult Function(ChargingStationModel station)? centerOnStation,
+    TResult Function(StationModel station)? centerOnStation,
     required TResult orElse(),
   }) {
     if (toggleView != null) {
@@ -366,7 +366,7 @@ class _$CenterLocationImpl implements CenterLocation {
     required TResult Function() loadStation,
     required TResult Function() toggleView,
     required TResult Function() centerLocation,
-    required TResult Function(ChargingStationModel station) centerOnStation,
+    required TResult Function(StationModel station) centerOnStation,
   }) {
     return centerLocation();
   }
@@ -377,7 +377,7 @@ class _$CenterLocationImpl implements CenterLocation {
     TResult? Function()? loadStation,
     TResult? Function()? toggleView,
     TResult? Function()? centerLocation,
-    TResult? Function(ChargingStationModel station)? centerOnStation,
+    TResult? Function(StationModel station)? centerOnStation,
   }) {
     return centerLocation?.call();
   }
@@ -388,7 +388,7 @@ class _$CenterLocationImpl implements CenterLocation {
     TResult Function()? loadStation,
     TResult Function()? toggleView,
     TResult Function()? centerLocation,
-    TResult Function(ChargingStationModel station)? centerOnStation,
+    TResult Function(StationModel station)? centerOnStation,
     required TResult orElse(),
   }) {
     if (centerLocation != null) {
@@ -445,9 +445,9 @@ abstract class _$$CenterOnStationImplCopyWith<$Res> {
           $Res Function(_$CenterOnStationImpl) then) =
       __$$CenterOnStationImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ChargingStationModel station});
+  $Res call({StationModel station});
 
-  $ChargingStationModelCopyWith<$Res> get station;
+  $StationModelCopyWith<$Res> get station;
 }
 
 /// @nodoc
@@ -469,7 +469,7 @@ class __$$CenterOnStationImplCopyWithImpl<$Res>
       null == station
           ? _value.station
           : station // ignore: cast_nullable_to_non_nullable
-              as ChargingStationModel,
+              as StationModel,
     ));
   }
 
@@ -477,8 +477,8 @@ class __$$CenterOnStationImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ChargingStationModelCopyWith<$Res> get station {
-    return $ChargingStationModelCopyWith<$Res>(_value.station, (value) {
+  $StationModelCopyWith<$Res> get station {
+    return $StationModelCopyWith<$Res>(_value.station, (value) {
       return _then(_value.copyWith(station: value));
     });
   }
@@ -490,7 +490,7 @@ class _$CenterOnStationImpl implements CenterOnStation {
   const _$CenterOnStationImpl(this.station);
 
   @override
-  final ChargingStationModel station;
+  final StationModel station;
 
   @override
   String toString() {
@@ -523,7 +523,7 @@ class _$CenterOnStationImpl implements CenterOnStation {
     required TResult Function() loadStation,
     required TResult Function() toggleView,
     required TResult Function() centerLocation,
-    required TResult Function(ChargingStationModel station) centerOnStation,
+    required TResult Function(StationModel station) centerOnStation,
   }) {
     return centerOnStation(station);
   }
@@ -534,7 +534,7 @@ class _$CenterOnStationImpl implements CenterOnStation {
     TResult? Function()? loadStation,
     TResult? Function()? toggleView,
     TResult? Function()? centerLocation,
-    TResult? Function(ChargingStationModel station)? centerOnStation,
+    TResult? Function(StationModel station)? centerOnStation,
   }) {
     return centerOnStation?.call(station);
   }
@@ -545,7 +545,7 @@ class _$CenterOnStationImpl implements CenterOnStation {
     TResult Function()? loadStation,
     TResult Function()? toggleView,
     TResult Function()? centerLocation,
-    TResult Function(ChargingStationModel station)? centerOnStation,
+    TResult Function(StationModel station)? centerOnStation,
     required TResult orElse(),
   }) {
     if (centerOnStation != null) {
@@ -593,10 +593,10 @@ class _$CenterOnStationImpl implements CenterOnStation {
 }
 
 abstract class CenterOnStation implements HomeEvent {
-  const factory CenterOnStation(final ChargingStationModel station) =
+  const factory CenterOnStation(final StationModel station) =
       _$CenterOnStationImpl;
 
-  ChargingStationModel get station;
+  StationModel get station;
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -613,8 +613,7 @@ mixin _$HomeState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<ChargingStationModel> stations, bool isList)
-        loaded,
+    required TResult Function(List<StationModel> stations, bool isList) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -623,7 +622,7 @@ mixin _$HomeState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult? Function(List<StationModel> stations, bool isList)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -632,7 +631,7 @@ mixin _$HomeState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult Function(List<StationModel> stations, bool isList)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -731,8 +730,7 @@ class _$InitialStateImpl implements InitialState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<ChargingStationModel> stations, bool isList)
-        loaded,
+    required TResult Function(List<StationModel> stations, bool isList) loaded,
   }) {
     return initial();
   }
@@ -744,7 +742,7 @@ class _$InitialStateImpl implements InitialState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult? Function(List<StationModel> stations, bool isList)? loaded,
   }) {
     return initial?.call();
   }
@@ -756,7 +754,7 @@ class _$InitialStateImpl implements InitialState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult Function(List<StationModel> stations, bool isList)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -855,8 +853,7 @@ class _$LoadingStateImpl implements LoadingState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<ChargingStationModel> stations, bool isList)
-        loaded,
+    required TResult Function(List<StationModel> stations, bool isList) loaded,
   }) {
     return loading();
   }
@@ -868,7 +865,7 @@ class _$LoadingStateImpl implements LoadingState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult? Function(List<StationModel> stations, bool isList)? loaded,
   }) {
     return loading?.call();
   }
@@ -880,7 +877,7 @@ class _$LoadingStateImpl implements LoadingState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult Function(List<StationModel> stations, bool isList)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1006,8 +1003,7 @@ class _$ErrorStateImpl implements ErrorState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<ChargingStationModel> stations, bool isList)
-        loaded,
+    required TResult Function(List<StationModel> stations, bool isList) loaded,
   }) {
     return error(message);
   }
@@ -1019,7 +1015,7 @@ class _$ErrorStateImpl implements ErrorState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult? Function(List<StationModel> stations, bool isList)? loaded,
   }) {
     return error?.call(message);
   }
@@ -1031,7 +1027,7 @@ class _$ErrorStateImpl implements ErrorState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult Function(List<StationModel> stations, bool isList)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1166,8 +1162,7 @@ class _$ViewChangedStateImpl implements ViewChangedState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<ChargingStationModel> stations, bool isList)
-        loaded,
+    required TResult Function(List<StationModel> stations, bool isList) loaded,
   }) {
     return viewChanged(isList);
   }
@@ -1179,7 +1174,7 @@ class _$ViewChangedStateImpl implements ViewChangedState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult? Function(List<StationModel> stations, bool isList)? loaded,
   }) {
     return viewChanged?.call(isList);
   }
@@ -1191,7 +1186,7 @@ class _$ViewChangedStateImpl implements ViewChangedState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult Function(List<StationModel> stations, bool isList)? loaded,
     required TResult orElse(),
   }) {
     if (viewChanged != null) {
@@ -1259,7 +1254,7 @@ abstract class _$$LoadedStateImplCopyWith<$Res> {
           _$LoadedStateImpl value, $Res Function(_$LoadedStateImpl) then) =
       __$$LoadedStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<ChargingStationModel> stations, bool isList});
+  $Res call({List<StationModel> stations, bool isList});
 }
 
 /// @nodoc
@@ -1282,7 +1277,7 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
       null == stations
           ? _value._stations
           : stations // ignore: cast_nullable_to_non_nullable
-              as List<ChargingStationModel>,
+              as List<StationModel>,
       isList: null == isList
           ? _value.isList
           : isList // ignore: cast_nullable_to_non_nullable
@@ -1294,13 +1289,13 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedStateImpl implements LoadedState {
-  const _$LoadedStateImpl(final List<ChargingStationModel> stations,
+  const _$LoadedStateImpl(final List<StationModel> stations,
       {required this.isList})
       : _stations = stations;
 
-  final List<ChargingStationModel> _stations;
+  final List<StationModel> _stations;
   @override
-  List<ChargingStationModel> get stations {
+  List<StationModel> get stations {
     if (_stations is EqualUnmodifiableListView) return _stations;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_stations);
@@ -1342,8 +1337,7 @@ class _$LoadedStateImpl implements LoadedState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<ChargingStationModel> stations, bool isList)
-        loaded,
+    required TResult Function(List<StationModel> stations, bool isList) loaded,
   }) {
     return loaded(stations, isList);
   }
@@ -1355,7 +1349,7 @@ class _$LoadedStateImpl implements LoadedState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult? Function(List<StationModel> stations, bool isList)? loaded,
   }) {
     return loaded?.call(stations, isList);
   }
@@ -1367,7 +1361,7 @@ class _$LoadedStateImpl implements LoadedState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<ChargingStationModel> stations, bool isList)? loaded,
+    TResult Function(List<StationModel> stations, bool isList)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -1418,10 +1412,10 @@ class _$LoadedStateImpl implements LoadedState {
 }
 
 abstract class LoadedState implements HomeState {
-  const factory LoadedState(final List<ChargingStationModel> stations,
+  const factory LoadedState(final List<StationModel> stations,
       {required final bool isList}) = _$LoadedStateImpl;
 
-  List<ChargingStationModel> get stations;
+  List<StationModel> get stations;
   bool get isList;
 
   /// Create a copy of HomeState

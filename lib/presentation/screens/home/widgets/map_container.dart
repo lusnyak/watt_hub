@@ -3,13 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:watt_hub/domain/models/charging_station/charging_station_model.dart';
+import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'station_info_modal.dart';
 
 class MapContainer extends StatelessWidget {
-  final List<ChargingStationModel> chargingStations;
+  final List<StationModel> chargingStations;
 
   const MapContainer({
     super.key,

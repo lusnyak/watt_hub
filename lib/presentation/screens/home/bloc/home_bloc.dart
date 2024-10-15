@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:watt_hub/data/fake_data/stations_data/stations_map.dart';
-import 'package:watt_hub/domain/models/charging_station/charging_station_model.dart';
+import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/utils/helpers/location_helper.dart';
 
 part 'home_bloc.freezed.dart';
@@ -47,7 +47,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       await Future.delayed(const Duration(seconds: 1));
 
       final stations = sampleStations
-          .map((stationJson) => ChargingStationModel.fromJson(stationJson))
+          .map((stationJson) => StationModel.fromJson(stationJson))
           .toList();
 
       emit(HomeState.loaded(stations, isList: isList));
@@ -85,7 +85,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     mapController.move(stationLocation, 18.0);
 
     final stations = sampleStations
-        .map((stationJson) => ChargingStationModel.fromJson(stationJson))
+        .map((stationJson) => StationModel.fromJson(stationJson))
         .toList();
 
     emit(HomeState.loaded(stations, isList: isList));
