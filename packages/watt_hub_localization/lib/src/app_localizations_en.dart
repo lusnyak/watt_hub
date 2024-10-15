@@ -38,4 +38,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hourlyRate => 'hr';
+
+  @override
+  String get filter => 'Filter';
+
+  @override
+  String get rating => 'Rating';
 }

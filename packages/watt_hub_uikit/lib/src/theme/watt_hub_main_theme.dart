@@ -15,6 +15,11 @@ ThemeData get lightTheme => ThemeData(
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         shape: StadiumBorder(),
       ),
+      sliderTheme: const SliderThemeData(
+        inactiveTrackColor: WattHubColors.primaryLightGreenColor,
+        inactiveTickMarkColor: WattHubColors.primaryGreenColor,
+        thumbColor: WattHubColors.primaryGreenColor,
+      ),
     );
 
 /// TODO: - dark theme property
