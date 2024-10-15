@@ -91,17 +91,6 @@ class _VerificationView extends StatelessWidget {
                       text: 'resend',
                       color: WattHubColors.primaryGreenColor),
                 ),
-                200.heightBox,
-                const Divider(color: WattHubColors.primaryLightGreenColor),
-                WHElevatedButton.primary(
-                  title: AppLocalizations.of(context).continueText,
-                  onPressed: () {
-                    const otpCode = '1234';
-                    context
-                        .read<VerificationBloc>()
-                        .add(const VerificationEvent.verifyOtp(otpCode));
-                  },
-                ),
               ],
             ).expanded(),
           ).paddingAll(20.0),
