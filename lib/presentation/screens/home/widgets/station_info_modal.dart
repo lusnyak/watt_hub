@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
-import 'package:watt_hub/domain/models/charging_station/charging_station_model.dart';
+import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
-void showStationInfo(BuildContext context, ChargingStationModel station) {
+void showStationInfo(BuildContext context, StationModel station) {
   showModalBottomSheet(
     context: context,
     builder: (BuildContext context) {
