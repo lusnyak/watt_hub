@@ -82,17 +82,14 @@ class _VerificationView extends StatelessWidget {
                 ),
                 15.heightBox,
                 Center(
-                  child: TextButton(
-                    child: Text(
-                      "resend",
-                      style: body14SemiBoldTextStyle,
-                    ),
-                    onPressed: () {
-                      context
-                          .read<VerificationBloc>()
-                          .add(const VerificationEvent.resendOtp());
-                    },
-                  ),
+                  child: WHTextButton.create(
+                      onPressed: () {
+                        context
+                            .read<VerificationBloc>()
+                            .add(const VerificationEvent.resendOtp());
+                      },
+                      text: 'resend',
+                      color: WattHubColors.primaryGreenColor),
                 ),
                 200.heightBox,
                 const Divider(color: WattHubColors.primaryLightGreenColor),
