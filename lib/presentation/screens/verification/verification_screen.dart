@@ -62,7 +62,11 @@ class _VerificationView extends StatelessWidget {
                   builder: (context, state) {
                     return Column(
                       children: [
-                        const WHPinPut(),
+                        WHPinPut(onCompleted: (val) {
+                          context
+                              .read<VerificationBloc>()
+                              .add(VerificationEvent.verifyOtp(val));
+                        }),
                         30.heightBox,
                         if (state is VerificationLoading)
                           const WHCircularSpin(),
