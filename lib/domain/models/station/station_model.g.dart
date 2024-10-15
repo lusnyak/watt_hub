@@ -1,14 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'charging_station_model.dart';
+part of 'station_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChargingStationModelImpl _$$ChargingStationModelImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ChargingStationModelImpl(
+_$StationModelImpl _$$StationModelImplFromJson(Map<String, dynamic> json) =>
+    _$StationModelImpl(
       id: (json['id'] as num).toInt(),
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
@@ -28,8 +27,7 @@ _$ChargingStationModelImpl _$$ChargingStationModelImplFromJson(
       user: UserModel.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ChargingStationModelImplToJson(
-        _$ChargingStationModelImpl instance) =>
+Map<String, dynamic> _$$StationModelImplToJson(_$StationModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'latitude': instance.latitude,

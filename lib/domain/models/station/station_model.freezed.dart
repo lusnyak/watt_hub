@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'charging_station_model.dart';
+part of 'station_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,45 +14,43 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ChargingStationModel _$ChargingStationModelFromJson(Map<String, dynamic> json) {
-  return _ChargingStationModel.fromJson(json);
+StationModel _$StationModelFromJson(Map<String, dynamic> json) {
+  return _StationModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ChargingStationModel {
+mixin _$StationModel {
   int get id => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
   DateTime get startTime => throw _privateConstructorUsedError;
   DateTime get endTime => throw _privateConstructorUsedError;
-  ConnectorTypeModel get connectorType =>
-      throw _privateConstructorUsedError; // Use the ConnectorType model
-  int get hourlyRate => throw _privateConstructorUsedError; // Changed to int
-  int get kwt => throw _privateConstructorUsedError; // Changed to int
+  ConnectorTypeModel get connectorType => throw _privateConstructorUsedError;
+  int get hourlyRate => throw _privateConstructorUsedError;
+  int get kwt => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  List<String> get image =>
-      throw _privateConstructorUsedError; // Changed to List<String>
+  List<String> get image => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
   List<String> get reviews => throw _privateConstructorUsedError;
   double get averageRate => throw _privateConstructorUsedError;
   UserModel get user => throw _privateConstructorUsedError;
 
-  /// Serializes this ChargingStationModel to a JSON map.
+  /// Serializes this StationModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of ChargingStationModel
+  /// Create a copy of StationModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChargingStationModelCopyWith<ChargingStationModel> get copyWith =>
+  $StationModelCopyWith<StationModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ChargingStationModelCopyWith<$Res> {
-  factory $ChargingStationModelCopyWith(ChargingStationModel value,
-          $Res Function(ChargingStationModel) then) =
-      _$ChargingStationModelCopyWithImpl<$Res, ChargingStationModel>;
+abstract class $StationModelCopyWith<$Res> {
+  factory $StationModelCopyWith(
+          StationModel value, $Res Function(StationModel) then) =
+      _$StationModelCopyWithImpl<$Res, StationModel>;
   @useResult
   $Res call(
       {int id,
@@ -76,17 +74,16 @@ abstract class $ChargingStationModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ChargingStationModelCopyWithImpl<$Res,
-        $Val extends ChargingStationModel>
-    implements $ChargingStationModelCopyWith<$Res> {
-  _$ChargingStationModelCopyWithImpl(this._value, this._then);
+class _$StationModelCopyWithImpl<$Res, $Val extends StationModel>
+    implements $StationModelCopyWith<$Res> {
+  _$StationModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ChargingStationModel
+  /// Create a copy of StationModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -171,7 +168,7 @@ class _$ChargingStationModelCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of ChargingStationModel
+  /// Create a copy of StationModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -181,7 +178,7 @@ class _$ChargingStationModelCopyWithImpl<$Res,
     });
   }
 
-  /// Create a copy of ChargingStationModel
+  /// Create a copy of StationModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -193,11 +190,11 @@ class _$ChargingStationModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ChargingStationModelImplCopyWith<$Res>
-    implements $ChargingStationModelCopyWith<$Res> {
-  factory _$$ChargingStationModelImplCopyWith(_$ChargingStationModelImpl value,
-          $Res Function(_$ChargingStationModelImpl) then) =
-      __$$ChargingStationModelImplCopyWithImpl<$Res>;
+abstract class _$$StationModelImplCopyWith<$Res>
+    implements $StationModelCopyWith<$Res> {
+  factory _$$StationModelImplCopyWith(
+          _$StationModelImpl value, $Res Function(_$StationModelImpl) then) =
+      __$$StationModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -224,14 +221,14 @@ abstract class _$$ChargingStationModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ChargingStationModelImplCopyWithImpl<$Res>
-    extends _$ChargingStationModelCopyWithImpl<$Res, _$ChargingStationModelImpl>
-    implements _$$ChargingStationModelImplCopyWith<$Res> {
-  __$$ChargingStationModelImplCopyWithImpl(_$ChargingStationModelImpl _value,
-      $Res Function(_$ChargingStationModelImpl) _then)
+class __$$StationModelImplCopyWithImpl<$Res>
+    extends _$StationModelCopyWithImpl<$Res, _$StationModelImpl>
+    implements _$$StationModelImplCopyWith<$Res> {
+  __$$StationModelImplCopyWithImpl(
+      _$StationModelImpl _value, $Res Function(_$StationModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ChargingStationModel
+  /// Create a copy of StationModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -252,7 +249,7 @@ class __$$ChargingStationModelImplCopyWithImpl<$Res>
     Object? averageRate = null,
     Object? user = null,
   }) {
-    return _then(_$ChargingStationModelImpl(
+    return _then(_$StationModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -319,8 +316,8 @@ class __$$ChargingStationModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChargingStationModelImpl implements _ChargingStationModel {
-  const _$ChargingStationModelImpl(
+class _$StationModelImpl implements _StationModel {
+  const _$StationModelImpl(
       {required this.id,
       required this.latitude,
       required this.longitude,
@@ -339,8 +336,8 @@ class _$ChargingStationModelImpl implements _ChargingStationModel {
       : _image = image,
         _reviews = reviews;
 
-  factory _$ChargingStationModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ChargingStationModelImplFromJson(json);
+  factory _$StationModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StationModelImplFromJson(json);
 
   @override
   final int id;
@@ -354,13 +351,10 @@ class _$ChargingStationModelImpl implements _ChargingStationModel {
   final DateTime endTime;
   @override
   final ConnectorTypeModel connectorType;
-// Use the ConnectorType model
   @override
   final int hourlyRate;
-// Changed to int
   @override
   final int kwt;
-// Changed to int
   @override
   final String phoneNumber;
   @override
@@ -373,7 +367,6 @@ class _$ChargingStationModelImpl implements _ChargingStationModel {
     return EqualUnmodifiableListView(_image);
   }
 
-// Changed to List<String>
   @override
   final String address;
   final List<String> _reviews;
@@ -391,14 +384,14 @@ class _$ChargingStationModelImpl implements _ChargingStationModel {
 
   @override
   String toString() {
-    return 'ChargingStationModel(id: $id, latitude: $latitude, longitude: $longitude, startTime: $startTime, endTime: $endTime, connectorType: $connectorType, hourlyRate: $hourlyRate, kwt: $kwt, phoneNumber: $phoneNumber, name: $name, image: $image, address: $address, reviews: $reviews, averageRate: $averageRate, user: $user)';
+    return 'StationModel(id: $id, latitude: $latitude, longitude: $longitude, startTime: $startTime, endTime: $endTime, connectorType: $connectorType, hourlyRate: $hourlyRate, kwt: $kwt, phoneNumber: $phoneNumber, name: $name, image: $image, address: $address, reviews: $reviews, averageRate: $averageRate, user: $user)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChargingStationModelImpl &&
+            other is _$StationModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
@@ -443,26 +436,24 @@ class _$ChargingStationModelImpl implements _ChargingStationModel {
       averageRate,
       user);
 
-  /// Create a copy of ChargingStationModel
+  /// Create a copy of StationModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChargingStationModelImplCopyWith<_$ChargingStationModelImpl>
-      get copyWith =>
-          __$$ChargingStationModelImplCopyWithImpl<_$ChargingStationModelImpl>(
-              this, _$identity);
+  _$$StationModelImplCopyWith<_$StationModelImpl> get copyWith =>
+      __$$StationModelImplCopyWithImpl<_$StationModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ChargingStationModelImplToJson(
+    return _$$StationModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _ChargingStationModel implements ChargingStationModel {
-  const factory _ChargingStationModel(
+abstract class _StationModel implements StationModel {
+  const factory _StationModel(
       {required final int id,
       required final double latitude,
       required final double longitude,
@@ -477,10 +468,10 @@ abstract class _ChargingStationModel implements ChargingStationModel {
       required final String address,
       required final List<String> reviews,
       required final double averageRate,
-      required final UserModel user}) = _$ChargingStationModelImpl;
+      required final UserModel user}) = _$StationModelImpl;
 
-  factory _ChargingStationModel.fromJson(Map<String, dynamic> json) =
-      _$ChargingStationModelImpl.fromJson;
+  factory _StationModel.fromJson(Map<String, dynamic> json) =
+      _$StationModelImpl.fromJson;
 
   @override
   int get id;
@@ -493,17 +484,17 @@ abstract class _ChargingStationModel implements ChargingStationModel {
   @override
   DateTime get endTime;
   @override
-  ConnectorTypeModel get connectorType; // Use the ConnectorType model
+  ConnectorTypeModel get connectorType;
   @override
-  int get hourlyRate; // Changed to int
+  int get hourlyRate;
   @override
-  int get kwt; // Changed to int
+  int get kwt;
   @override
   String get phoneNumber;
   @override
   String get name;
   @override
-  List<String> get image; // Changed to List<String>
+  List<String> get image;
   @override
   String get address;
   @override
@@ -513,10 +504,10 @@ abstract class _ChargingStationModel implements ChargingStationModel {
   @override
   UserModel get user;
 
-  /// Create a copy of ChargingStationModel
+  /// Create a copy of StationModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChargingStationModelImplCopyWith<_$ChargingStationModelImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$StationModelImplCopyWith<_$StationModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
