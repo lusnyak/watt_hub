@@ -6,27 +6,22 @@ class WHTextButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Color color;
 
-
-
   // Private constructor
   const WHTextButton._({
     required this.text,
     required this.onPressed,
     required this.color,
-
   });
 
   // Factory constructor
-  factory WHTextButton.create({
-    required String text,
-    required VoidCallback onPressed,
-    required Color color
-  }) {
+  factory WHTextButton.create(
+      {required String text,
+      required VoidCallback onPressed,
+      required Color color}) {
     return WHTextButton._(
       text: text,
       onPressed: onPressed,
       color: color,
-
     );
   }
 
@@ -35,11 +30,7 @@ class WHTextButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-
         foregroundColor: WattHubColors.primaryGreenColor,
-
-
-
       ),
       child: Text(text),
     );
