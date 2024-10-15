@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
+import 'package:watt_hub/domain/models/filter/filter_model.dart';
 import 'package:watt_hub/presentation/screens/filter/bloc/filter_bloc.dart';
 import 'package:watt_hub/presentation/screens/filter/widgets/filter_slider.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
@@ -36,19 +37,60 @@ class FilterView extends StatelessWidget {
         child: BlocBuilder<FilterBloc, FilterState>(
           builder: (context, state) {
             return state.when(
-              initial: () => Center(child: Text('Select filters')),
+              initial: () => nil,
               loading: () => const Center(child: CircularProgressIndicator()),
               error: (message) => Center(child: Text('Error: $message')),
-              loaded: (connectors, currentSliderValue) {
+              loaded: (
+                connectors,
+                cars,
+                currentSliderValue,
+                selectedCar,
+                selectedConnector,
+              ) {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    const Text('Car Type'),
-                    20.h.heightBox,
-                    const Text('Connector Type'),
-                    20.h.heightBox,
-                    Text('Current Rating: $currentSliderValue'),
+                    WhDropDownButton(
+                      items: cars,
+                      itemLabel: (car) => car.title,
+                      onChanged: (value) {
+                        if (value != null) {
+                          context
+                              .read<FilterBloc>()
+                              .add(FilterEvent.carTypeChanged(value));
+                        }
+                      },
+                      value: selectedCar,
+                    ),
+                    40.h.heightBox,
+                    WhDropDownButton(
+                      items: connectors,
+                      itemLabel: (connector) => connector.title,
+                      onChanged: (value) {
+                        if (value != null) {
+                          context
+                              .read<FilterBloc>()
+                              .add(FilterEvent.connectorTypeChanged(value));
+                        }
+                      },
+                      value: selectedConnector,
+                    ),
+                    40.h.heightBox,
                     FilterSlider(currentSliderValue: currentSliderValue),
+                    const Spacer(),
+                    WHElevatedButton.primary(
+                      title: context.localized.filter,
+                      onPressed: () {
+                        Navigator.pop(
+                          context,
+                          FilterModel(
+                            connector: selectedConnector!,
+                            car: selectedCar!,
+                            rating: currentSliderValue,
+                          ),
+                        );
+                      },
+                    )
                   ],
                 ).paddingAll(20.r);
               },

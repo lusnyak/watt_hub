@@ -20,18 +20,27 @@ mixin _$FilterEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(double newValue) sliderValueChanged,
+    required TResult Function(CarTypeModel selectedCar) carTypeChanged,
+    required TResult Function(ConnectorTypeModel selectedConnector)
+        connectorTypeChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(double newValue)? sliderValueChanged,
+    TResult? Function(CarTypeModel selectedCar)? carTypeChanged,
+    TResult? Function(ConnectorTypeModel selectedConnector)?
+        connectorTypeChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(double newValue)? sliderValueChanged,
+    TResult Function(CarTypeModel selectedCar)? carTypeChanged,
+    TResult Function(ConnectorTypeModel selectedConnector)?
+        connectorTypeChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +48,24 @@ mixin _$FilterEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SliderValueChanged value) sliderValueChanged,
+    required TResult Function(_CarTypeChanged value) carTypeChanged,
+    required TResult Function(_ConnectorTypeChanged value) connectorTypeChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_SliderValueChanged value)? sliderValueChanged,
+    TResult? Function(_CarTypeChanged value)? carTypeChanged,
+    TResult? Function(_ConnectorTypeChanged value)? connectorTypeChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SliderValueChanged value)? sliderValueChanged,
+    TResult Function(_CarTypeChanged value)? carTypeChanged,
+    TResult Function(_ConnectorTypeChanged value)? connectorTypeChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +135,9 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(double newValue) sliderValueChanged,
+    required TResult Function(CarTypeModel selectedCar) carTypeChanged,
+    required TResult Function(ConnectorTypeModel selectedConnector)
+        connectorTypeChanged,
   }) {
     return started();
   }
@@ -129,6 +147,9 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(double newValue)? sliderValueChanged,
+    TResult? Function(CarTypeModel selectedCar)? carTypeChanged,
+    TResult? Function(ConnectorTypeModel selectedConnector)?
+        connectorTypeChanged,
   }) {
     return started?.call();
   }
@@ -138,6 +159,9 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(double newValue)? sliderValueChanged,
+    TResult Function(CarTypeModel selectedCar)? carTypeChanged,
+    TResult Function(ConnectorTypeModel selectedConnector)?
+        connectorTypeChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -151,6 +175,8 @@ class _$StartedImpl implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SliderValueChanged value) sliderValueChanged,
+    required TResult Function(_CarTypeChanged value) carTypeChanged,
+    required TResult Function(_ConnectorTypeChanged value) connectorTypeChanged,
   }) {
     return started(this);
   }
@@ -160,6 +186,8 @@ class _$StartedImpl implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_SliderValueChanged value)? sliderValueChanged,
+    TResult? Function(_CarTypeChanged value)? carTypeChanged,
+    TResult? Function(_ConnectorTypeChanged value)? connectorTypeChanged,
   }) {
     return started?.call(this);
   }
@@ -169,6 +197,8 @@ class _$StartedImpl implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SliderValueChanged value)? sliderValueChanged,
+    TResult Function(_CarTypeChanged value)? carTypeChanged,
+    TResult Function(_ConnectorTypeChanged value)? connectorTypeChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -254,6 +284,9 @@ class _$SliderValueChangedImpl implements _SliderValueChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(double newValue) sliderValueChanged,
+    required TResult Function(CarTypeModel selectedCar) carTypeChanged,
+    required TResult Function(ConnectorTypeModel selectedConnector)
+        connectorTypeChanged,
   }) {
     return sliderValueChanged(newValue);
   }
@@ -263,6 +296,9 @@ class _$SliderValueChangedImpl implements _SliderValueChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(double newValue)? sliderValueChanged,
+    TResult? Function(CarTypeModel selectedCar)? carTypeChanged,
+    TResult? Function(ConnectorTypeModel selectedConnector)?
+        connectorTypeChanged,
   }) {
     return sliderValueChanged?.call(newValue);
   }
@@ -272,6 +308,9 @@ class _$SliderValueChangedImpl implements _SliderValueChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(double newValue)? sliderValueChanged,
+    TResult Function(CarTypeModel selectedCar)? carTypeChanged,
+    TResult Function(ConnectorTypeModel selectedConnector)?
+        connectorTypeChanged,
     required TResult orElse(),
   }) {
     if (sliderValueChanged != null) {
@@ -285,6 +324,8 @@ class _$SliderValueChangedImpl implements _SliderValueChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_SliderValueChanged value) sliderValueChanged,
+    required TResult Function(_CarTypeChanged value) carTypeChanged,
+    required TResult Function(_ConnectorTypeChanged value) connectorTypeChanged,
   }) {
     return sliderValueChanged(this);
   }
@@ -294,6 +335,8 @@ class _$SliderValueChangedImpl implements _SliderValueChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_SliderValueChanged value)? sliderValueChanged,
+    TResult? Function(_CarTypeChanged value)? carTypeChanged,
+    TResult? Function(_ConnectorTypeChanged value)? connectorTypeChanged,
   }) {
     return sliderValueChanged?.call(this);
   }
@@ -303,6 +346,8 @@ class _$SliderValueChangedImpl implements _SliderValueChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_SliderValueChanged value)? sliderValueChanged,
+    TResult Function(_CarTypeChanged value)? carTypeChanged,
+    TResult Function(_ConnectorTypeChanged value)? connectorTypeChanged,
     required TResult orElse(),
   }) {
     if (sliderValueChanged != null) {
@@ -326,6 +371,347 @@ abstract class _SliderValueChanged implements FilterEvent {
 }
 
 /// @nodoc
+abstract class _$$CarTypeChangedImplCopyWith<$Res> {
+  factory _$$CarTypeChangedImplCopyWith(_$CarTypeChangedImpl value,
+          $Res Function(_$CarTypeChangedImpl) then) =
+      __$$CarTypeChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CarTypeModel selectedCar});
+
+  $CarTypeModelCopyWith<$Res> get selectedCar;
+}
+
+/// @nodoc
+class __$$CarTypeChangedImplCopyWithImpl<$Res>
+    extends _$FilterEventCopyWithImpl<$Res, _$CarTypeChangedImpl>
+    implements _$$CarTypeChangedImplCopyWith<$Res> {
+  __$$CarTypeChangedImplCopyWithImpl(
+      _$CarTypeChangedImpl _value, $Res Function(_$CarTypeChangedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedCar = null,
+  }) {
+    return _then(_$CarTypeChangedImpl(
+      null == selectedCar
+          ? _value.selectedCar
+          : selectedCar // ignore: cast_nullable_to_non_nullable
+              as CarTypeModel,
+    ));
+  }
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CarTypeModelCopyWith<$Res> get selectedCar {
+    return $CarTypeModelCopyWith<$Res>(_value.selectedCar, (value) {
+      return _then(_value.copyWith(selectedCar: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$CarTypeChangedImpl implements _CarTypeChanged {
+  const _$CarTypeChangedImpl(this.selectedCar);
+
+  @override
+  final CarTypeModel selectedCar;
+
+  @override
+  String toString() {
+    return 'FilterEvent.carTypeChanged(selectedCar: $selectedCar)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CarTypeChangedImpl &&
+            (identical(other.selectedCar, selectedCar) ||
+                other.selectedCar == selectedCar));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, selectedCar);
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CarTypeChangedImplCopyWith<_$CarTypeChangedImpl> get copyWith =>
+      __$$CarTypeChangedImplCopyWithImpl<_$CarTypeChangedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(double newValue) sliderValueChanged,
+    required TResult Function(CarTypeModel selectedCar) carTypeChanged,
+    required TResult Function(ConnectorTypeModel selectedConnector)
+        connectorTypeChanged,
+  }) {
+    return carTypeChanged(selectedCar);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(double newValue)? sliderValueChanged,
+    TResult? Function(CarTypeModel selectedCar)? carTypeChanged,
+    TResult? Function(ConnectorTypeModel selectedConnector)?
+        connectorTypeChanged,
+  }) {
+    return carTypeChanged?.call(selectedCar);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(double newValue)? sliderValueChanged,
+    TResult Function(CarTypeModel selectedCar)? carTypeChanged,
+    TResult Function(ConnectorTypeModel selectedConnector)?
+        connectorTypeChanged,
+    required TResult orElse(),
+  }) {
+    if (carTypeChanged != null) {
+      return carTypeChanged(selectedCar);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_SliderValueChanged value) sliderValueChanged,
+    required TResult Function(_CarTypeChanged value) carTypeChanged,
+    required TResult Function(_ConnectorTypeChanged value) connectorTypeChanged,
+  }) {
+    return carTypeChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_SliderValueChanged value)? sliderValueChanged,
+    TResult? Function(_CarTypeChanged value)? carTypeChanged,
+    TResult? Function(_ConnectorTypeChanged value)? connectorTypeChanged,
+  }) {
+    return carTypeChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_SliderValueChanged value)? sliderValueChanged,
+    TResult Function(_CarTypeChanged value)? carTypeChanged,
+    TResult Function(_ConnectorTypeChanged value)? connectorTypeChanged,
+    required TResult orElse(),
+  }) {
+    if (carTypeChanged != null) {
+      return carTypeChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CarTypeChanged implements FilterEvent {
+  const factory _CarTypeChanged(final CarTypeModel selectedCar) =
+      _$CarTypeChangedImpl;
+
+  CarTypeModel get selectedCar;
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CarTypeChangedImplCopyWith<_$CarTypeChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConnectorTypeChangedImplCopyWith<$Res> {
+  factory _$$ConnectorTypeChangedImplCopyWith(_$ConnectorTypeChangedImpl value,
+          $Res Function(_$ConnectorTypeChangedImpl) then) =
+      __$$ConnectorTypeChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ConnectorTypeModel selectedConnector});
+
+  $ConnectorTypeModelCopyWith<$Res> get selectedConnector;
+}
+
+/// @nodoc
+class __$$ConnectorTypeChangedImplCopyWithImpl<$Res>
+    extends _$FilterEventCopyWithImpl<$Res, _$ConnectorTypeChangedImpl>
+    implements _$$ConnectorTypeChangedImplCopyWith<$Res> {
+  __$$ConnectorTypeChangedImplCopyWithImpl(_$ConnectorTypeChangedImpl _value,
+      $Res Function(_$ConnectorTypeChangedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedConnector = null,
+  }) {
+    return _then(_$ConnectorTypeChangedImpl(
+      null == selectedConnector
+          ? _value.selectedConnector
+          : selectedConnector // ignore: cast_nullable_to_non_nullable
+              as ConnectorTypeModel,
+    ));
+  }
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConnectorTypeModelCopyWith<$Res> get selectedConnector {
+    return $ConnectorTypeModelCopyWith<$Res>(_value.selectedConnector, (value) {
+      return _then(_value.copyWith(selectedConnector: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ConnectorTypeChangedImpl implements _ConnectorTypeChanged {
+  const _$ConnectorTypeChangedImpl(this.selectedConnector);
+
+  @override
+  final ConnectorTypeModel selectedConnector;
+
+  @override
+  String toString() {
+    return 'FilterEvent.connectorTypeChanged(selectedConnector: $selectedConnector)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConnectorTypeChangedImpl &&
+            (identical(other.selectedConnector, selectedConnector) ||
+                other.selectedConnector == selectedConnector));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, selectedConnector);
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConnectorTypeChangedImplCopyWith<_$ConnectorTypeChangedImpl>
+      get copyWith =>
+          __$$ConnectorTypeChangedImplCopyWithImpl<_$ConnectorTypeChangedImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(double newValue) sliderValueChanged,
+    required TResult Function(CarTypeModel selectedCar) carTypeChanged,
+    required TResult Function(ConnectorTypeModel selectedConnector)
+        connectorTypeChanged,
+  }) {
+    return connectorTypeChanged(selectedConnector);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(double newValue)? sliderValueChanged,
+    TResult? Function(CarTypeModel selectedCar)? carTypeChanged,
+    TResult? Function(ConnectorTypeModel selectedConnector)?
+        connectorTypeChanged,
+  }) {
+    return connectorTypeChanged?.call(selectedConnector);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(double newValue)? sliderValueChanged,
+    TResult Function(CarTypeModel selectedCar)? carTypeChanged,
+    TResult Function(ConnectorTypeModel selectedConnector)?
+        connectorTypeChanged,
+    required TResult orElse(),
+  }) {
+    if (connectorTypeChanged != null) {
+      return connectorTypeChanged(selectedConnector);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_SliderValueChanged value) sliderValueChanged,
+    required TResult Function(_CarTypeChanged value) carTypeChanged,
+    required TResult Function(_ConnectorTypeChanged value) connectorTypeChanged,
+  }) {
+    return connectorTypeChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_SliderValueChanged value)? sliderValueChanged,
+    TResult? Function(_CarTypeChanged value)? carTypeChanged,
+    TResult? Function(_ConnectorTypeChanged value)? connectorTypeChanged,
+  }) {
+    return connectorTypeChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_SliderValueChanged value)? sliderValueChanged,
+    TResult Function(_CarTypeChanged value)? carTypeChanged,
+    TResult Function(_ConnectorTypeChanged value)? connectorTypeChanged,
+    required TResult orElse(),
+  }) {
+    if (connectorTypeChanged != null) {
+      return connectorTypeChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ConnectorTypeChanged implements FilterEvent {
+  const factory _ConnectorTypeChanged(
+      final ConnectorTypeModel selectedConnector) = _$ConnectorTypeChangedImpl;
+
+  ConnectorTypeModel get selectedConnector;
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ConnectorTypeChangedImplCopyWith<_$ConnectorTypeChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$FilterState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -333,7 +719,11 @@ mixin _$FilterState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -343,7 +733,11 @@ mixin _$FilterState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)?
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -353,7 +747,11 @@ mixin _$FilterState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)?
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -451,7 +849,11 @@ class _$InitialStateImpl implements _InitialState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)
         loaded,
   }) {
     return initial();
@@ -464,7 +866,11 @@ class _$InitialStateImpl implements _InitialState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)?
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)?
         loaded,
   }) {
     return initial?.call();
@@ -477,7 +883,11 @@ class _$InitialStateImpl implements _InitialState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)?
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)?
         loaded,
     required TResult orElse(),
   }) {
@@ -574,7 +984,11 @@ class _$LoadingStateImpl implements _LoadingState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)
         loaded,
   }) {
     return loading();
@@ -587,7 +1001,11 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)?
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)?
         loaded,
   }) {
     return loading?.call();
@@ -600,7 +1018,11 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)?
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)?
         loaded,
     required TResult orElse(),
   }) {
@@ -724,7 +1146,11 @@ class _$ErrorStateImpl implements _ErrorState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)
         loaded,
   }) {
     return error(message);
@@ -737,7 +1163,11 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)?
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)?
         loaded,
   }) {
     return error?.call(message);
@@ -750,7 +1180,11 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)?
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)?
         loaded,
     required TResult orElse(),
   }) {
@@ -816,7 +1250,15 @@ abstract class _$$LoadedStateImplCopyWith<$Res> {
           _$LoadedStateImpl value, $Res Function(_$LoadedStateImpl) then) =
       __$$LoadedStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<ConnectorTypeModel> connectors, double currentSliderValue});
+  $Res call(
+      {List<ConnectorTypeModel> connectors,
+      List<CarTypeModel> cars,
+      double currentSliderValue,
+      CarTypeModel? selectedCar,
+      ConnectorTypeModel? selectedConnector});
+
+  $CarTypeModelCopyWith<$Res>? get selectedCar;
+  $ConnectorTypeModelCopyWith<$Res>? get selectedConnector;
 }
 
 /// @nodoc
@@ -833,27 +1275,75 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? connectors = null,
+    Object? cars = null,
     Object? currentSliderValue = null,
+    Object? selectedCar = freezed,
+    Object? selectedConnector = freezed,
   }) {
     return _then(_$LoadedStateImpl(
       null == connectors
           ? _value._connectors
           : connectors // ignore: cast_nullable_to_non_nullable
               as List<ConnectorTypeModel>,
+      null == cars
+          ? _value._cars
+          : cars // ignore: cast_nullable_to_non_nullable
+              as List<CarTypeModel>,
       currentSliderValue: null == currentSliderValue
           ? _value.currentSliderValue
           : currentSliderValue // ignore: cast_nullable_to_non_nullable
               as double,
+      selectedCar: freezed == selectedCar
+          ? _value.selectedCar
+          : selectedCar // ignore: cast_nullable_to_non_nullable
+              as CarTypeModel?,
+      selectedConnector: freezed == selectedConnector
+          ? _value.selectedConnector
+          : selectedConnector // ignore: cast_nullable_to_non_nullable
+              as ConnectorTypeModel?,
     ));
+  }
+
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CarTypeModelCopyWith<$Res>? get selectedCar {
+    if (_value.selectedCar == null) {
+      return null;
+    }
+
+    return $CarTypeModelCopyWith<$Res>(_value.selectedCar!, (value) {
+      return _then(_value.copyWith(selectedCar: value));
+    });
+  }
+
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConnectorTypeModelCopyWith<$Res>? get selectedConnector {
+    if (_value.selectedConnector == null) {
+      return null;
+    }
+
+    return $ConnectorTypeModelCopyWith<$Res>(_value.selectedConnector!,
+        (value) {
+      return _then(_value.copyWith(selectedConnector: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$LoadedStateImpl implements _LoadedState {
-  const _$LoadedStateImpl(final List<ConnectorTypeModel> connectors,
-      {this.currentSliderValue = 1})
-      : _connectors = connectors;
+  const _$LoadedStateImpl(
+      final List<ConnectorTypeModel> connectors, final List<CarTypeModel> cars,
+      {required this.currentSliderValue,
+      this.selectedCar,
+      this.selectedConnector})
+      : _connectors = connectors,
+        _cars = cars;
 
   final List<ConnectorTypeModel> _connectors;
   @override
@@ -863,13 +1353,24 @@ class _$LoadedStateImpl implements _LoadedState {
     return EqualUnmodifiableListView(_connectors);
   }
 
+  final List<CarTypeModel> _cars;
   @override
-  @JsonKey()
+  List<CarTypeModel> get cars {
+    if (_cars is EqualUnmodifiableListView) return _cars;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_cars);
+  }
+
+  @override
   final double currentSliderValue;
+  @override
+  final CarTypeModel? selectedCar;
+  @override
+  final ConnectorTypeModel? selectedConnector;
 
   @override
   String toString() {
-    return 'FilterState.loaded(connectors: $connectors, currentSliderValue: $currentSliderValue)';
+    return 'FilterState.loaded(connectors: $connectors, cars: $cars, currentSliderValue: $currentSliderValue, selectedCar: $selectedCar, selectedConnector: $selectedConnector)';
   }
 
   @override
@@ -879,13 +1380,23 @@ class _$LoadedStateImpl implements _LoadedState {
             other is _$LoadedStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._connectors, _connectors) &&
+            const DeepCollectionEquality().equals(other._cars, _cars) &&
             (identical(other.currentSliderValue, currentSliderValue) ||
-                other.currentSliderValue == currentSliderValue));
+                other.currentSliderValue == currentSliderValue) &&
+            (identical(other.selectedCar, selectedCar) ||
+                other.selectedCar == selectedCar) &&
+            (identical(other.selectedConnector, selectedConnector) ||
+                other.selectedConnector == selectedConnector));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_connectors), currentSliderValue);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_connectors),
+      const DeepCollectionEquality().hash(_cars),
+      currentSliderValue,
+      selectedCar,
+      selectedConnector);
 
   /// Create a copy of FilterState
   /// with the given fields replaced by the non-null parameter values.
@@ -902,10 +1413,15 @@ class _$LoadedStateImpl implements _LoadedState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)
         loaded,
   }) {
-    return loaded(connectors, currentSliderValue);
+    return loaded(
+        connectors, cars, currentSliderValue, selectedCar, selectedConnector);
   }
 
   @override
@@ -915,10 +1431,15 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)?
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)?
         loaded,
   }) {
-    return loaded?.call(connectors, currentSliderValue);
+    return loaded?.call(
+        connectors, cars, currentSliderValue, selectedCar, selectedConnector);
   }
 
   @override
@@ -928,12 +1449,17 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(
-            List<ConnectorTypeModel> connectors, double currentSliderValue)?
+            List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars,
+            double currentSliderValue,
+            CarTypeModel? selectedCar,
+            ConnectorTypeModel? selectedConnector)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(connectors, currentSliderValue);
+      return loaded(
+          connectors, cars, currentSliderValue, selectedCar, selectedConnector);
     }
     return orElse();
   }
@@ -977,11 +1503,17 @@ class _$LoadedStateImpl implements _LoadedState {
 }
 
 abstract class _LoadedState implements FilterState {
-  const factory _LoadedState(final List<ConnectorTypeModel> connectors,
-      {final double currentSliderValue}) = _$LoadedStateImpl;
+  const factory _LoadedState(
+      final List<ConnectorTypeModel> connectors, final List<CarTypeModel> cars,
+      {required final double currentSliderValue,
+      final CarTypeModel? selectedCar,
+      final ConnectorTypeModel? selectedConnector}) = _$LoadedStateImpl;
 
   List<ConnectorTypeModel> get connectors;
+  List<CarTypeModel> get cars;
   double get currentSliderValue;
+  CarTypeModel? get selectedCar;
+  ConnectorTypeModel? get selectedConnector;
 
   /// Create a copy of FilterState
   /// with the given fields replaced by the non-null parameter values.
