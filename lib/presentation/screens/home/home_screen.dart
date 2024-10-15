@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
+import 'package:watt_hub/domain/models/filter/filter_model.dart';
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:watt_hub/presentation/screens/home/widgets/map_container.dart';
 import 'package:watt_hub/presentation/screens/home/widgets/stations_list.dart';
@@ -38,7 +39,11 @@ class _HomeView extends StatelessWidget {
           actions: [
             WHIconButton.primary(
               icon: const Icon(Icons.filter_alt),
-              onPressed: () => context.router.push(const FilterRoute()),
+              onPressed: () async {
+                final filterData =
+                    await context.router.push<FilterModel>(const FilterRoute());
+                debugPrint('${filterData?.connector.title} filterData');
+              },
             ).paddingOnly(right: 20.w),
           ],
         ),
