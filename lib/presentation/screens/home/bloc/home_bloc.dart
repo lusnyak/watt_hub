@@ -46,7 +46,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       await _initializeLocation();
       await Future.delayed(const Duration(seconds: 1));
 
-      final stations = sampleStations
+      final stations = stationsData
           .map((stationJson) => StationModel.fromJson(stationJson))
           .toList();
 
@@ -84,7 +84,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
     mapController.move(stationLocation, 18.0);
 
-    final stations = sampleStations
+    final stations = stationsData
         .map((stationJson) => StationModel.fromJson(stationJson))
         .toList();
 
