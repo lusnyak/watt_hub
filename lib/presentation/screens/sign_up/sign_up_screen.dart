@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
@@ -87,18 +88,23 @@ class _SignUpView extends StatelessWidget {
                         Expanded(
                           child: RichText(
                             text: TextSpan(
-                              text: 'I agree to WattHub ',
+                              text: AppLocalizations.of(context).iAagreeToWattHub,
                               style: body16RegularTextStyle,
                               children: <TextSpan>[
                                 TextSpan(
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = () {},
-                                  text: 'Privacy Policy ',
+                                    ..onTap = () async {
+                                      final url = Uri.parse(
+                                          'https://termsfeed.com/live/cc373245-d9b0-410d-960c-db897b26bffc');
+                                      if (await canLaunchUrl(url)) {
+                                        await launchUrl(url);
+                                      }
+                                    },
+                                  text: AppLocalizations.of(context).privacyPolicy,
                                   style: green16RegularTextStyle,
                                 ),
-                                const TextSpan(
-                                  text:
-                                      'and confirm that I am over 17 years old.',
+                                 TextSpan(
+                                  text: AppLocalizations.of(context).andConfirm,
                                 ),
                               ],
                             ),

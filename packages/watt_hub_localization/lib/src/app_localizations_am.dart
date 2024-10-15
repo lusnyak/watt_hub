@@ -38,4 +38,13 @@ class AppLocalizationsAm extends AppLocalizations {
   @override
   String get pleaseAgree =>
       'Խնդրում ենք համաձայնել պայմաններին և մուտքագրել վավեր էլ.փոստ։';
+
+  @override
+  String get privacyPolicy => 'Գաղտնիության քաղաքականության ';
+
+  @override
+  String get iAagreeToWattHub => 'Ես համաձայն եմ WattHub-ի';
+
+  @override
+  String get andConfirm => 'հետ և հաստատում, որ ես 17 տարեկանից բարձր եմ:';
 }
