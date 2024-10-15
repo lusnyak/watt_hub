@@ -1,21 +1,11 @@
-import 'package:equatable/equatable.dart';
+part of 'onboarding_bloc.dart';
 
-abstract class OnboardingEvent extends Equatable {
-  const OnboardingEvent();
+@freezed
+class OnboardingEvent with _$OnboardingEvent {
+  const factory OnboardingEvent.loadOnboarding() = LoadOnboardingEvent;
 
-  @override
-  List<Object> get props => [];
-}
+  const factory OnboardingEvent.nextOnboarding() = NextOnboardingEvent;
 
-class NextOnboardingEvent extends OnboardingEvent {}
-
-class LoadOnboardingEvent extends OnboardingEvent {}
-
-class OnboardingPageChangedEvent extends OnboardingEvent {
-  final int pageIndex;
-
-  const OnboardingPageChangedEvent(this.pageIndex);
-
-  @override
-  List<Object> get props => [pageIndex];
+  const factory OnboardingEvent.onboardingPageChanged(int pageIndex) =
+      OnboardingPageChangedEvent;
 }

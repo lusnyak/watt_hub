@@ -1,22 +1,11 @@
-import 'package:equatable/equatable.dart';
-import 'package:watt_hub/domain/models/onboarding/onboarding_model.dart';
+part of 'onboarding_bloc.dart';
 
-abstract class OnboardingState extends Equatable {
-  const OnboardingState();
+@freezed
+class OnboardingState with _$OnboardingState {
+  const factory OnboardingState.initial() = _OnboardingInitialState;
 
-  @override
-  List<Object?> get props => [];
+  const factory OnboardingState.loaded(OnboardingModel currentModel) =
+      _OnboardingLoadedState;
+
+  const factory OnboardingState.complete() = _OnboardingCompleteState;
 }
-
-class OnboardingInitialState extends OnboardingState {}
-
-class OnboardingLoadedState extends OnboardingState {
-  final OnboardingModel currentModel;
-
-  const OnboardingLoadedState(this.currentModel);
-
-  @override
-  List<Object?> get props => [currentModel];
-}
-
-class OnboardingCompleteState extends OnboardingState {}

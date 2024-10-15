@@ -27,7 +27,6 @@ dependencies:
   json_annotation: ^4.9.0
   equatable: ^2.0.5
 
-  #TODO: - move on package UIKIT
 
 
 dev_dependencies:
