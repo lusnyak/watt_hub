@@ -67,7 +67,7 @@ class _VerificationView extends StatelessWidget {
                               .read<VerificationBloc>()
                               .add(VerificationEvent.verifyOtp(val));
                         }),
-                        30.heightBox,
+                        30.h.heightBox,
                         if (state is VerificationLoading)
                           const WHCircularSpin(),
                       ],
@@ -80,7 +80,7 @@ class _VerificationView extends StatelessWidget {
                     style: body14RegularTextStyle,
                   ),
                 ),
-                15.heightBox,
+                15.h.heightBox,
                 Center(
                   child: WHTextButton.create(
                       onPressed: () {
