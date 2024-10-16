@@ -28,6 +28,7 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i293.FilterBloc>(() => _i293.FilterBloc());
     gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
+    gh.factory<_i293.FilterBloc>(() => _i293.FilterBloc());
     return this;
   }
 }
