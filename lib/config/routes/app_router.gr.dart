@@ -106,10 +106,21 @@ class DetailRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [FilterScreen]
-class FilterRoute extends PageRouteInfo<void> {
-  const FilterRoute({List<PageRouteInfo>? children})
-      : super(
+class FilterRoute extends PageRouteInfo<FilterRouteArgs> {
+  FilterRoute({
+    Key? key,
+    String? selectedConnector,
+    String? selectedCar,
+    double? rating,
+    List<PageRouteInfo>? children,
+  }) : super(
           FilterRoute.name,
+          args: FilterRouteArgs(
+            key: key,
+            selectedConnector: selectedConnector,
+            selectedCar: selectedCar,
+            rating: rating,
+          ),
           initialChildren: children,
         );
 
@@ -118,9 +129,38 @@ class FilterRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const FilterScreen();
+      final args =
+          data.argsAs<FilterRouteArgs>(orElse: () => const FilterRouteArgs());
+      return FilterScreen(
+        key: args.key,
+        selectedConnector: args.selectedConnector,
+        selectedCar: args.selectedCar,
+        rating: args.rating,
+      );
     },
   );
+}
+
+class FilterRouteArgs {
+  const FilterRouteArgs({
+    this.key,
+    this.selectedConnector,
+    this.selectedCar,
+    this.rating,
+  });
+
+  final Key? key;
+
+  final String? selectedConnector;
+
+  final String? selectedCar;
+
+  final double? rating;
+
+  @override
+  String toString() {
+    return 'FilterRouteArgs{key: $key, selectedConnector: $selectedConnector, selectedCar: $selectedCar, rating: $rating}';
+  }
 }
 
 /// generated route for

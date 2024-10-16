@@ -19,10 +19,12 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
       : pageController = PageController(),
         super(const OnboardingState.initial()) {
     on<LoadOnboardingEvent>((event, emit) {
+      //////
       SharedPreferencesService().setBool(
         'isOnBoard',
         true,
       );
+      //////
       emit(OnboardingState.loaded(onboardingData[0]));
     });
 

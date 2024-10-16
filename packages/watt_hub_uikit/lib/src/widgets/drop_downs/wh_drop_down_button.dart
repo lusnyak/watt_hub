@@ -21,6 +21,7 @@ class WhDropDownButton<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('$value value');
     return DropdownButton2<T>(
       iconStyleData: IconStyleData(
         icon: suffixText != null
