@@ -65,7 +65,7 @@ class _VerificationView extends StatelessWidget {
                         const WHPinPut(),
                         30.heightBox,
                         if (state is VerificationLoading)
-                          const CircularProgressIndicator(),
+                          const WHCircularSpin(),
                       ],
                     );
                   },

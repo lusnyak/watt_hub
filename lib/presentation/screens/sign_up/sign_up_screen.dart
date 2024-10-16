@@ -76,9 +76,7 @@ class _SignUpView extends StatelessWidget {
                     Row(
                       children: [
                         Checkbox(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(6),
-                          ),
+                          shape: roundedBorder6,
                           value: emailState ? (state).isChecked : false,
                           onChanged: (bool? value) {
                             context
@@ -111,6 +109,7 @@ class _SignUpView extends StatelessWidget {
                       ],
                     ),
                     80.heightBox,
+
                     WHElevatedButton.primary(
                       title: AppLocalizations.of(context).continueText,
                       onPressed: () {
