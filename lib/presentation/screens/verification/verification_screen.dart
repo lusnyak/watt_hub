@@ -1,8 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:watt_hub/config/routes/app_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
+
+import '../../../config/locator/service_locator.dart';
+import '../../../config/routes/app_router.dart';
+import 'bloc/verification_bloc.dart';
 
 @RoutePage()
 class VerificationScreen extends StatelessWidget {
@@ -10,58 +14,98 @@ class VerificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => getIt<VerificationBloc>(),
+      child: const _VerificationView(),
+    );
+  }
+}
+
+class _VerificationView extends StatelessWidget {
+  const _VerificationView();
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-       // bottomSheet: Container(height: 200, color: Colors.yellow,),
-       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    AppLocalizations.of(context).otpCodeVerification,
-                    style: body24SemiBoldTextStyle,
-                  ),
-                  const Text("🔐")
-                ],
-              ),
-              Text(
-                AppLocalizations.of(context).sentAnOtpCode,
-                style: body16RegularTextStyle,
-              ),
-              40.heightBox,
-              const WHPinPut(),
-              30.heightBox,
-              Center(
-                child: Text(
-                  AppLocalizations.of(context).didntReceiveEmail,
-                  style: body14RegularTextStyle,
+      body: SafeArea(
+        child: BlocListener<VerificationBloc, VerificationState>(
+          listener: (context, state) {
+            state.map(
+              initial: (_) {},
+              loading: (_) {},
+              success: (_) {
+                AutoRouter.of(context).replace(const HomeRoute());
+              },
+              failure: (failure) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(failure.error)),
+                );
+              },
+            );
+          },
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  "${AppLocalizations.of(context).otpCodeVerification} \u{1F510}",
+                  style: body24SemiBoldTextStyle,
                 ),
-              ),
-              15.heightBox,
-              /// TODO: - TextButton - create UIKIt element
-              Center(
-                child: TextButton(
+                Text(
+                  AppLocalizations.of(context).sentAnOtpCode,
+                  style: body16RegularTextStyle,
+                ),
+                40.heightBox,
+                BlocBuilder<VerificationBloc, VerificationState>(
+                  builder: (context, state) {
+                    return Column(
+                      children: [
+                        const WHPinPut(),
+                        30.heightBox,
+                        if (state is VerificationLoading)
+                          const CircularProgressIndicator(),
+                      ],
+                    );
+                  },
+                ),
+                Center(
                   child: Text(
-                    "resend",
-                    style: body14SemiBoldTextStyle,
+                    AppLocalizations.of(context).didntReceiveEmail,
+                    style: body14RegularTextStyle,
                   ),
-                  onPressed: () {},
                 ),
-              ),
-              WHElevatedButton.primary(
-                title: AppLocalizations.of(context).continueText,
-                onPressed: () => AutoRouter.of(context).replace(
-                  const HomeRoute(),
+                15.heightBox,
+                Center(
+                  child: TextButton(
+                    child: Text(
+                      "resend",
+                      style: body14SemiBoldTextStyle,
+                    ),
+                    onPressed: () {
+                      context
+                          .read<VerificationBloc>()
+                          .add(const VerificationEvent.resendOtp());
+                    },
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ).expanded(),
-      ).paddingAll(20.0),
+                200.heightBox,
+                const Divider(color: WattHubColors.primaryLightGreenColor),
+                WHElevatedButton.primary(
+                  title: AppLocalizations.of(context).continueText,
+                  onPressed: () {
+                    const otpCode = '1234';
+                    context
+                        .read<VerificationBloc>()
+                        .add(const VerificationEvent.verifyOtp(otpCode));
+                  },
+                ),
+              ],
+            ).expanded(),
+          ).paddingAll(20.0),
+        ),
+      ),
     );
   }
 }
