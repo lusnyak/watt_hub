@@ -23,48 +23,55 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              AppLocalizations.of(context).helloThere,
-              style: body24SemiBoldTextStyle,
-            ),
-            20.heightBox,
-            Text(
-              AppLocalizations.of(context).enterYourEmail,
-              style: body16RegularTextStyle,
-            ),
-            20.heightBox,
-            WHTextField.singleLine(
-              validator: validateEmail,
-              label: AppLocalizations.of(context).emailAddress,
-              hintText: '',
-              keyboardType: TextInputType.emailAddress,
-            ),
-            20.heightBox,
-            RichText(
-                text: TextSpan(
-              text: 'I agree to EvPoint ',
-              style: body16RegularTextStyle,
-              children: <TextSpan>[
-                TextSpan(
-                    recognizer: TapGestureRecognizer()..onTap,
-                    text: 'Public Agreement. Terms. Privacy Policy ',
-                    style: green16RegularTextStyle),
-                const TextSpan(
-                    text: 'and confirm that I am over 17 years old.'),
-              ],
-            )),
-            80.heightBox,
-            WHElevatedButton.primary(
-              title: AppLocalizations.of(context).continueText,
-              onPressed: () => AutoRouter.of(context).push(
-                const VerificationRoute(),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    AppLocalizations.of(context).helloThere,
+                    style: body24SemiBoldTextStyle,
+                  ),
+                  const Text("👋")
+                ],
               ),
-            ),
-          ],
+              20.heightBox,
+              Text(
+                AppLocalizations.of(context).enterYourEmail,
+                style: body16RegularTextStyle,
+              ),
+              20.heightBox,
+              WHTextField.singleLine(
+                validator: validateEmail,
+                label: AppLocalizations.of(context).emailAddress,
+                hintText: '',
+                keyboardType: TextInputType.emailAddress,
+              ),
+              20.heightBox,
+              RichText(
+                  text: TextSpan(
+                text: 'I agree to EvPoint ',
+                style: body16RegularTextStyle,
+                children: <TextSpan>[
+                  TextSpan(
+                      recognizer: TapGestureRecognizer()..onTap,
+                      text: 'Public Agreement. Terms. Privacy Policy ',
+                      style: body16RegularTextStyle.copyWith(color: WattHubColors.primaryGreenColor)),
+                  const TextSpan(
+                      text: 'and confirm that I am over 17 years old.'),
+                ],
+              )),
+              80.heightBox,
+              WHElevatedButton.primary(
+                title: AppLocalizations.of(context).continueText,
+                onPressed: () => AutoRouter.of(context).push(
+                  const VerificationRoute(),
+                ),
+              ),
+            ],
+          ),
         ),
       ).paddingAll(20.0),
     );

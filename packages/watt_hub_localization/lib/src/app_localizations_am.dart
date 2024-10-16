@@ -24,4 +24,14 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get continueText => 'Շարունակել';
+
+  @override
+  String get otpCodeVerification => 'OTP կոդի ստուգում ';
+
+  @override
+  String get sentAnOtpCode =>
+      'Մենք ուղարկել ենք OTP կոդը էլեկտրոնային հասցեին: Շարունակելու համար մուտքագրեք OTP կոդը:';
+
+  @override
+  String get didntReceiveEmail => 'Էլփոստին չե՞ք ստացել:';
 }

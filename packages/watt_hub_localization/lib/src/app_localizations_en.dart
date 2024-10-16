@@ -24,4 +24,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get continueText => 'Continue';
+
+  @override
+  String get otpCodeVerification => 'OTP code verification ';
+
+  @override
+  String get sentAnOtpCode =>
+      'We have sent an OTP code to email address. Enter the OTP code below to continue.';
+
+  @override
+  String get didntReceiveEmail => 'Didn\'t receive email?';
 }
