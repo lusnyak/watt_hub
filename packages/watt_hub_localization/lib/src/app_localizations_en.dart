@@ -38,4 +38,13 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get pleaseAgree =>
       'Please agree to the terms and enter a valid email.';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy ';
+
+  @override
+  String get iAagreeToWattHub => 'I agree to WattHub ';
+
+  @override
+  String get andConfirm => 'and confirm that I am over 17 years old.';
 }

@@ -8,5 +8,8 @@
   "otpCodeVerification": "OTP code verification ",
   "sentAnOtpCode": "We have sent an OTP code to email address. Enter the OTP code below to continue.",
   "didntReceiveEmail": "Didn't receive email?",
-  "pleaseAgree": "Please agree to the terms and enter a valid email."
+  "pleaseAgree": "Please agree to the terms and enter a valid email.",
+  "privacyPolicy": "Privacy Policy ",
+  "iAagreeToWattHub": "I agree to WattHub ",
+  "andConfirm": "and confirm that I am over 17 years old."
 }

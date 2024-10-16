@@ -157,6 +157,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please agree to the terms and enter a valid email.'**
   String get pleaseAgree;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy '**
+  String get privacyPolicy;
+
+  /// No description provided for @iAagreeToWattHub.
+  ///
+  /// In en, this message translates to:
+  /// **'I agree to WattHub '**
+  String get iAagreeToWattHub;
+
+  /// No description provided for @andConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'and confirm that I am over 17 years old.'**
+  String get andConfirm;
 }
 
 class _AppLocalizationsDelegate
