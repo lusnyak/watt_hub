@@ -1,13 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:watt_hub/config/config.dart';
-
+import 'package:watt_hub/utils/helpers/constans.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
+import '../../../utils/helpers/email_validator.dart';
+import '../../../utils/helpers/url_launcher.dart';
 import 'bloc/sign_up_bloc.dart';
-
 
 @RoutePage()
 class SignUpScreen extends StatelessWidget {
@@ -17,18 +17,18 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => getIt<SignUpBloc>(),
-      child: _SignUpView(),
+      child: const _SignUpView(),
     );
   }
 }
 
 class _SignUpView extends StatelessWidget {
-  _SignUpView();
-
-  final _formKey = GlobalKey<FormState>();
+  const _SignUpView();
 
   @override
   Widget build(BuildContext context) {
+    final signUpBloc = context.read<SignUpBloc>();
+
     return Scaffold(
       appBar: AppBar(),
       body: SafeArea(
@@ -43,11 +43,10 @@ class _SignUpView extends StatelessWidget {
                   }
                 },
                 builder: (context, state) {
-
                   final emailState = state is SignUpFormState;
 
                   return Form(
-                    key: _formKey,
+                    key: signUpBloc.formKey,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -56,23 +55,22 @@ class _SignUpView extends StatelessWidget {
                           "${AppLocalizations.of(context).helloThere} \u{1f44b}",
                           style: body24SemiBoldTextStyle,
                         ),
-                        20.heightBox,
+                        20.h.heightBox,
                         Text(
                           AppLocalizations.of(context).enterYourEmail,
                           style: body16RegularTextStyle,
                         ),
                         20.h.heightBox,
-                        // Email input field with validation
                         WHTextField.singleLine(
-                          controller: context.read<SignUpBloc>().emailController,
+                          controller: signUpBloc.emailController,
                           onChanged: (value) {
-                            context.read<SignUpBloc>().add(EmailChanged(value));
+                            signUpBloc.add(EmailChanged(value));
                           },
                           label: AppLocalizations.of(context).emailAddress,
                           hintText: 'johndoe@gmail.com',
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
-                            return _validateEmail(value);
+                            return validateEmail(value);
                           },
                         ),
                         20.h.heightBox,
@@ -80,33 +78,35 @@ class _SignUpView extends StatelessWidget {
                           children: [
                             Checkbox(
                               shape: roundedBorder6,
-                              value: emailState ? (state).isChecked : false,
+                              value: emailState ? state.isChecked : false,
                               onChanged: (bool? value) {
-                                context
-                                    .read<SignUpBloc>()
-                                    .add(CheckboxChanged(value ?? false));
+                                if (value != null) {
+                                  signUpBloc.add(CheckboxChanged(value));
+                                }
                               },
                             ),
                             Expanded(
                               child: RichText(
                                 text: TextSpan(
-                                  text: AppLocalizations.of(context).iAagreeToWattHub,
+                                  text: AppLocalizations.of(context)
+                                      .iAagreeToWattHub,
                                   style: body12RegularTextStyle,
                                   children: <TextSpan>[
                                     TextSpan(
                                       recognizer: TapGestureRecognizer()
-                                        ..onTap = () async {
-                                          final url = Uri.parse(
-                                              'https://termsfeed.com/live/cc373245-d9b0-410d-960c-db897b26bffc');
-                                          if (await canLaunchUrl(url)) {
-                                            await launchUrl(url);
-                                          }
+                                        ..onTap = () {
+                                          launchURL(
+                                              AppConstans.privacyPolicyUrl);
                                         },
-                                      text: AppLocalizations.of(context).privacyPolicy,
-                                      style: body12RegularTextStyle.copyWith(color: WattHubColors.primaryGreenColor),
+                                      text: AppLocalizations.of(context)
+                                          .privacyPolicy,
+                                      style: body12RegularTextStyle.copyWith(
+                                          color:
+                                              WattHubColors.primaryGreenColor),
                                     ),
-                                     TextSpan(
-                                      text: AppLocalizations.of(context).andConfirm,
+                                    TextSpan(
+                                      text: AppLocalizations.of(context)
+                                          .andConfirm,
                                     ),
                                   ],
                                 ),
@@ -114,7 +114,6 @@ class _SignUpView extends StatelessWidget {
                             ),
                           ],
                         ),
-
                       ],
                     ),
                   );
@@ -128,28 +127,14 @@ class _SignUpView extends StatelessWidget {
                 WHElevatedButton.primary(
                   title: AppLocalizations.of(context).continueText,
                   onPressed: () {
-                    if (_formKey.currentState?.validate() ?? false) {
-                      context.read<SignUpBloc>().add(const SubmitSignUp());
-                    }
+                    signUpBloc.add(const SubmitSignUp());
                   },
                 ).paddingSymmetric(vertical: 16.h, horizontal: 20.w)
               ],
             )
-
           ],
         ),
       ),
     );
-  }
-
-  // Method to validate email
-  String? _validateEmail(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Please enter email';
-    }
-    if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-      return 'Please enter a valid email';
-    }
-    return null;
   }
 }

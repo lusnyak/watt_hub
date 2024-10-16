@@ -175,6 +175,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'and confirm that I am over 17 years old.'**
   String get andConfirm;
+
+  /// No description provided for @resend.
+  ///
+  /// In en, this message translates to:
+  /// **'resend'**
+  String get resend;
 }
 
 class _AppLocalizationsDelegate

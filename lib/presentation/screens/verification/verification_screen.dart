@@ -26,6 +26,7 @@ class _VerificationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final verificationBloc = context.read<VerificationBloc>();
     return Scaffold(
       appBar: AppBar(),
       body: SafeArea(
@@ -57,14 +58,13 @@ class _VerificationView extends StatelessWidget {
                   AppLocalizations.of(context).sentAnOtpCode,
                   style: body16RegularTextStyle,
                 ),
-                40.heightBox,
+                40.h.heightBox,
                 BlocBuilder<VerificationBloc, VerificationState>(
                   builder: (context, state) {
                     return Column(
                       children: [
                         WHPinPut(onCompleted: (val) {
-                          context
-                              .read<VerificationBloc>()
+                          verificationBloc
                               .add(VerificationEvent.verifyOtp(val));
                         }),
                         30.h.heightBox,
@@ -84,11 +84,10 @@ class _VerificationView extends StatelessWidget {
                 Center(
                   child: WHTextButton.create(
                       onPressed: () {
-                        context
-                            .read<VerificationBloc>()
+                        verificationBloc
                             .add(const VerificationEvent.resendOtp());
                       },
-                      text: 'resend',
+                      text: AppLocalizations.of(context).resend,
                       color: WattHubColors.primaryGreenColor),
                 ),
               ],

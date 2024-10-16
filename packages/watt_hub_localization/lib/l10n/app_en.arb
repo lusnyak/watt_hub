@@ -11,5 +11,6 @@
   "pleaseAgree": "Please agree to the terms and enter a valid email.",
   "privacyPolicy": "Privacy Policy ",
   "iAagreeToWattHub": "I agree to WattHub ",
-  "andConfirm": "and confirm that I am over 17 years old."
+  "andConfirm": "and confirm that I am over 17 years old.",
+  "resend": "resend"
 }

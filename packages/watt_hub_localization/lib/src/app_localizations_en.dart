@@ -47,4 +47,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get andConfirm => 'and confirm that I am over 17 years old.';
+
+  @override
+  String get resend => 'resend';
 }
