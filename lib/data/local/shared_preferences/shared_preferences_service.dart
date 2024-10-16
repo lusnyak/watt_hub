@@ -1,41 +1,21 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesService {
-  static final SharedPreferencesService _instance =
-      SharedPreferencesService._internal();
-  SharedPreferences? _preferences;
 
-  factory SharedPreferencesService() {
-    return _instance;
+  static const String onBoardingLaunchKey = "onBoardingLaunch";
+
+  SharedPreferencesService._();
+
+  static SharedPreferencesService instance = SharedPreferencesService._();
+
+  static SharedPreferences? _sharedPrefs;
+
+  getSharedInstance() async {
+    _sharedPrefs ??= await SharedPreferences.getInstance();
   }
 
-  SharedPreferencesService._internal();
+  bool onBoardingLaunch() =>
+      _sharedPrefs?.getBool(SharedPreferencesService.onBoardingLaunchKey) ?? false;
 
-  Future<void> init() async {
-    _preferences = await SharedPreferences.getInstance();
-  }
-
-  Future<void> setBool(String key, bool value) async {
-    await _preferences?.setBool(key, value);
-  }
-
-  bool? getBool(String key) {
-    return _preferences?.getBool(key);
-  }
-
-  Future<void> setString(String key, String value) async {
-    await _preferences?.setString(key, value);
-  }
-
-  String? getString(String key) {
-    return _preferences?.getString(key);
-  }
-
-  Future<void> setDouble(String key, double value) async {
-    await _preferences?.setDouble(key, value);
-  }
-
-  double? getDouble(String key) {
-    return _preferences?.getDouble(key);
-  }
+  setOnBoardingLaunch(bool value) async => await _sharedPrefs?.setBool(SharedPreferencesService.onBoardingLaunchKey, value);
 }

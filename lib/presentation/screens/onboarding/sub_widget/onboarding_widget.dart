@@ -10,22 +10,27 @@ class OnboardingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(model.image),
-          Text(
-            model.title,
-            style: body32MediumTextStyle,
-          ),
-          Text(
-            model.description,
-            style: body18RegularTextStyle,
-          ),
-        ],
-      ),
-    );
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Image.asset(
+          model.image,
+          fit: BoxFit.fitWidth,
+        ).expanded(),
+        Text(
+          model.title,
+          style: body32SemiBoldTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        8.h.heightBox,
+        Text(
+          model.description,
+          style: body16RegularTextStyle,
+          textAlign: TextAlign.center,
+        ),
+      ],
+    ).paddingSymmetric(horizontal: 16.w);
   }
 }

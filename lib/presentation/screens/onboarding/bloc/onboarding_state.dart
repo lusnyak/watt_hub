@@ -4,7 +4,7 @@ part of 'onboarding_bloc.dart';
 class OnboardingState with _$OnboardingState {
   const factory OnboardingState.initial() = _OnboardingInitialState;
 
-  const factory OnboardingState.loaded(OnboardingModel currentModel) =
+  const factory OnboardingState.loaded(List<OnboardingModel> onboardingData) =
       _OnboardingLoadedState;
 
   const factory OnboardingState.complete() = _OnboardingCompleteState;

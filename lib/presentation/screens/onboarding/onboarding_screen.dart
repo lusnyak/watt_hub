@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watt_hub/config/locator/service_locator.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/data/local/onboarding_data/onboarding_data.dart';
 import 'package:watt_hub/presentation/screens/onboarding/sub_widget/onboarding_widget.dart';
@@ -15,7 +16,7 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          OnboardingBloc(onboardingData)..add(const LoadOnboardingEvent()),
+          getIt<OnboardingBloc>()..add(const LoadOnboardingEvent()),
       child: const _OnboardingView(),
     );
   }
@@ -38,9 +39,7 @@ class _OnboardingView extends StatelessWidget {
         },
         builder: (context, state) {
           return state.maybeWhen(
-            orElse: () => const Center(
-              child: CircularProgressIndicator(),
-            ),
+            orElse: () => const CircularProgressIndicator().toCenter(),
             loaded: (currentModel) {
               return SafeArea(
                 child: Column(
@@ -49,11 +48,6 @@ class _OnboardingView extends StatelessWidget {
                   children: [
                     PageView.builder(
                       controller: context.read<OnboardingBloc>().pageController,
-                      onPageChanged: (index) {
-                        context
-                            .read<OnboardingBloc>()
-                            .add(OnboardingEvent.onboardingPageChanged(index));
-                      },
                       itemCount: onboardingData.length,
                       itemBuilder: (context, index) {
                         return OnboardingWidget(
@@ -61,26 +55,19 @@ class _OnboardingView extends StatelessWidget {
                         );
                       },
                     ).expanded(),
-                    Center(
-                      child: SmoothPageIndicator(
-                        controller:
-                            context.read<OnboardingBloc>().pageController,
-                        count: 3,
-                        effect: const ExpandingDotsEffect(
-                          activeDotColor: WattHubColors.primaryGreenColor,
-                          dotColor: WattHubColors.primaryLightGreenColor,
-                          dotHeight: 16,
-                          dotWidth: 16,
-                          spacing: 8,
-                        ),
+                    SmoothPageIndicator(
+                      controller:
+                          context.read<OnboardingBloc>().pageController,
+                      count: 3,
+                      effect: ExpandingDotsEffect(
+                        activeDotColor: WattHubColors.primaryGreenColor,
+                        dotColor: WattHubColors.primaryLightGreenColor,
+                        dotHeight: 12.r,
+                        dotWidth: 12.r,
+                        spacing: 8,
                       ),
-                    ),
-                    const Divider(
-                      thickness: 1.8,
-                      indent: 10,
-                      endIndent: 10,
-                      color: WattHubColors.lightGray,
-                    ).paddingSymmetric(vertical: 8.h),
+                    ).toCenter().paddingSymmetric(vertical: 16.h),
+                    const Divider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,7 +88,7 @@ class _OnboardingView extends StatelessWidget {
                           title: 'Next',
                         ).expanded(),
                       ],
-                    ).paddingAll(20.sp),
+                    ).paddingAll(20.r),
                   ],
                 ),
               );
