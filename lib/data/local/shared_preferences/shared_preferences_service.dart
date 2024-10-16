@@ -2,7 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesService {
   static final SharedPreferencesService _instance =
-  SharedPreferencesService._internal();
+      SharedPreferencesService._internal();
   SharedPreferences? _preferences;
 
   factory SharedPreferencesService() {
@@ -21,5 +21,21 @@ class SharedPreferencesService {
 
   bool? getBool(String key) {
     return _preferences?.getBool(key);
+  }
+
+  Future<void> setString(String key, String value) async {
+    await _preferences?.setString(key, value);
+  }
+
+  String? getString(String key) {
+    return _preferences?.getString(key);
+  }
+
+  Future<void> setDouble(String key, double value) async {
+    await _preferences?.setDouble(key, value);
+  }
+
+  double? getDouble(String key) {
+    return _preferences?.getDouble(key);
   }
 }
