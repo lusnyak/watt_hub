@@ -87,9 +87,8 @@ class _SignUpView extends StatelessWidget {
                         Expanded(
                           child: RichText(
                             text: TextSpan(
-
                               text: AppLocalizations.of(context).iAagreeToWattHub,
-                              style: body16RegularTextStyle,
+                              style: body12RegularTextStyle,
                               children: <TextSpan>[
                                 TextSpan(
                                   recognizer: TapGestureRecognizer()
@@ -102,6 +101,7 @@ class _SignUpView extends StatelessWidget {
                                     },
                                   text: AppLocalizations.of(context).privacyPolicy,
                                   style: body12RegularTextStyle.copyWith(color: WattHubColors.primaryGreenColor),
+
                                 ),
                                  TextSpan(
                                   text: AppLocalizations.of(context).andConfirm,
@@ -112,9 +112,9 @@ class _SignUpView extends StatelessWidget {
                         ),
                       ],
                     ),
-                    80.heightBox,
-
-                    WHElevatedButton.primary(
+                    210.heightBox,
+                    const Divider(color: WattHubColors.primaryLightGreenColor),
+                     WHElevatedButton.primary(
                       title: AppLocalizations.of(context).continueText,
                       onPressed: () {
                         if (_formKey.currentState?.validate() ?? false) {

@@ -29,9 +29,9 @@ extension GetItInjectableX on _i174.GetIt {
       environment,
       environmentFilter,
     );
+    gh.factory<_i60.OtpService>(() => _i60.OtpService());
     gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
     gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
-    gh.factory<_i60.OtpService>(() => _i60.OtpService());
     gh.factory<_i298.VerificationBloc>(
         () => _i298.VerificationBloc(gh<_i60.OtpService>()));
     return this;

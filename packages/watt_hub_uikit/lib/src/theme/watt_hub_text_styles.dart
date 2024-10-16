@@ -157,5 +157,3 @@ TextStyle get body48SemiBoldTextStyle =>  GoogleFonts.urbanist (
   color: WattHubColors.primaryBlackColor,
 );
 
-
-
