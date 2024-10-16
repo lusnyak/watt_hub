@@ -41,15 +41,15 @@ class _HomeView extends StatelessWidget {
             WHIconButton.primary(
               icon: const Icon(Icons.filter_alt),
               onPressed: () async {
-                final selectedConnector =
-                    SharedPreferencesService().getString('selectedConnector');
-                final selectedCar =
-                    SharedPreferencesService().getString('selectedCar');
+                final selectedConnectorId =
+                    SharedPreferencesService().getString('selectedConnectorId');
+                final selectedCarId =
+                    SharedPreferencesService().getString('selectedCarId');
                 final rating = SharedPreferencesService().getDouble('rating');
                 final filterData =
                     await context.router.push<FilterModel>(FilterRoute(
-                  selectedCar: selectedCar,
-                  selectedConnector: selectedConnector,
+                  selectedCarId: selectedCarId,
+                  selectedConnectorId: selectedConnectorId,
                   rating: rating,
                 ));
                 debugPrint('${filterData?.connector.title} filterData');

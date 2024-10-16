@@ -7,19 +7,20 @@ import 'package:watt_hub/domain/models/filter/filter_model.dart';
 import 'package:watt_hub/presentation/screens/filter/bloc/filter_bloc.dart';
 import 'package:watt_hub/presentation/screens/filter/widgets/filter_slider.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
+import 'package:watt_hub/utils/helpers/helpers.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
 class FilterScreen extends StatelessWidget {
   const FilterScreen({
     super.key,
-    this.selectedConnector,
-    this.selectedCar,
+    this.selectedConnectorId,
+    this.selectedCarId,
     this.rating,
   });
 
-  final String? selectedConnector;
-  final String? selectedCar;
+  final String? selectedConnectorId;
+  final String? selectedCarId;
   final double? rating;
 
   @override
@@ -27,8 +28,8 @@ class FilterScreen extends StatelessWidget {
     return BlocProvider(
       create: (_) => getIt<FilterBloc>()..add(const FilterEvent.started()),
       child: FilterView(
-        initialSelectedConnector: selectedConnector,
-        initialSelectedCar: selectedCar,
+        initialSelectedConnectorId: selectedConnectorId,
+        initialSelectedCarId: selectedCarId,
         initialRating: rating,
       ),
     );
@@ -38,13 +39,13 @@ class FilterScreen extends StatelessWidget {
 class FilterView extends StatelessWidget {
   const FilterView({
     super.key,
-    this.initialSelectedConnector,
-    this.initialSelectedCar,
+    this.initialSelectedConnectorId,
+    this.initialSelectedCarId,
     this.initialRating,
   });
 
-  final String? initialSelectedConnector;
-  final String? initialSelectedCar;
+  final String? initialSelectedConnectorId;
+  final String? initialSelectedCarId;
   final double? initialRating;
 
   @override
@@ -83,7 +84,8 @@ class FilterView extends StatelessWidget {
                               .add(FilterEvent.carTypeChanged(value));
                         }
                       },
-                      value: selectedCar,
+                      value: selectedCar ??
+                          getElementById(cars, initialSelectedCarId),
                     ),
                     40.h.heightBox,
                     WhDropDownButton(
@@ -96,7 +98,9 @@ class FilterView extends StatelessWidget {
                               .add(FilterEvent.connectorTypeChanged(value));
                         }
                       },
-                      value: selectedConnector ?? selectedConnector,
+                      value: selectedConnector ??
+                          getElementById(
+                              connectors, initialSelectedConnectorId),
                     ),
                     40.h.heightBox,
                     FilterSlider(currentSliderValue: currentSliderValue),
@@ -104,14 +108,13 @@ class FilterView extends StatelessWidget {
                     WHElevatedButton.primary(
                       title: context.localized.filter,
                       onPressed: () {
-                        SharedPreferencesService().setString(
-                            'selectedConnector', selectedConnector!.title);
+                        SharedPreferencesService().setInt(
+                            'selectedConnectorId', selectedConnector!.id);
                         SharedPreferencesService()
-                            .setString('selectedCar', selectedCar!.title);
+                            .setInt('selectedCar', selectedCar!.id);
                         SharedPreferencesService()
                             .setDouble('rating', currentSliderValue);
-                        Navigator.pop(
-                          context,
+                        context.router.maybePop(
                           FilterModel(
                             connector: selectedConnector,
                             car: selectedCar,

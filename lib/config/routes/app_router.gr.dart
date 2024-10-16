@@ -109,16 +109,16 @@ class DetailRoute extends PageRouteInfo<void> {
 class FilterRoute extends PageRouteInfo<FilterRouteArgs> {
   FilterRoute({
     Key? key,
-    String? selectedConnector,
-    String? selectedCar,
+    String? selectedConnectorId,
+    String? selectedCarId,
     double? rating,
     List<PageRouteInfo>? children,
   }) : super(
           FilterRoute.name,
           args: FilterRouteArgs(
             key: key,
-            selectedConnector: selectedConnector,
-            selectedCar: selectedCar,
+            selectedConnectorId: selectedConnectorId,
+            selectedCarId: selectedCarId,
             rating: rating,
           ),
           initialChildren: children,
@@ -133,8 +133,8 @@ class FilterRoute extends PageRouteInfo<FilterRouteArgs> {
           data.argsAs<FilterRouteArgs>(orElse: () => const FilterRouteArgs());
       return FilterScreen(
         key: args.key,
-        selectedConnector: args.selectedConnector,
-        selectedCar: args.selectedCar,
+        selectedConnectorId: args.selectedConnectorId,
+        selectedCarId: args.selectedCarId,
         rating: args.rating,
       );
     },
@@ -144,22 +144,22 @@ class FilterRoute extends PageRouteInfo<FilterRouteArgs> {
 class FilterRouteArgs {
   const FilterRouteArgs({
     this.key,
-    this.selectedConnector,
-    this.selectedCar,
+    this.selectedConnectorId,
+    this.selectedCarId,
     this.rating,
   });
 
   final Key? key;
 
-  final String? selectedConnector;
+  final String? selectedConnectorId;
 
-  final String? selectedCar;
+  final String? selectedCarId;
 
   final double? rating;
 
   @override
   String toString() {
-    return 'FilterRouteArgs{key: $key, selectedConnector: $selectedConnector, selectedCar: $selectedCar, rating: $rating}';
+    return 'FilterRouteArgs{key: $key, selectedConnectorId: $selectedConnectorId, selectedCarId: $selectedCarId, rating: $rating}';
   }
 }
 
