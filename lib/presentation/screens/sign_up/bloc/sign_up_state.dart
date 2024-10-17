@@ -7,7 +7,7 @@ class SignUpState with _$SignUpState {
     required bool isChecked,
   }) = _SignUpFormState;
 
-  const factory SignUpState.success() = _SignUpSuccess;
+  const factory SignUpState.success() = _SignUpSuccessState;
 
-  const factory SignUpState.failure(String message) = _SignUpFailure;
+  const factory SignUpState.failure(String message) = _SignUpFailureState;
 }
