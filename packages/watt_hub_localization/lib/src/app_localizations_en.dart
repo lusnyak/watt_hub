@@ -11,4 +11,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get back => 'Back';
+
+  @override
+  String get helloThere => 'Hello there';
+
+  @override
+  String get enterYourEmail =>
+      'Please enter your email address. You will receive an OTP code in the next step for the verification process.';
+
+  @override
+  String get emailAddress => 'Email Address';
+
+  @override
+  String get continueText => 'Continue';
+
+  @override
+  String get otpCodeVerification => 'OTP code verification ';
+
+  @override
+  String get sentAnOtpCode =>
+      'We have sent an OTP code to email address. Enter the OTP code below to continue.';
+
+  @override
+  String get didntReceiveEmail => 'Didn\'t receive email?';
+
+  @override
+  String get pleaseAgree =>
+      'Please agree to the terms and enter a valid email.';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy ';
+
+  @override
+  String get iAagreeToWattHub => 'I agree to WattHub ';
+
+  @override
+  String get andConfirm => 'and confirm that I am over 17 years old.';
+
+  @override
+  String get resend => 'resend';
+
+  @override
+  String get pleaseEnterEmail => 'Please enter email';
+
+  @override
+  String get pleaseEnterAValidEmail => 'Please enter a valid email';
 }

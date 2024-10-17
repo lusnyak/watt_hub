@@ -109,6 +109,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back'**
   String get back;
+
+  /// No description provided for @helloThere.
+  ///
+  /// In en, this message translates to:
+  /// **'Hello there'**
+  String get helloThere;
+
+  /// No description provided for @enterYourEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your email address. You will receive an OTP code in the next step for the verification process.'**
+  String get enterYourEmail;
+
+  /// No description provided for @emailAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Address'**
+  String get emailAddress;
+
+  /// No description provided for @continueText.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueText;
+
+  /// No description provided for @otpCodeVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'OTP code verification '**
+  String get otpCodeVerification;
+
+  /// No description provided for @sentAnOtpCode.
+  ///
+  /// In en, this message translates to:
+  /// **'We have sent an OTP code to email address. Enter the OTP code below to continue.'**
+  String get sentAnOtpCode;
+
+  /// No description provided for @didntReceiveEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t receive email?'**
+  String get didntReceiveEmail;
+
+  /// No description provided for @pleaseAgree.
+  ///
+  /// In en, this message translates to:
+  /// **'Please agree to the terms and enter a valid email.'**
+  String get pleaseAgree;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy '**
+  String get privacyPolicy;
+
+  /// No description provided for @iAagreeToWattHub.
+  ///
+  /// In en, this message translates to:
+  /// **'I agree to WattHub '**
+  String get iAagreeToWattHub;
+
+  /// No description provided for @andConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'and confirm that I am over 17 years old.'**
+  String get andConfirm;
+
+  /// No description provided for @resend.
+  ///
+  /// In en, this message translates to:
+  /// **'resend'**
+  String get resend;
+
+  /// No description provided for @pleaseEnterEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter email'**
+  String get pleaseEnterEmail;
+
+  /// No description provided for @pleaseEnterAValidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email'**
+  String get pleaseEnterAValidEmail;
 }
 
 class _AppLocalizationsDelegate

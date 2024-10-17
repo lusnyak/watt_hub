@@ -24,7 +24,7 @@ class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(page: SplashRoute.page, initial: true),
-        AutoRoute(page: UikitExampleRoute.page, /*initial: true*/),
+        AutoRoute(page: UikitExampleRoute.page),
         AutoRoute(page: OnboardingRoute.page),
         AutoRoute(page: DashboardRoute.page, children: [
           AutoRoute(page: HomeRoute.page),

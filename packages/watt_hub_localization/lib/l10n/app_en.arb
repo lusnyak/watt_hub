@@ -1,4 +1,18 @@
 {
   "nextPage": "Next Page",
-  "back": "Back"
+  "back": "Back",
+  "helloThere": "Hello there",
+  "enterYourEmail": "Please enter your email address. You will receive an OTP code in the next step for the verification process.",
+  "emailAddress": "Email Address",
+  "continueText": "Continue",
+  "otpCodeVerification": "OTP code verification ",
+  "sentAnOtpCode": "We have sent an OTP code to email address. Enter the OTP code below to continue.",
+  "didntReceiveEmail": "Didn't receive email?",
+  "pleaseAgree": "Please agree to the terms and enter a valid email.",
+  "privacyPolicy": "Privacy Policy ",
+  "iAagreeToWattHub": "I agree to WattHub ",
+  "andConfirm": "and confirm that I am over 17 years old.",
+  "resend": "resend",
+  "pleaseEnterEmail": "Please enter email",
+  "pleaseEnterAValidEmail": "Please enter a valid email"
 }
