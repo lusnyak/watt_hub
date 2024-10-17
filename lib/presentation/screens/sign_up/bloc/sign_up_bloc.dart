@@ -14,9 +14,9 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
   SignUpBloc()
       : super(const SignUpState.form(isEmailValid: false, isChecked: false)) {
-    on<EmailChanged>(validateEmail);
+    on<EmailChangedEvent>(validateEmail);
 
-    on<CheckboxChanged>((event, emit) {
+    on<CheckboxChangedEvent>((event, emit) {
       state.when(
         form: (isEmailValid, _) {
           emit(SignUpState.form(
@@ -31,7 +31,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       );
     });
 
-    on<SubmitSignUp>((event, emit) {
+    on<SubmitSignUpEvent>((event, emit) {
       if (formKey.currentState?.validate() ?? false) {
         emit(const SignUpState.success());
       } else {
@@ -44,7 +44,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     return RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(email);
   }
 
-  void validateEmail(EmailChanged event, Emitter<SignUpState> emit) {
+  void validateEmail(EmailChangedEvent event, Emitter<SignUpState> emit) {
     final isValidEmail = _validateEmail(event.email);
 
     emit(
