@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:watt_hub/data/fake_data/stations_data/stations_map.dart';
+import 'package:watt_hub/data/local/shared_preferences/shared_preferences_service.dart';
 import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/utils/helpers/location_helper.dart';
 
@@ -25,6 +26,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<ToggleView>(_onToggleView);
     on<CenterLocation>(_onCenterLocation);
     on<CenterOnStation>(_onCenterOnStation);
+    on<LoadFilters>(_onLoadFilters);
   }
 
   Future<void> _initializeLocation() async {
@@ -50,9 +52,41 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           .map((stationJson) => StationModel.fromJson(stationJson))
           .toList();
 
-      emit(HomeState.loaded(stations, isList: isList));
+      final selectedConnectorId =
+          SharedPreferencesService.instance.selectedFilterConnectorId();
+      final selectedCarId =
+          SharedPreferencesService.instance.selectedFilterCarId();
+      final rating = SharedPreferencesService.instance.filterRating();
+
+      emit(HomeState.loaded(
+        stations,
+        isList: isList,
+        selectedConnectorId: selectedConnectorId,
+        selectedCarId: selectedCarId,
+        rating: rating,
+      ));
     } catch (e) {
       emit(const HomeState.error("Failed to load stations"));
+    }
+  }
+
+  Future<void> _onLoadFilters(
+    LoadFilters event,
+    Emitter<HomeState> emit,
+  ) async {
+    final selectedConnectorId =
+        SharedPreferencesService.instance.selectedFilterConnectorId();
+    final selectedCarId =
+        SharedPreferencesService.instance.selectedFilterCarId();
+    final rating = SharedPreferencesService.instance.filterRating();
+
+    if (state is LoadedState) {
+      final loadedState = state as LoadedState;
+      emit(loadedState.copyWith(
+        selectedConnectorId: selectedConnectorId,
+        selectedCarId: selectedCarId,
+        rating: rating,
+      ));
     }
   }
 

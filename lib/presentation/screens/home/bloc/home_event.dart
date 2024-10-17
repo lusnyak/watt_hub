@@ -6,4 +6,5 @@ abstract class HomeEvent with _$HomeEvent {
   const factory HomeEvent.toggleView() = ToggleView;
   const factory HomeEvent.centerLocation() = CenterLocation;
   const factory HomeEvent.centerOnStation(StationModel station) = CenterOnStation;
+  const factory HomeEvent.loadFilters() = LoadFilters;
 }

@@ -8,7 +8,7 @@ class FilterState with _$FilterState {
   const factory FilterState.loaded(
     List<ConnectorTypeModel> connectors,
     List<CarTypeModel> cars, {
-    required double currentSliderValue,
+    double? currentSliderValue,
     CarTypeModel? selectedCar,
     ConnectorTypeModel? selectedConnector,
   }) = _LoadedState;

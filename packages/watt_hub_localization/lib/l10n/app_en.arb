@@ -11,5 +11,7 @@
   "kilowatt": "kw",
   "hourlyRate": "hr",
   "filter": "Filter",
-  "rating": "Rating"
+  "rating": "Rating",
+  "chooseCar": "Choos Car Type",
+  "chooseConnector": "Choose Connector"
 }

@@ -14,6 +14,8 @@ import 'package:watt_hub/presentation/screens/filter/bloc/filter_bloc.dart'
     as _i293;
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart'
     as _i944;
+import 'package:watt_hub/presentation/screens/onboarding/bloc/onboarding_bloc.dart'
+    as _i764;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -28,6 +30,7 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i293.FilterBloc>(() => _i293.FilterBloc());
     gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
+    gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
     return this;
   }
 }

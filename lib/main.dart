@@ -6,7 +6,7 @@ import 'data/local/shared_preferences/shared_preferences_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SharedPreferencesService().init();
+  await SharedPreferencesService.instance.getSharedInstance();
   await GetIt.I.reset();
   configureDependencies();
   runApp(WattHubApp());

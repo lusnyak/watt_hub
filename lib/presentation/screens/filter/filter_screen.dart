@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
-import 'package:watt_hub/data/local/shared_preferences/shared_preferences_service.dart';
 import 'package:watt_hub/domain/models/filter/filter_model.dart';
 import 'package:watt_hub/presentation/screens/filter/bloc/filter_bloc.dart';
 import 'package:watt_hub/presentation/screens/filter/widgets/filter_slider.dart';
@@ -19,8 +18,8 @@ class FilterScreen extends StatelessWidget {
     this.rating,
   });
 
-  final String? selectedConnectorId;
-  final String? selectedCarId;
+  final int? selectedConnectorId;
+  final int? selectedCarId;
   final double? rating;
 
   @override
@@ -44,8 +43,8 @@ class FilterView extends StatelessWidget {
     this.initialRating,
   });
 
-  final String? initialSelectedConnectorId;
-  final String? initialSelectedCarId;
+  final int? initialSelectedConnectorId;
+  final int? initialSelectedCarId;
   final double? initialRating;
 
   @override
@@ -71,22 +70,25 @@ class FilterView extends StatelessWidget {
                 selectedCar,
                 selectedConnector,
               ) {
+                final initialSelectedCar =
+                    findById(cars, initialSelectedCarId, (car) => car.id);
+                final initialSelectedConnector = findById(connectors,
+                    initialSelectedConnectorId, (connector) => connector.id);
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     WhDropDownButton(
-                      items: cars,
-                      itemLabel: (car) => car.title,
-                      onChanged: (value) {
-                        if (value != null) {
-                          context
-                              .read<FilterBloc>()
-                              .add(FilterEvent.carTypeChanged(value));
-                        }
-                      },
-                      value: selectedCar ??
-                          getElementById(cars, initialSelectedCarId),
-                    ),
+                        items: cars,
+                        itemLabel: (car) => car.title,
+                        onChanged: (value) {
+                          if (value != null) {
+                            context
+                                .read<FilterBloc>()
+                                .add(FilterEvent.carTypeChanged(value));
+                          }
+                        },
+                        hintText: context.localized.chooseCar,
+                        value: selectedCar ?? initialSelectedCar),
                     40.h.heightBox,
                     WhDropDownButton(
                       items: connectors,
@@ -98,27 +100,25 @@ class FilterView extends StatelessWidget {
                               .add(FilterEvent.connectorTypeChanged(value));
                         }
                       },
-                      value: selectedConnector ??
-                          getElementById(
-                              connectors, initialSelectedConnectorId),
+                      hintText: context.localized.chooseConnector,
+                      value: selectedConnector ?? initialSelectedConnector,
                     ),
                     40.h.heightBox,
-                    FilterSlider(currentSliderValue: currentSliderValue),
+                    FilterSlider(
+                        currentSliderValue:
+                            currentSliderValue ?? initialRating),
                     const Spacer(),
                     WHElevatedButton.primary(
                       title: context.localized.filter,
                       onPressed: () {
-                        SharedPreferencesService().setInt(
-                            'selectedConnectorId', selectedConnector!.id);
-                        SharedPreferencesService()
-                            .setInt('selectedCar', selectedCar!.id);
-                        SharedPreferencesService()
-                            .setDouble('rating', currentSliderValue);
+                        context
+                            .read<FilterBloc>()
+                            .add(const FilterEvent.applyFilters());
                         context.router.maybePop(
                           FilterModel(
                             connector: selectedConnector,
                             car: selectedCar,
-                            rating: initialRating ?? currentSliderValue,
+                            rating: currentSliderValue ?? initialRating,
                           ),
                         );
                       },

@@ -109,8 +109,8 @@ class DetailRoute extends PageRouteInfo<void> {
 class FilterRoute extends PageRouteInfo<FilterRouteArgs> {
   FilterRoute({
     Key? key,
-    String? selectedConnectorId,
-    String? selectedCarId,
+    int? selectedConnectorId,
+    int? selectedCarId,
     double? rating,
     List<PageRouteInfo>? children,
   }) : super(
@@ -151,9 +151,9 @@ class FilterRouteArgs {
 
   final Key? key;
 
-  final String? selectedConnectorId;
+  final int? selectedConnectorId;
 
-  final String? selectedCarId;
+  final int? selectedCarId;
 
   final double? rating;
 

@@ -16,7 +16,6 @@ class WHSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('$currentSliderValue, currentSliderValue');
     return Slider(
       value: currentSliderValue,
       max: max,

@@ -468,21 +468,21 @@ mixin _$OnboardingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(OnboardingModel currentModel) loaded,
+    required TResult Function(List<OnboardingModel> onboardingData) loaded,
     required TResult Function() complete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(OnboardingModel currentModel)? loaded,
+    TResult? Function(List<OnboardingModel> onboardingData)? loaded,
     TResult? Function()? complete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(OnboardingModel currentModel)? loaded,
+    TResult Function(List<OnboardingModel> onboardingData)? loaded,
     TResult Function()? complete,
     required TResult orElse(),
   }) =>
@@ -577,7 +577,7 @@ class _$OnboardingInitialStateImpl implements _OnboardingInitialState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(OnboardingModel currentModel) loaded,
+    required TResult Function(List<OnboardingModel> onboardingData) loaded,
     required TResult Function() complete,
   }) {
     return initial();
@@ -587,7 +587,7 @@ class _$OnboardingInitialStateImpl implements _OnboardingInitialState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(OnboardingModel currentModel)? loaded,
+    TResult? Function(List<OnboardingModel> onboardingData)? loaded,
     TResult? Function()? complete,
   }) {
     return initial?.call();
@@ -597,7 +597,7 @@ class _$OnboardingInitialStateImpl implements _OnboardingInitialState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(OnboardingModel currentModel)? loaded,
+    TResult Function(List<OnboardingModel> onboardingData)? loaded,
     TResult Function()? complete,
     required TResult orElse(),
   }) {
@@ -653,9 +653,7 @@ abstract class _$$OnboardingLoadedStateImplCopyWith<$Res> {
           $Res Function(_$OnboardingLoadedStateImpl) then) =
       __$$OnboardingLoadedStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({OnboardingModel currentModel});
-
-  $OnboardingModelCopyWith<$Res> get currentModel;
+  $Res call({List<OnboardingModel> onboardingData});
 }
 
 /// @nodoc
@@ -671,38 +669,34 @@ class __$$OnboardingLoadedStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentModel = null,
+    Object? onboardingData = null,
   }) {
     return _then(_$OnboardingLoadedStateImpl(
-      null == currentModel
-          ? _value.currentModel
-          : currentModel // ignore: cast_nullable_to_non_nullable
-              as OnboardingModel,
+      null == onboardingData
+          ? _value._onboardingData
+          : onboardingData // ignore: cast_nullable_to_non_nullable
+              as List<OnboardingModel>,
     ));
-  }
-
-  /// Create a copy of OnboardingState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $OnboardingModelCopyWith<$Res> get currentModel {
-    return $OnboardingModelCopyWith<$Res>(_value.currentModel, (value) {
-      return _then(_value.copyWith(currentModel: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$OnboardingLoadedStateImpl implements _OnboardingLoadedState {
-  const _$OnboardingLoadedStateImpl(this.currentModel);
+  const _$OnboardingLoadedStateImpl(final List<OnboardingModel> onboardingData)
+      : _onboardingData = onboardingData;
 
+  final List<OnboardingModel> _onboardingData;
   @override
-  final OnboardingModel currentModel;
+  List<OnboardingModel> get onboardingData {
+    if (_onboardingData is EqualUnmodifiableListView) return _onboardingData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_onboardingData);
+  }
 
   @override
   String toString() {
-    return 'OnboardingState.loaded(currentModel: $currentModel)';
+    return 'OnboardingState.loaded(onboardingData: $onboardingData)';
   }
 
   @override
@@ -710,12 +704,13 @@ class _$OnboardingLoadedStateImpl implements _OnboardingLoadedState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OnboardingLoadedStateImpl &&
-            (identical(other.currentModel, currentModel) ||
-                other.currentModel == currentModel));
+            const DeepCollectionEquality()
+                .equals(other._onboardingData, _onboardingData));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentModel);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_onboardingData));
 
   /// Create a copy of OnboardingState
   /// with the given fields replaced by the non-null parameter values.
@@ -730,32 +725,32 @@ class _$OnboardingLoadedStateImpl implements _OnboardingLoadedState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(OnboardingModel currentModel) loaded,
+    required TResult Function(List<OnboardingModel> onboardingData) loaded,
     required TResult Function() complete,
   }) {
-    return loaded(currentModel);
+    return loaded(onboardingData);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(OnboardingModel currentModel)? loaded,
+    TResult? Function(List<OnboardingModel> onboardingData)? loaded,
     TResult? Function()? complete,
   }) {
-    return loaded?.call(currentModel);
+    return loaded?.call(onboardingData);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(OnboardingModel currentModel)? loaded,
+    TResult Function(List<OnboardingModel> onboardingData)? loaded,
     TResult Function()? complete,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(currentModel);
+      return loaded(onboardingData);
     }
     return orElse();
   }
@@ -796,10 +791,10 @@ class _$OnboardingLoadedStateImpl implements _OnboardingLoadedState {
 }
 
 abstract class _OnboardingLoadedState implements OnboardingState {
-  const factory _OnboardingLoadedState(final OnboardingModel currentModel) =
-      _$OnboardingLoadedStateImpl;
+  const factory _OnboardingLoadedState(
+      final List<OnboardingModel> onboardingData) = _$OnboardingLoadedStateImpl;
 
-  OnboardingModel get currentModel;
+  List<OnboardingModel> get onboardingData;
 
   /// Create a copy of OnboardingState
   /// with the given fields replaced by the non-null parameter values.
@@ -853,7 +848,7 @@ class _$OnboardingCompleteStateImpl implements _OnboardingCompleteState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(OnboardingModel currentModel) loaded,
+    required TResult Function(List<OnboardingModel> onboardingData) loaded,
     required TResult Function() complete,
   }) {
     return complete();
@@ -863,7 +858,7 @@ class _$OnboardingCompleteStateImpl implements _OnboardingCompleteState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(OnboardingModel currentModel)? loaded,
+    TResult? Function(List<OnboardingModel> onboardingData)? loaded,
     TResult? Function()? complete,
   }) {
     return complete?.call();
@@ -873,7 +868,7 @@ class _$OnboardingCompleteStateImpl implements _OnboardingCompleteState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(OnboardingModel currentModel)? loaded,
+    TResult Function(List<OnboardingModel> onboardingData)? loaded,
     TResult Function()? complete,
     required TResult orElse(),
   }) {

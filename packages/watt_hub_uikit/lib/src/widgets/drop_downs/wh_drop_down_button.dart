@@ -21,7 +21,6 @@ class WhDropDownButton<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('$value value');
     return DropdownButton2<T>(
       iconStyleData: IconStyleData(
         icon: suffixText != null
@@ -48,7 +47,8 @@ class WhDropDownButton<T> extends StatelessWidget {
       hint: hintText != null
           ? Text(
               hintText!,
-              style: body16RegularTextStyle,
+              style: body14RegularTextStyle.copyWith(
+                  color: WattHubColors.lightGray),
             )
           : null,
       items: items

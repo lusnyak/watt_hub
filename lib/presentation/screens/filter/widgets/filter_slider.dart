@@ -7,10 +7,10 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 class FilterSlider extends StatelessWidget {
   const FilterSlider({
     super.key,
-    required this.currentSliderValue,
+    this.currentSliderValue,
   });
 
-  final double currentSliderValue;
+  final double? currentSliderValue;
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,14 @@ class FilterSlider extends StatelessWidget {
           style: body18MediumTextStyle,
         ),
         WHSlider(
-          currentSliderValue: currentSliderValue,
+          currentSliderValue: currentSliderValue ?? 0,
           max: 5,
           divisions: 5,
-          onChanged: (value) => context
-              .read<FilterBloc>()
-              .add(FilterEvent.sliderValueChanged(value)),
+          onChanged: (value) {
+            context
+                .read<FilterBloc>()
+                .add(FilterEvent.sliderValueChanged(value));
+          },
         )
       ],
     );

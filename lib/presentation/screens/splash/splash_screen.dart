@@ -16,22 +16,25 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> retrieveData(BuildContext context) async {
+    // SharedPreferencesService.instance.setOnBoardingLaunch(false);
     if (!context.mounted) return;
-    bool? isOnBoard = SharedPreferencesService().getBool('isOnBoard');
-    if (isOnBoard == true) {
-      AutoRouter.of(context).push(const HomeRoute());
+    bool? isOnBoard = SharedPreferencesService.instance.onBoardingLaunch();
+    if (isOnBoard) {
+      AutoRouter.of(context).replace(const HomeRoute());
     } else {
-      AutoRouter.of(context).push(const OnboardingRoute());
+      AutoRouter.of(context).replace(const OnboardingRoute());
     }
   }
 
   @override
   void initState() {
     super.initState();
+    SharedPreferencesService.instance.deleteSelectedFilterConnectorId();
+    SharedPreferencesService.instance.deleteSelectedFilterCarId();
+    SharedPreferencesService.instance.deleteSelectedFilterRating();
 
     Timer(const Duration(seconds: 3), () {
       retrieveData(context);
-      // AutoRouter.of(context).push(const OnboardingRoute());
     });
   }
 

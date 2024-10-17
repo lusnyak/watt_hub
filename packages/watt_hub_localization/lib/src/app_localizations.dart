@@ -175,6 +175,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Rating'**
   String get rating;
+
+  /// No description provided for @chooseCar.
+  ///
+  /// In en, this message translates to:
+  /// **'Choos Car Type'**
+  String get chooseCar;
+
+  /// No description provided for @chooseConnector.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Connector'**
+  String get chooseConnector;
 }
 
 class _AppLocalizationsDelegate

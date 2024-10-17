@@ -1,49 +1,53 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesService {
-  static final SharedPreferencesService _instance =
-      SharedPreferencesService._internal();
-  SharedPreferences? _preferences;
+  static const String onBoardingLaunchKey = "onBoardingLaunch";
+  static const String selectedFilterConnectorIdKey =
+      "selectedFilterConnectorIdKey";
+  static const String selectedFilterCarIdKey = "selectedFilterCarIdKey";
+  static const String filterRatingKey = "filterRatingKey";
 
-  factory SharedPreferencesService() {
-    return _instance;
+  SharedPreferencesService._();
+
+  static SharedPreferencesService instance = SharedPreferencesService._();
+
+  static SharedPreferences? _sharedPrefs;
+
+  getSharedInstance() async {
+    _sharedPrefs ??= await SharedPreferences.getInstance();
   }
 
-  SharedPreferencesService._internal();
+  bool onBoardingLaunch() =>
+      _sharedPrefs?.getBool(SharedPreferencesService.onBoardingLaunchKey) ??
+      false;
 
-  Future<void> init() async {
-    _preferences = await SharedPreferences.getInstance();
-  }
+  setOnBoardingLaunch(bool value) async => await _sharedPrefs?.setBool(
+      SharedPreferencesService.onBoardingLaunchKey, value);
 
-  Future<void> setBool(String key, bool value) async {
-    await _preferences?.setBool(key, value);
-  }
+  int? selectedFilterConnectorId() => _sharedPrefs
+      ?.getInt(SharedPreferencesService.selectedFilterConnectorIdKey);
 
-  bool? getBool(String key) {
-    return _preferences?.getBool(key);
-  }
+  setSelectedFilterConnectorId(int value) async => await _sharedPrefs?.setInt(
+      SharedPreferencesService.selectedFilterConnectorIdKey, value);
 
-  Future<void> setString(String key, String value) async {
-    await _preferences?.setString(key, value);
-  }
+  int? selectedFilterCarId() =>
+      _sharedPrefs?.getInt(SharedPreferencesService.selectedFilterCarIdKey);
 
-  String? getString(String key) {
-    return _preferences?.getString(key);
-  }
+  setSelectedFilterCarId(int value) async => await _sharedPrefs?.setInt(
+      SharedPreferencesService.selectedFilterCarIdKey, value);
 
-  Future<void> setDouble(String key, double value) async {
-    await _preferences?.setDouble(key, value);
-  }
+  double? filterRating() =>
+      _sharedPrefs?.getDouble(SharedPreferencesService.filterRatingKey);
 
-  double? getDouble(String key) {
-    return _preferences?.getDouble(key);
-  }
+  setFilterRating(double value) async => await _sharedPrefs?.setDouble(
+      SharedPreferencesService.filterRatingKey, value);
 
-  Future<void> setInt(String key, int value) async {
-    await _preferences?.setInt(key, value);
-  }
+  deleteSelectedFilterConnectorId() async => await _sharedPrefs
+      ?.remove(SharedPreferencesService.selectedFilterConnectorIdKey);
 
-  int? getInt(String key) {
-    return _preferences?.getInt(key);
-  }
+  deleteSelectedFilterCarId() async => await _sharedPrefs
+      ?.remove(SharedPreferencesService.selectedFilterCarIdKey);
+
+  deleteSelectedFilterRating() async =>
+      await _sharedPrefs?.remove(SharedPreferencesService.filterRatingKey);
 }

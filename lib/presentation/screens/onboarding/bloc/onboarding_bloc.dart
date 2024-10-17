@@ -1,5 +1,7 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
+import 'package:watt_hub/data/local/onboarding_data/onboarding_data.dart';
 import 'package:watt_hub/data/local/shared_preferences/shared_preferences_service.dart';
 import 'package:watt_hub/domain/models/onboarding/onboarding_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -10,40 +12,32 @@ part 'onboarding_state.dart';
 
 part 'onboarding_bloc.freezed.dart';
 
-
+@injectable
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
-  final List<OnboardingModel> onboardingData;
   final PageController pageController;
 
-  OnboardingBloc(this.onboardingData)
+  OnboardingBloc()
       : pageController = PageController(),
         super(const OnboardingState.initial()) {
     on<LoadOnboardingEvent>((event, emit) {
-      //////
-      SharedPreferencesService().setBool(
-        'isOnBoard',
-        true,
-      );
-      //////
-      emit(OnboardingState.loaded(onboardingData[0]));
+      SharedPreferencesService.instance.setOnBoardingLaunch(false);
+      emit(OnboardingState.loaded(onboardingData));
     });
 
     on<NextOnboardingEvent>((event, emit) {
       if (state is _OnboardingLoadedState) {
         final currentPage = pageController.page!.toInt();
-        if (currentPage < onboardingData.length - 1) {
+        if (currentPage <
+            (state as _OnboardingLoadedState).onboardingData.length - 1) {
           pageController.nextPage(
             duration: const Duration(milliseconds: 300),
             curve: Curves.easeInOut,
           );
         } else {
+          SharedPreferencesService.instance.setOnBoardingLaunch(true);
           emit(const OnboardingState.complete());
         }
       }
-    });
-
-    on<OnboardingPageChangedEvent>((event, emit) {
-      emit(OnboardingState.loaded(onboardingData[event.pageIndex]));
     });
   }
 

@@ -44,4 +44,10 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get rating => 'Rating';
+
+  @override
+  String get chooseCar => 'Choos Car Type';
+
+  @override
+  String get chooseConnector => 'Choose Connector';
 }

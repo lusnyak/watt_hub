@@ -1,10 +1,9 @@
-abstract class Identifiable {
-  dynamic get id;
-}
-
-T getElementById<T extends Identifiable>(List<T> list, dynamic id) {
-  return list.firstWhere(
-    (element) => element.id == id,
-    orElse: () => throw Exception('Element with id $id not found'),
-  );
+T? findById<T>(List<T> list, dynamic id, dynamic Function(T) getId) {
+  if (id == null) return null;
+  for (var item in list) {
+    if (getId(item) == id) {
+      return item;
+    }
+  }
+  return null;
 }
