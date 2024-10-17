@@ -14,48 +14,58 @@ class _UikitPopupState extends State<UikitPopup> {
       "We need access to you location to find EV charging station around you.";
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
           child: Column(
         children: [
           ElevatedButton(
-            onPressed: () => showDialog<void>(
-                context: context,
-                builder: (BuildContext context) {
-                  return WHPopup(
-                    image: WattHubAssets.images.popupLocationImg.keyName,
-                    title: title,
-                    subTitle: subTitle,
-                  );
-                }),
+            onPressed: () {
+              WHPopup.of(context).show(
+                image: WattHubAssets.images.popupSuccessfulImg.keyName,
+                title: "Verification Successful!",
+                subTitle:
+                    "Please wait...\nYou will be directed to the homepage.",
+              );
+            },
             child: const Text("loading"),
           ),
           ElevatedButton(
-            onPressed: () => showDialog<void>(
-                context: context,
-                builder: (BuildContext context) {
-                  return WHPopup(
-                    image: WattHubAssets.images.popupLocationImg.keyName,
-                    title: "Location",
-                    subTitle: subTitle,
-                    cancelButtonTitle: "cancel",
-                    confirmButtonTitle: "save",
-                  );
-                }),
+            onPressed: () {
+              WHPopup.of(context).show(
+                image: WattHubAssets.images.popupLocationImg.keyName,
+                title: title,
+                subTitle: subTitle,
+                cancelButtonTitle: "Cancel",
+                confirmButtonTitle: "Enable Location",
+                onConfirmPressed: () {
+                  Navigator.pop(context);
+                },
+                onCancelPressed: () {
+                  Navigator.pop(context);
+                },
+              );
+            },
             child: const Text("primary"),
           ),
           ElevatedButton(
-            onPressed: () => showDialog<void>(
-                context: context,
-                builder: (BuildContext context) {
-                  return WHPopup(
-                    image: WattHubAssets.images.popupSuccessfulImg.keyName,
-                    title: title,
-                    subTitle: subTitle,
-                    confirmButtonTitle: "ok",
-                  );
-                }),
+            onPressed: () {
+              WHPopup.of(context).show(
+                image: WattHubAssets.images.popupSuccessfulImg.keyName,
+                title: "Booking Successful!",
+                subTitle:
+                    "You can view booking details on the \n\t\t My Booking menu.",
+                confirmButtonTitle: "Ok",
+                onConfirmPressed: () {
+                  Navigator.pop(context);
+                },
+              );
+            },
             child: const Text("confirm"),
           ),
         ],
