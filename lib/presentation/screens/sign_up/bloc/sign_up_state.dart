@@ -5,9 +5,9 @@ class SignUpState with _$SignUpState {
   const factory SignUpState.form({
     required bool isEmailValid,
     required bool isChecked,
-  }) = SignUpFormState;
+  }) = _SignUpFormState;
 
-  const factory SignUpState.success() = SignUpSuccess;
+  const factory SignUpState.success() = _SignUpSuccess;
 
-  const factory SignUpState.failure(String message) = SignUpFailure;
+  const factory SignUpState.failure(String message) = _SignUpFailure;
 }

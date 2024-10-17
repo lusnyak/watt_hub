@@ -24,11 +24,12 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
             isChecked: event.isChecked, // Update the checked state
           ));
         },
-        success: () => emit(SignUpState.form(isEmailValid: false, isChecked: event.isChecked)),
-        failure: (_) => emit(SignUpState.form(isEmailValid: false, isChecked: event.isChecked)),
+        success: () => emit(
+            SignUpState.form(isEmailValid: false, isChecked: event.isChecked)),
+        failure: (_) => emit(
+            SignUpState.form(isEmailValid: false, isChecked: event.isChecked)),
       );
     });
-
 
     on<SubmitSignUp>((event, emit) {
       if (formKey.currentState?.validate() ?? false) {
@@ -46,13 +47,15 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   void validateEmail(EmailChanged event, Emitter<SignUpState> emit) {
     final isValidEmail = _validateEmail(event.email);
 
-    emit(state.maybeWhen(
-      form: (_, isChecked) => SignUpState.form(
-        isEmailValid: isValidEmail,
-        isChecked: isChecked,
+    emit(
+      state.maybeWhen(
+        form: (_, isChecked) => SignUpState.form(
+          isEmailValid: isValidEmail,
+          isChecked: isChecked,
+        ),
+        orElse: () => state,
       ),
-      orElse: () => state, // Handle other states accordingly
-    ));
+    );
   }
 
   void disposeController() {

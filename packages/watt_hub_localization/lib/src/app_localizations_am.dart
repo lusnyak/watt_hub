@@ -50,4 +50,11 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get resend => 'կրկին ուղարկել';
+
+  @override
+  String get pleaseEnterEmail => 'Խնդրում ենք մուտքագրել էլ․փոստ';
+
+  @override
+  String get pleaseEnterAValidEmail =>
+      'Խնդրում ենք մուտքագրել վավեր էլ․փոստի հասցե';
 }

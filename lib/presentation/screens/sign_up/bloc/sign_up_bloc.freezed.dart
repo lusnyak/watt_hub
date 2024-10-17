@@ -514,23 +514,23 @@ mixin _$SignUpState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SignUpFormState value) form,
-    required TResult Function(SignUpSuccess value) success,
-    required TResult Function(SignUpFailure value) failure,
+    required TResult Function(_SignUpFormState value) form,
+    required TResult Function(_SignUpSuccess value) success,
+    required TResult Function(_SignUpFailure value) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SignUpFormState value)? form,
-    TResult? Function(SignUpSuccess value)? success,
-    TResult? Function(SignUpFailure value)? failure,
+    TResult? Function(_SignUpFormState value)? form,
+    TResult? Function(_SignUpSuccess value)? success,
+    TResult? Function(_SignUpFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SignUpFormState value)? form,
-    TResult Function(SignUpSuccess value)? success,
-    TResult Function(SignUpFailure value)? failure,
+    TResult Function(_SignUpFormState value)? form,
+    TResult Function(_SignUpSuccess value)? success,
+    TResult Function(_SignUpFailure value)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -597,7 +597,7 @@ class __$$SignUpFormStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignUpFormStateImpl implements SignUpFormState {
+class _$SignUpFormStateImpl implements _SignUpFormState {
   const _$SignUpFormStateImpl(
       {required this.isEmailValid, required this.isChecked});
 
@@ -671,9 +671,9 @@ class _$SignUpFormStateImpl implements SignUpFormState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SignUpFormState value) form,
-    required TResult Function(SignUpSuccess value) success,
-    required TResult Function(SignUpFailure value) failure,
+    required TResult Function(_SignUpFormState value) form,
+    required TResult Function(_SignUpSuccess value) success,
+    required TResult Function(_SignUpFailure value) failure,
   }) {
     return form(this);
   }
@@ -681,9 +681,9 @@ class _$SignUpFormStateImpl implements SignUpFormState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SignUpFormState value)? form,
-    TResult? Function(SignUpSuccess value)? success,
-    TResult? Function(SignUpFailure value)? failure,
+    TResult? Function(_SignUpFormState value)? form,
+    TResult? Function(_SignUpSuccess value)? success,
+    TResult? Function(_SignUpFailure value)? failure,
   }) {
     return form?.call(this);
   }
@@ -691,9 +691,9 @@ class _$SignUpFormStateImpl implements SignUpFormState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SignUpFormState value)? form,
-    TResult Function(SignUpSuccess value)? success,
-    TResult Function(SignUpFailure value)? failure,
+    TResult Function(_SignUpFormState value)? form,
+    TResult Function(_SignUpSuccess value)? success,
+    TResult Function(_SignUpFailure value)? failure,
     required TResult orElse(),
   }) {
     if (form != null) {
@@ -703,8 +703,8 @@ class _$SignUpFormStateImpl implements SignUpFormState {
   }
 }
 
-abstract class SignUpFormState implements SignUpState {
-  const factory SignUpFormState(
+abstract class _SignUpFormState implements SignUpState {
+  const factory _SignUpFormState(
       {required final bool isEmailValid,
       required final bool isChecked}) = _$SignUpFormStateImpl;
 
@@ -739,7 +739,7 @@ class __$$SignUpSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignUpSuccessImpl implements SignUpSuccess {
+class _$SignUpSuccessImpl implements _SignUpSuccess {
   const _$SignUpSuccessImpl();
 
   @override
@@ -793,9 +793,9 @@ class _$SignUpSuccessImpl implements SignUpSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SignUpFormState value) form,
-    required TResult Function(SignUpSuccess value) success,
-    required TResult Function(SignUpFailure value) failure,
+    required TResult Function(_SignUpFormState value) form,
+    required TResult Function(_SignUpSuccess value) success,
+    required TResult Function(_SignUpFailure value) failure,
   }) {
     return success(this);
   }
@@ -803,9 +803,9 @@ class _$SignUpSuccessImpl implements SignUpSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SignUpFormState value)? form,
-    TResult? Function(SignUpSuccess value)? success,
-    TResult? Function(SignUpFailure value)? failure,
+    TResult? Function(_SignUpFormState value)? form,
+    TResult? Function(_SignUpSuccess value)? success,
+    TResult? Function(_SignUpFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -813,9 +813,9 @@ class _$SignUpSuccessImpl implements SignUpSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SignUpFormState value)? form,
-    TResult Function(SignUpSuccess value)? success,
-    TResult Function(SignUpFailure value)? failure,
+    TResult Function(_SignUpFormState value)? form,
+    TResult Function(_SignUpSuccess value)? success,
+    TResult Function(_SignUpFailure value)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -825,8 +825,8 @@ class _$SignUpSuccessImpl implements SignUpSuccess {
   }
 }
 
-abstract class SignUpSuccess implements SignUpState {
-  const factory SignUpSuccess() = _$SignUpSuccessImpl;
+abstract class _SignUpSuccess implements SignUpState {
+  const factory _SignUpSuccess() = _$SignUpSuccessImpl;
 }
 
 /// @nodoc
@@ -864,7 +864,7 @@ class __$$SignUpFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignUpFailureImpl implements SignUpFailure {
+class _$SignUpFailureImpl implements _SignUpFailure {
   const _$SignUpFailureImpl(this.message);
 
   @override
@@ -931,9 +931,9 @@ class _$SignUpFailureImpl implements SignUpFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SignUpFormState value) form,
-    required TResult Function(SignUpSuccess value) success,
-    required TResult Function(SignUpFailure value) failure,
+    required TResult Function(_SignUpFormState value) form,
+    required TResult Function(_SignUpSuccess value) success,
+    required TResult Function(_SignUpFailure value) failure,
   }) {
     return failure(this);
   }
@@ -941,9 +941,9 @@ class _$SignUpFailureImpl implements SignUpFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SignUpFormState value)? form,
-    TResult? Function(SignUpSuccess value)? success,
-    TResult? Function(SignUpFailure value)? failure,
+    TResult? Function(_SignUpFormState value)? form,
+    TResult? Function(_SignUpSuccess value)? success,
+    TResult? Function(_SignUpFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -951,9 +951,9 @@ class _$SignUpFailureImpl implements SignUpFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SignUpFormState value)? form,
-    TResult Function(SignUpSuccess value)? success,
-    TResult Function(SignUpFailure value)? failure,
+    TResult Function(_SignUpFormState value)? form,
+    TResult Function(_SignUpSuccess value)? success,
+    TResult Function(_SignUpFailure value)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -963,8 +963,8 @@ class _$SignUpFailureImpl implements SignUpFailure {
   }
 }
 
-abstract class SignUpFailure implements SignUpState {
-  const factory SignUpFailure(final String message) = _$SignUpFailureImpl;
+abstract class _SignUpFailure implements SignUpState {
+  const factory _SignUpFailure(final String message) = _$SignUpFailureImpl;
 
   String get message;
 

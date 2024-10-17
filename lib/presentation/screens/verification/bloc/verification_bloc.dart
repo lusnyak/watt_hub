@@ -24,18 +24,28 @@ class VerificationBloc extends Bloc<VerificationEvent, VerificationState> {
       }
     });
 
-    on<VerifyOtp>((event, emit) async {
-      emit(const VerificationState.loading());
-      try {
-        final isValid = await _otpService.verifyOtp(event.otpCode);
-        if (isValid) {
-          emit(const VerificationState.success());
-        } else {
-          emit(const VerificationState.failure('Invalid OTP code'));
+    on<VerifyOtp>(
+      (event, emit) async {
+        emit(
+          const VerificationState.loading(),
+        );
+        try {
+          final isValid = await _otpService.verifyOtp(event.otpCode);
+          if (isValid) {
+            emit(
+              const VerificationState.success(),
+            );
+          } else {
+            emit(
+              const VerificationState.failure('Invalid OTP code'),
+            );
+          }
+        } catch (e) {
+          emit(
+            VerificationState.failure('Verification failed: ${e.toString()}'),
+          );
         }
-      } catch (e) {
-        emit(VerificationState.failure('Verification failed: ${e.toString()}'));
-      }
-    });
+      },
+    );
   }
 }

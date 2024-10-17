@@ -50,4 +50,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resend => 'resend';
+
+  @override
+  String get pleaseEnterEmail => 'Please enter email';
+
+  @override
+  String get pleaseEnterAValidEmail => 'Please enter a valid email';
 }

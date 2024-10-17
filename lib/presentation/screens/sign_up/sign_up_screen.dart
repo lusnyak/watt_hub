@@ -1,12 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
-import 'package:watt_hub/utils/helpers/constans.dart';
+import 'package:watt_hub/utils/utils.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
-import '../../../utils/helpers/email_validator.dart';
-import '../../../utils/helpers/url_launcher.dart';
 import 'bloc/sign_up_bloc.dart';
 
 @RoutePage()
@@ -38,12 +36,21 @@ class _SignUpView extends StatelessWidget {
             SingleChildScrollView(
               child: BlocConsumer<SignUpBloc, SignUpState>(
                 listener: (context, state) {
-                  if (state is SignUpSuccess) {
-                    AutoRouter.of(context).push(const VerificationRoute());
-                  }
+                  state.whenOrNull(success: () {
+                    AutoRouter.of(context).push(
+                      const VerificationRoute(),
+                    );
+                  });
                 },
                 builder: (context, state) {
-                  final emailState = state is SignUpFormState;
+                  final (a, isChecked) = state.maybeWhen(
+                    form: (emailValidated, checked) {
+                      return (emailValidated, checked);
+                    },
+                    orElse: () {
+                      return (false, false);
+                    },
+                  );
 
                   return Form(
                     key: signUpBloc.formKey,
@@ -64,13 +71,15 @@ class _SignUpView extends StatelessWidget {
                         WHTextField.singleLine(
                           controller: signUpBloc.emailController,
                           onChanged: (value) {
-                            signUpBloc.add(EmailChanged(value));
+                            signUpBloc.add(
+                              EmailChanged(value),
+                            );
                           },
                           label: AppLocalizations.of(context).emailAddress,
                           hintText: 'johndoe@gmail.com',
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
-                            return validateEmail(value);
+                            return validateEmail(value, context);
                           },
                         ),
                         20.h.heightBox,
@@ -78,10 +87,12 @@ class _SignUpView extends StatelessWidget {
                           children: [
                             Checkbox(
                               shape: roundedBorder6,
-                              value: emailState ? state.isChecked : false,
+                              value: isChecked,
                               onChanged: (bool? value) {
                                 if (value != null) {
-                                  signUpBloc.add(CheckboxChanged(value));
+                                  signUpBloc.add(
+                                    CheckboxChanged(value),
+                                  );
                                 }
                               },
                             ),
@@ -94,9 +105,9 @@ class _SignUpView extends StatelessWidget {
                                   children: <TextSpan>[
                                     TextSpan(
                                       recognizer: TapGestureRecognizer()
-                                        ..onTap = () {
-                                          launchURL(
-                                              AppConstans.privacyPolicyUrl);
+                                        ..onTap = () async {
+                                          await launchURL(
+                                              AppConstants.privacyPolicyUrl);
                                         },
                                       text: AppLocalizations.of(context)
                                           .privacyPolicy,
@@ -127,7 +138,9 @@ class _SignUpView extends StatelessWidget {
                 WHElevatedButton.primary(
                   title: AppLocalizations.of(context).continueText,
                   onPressed: () {
-                    signUpBloc.add(const SubmitSignUp());
+                    signUpBloc.add(
+                      const SubmitSignUp(),
+                    );
                   },
                 ).paddingSymmetric(vertical: 16.h, horizontal: 20.w)
               ],

@@ -40,7 +40,9 @@ class _VerificationView extends StatelessWidget {
               },
               failure: (failure) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(failure.error)),
+                  SnackBar(
+                    content: Text(failure.error),
+                  ),
                 );
               },
             );
@@ -63,10 +65,13 @@ class _VerificationView extends StatelessWidget {
                   builder: (context, state) {
                     return Column(
                       children: [
-                        WHPinPut(onCompleted: (val) {
-                          verificationBloc
-                              .add(VerificationEvent.verifyOtp(val));
-                        }),
+                        WHPinPut(
+                          onCompleted: (val) {
+                            verificationBloc.add(
+                              VerificationEvent.verifyOtp(val),
+                            );
+                          },
+                        ),
                         30.h.heightBox,
                         if (state is VerificationLoading)
                           const WHCircularSpin(),
@@ -84,8 +89,9 @@ class _VerificationView extends StatelessWidget {
                 Center(
                   child: WHTextButton.create(
                       onPressed: () {
-                        verificationBloc
-                            .add(const VerificationEvent.resendOtp());
+                        verificationBloc.add(
+                          const VerificationEvent.resendOtp(),
+                        );
                       },
                       text: AppLocalizations.of(context).resend,
                       color: WattHubColors.primaryGreenColor),

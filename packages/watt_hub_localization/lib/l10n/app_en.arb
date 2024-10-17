@@ -12,5 +12,7 @@
   "privacyPolicy": "Privacy Policy ",
   "iAagreeToWattHub": "I agree to WattHub ",
   "andConfirm": "and confirm that I am over 17 years old.",
-  "resend": "resend"
+  "resend": "resend",
+  "pleaseEnterEmail": "Please enter email",
+  "pleaseEnterAValidEmail": "Please enter a valid email"
 }
