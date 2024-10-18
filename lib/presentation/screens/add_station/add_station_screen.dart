@@ -2,12 +2,6 @@ import 'dart:io';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
-import 'package:watt_hub/presentation/screens/add_station/block/add_station_bloc.dart';
-import 'package:watt_hub/presentation/screens/add_station/widgets/image_picker_upload_button.dart';
-import 'package:watt_hub_localization/watt_hub_localization.dart';
-import 'package:watt_hub_uikit/watt_hub_uikit.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../config/locator/service_locator.dart';
 
 @RoutePage()
 class AddStationScreen extends StatelessWidget {
@@ -75,109 +69,36 @@ class AddStationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).addStation,
-            style: body18SemiBoldTextStyle),
-        centerTitle: true,
         leading: IconButton(
           onPressed: () => AutoRouter.of(context).push(const ProfileRoute()),
           icon: const Icon(Icons.arrow_back),
         ),
       ),
       body: SafeArea(
-
-        child: BlocBuilder<AddStationBlock, AddStationState>(
-          builder: (context, state) {
-            return state.when(
-              initial: () => Container(),
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (message) => Center(child: Text('Error: $message')),
-              loaded: (images) {
-                final currentImages = images ?? [];
-                debugPrint("$currentImages");
-                return SingleChildScrollView(
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                        minHeight: MediaQuery.of(context).size.height),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        WHElevatedButton.secondary(
-                          title: AppLocalizations.of(context).chooseAddress,
-                        ),
-                        Text(AppLocalizations.of(context).timePicker,
-                            style: body18SemiBoldTextStyle),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            WHElevatedButton.secondary(
-                                title: AppLocalizations.of(context).startTime),
-                            WHElevatedButton.secondary(
-                                title: AppLocalizations.of(context).endTime),
-                          ],
-                        ),
-                        WHTextField.singleLine(
-                          controller: context
-                              .read<AddStationBlock>()
-                              .hourlyRateController,
-                          keyboardType: TextInputType.number,
-                          label: AppLocalizations.of(context).hourlyRate,
-                          hintText: AppLocalizations.of(context).hourlyRate,
-                        ),
-                        WHTextField.singleLine(
-                          controller: context
-                              .read<AddStationBlock>()
-                              .kilowattController,
-                          keyboardType: TextInputType.number,
-                          label: AppLocalizations.of(context).kilowatt,
-                          hintText: AppLocalizations.of(context).kilowatt,
-                        ),
-                        Text(AppLocalizations.of(context).contactInfo,
-                            style: body18SemiBoldTextStyle),
-                        WHTextField.singleLine(
-                          controller:
-                              context.read<AddStationBlock>().phoneController,
-                          keyboardType: TextInputType.phone,
-                          label: AppLocalizations.of(context).phone,
-                          hintText:
-                              AppLocalizations.of(context).yourPhoneNumber,
-                        ),
-                        WHTextField.singleLine(
-                          controller:
-                              context.read<AddStationBlock>().nameController,
-                          keyboardType: TextInputType.name,
-                          label: AppLocalizations.of(context).name,
-                          hintText: AppLocalizations.of(context).yourName,
-                        ),
-                        Text(AppLocalizations.of(context).stationImage,
-                            style: body18SemiBoldTextStyle),
-                        SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Container(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                height: 120.0,
-                                child: Row(children: [
-                                  if (currentImages.length < 5)
-                                    WHImagePicker.multiple(
-                                      limit: 5 - currentImages.length,
-                                      onPicked: (file) {
-                                        context.read<AddStationBlock>().add(
-                                            AddStationEvent.imagesSelected(
-                                                file));
-                                      },
-                                      child: const ImagePickerUploadButton(),
-                                    ),
-                                  Expanded(child: _previewImages(context)),
-                                ]))),
-                        WHElevatedButton.primary(
-                          title: AppLocalizations.of(context).addStation,
-                        ),
-                      ],
-                    ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Text(
+              "Add Station Screen!",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 24.0,
+                color: Colors.blue,
+              ),
+            ),
+            20.heightBox,
+            ElevatedButton(
+                onPressed: () => AutoRouter.of(context)
+                    .push(const ChooseStationAddressRoute()),
+                child: const Text(
+                  "Choose Station Address",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.blue,
                   ),
-                );
-              },
-            );
-          },
+                ))
+          ],
         ),
       ).paddingAll(20.0),
     );
