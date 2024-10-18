@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: nil,
+        leading: null,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
