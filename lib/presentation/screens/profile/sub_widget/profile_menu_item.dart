@@ -22,7 +22,6 @@ class ProfileMenuItem extends StatelessWidget {
       iconColor: colorTile,
       splashColor: WattHubColors.primaryLightGreenColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-      contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
       onTap: onTap,
       title: Text(title,
           style: const TextStyle(
@@ -37,7 +36,6 @@ class ProfileMenuItem extends StatelessWidget {
       ),
       trailing: Icon(
         iconTrailing,
-        size: 30,
       ),
     );
   }
