@@ -17,6 +17,7 @@ class HomeScreen extends StatelessWidget {
     return BlocProvider(
       create: (_) => getIt<HomeBloc>()..add(const LoadStationEvent()),
       child: const _HomeView(),
+
     );
   }
 }

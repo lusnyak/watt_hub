@@ -11,6 +11,8 @@ class AddStationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text("Add Station"),
+        centerTitle: true,
         leading: IconButton(
           onPressed: () => AutoRouter.of(context).push(const ProfileRoute()),
           icon: const Icon(Icons.arrow_back),
@@ -18,16 +20,15 @@ class AddStationScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              "Add Station Screen!",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 24.0,
-                color: Colors.blue,
-              ),
+            WHElevatedButton.secondary(title: "Choose an address"),
+            Text("Time Picker", style: body16SemiBoldTextStyle),
+            Row(
+              children: [
+                WHElevatedButton.primary(title: "Start time"),
+                WHElevatedButton.primary(title: "End Time")
+              ],
             ),
             20.h.heightBox,
             ElevatedButton(
