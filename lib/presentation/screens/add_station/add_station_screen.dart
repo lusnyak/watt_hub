@@ -25,6 +25,7 @@ class AddStationScreen extends StatelessWidget {
             WHElevatedButton.secondary(title: "Choose an address"),
             Text("Time Picker", style: body16SemiBoldTextStyle),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 WHElevatedButton.primary(title: "Start time"),
                 WHElevatedButton.primary(title: "End Time")
@@ -41,6 +42,13 @@ class AddStationScreen extends StatelessWidget {
                     color: Colors.blue,
                   ),
                 ))
+            WHTextField.singleLine(
+                label: "Hourly rate", hintText: "Hourly rate"),
+            WHTextField.singleLine(label: "Kilowatt", hintText: "Kilowatt"),
+
+            Text("Contact info", style: body16SemiBoldTextStyle),
+
+            // WhDropDownButton(items: items, itemLabel: itemLabel)
           ],
         ),
       ).paddingAll(20.0),
