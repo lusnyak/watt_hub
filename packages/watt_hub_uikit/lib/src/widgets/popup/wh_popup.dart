@@ -3,13 +3,22 @@ import 'package:flutter/material.dart';
 import '../../../watt_hub_uikit.dart';
 
 class WHPopup extends StatelessWidget {
-  const WHPopup({super.key});
+  const WHPopup({
+    super.key,
+    required this.image,
+     required this.title,
+     required this.subTitle,
+  });
+
+  final String image;
+  final String title;
+  final String subTitle;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Image.asset(
-        WattHubAssets.images.popupSuccessfulImg.keyName,
+        image,
         width: 100.sp,
         height: 200.sp,
         fit: BoxFit.fill,
@@ -17,15 +26,16 @@ class WHPopup extends StatelessWidget {
       content: Column(
         children: [
           Text(
-            "Enable Location",
+            title,
             style: body16SemiBoldTextStyle.copyWith(
                 color: WattHubColors.primaryGreenColor),
             textAlign: TextAlign.center,
           ),
           Text(
-            "We need access to you location to find EV charging station around you.",
+            subTitle,
+            // ,
             textAlign: TextAlign.center,
-            style: body14MediumTextStyle,
+            style: body14RegularTextStyle,
           ),
         ],
       ),
@@ -33,13 +43,21 @@ class WHPopup extends StatelessWidget {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(50.sp))),
       actions: <Widget>[
-        WHElevatedButton.primary(title: "title"),
-        20.w.widthBox,
-        WHElevatedButton.secondary(title: "title"),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            WHElevatedButton.primary(
+              title: "Enable Location",
+              shadow: false,
+            ).paddingAll(8.h),
+            WHElevatedButton.secondary(
+              title: "Cancel",
+            ).paddingAll(8.h),
+          ],
+        ).paddingAll(8.h),
       ],
 
       actionsPadding: EdgeInsets.symmetric(horizontal: 20.sp),
-      elevation: 24.0,
       contentPadding: EdgeInsets.zero,
       backgroundColor: Colors.white,
       // shape: const CircleBorder(),
