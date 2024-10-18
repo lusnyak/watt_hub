@@ -98,6 +98,7 @@ class AddStationView extends StatelessWidget {
                     color: Colors.blue,
                   ),
                 ))
+
           ],
         ),
       ).paddingAll(20.0),
