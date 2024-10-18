@@ -185,8 +185,6 @@ class AddStationView extends StatelessWidget {
               },
             );
           },
-
-
         ),
       ).paddingAll(20.0),
     );
