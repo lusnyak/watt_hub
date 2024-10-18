@@ -8,6 +8,7 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../config/locator/service_locator.dart';
 
+
 @RoutePage()
 class AddStationScreen extends StatelessWidget {
   const AddStationScreen({super.key});
@@ -135,6 +136,7 @@ class AddStationView extends StatelessWidget {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).addStation,
             style: body18SemiBoldTextStyle),
+
         centerTitle: true,
         leading: IconButton(
           onPressed: () => AutoRouter.of(context).push(const ProfileRoute()),
@@ -142,7 +144,6 @@ class AddStationView extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-
         child: BlocBuilder<AddStationBlock, AddStationState>(
           builder: (context, state) {
             return state.when(
@@ -201,6 +202,7 @@ class AddStationView extends StatelessWidget {
               },
             );
           },
+
         ),
       ).paddingAll(20.0),
     );
