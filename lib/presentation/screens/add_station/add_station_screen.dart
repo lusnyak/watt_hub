@@ -34,9 +34,7 @@ class AddStationScreen extends StatelessWidget {
             WHTextField.singleLine(
                 label: "Hourly rate", hintText: "Hourly rate"),
             WHTextField.singleLine(label: "Kilowatt", hintText: "Kilowatt"),
-
             Text("Contact info", style: body16SemiBoldTextStyle),
-
             // WhDropDownButton(items: items, itemLabel: itemLabel)
           ],
         ),
