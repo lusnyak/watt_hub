@@ -80,7 +80,6 @@ class AddStationView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Add Station", style: body18SemiBoldTextStyle),
-
         centerTitle: true,
         leading: IconButton(
           onPressed: () => AutoRouter.of(context).push(const ProfileRoute()),
@@ -180,6 +179,7 @@ class AddStationView extends StatelessWidget {
                         ),
                       ],
                     ),
+
                   ),
                 );
               },
