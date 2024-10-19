@@ -13,6 +13,8 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:watt_hub/config/network/otp_service.dart' as _i60;
 import 'package:watt_hub/presentation/screens/onboarding/bloc/onboarding_bloc.dart'
     as _i764;
+import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart'
+    as _i177;
 import 'package:watt_hub/presentation/screens/sign_up/bloc/sign_up_bloc.dart'
     as _i141;
 import 'package:watt_hub/presentation/screens/verification/bloc/verification_bloc.dart'
@@ -30,8 +32,9 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     gh.factory<_i60.OtpService>(() => _i60.OtpService());
-    gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
+    gh.factory<_i177.ProfileBloc>(() => _i177.ProfileBloc());
     gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
+    gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
     gh.factory<_i298.VerificationBloc>(
         () => _i298.VerificationBloc(gh<_i60.OtpService>()));
     return this;
