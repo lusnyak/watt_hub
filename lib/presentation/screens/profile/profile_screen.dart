@@ -1,18 +1,35 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watt_hub/config/locator/service_locator.dart';
+import 'package:watt_hub/config/routes/app_router.dart';
+import 'package:watt_hub/data/local/profile/profile_data.dart';
+import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_divider.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_item.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => getIt<ProfileBloc>()..add(const LoadProfileEvent()),
+      child: const _ProfileView(),
+    );
+  }
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileView extends StatefulWidget {
+  const _ProfileView();
+
+  @override
+  State<_ProfileView> createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends State<_ProfileView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,17 +51,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14)),
               contentPadding: const EdgeInsets.symmetric(vertical: 20),
-              onTap: () => {},
+              onTap: () {
+                AutoRouter.of(context).push(const ProfileDetailRoute());
+              },
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Andrew Ainsley',
-                      style: TextStyle(
+                  Text(profileData.fullName,
+                      style: const TextStyle(
                         fontSize: 20,
                       )),
                   12.heightBox,
-                  const Text('+1 111 467 378 399',
-                      style: TextStyle(
+                  Text(profileData.phone,
+                      style: const TextStyle(
                           fontSize: 12, color: WattHubColors.darkMoodColor)),
                 ],
               ),
@@ -55,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 borderRadius:
                     BorderRadius.circular(100), // Makes the image round
                 child: Image.network(
-                  'https://i.pinimg.com/736x/4b/0d/8a/4b0d8a3809bff41e4f010fc5add5effe.jpg',
+                  profileData.imageUrl,
                   width: 80, // Sets the width of the image
                   height:
                       80, // Sets the height of the image (optional, to make it square)
@@ -72,7 +91,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ProfileMenuItem(
               title: 'My Vehicle',
               iconLeading: Icons.local_taxi_sharp,
-              onTap: () => {},
+              onTap: () =>
+                  {AutoRouter.of(context).popAndPush(const VehicleListRoute())},
               iconTrailing: Icons.chevron_right_outlined,
             ),
             ProfileMenuItem(

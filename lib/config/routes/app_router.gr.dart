@@ -181,6 +181,25 @@ class OnboardingRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [ProfileDetailScreen]
+class ProfileDetailRoute extends PageRouteInfo<void> {
+  const ProfileDetailRoute({List<PageRouteInfo>? children})
+      : super(
+          ProfileDetailRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileDetailRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const ProfileDetailScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [ProfileScreen]
 class ProfileRoute extends PageRouteInfo<void> {
   const ProfileRoute({List<PageRouteInfo>? children})
@@ -328,6 +347,25 @@ class UikitExampleRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const UikitExamplePage();
+    },
+  );
+}
+
+/// generated route for
+/// [VehicleListScreen]
+class VehicleListRoute extends PageRouteInfo<void> {
+  const VehicleListRoute({List<PageRouteInfo>? children})
+      : super(
+          VehicleListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'VehicleListRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const VehicleListScreen();
     },
   );
 }
