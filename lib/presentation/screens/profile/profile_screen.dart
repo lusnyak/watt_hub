@@ -10,14 +10,26 @@ import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_it
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => getIt<ProfileBloc>()..add(const LoadProfileEvent()),
+      child: const _ProfileView(),
+    );
+  }
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileView extends StatefulWidget {
+  const _ProfileView();
+
+  @override
+  State<_ProfileView> createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends State<_ProfileView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
