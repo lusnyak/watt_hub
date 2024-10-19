@@ -28,6 +28,8 @@ import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart'
     as _i944;
 import 'package:watt_hub/presentation/screens/onboarding/bloc/onboarding_bloc.dart'
     as _i764;
+import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart'
+    as _i177;
 import 'package:watt_hub/presentation/screens/sign_up/bloc/sign_up_bloc.dart'
     as _i141;
 import 'package:watt_hub/presentation/screens/verification/bloc/verification_bloc.dart'
@@ -46,11 +48,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final dioClient = _$DioClient();
     gh.factory<_i60.OtpService>(() => _i60.OtpService());
-    gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
-    gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
     gh.factory<_i293.FilterBloc>(() => _i293.FilterBloc());
-    gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
+    gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
     gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
+    gh.factory<_i177.ProfileBloc>(() => _i177.ProfileBloc());
+    gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
+    gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
     gh.lazySingleton<_i361.Dio>(() => dioClient.dio());
     gh.lazySingleton<_i441.AuthRepository>(() => _i441.AuthRepository());
     gh.factory<_i231.TokenStorage>(() => _i957.TokenStorageImpl());
