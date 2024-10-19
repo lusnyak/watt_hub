@@ -16,7 +16,9 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<ProfileBloc>()..add(const LoadProfileEvent()),
+      create: (context) =>
+      getIt<ProfileBloc>()
+        ..add(const LoadProfileEvent()),
       child: const _ProfileView(),
     );
   }
@@ -72,12 +74,13 @@ class _ProfileViewState extends State<_ProfileView> {
               visualDensity: const VisualDensity(vertical: 4, horizontal: 4),
               leading: ClipRRect(
                 borderRadius:
-                    BorderRadius.circular(100), // Makes the image round
+                BorderRadius.circular(100), // Makes the image round
                 child: Image.network(
                   profileData.imageUrl,
-                  width: 80, // Sets the width of the image
-                  height:
-                      80, // Sets the height of the image (optional, to make it square)
+                  width: 80,
+                  // Sets the width of the image
+                  height: 80,
+                  // Sets the height of the image (optional, to make it square)
                   fit: BoxFit.cover, // Ensures the image fills the container
                 ),
               ),
@@ -91,8 +94,9 @@ class _ProfileViewState extends State<_ProfileView> {
             ProfileMenuItem(
               title: 'My Vehicle',
               iconLeading: Icons.local_taxi_sharp,
-              onTap: () =>
-                  {AutoRouter.of(context).popAndPush(const VehicleListRoute())},
+              onTap: () {
+                AutoRouter.of(context).push(const VehicleListRoute());
+              },
               iconTrailing: Icons.chevron_right_outlined,
             ),
             ProfileMenuItem(
