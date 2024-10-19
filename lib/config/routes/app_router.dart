@@ -7,7 +7,9 @@ import 'package:watt_hub/presentation/screens/detail/detail_screen.dart';
 import 'package:watt_hub/presentation/screens/filter/filter_screen.dart';
 import 'package:watt_hub/presentation/screens/home/home_screen.dart';
 import 'package:watt_hub/presentation/screens/onboarding/onboarding_screen.dart';
+import 'package:watt_hub/presentation/screens/profile/profile_detail_screen.dart';
 import 'package:watt_hub/presentation/screens/profile/profile_screen.dart';
+import 'package:watt_hub/presentation/screens/profile/vehicle_list_screen.dart';
 import 'package:watt_hub/presentation/screens/request_station/request_station_screen.dart';
 import 'package:watt_hub/presentation/screens/request_user/request_user_screen.dart';
 import 'package:watt_hub/presentation/screens/sign_up/sign_up_screen.dart';
@@ -24,12 +26,17 @@ class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(page: SplashRoute.page, initial: true),
-        AutoRoute(page: UikitExampleRoute.page, /*initial: true*/),
+        AutoRoute(
+          page: UikitExampleRoute.page, /*initial: true*/
+        ),
         AutoRoute(page: OnboardingRoute.page),
         AutoRoute(page: DashboardRoute.page, children: [
           AutoRoute(page: HomeRoute.page),
           AutoRoute(page: RequestStationRoute.page),
-          AutoRoute(page: ProfileRoute.page),
+          AutoRoute(path: 'profile', page: ProfileRoute.page, children: [
+            AutoRoute(page: ProfileDetailRoute.page, path: 'detail'),
+            AutoRoute(page: VehicleListRoute.page, path: 'vehicles'),
+          ]),
         ]),
         AutoRoute(page: SignUpRoute.page),
         AutoRoute(page: VerificationRoute.page),
