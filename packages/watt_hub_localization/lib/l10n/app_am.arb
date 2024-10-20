@@ -14,6 +14,19 @@
   "andConfirm": "հետ և հաստատում, որ ես 17 տարեկանից բարձր եմ:",
   "resend": "կրկին ուղարկել",
   "pleaseEnterEmail": "Խնդրում ենք մուտքագրել էլ․փոստ",
-  "pleaseEnterAValidEmail": "Խնդրում ենք մուտքագրել վավեր էլ․փոստի հասցե"
+  "pleaseEnterAValidEmail": "Խնդրում ենք մուտքագրել վավեր էլ․փոստի հասցե",
+   "home": "Home",
+   "requests": "Requests",
+   "profile": "Profile",
+   "noData": "No Data",
+   "reviews": "reviews",
+   "view": "View",
+   "book": "Book",
+   "kilowatt": "kw",
+   "hourlyRate": "hr",
+   "filter": "Filter",
+   "rating": "Rating",
+   "chooseCar": "Choos Car Type",
+   "chooseConnector": "Choose Connector"
 }
 
