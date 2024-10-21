@@ -6,7 +6,7 @@ import 'package:watt_hub/config/locator/service_locator.dart';
 import 'package:watt_hub/domain/models/filter/filter_model.dart';
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:watt_hub/presentation/screens/home/widgets/map_container.dart';
-import 'package:watt_hub/presentation/screens/home/widgets/stations_list.dart';
+import 'package:watt_hub/presentation/widgets/stations_list.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
