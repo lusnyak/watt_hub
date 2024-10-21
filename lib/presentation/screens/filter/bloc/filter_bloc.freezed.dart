@@ -914,9 +914,9 @@ mixin _$FilterState {
     required TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)
         loadedState,
   }) =>
       throw _privateConstructorUsedError;
@@ -928,9 +928,9 @@ mixin _$FilterState {
     TResult? Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)?
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)?
         loadedState,
   }) =>
       throw _privateConstructorUsedError;
@@ -942,9 +942,9 @@ mixin _$FilterState {
     TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)?
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)?
         loadedState,
     required TResult orElse(),
   }) =>
@@ -1044,9 +1044,9 @@ class _$InitialStateImpl implements _InitialState {
     required TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)
         loadedState,
   }) {
     return initialState();
@@ -1061,9 +1061,9 @@ class _$InitialStateImpl implements _InitialState {
     TResult? Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)?
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)?
         loadedState,
   }) {
     return initialState?.call();
@@ -1078,9 +1078,9 @@ class _$InitialStateImpl implements _InitialState {
     TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)?
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)?
         loadedState,
     required TResult orElse(),
   }) {
@@ -1179,9 +1179,9 @@ class _$LoadingStateImpl implements _LoadingState {
     required TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)
         loadedState,
   }) {
     return loadingState();
@@ -1196,9 +1196,9 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult? Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)?
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)?
         loadedState,
   }) {
     return loadingState?.call();
@@ -1213,9 +1213,9 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)?
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)?
         loadedState,
     required TResult orElse(),
   }) {
@@ -1341,9 +1341,9 @@ class _$ErrorStateImpl implements _ErrorState {
     required TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)
         loadedState,
   }) {
     return errorState(message);
@@ -1358,9 +1358,9 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult? Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)?
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)?
         loadedState,
   }) {
     return errorState?.call(message);
@@ -1375,9 +1375,9 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)?
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)?
         loadedState,
     required TResult orElse(),
   }) {
@@ -1446,12 +1446,9 @@ abstract class _$$LoadedStateImplCopyWith<$Res> {
   $Res call(
       {List<ConnectorTypeModel> connectors,
       List<CarTypeModel> cars,
-      double? ratingValue,
-      CarTypeModel? selectedCar,
-      ConnectorTypeModel? selectedConnector});
-
-  $CarTypeModelCopyWith<$Res>? get selectedCar;
-  $ConnectorTypeModelCopyWith<$Res>? get selectedConnector;
+      int? initialSelectedCarId,
+      int? initialSelectedConnectorId,
+      double? initialRating});
 }
 
 /// @nodoc
@@ -1469,9 +1466,9 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
   $Res call({
     Object? connectors = null,
     Object? cars = null,
-    Object? ratingValue = freezed,
-    Object? selectedCar = freezed,
-    Object? selectedConnector = freezed,
+    Object? initialSelectedCarId = freezed,
+    Object? initialSelectedConnectorId = freezed,
+    Object? initialRating = freezed,
   }) {
     return _then(_$LoadedStateImpl(
       null == connectors
@@ -1482,48 +1479,19 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
           ? _value._cars
           : cars // ignore: cast_nullable_to_non_nullable
               as List<CarTypeModel>,
-      ratingValue: freezed == ratingValue
-          ? _value.ratingValue
-          : ratingValue // ignore: cast_nullable_to_non_nullable
+      initialSelectedCarId: freezed == initialSelectedCarId
+          ? _value.initialSelectedCarId
+          : initialSelectedCarId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      initialSelectedConnectorId: freezed == initialSelectedConnectorId
+          ? _value.initialSelectedConnectorId
+          : initialSelectedConnectorId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      initialRating: freezed == initialRating
+          ? _value.initialRating
+          : initialRating // ignore: cast_nullable_to_non_nullable
               as double?,
-      selectedCar: freezed == selectedCar
-          ? _value.selectedCar
-          : selectedCar // ignore: cast_nullable_to_non_nullable
-              as CarTypeModel?,
-      selectedConnector: freezed == selectedConnector
-          ? _value.selectedConnector
-          : selectedConnector // ignore: cast_nullable_to_non_nullable
-              as ConnectorTypeModel?,
     ));
-  }
-
-  /// Create a copy of FilterState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $CarTypeModelCopyWith<$Res>? get selectedCar {
-    if (_value.selectedCar == null) {
-      return null;
-    }
-
-    return $CarTypeModelCopyWith<$Res>(_value.selectedCar!, (value) {
-      return _then(_value.copyWith(selectedCar: value));
-    });
-  }
-
-  /// Create a copy of FilterState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ConnectorTypeModelCopyWith<$Res>? get selectedConnector {
-    if (_value.selectedConnector == null) {
-      return null;
-    }
-
-    return $ConnectorTypeModelCopyWith<$Res>(_value.selectedConnector!,
-        (value) {
-      return _then(_value.copyWith(selectedConnector: value));
-    });
   }
 }
 
@@ -1532,7 +1500,9 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
 class _$LoadedStateImpl implements _LoadedState {
   const _$LoadedStateImpl(
       final List<ConnectorTypeModel> connectors, final List<CarTypeModel> cars,
-      {this.ratingValue, this.selectedCar, this.selectedConnector})
+      {this.initialSelectedCarId,
+      this.initialSelectedConnectorId,
+      this.initialRating})
       : _connectors = connectors,
         _cars = cars;
 
@@ -1553,15 +1523,15 @@ class _$LoadedStateImpl implements _LoadedState {
   }
 
   @override
-  final double? ratingValue;
+  final int? initialSelectedCarId;
   @override
-  final CarTypeModel? selectedCar;
+  final int? initialSelectedConnectorId;
   @override
-  final ConnectorTypeModel? selectedConnector;
+  final double? initialRating;
 
   @override
   String toString() {
-    return 'FilterState.loadedState(connectors: $connectors, cars: $cars, ratingValue: $ratingValue, selectedCar: $selectedCar, selectedConnector: $selectedConnector)';
+    return 'FilterState.loadedState(connectors: $connectors, cars: $cars, initialSelectedCarId: $initialSelectedCarId, initialSelectedConnectorId: $initialSelectedConnectorId, initialRating: $initialRating)';
   }
 
   @override
@@ -1572,12 +1542,14 @@ class _$LoadedStateImpl implements _LoadedState {
             const DeepCollectionEquality()
                 .equals(other._connectors, _connectors) &&
             const DeepCollectionEquality().equals(other._cars, _cars) &&
-            (identical(other.ratingValue, ratingValue) ||
-                other.ratingValue == ratingValue) &&
-            (identical(other.selectedCar, selectedCar) ||
-                other.selectedCar == selectedCar) &&
-            (identical(other.selectedConnector, selectedConnector) ||
-                other.selectedConnector == selectedConnector));
+            (identical(other.initialSelectedCarId, initialSelectedCarId) ||
+                other.initialSelectedCarId == initialSelectedCarId) &&
+            (identical(other.initialSelectedConnectorId,
+                    initialSelectedConnectorId) ||
+                other.initialSelectedConnectorId ==
+                    initialSelectedConnectorId) &&
+            (identical(other.initialRating, initialRating) ||
+                other.initialRating == initialRating));
   }
 
   @override
@@ -1585,9 +1557,9 @@ class _$LoadedStateImpl implements _LoadedState {
       runtimeType,
       const DeepCollectionEquality().hash(_connectors),
       const DeepCollectionEquality().hash(_cars),
-      ratingValue,
-      selectedCar,
-      selectedConnector);
+      initialSelectedCarId,
+      initialSelectedConnectorId,
+      initialRating);
 
   /// Create a copy of FilterState
   /// with the given fields replaced by the non-null parameter values.
@@ -1606,13 +1578,13 @@ class _$LoadedStateImpl implements _LoadedState {
     required TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)
         loadedState,
   }) {
-    return loadedState(
-        connectors, cars, ratingValue, selectedCar, selectedConnector);
+    return loadedState(connectors, cars, initialSelectedCarId,
+        initialSelectedConnectorId, initialRating);
   }
 
   @override
@@ -1624,13 +1596,13 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult? Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)?
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)?
         loadedState,
   }) {
-    return loadedState?.call(
-        connectors, cars, ratingValue, selectedCar, selectedConnector);
+    return loadedState?.call(connectors, cars, initialSelectedCarId,
+        initialSelectedConnectorId, initialRating);
   }
 
   @override
@@ -1642,15 +1614,15 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
-            double? ratingValue,
-            CarTypeModel? selectedCar,
-            ConnectorTypeModel? selectedConnector)?
+            int? initialSelectedCarId,
+            int? initialSelectedConnectorId,
+            double? initialRating)?
         loadedState,
     required TResult orElse(),
   }) {
     if (loadedState != null) {
-      return loadedState(
-          connectors, cars, ratingValue, selectedCar, selectedConnector);
+      return loadedState(connectors, cars, initialSelectedCarId,
+          initialSelectedConnectorId, initialRating);
     }
     return orElse();
   }
@@ -1696,15 +1668,15 @@ class _$LoadedStateImpl implements _LoadedState {
 abstract class _LoadedState implements FilterState {
   const factory _LoadedState(
       final List<ConnectorTypeModel> connectors, final List<CarTypeModel> cars,
-      {final double? ratingValue,
-      final CarTypeModel? selectedCar,
-      final ConnectorTypeModel? selectedConnector}) = _$LoadedStateImpl;
+      {final int? initialSelectedCarId,
+      final int? initialSelectedConnectorId,
+      final double? initialRating}) = _$LoadedStateImpl;
 
   List<ConnectorTypeModel> get connectors;
   List<CarTypeModel> get cars;
-  double? get ratingValue;
-  CarTypeModel? get selectedCar;
-  ConnectorTypeModel? get selectedConnector;
+  int? get initialSelectedCarId;
+  int? get initialSelectedConnectorId;
+  double? get initialRating;
 
   /// Create a copy of FilterState
   /// with the given fields replaced by the non-null parameter values.

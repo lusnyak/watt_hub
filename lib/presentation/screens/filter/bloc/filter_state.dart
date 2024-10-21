@@ -8,8 +8,8 @@ class FilterState with _$FilterState {
   const factory FilterState.loadedState(
     List<ConnectorTypeModel> connectors,
     List<CarTypeModel> cars, {
-    double? ratingValue,
-    CarTypeModel? selectedCar,
-    ConnectorTypeModel? selectedConnector,
+    int? initialSelectedCarId,
+    int? initialSelectedConnectorId,
+    double? initialRating,
   }) = _LoadedState;
 }

@@ -1,14 +1,16 @@
-import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
-import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class FilterModel {
-  FilterModel({
-    this.connector,
-    this.car,
-    this.rating,
-  });
+part 'filter_model.freezed.dart';
+part 'filter_model.g.dart';
 
-  ConnectorTypeModel? connector;
-  CarTypeModel? car;
-  double? rating;
+@freezed
+class FilterModel with _$FilterModel {
+  const factory FilterModel({
+    int? connectorId,
+    int? carId,
+    double? rating,
+  }) = _FilterModel;
+
+  factory FilterModel.fromJson(Map<String, dynamic> json) =>
+      _$FilterModelFromJson(json);
 }

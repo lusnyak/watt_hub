@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
-import 'package:watt_hub/domain/models/filter/filter_model.dart';
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:watt_hub/presentation/screens/home/widgets/map_container.dart';
 import 'package:watt_hub/presentation/widgets/stations_list.dart';
@@ -34,27 +33,7 @@ class _HomeView extends StatelessWidget {
           actions: [
             WHIconButton.primary(
               icon: const Icon(Icons.filter_alt),
-              onPressed: () async {
-                final currentState = context.read<HomeBloc>().state;
-
-                if (currentState is LoadedState) {
-                  final selectedConnectorId = currentState.selectedConnectorId;
-                  final selectedCarId = currentState.selectedCarId;
-                  final rating = currentState.rating;
-
-                  final filterData = await context.router.push<FilterModel>(
-                    FilterRoute(
-                      selectedCarId: selectedCarId,
-                      selectedConnectorId: selectedConnectorId,
-                      rating: rating,
-                    ),
-                  );
-
-                  if (filterData != null) {
-                    context.read<HomeBloc>().add(const LoadStationEvent());
-                  }
-                }
-              },
+              onPressed: () => context.router.push(const FilterRoute()),
             ).paddingOnly(right: 20.w),
           ],
         ),

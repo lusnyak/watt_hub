@@ -1,11 +1,12 @@
-import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:injectable/injectable.dart';
+import 'package:watt_hub/config/config.dart';
+import 'package:watt_hub/data/local/local.dart';
 import 'package:watt_hub/data/fake_data/car_types_data/car_types_data.dart';
 import 'package:watt_hub/data/fake_data/connectors_data/connectors_data.dart';
-import 'package:watt_hub/data/local/shared_preferences/shared_preferences_service.dart';
+import 'package:watt_hub/data/local/filter_storage/filter_storage_impl.dart';
 import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
 import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
+import 'package:watt_hub/domain/models/filter/filter_model.dart';
 
 part 'filter_event.dart';
 part 'filter_state.dart';
@@ -14,65 +15,77 @@ part 'filter_bloc.freezed.dart';
 @injectable
 class FilterBloc extends Bloc<FilterEvent, FilterState> {
   FilterBloc() : super(const FilterState.initialState()) {
-    on<FilterEvent>((event, emit) {
-      event.map(
-        startedEvent: (_) {
-          emit(const FilterState.loadingState());
+    on<_StartedEvent>(_onStartedEvent);
+    on<_SliderValueChangedEvent>(_onSliderValueChanged);
+    on<_CarTypeChangedEvent>(_onCarTypeChanged);
+    on<_ConnectorTypeChangedEvent>(_onConnectorTypeChanged);
+    on<_ApplyFiltersEvent>(_onApplyFiltersEvent);
+  }
 
-          final connectors = connectorsData
-              .map(
-                  (connectorJson) => ConnectorTypeModel.fromJson(connectorJson))
-              .toList();
+  Future<void> _onStartedEvent(
+      _StartedEvent event, Emitter<FilterState> emit) async {
+    emit(const FilterState.loadingState());
 
-          final cars = carTypesData
-              .map((carJson) => CarTypeModel.fromJson(carJson))
-              .toList();
+    try {
+      final filterData = await getIt<FilterStorage>().readFilterData();
 
-          emit(FilterState.loadedState(connectors, cars, ratingValue: null));
-        },
-        sliderValueChangedEvent: (event) {
-          if (state is _LoadedState) {
-            final currentState = state as _LoadedState;
-            emit(currentState.copyWith(ratingValue: event.newValue));
-          }
-        },
-        carTypeChangedEvent: (event) {
-          if (state is _LoadedState) {
-            final currentState = state as _LoadedState;
-            emit(currentState.copyWith(selectedCar: event.selectedCar));
-          }
-        },
-        connectorTypeChangedEvent: (event) {
-          if (state is _LoadedState) {
-            final currentState = state as _LoadedState;
-            emit(currentState.copyWith(
-                selectedConnector: event.selectedConnector));
-          }
-        },
-        applyFiltersEvent: (_) async {
-          if (state is _LoadedState) {
-            final currentState = state as _LoadedState;
-            final selectedConnector = currentState.selectedConnector;
-            final selectedCar = currentState.selectedCar;
-            final currentSliderValue = currentState.ratingValue;
+      final connectors = connectorsData
+          .map((connectorJson) => ConnectorTypeModel.fromJson(connectorJson))
+          .toList();
 
-            if (selectedConnector?.id != null) {
-              await SharedPreferencesService.instance
-                  .setSelectedFilterConnectorId(selectedConnector!.id);
-            }
+      final cars = carTypesData
+          .map((carJson) => CarTypeModel.fromJson(carJson))
+          .toList();
 
-            if (selectedCar?.id != null) {
-              await SharedPreferencesService.instance
-                  .setSelectedFilterCarId(selectedCar!.id);
-            }
+      emit(FilterState.loadedState(
+        connectors,
+        cars,
+        initialRating: filterData?.rating,
+        initialSelectedCarId: filterData?.carId,
+        initialSelectedConnectorId: filterData?.connectorId,
+      ));
+    } catch (e) {
+      emit(const FilterState.errorState('Failed to load filter data'));
+    }
+  }
 
-            if (currentSliderValue != null) {
-              await SharedPreferencesService.instance
-                  .setFilterRating(currentSliderValue);
-            }
-          }
-        },
+  void _onSliderValueChanged(
+      _SliderValueChangedEvent event, Emitter<FilterState> emit) {
+    if (state is _LoadedState) {
+      final currentState = state as _LoadedState;
+      emit(currentState.copyWith(initialRating: event.newValue));
+    }
+  }
+
+  void _onCarTypeChanged(
+      _CarTypeChangedEvent event, Emitter<FilterState> emit) {
+    if (state is _LoadedState) {
+      final currentState = state as _LoadedState;
+      emit(currentState.copyWith(initialSelectedCarId: event.selectedCar?.id));
+    }
+  }
+
+  void _onConnectorTypeChanged(
+      _ConnectorTypeChangedEvent event, Emitter<FilterState> emit) {
+    if (state is _LoadedState) {
+      final currentState = state as _LoadedState;
+      emit(currentState.copyWith(
+          initialSelectedConnectorId: event.selectedConnector?.id));
+    }
+  }
+
+  Future<void> _onApplyFiltersEvent(
+      _ApplyFiltersEvent event, Emitter<FilterState> emit) async {
+    if (state is _LoadedState) {
+      final currentState = state as _LoadedState;
+
+      final filterData = FilterModel(
+        connectorId: currentState.initialSelectedConnectorId,
+        carId: currentState.initialSelectedCarId,
+        rating: currentState.initialRating,
       );
-    });
+
+      await FilterStorageImpl().saveFilterData(filterData);
+    }
   }
 }
