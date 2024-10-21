@@ -19,6 +19,7 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8
     }
     defaultConfig {
+        minSdkVersion 21
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.watt_hub.watt_hub"
         // You can update the following values to match your application needs.
