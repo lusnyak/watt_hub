@@ -13,59 +13,66 @@ part 'filter_bloc.freezed.dart';
 
 @injectable
 class FilterBloc extends Bloc<FilterEvent, FilterState> {
-  FilterBloc() : super(const FilterState.initial()) {
+  FilterBloc() : super(const FilterState.initialState()) {
     on<FilterEvent>((event, emit) {
-      event.map(started: (_) {
-        emit(const FilterState.loading());
+      event.map(
+        startedEvent: (_) {
+          emit(const FilterState.loadingState());
 
-        final connectors = connectorsData
-            .map((connectorJson) => ConnectorTypeModel.fromJson(connectorJson))
-            .toList();
+          final connectors = connectorsData
+              .map(
+                  (connectorJson) => ConnectorTypeModel.fromJson(connectorJson))
+              .toList();
 
-        final cars = carTypesData
-            .map((carJson) => CarTypeModel.fromJson(carJson))
-            .toList();
+          final cars = carTypesData
+              .map((carJson) => CarTypeModel.fromJson(carJson))
+              .toList();
 
-        emit(FilterState.loaded(connectors, cars, currentSliderValue: null));
-      }, sliderValueChanged: (event) {
-        if (state is _LoadedState) {
-          final currentState = state as _LoadedState;
-          emit(currentState.copyWith(currentSliderValue: event.newValue));
-        }
-      }, carTypeChanged: (event) {
-        if (state is _LoadedState) {
-          final currentState = state as _LoadedState;
-          emit(currentState.copyWith(selectedCar: event.selectedCar));
-        }
-      }, connectorTypeChanged: (event) {
-        if (state is _LoadedState) {
-          final currentState = state as _LoadedState;
-          emit(currentState.copyWith(
-              selectedConnector: event.selectedConnector));
-        }
-      }, applyFilters: (_) async {
-        if (state is _LoadedState) {
-          final currentState = state as _LoadedState;
-          final selectedConnector = currentState.selectedConnector;
-          final selectedCar = currentState.selectedCar;
-          final currentSliderValue = currentState.currentSliderValue;
-
-          if (selectedConnector?.id != null) {
-            await SharedPreferencesService.instance
-                .setSelectedFilterConnectorId(selectedConnector!.id);
+          emit(FilterState.loadedState(connectors, cars, ratingValue: null));
+        },
+        sliderValueChangedEvent: (event) {
+          if (state is _LoadedState) {
+            final currentState = state as _LoadedState;
+            emit(currentState.copyWith(ratingValue: event.newValue));
           }
-
-          if (selectedCar?.id != null) {
-            await SharedPreferencesService.instance
-                .setSelectedFilterCarId(selectedCar!.id);
+        },
+        carTypeChangedEvent: (event) {
+          if (state is _LoadedState) {
+            final currentState = state as _LoadedState;
+            emit(currentState.copyWith(selectedCar: event.selectedCar));
           }
-
-          if (currentSliderValue != null) {
-            await SharedPreferencesService.instance
-                .setFilterRating(currentSliderValue);
+        },
+        connectorTypeChangedEvent: (event) {
+          if (state is _LoadedState) {
+            final currentState = state as _LoadedState;
+            emit(currentState.copyWith(
+                selectedConnector: event.selectedConnector));
           }
-        }
-      });
+        },
+        applyFiltersEvent: (_) async {
+          if (state is _LoadedState) {
+            final currentState = state as _LoadedState;
+            final selectedConnector = currentState.selectedConnector;
+            final selectedCar = currentState.selectedCar;
+            final currentSliderValue = currentState.ratingValue;
+
+            if (selectedConnector?.id != null) {
+              await SharedPreferencesService.instance
+                  .setSelectedFilterConnectorId(selectedConnector!.id);
+            }
+
+            if (selectedCar?.id != null) {
+              await SharedPreferencesService.instance
+                  .setSelectedFilterCarId(selectedCar!.id);
+            }
+
+            if (currentSliderValue != null) {
+              await SharedPreferencesService.instance
+                  .setFilterRating(currentSliderValue);
+            }
+          }
+        },
+      );
     });
   }
 }

@@ -22,11 +22,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   bool isList = true;
 
   HomeBloc() : super(const HomeState.initial()) {
-    on<LoadStation>(_onLoadStation);
-    on<ToggleView>(_onToggleView);
-    on<CenterLocation>(_onCenterLocation);
-    on<CenterOnStation>(_onCenterOnStation);
-    on<LoadFilters>(_onLoadFilters);
+    on<LoadStationEvent>(_onLoadStation);
+    on<ToggleViewEvent>(_onToggleView);
+    on<CenterLocationEvent>(_onCenterLocation);
+    on<CenterOnStationEvent>(_onCenterOnStation);
+    on<LoadFiltersEvent>(_onLoadFilters);
   }
 
   Future<void> _initializeLocation() async {
@@ -40,7 +40,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   Future<void> _onLoadStation(
-    LoadStation event,
+    LoadStationEvent event,
     Emitter<HomeState> emit,
   ) async {
     emit(const HomeState.loading());
@@ -71,7 +71,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   Future<void> _onLoadFilters(
-    LoadFilters event,
+    LoadFiltersEvent event,
     Emitter<HomeState> emit,
   ) async {
     final selectedConnectorId =
@@ -90,7 +90,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
   }
 
-  void _onToggleView(ToggleView event, Emitter<HomeState> emit) {
+  void _onToggleView(ToggleViewEvent event, Emitter<HomeState> emit) {
     isList = !isList;
     if (state is LoadedState) {
       final loadedState = state as LoadedState;
@@ -100,14 +100,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
   }
 
-  void _onCenterLocation(CenterLocation event, Emitter<HomeState> emit) {
+  void _onCenterLocation(CenterLocationEvent event, Emitter<HomeState> emit) {
     if (currentLocation != null) {
       mapController.move(currentLocation!, 18.0);
     }
   }
 
   void _onCenterOnStation(
-    CenterOnStation event,
+    CenterOnStationEvent event,
     Emitter<HomeState> emit,
   ) {
     isList = true;

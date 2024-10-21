@@ -25,7 +25,8 @@ class StationsList extends StatelessWidget {
             borderRadius: BorderRadius.circular(15.r),
           ),
           child: InkWell(
-            onTap: () => context.read<HomeBloc>().add(CenterOnStation(station)),
+            onTap: () =>
+                context.read<HomeBloc>().add(CenterOnStationEvent(station)),
             borderRadius: BorderRadius.circular(15.r),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,12 +43,10 @@ class StationsList extends StatelessWidget {
                       color: Colors.grey,
                     ),
                     4.w.widthBox,
-                    Expanded(
-                      child: Text(
-                        station.address,
-                        style: const TextStyle(color: Colors.grey),
-                      ),
-                    ),
+                    Text(
+                      station.address,
+                      style: const TextStyle(color: Colors.grey),
+                    ).expanded(),
                   ],
                 ),
                 8.h.heightBox,

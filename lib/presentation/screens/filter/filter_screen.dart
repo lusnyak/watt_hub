@@ -25,7 +25,7 @@ class FilterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<FilterBloc>()..add(const FilterEvent.started()),
+      create: (_) => getIt<FilterBloc>()..add(const FilterEvent.startedEvent()),
       child: FilterView(
         initialSelectedConnectorId: selectedConnectorId,
         initialSelectedCarId: selectedCarId,
@@ -60,18 +60,21 @@ class FilterView extends StatelessWidget {
         child: BlocBuilder<FilterBloc, FilterState>(
           builder: (context, state) {
             return state.when(
-              initial: () => nil,
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (message) => Center(child: Text('Error: $message')),
-              loaded: (
+              initialState: () => nil,
+              loadingState: () => const Center(child: CircularProgressIndicator()),
+              errorState: (message) => Center(child: Text('Error: $message')),
+              loadedState: (
                 connectors,
                 cars,
                 currentSliderValue,
                 selectedCar,
                 selectedConnector,
               ) {
-                final initialSelectedCar =
-                    findById(cars, initialSelectedCarId, (car) => car.id);
+                final initialSelectedCar = findById(
+                  cars,
+                  initialSelectedCarId,
+                  (car) => car.id,
+                );
                 final initialSelectedConnector = findById(connectors,
                     initialSelectedConnectorId, (connector) => connector.id);
                 return Column(
@@ -84,7 +87,7 @@ class FilterView extends StatelessWidget {
                           if (value != null) {
                             context
                                 .read<FilterBloc>()
-                                .add(FilterEvent.carTypeChanged(value));
+                                .add(FilterEvent.carTypeChangedEvent(value));
                           }
                         },
                         hintText: context.localized.chooseCar,
@@ -95,9 +98,8 @@ class FilterView extends StatelessWidget {
                       itemLabel: (connector) => connector.title,
                       onChanged: (value) {
                         if (value != null) {
-                          context
-                              .read<FilterBloc>()
-                              .add(FilterEvent.connectorTypeChanged(value));
+                          context.read<FilterBloc>().add(
+                              FilterEvent.connectorTypeChangedEvent(value));
                         }
                       },
                       hintText: context.localized.chooseConnector,
@@ -113,7 +115,7 @@ class FilterView extends StatelessWidget {
                       onPressed: () {
                         context
                             .read<FilterBloc>()
-                            .add(const FilterEvent.applyFilters());
+                            .add(const FilterEvent.applyFiltersEvent());
                         context.router.maybePop(
                           FilterModel(
                             connector: selectedConnector,

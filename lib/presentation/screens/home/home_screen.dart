@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<HomeBloc>()..add(const LoadStation()),
+      create: (_) => getIt<HomeBloc>()..add(const LoadStationEvent()),
       child: const _HomeView(),
     );
   }
@@ -42,10 +42,6 @@ class _HomeView extends StatelessWidget {
                   final selectedCarId = currentState.selectedCarId;
                   final rating = currentState.rating;
 
-                  debugPrint('$selectedConnectorId selectedConnectorId');
-                  debugPrint('$selectedCarId selectedCarId');
-                  debugPrint('$rating rating');
-
                   final filterData = await context.router.push<FilterModel>(
                     FilterRoute(
                       selectedCarId: selectedCarId,
@@ -55,11 +51,8 @@ class _HomeView extends StatelessWidget {
                   );
 
                   if (filterData != null) {
-                    context
-                        .read<HomeBloc>()
-                        .add(const LoadStation());
+                    context.read<HomeBloc>().add(const LoadStationEvent());
                   }
-                  debugPrint('${filterData?.connector?.title} filterData');
                 }
               },
             ).paddingOnly(right: 20.w),
@@ -74,8 +67,13 @@ class _HomeView extends StatelessWidget {
                 loading: () => const Center(child: CircularProgressIndicator()),
                 error: (message) => Center(child: Text(message)),
                 viewChanged: (isList) => nil,
-                loaded: (stations, isList, selectedConnectorId, selectedCarId,
-                    rating) {
+                loaded: (
+                  stations,
+                  isList,
+                  selectedConnectorId,
+                  selectedCarId,
+                  rating,
+                ) {
                   return isList
                       ? MapContainer(
                           chargingStations: stations,
@@ -99,14 +97,14 @@ class _HomeView extends StatelessWidget {
                 ))
                   FloatingActionButton(
                     onPressed: () {
-                      context.read<HomeBloc>().add(const CenterLocation());
+                      context.read<HomeBloc>().add(const CenterLocationEvent());
                     },
                     child: const Icon(Icons.my_location_outlined),
                   ),
                 20.widthBox,
                 FloatingActionButton(
                   onPressed: () {
-                    context.read<HomeBloc>().add(const ToggleView());
+                    context.read<HomeBloc>().add(const ToggleViewEvent());
                   },
                   child: Icon(
                     context.read<HomeBloc>().isList ? Icons.list : Icons.map,

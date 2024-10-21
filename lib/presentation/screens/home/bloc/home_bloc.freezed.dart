@@ -18,57 +18,57 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadStation,
-    required TResult Function() toggleView,
-    required TResult Function() centerLocation,
+    required TResult Function() loadStationEvent,
+    required TResult Function() toggleViewEventEvent,
+    required TResult Function() centerLocationEvent,
     required TResult Function(StationModel station) centerOnStation,
-    required TResult Function() loadFilters,
+    required TResult Function() loadFiltersEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadStation,
-    TResult? Function()? toggleView,
-    TResult? Function()? centerLocation,
+    TResult? Function()? loadStationEvent,
+    TResult? Function()? toggleViewEventEvent,
+    TResult? Function()? centerLocationEvent,
     TResult? Function(StationModel station)? centerOnStation,
-    TResult? Function()? loadFilters,
+    TResult? Function()? loadFiltersEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadStation,
-    TResult Function()? toggleView,
-    TResult Function()? centerLocation,
+    TResult Function()? loadStationEvent,
+    TResult Function()? toggleViewEventEvent,
+    TResult Function()? centerLocationEvent,
     TResult Function(StationModel station)? centerOnStation,
-    TResult Function()? loadFilters,
+    TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadStation value) loadStation,
-    required TResult Function(ToggleView value) toggleView,
-    required TResult Function(CenterLocation value) centerLocation,
-    required TResult Function(CenterOnStation value) centerOnStation,
-    required TResult Function(LoadFilters value) loadFilters,
+    required TResult Function(LoadStationEvent value) loadStationEvent,
+    required TResult Function(ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(CenterLocationEvent value) centerLocationEvent,
+    required TResult Function(CenterOnStationEvent value) centerOnStation,
+    required TResult Function(LoadFiltersEvent value) loadFiltersEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadStation value)? loadStation,
-    TResult? Function(ToggleView value)? toggleView,
-    TResult? Function(CenterLocation value)? centerLocation,
-    TResult? Function(CenterOnStation value)? centerOnStation,
-    TResult? Function(LoadFilters value)? loadFilters,
+    TResult? Function(LoadStationEvent value)? loadStationEvent,
+    TResult? Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult? Function(CenterOnStationEvent value)? centerOnStation,
+    TResult? Function(LoadFiltersEvent value)? loadFiltersEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadStation value)? loadStation,
-    TResult Function(ToggleView value)? toggleView,
-    TResult Function(CenterLocation value)? centerLocation,
-    TResult Function(CenterOnStation value)? centerOnStation,
-    TResult Function(LoadFilters value)? loadFilters,
+    TResult Function(LoadStationEvent value)? loadStationEvent,
+    TResult Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult Function(CenterOnStationEvent value)? centerOnStation,
+    TResult Function(LoadFiltersEvent value)? loadFiltersEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -95,18 +95,18 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
 }
 
 /// @nodoc
-abstract class _$$LoadStationImplCopyWith<$Res> {
-  factory _$$LoadStationImplCopyWith(
-          _$LoadStationImpl value, $Res Function(_$LoadStationImpl) then) =
-      __$$LoadStationImplCopyWithImpl<$Res>;
+abstract class _$$LoadStationEventImplCopyWith<$Res> {
+  factory _$$LoadStationEventImplCopyWith(_$LoadStationEventImpl value,
+          $Res Function(_$LoadStationEventImpl) then) =
+      __$$LoadStationEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadStationImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$LoadStationImpl>
-    implements _$$LoadStationImplCopyWith<$Res> {
-  __$$LoadStationImplCopyWithImpl(
-      _$LoadStationImpl _value, $Res Function(_$LoadStationImpl) _then)
+class __$$LoadStationEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadStationEventImpl>
+    implements _$$LoadStationEventImplCopyWith<$Res> {
+  __$$LoadStationEventImplCopyWithImpl(_$LoadStationEventImpl _value,
+      $Res Function(_$LoadStationEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HomeEvent
@@ -115,18 +115,18 @@ class __$$LoadStationImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadStationImpl implements LoadStation {
-  const _$LoadStationImpl();
+class _$LoadStationEventImpl implements LoadStationEvent {
+  const _$LoadStationEventImpl();
 
   @override
   String toString() {
-    return 'HomeEvent.loadStation()';
+    return 'HomeEvent.loadStationEvent()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadStationImpl);
+        (other.runtimeType == runtimeType && other is _$LoadStationEventImpl);
   }
 
   @override
@@ -135,39 +135,39 @@ class _$LoadStationImpl implements LoadStation {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadStation,
-    required TResult Function() toggleView,
-    required TResult Function() centerLocation,
+    required TResult Function() loadStationEvent,
+    required TResult Function() toggleViewEventEvent,
+    required TResult Function() centerLocationEvent,
     required TResult Function(StationModel station) centerOnStation,
-    required TResult Function() loadFilters,
+    required TResult Function() loadFiltersEvent,
   }) {
-    return loadStation();
+    return loadStationEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadStation,
-    TResult? Function()? toggleView,
-    TResult? Function()? centerLocation,
+    TResult? Function()? loadStationEvent,
+    TResult? Function()? toggleViewEventEvent,
+    TResult? Function()? centerLocationEvent,
     TResult? Function(StationModel station)? centerOnStation,
-    TResult? Function()? loadFilters,
+    TResult? Function()? loadFiltersEvent,
   }) {
-    return loadStation?.call();
+    return loadStationEvent?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadStation,
-    TResult Function()? toggleView,
-    TResult Function()? centerLocation,
+    TResult Function()? loadStationEvent,
+    TResult Function()? toggleViewEventEvent,
+    TResult Function()? centerLocationEvent,
     TResult Function(StationModel station)? centerOnStation,
-    TResult Function()? loadFilters,
+    TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) {
-    if (loadStation != null) {
-      return loadStation();
+    if (loadStationEvent != null) {
+      return loadStationEvent();
     }
     return orElse();
   }
@@ -175,61 +175,61 @@ class _$LoadStationImpl implements LoadStation {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadStation value) loadStation,
-    required TResult Function(ToggleView value) toggleView,
-    required TResult Function(CenterLocation value) centerLocation,
-    required TResult Function(CenterOnStation value) centerOnStation,
-    required TResult Function(LoadFilters value) loadFilters,
+    required TResult Function(LoadStationEvent value) loadStationEvent,
+    required TResult Function(ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(CenterLocationEvent value) centerLocationEvent,
+    required TResult Function(CenterOnStationEvent value) centerOnStation,
+    required TResult Function(LoadFiltersEvent value) loadFiltersEvent,
   }) {
-    return loadStation(this);
+    return loadStationEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadStation value)? loadStation,
-    TResult? Function(ToggleView value)? toggleView,
-    TResult? Function(CenterLocation value)? centerLocation,
-    TResult? Function(CenterOnStation value)? centerOnStation,
-    TResult? Function(LoadFilters value)? loadFilters,
+    TResult? Function(LoadStationEvent value)? loadStationEvent,
+    TResult? Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult? Function(CenterOnStationEvent value)? centerOnStation,
+    TResult? Function(LoadFiltersEvent value)? loadFiltersEvent,
   }) {
-    return loadStation?.call(this);
+    return loadStationEvent?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadStation value)? loadStation,
-    TResult Function(ToggleView value)? toggleView,
-    TResult Function(CenterLocation value)? centerLocation,
-    TResult Function(CenterOnStation value)? centerOnStation,
-    TResult Function(LoadFilters value)? loadFilters,
+    TResult Function(LoadStationEvent value)? loadStationEvent,
+    TResult Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult Function(CenterOnStationEvent value)? centerOnStation,
+    TResult Function(LoadFiltersEvent value)? loadFiltersEvent,
     required TResult orElse(),
   }) {
-    if (loadStation != null) {
-      return loadStation(this);
+    if (loadStationEvent != null) {
+      return loadStationEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class LoadStation implements HomeEvent {
-  const factory LoadStation() = _$LoadStationImpl;
+abstract class LoadStationEvent implements HomeEvent {
+  const factory LoadStationEvent() = _$LoadStationEventImpl;
 }
 
 /// @nodoc
-abstract class _$$ToggleViewImplCopyWith<$Res> {
-  factory _$$ToggleViewImplCopyWith(
-          _$ToggleViewImpl value, $Res Function(_$ToggleViewImpl) then) =
-      __$$ToggleViewImplCopyWithImpl<$Res>;
+abstract class _$$ToggleViewEventImplCopyWith<$Res> {
+  factory _$$ToggleViewEventImplCopyWith(_$ToggleViewEventImpl value,
+          $Res Function(_$ToggleViewEventImpl) then) =
+      __$$ToggleViewEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ToggleViewImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$ToggleViewImpl>
-    implements _$$ToggleViewImplCopyWith<$Res> {
-  __$$ToggleViewImplCopyWithImpl(
-      _$ToggleViewImpl _value, $Res Function(_$ToggleViewImpl) _then)
+class __$$ToggleViewEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$ToggleViewEventImpl>
+    implements _$$ToggleViewEventImplCopyWith<$Res> {
+  __$$ToggleViewEventImplCopyWithImpl(
+      _$ToggleViewEventImpl _value, $Res Function(_$ToggleViewEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HomeEvent
@@ -238,18 +238,18 @@ class __$$ToggleViewImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ToggleViewImpl implements ToggleView {
-  const _$ToggleViewImpl();
+class _$ToggleViewEventImpl implements ToggleViewEvent {
+  const _$ToggleViewEventImpl();
 
   @override
   String toString() {
-    return 'HomeEvent.toggleView()';
+    return 'HomeEvent.toggleViewEventEvent()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ToggleViewImpl);
+        (other.runtimeType == runtimeType && other is _$ToggleViewEventImpl);
   }
 
   @override
@@ -258,39 +258,39 @@ class _$ToggleViewImpl implements ToggleView {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadStation,
-    required TResult Function() toggleView,
-    required TResult Function() centerLocation,
+    required TResult Function() loadStationEvent,
+    required TResult Function() toggleViewEventEvent,
+    required TResult Function() centerLocationEvent,
     required TResult Function(StationModel station) centerOnStation,
-    required TResult Function() loadFilters,
+    required TResult Function() loadFiltersEvent,
   }) {
-    return toggleView();
+    return toggleViewEventEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadStation,
-    TResult? Function()? toggleView,
-    TResult? Function()? centerLocation,
+    TResult? Function()? loadStationEvent,
+    TResult? Function()? toggleViewEventEvent,
+    TResult? Function()? centerLocationEvent,
     TResult? Function(StationModel station)? centerOnStation,
-    TResult? Function()? loadFilters,
+    TResult? Function()? loadFiltersEvent,
   }) {
-    return toggleView?.call();
+    return toggleViewEventEvent?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadStation,
-    TResult Function()? toggleView,
-    TResult Function()? centerLocation,
+    TResult Function()? loadStationEvent,
+    TResult Function()? toggleViewEventEvent,
+    TResult Function()? centerLocationEvent,
     TResult Function(StationModel station)? centerOnStation,
-    TResult Function()? loadFilters,
+    TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) {
-    if (toggleView != null) {
-      return toggleView();
+    if (toggleViewEventEvent != null) {
+      return toggleViewEventEvent();
     }
     return orElse();
   }
@@ -298,61 +298,61 @@ class _$ToggleViewImpl implements ToggleView {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadStation value) loadStation,
-    required TResult Function(ToggleView value) toggleView,
-    required TResult Function(CenterLocation value) centerLocation,
-    required TResult Function(CenterOnStation value) centerOnStation,
-    required TResult Function(LoadFilters value) loadFilters,
+    required TResult Function(LoadStationEvent value) loadStationEvent,
+    required TResult Function(ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(CenterLocationEvent value) centerLocationEvent,
+    required TResult Function(CenterOnStationEvent value) centerOnStation,
+    required TResult Function(LoadFiltersEvent value) loadFiltersEvent,
   }) {
-    return toggleView(this);
+    return toggleViewEventEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadStation value)? loadStation,
-    TResult? Function(ToggleView value)? toggleView,
-    TResult? Function(CenterLocation value)? centerLocation,
-    TResult? Function(CenterOnStation value)? centerOnStation,
-    TResult? Function(LoadFilters value)? loadFilters,
+    TResult? Function(LoadStationEvent value)? loadStationEvent,
+    TResult? Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult? Function(CenterOnStationEvent value)? centerOnStation,
+    TResult? Function(LoadFiltersEvent value)? loadFiltersEvent,
   }) {
-    return toggleView?.call(this);
+    return toggleViewEventEvent?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadStation value)? loadStation,
-    TResult Function(ToggleView value)? toggleView,
-    TResult Function(CenterLocation value)? centerLocation,
-    TResult Function(CenterOnStation value)? centerOnStation,
-    TResult Function(LoadFilters value)? loadFilters,
+    TResult Function(LoadStationEvent value)? loadStationEvent,
+    TResult Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult Function(CenterOnStationEvent value)? centerOnStation,
+    TResult Function(LoadFiltersEvent value)? loadFiltersEvent,
     required TResult orElse(),
   }) {
-    if (toggleView != null) {
-      return toggleView(this);
+    if (toggleViewEventEvent != null) {
+      return toggleViewEventEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class ToggleView implements HomeEvent {
-  const factory ToggleView() = _$ToggleViewImpl;
+abstract class ToggleViewEvent implements HomeEvent {
+  const factory ToggleViewEvent() = _$ToggleViewEventImpl;
 }
 
 /// @nodoc
-abstract class _$$CenterLocationImplCopyWith<$Res> {
-  factory _$$CenterLocationImplCopyWith(_$CenterLocationImpl value,
-          $Res Function(_$CenterLocationImpl) then) =
-      __$$CenterLocationImplCopyWithImpl<$Res>;
+abstract class _$$CenterLocationEventImplCopyWith<$Res> {
+  factory _$$CenterLocationEventImplCopyWith(_$CenterLocationEventImpl value,
+          $Res Function(_$CenterLocationEventImpl) then) =
+      __$$CenterLocationEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CenterLocationImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$CenterLocationImpl>
-    implements _$$CenterLocationImplCopyWith<$Res> {
-  __$$CenterLocationImplCopyWithImpl(
-      _$CenterLocationImpl _value, $Res Function(_$CenterLocationImpl) _then)
+class __$$CenterLocationEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$CenterLocationEventImpl>
+    implements _$$CenterLocationEventImplCopyWith<$Res> {
+  __$$CenterLocationEventImplCopyWithImpl(_$CenterLocationEventImpl _value,
+      $Res Function(_$CenterLocationEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HomeEvent
@@ -361,18 +361,19 @@ class __$$CenterLocationImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CenterLocationImpl implements CenterLocation {
-  const _$CenterLocationImpl();
+class _$CenterLocationEventImpl implements CenterLocationEvent {
+  const _$CenterLocationEventImpl();
 
   @override
   String toString() {
-    return 'HomeEvent.centerLocation()';
+    return 'HomeEvent.centerLocationEvent()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CenterLocationImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$CenterLocationEventImpl);
   }
 
   @override
@@ -381,39 +382,39 @@ class _$CenterLocationImpl implements CenterLocation {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadStation,
-    required TResult Function() toggleView,
-    required TResult Function() centerLocation,
+    required TResult Function() loadStationEvent,
+    required TResult Function() toggleViewEventEvent,
+    required TResult Function() centerLocationEvent,
     required TResult Function(StationModel station) centerOnStation,
-    required TResult Function() loadFilters,
+    required TResult Function() loadFiltersEvent,
   }) {
-    return centerLocation();
+    return centerLocationEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadStation,
-    TResult? Function()? toggleView,
-    TResult? Function()? centerLocation,
+    TResult? Function()? loadStationEvent,
+    TResult? Function()? toggleViewEventEvent,
+    TResult? Function()? centerLocationEvent,
     TResult? Function(StationModel station)? centerOnStation,
-    TResult? Function()? loadFilters,
+    TResult? Function()? loadFiltersEvent,
   }) {
-    return centerLocation?.call();
+    return centerLocationEvent?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadStation,
-    TResult Function()? toggleView,
-    TResult Function()? centerLocation,
+    TResult Function()? loadStationEvent,
+    TResult Function()? toggleViewEventEvent,
+    TResult Function()? centerLocationEvent,
     TResult Function(StationModel station)? centerOnStation,
-    TResult Function()? loadFilters,
+    TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) {
-    if (centerLocation != null) {
-      return centerLocation();
+    if (centerLocationEvent != null) {
+      return centerLocationEvent();
     }
     return orElse();
   }
@@ -421,53 +422,53 @@ class _$CenterLocationImpl implements CenterLocation {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadStation value) loadStation,
-    required TResult Function(ToggleView value) toggleView,
-    required TResult Function(CenterLocation value) centerLocation,
-    required TResult Function(CenterOnStation value) centerOnStation,
-    required TResult Function(LoadFilters value) loadFilters,
+    required TResult Function(LoadStationEvent value) loadStationEvent,
+    required TResult Function(ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(CenterLocationEvent value) centerLocationEvent,
+    required TResult Function(CenterOnStationEvent value) centerOnStation,
+    required TResult Function(LoadFiltersEvent value) loadFiltersEvent,
   }) {
-    return centerLocation(this);
+    return centerLocationEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadStation value)? loadStation,
-    TResult? Function(ToggleView value)? toggleView,
-    TResult? Function(CenterLocation value)? centerLocation,
-    TResult? Function(CenterOnStation value)? centerOnStation,
-    TResult? Function(LoadFilters value)? loadFilters,
+    TResult? Function(LoadStationEvent value)? loadStationEvent,
+    TResult? Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult? Function(CenterOnStationEvent value)? centerOnStation,
+    TResult? Function(LoadFiltersEvent value)? loadFiltersEvent,
   }) {
-    return centerLocation?.call(this);
+    return centerLocationEvent?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadStation value)? loadStation,
-    TResult Function(ToggleView value)? toggleView,
-    TResult Function(CenterLocation value)? centerLocation,
-    TResult Function(CenterOnStation value)? centerOnStation,
-    TResult Function(LoadFilters value)? loadFilters,
+    TResult Function(LoadStationEvent value)? loadStationEvent,
+    TResult Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult Function(CenterOnStationEvent value)? centerOnStation,
+    TResult Function(LoadFiltersEvent value)? loadFiltersEvent,
     required TResult orElse(),
   }) {
-    if (centerLocation != null) {
-      return centerLocation(this);
+    if (centerLocationEvent != null) {
+      return centerLocationEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class CenterLocation implements HomeEvent {
-  const factory CenterLocation() = _$CenterLocationImpl;
+abstract class CenterLocationEvent implements HomeEvent {
+  const factory CenterLocationEvent() = _$CenterLocationEventImpl;
 }
 
 /// @nodoc
-abstract class _$$CenterOnStationImplCopyWith<$Res> {
-  factory _$$CenterOnStationImplCopyWith(_$CenterOnStationImpl value,
-          $Res Function(_$CenterOnStationImpl) then) =
-      __$$CenterOnStationImplCopyWithImpl<$Res>;
+abstract class _$$CenterOnStationEventImplCopyWith<$Res> {
+  factory _$$CenterOnStationEventImplCopyWith(_$CenterOnStationEventImpl value,
+          $Res Function(_$CenterOnStationEventImpl) then) =
+      __$$CenterOnStationEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({StationModel station});
 
@@ -475,11 +476,11 @@ abstract class _$$CenterOnStationImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$CenterOnStationImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$CenterOnStationImpl>
-    implements _$$CenterOnStationImplCopyWith<$Res> {
-  __$$CenterOnStationImplCopyWithImpl(
-      _$CenterOnStationImpl _value, $Res Function(_$CenterOnStationImpl) _then)
+class __$$CenterOnStationEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$CenterOnStationEventImpl>
+    implements _$$CenterOnStationEventImplCopyWith<$Res> {
+  __$$CenterOnStationEventImplCopyWithImpl(_$CenterOnStationEventImpl _value,
+      $Res Function(_$CenterOnStationEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HomeEvent
@@ -489,7 +490,7 @@ class __$$CenterOnStationImplCopyWithImpl<$Res>
   $Res call({
     Object? station = null,
   }) {
-    return _then(_$CenterOnStationImpl(
+    return _then(_$CenterOnStationEventImpl(
       null == station
           ? _value.station
           : station // ignore: cast_nullable_to_non_nullable
@@ -510,8 +511,8 @@ class __$$CenterOnStationImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CenterOnStationImpl implements CenterOnStation {
-  const _$CenterOnStationImpl(this.station);
+class _$CenterOnStationEventImpl implements CenterOnStationEvent {
+  const _$CenterOnStationEventImpl(this.station);
 
   @override
   final StationModel station;
@@ -525,7 +526,7 @@ class _$CenterOnStationImpl implements CenterOnStation {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CenterOnStationImpl &&
+            other is _$CenterOnStationEventImpl &&
             (identical(other.station, station) || other.station == station));
   }
 
@@ -537,18 +538,19 @@ class _$CenterOnStationImpl implements CenterOnStation {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CenterOnStationImplCopyWith<_$CenterOnStationImpl> get copyWith =>
-      __$$CenterOnStationImplCopyWithImpl<_$CenterOnStationImpl>(
-          this, _$identity);
+  _$$CenterOnStationEventImplCopyWith<_$CenterOnStationEventImpl>
+      get copyWith =>
+          __$$CenterOnStationEventImplCopyWithImpl<_$CenterOnStationEventImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadStation,
-    required TResult Function() toggleView,
-    required TResult Function() centerLocation,
+    required TResult Function() loadStationEvent,
+    required TResult Function() toggleViewEventEvent,
+    required TResult Function() centerLocationEvent,
     required TResult Function(StationModel station) centerOnStation,
-    required TResult Function() loadFilters,
+    required TResult Function() loadFiltersEvent,
   }) {
     return centerOnStation(station);
   }
@@ -556,11 +558,11 @@ class _$CenterOnStationImpl implements CenterOnStation {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadStation,
-    TResult? Function()? toggleView,
-    TResult? Function()? centerLocation,
+    TResult? Function()? loadStationEvent,
+    TResult? Function()? toggleViewEventEvent,
+    TResult? Function()? centerLocationEvent,
     TResult? Function(StationModel station)? centerOnStation,
-    TResult? Function()? loadFilters,
+    TResult? Function()? loadFiltersEvent,
   }) {
     return centerOnStation?.call(station);
   }
@@ -568,11 +570,11 @@ class _$CenterOnStationImpl implements CenterOnStation {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadStation,
-    TResult Function()? toggleView,
-    TResult Function()? centerLocation,
+    TResult Function()? loadStationEvent,
+    TResult Function()? toggleViewEventEvent,
+    TResult Function()? centerLocationEvent,
     TResult Function(StationModel station)? centerOnStation,
-    TResult Function()? loadFilters,
+    TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) {
     if (centerOnStation != null) {
@@ -584,11 +586,11 @@ class _$CenterOnStationImpl implements CenterOnStation {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadStation value) loadStation,
-    required TResult Function(ToggleView value) toggleView,
-    required TResult Function(CenterLocation value) centerLocation,
-    required TResult Function(CenterOnStation value) centerOnStation,
-    required TResult Function(LoadFilters value) loadFilters,
+    required TResult Function(LoadStationEvent value) loadStationEvent,
+    required TResult Function(ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(CenterLocationEvent value) centerLocationEvent,
+    required TResult Function(CenterOnStationEvent value) centerOnStation,
+    required TResult Function(LoadFiltersEvent value) loadFiltersEvent,
   }) {
     return centerOnStation(this);
   }
@@ -596,11 +598,11 @@ class _$CenterOnStationImpl implements CenterOnStation {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadStation value)? loadStation,
-    TResult? Function(ToggleView value)? toggleView,
-    TResult? Function(CenterLocation value)? centerLocation,
-    TResult? Function(CenterOnStation value)? centerOnStation,
-    TResult? Function(LoadFilters value)? loadFilters,
+    TResult? Function(LoadStationEvent value)? loadStationEvent,
+    TResult? Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult? Function(CenterOnStationEvent value)? centerOnStation,
+    TResult? Function(LoadFiltersEvent value)? loadFiltersEvent,
   }) {
     return centerOnStation?.call(this);
   }
@@ -608,11 +610,11 @@ class _$CenterOnStationImpl implements CenterOnStation {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadStation value)? loadStation,
-    TResult Function(ToggleView value)? toggleView,
-    TResult Function(CenterLocation value)? centerLocation,
-    TResult Function(CenterOnStation value)? centerOnStation,
-    TResult Function(LoadFilters value)? loadFilters,
+    TResult Function(LoadStationEvent value)? loadStationEvent,
+    TResult Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult Function(CenterOnStationEvent value)? centerOnStation,
+    TResult Function(LoadFiltersEvent value)? loadFiltersEvent,
     required TResult orElse(),
   }) {
     if (centerOnStation != null) {
@@ -622,32 +624,32 @@ class _$CenterOnStationImpl implements CenterOnStation {
   }
 }
 
-abstract class CenterOnStation implements HomeEvent {
-  const factory CenterOnStation(final StationModel station) =
-      _$CenterOnStationImpl;
+abstract class CenterOnStationEvent implements HomeEvent {
+  const factory CenterOnStationEvent(final StationModel station) =
+      _$CenterOnStationEventImpl;
 
   StationModel get station;
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CenterOnStationImplCopyWith<_$CenterOnStationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CenterOnStationEventImplCopyWith<_$CenterOnStationEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadFiltersImplCopyWith<$Res> {
-  factory _$$LoadFiltersImplCopyWith(
-          _$LoadFiltersImpl value, $Res Function(_$LoadFiltersImpl) then) =
-      __$$LoadFiltersImplCopyWithImpl<$Res>;
+abstract class _$$LoadFiltersEventImplCopyWith<$Res> {
+  factory _$$LoadFiltersEventImplCopyWith(_$LoadFiltersEventImpl value,
+          $Res Function(_$LoadFiltersEventImpl) then) =
+      __$$LoadFiltersEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadFiltersImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$LoadFiltersImpl>
-    implements _$$LoadFiltersImplCopyWith<$Res> {
-  __$$LoadFiltersImplCopyWithImpl(
-      _$LoadFiltersImpl _value, $Res Function(_$LoadFiltersImpl) _then)
+class __$$LoadFiltersEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadFiltersEventImpl>
+    implements _$$LoadFiltersEventImplCopyWith<$Res> {
+  __$$LoadFiltersEventImplCopyWithImpl(_$LoadFiltersEventImpl _value,
+      $Res Function(_$LoadFiltersEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HomeEvent
@@ -656,18 +658,18 @@ class __$$LoadFiltersImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadFiltersImpl implements LoadFilters {
-  const _$LoadFiltersImpl();
+class _$LoadFiltersEventImpl implements LoadFiltersEvent {
+  const _$LoadFiltersEventImpl();
 
   @override
   String toString() {
-    return 'HomeEvent.loadFilters()';
+    return 'HomeEvent.loadFiltersEvent()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadFiltersImpl);
+        (other.runtimeType == runtimeType && other is _$LoadFiltersEventImpl);
   }
 
   @override
@@ -676,39 +678,39 @@ class _$LoadFiltersImpl implements LoadFilters {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loadStation,
-    required TResult Function() toggleView,
-    required TResult Function() centerLocation,
+    required TResult Function() loadStationEvent,
+    required TResult Function() toggleViewEventEvent,
+    required TResult Function() centerLocationEvent,
     required TResult Function(StationModel station) centerOnStation,
-    required TResult Function() loadFilters,
+    required TResult Function() loadFiltersEvent,
   }) {
-    return loadFilters();
+    return loadFiltersEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loadStation,
-    TResult? Function()? toggleView,
-    TResult? Function()? centerLocation,
+    TResult? Function()? loadStationEvent,
+    TResult? Function()? toggleViewEventEvent,
+    TResult? Function()? centerLocationEvent,
     TResult? Function(StationModel station)? centerOnStation,
-    TResult? Function()? loadFilters,
+    TResult? Function()? loadFiltersEvent,
   }) {
-    return loadFilters?.call();
+    return loadFiltersEvent?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loadStation,
-    TResult Function()? toggleView,
-    TResult Function()? centerLocation,
+    TResult Function()? loadStationEvent,
+    TResult Function()? toggleViewEventEvent,
+    TResult Function()? centerLocationEvent,
     TResult Function(StationModel station)? centerOnStation,
-    TResult Function()? loadFilters,
+    TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) {
-    if (loadFilters != null) {
-      return loadFilters();
+    if (loadFiltersEvent != null) {
+      return loadFiltersEvent();
     }
     return orElse();
   }
@@ -716,46 +718,46 @@ class _$LoadFiltersImpl implements LoadFilters {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadStation value) loadStation,
-    required TResult Function(ToggleView value) toggleView,
-    required TResult Function(CenterLocation value) centerLocation,
-    required TResult Function(CenterOnStation value) centerOnStation,
-    required TResult Function(LoadFilters value) loadFilters,
+    required TResult Function(LoadStationEvent value) loadStationEvent,
+    required TResult Function(ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(CenterLocationEvent value) centerLocationEvent,
+    required TResult Function(CenterOnStationEvent value) centerOnStation,
+    required TResult Function(LoadFiltersEvent value) loadFiltersEvent,
   }) {
-    return loadFilters(this);
+    return loadFiltersEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadStation value)? loadStation,
-    TResult? Function(ToggleView value)? toggleView,
-    TResult? Function(CenterLocation value)? centerLocation,
-    TResult? Function(CenterOnStation value)? centerOnStation,
-    TResult? Function(LoadFilters value)? loadFilters,
+    TResult? Function(LoadStationEvent value)? loadStationEvent,
+    TResult? Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult? Function(CenterOnStationEvent value)? centerOnStation,
+    TResult? Function(LoadFiltersEvent value)? loadFiltersEvent,
   }) {
-    return loadFilters?.call(this);
+    return loadFiltersEvent?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadStation value)? loadStation,
-    TResult Function(ToggleView value)? toggleView,
-    TResult Function(CenterLocation value)? centerLocation,
-    TResult Function(CenterOnStation value)? centerOnStation,
-    TResult Function(LoadFilters value)? loadFilters,
+    TResult Function(LoadStationEvent value)? loadStationEvent,
+    TResult Function(ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(CenterLocationEvent value)? centerLocationEvent,
+    TResult Function(CenterOnStationEvent value)? centerOnStation,
+    TResult Function(LoadFiltersEvent value)? loadFiltersEvent,
     required TResult orElse(),
   }) {
-    if (loadFilters != null) {
-      return loadFilters(this);
+    if (loadFiltersEvent != null) {
+      return loadFiltersEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class LoadFilters implements HomeEvent {
-  const factory LoadFilters() = _$LoadFiltersImpl;
+abstract class LoadFiltersEvent implements HomeEvent {
+  const factory LoadFiltersEvent() = _$LoadFiltersEventImpl;
 }
 
 /// @nodoc

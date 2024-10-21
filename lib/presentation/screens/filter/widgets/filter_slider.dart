@@ -28,7 +28,7 @@ class FilterSlider extends StatelessWidget {
           onChanged: (value) {
             context
                 .read<FilterBloc>()
-                .add(FilterEvent.sliderValueChanged(value));
+                .add(FilterEvent.sliderValueChangedEvent(value));
           },
         )
       ],
