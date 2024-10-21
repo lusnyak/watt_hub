@@ -6,13 +6,17 @@ class WHPopup extends StatelessWidget {
   const WHPopup({
     super.key,
     required this.image,
-     required this.title,
-     required this.subTitle,
+    required this.title,
+    required this.subTitle,
+    this.cancelButtonTitle,
+    this.confirmButtonTitle,
   });
 
   final String image;
   final String title;
   final String subTitle;
+  final String? cancelButtonTitle;
+  final String? confirmButtonTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +37,6 @@ class WHPopup extends StatelessWidget {
           ),
           Text(
             subTitle,
-            // ,
             textAlign: TextAlign.center,
             style: body14RegularTextStyle,
           ),
@@ -43,18 +46,28 @@ class WHPopup extends StatelessWidget {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(50.sp))),
       actions: <Widget>[
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            WHElevatedButton.primary(
-              title: "Enable Location",
-              shadow: false,
-            ).paddingAll(8.h),
-            WHElevatedButton.secondary(
-              title: "Cancel",
-            ).paddingAll(8.h),
-          ],
-        ).paddingAll(8.h),
+        if (confirmButtonTitle != null && cancelButtonTitle != null)
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              WHElevatedButton.primary(
+                title: confirmButtonTitle ?? "",
+                shadow: false,
+              ).paddingAll(8.h),
+              WHElevatedButton.secondary(
+                title: cancelButtonTitle ?? "",
+              ).paddingAll(8.h),
+            ],
+          ).paddingAll(8.h),
+        if (cancelButtonTitle == null && confirmButtonTitle != null)
+          WHElevatedButton.primary(
+            title: confirmButtonTitle ?? "",
+            shadow: false,
+          ).toCenter().paddingAll(20.h),
+        if (cancelButtonTitle == null && confirmButtonTitle == null)
+          const Center(
+            child: CircularProgressIndicator(),
+          ).paddingAll(20.sp),
       ],
 
       actionsPadding: EdgeInsets.symmetric(horizontal: 20.sp),
