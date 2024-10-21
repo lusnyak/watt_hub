@@ -49,6 +49,7 @@ class _WHPopup extends StatelessWidget {
   final String subTitle;
   final String? cancelButtonTitle;
   final String? confirmButtonTitle;
+
   final VoidCallback? onConfirmPressed;
   final VoidCallback? onCancelPressed;
 

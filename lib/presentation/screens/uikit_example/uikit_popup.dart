@@ -10,6 +10,7 @@ class UikitPopup extends StatefulWidget {
 
 class _UikitPopupState extends State<UikitPopup> {
   String title = "Enable Location";
+
   String subTitle =
       "We need access to you location to find EV charging station around you.";
 
@@ -73,3 +74,5 @@ class _UikitPopupState extends State<UikitPopup> {
     );
   }
 }
+/*
+                      */
