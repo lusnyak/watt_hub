@@ -768,8 +768,14 @@ mixin _$HomeState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)
+    required TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -779,8 +785,14 @@ mixin _$HomeState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult? Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -790,8 +802,14 @@ mixin _$HomeState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -891,8 +909,14 @@ class _$InitialStateImpl implements InitialState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)
+    required TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)
         loaded,
   }) {
     return initial();
@@ -905,8 +929,14 @@ class _$InitialStateImpl implements InitialState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult? Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
   }) {
     return initial?.call();
@@ -919,8 +949,14 @@ class _$InitialStateImpl implements InitialState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1020,8 +1056,14 @@ class _$LoadingStateImpl implements LoadingState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)
+    required TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)
         loaded,
   }) {
     return loading();
@@ -1034,8 +1076,14 @@ class _$LoadingStateImpl implements LoadingState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult? Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
   }) {
     return loading?.call();
@@ -1048,8 +1096,14 @@ class _$LoadingStateImpl implements LoadingState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1176,8 +1230,14 @@ class _$ErrorStateImpl implements ErrorState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)
+    required TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)
         loaded,
   }) {
     return error(message);
@@ -1190,8 +1250,14 @@ class _$ErrorStateImpl implements ErrorState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult? Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
   }) {
     return error?.call(message);
@@ -1204,8 +1270,14 @@ class _$ErrorStateImpl implements ErrorState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1341,8 +1413,14 @@ class _$ViewChangedStateImpl implements ViewChangedState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)
+    required TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)
         loaded,
   }) {
     return viewChanged(isList);
@@ -1355,8 +1433,14 @@ class _$ViewChangedStateImpl implements ViewChangedState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult? Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
   }) {
     return viewChanged?.call(isList);
@@ -1369,8 +1453,14 @@ class _$ViewChangedStateImpl implements ViewChangedState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1442,6 +1532,8 @@ abstract class _$$LoadedStateImplCopyWith<$Res> {
   $Res call(
       {List<StationModel> stations,
       bool isList,
+      LatLng? currentLocation,
+      bool isMapReady,
       int? selectedConnectorId,
       int? selectedCarId,
       double? rating});
@@ -1462,6 +1554,8 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
   $Res call({
     Object? stations = null,
     Object? isList = null,
+    Object? currentLocation = freezed,
+    Object? isMapReady = null,
     Object? selectedConnectorId = freezed,
     Object? selectedCarId = freezed,
     Object? rating = freezed,
@@ -1474,6 +1568,14 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
       isList: null == isList
           ? _value.isList
           : isList // ignore: cast_nullable_to_non_nullable
+              as bool,
+      currentLocation: freezed == currentLocation
+          ? _value.currentLocation
+          : currentLocation // ignore: cast_nullable_to_non_nullable
+              as LatLng?,
+      isMapReady: null == isMapReady
+          ? _value.isMapReady
+          : isMapReady // ignore: cast_nullable_to_non_nullable
               as bool,
       selectedConnectorId: freezed == selectedConnectorId
           ? _value.selectedConnectorId
@@ -1496,6 +1598,8 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
 class _$LoadedStateImpl implements LoadedState {
   const _$LoadedStateImpl(final List<StationModel> stations,
       {required this.isList,
+      this.currentLocation,
+      this.isMapReady = false,
       this.selectedConnectorId,
       this.selectedCarId,
       this.rating})
@@ -1512,6 +1616,11 @@ class _$LoadedStateImpl implements LoadedState {
   @override
   final bool isList;
   @override
+  final LatLng? currentLocation;
+  @override
+  @JsonKey()
+  final bool isMapReady;
+  @override
   final int? selectedConnectorId;
   @override
   final int? selectedCarId;
@@ -1520,7 +1629,7 @@ class _$LoadedStateImpl implements LoadedState {
 
   @override
   String toString() {
-    return 'HomeState.loaded(stations: $stations, isList: $isList, selectedConnectorId: $selectedConnectorId, selectedCarId: $selectedCarId, rating: $rating)';
+    return 'HomeState.loaded(stations: $stations, isList: $isList, currentLocation: $currentLocation, isMapReady: $isMapReady, selectedConnectorId: $selectedConnectorId, selectedCarId: $selectedCarId, rating: $rating)';
   }
 
   @override
@@ -1530,6 +1639,10 @@ class _$LoadedStateImpl implements LoadedState {
             other is _$LoadedStateImpl &&
             const DeepCollectionEquality().equals(other._stations, _stations) &&
             (identical(other.isList, isList) || other.isList == isList) &&
+            (identical(other.currentLocation, currentLocation) ||
+                other.currentLocation == currentLocation) &&
+            (identical(other.isMapReady, isMapReady) ||
+                other.isMapReady == isMapReady) &&
             (identical(other.selectedConnectorId, selectedConnectorId) ||
                 other.selectedConnectorId == selectedConnectorId) &&
             (identical(other.selectedCarId, selectedCarId) ||
@@ -1542,6 +1655,8 @@ class _$LoadedStateImpl implements LoadedState {
       runtimeType,
       const DeepCollectionEquality().hash(_stations),
       isList,
+      currentLocation,
+      isMapReady,
       selectedConnectorId,
       selectedCarId,
       rating);
@@ -1561,11 +1676,18 @@ class _$LoadedStateImpl implements LoadedState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)
+    required TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)
         loaded,
   }) {
-    return loaded(stations, isList, selectedConnectorId, selectedCarId, rating);
+    return loaded(stations, isList, currentLocation, isMapReady,
+        selectedConnectorId, selectedCarId, rating);
   }
 
   @override
@@ -1575,12 +1697,18 @@ class _$LoadedStateImpl implements LoadedState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult? Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
   }) {
-    return loaded?.call(
-        stations, isList, selectedConnectorId, selectedCarId, rating);
+    return loaded?.call(stations, isList, currentLocation, isMapReady,
+        selectedConnectorId, selectedCarId, rating);
   }
 
   @override
@@ -1590,14 +1718,20 @@ class _$LoadedStateImpl implements LoadedState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(List<StationModel> stations, bool isList,
-            int? selectedConnectorId, int? selectedCarId, double? rating)?
+    TResult Function(
+            List<StationModel> stations,
+            bool isList,
+            LatLng? currentLocation,
+            bool isMapReady,
+            int? selectedConnectorId,
+            int? selectedCarId,
+            double? rating)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(
-          stations, isList, selectedConnectorId, selectedCarId, rating);
+      return loaded(stations, isList, currentLocation, isMapReady,
+          selectedConnectorId, selectedCarId, rating);
     }
     return orElse();
   }
@@ -1646,12 +1780,16 @@ class _$LoadedStateImpl implements LoadedState {
 abstract class LoadedState implements HomeState {
   const factory LoadedState(final List<StationModel> stations,
       {required final bool isList,
+      final LatLng? currentLocation,
+      final bool isMapReady,
       final int? selectedConnectorId,
       final int? selectedCarId,
       final double? rating}) = _$LoadedStateImpl;
 
   List<StationModel> get stations;
   bool get isList;
+  LatLng? get currentLocation;
+  bool get isMapReady;
   int? get selectedConnectorId;
   int? get selectedCarId;
   double? get rating;

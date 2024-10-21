@@ -49,6 +49,8 @@ class _HomeView extends StatelessWidget {
                 loaded: (
                   stations,
                   isList,
+                  currentLocation,
+                  isMapReady,
                   selectedConnectorId,
                   selectedCarId,
                   rating,

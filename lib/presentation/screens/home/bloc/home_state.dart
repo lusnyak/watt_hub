@@ -9,9 +9,10 @@ class HomeState with _$HomeState {
   const factory HomeState.loaded(
     List<StationModel> stations, {
     required bool isList,
+    LatLng? currentLocation,
+    @Default(false) bool isMapReady,
     int? selectedConnectorId,
     int? selectedCarId,
     double? rating,
   }) = LoadedState;
 }
-
