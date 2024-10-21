@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_station_block.dart';
+part of 'add_station_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -34,17 +34,17 @@ mixin _$AddStationEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_StartedEvent value) started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_StartedEvent value)? started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_StartedEvent value)? started,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -72,18 +72,18 @@ class _$AddStationEventCopyWithImpl<$Res, $Val extends AddStationEvent>
 }
 
 /// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
+abstract class _$$StartedEventImplCopyWith<$Res> {
+  factory _$$StartedEventImplCopyWith(
+          _$StartedEventImpl value, $Res Function(_$StartedEventImpl) then) =
+      __$$StartedEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$AddStationEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+class __$$StartedEventImplCopyWithImpl<$Res>
+    extends _$AddStationEventCopyWithImpl<$Res, _$StartedEventImpl>
+    implements _$$StartedEventImplCopyWith<$Res> {
+  __$$StartedEventImplCopyWithImpl(
+      _$StartedEventImpl _value, $Res Function(_$StartedEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AddStationEvent
@@ -92,8 +92,8 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
+class _$StartedEventImpl implements _StartedEvent {
+  const _$StartedEventImpl();
 
   @override
   String toString() {
@@ -103,7 +103,7 @@ class _$StartedImpl implements _Started {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+        (other.runtimeType == runtimeType && other is _$StartedEventImpl);
   }
 
   @override
@@ -140,7 +140,7 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_StartedEvent value) started,
   }) {
     return started(this);
   }
@@ -148,7 +148,7 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_StartedEvent value)? started,
   }) {
     return started?.call(this);
   }
@@ -156,7 +156,7 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_StartedEvent value)? started,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -166,8 +166,8 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements AddStationEvent {
-  const factory _Started() = _$StartedImpl;
+abstract class _StartedEvent implements AddStationEvent {
+  const factory _StartedEvent() = _$StartedEventImpl;
 }
 
 /// @nodoc
@@ -177,6 +177,7 @@ mixin _$AddStationState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
+    required TResult Function() loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -184,6 +185,7 @@ mixin _$AddStationState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
+    TResult? Function()? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -191,6 +193,7 @@ mixin _$AddStationState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
+    TResult Function()? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -199,6 +202,7 @@ mixin _$AddStationState {
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
     required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -206,6 +210,7 @@ mixin _$AddStationState {
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
     TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -213,6 +218,7 @@ mixin _$AddStationState {
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
     TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -283,6 +289,7 @@ class _$InitialStateImpl implements _InitialState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
+    required TResult Function() loaded,
   }) {
     return initial();
   }
@@ -293,6 +300,7 @@ class _$InitialStateImpl implements _InitialState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
+    TResult? Function()? loaded,
   }) {
     return initial?.call();
   }
@@ -303,6 +311,7 @@ class _$InitialStateImpl implements _InitialState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
+    TResult Function()? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -317,6 +326,7 @@ class _$InitialStateImpl implements _InitialState {
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
     required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) {
     return initial(this);
   }
@@ -327,6 +337,7 @@ class _$InitialStateImpl implements _InitialState {
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
     TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -337,6 +348,7 @@ class _$InitialStateImpl implements _InitialState {
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
     TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -394,6 +406,7 @@ class _$LoadingStateImpl implements _LoadingState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
+    required TResult Function() loaded,
   }) {
     return loading();
   }
@@ -404,6 +417,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
+    TResult? Function()? loaded,
   }) {
     return loading?.call();
   }
@@ -414,6 +428,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
+    TResult Function()? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -428,6 +443,7 @@ class _$LoadingStateImpl implements _LoadingState {
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
     required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) {
     return loading(this);
   }
@@ -438,6 +454,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
     TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -448,6 +465,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
     TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -532,6 +550,7 @@ class _$ErrorStateImpl implements _ErrorState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
+    required TResult Function() loaded,
   }) {
     return error(message);
   }
@@ -542,6 +561,7 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
+    TResult? Function()? loaded,
   }) {
     return error?.call(message);
   }
@@ -552,6 +572,7 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
+    TResult Function()? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -566,6 +587,7 @@ class _$ErrorStateImpl implements _ErrorState {
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
     required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) {
     return error(this);
   }
@@ -576,6 +598,7 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
     TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
     return error?.call(this);
   }
@@ -586,6 +609,7 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
     TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -605,4 +629,121 @@ abstract class _ErrorState implements AddStationState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadedStateImplCopyWith<$Res> {
+  factory _$$LoadedStateImplCopyWith(
+          _$LoadedStateImpl value, $Res Function(_$LoadedStateImpl) then) =
+      __$$LoadedStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadedStateImplCopyWithImpl<$Res>
+    extends _$AddStationStateCopyWithImpl<$Res, _$LoadedStateImpl>
+    implements _$$LoadedStateImplCopyWith<$Res> {
+  __$$LoadedStateImplCopyWithImpl(
+      _$LoadedStateImpl _value, $Res Function(_$LoadedStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddStationState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadedStateImpl implements _LoadedState {
+  const _$LoadedStateImpl();
+
+  @override
+  String toString() {
+    return 'AddStationState.loaded()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadedStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function() loaded,
+  }) {
+    return loaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function()? loaded,
+  }) {
+    return loaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function()? loaded,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialState value) initial,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
+  }) {
+    return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialState value)? initial,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialState value)? initial,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadedState implements AddStationState {
+  const factory _LoadedState() = _$LoadedStateImpl;
 }
