@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
 import 'package:watt_hub/data/local/filter_storage/filter_storage_impl.dart';
 import 'package:watt_hub/watt_hub_app.dart';
@@ -9,6 +10,5 @@ void main() async {
   await SharedPreferencesService.instance.getSharedInstance();
   FilterStorageImpl().deleteFilterData();
   configureDependencies();
-
   runApp(WattHubApp());
 }
