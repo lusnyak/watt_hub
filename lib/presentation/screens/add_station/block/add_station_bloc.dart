@@ -10,6 +10,7 @@ part 'add_station_state.dart';
 
 part 'add_station_bloc.freezed.dart';
 
+
 @injectable
 class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
   final TextEditingController nameController = TextEditingController();
@@ -49,6 +50,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
             }
           }
         },
+
       );
     });
   }

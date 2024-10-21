@@ -623,8 +623,6 @@ abstract class _$$ConnectorTypeChangedEventImplCopyWith<$Res> {
       __$$ConnectorTypeChangedEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ConnectorTypeModel? selectedConnector});
-
-  $ConnectorTypeModelCopyWith<$Res>? get selectedConnector;
 }
 
 /// @nodoc
@@ -650,21 +648,6 @@ class __$$ConnectorTypeChangedEventImplCopyWithImpl<$Res>
               as ConnectorTypeModel?,
     ));
   }
-
-  /// Create a copy of AddStationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ConnectorTypeModelCopyWith<$Res>? get selectedConnector {
-    if (_value.selectedConnector == null) {
-      return null;
-    }
-
-    return $ConnectorTypeModelCopyWith<$Res>(_value.selectedConnector!,
-        (value) {
-      return _then(_value.copyWith(selectedConnector: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -685,12 +668,13 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConnectorTypeChangedEventImpl &&
-            (identical(other.selectedConnector, selectedConnector) ||
-                other.selectedConnector == selectedConnector));
+            const DeepCollectionEquality()
+                .equals(other.selectedConnector, selectedConnector));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedConnector);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(selectedConnector));
 
   /// Create a copy of AddStationEvent
   /// with the given fields replaced by the non-null parameter values.

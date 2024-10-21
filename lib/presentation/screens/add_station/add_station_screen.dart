@@ -8,7 +8,6 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../config/locator/service_locator.dart';
 
-
 @RoutePage()
 class AddStationScreen extends StatelessWidget {
   const AddStationScreen({super.key});
@@ -137,6 +136,7 @@ class AddStationView extends StatelessWidget {
         title: Text(AppLocalizations.of(context).addStation,
             style: body18SemiBoldTextStyle),
 
+
         centerTitle: true,
         leading: IconButton(
           onPressed: () => AutoRouter.of(context).push(const ProfileRoute()),
@@ -167,9 +167,9 @@ class AddStationView extends StatelessWidget {
                             WHElevatedButton.secondary(title: "End time"),
                           ],
                         ),
-
                         WHTextField.singleLine(
                           controller:  context.read<AddStationBlock>().hourlyRateController,
+
 
                           keyboardType: TextInputType.number,
                           label: "Hourly rate",
@@ -193,8 +193,6 @@ class AddStationView extends StatelessWidget {
                         Text("Add station image", style: body18SemiBoldTextStyle),
                          const MyHomePage(),
                         WHElevatedButton.primary(title: "Add station"),
-
-
                       ],
                     ),
                   ),
@@ -203,10 +201,11 @@ class AddStationView extends StatelessWidget {
             );
           },
 
-
-
         ),
       ).paddingAll(20.0),
     );
   }
 }
+
+
+
