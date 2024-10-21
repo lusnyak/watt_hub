@@ -10,7 +10,6 @@ class UikitPopup extends StatefulWidget {
 
 class _UikitPopupState extends State<UikitPopup> {
   String title = "Enable Location";
-
   String subTitle =
       "We need access to you location to find EV charging station around you.";
 
@@ -40,7 +39,7 @@ class _UikitPopupState extends State<UikitPopup> {
                     image: WattHubAssets.images.popupLocationImg.keyName,
                     title: "Location",
                     subTitle: subTitle,
-                    cancelButtonTitle: "cansle",
+                    cancelButtonTitle: "cancel",
                     confirmButtonTitle: "save",
                   );
                 }),
@@ -64,5 +63,3 @@ class _UikitPopupState extends State<UikitPopup> {
     );
   }
 }
-/*
-                      */
