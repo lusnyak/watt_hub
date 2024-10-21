@@ -23,57 +23,63 @@ class WHPopup extends StatelessWidget {
     return AlertDialog(
       title: Image.asset(
         image,
-        width: 100.sp,
-        height: 200.sp,
-        fit: BoxFit.fill,
+        width: 200.w,
+        height: 200.h,
+        fit: BoxFit.contain,
       ),
       content: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             title,
-            style: body16SemiBoldTextStyle.copyWith(
+            style: body18SemiBoldTextStyle.copyWith(
                 color: WattHubColors.primaryGreenColor),
             textAlign: TextAlign.center,
-          ),
+          ).paddingSymmetric(vertical: 8.h),
           Text(
             subTitle,
             textAlign: TextAlign.center,
             style: body14RegularTextStyle,
-          ),
+          ).paddingSymmetric(horizontal: 20.sp, vertical: 8.h),
         ],
       ),
-      insetPadding: EdgeInsets.symmetric(horizontal: 20.sp, vertical: 70.sp),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(50.sp))),
       actions: <Widget>[
         if (confirmButtonTitle != null && cancelButtonTitle != null)
           Column(
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min,
             children: [
               WHElevatedButton.primary(
                 title: confirmButtonTitle ?? "",
                 shadow: false,
-              ).paddingAll(8.h),
+              ).paddingOnly(bottom: 8.sp),
               WHElevatedButton.secondary(
                 title: cancelButtonTitle ?? "",
-              ).paddingAll(8.h),
+              ).paddingSymmetric(vertical: 8.sp),
             ],
-          ).paddingAll(8.h),
+          ).paddingAll(8.sp),
         if (cancelButtonTitle == null && confirmButtonTitle != null)
-          WHElevatedButton.primary(
-            title: confirmButtonTitle ?? "",
-            shadow: false,
-          ).toCenter().paddingAll(20.h),
+          SizedBox(
+            width: double.infinity,
+            child: WHElevatedButton.primary(
+              title: confirmButtonTitle ?? "",
+              shadow: false,
+            ).paddingSymmetric(vertical: 20.sp),
+          ).paddingAll(8.sp),
         if (cancelButtonTitle == null && confirmButtonTitle == null)
           const Center(
-            child: CircularProgressIndicator(),
+            child: WHCircularSpin(),
           ).paddingAll(20.sp),
       ],
-
-      actionsPadding: EdgeInsets.symmetric(horizontal: 20.sp),
+      actionsPadding: EdgeInsets.symmetric(horizontal: 12.sp),
       contentPadding: EdgeInsets.zero,
       backgroundColor: Colors.white,
-      // shape: const CircleBorder(),
     ).paddingAll(20.sp);
   }
 }
