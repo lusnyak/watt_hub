@@ -52,9 +52,6 @@ class _WHPopup extends StatelessWidget {
   final VoidCallback? onConfirmPressed;
   final VoidCallback? onCancelPressed;
 
-  final VoidCallback? onConfirmPressed;
-  final VoidCallback? onCancelPressed;
-
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
