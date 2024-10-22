@@ -24,7 +24,7 @@ class _UikitPopupState extends State<UikitPopup> {
     return Scaffold(
       body: SafeArea(
           child: Column(
-            children: [
+             children: [
               ElevatedButton(
                 onPressed: () {
                   WHPopup.of(context).show(
