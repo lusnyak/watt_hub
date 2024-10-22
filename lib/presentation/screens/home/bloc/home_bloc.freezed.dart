@@ -19,27 +19,30 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function() toggleViewEventEvent,
-    required TResult Function() centerLocationEvent,
-    required TResult Function(StationModel station) centerOnStation,
+    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(dynamic currentLocation) centerLocationEvent,
+    required TResult Function(StationModel station, LatLng? currentLocation)
+        centerOnStation,
     required TResult Function() loadFiltersEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function()? toggleViewEventEvent,
-    TResult? Function()? centerLocationEvent,
-    TResult? Function(StationModel station)? centerOnStation,
+    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(dynamic currentLocation)? centerLocationEvent,
+    TResult? Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult? Function()? loadFiltersEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function()? toggleViewEventEvent,
-    TResult Function()? centerLocationEvent,
-    TResult Function(StationModel station)? centerOnStation,
+    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(dynamic currentLocation)? centerLocationEvent,
+    TResult Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) =>
@@ -136,9 +139,10 @@ class _$LoadStationEventImpl implements LoadStationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function() toggleViewEventEvent,
-    required TResult Function() centerLocationEvent,
-    required TResult Function(StationModel station) centerOnStation,
+    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(dynamic currentLocation) centerLocationEvent,
+    required TResult Function(StationModel station, LatLng? currentLocation)
+        centerOnStation,
     required TResult Function() loadFiltersEvent,
   }) {
     return loadStationEvent();
@@ -148,9 +152,10 @@ class _$LoadStationEventImpl implements LoadStationEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function()? toggleViewEventEvent,
-    TResult? Function()? centerLocationEvent,
-    TResult? Function(StationModel station)? centerOnStation,
+    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(dynamic currentLocation)? centerLocationEvent,
+    TResult? Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult? Function()? loadFiltersEvent,
   }) {
     return loadStationEvent?.call();
@@ -160,9 +165,10 @@ class _$LoadStationEventImpl implements LoadStationEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function()? toggleViewEventEvent,
-    TResult Function()? centerLocationEvent,
-    TResult Function(StationModel station)? centerOnStation,
+    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(dynamic currentLocation)? centerLocationEvent,
+    TResult Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) {
@@ -222,6 +228,8 @@ abstract class _$$ToggleViewEventImplCopyWith<$Res> {
   factory _$$ToggleViewEventImplCopyWith(_$ToggleViewEventImpl value,
           $Res Function(_$ToggleViewEventImpl) then) =
       __$$ToggleViewEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({LatLng? currentLocation});
 }
 
 /// @nodoc
@@ -234,63 +242,93 @@ class __$$ToggleViewEventImplCopyWithImpl<$Res>
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currentLocation = freezed,
+  }) {
+    return _then(_$ToggleViewEventImpl(
+      freezed == currentLocation
+          ? _value.currentLocation
+          : currentLocation // ignore: cast_nullable_to_non_nullable
+              as LatLng?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ToggleViewEventImpl implements ToggleViewEvent {
-  const _$ToggleViewEventImpl();
+  const _$ToggleViewEventImpl(this.currentLocation);
+
+  @override
+  final LatLng? currentLocation;
 
   @override
   String toString() {
-    return 'HomeEvent.toggleViewEventEvent()';
+    return 'HomeEvent.toggleViewEventEvent(currentLocation: $currentLocation)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ToggleViewEventImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ToggleViewEventImpl &&
+            (identical(other.currentLocation, currentLocation) ||
+                other.currentLocation == currentLocation));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, currentLocation);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ToggleViewEventImplCopyWith<_$ToggleViewEventImpl> get copyWith =>
+      __$$ToggleViewEventImplCopyWithImpl<_$ToggleViewEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function() toggleViewEventEvent,
-    required TResult Function() centerLocationEvent,
-    required TResult Function(StationModel station) centerOnStation,
+    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(dynamic currentLocation) centerLocationEvent,
+    required TResult Function(StationModel station, LatLng? currentLocation)
+        centerOnStation,
     required TResult Function() loadFiltersEvent,
   }) {
-    return toggleViewEventEvent();
+    return toggleViewEventEvent(currentLocation);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function()? toggleViewEventEvent,
-    TResult? Function()? centerLocationEvent,
-    TResult? Function(StationModel station)? centerOnStation,
+    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(dynamic currentLocation)? centerLocationEvent,
+    TResult? Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult? Function()? loadFiltersEvent,
   }) {
-    return toggleViewEventEvent?.call();
+    return toggleViewEventEvent?.call(currentLocation);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function()? toggleViewEventEvent,
-    TResult Function()? centerLocationEvent,
-    TResult Function(StationModel station)? centerOnStation,
+    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(dynamic currentLocation)? centerLocationEvent,
+    TResult Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) {
     if (toggleViewEventEvent != null) {
-      return toggleViewEventEvent();
+      return toggleViewEventEvent(currentLocation);
     }
     return orElse();
   }
@@ -337,7 +375,16 @@ class _$ToggleViewEventImpl implements ToggleViewEvent {
 }
 
 abstract class ToggleViewEvent implements HomeEvent {
-  const factory ToggleViewEvent() = _$ToggleViewEventImpl;
+  const factory ToggleViewEvent(final LatLng? currentLocation) =
+      _$ToggleViewEventImpl;
+
+  LatLng? get currentLocation;
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ToggleViewEventImplCopyWith<_$ToggleViewEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -345,6 +392,8 @@ abstract class _$$CenterLocationEventImplCopyWith<$Res> {
   factory _$$CenterLocationEventImplCopyWith(_$CenterLocationEventImpl value,
           $Res Function(_$CenterLocationEventImpl) then) =
       __$$CenterLocationEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({dynamic currentLocation});
 }
 
 /// @nodoc
@@ -357,64 +406,91 @@ class __$$CenterLocationEventImplCopyWithImpl<$Res>
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currentLocation = freezed,
+  }) {
+    return _then(_$CenterLocationEventImpl(
+      freezed == currentLocation ? _value.currentLocation! : currentLocation,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$CenterLocationEventImpl implements CenterLocationEvent {
-  const _$CenterLocationEventImpl();
+  const _$CenterLocationEventImpl(this.currentLocation);
+
+  @override
+  final dynamic currentLocation;
 
   @override
   String toString() {
-    return 'HomeEvent.centerLocationEvent()';
+    return 'HomeEvent.centerLocationEvent(currentLocation: $currentLocation)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CenterLocationEventImpl);
+            other is _$CenterLocationEventImpl &&
+            const DeepCollectionEquality()
+                .equals(other.currentLocation, currentLocation));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(currentLocation));
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CenterLocationEventImplCopyWith<_$CenterLocationEventImpl> get copyWith =>
+      __$$CenterLocationEventImplCopyWithImpl<_$CenterLocationEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function() toggleViewEventEvent,
-    required TResult Function() centerLocationEvent,
-    required TResult Function(StationModel station) centerOnStation,
+    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(dynamic currentLocation) centerLocationEvent,
+    required TResult Function(StationModel station, LatLng? currentLocation)
+        centerOnStation,
     required TResult Function() loadFiltersEvent,
   }) {
-    return centerLocationEvent();
+    return centerLocationEvent(currentLocation);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function()? toggleViewEventEvent,
-    TResult? Function()? centerLocationEvent,
-    TResult? Function(StationModel station)? centerOnStation,
+    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(dynamic currentLocation)? centerLocationEvent,
+    TResult? Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult? Function()? loadFiltersEvent,
   }) {
-    return centerLocationEvent?.call();
+    return centerLocationEvent?.call(currentLocation);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function()? toggleViewEventEvent,
-    TResult Function()? centerLocationEvent,
-    TResult Function(StationModel station)? centerOnStation,
+    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(dynamic currentLocation)? centerLocationEvent,
+    TResult Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) {
     if (centerLocationEvent != null) {
-      return centerLocationEvent();
+      return centerLocationEvent(currentLocation);
     }
     return orElse();
   }
@@ -461,7 +537,16 @@ class _$CenterLocationEventImpl implements CenterLocationEvent {
 }
 
 abstract class CenterLocationEvent implements HomeEvent {
-  const factory CenterLocationEvent() = _$CenterLocationEventImpl;
+  const factory CenterLocationEvent(final dynamic currentLocation) =
+      _$CenterLocationEventImpl;
+
+  dynamic get currentLocation;
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CenterLocationEventImplCopyWith<_$CenterLocationEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -470,7 +555,7 @@ abstract class _$$CenterOnStationEventImplCopyWith<$Res> {
           $Res Function(_$CenterOnStationEventImpl) then) =
       __$$CenterOnStationEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({StationModel station});
+  $Res call({StationModel station, LatLng? currentLocation});
 
   $StationModelCopyWith<$Res> get station;
 }
@@ -489,12 +574,17 @@ class __$$CenterOnStationEventImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? station = null,
+    Object? currentLocation = freezed,
   }) {
     return _then(_$CenterOnStationEventImpl(
       null == station
           ? _value.station
           : station // ignore: cast_nullable_to_non_nullable
               as StationModel,
+      freezed == currentLocation
+          ? _value.currentLocation
+          : currentLocation // ignore: cast_nullable_to_non_nullable
+              as LatLng?,
     ));
   }
 
@@ -512,14 +602,16 @@ class __$$CenterOnStationEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CenterOnStationEventImpl implements CenterOnStationEvent {
-  const _$CenterOnStationEventImpl(this.station);
+  const _$CenterOnStationEventImpl(this.station, this.currentLocation);
 
   @override
   final StationModel station;
+  @override
+  final LatLng? currentLocation;
 
   @override
   String toString() {
-    return 'HomeEvent.centerOnStation(station: $station)';
+    return 'HomeEvent.centerOnStation(station: $station, currentLocation: $currentLocation)';
   }
 
   @override
@@ -527,11 +619,13 @@ class _$CenterOnStationEventImpl implements CenterOnStationEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CenterOnStationEventImpl &&
-            (identical(other.station, station) || other.station == station));
+            (identical(other.station, station) || other.station == station) &&
+            (identical(other.currentLocation, currentLocation) ||
+                other.currentLocation == currentLocation));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, station);
+  int get hashCode => Object.hash(runtimeType, station, currentLocation);
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -547,38 +641,41 @@ class _$CenterOnStationEventImpl implements CenterOnStationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function() toggleViewEventEvent,
-    required TResult Function() centerLocationEvent,
-    required TResult Function(StationModel station) centerOnStation,
+    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(dynamic currentLocation) centerLocationEvent,
+    required TResult Function(StationModel station, LatLng? currentLocation)
+        centerOnStation,
     required TResult Function() loadFiltersEvent,
   }) {
-    return centerOnStation(station);
+    return centerOnStation(station, currentLocation);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function()? toggleViewEventEvent,
-    TResult? Function()? centerLocationEvent,
-    TResult? Function(StationModel station)? centerOnStation,
+    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(dynamic currentLocation)? centerLocationEvent,
+    TResult? Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult? Function()? loadFiltersEvent,
   }) {
-    return centerOnStation?.call(station);
+    return centerOnStation?.call(station, currentLocation);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function()? toggleViewEventEvent,
-    TResult Function()? centerLocationEvent,
-    TResult Function(StationModel station)? centerOnStation,
+    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(dynamic currentLocation)? centerLocationEvent,
+    TResult Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) {
     if (centerOnStation != null) {
-      return centerOnStation(station);
+      return centerOnStation(station, currentLocation);
     }
     return orElse();
   }
@@ -625,10 +722,12 @@ class _$CenterOnStationEventImpl implements CenterOnStationEvent {
 }
 
 abstract class CenterOnStationEvent implements HomeEvent {
-  const factory CenterOnStationEvent(final StationModel station) =
+  const factory CenterOnStationEvent(
+          final StationModel station, final LatLng? currentLocation) =
       _$CenterOnStationEventImpl;
 
   StationModel get station;
+  LatLng? get currentLocation;
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -679,9 +778,10 @@ class _$LoadFiltersEventImpl implements LoadFiltersEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function() toggleViewEventEvent,
-    required TResult Function() centerLocationEvent,
-    required TResult Function(StationModel station) centerOnStation,
+    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(dynamic currentLocation) centerLocationEvent,
+    required TResult Function(StationModel station, LatLng? currentLocation)
+        centerOnStation,
     required TResult Function() loadFiltersEvent,
   }) {
     return loadFiltersEvent();
@@ -691,9 +791,10 @@ class _$LoadFiltersEventImpl implements LoadFiltersEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function()? toggleViewEventEvent,
-    TResult? Function()? centerLocationEvent,
-    TResult? Function(StationModel station)? centerOnStation,
+    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(dynamic currentLocation)? centerLocationEvent,
+    TResult? Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult? Function()? loadFiltersEvent,
   }) {
     return loadFiltersEvent?.call();
@@ -703,9 +804,10 @@ class _$LoadFiltersEventImpl implements LoadFiltersEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function()? toggleViewEventEvent,
-    TResult Function()? centerLocationEvent,
-    TResult Function(StationModel station)? centerOnStation,
+    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(dynamic currentLocation)? centerLocationEvent,
+    TResult Function(StationModel station, LatLng? currentLocation)?
+        centerOnStation,
     TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) {
@@ -768,14 +870,8 @@ mixin _$HomeState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)
+    required TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -785,14 +881,8 @@ mixin _$HomeState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult? Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -802,14 +892,8 @@ mixin _$HomeState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -909,14 +993,8 @@ class _$InitialStateImpl implements InitialState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)
+    required TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)
         loaded,
   }) {
     return initial();
@@ -929,14 +1007,8 @@ class _$InitialStateImpl implements InitialState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult? Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
   }) {
     return initial?.call();
@@ -949,14 +1021,8 @@ class _$InitialStateImpl implements InitialState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1056,14 +1122,8 @@ class _$LoadingStateImpl implements LoadingState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)
+    required TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)
         loaded,
   }) {
     return loading();
@@ -1076,14 +1136,8 @@ class _$LoadingStateImpl implements LoadingState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult? Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
   }) {
     return loading?.call();
@@ -1096,14 +1150,8 @@ class _$LoadingStateImpl implements LoadingState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1230,14 +1278,8 @@ class _$ErrorStateImpl implements ErrorState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)
+    required TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)
         loaded,
   }) {
     return error(message);
@@ -1250,14 +1292,8 @@ class _$ErrorStateImpl implements ErrorState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult? Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
   }) {
     return error?.call(message);
@@ -1270,14 +1306,8 @@ class _$ErrorStateImpl implements ErrorState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1413,14 +1443,8 @@ class _$ViewChangedStateImpl implements ViewChangedState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)
+    required TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)
         loaded,
   }) {
     return viewChanged(isList);
@@ -1433,14 +1457,8 @@ class _$ViewChangedStateImpl implements ViewChangedState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult? Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
   }) {
     return viewChanged?.call(isList);
@@ -1453,14 +1471,8 @@ class _$ViewChangedStateImpl implements ViewChangedState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1533,10 +1545,7 @@ abstract class _$$LoadedStateImplCopyWith<$Res> {
       {List<StationModel> stations,
       bool isList,
       LatLng? currentLocation,
-      bool isMapReady,
-      int? selectedConnectorId,
-      int? selectedCarId,
-      double? rating});
+      bool isMapReady});
 }
 
 /// @nodoc
@@ -1556,9 +1565,6 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
     Object? isList = null,
     Object? currentLocation = freezed,
     Object? isMapReady = null,
-    Object? selectedConnectorId = freezed,
-    Object? selectedCarId = freezed,
-    Object? rating = freezed,
   }) {
     return _then(_$LoadedStateImpl(
       null == stations
@@ -1577,18 +1583,6 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
           ? _value.isMapReady
           : isMapReady // ignore: cast_nullable_to_non_nullable
               as bool,
-      selectedConnectorId: freezed == selectedConnectorId
-          ? _value.selectedConnectorId
-          : selectedConnectorId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      selectedCarId: freezed == selectedCarId
-          ? _value.selectedCarId
-          : selectedCarId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      rating: freezed == rating
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as double?,
     ));
   }
 }
@@ -1597,12 +1591,7 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
 
 class _$LoadedStateImpl implements LoadedState {
   const _$LoadedStateImpl(final List<StationModel> stations,
-      {required this.isList,
-      this.currentLocation,
-      this.isMapReady = false,
-      this.selectedConnectorId,
-      this.selectedCarId,
-      this.rating})
+      {this.isList = true, this.currentLocation, this.isMapReady = false})
       : _stations = stations;
 
   final List<StationModel> _stations;
@@ -1614,22 +1603,17 @@ class _$LoadedStateImpl implements LoadedState {
   }
 
   @override
+  @JsonKey()
   final bool isList;
   @override
   final LatLng? currentLocation;
   @override
   @JsonKey()
   final bool isMapReady;
-  @override
-  final int? selectedConnectorId;
-  @override
-  final int? selectedCarId;
-  @override
-  final double? rating;
 
   @override
   String toString() {
-    return 'HomeState.loaded(stations: $stations, isList: $isList, currentLocation: $currentLocation, isMapReady: $isMapReady, selectedConnectorId: $selectedConnectorId, selectedCarId: $selectedCarId, rating: $rating)';
+    return 'HomeState.loaded(stations: $stations, isList: $isList, currentLocation: $currentLocation, isMapReady: $isMapReady)';
   }
 
   @override
@@ -1642,12 +1626,7 @@ class _$LoadedStateImpl implements LoadedState {
             (identical(other.currentLocation, currentLocation) ||
                 other.currentLocation == currentLocation) &&
             (identical(other.isMapReady, isMapReady) ||
-                other.isMapReady == isMapReady) &&
-            (identical(other.selectedConnectorId, selectedConnectorId) ||
-                other.selectedConnectorId == selectedConnectorId) &&
-            (identical(other.selectedCarId, selectedCarId) ||
-                other.selectedCarId == selectedCarId) &&
-            (identical(other.rating, rating) || other.rating == rating));
+                other.isMapReady == isMapReady));
   }
 
   @override
@@ -1656,10 +1635,7 @@ class _$LoadedStateImpl implements LoadedState {
       const DeepCollectionEquality().hash(_stations),
       isList,
       currentLocation,
-      isMapReady,
-      selectedConnectorId,
-      selectedCarId,
-      rating);
+      isMapReady);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1676,18 +1652,11 @@ class _$LoadedStateImpl implements LoadedState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(bool isList) viewChanged,
-    required TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)
+    required TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)
         loaded,
   }) {
-    return loaded(stations, isList, currentLocation, isMapReady,
-        selectedConnectorId, selectedCarId, rating);
+    return loaded(stations, isList, currentLocation, isMapReady);
   }
 
   @override
@@ -1697,18 +1666,11 @@ class _$LoadedStateImpl implements LoadedState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(bool isList)? viewChanged,
-    TResult? Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult? Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
   }) {
-    return loaded?.call(stations, isList, currentLocation, isMapReady,
-        selectedConnectorId, selectedCarId, rating);
+    return loaded?.call(stations, isList, currentLocation, isMapReady);
   }
 
   @override
@@ -1718,20 +1680,13 @@ class _$LoadedStateImpl implements LoadedState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(bool isList)? viewChanged,
-    TResult Function(
-            List<StationModel> stations,
-            bool isList,
-            LatLng? currentLocation,
-            bool isMapReady,
-            int? selectedConnectorId,
-            int? selectedCarId,
-            double? rating)?
+    TResult Function(List<StationModel> stations, bool isList,
+            LatLng? currentLocation, bool isMapReady)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(stations, isList, currentLocation, isMapReady,
-          selectedConnectorId, selectedCarId, rating);
+      return loaded(stations, isList, currentLocation, isMapReady);
     }
     return orElse();
   }
@@ -1779,20 +1734,14 @@ class _$LoadedStateImpl implements LoadedState {
 
 abstract class LoadedState implements HomeState {
   const factory LoadedState(final List<StationModel> stations,
-      {required final bool isList,
+      {final bool isList,
       final LatLng? currentLocation,
-      final bool isMapReady,
-      final int? selectedConnectorId,
-      final int? selectedCarId,
-      final double? rating}) = _$LoadedStateImpl;
+      final bool isMapReady}) = _$LoadedStateImpl;
 
   List<StationModel> get stations;
   bool get isList;
   LatLng? get currentLocation;
   bool get isMapReady;
-  int? get selectedConnectorId;
-  int? get selectedCarId;
-  double? get rating;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.

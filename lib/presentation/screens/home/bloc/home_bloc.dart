@@ -1,10 +1,10 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:watt_hub/data/fake_data/stations_data/stations_map.dart';
-import 'package:watt_hub/data/local/shared_preferences/shared_preferences_service.dart';
 import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/utils/helpers/location_helper.dart';
 
@@ -17,10 +17,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final LocationManager _locationManager = LocationManager();
   final MapController mapController = MapController();
 
-  LatLng? currentLocation;
-  bool isMapReady = false;
-  bool isList = true;
-
   HomeBloc() : super(const HomeState.initial()) {
     on<LoadStationEvent>(_onLoadStation);
     on<ToggleViewEvent>(_onToggleView);
@@ -29,14 +25,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<LoadFiltersEvent>(_onLoadFilters);
   }
 
-  Future<void> _initializeLocation() async {
+  Future<LatLng?> _initializeLocation() async {
     final location = await _locationManager.getCurrentLocation();
     if (location != null) {
-      currentLocation = location;
-      if (isMapReady) {
-        mapController.move(location, 18.0);
-      }
+      return location;
     }
+    return null;
   }
 
   Future<void> _onLoadStation(
@@ -45,25 +39,17 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     emit(const HomeState.loading());
     try {
-      await _initializeLocation();
+      final location = await _initializeLocation();
       await Future.delayed(const Duration(seconds: 1));
 
       final stations = stationsData
           .map((stationJson) => StationModel.fromJson(stationJson))
           .toList();
 
-      final selectedConnectorId =
-          SharedPreferencesService.instance.selectedFilterConnectorId();
-      final selectedCarId =
-          SharedPreferencesService.instance.selectedFilterCarId();
-      final rating = SharedPreferencesService.instance.filterRating();
-
       emit(HomeState.loaded(
         stations,
-        isList: isList,
-        selectedConnectorId: selectedConnectorId,
-        selectedCarId: selectedCarId,
-        rating: rating,
+        isList: true,
+        currentLocation: location,
       ));
     } catch (e) {
       emit(const HomeState.error("Failed to load stations"));
@@ -73,36 +59,23 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   Future<void> _onLoadFilters(
     LoadFiltersEvent event,
     Emitter<HomeState> emit,
-  ) async {
-    final selectedConnectorId =
-        SharedPreferencesService.instance.selectedFilterConnectorId();
-    final selectedCarId =
-        SharedPreferencesService.instance.selectedFilterCarId();
-    final rating = SharedPreferencesService.instance.filterRating();
-
-    if (state is LoadedState) {
-      final loadedState = state as LoadedState;
-      emit(loadedState.copyWith(
-        selectedConnectorId: selectedConnectorId,
-        selectedCarId: selectedCarId,
-        rating: rating,
-      ));
-    }
-  }
+  ) async {}
 
   void _onToggleView(ToggleViewEvent event, Emitter<HomeState> emit) {
-    isList = !isList;
     if (state is LoadedState) {
       final loadedState = state as LoadedState;
-      emit(HomeState.loaded(loadedState.stations, isList: isList));
+      emit(HomeState.loaded(loadedState.stations, isList: !loadedState.isList, currentLocation: event.currentLocation));
     } else {
-      emit(HomeState.viewChanged(isList));
+      emit(const HomeState.viewChanged(true));
     }
   }
 
-  void _onCenterLocation(CenterLocationEvent event, Emitter<HomeState> emit) {
-    if (currentLocation != null) {
-      mapController.move(currentLocation!, 18.0);
+  void _onCenterLocation(
+      CenterLocationEvent event, Emitter<HomeState> emit) async {
+    final location = event.currentLocation;
+    debugPrint('$location location');
+    if (location != null) {
+      mapController.move(location, 18.0);
     }
   }
 
@@ -110,7 +83,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     CenterOnStationEvent event,
     Emitter<HomeState> emit,
   ) {
-    isList = true;
     final stationLocation = LatLng(
       event.station.latitude,
       event.station.longitude,
@@ -122,6 +94,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         .map((stationJson) => StationModel.fromJson(stationJson))
         .toList();
 
-    emit(HomeState.loaded(stations, isList: isList));
+    emit(HomeState.loaded(stations, currentLocation: event.currentLocation));
   }
 }

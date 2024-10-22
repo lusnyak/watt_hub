@@ -10,79 +10,77 @@ import 'station_info_modal.dart';
 
 class MapContainer extends StatelessWidget {
   final List<StationModel> chargingStations;
+  final LatLng? currentLocation;
 
   const MapContainer({
     super.key,
     required this.chargingStations,
+    this.currentLocation,
   });
 
   @override
   Widget build(BuildContext context) {
-    final currentLocation = context.read<HomeBloc>().currentLocation;
-    return currentLocation != null
-        ? FlutterMap(
-            mapController: context.read<HomeBloc>().mapController,
-            options: MapOptions(
-              initialCenter: context.read<HomeBloc>().currentLocation ??
-                  const LatLng(40.7942, 43.84528),
-              initialZoom: 18.0,
-            ),
-            children: [
-              TileLayer(
-                urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                userAgentPackageName: 'com.example.app',
-              ),
-              if (!context.read<HomeBloc>().isMapReady)
-                MarkerClusterLayerWidget(
-                  options: MarkerClusterLayerOptions(
-                    maxClusterRadius: 45,
-                    size: Size(40.w, 40.h),
-                    alignment: Alignment.center,
-                    maxZoom: 15,
-                    markers: [
-                      for (var station in chargingStations)
-                        Marker(
-                          width: 56.w,
-                          height: 56.h,
-                          point: LatLng(station.latitude, station.longitude),
-                          child: GestureDetector(
-                            onTap: () => showStationInfo(context, station),
-                            child: Icon(
-                              Icons.charging_station,
-                              size: 56.r,
-                              color: WattHubColors.primaryGreenColor,
-                            ),
-                          ),
-                        ),
-                      Marker(
-                        width: 80.w,
-                        height: 80.h,
-                        point: currentLocation,
-                        child: Icon(
-                          Icons.location_on_outlined,
-                          size: 56.r,
-                          color: WattHubColors.primaryGreenColor,
-                        ),
-                      ),
-                    ],
-                    builder: (context, markers) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.r),
-                          color: WattHubColors.primaryGreenColor,
-                        ),
-                        child: Center(
-                          child: Text(
-                            markers.length.toString(),
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      );
-                    },
+    debugPrint('$currentLocation currentLocation');
+    return FlutterMap(
+      mapController: context.read<HomeBloc>().mapController,
+      options: MapOptions(
+        initialCenter: currentLocation ?? const LatLng(40.7942, 43.84528),
+        initialZoom: 18.0,
+      ),
+      children: [
+        TileLayer(
+          urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+          userAgentPackageName: 'com.example.app',
+        ),
+        MarkerClusterLayerWidget(
+          options: MarkerClusterLayerOptions(
+            maxClusterRadius: 45,
+            size: Size(40.w, 40.h),
+            alignment: Alignment.center,
+            maxZoom: 15,
+            markers: [
+              for (var station in chargingStations)
+                Marker(
+                  width: 56.w,
+                  height: 56.h,
+                  point: LatLng(station.latitude, station.longitude),
+                  child: GestureDetector(
+                    onTap: () => showStationInfo(context, station),
+                    child: Icon(
+                      Icons.charging_station,
+                      size: 56.r,
+                      color: WattHubColors.primaryGreenColor,
+                    ),
                   ),
-                ).paddingAll(50.r),
+                ),
+              Marker(
+                width: 80.w,
+                height: 80.h,
+                point: currentLocation ?? const LatLng(0, 0),
+                child: Icon(
+                  Icons.location_on_outlined,
+                  size: 56.r,
+                  color: WattHubColors.primaryGreenColor,
+                ),
+              ),
             ],
-          )
-        : const Center(child: CircularProgressIndicator());
+            builder: (context, markers) {
+              return Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.r),
+                  color: WattHubColors.primaryGreenColor,
+                ),
+                child: Center(
+                  child: Text(
+                    markers.length.toString(),
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ),
+              );
+            },
+          ),
+        ).paddingAll(50.r),
+      ],
+    );
   }
 }

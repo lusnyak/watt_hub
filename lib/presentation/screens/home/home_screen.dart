@@ -51,16 +51,16 @@ class _HomeView extends StatelessWidget {
                   isList,
                   currentLocation,
                   isMapReady,
-                  selectedConnectorId,
-                  selectedCarId,
-                  rating,
                 ) {
+                  debugPrint('$currentLocation currentLocation');
                   return isList
                       ? MapContainer(
                           chargingStations: stations,
+                          currentLocation: currentLocation,
                         )
                       : StationsList(
                           stationsList: stations,
+                          currentLocation: currentLocation,
                         );
                 },
               );
@@ -69,26 +69,33 @@ class _HomeView extends StatelessWidget {
         ),
         floatingActionButton: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
+            final isList = state is LoadedState ? state.isList : true;
+            final currentLocation =
+                state is LoadedState ? state.currentLocation : null;
             return Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 if (state.maybeMap(
-                  loaded: (_) => context.read<HomeBloc>().isList,
+                  loaded: (_) => isList,
                   orElse: () => false,
                 ))
                   FloatingActionButton(
                     onPressed: () {
-                      context.read<HomeBloc>().add(const CenterLocationEvent());
+                      context
+                          .read<HomeBloc>()
+                          .add(CenterLocationEvent(currentLocation));
                     },
                     child: const Icon(Icons.my_location_outlined),
                   ),
                 20.widthBox,
                 FloatingActionButton(
                   onPressed: () {
-                    context.read<HomeBloc>().add(const ToggleViewEvent());
+                    context
+                        .read<HomeBloc>()
+                        .add(ToggleViewEvent(currentLocation));
                   },
                   child: Icon(
-                    context.read<HomeBloc>().isList ? Icons.list : Icons.map,
+                    isList ? Icons.list : Icons.map,
                   ),
                 ),
               ],

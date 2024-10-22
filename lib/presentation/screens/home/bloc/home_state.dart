@@ -8,11 +8,8 @@ class HomeState with _$HomeState {
   const factory HomeState.viewChanged(bool isList) = ViewChangedState;
   const factory HomeState.loaded(
     List<StationModel> stations, {
-    required bool isList,
+    @Default(true) bool isList,
     LatLng? currentLocation,
     @Default(false) bool isMapReady,
-    int? selectedConnectorId,
-    int? selectedCarId,
-    double? rating,
   }) = LoadedState;
 }
