@@ -1,7 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesService {
-
   static const String onBoardingLaunchKey = "onBoardingLaunch";
 
   SharedPreferencesService._();
@@ -15,7 +14,9 @@ class SharedPreferencesService {
   }
 
   bool onBoardingLaunch() =>
-      _sharedPrefs?.getBool(SharedPreferencesService.onBoardingLaunchKey) ?? false;
+      _sharedPrefs?.getBool(SharedPreferencesService.onBoardingLaunchKey) ??
+          false;
 
-  setOnBoardingLaunch(bool value) async => await _sharedPrefs?.setBool(SharedPreferencesService.onBoardingLaunchKey, value);
+  setOnBoardingLaunch(bool value) async => await _sharedPrefs?.setBool(
+      SharedPreferencesService.onBoardingLaunchKey, value);
 }

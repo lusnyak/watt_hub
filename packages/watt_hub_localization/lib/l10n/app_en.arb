@@ -14,5 +14,18 @@
   "andConfirm": "and confirm that I am over 17 years old.",
   "resend": "resend",
   "pleaseEnterEmail": "Please enter email",
-  "pleaseEnterAValidEmail": "Please enter a valid email"
+  "pleaseEnterAValidEmail": "Please enter a valid email",
+    "home": "Home",
+    "requests": "Requests",
+    "profile": "Profile",
+    "noData": "No Data",
+    "reviews": "reviews",
+    "view": "View",
+    "book": "Book",
+    "kilowatt": "kw",
+    "hourlyRate": "hr",
+    "filter": "Filter",
+    "rating": "Rating",
+    "chooseCar": "Choos Car Type",
+    "chooseConnector": "Choose Connector"
 }
