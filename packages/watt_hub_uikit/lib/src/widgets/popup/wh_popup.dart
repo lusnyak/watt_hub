@@ -7,7 +7,7 @@ class WHPopup {
 
   WHPopup.of(this.context);
 
-  void show({
+  Future<void> show({
     required String image,
     required String title,
     required String subTitle,
@@ -15,8 +15,8 @@ class WHPopup {
     String? confirmButtonTitle,
     VoidCallback? onConfirmPressed,
     VoidCallback? onCancelPressed,
-  }) {
-    showDialog<void>(
+  }) async {
+    await showDialog<void>(
       context: context,
       builder: (BuildContext context) {
         return _WHPopup(
@@ -80,7 +80,7 @@ class _WHPopup extends StatelessWidget {
         ],
       ),
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(50.sp))),
+          borderRadius: BorderRadius.all(Radius.circular(50.r))),
       actions: <Widget>[
         if (confirmButtonTitle != null && cancelButtonTitle != null)
           Column(
@@ -101,7 +101,7 @@ class _WHPopup extends StatelessWidget {
           ).paddingAll(8.sp),
         if (cancelButtonTitle == null && confirmButtonTitle != null)
           SizedBox(
-            width: double.infinity,
+            // width: double.infinity,
             child: WHElevatedButton.primary(
               onPressed: onConfirmPressed,
               title: confirmButtonTitle ?? "",
