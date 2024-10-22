@@ -2,14 +2,46 @@ import 'package:flutter/material.dart';
 
 import '../../../watt_hub_uikit.dart';
 
-class WHPopup extends StatelessWidget {
-  const WHPopup({
-    super.key,
+class WHPopup {
+  final BuildContext context;
+
+  WHPopup.of(this.context);
+
+  void show({
+    required String image,
+    required String title,
+    required String subTitle,
+    String? cancelButtonTitle,
+    String? confirmButtonTitle,
+    VoidCallback? onConfirmPressed,
+    VoidCallback? onCancelPressed,
+  }) {
+    showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return _WHPopup(
+          image: image,
+          title: title,
+          subTitle: subTitle,
+          cancelButtonTitle: cancelButtonTitle,
+          confirmButtonTitle: confirmButtonTitle,
+          onConfirmPressed: onConfirmPressed,
+          onCancelPressed: onCancelPressed,
+        );
+      },
+    );
+  }
+}
+
+class _WHPopup extends StatelessWidget {
+  const _WHPopup({
     required this.image,
     required this.title,
     required this.subTitle,
     this.cancelButtonTitle,
     this.confirmButtonTitle,
+    this.onConfirmPressed,
+    this.onCancelPressed,
   });
 
   final String image;
@@ -17,6 +49,8 @@ class WHPopup extends StatelessWidget {
   final String subTitle;
   final String? cancelButtonTitle;
   final String? confirmButtonTitle;
+  final VoidCallback? onConfirmPressed;
+  final VoidCallback? onCancelPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -50,16 +84,17 @@ class WHPopup extends StatelessWidget {
       actions: <Widget>[
         if (confirmButtonTitle != null && cancelButtonTitle != null)
           Column(
-            // crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.min,
             children: [
               WHElevatedButton.primary(
+                onPressed: onConfirmPressed,
                 title: confirmButtonTitle ?? "",
                 shadow: false,
               ).paddingOnly(bottom: 8.sp),
               WHElevatedButton.secondary(
+                onPressed: onCancelPressed,
                 title: cancelButtonTitle ?? "",
               ).paddingSymmetric(vertical: 8.sp),
             ],
@@ -68,6 +103,7 @@ class WHPopup extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: WHElevatedButton.primary(
+              onPressed: onConfirmPressed,
               title: confirmButtonTitle ?? "",
               shadow: false,
             ).paddingSymmetric(vertical: 20.sp),
