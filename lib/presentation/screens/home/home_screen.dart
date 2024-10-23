@@ -52,7 +52,6 @@ class _HomeView extends StatelessWidget {
                   currentLocation,
                   isMapReady,
                 ) {
-                  debugPrint('$currentLocation currentLocation');
                   return isList
                       ? MapContainer(
                           chargingStations: stations,

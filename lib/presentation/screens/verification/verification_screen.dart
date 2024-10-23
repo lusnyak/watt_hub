@@ -1,21 +1,27 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 import '../../../config/locator/service_locator.dart';
-import '../../../config/routes/app_router.dart';
 import 'bloc/verification_bloc.dart';
 
 @RoutePage()
 class VerificationScreen extends StatelessWidget {
-  const VerificationScreen({super.key});
+  const VerificationScreen({
+    super.key,
+    this.token,
+  });
+
+  final String? token;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<VerificationBloc>(),
+      create: (context) =>
+          getIt<VerificationBloc>()..add(VerificationEvent.setToken(token)),
       child: const _VerificationView(),
     );
   }
@@ -32,19 +38,18 @@ class _VerificationView extends StatelessWidget {
       body: SafeArea(
         child: BlocListener<VerificationBloc, VerificationState>(
           listener: (context, state) {
-            state.maybeMap(
-              success: (_) {
+            if (state is VerificationSuccess) {
+              debugPrint('${state.flag} state.flag');
+              if (state.flag == true) {
                 AutoRouter.of(context).replace(const HomeRoute());
-              },
-              failure: (failure) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(failure.error),
-                  ),
-                );
-              },
-              orElse: () {},
-            );
+              }
+            } else if (state is VerificationFailure) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(state.error),
+                ),
+              );
+            }
           },
           child: SingleChildScrollView(
             child: Column(
@@ -66,9 +71,14 @@ class _VerificationView extends StatelessWidget {
                       children: [
                         WHPinPut(
                           onCompleted: (val) {
-                            verificationBloc.add(
-                              VerificationEvent.verifyOtp(val),
-                            );
+                            if (state is VerificationSuccess) {
+                              verificationBloc.add(
+                                VerificationEvent.verifyOtp(
+                                  otpCode: val,
+                                  token: state.token,
+                                ),
+                              );
+                            }
                           },
                         ),
                         30.h.heightBox,
@@ -78,22 +88,21 @@ class _VerificationView extends StatelessWidget {
                     );
                   },
                 ),
-                Center(
-                  child: Text(
-                    AppLocalizations.of(context).didntReceiveEmail,
-                    style: body14RegularTextStyle,
-                  ),
+                20.h.heightBox,
+                Text(
+                  AppLocalizations.of(context).didntReceiveEmail,
+                  style: body14RegularTextStyle,
+                  textAlign: TextAlign.center,
                 ),
                 15.h.heightBox,
-                Center(
-                  child: WHTextButton.create(
-                      onPressed: () {
-                        verificationBloc.add(
-                          const VerificationEvent.resendOtp(),
-                        );
-                      },
-                      text: AppLocalizations.of(context).resend,
-                      color: WattHubColors.primaryGreenColor),
+                WHTextButton.create(
+                  onPressed: () {
+                    verificationBloc.add(
+                      const VerificationEvent.resendOtp(),
+                    );
+                  },
+                  text: AppLocalizations.of(context).resend,
+                  color: WattHubColors.primaryGreenColor,
                 ),
               ],
             ),

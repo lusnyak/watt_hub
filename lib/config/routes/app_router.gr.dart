@@ -315,10 +315,17 @@ class UikitExampleRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [VerificationScreen]
-class VerificationRoute extends PageRouteInfo<void> {
-  const VerificationRoute({List<PageRouteInfo>? children})
-      : super(
+class VerificationRoute extends PageRouteInfo<VerificationRouteArgs> {
+  VerificationRoute({
+    Key? key,
+    String? token,
+    List<PageRouteInfo>? children,
+  }) : super(
           VerificationRoute.name,
+          args: VerificationRouteArgs(
+            key: key,
+            token: token,
+          ),
           initialChildren: children,
         );
 
@@ -327,7 +334,28 @@ class VerificationRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const VerificationScreen();
+      final args = data.argsAs<VerificationRouteArgs>(
+          orElse: () => const VerificationRouteArgs());
+      return VerificationScreen(
+        key: args.key,
+        token: args.token,
+      );
     },
   );
+}
+
+class VerificationRouteArgs {
+  const VerificationRouteArgs({
+    this.key,
+    this.token,
+  });
+
+  final Key? key;
+
+  final String? token;
+
+  @override
+  String toString() {
+    return 'VerificationRouteArgs{key: $key, token: $token}';
+  }
 }

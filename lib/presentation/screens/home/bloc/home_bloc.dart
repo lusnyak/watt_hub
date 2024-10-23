@@ -73,7 +73,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   void _onCenterLocation(
       CenterLocationEvent event, Emitter<HomeState> emit) async {
     final location = event.currentLocation;
-    debugPrint('$location location');
     if (location != null) {
       mapController.move(location, 18.0);
     }

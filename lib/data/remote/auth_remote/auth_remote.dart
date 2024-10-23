@@ -14,4 +14,10 @@ abstract class AuthRemoteApi {
 
   @POST(EndPoints.authOtp)
   Future<TokenModel?> otp(@Field('email') String email);
+
+  @POST(EndPoints.checkOtp)
+  Future<TokenModel?> checkOtp(
+    @Field('otp') String? otp,
+    @Field('token') String? token,
+  );
 }

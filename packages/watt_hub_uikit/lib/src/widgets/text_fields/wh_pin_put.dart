@@ -21,6 +21,7 @@ class WHPinPut extends StatelessWidget {
         color: WattHubColors.primaryLightGreenColor,
         borderRadius: BorderRadius.circular(8.r),
       ),
+      length: 6,
       onChanged: onChanged,
       onCompleted: onCompleted,
       onTapOutside: (evt) => FocusScope.of(context).unfocus(),
