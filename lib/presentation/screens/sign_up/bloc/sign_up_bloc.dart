@@ -29,7 +29,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
             isChecked: event.isChecked,
           ));
         },
-        success: (tokenData) => emit(SignUpState.form(
+        success: (tokenData, email) => emit(SignUpState.form(
           isEmailValid: false,
           isChecked: event.isChecked,
         )),
@@ -45,7 +45,10 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         try {
           final TokenModel? tokenData =
               await getIt<UserRepository>().userConnect(emailController.text);
-          emit(SignUpState.success(tokenData));
+          emit(SignUpState.success(
+            tokenData: tokenData,
+            email: emailController.text,
+          ));
         } catch (e) {
           emit(SignUpState.failure(e.toString()));
         }

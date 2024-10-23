@@ -18,23 +18,23 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$VerificationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() resendOtp,
+    required TResult Function(String? email) resendOtp,
     required TResult Function(String? otpCode, String? token) verifyOtp,
-    required TResult Function(String? token) setToken,
+    required TResult Function(String? token, String? email) setValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? resendOtp,
+    TResult? Function(String? email)? resendOtp,
     TResult? Function(String? otpCode, String? token)? verifyOtp,
-    TResult? Function(String? token)? setToken,
+    TResult? Function(String? token, String? email)? setValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? resendOtp,
+    TResult Function(String? email)? resendOtp,
     TResult Function(String? otpCode, String? token)? verifyOtp,
-    TResult Function(String? token)? setToken,
+    TResult Function(String? token, String? email)? setValues,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,21 +42,21 @@ mixin _$VerificationEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ResendOtp value) resendOtp,
     required TResult Function(VerifyOtp value) verifyOtp,
-    required TResult Function(SetTokenEvent value) setToken,
+    required TResult Function(SetValuesEvent value) setValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ResendOtp value)? resendOtp,
     TResult? Function(VerifyOtp value)? verifyOtp,
-    TResult? Function(SetTokenEvent value)? setToken,
+    TResult? Function(SetValuesEvent value)? setValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ResendOtp value)? resendOtp,
     TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(SetTokenEvent value)? setToken,
+    TResult Function(SetValuesEvent value)? setValues,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -88,6 +88,8 @@ abstract class _$$ResendOtpImplCopyWith<$Res> {
   factory _$$ResendOtpImplCopyWith(
           _$ResendOtpImpl value, $Res Function(_$ResendOtpImpl) then) =
       __$$ResendOtpImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? email});
 }
 
 /// @nodoc
@@ -100,57 +102,82 @@ class __$$ResendOtpImplCopyWithImpl<$Res>
 
   /// Create a copy of VerificationEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = freezed,
+  }) {
+    return _then(_$ResendOtpImpl(
+      freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ResendOtpImpl implements ResendOtp {
-  const _$ResendOtpImpl();
+  const _$ResendOtpImpl(this.email);
+
+  @override
+  final String? email;
 
   @override
   String toString() {
-    return 'VerificationEvent.resendOtp()';
+    return 'VerificationEvent.resendOtp(email: $email)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ResendOtpImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ResendOtpImpl &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, email);
+
+  /// Create a copy of VerificationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ResendOtpImplCopyWith<_$ResendOtpImpl> get copyWith =>
+      __$$ResendOtpImplCopyWithImpl<_$ResendOtpImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() resendOtp,
+    required TResult Function(String? email) resendOtp,
     required TResult Function(String? otpCode, String? token) verifyOtp,
-    required TResult Function(String? token) setToken,
+    required TResult Function(String? token, String? email) setValues,
   }) {
-    return resendOtp();
+    return resendOtp(email);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? resendOtp,
+    TResult? Function(String? email)? resendOtp,
     TResult? Function(String? otpCode, String? token)? verifyOtp,
-    TResult? Function(String? token)? setToken,
+    TResult? Function(String? token, String? email)? setValues,
   }) {
-    return resendOtp?.call();
+    return resendOtp?.call(email);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? resendOtp,
+    TResult Function(String? email)? resendOtp,
     TResult Function(String? otpCode, String? token)? verifyOtp,
-    TResult Function(String? token)? setToken,
+    TResult Function(String? token, String? email)? setValues,
     required TResult orElse(),
   }) {
     if (resendOtp != null) {
-      return resendOtp();
+      return resendOtp(email);
     }
     return orElse();
   }
@@ -160,7 +187,7 @@ class _$ResendOtpImpl implements ResendOtp {
   TResult map<TResult extends Object?>({
     required TResult Function(ResendOtp value) resendOtp,
     required TResult Function(VerifyOtp value) verifyOtp,
-    required TResult Function(SetTokenEvent value) setToken,
+    required TResult Function(SetValuesEvent value) setValues,
   }) {
     return resendOtp(this);
   }
@@ -170,7 +197,7 @@ class _$ResendOtpImpl implements ResendOtp {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ResendOtp value)? resendOtp,
     TResult? Function(VerifyOtp value)? verifyOtp,
-    TResult? Function(SetTokenEvent value)? setToken,
+    TResult? Function(SetValuesEvent value)? setValues,
   }) {
     return resendOtp?.call(this);
   }
@@ -180,7 +207,7 @@ class _$ResendOtpImpl implements ResendOtp {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ResendOtp value)? resendOtp,
     TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(SetTokenEvent value)? setToken,
+    TResult Function(SetValuesEvent value)? setValues,
     required TResult orElse(),
   }) {
     if (resendOtp != null) {
@@ -191,7 +218,15 @@ class _$ResendOtpImpl implements ResendOtp {
 }
 
 abstract class ResendOtp implements VerificationEvent {
-  const factory ResendOtp() = _$ResendOtpImpl;
+  const factory ResendOtp(final String? email) = _$ResendOtpImpl;
+
+  String? get email;
+
+  /// Create a copy of VerificationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ResendOtpImplCopyWith<_$ResendOtpImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -270,9 +305,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() resendOtp,
+    required TResult Function(String? email) resendOtp,
     required TResult Function(String? otpCode, String? token) verifyOtp,
-    required TResult Function(String? token) setToken,
+    required TResult Function(String? token, String? email) setValues,
   }) {
     return verifyOtp(otpCode, token);
   }
@@ -280,9 +315,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? resendOtp,
+    TResult? Function(String? email)? resendOtp,
     TResult? Function(String? otpCode, String? token)? verifyOtp,
-    TResult? Function(String? token)? setToken,
+    TResult? Function(String? token, String? email)? setValues,
   }) {
     return verifyOtp?.call(otpCode, token);
   }
@@ -290,9 +325,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? resendOtp,
+    TResult Function(String? email)? resendOtp,
     TResult Function(String? otpCode, String? token)? verifyOtp,
-    TResult Function(String? token)? setToken,
+    TResult Function(String? token, String? email)? setValues,
     required TResult orElse(),
   }) {
     if (verifyOtp != null) {
@@ -306,7 +341,7 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult map<TResult extends Object?>({
     required TResult Function(ResendOtp value) resendOtp,
     required TResult Function(VerifyOtp value) verifyOtp,
-    required TResult Function(SetTokenEvent value) setToken,
+    required TResult Function(SetValuesEvent value) setValues,
   }) {
     return verifyOtp(this);
   }
@@ -316,7 +351,7 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ResendOtp value)? resendOtp,
     TResult? Function(VerifyOtp value)? verifyOtp,
-    TResult? Function(SetTokenEvent value)? setToken,
+    TResult? Function(SetValuesEvent value)? setValues,
   }) {
     return verifyOtp?.call(this);
   }
@@ -326,7 +361,7 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ResendOtp value)? resendOtp,
     TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(SetTokenEvent value)? setToken,
+    TResult Function(SetValuesEvent value)? setValues,
     required TResult orElse(),
   }) {
     if (verifyOtp != null) {
@@ -351,20 +386,20 @@ abstract class VerifyOtp implements VerificationEvent {
 }
 
 /// @nodoc
-abstract class _$$SetTokenEventImplCopyWith<$Res> {
-  factory _$$SetTokenEventImplCopyWith(
-          _$SetTokenEventImpl value, $Res Function(_$SetTokenEventImpl) then) =
-      __$$SetTokenEventImplCopyWithImpl<$Res>;
+abstract class _$$SetValuesEventImplCopyWith<$Res> {
+  factory _$$SetValuesEventImplCopyWith(_$SetValuesEventImpl value,
+          $Res Function(_$SetValuesEventImpl) then) =
+      __$$SetValuesEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String? token});
+  $Res call({String? token, String? email});
 }
 
 /// @nodoc
-class __$$SetTokenEventImplCopyWithImpl<$Res>
-    extends _$VerificationEventCopyWithImpl<$Res, _$SetTokenEventImpl>
-    implements _$$SetTokenEventImplCopyWith<$Res> {
-  __$$SetTokenEventImplCopyWithImpl(
-      _$SetTokenEventImpl _value, $Res Function(_$SetTokenEventImpl) _then)
+class __$$SetValuesEventImplCopyWithImpl<$Res>
+    extends _$VerificationEventCopyWithImpl<$Res, _$SetValuesEventImpl>
+    implements _$$SetValuesEventImplCopyWith<$Res> {
+  __$$SetValuesEventImplCopyWithImpl(
+      _$SetValuesEventImpl _value, $Res Function(_$SetValuesEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of VerificationEvent
@@ -373,11 +408,16 @@ class __$$SetTokenEventImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? token = freezed,
+    Object? email = freezed,
   }) {
-    return _then(_$SetTokenEventImpl(
-      freezed == token
+    return _then(_$SetValuesEventImpl(
+      token: freezed == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -385,66 +425,70 @@ class __$$SetTokenEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetTokenEventImpl implements SetTokenEvent {
-  const _$SetTokenEventImpl(this.token);
+class _$SetValuesEventImpl implements SetValuesEvent {
+  const _$SetValuesEventImpl({this.token, this.email});
 
   @override
   final String? token;
+  @override
+  final String? email;
 
   @override
   String toString() {
-    return 'VerificationEvent.setToken(token: $token)';
+    return 'VerificationEvent.setValues(token: $token, email: $email)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetTokenEventImpl &&
-            (identical(other.token, token) || other.token == token));
+            other is _$SetValuesEventImpl &&
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, token);
+  int get hashCode => Object.hash(runtimeType, token, email);
 
   /// Create a copy of VerificationEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetTokenEventImplCopyWith<_$SetTokenEventImpl> get copyWith =>
-      __$$SetTokenEventImplCopyWithImpl<_$SetTokenEventImpl>(this, _$identity);
+  _$$SetValuesEventImplCopyWith<_$SetValuesEventImpl> get copyWith =>
+      __$$SetValuesEventImplCopyWithImpl<_$SetValuesEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() resendOtp,
+    required TResult Function(String? email) resendOtp,
     required TResult Function(String? otpCode, String? token) verifyOtp,
-    required TResult Function(String? token) setToken,
+    required TResult Function(String? token, String? email) setValues,
   }) {
-    return setToken(token);
+    return setValues(token, email);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? resendOtp,
+    TResult? Function(String? email)? resendOtp,
     TResult? Function(String? otpCode, String? token)? verifyOtp,
-    TResult? Function(String? token)? setToken,
+    TResult? Function(String? token, String? email)? setValues,
   }) {
-    return setToken?.call(token);
+    return setValues?.call(token, email);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? resendOtp,
+    TResult Function(String? email)? resendOtp,
     TResult Function(String? otpCode, String? token)? verifyOtp,
-    TResult Function(String? token)? setToken,
+    TResult Function(String? token, String? email)? setValues,
     required TResult orElse(),
   }) {
-    if (setToken != null) {
-      return setToken(token);
+    if (setValues != null) {
+      return setValues(token, email);
     }
     return orElse();
   }
@@ -454,9 +498,9 @@ class _$SetTokenEventImpl implements SetTokenEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ResendOtp value) resendOtp,
     required TResult Function(VerifyOtp value) verifyOtp,
-    required TResult Function(SetTokenEvent value) setToken,
+    required TResult Function(SetValuesEvent value) setValues,
   }) {
-    return setToken(this);
+    return setValues(this);
   }
 
   @override
@@ -464,9 +508,9 @@ class _$SetTokenEventImpl implements SetTokenEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ResendOtp value)? resendOtp,
     TResult? Function(VerifyOtp value)? verifyOtp,
-    TResult? Function(SetTokenEvent value)? setToken,
+    TResult? Function(SetValuesEvent value)? setValues,
   }) {
-    return setToken?.call(this);
+    return setValues?.call(this);
   }
 
   @override
@@ -474,25 +518,27 @@ class _$SetTokenEventImpl implements SetTokenEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ResendOtp value)? resendOtp,
     TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(SetTokenEvent value)? setToken,
+    TResult Function(SetValuesEvent value)? setValues,
     required TResult orElse(),
   }) {
-    if (setToken != null) {
-      return setToken(this);
+    if (setValues != null) {
+      return setValues(this);
     }
     return orElse();
   }
 }
 
-abstract class SetTokenEvent implements VerificationEvent {
-  const factory SetTokenEvent(final String? token) = _$SetTokenEventImpl;
+abstract class SetValuesEvent implements VerificationEvent {
+  const factory SetValuesEvent({final String? token, final String? email}) =
+      _$SetValuesEventImpl;
 
   String? get token;
+  String? get email;
 
   /// Create a copy of VerificationEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SetTokenEventImplCopyWith<_$SetTokenEventImpl> get copyWith =>
+  _$$SetValuesEventImplCopyWith<_$SetValuesEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -502,7 +548,9 @@ mixin _$VerificationState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String? token, bool? flag) success,
+    required TResult Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)
+        success,
     required TResult Function(String error) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -510,7 +558,9 @@ mixin _$VerificationState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String? token, bool? flag)? success,
+    TResult? Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)?
+        success,
     TResult? Function(String error)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -518,7 +568,9 @@ mixin _$VerificationState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String? token, bool? flag)? success,
+    TResult Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)?
+        success,
     TResult Function(String error)? failure,
     required TResult orElse(),
   }) =>
@@ -615,7 +667,9 @@ class _$VerificationInitialImpl implements VerificationInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String? token, bool? flag) success,
+    required TResult Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)
+        success,
     required TResult Function(String error) failure,
   }) {
     return initial();
@@ -626,7 +680,9 @@ class _$VerificationInitialImpl implements VerificationInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String? token, bool? flag)? success,
+    TResult? Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)?
+        success,
     TResult? Function(String error)? failure,
   }) {
     return initial?.call();
@@ -637,7 +693,9 @@ class _$VerificationInitialImpl implements VerificationInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String? token, bool? flag)? success,
+    TResult Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)?
+        success,
     TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
@@ -733,7 +791,9 @@ class _$VerificationLoadingImpl implements VerificationLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String? token, bool? flag) success,
+    required TResult Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)
+        success,
     required TResult Function(String error) failure,
   }) {
     return loading();
@@ -744,7 +804,9 @@ class _$VerificationLoadingImpl implements VerificationLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String? token, bool? flag)? success,
+    TResult? Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)?
+        success,
     TResult? Function(String error)? failure,
   }) {
     return loading?.call();
@@ -755,7 +817,9 @@ class _$VerificationLoadingImpl implements VerificationLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String? token, bool? flag)? success,
+    TResult Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)?
+        success,
     TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
@@ -813,7 +877,9 @@ abstract class _$$VerificationSuccessImplCopyWith<$Res> {
           $Res Function(_$VerificationSuccessImpl) then) =
       __$$VerificationSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String? token, bool? flag});
+  $Res call({String? token, bool? flag, String? email, TokenModel? resendData});
+
+  $TokenModelCopyWith<$Res>? get resendData;
 }
 
 /// @nodoc
@@ -831,6 +897,8 @@ class __$$VerificationSuccessImplCopyWithImpl<$Res>
   $Res call({
     Object? token = freezed,
     Object? flag = freezed,
+    Object? email = freezed,
+    Object? resendData = freezed,
   }) {
     return _then(_$VerificationSuccessImpl(
       token: freezed == token
@@ -841,23 +909,50 @@ class __$$VerificationSuccessImplCopyWithImpl<$Res>
           ? _value.flag
           : flag // ignore: cast_nullable_to_non_nullable
               as bool?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      resendData: freezed == resendData
+          ? _value.resendData
+          : resendData // ignore: cast_nullable_to_non_nullable
+              as TokenModel?,
     ));
+  }
+
+  /// Create a copy of VerificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TokenModelCopyWith<$Res>? get resendData {
+    if (_value.resendData == null) {
+      return null;
+    }
+
+    return $TokenModelCopyWith<$Res>(_value.resendData!, (value) {
+      return _then(_value.copyWith(resendData: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$VerificationSuccessImpl implements VerificationSuccess {
-  const _$VerificationSuccessImpl({this.token, this.flag});
+  const _$VerificationSuccessImpl(
+      {this.token, this.flag, this.email, this.resendData});
 
   @override
   final String? token;
   @override
   final bool? flag;
+  @override
+  final String? email;
+  @override
+  final TokenModel? resendData;
 
   @override
   String toString() {
-    return 'VerificationState.success(token: $token, flag: $flag)';
+    return 'VerificationState.success(token: $token, flag: $flag, email: $email, resendData: $resendData)';
   }
 
   @override
@@ -866,11 +961,14 @@ class _$VerificationSuccessImpl implements VerificationSuccess {
         (other.runtimeType == runtimeType &&
             other is _$VerificationSuccessImpl &&
             (identical(other.token, token) || other.token == token) &&
-            (identical(other.flag, flag) || other.flag == flag));
+            (identical(other.flag, flag) || other.flag == flag) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.resendData, resendData) ||
+                other.resendData == resendData));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, token, flag);
+  int get hashCode => Object.hash(runtimeType, token, flag, email, resendData);
 
   /// Create a copy of VerificationState
   /// with the given fields replaced by the non-null parameter values.
@@ -886,10 +984,12 @@ class _$VerificationSuccessImpl implements VerificationSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String? token, bool? flag) success,
+    required TResult Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)
+        success,
     required TResult Function(String error) failure,
   }) {
-    return success(token, flag);
+    return success(token, flag, email, resendData);
   }
 
   @override
@@ -897,10 +997,12 @@ class _$VerificationSuccessImpl implements VerificationSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String? token, bool? flag)? success,
+    TResult? Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)?
+        success,
     TResult? Function(String error)? failure,
   }) {
-    return success?.call(token, flag);
+    return success?.call(token, flag, email, resendData);
   }
 
   @override
@@ -908,12 +1010,14 @@ class _$VerificationSuccessImpl implements VerificationSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String? token, bool? flag)? success,
+    TResult Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)?
+        success,
     TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(token, flag);
+      return success(token, flag, email, resendData);
     }
     return orElse();
   }
@@ -957,11 +1061,16 @@ class _$VerificationSuccessImpl implements VerificationSuccess {
 }
 
 abstract class VerificationSuccess implements VerificationState {
-  const factory VerificationSuccess({final String? token, final bool? flag}) =
-      _$VerificationSuccessImpl;
+  const factory VerificationSuccess(
+      {final String? token,
+      final bool? flag,
+      final String? email,
+      final TokenModel? resendData}) = _$VerificationSuccessImpl;
 
   String? get token;
   bool? get flag;
+  String? get email;
+  TokenModel? get resendData;
 
   /// Create a copy of VerificationState
   /// with the given fields replaced by the non-null parameter values.
@@ -1041,7 +1150,9 @@ class _$VerificationFailureImpl implements VerificationFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String? token, bool? flag) success,
+    required TResult Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)
+        success,
     required TResult Function(String error) failure,
   }) {
     return failure(error);
@@ -1052,7 +1163,9 @@ class _$VerificationFailureImpl implements VerificationFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String? token, bool? flag)? success,
+    TResult? Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)?
+        success,
     TResult? Function(String error)? failure,
   }) {
     return failure?.call(error);
@@ -1063,7 +1176,9 @@ class _$VerificationFailureImpl implements VerificationFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String? token, bool? flag)? success,
+    TResult Function(
+            String? token, bool? flag, String? email, TokenModel? resendData)?
+        success,
     TResult Function(String error)? failure,
     required TResult orElse(),
   }) {

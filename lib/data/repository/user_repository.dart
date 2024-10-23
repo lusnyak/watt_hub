@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
+import 'package:watt_hub/data/local/token_storage/token_storage.dart';
 import 'package:watt_hub/domain/models/token_model/token_model.dart';
 
 import '../remote/auth_remote/auth_remote.dart';
@@ -8,7 +8,7 @@ import '../remote/auth_remote/auth_remote.dart';
 class UserRepository {
   UserRepository();
 
-  Future<TokenModel?> userConnect(String email) async {
+  Future<TokenModel?> userConnect(String? email) async {
     return await getIt<AuthRemoteApi>().otp(email);
   }
 
@@ -16,13 +16,15 @@ class UserRepository {
     String? otp,
     String? token,
   ) async {
-    return await getIt<AuthRemoteApi>().checkOtp(otp, token).then((onValue) {
-      debugPrint("${onValue?.token} checkOtp then");
+    return await getIt<AuthRemoteApi>()
+        .checkOtp(otp, token)
+        .then((onValue) async {
+      if (onValue != null) {
+        await getIt<TokenStorage>().saveToken(onValue);
+      }
 
-      /// Token storage pahel
       return onValue?.token != null;
     }).catchError((e) {
-      debugPrint("${e.toString()} e.toString()");
       return false;
     });
   }

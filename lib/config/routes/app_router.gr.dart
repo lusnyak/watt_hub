@@ -319,12 +319,14 @@ class VerificationRoute extends PageRouteInfo<VerificationRouteArgs> {
   VerificationRoute({
     Key? key,
     String? token,
+    String? email,
     List<PageRouteInfo>? children,
   }) : super(
           VerificationRoute.name,
           args: VerificationRouteArgs(
             key: key,
             token: token,
+            email: email,
           ),
           initialChildren: children,
         );
@@ -339,6 +341,7 @@ class VerificationRoute extends PageRouteInfo<VerificationRouteArgs> {
       return VerificationScreen(
         key: args.key,
         token: args.token,
+        email: args.email,
       );
     },
   );
@@ -348,14 +351,17 @@ class VerificationRouteArgs {
   const VerificationRouteArgs({
     this.key,
     this.token,
+    this.email,
   });
 
   final Key? key;
 
   final String? token;
 
+  final String? email;
+
   @override
   String toString() {
-    return 'VerificationRouteArgs{key: $key, token: $token}';
+    return 'VerificationRouteArgs{key: $key, token: $token, email: $email}';
   }
 }

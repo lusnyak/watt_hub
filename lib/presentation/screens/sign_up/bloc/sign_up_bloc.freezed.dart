@@ -496,21 +496,21 @@ mixin _$SignUpState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool isEmailValid, bool isChecked) form,
-    required TResult Function(TokenModel? tokenData) success,
+    required TResult Function(TokenModel? tokenData, String? email) success,
     required TResult Function(String message) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isEmailValid, bool isChecked)? form,
-    TResult? Function(TokenModel? tokenData)? success,
+    TResult? Function(TokenModel? tokenData, String? email)? success,
     TResult? Function(String message)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isEmailValid, bool isChecked)? form,
-    TResult Function(TokenModel? tokenData)? success,
+    TResult Function(TokenModel? tokenData, String? email)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) =>
@@ -641,7 +641,7 @@ class _$SignUpFormStateImpl implements _SignUpFormState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool isEmailValid, bool isChecked) form,
-    required TResult Function(TokenModel? tokenData) success,
+    required TResult Function(TokenModel? tokenData, String? email) success,
     required TResult Function(String message) failure,
   }) {
     return form(isEmailValid, isChecked);
@@ -651,7 +651,7 @@ class _$SignUpFormStateImpl implements _SignUpFormState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isEmailValid, bool isChecked)? form,
-    TResult? Function(TokenModel? tokenData)? success,
+    TResult? Function(TokenModel? tokenData, String? email)? success,
     TResult? Function(String message)? failure,
   }) {
     return form?.call(isEmailValid, isChecked);
@@ -661,7 +661,7 @@ class _$SignUpFormStateImpl implements _SignUpFormState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isEmailValid, bool isChecked)? form,
-    TResult Function(TokenModel? tokenData)? success,
+    TResult Function(TokenModel? tokenData, String? email)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -727,7 +727,7 @@ abstract class _$$SignUpSuccessStateImplCopyWith<$Res> {
           $Res Function(_$SignUpSuccessStateImpl) then) =
       __$$SignUpSuccessStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({TokenModel? tokenData});
+  $Res call({TokenModel? tokenData, String? email});
 
   $TokenModelCopyWith<$Res>? get tokenData;
 }
@@ -746,12 +746,17 @@ class __$$SignUpSuccessStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? tokenData = freezed,
+    Object? email = freezed,
   }) {
     return _then(_$SignUpSuccessStateImpl(
-      freezed == tokenData
+      tokenData: freezed == tokenData
           ? _value.tokenData
           : tokenData // ignore: cast_nullable_to_non_nullable
               as TokenModel?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -773,14 +778,16 @@ class __$$SignUpSuccessStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SignUpSuccessStateImpl implements _SignUpSuccessState {
-  const _$SignUpSuccessStateImpl(this.tokenData);
+  const _$SignUpSuccessStateImpl({this.tokenData, this.email});
 
   @override
   final TokenModel? tokenData;
+  @override
+  final String? email;
 
   @override
   String toString() {
-    return 'SignUpState.success(tokenData: $tokenData)';
+    return 'SignUpState.success(tokenData: $tokenData, email: $email)';
   }
 
   @override
@@ -789,11 +796,12 @@ class _$SignUpSuccessStateImpl implements _SignUpSuccessState {
         (other.runtimeType == runtimeType &&
             other is _$SignUpSuccessStateImpl &&
             (identical(other.tokenData, tokenData) ||
-                other.tokenData == tokenData));
+                other.tokenData == tokenData) &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tokenData);
+  int get hashCode => Object.hash(runtimeType, tokenData, email);
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
@@ -808,32 +816,32 @@ class _$SignUpSuccessStateImpl implements _SignUpSuccessState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool isEmailValid, bool isChecked) form,
-    required TResult Function(TokenModel? tokenData) success,
+    required TResult Function(TokenModel? tokenData, String? email) success,
     required TResult Function(String message) failure,
   }) {
-    return success(tokenData);
+    return success(tokenData, email);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isEmailValid, bool isChecked)? form,
-    TResult? Function(TokenModel? tokenData)? success,
+    TResult? Function(TokenModel? tokenData, String? email)? success,
     TResult? Function(String message)? failure,
   }) {
-    return success?.call(tokenData);
+    return success?.call(tokenData, email);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isEmailValid, bool isChecked)? form,
-    TResult Function(TokenModel? tokenData)? success,
+    TResult Function(TokenModel? tokenData, String? email)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(tokenData);
+      return success(tokenData, email);
     }
     return orElse();
   }
@@ -874,10 +882,12 @@ class _$SignUpSuccessStateImpl implements _SignUpSuccessState {
 }
 
 abstract class _SignUpSuccessState implements SignUpState {
-  const factory _SignUpSuccessState(final TokenModel? tokenData) =
-      _$SignUpSuccessStateImpl;
+  const factory _SignUpSuccessState(
+      {final TokenModel? tokenData,
+      final String? email}) = _$SignUpSuccessStateImpl;
 
   TokenModel? get tokenData;
+  String? get email;
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
@@ -956,7 +966,7 @@ class _$SignUpFailureStateImpl implements _SignUpFailureState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool isEmailValid, bool isChecked) form,
-    required TResult Function(TokenModel? tokenData) success,
+    required TResult Function(TokenModel? tokenData, String? email) success,
     required TResult Function(String message) failure,
   }) {
     return failure(message);
@@ -966,7 +976,7 @@ class _$SignUpFailureStateImpl implements _SignUpFailureState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isEmailValid, bool isChecked)? form,
-    TResult? Function(TokenModel? tokenData)? success,
+    TResult? Function(TokenModel? tokenData, String? email)? success,
     TResult? Function(String message)? failure,
   }) {
     return failure?.call(message);
@@ -976,7 +986,7 @@ class _$SignUpFailureStateImpl implements _SignUpFailureState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isEmailValid, bool isChecked)? form,
-    TResult Function(TokenModel? tokenData)? success,
+    TResult Function(TokenModel? tokenData, String? email)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {

@@ -13,15 +13,17 @@ class VerificationScreen extends StatelessWidget {
   const VerificationScreen({
     super.key,
     this.token,
+    this.email,
   });
 
   final String? token;
+  final String? email;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          getIt<VerificationBloc>()..add(VerificationEvent.setToken(token)),
+      create: (context) => getIt<VerificationBloc>()
+        ..add(VerificationEvent.setValues(token: token, email: email)),
       child: const _VerificationView(),
     );
   }
@@ -39,9 +41,16 @@ class _VerificationView extends StatelessWidget {
         child: BlocListener<VerificationBloc, VerificationState>(
           listener: (context, state) {
             if (state is VerificationSuccess) {
-              debugPrint('${state.flag} state.flag');
               if (state.flag == true) {
                 AutoRouter.of(context).replace(const HomeRoute());
+              } else if (state.resendData != null) {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text(
+                    state.resendData?.otpCode ?? '',
+                    style: body18RegularTextStyle,
+                  ),
+                  backgroundColor: WattHubColors.primaryGreenColor,
+                ));
               }
             } else if (state is VerificationFailure) {
               ScaffoldMessenger.of(context).showSnackBar(
@@ -95,15 +104,21 @@ class _VerificationView extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 15.h.heightBox,
-                WHTextButton.create(
-                  onPressed: () {
-                    verificationBloc.add(
-                      const VerificationEvent.resendOtp(),
-                    );
-                  },
-                  text: AppLocalizations.of(context).resend,
-                  color: WattHubColors.primaryGreenColor,
-                ),
+                BlocBuilder<VerificationBloc, VerificationState>(
+                    builder: (context, state) {
+                  return WHTextButton.create(
+                    onPressed: () {
+                      if (state is VerificationSuccess) {
+                        debugPrint('${state.email} email');
+                        verificationBloc.add(
+                          VerificationEvent.resendOtp(state.email),
+                        );
+                      }
+                    },
+                    text: AppLocalizations.of(context).resend,
+                    color: WattHubColors.primaryGreenColor,
+                  );
+                })
               ],
             ),
           ).paddingAll(20.r),
