@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 
-class TestInterceptor extends Interceptor {
+class ApiLoggingInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     super.onRequest(options, handler);
@@ -8,6 +9,7 @@ class TestInterceptor extends Interceptor {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
+    debugPrint(response.data.toString());
     super.onResponse(response, handler);
   }
 
