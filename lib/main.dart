@@ -7,6 +7,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPreferencesService.instance.getSharedInstance();
   configureDependencies();
-  setupLocator();
+
   runApp(WattHubApp());
 }
