@@ -8,7 +8,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPreferencesService.instance.getSharedInstance();
   FilterStorageImpl().deleteFilterData();
-  // await GetIt.I.reset();
   configureDependencies();
 
   runApp(WattHubApp());

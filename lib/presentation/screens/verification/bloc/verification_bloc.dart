@@ -1,6 +1,9 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:watt_hub/config/locator/service_locator.dart';
+import 'package:watt_hub/data/repository/user_repository.dart';
 
 import '../../../../config/network/otp_service.dart';
 
@@ -26,20 +29,11 @@ class VerificationBloc extends Bloc<VerificationEvent, VerificationState> {
 
     on<VerifyOtp>(
       (event, emit) async {
-        emit(
-          const VerificationState.loading(),
-        );
+        emit(const VerificationState.loading());
         try {
-          final isValid = await _otpService.verifyOtp(event.otpCode);
-          if (isValid) {
-            emit(
-              const VerificationState.success(),
-            );
-          } else {
-            emit(
-              const VerificationState.failure('Invalid OTP code'),
-            );
-          }
+          final flag = await getIt<UserRepository>()
+              .userVerification(event.otpCode, event.token);
+          emit(VerificationState.success(flag: flag));
         } catch (e) {
           emit(
             VerificationState.failure('Verification failed: ${e.toString()}'),
@@ -47,5 +41,11 @@ class VerificationBloc extends Bloc<VerificationEvent, VerificationState> {
         }
       },
     );
+
+    on<SetTokenEvent>((event, emit) {
+      if (event.token != null) {
+        emit(VerificationState.success(token: event.token));
+      }
+    });
   }
 }

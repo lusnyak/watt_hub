@@ -4,9 +4,6 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 PinTheme get defaultPinTheme => PinTheme(
       width: 56,
       height: 56,
-      margin: EdgeInsets.symmetric(
-        horizontal: 8.w,
-      ),
       textStyle: const TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.w600,

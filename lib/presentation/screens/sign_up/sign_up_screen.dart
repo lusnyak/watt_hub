@@ -41,8 +41,11 @@ class _SignUpView extends StatelessWidget {
                       // condition subject to change
                       if (tokenData?.token != null) {
                         AutoRouter.of(context).push(
-                          const VerificationRoute(),
+                          VerificationRoute(token: tokenData?.token),
                         );
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text(tokenData?.otpCode ?? "")));
                       }
                     },
                     orElse: () => nil,
