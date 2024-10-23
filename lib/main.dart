@@ -10,6 +10,6 @@ void main() async {
   FilterStorageImpl().deleteFilterData();
   // await GetIt.I.reset();
   configureDependencies();
-  setupLocator();
+
   runApp(WattHubApp());
 }
