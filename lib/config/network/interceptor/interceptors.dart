@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 
 class ApiLoggingInterceptor extends Interceptor {
   @override
@@ -8,6 +9,7 @@ class ApiLoggingInterceptor extends Interceptor {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
+    debugPrint(response.data.toString());
     super.onResponse(response, handler);
   }
 
