@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:watt_hub/config/locator/service_locator.dart';
+import 'package:watt_hub/data/repository/user_repository.dart';
+import 'package:watt_hub/domain/models/token_model/token_model.dart';
 
 part 'sign_up_bloc.freezed.dart';
 part 'sign_up_event.dart';
@@ -13,7 +16,9 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   SignUpBloc()
-      : super(const SignUpState.form(isEmailValid: false, isChecked: false)) {
+      : super(
+          const SignUpState.form(isEmailValid: false, isChecked: false),
+        ) {
     on<EmailChangedEvent>(validateEmail);
 
     on<CheckboxChangedEvent>((event, emit) {
@@ -21,19 +26,29 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         form: (isEmailValid, _) {
           emit(SignUpState.form(
             isEmailValid: isEmailValid,
-            isChecked: event.isChecked, // Update the checked state
+            isChecked: event.isChecked,
           ));
         },
-        success: () => emit(
-            SignUpState.form(isEmailValid: false, isChecked: event.isChecked)),
-        failure: (_) => emit(
-            SignUpState.form(isEmailValid: false, isChecked: event.isChecked)),
+        success: (tokenData) => emit(SignUpState.form(
+          isEmailValid: false,
+          isChecked: event.isChecked,
+        )),
+        failure: (_) => emit(SignUpState.form(
+          isEmailValid: false,
+          isChecked: event.isChecked,
+        )),
       );
     });
 
-    on<SubmitSignUpEvent>((event, emit) {
+    on<SubmitSignUpEvent>((event, emit) async {
       if (formKey.currentState?.validate() ?? false) {
-        emit(const SignUpState.success());
+        try {
+          final TokenModel? tokenData =
+              await getIt<UserRepository>().userConnect(emailController.text);
+          emit(SignUpState.success(tokenData));
+        } catch (e) {
+          emit(SignUpState.failure(e.toString()));
+        }
       } else {
         emit(const SignUpState.failure('Please ensure all fields are valid.'));
       }

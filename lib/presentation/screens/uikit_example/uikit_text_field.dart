@@ -28,7 +28,6 @@ class _UikitTextFieldState extends State<UikitTextField> {
       children: [
         WHPinPut(
           onCompleted: (pin) {
-            debugPrint("onCompleted");
             debugPrint(pin);
           },
           onChanged: (value) => debugPrint(value),
