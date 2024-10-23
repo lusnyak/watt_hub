@@ -24,11 +24,13 @@ class _AuthRemoteApi implements AuthRemoteApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<TokenModel?> otp(String email) async {
+  Future<TokenModel?> otp(String? email) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = {'email': email};
+    _data.removeWhere((k, v) => v == null);
     final _options = _setStreamType<TokenModel>(Options(
       method: 'POST',
       headers: _headers,

@@ -13,7 +13,7 @@ abstract class AuthRemoteApi {
   factory AuthRemoteApi(Dio dio) = _AuthRemoteApi;
 
   @POST(EndPoints.authOtp)
-  Future<TokenModel?> otp(@Field('email') String email);
+  Future<TokenModel?> otp(@Field('email') String? email);
 
   @POST(EndPoints.checkOtp)
   Future<TokenModel?> checkOtp(

@@ -37,15 +37,28 @@ class _SignUpView extends StatelessWidget {
               child: BlocConsumer<SignUpBloc, SignUpState>(
                 listener: (context, state) {
                   state.maybeWhen(
-                    success: (tokenData) {
+                    success: (tokenData, email) {
                       // condition subject to change
                       if (tokenData?.token != null) {
                         AutoRouter.of(context).push(
-                          VerificationRoute(token: tokenData?.token),
+                          VerificationRoute(
+                            token: tokenData?.token,
+                            email: email,
+                          ),
                         );
 
                         ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text(tokenData?.otpCode ?? "")));
+                          SnackBar(
+                            content: Text(
+                              tokenData?.otpCode ?? "",
+                              style: body18SemiBoldTextStyle.copyWith(
+                                color: WattHubColors.whiteColor,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            backgroundColor: WattHubColors.primaryGreenColor,
+                          ),
+                        );
                       }
                     },
                     orElse: () => nil,

@@ -51,13 +51,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
     gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
     gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
+    gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
     gh.lazySingleton<_i361.Dio>(() => dioClient.dio());
     gh.factory<_i231.TokenStorage>(() => _i957.TokenStorageImpl());
     gh.lazySingleton<_i1029.AuthRemoteApi>(
         () => _i1029.AuthRemoteApi(gh<_i361.Dio>()));
     gh.factory<_i749.FilterStorage>(() => _i309.FilterStorageImpl());
-    gh.factory<_i298.VerificationBloc>(
-        () => _i298.VerificationBloc(gh<_i60.OtpService>()));
     return this;
   }
 }
