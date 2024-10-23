@@ -26,7 +26,6 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     on<NextOnboardingEvent>((event, emit) {
       if (state is _OnboardingLoadedState) {
         final currentPage = pageController.page!.toInt();
-        debugPrint(currentPage.toString());
         if (currentPage <
             (state as _OnboardingLoadedState).onboardingData.length - 1) {
           pageController.nextPage(

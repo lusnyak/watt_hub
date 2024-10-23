@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     if (!context.mounted) return;
     bool? isOnBoard = SharedPreferencesService.instance.onBoardingLaunch();
     if (isOnBoard) {
-      AutoRouter.of(context).replace(const HomeRoute());
+      AutoRouter.of(context).replace(const VerificationRoute());
     } else {
       AutoRouter.of(context).replace(const OnboardingRoute());
     }
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Timer(const Duration(seconds: 3), () {
-       retrieveData(context);
+      retrieveData(context);
     });
   }
 

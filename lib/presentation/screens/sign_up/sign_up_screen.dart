@@ -36,11 +36,17 @@ class _SignUpView extends StatelessWidget {
             SingleChildScrollView(
               child: BlocConsumer<SignUpBloc, SignUpState>(
                 listener: (context, state) {
-                  state.whenOrNull(success: () {
-                    AutoRouter.of(context).push(
-                      const VerificationRoute(),
-                    );
-                  });
+                  state.maybeWhen(
+                    success: (tokenData) {
+                      // condition subject to change
+                      if (tokenData?.token != null) {
+                        AutoRouter.of(context).push(
+                          const VerificationRoute(),
+                        );
+                      }
+                    },
+                    orElse: () => nil,
+                  );
                 },
                 builder: (context, state) {
                   final (a, isChecked) = state.maybeWhen(
@@ -113,7 +119,7 @@ class _SignUpView extends StatelessWidget {
                                           .privacyPolicy,
                                       style: body12RegularTextStyle.copyWith(
                                           color:
-                                          WattHubColors.primaryGreenColor),
+                                              WattHubColors.primaryGreenColor),
                                     ),
                                     TextSpan(
                                       text: AppLocalizations.of(context)
@@ -138,9 +144,7 @@ class _SignUpView extends StatelessWidget {
                 WHElevatedButton.primary(
                   title: AppLocalizations.of(context).continueText,
                   onPressed: () {
-                    signUpBloc.add(
-                      const SubmitSignUpEvent(),
-                    );
+                    signUpBloc.add(const SubmitSignUpEvent());
                   },
                 ).paddingSymmetric(vertical: 16.h, horizontal: 20.w)
               ],
