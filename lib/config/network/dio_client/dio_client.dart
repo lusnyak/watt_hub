@@ -4,9 +4,7 @@ import 'package:watt_hub/config/network/constants/constants.dart';
 import 'package:watt_hub/config/network/interceptor/interceptors.dart';
 
 @module
-class DioClient {
-  DioClient._();
-
+abstract class DioClient {
   @lazySingleton
   Dio dio() => Dio(BaseOptions(
         baseUrl: APIBase.url,

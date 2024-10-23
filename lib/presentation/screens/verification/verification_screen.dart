@@ -32,9 +32,7 @@ class _VerificationView extends StatelessWidget {
       body: SafeArea(
         child: BlocListener<VerificationBloc, VerificationState>(
           listener: (context, state) {
-            state.map(
-              initial: (_) {},
-              loading: (_) {},
+            state.maybeMap(
               success: (_) {
                 AutoRouter.of(context).replace(const HomeRoute());
               },
@@ -45,6 +43,7 @@ class _VerificationView extends StatelessWidget {
                   ),
                 );
               },
+              orElse: () {},
             );
           },
           child: SingleChildScrollView(
@@ -97,8 +96,8 @@ class _VerificationView extends StatelessWidget {
                       color: WattHubColors.primaryGreenColor),
                 ),
               ],
-            ).expanded(),
-          ).paddingAll(20.0),
+            ),
+          ).paddingAll(20.r),
         ),
       ),
     );
