@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:retrofit/retrofit.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/config/network/constants/constants.dart';
 import 'package:watt_hub/config/network/constants/end_points.dart';
