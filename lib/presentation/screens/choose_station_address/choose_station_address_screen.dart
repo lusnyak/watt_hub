@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
+import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
 class ChooseStationAddressScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class ChooseStationAddressScreen extends StatelessWidget {
                 color: Colors.blue,
               ),
             ),
-            20.heightBox,
+            20.h.heightBox,
             ElevatedButton(
                 onPressed: () => AutoRouter.of(context).push(
                       const AddStationRoute(),
