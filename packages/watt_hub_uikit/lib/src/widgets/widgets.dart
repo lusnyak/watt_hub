@@ -6,6 +6,5 @@ export 'slider/sliders.dart';
 export 'popup/popup.dart';
 export 'date_picker/date_picker.dart';
 export 'carousel_slider/carousel_slider.dart';
-
-
+export 'calendar/calendar.dart';
 
