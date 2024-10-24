@@ -48,6 +48,25 @@ class AddStationRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [AppLoadingScreen]
+class AppLoadingRoute extends PageRouteInfo<void> {
+  const AppLoadingRoute({List<PageRouteInfo>? children})
+      : super(
+          AppLoadingRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AppLoadingRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AppLoadingScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [ChooseStationAddressScreen]
 class ChooseStationAddressRoute extends PageRouteInfo<void> {
   const ChooseStationAddressRoute({List<PageRouteInfo>? children})
