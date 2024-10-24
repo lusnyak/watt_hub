@@ -30,6 +30,7 @@ class _HomeView extends StatelessWidget {
         backgroundColor: Colors.transparent,
         extendBodyBehindAppBar: true,
         appBar: AppBar(
+          leading: nil,
           actions: [
             WHIconButton.primary(
               icon: const Icon(Icons.filter_alt),
@@ -43,7 +44,7 @@ class _HomeView extends StatelessWidget {
             builder: (context, state) {
               return state.when(
                 initial: () => const SizedBox.shrink(),
-                loading: () => const Center(child: CircularProgressIndicator()),
+                loading: () => const Center(child: WHCircularSpin()),
                 error: (message) => Center(child: Text(message)),
                 viewChanged: (isList) => nil,
                 loaded: (
@@ -52,7 +53,6 @@ class _HomeView extends StatelessWidget {
                   currentLocation,
                   isMapReady,
                 ) {
-                  debugPrint('$currentLocation currentLocation');
                   return isList
                       ? MapContainer(
                           chargingStations: stations,
@@ -80,6 +80,7 @@ class _HomeView extends StatelessWidget {
                   orElse: () => false,
                 ))
                   FloatingActionButton(
+                    heroTag: "location",
                     onPressed: () {
                       context
                           .read<HomeBloc>()
@@ -89,6 +90,7 @@ class _HomeView extends StatelessWidget {
                   ),
                 20.widthBox,
                 FloatingActionButton(
+                  heroTag: "list",
                   onPressed: () {
                     context
                         .read<HomeBloc>()

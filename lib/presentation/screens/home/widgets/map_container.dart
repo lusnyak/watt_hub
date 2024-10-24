@@ -20,7 +20,6 @@ class MapContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('$currentLocation currentLocation');
     return FlutterMap(
       mapController: context.read<HomeBloc>().mapController,
       options: MapOptions(

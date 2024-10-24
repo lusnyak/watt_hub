@@ -40,23 +40,23 @@ mixin _$SignUpEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(CheckboxChanged value) checkboxChanged,
-    required TResult Function(SubmitSignUp value) submitSignUp,
+    required TResult Function(EmailChangedEvent value) emailChanged,
+    required TResult Function(CheckboxChangedEvent value) checkboxChanged,
+    required TResult Function(SubmitSignUpEvent value) submitSignUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChanged value)? emailChanged,
-    TResult? Function(CheckboxChanged value)? checkboxChanged,
-    TResult? Function(SubmitSignUp value)? submitSignUp,
+    TResult? Function(EmailChangedEvent value)? emailChanged,
+    TResult? Function(CheckboxChangedEvent value)? checkboxChanged,
+    TResult? Function(SubmitSignUpEvent value)? submitSignUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(CheckboxChanged value)? checkboxChanged,
-    TResult Function(SubmitSignUp value)? submitSignUp,
+    TResult Function(EmailChangedEvent value)? emailChanged,
+    TResult Function(CheckboxChangedEvent value)? checkboxChanged,
+    TResult Function(SubmitSignUpEvent value)? submitSignUp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -84,20 +84,20 @@ class _$SignUpEventCopyWithImpl<$Res, $Val extends SignUpEvent>
 }
 
 /// @nodoc
-abstract class _$$EmailChangedImplCopyWith<$Res> {
-  factory _$$EmailChangedImplCopyWith(
-          _$EmailChangedImpl value, $Res Function(_$EmailChangedImpl) then) =
-      __$$EmailChangedImplCopyWithImpl<$Res>;
+abstract class _$$EmailChangedEventImplCopyWith<$Res> {
+  factory _$$EmailChangedEventImplCopyWith(_$EmailChangedEventImpl value,
+          $Res Function(_$EmailChangedEventImpl) then) =
+      __$$EmailChangedEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$EmailChangedImplCopyWithImpl<$Res>
-    extends _$SignUpEventCopyWithImpl<$Res, _$EmailChangedImpl>
-    implements _$$EmailChangedImplCopyWith<$Res> {
-  __$$EmailChangedImplCopyWithImpl(
-      _$EmailChangedImpl _value, $Res Function(_$EmailChangedImpl) _then)
+class __$$EmailChangedEventImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$EmailChangedEventImpl>
+    implements _$$EmailChangedEventImplCopyWith<$Res> {
+  __$$EmailChangedEventImplCopyWithImpl(_$EmailChangedEventImpl _value,
+      $Res Function(_$EmailChangedEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of SignUpEvent
@@ -107,7 +107,7 @@ class __$$EmailChangedImplCopyWithImpl<$Res>
   $Res call({
     Object? email = null,
   }) {
-    return _then(_$EmailChangedImpl(
+    return _then(_$EmailChangedEventImpl(
       null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -118,8 +118,8 @@ class __$$EmailChangedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EmailChangedImpl implements EmailChanged {
-  const _$EmailChangedImpl(this.email);
+class _$EmailChangedEventImpl implements EmailChangedEvent {
+  const _$EmailChangedEventImpl(this.email);
 
   @override
   final String email;
@@ -133,7 +133,7 @@ class _$EmailChangedImpl implements EmailChanged {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EmailChangedImpl &&
+            other is _$EmailChangedEventImpl &&
             (identical(other.email, email) || other.email == email));
   }
 
@@ -145,8 +145,9 @@ class _$EmailChangedImpl implements EmailChanged {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
-      __$$EmailChangedImplCopyWithImpl<_$EmailChangedImpl>(this, _$identity);
+  _$$EmailChangedEventImplCopyWith<_$EmailChangedEventImpl> get copyWith =>
+      __$$EmailChangedEventImplCopyWithImpl<_$EmailChangedEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -185,9 +186,9 @@ class _$EmailChangedImpl implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(CheckboxChanged value) checkboxChanged,
-    required TResult Function(SubmitSignUp value) submitSignUp,
+    required TResult Function(EmailChangedEvent value) emailChanged,
+    required TResult Function(CheckboxChangedEvent value) checkboxChanged,
+    required TResult Function(SubmitSignUpEvent value) submitSignUp,
   }) {
     return emailChanged(this);
   }
@@ -195,9 +196,9 @@ class _$EmailChangedImpl implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChanged value)? emailChanged,
-    TResult? Function(CheckboxChanged value)? checkboxChanged,
-    TResult? Function(SubmitSignUp value)? submitSignUp,
+    TResult? Function(EmailChangedEvent value)? emailChanged,
+    TResult? Function(CheckboxChangedEvent value)? checkboxChanged,
+    TResult? Function(SubmitSignUpEvent value)? submitSignUp,
   }) {
     return emailChanged?.call(this);
   }
@@ -205,9 +206,9 @@ class _$EmailChangedImpl implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(CheckboxChanged value)? checkboxChanged,
-    TResult Function(SubmitSignUp value)? submitSignUp,
+    TResult Function(EmailChangedEvent value)? emailChanged,
+    TResult Function(CheckboxChangedEvent value)? checkboxChanged,
+    TResult Function(SubmitSignUpEvent value)? submitSignUp,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -217,33 +218,33 @@ class _$EmailChangedImpl implements EmailChanged {
   }
 }
 
-abstract class EmailChanged implements SignUpEvent {
-  const factory EmailChanged(final String email) = _$EmailChangedImpl;
+abstract class EmailChangedEvent implements SignUpEvent {
+  const factory EmailChangedEvent(final String email) = _$EmailChangedEventImpl;
 
   String get email;
 
   /// Create a copy of SignUpEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
+  _$$EmailChangedEventImplCopyWith<_$EmailChangedEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CheckboxChangedImplCopyWith<$Res> {
-  factory _$$CheckboxChangedImplCopyWith(_$CheckboxChangedImpl value,
-          $Res Function(_$CheckboxChangedImpl) then) =
-      __$$CheckboxChangedImplCopyWithImpl<$Res>;
+abstract class _$$CheckboxChangedEventImplCopyWith<$Res> {
+  factory _$$CheckboxChangedEventImplCopyWith(_$CheckboxChangedEventImpl value,
+          $Res Function(_$CheckboxChangedEventImpl) then) =
+      __$$CheckboxChangedEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isChecked});
 }
 
 /// @nodoc
-class __$$CheckboxChangedImplCopyWithImpl<$Res>
-    extends _$SignUpEventCopyWithImpl<$Res, _$CheckboxChangedImpl>
-    implements _$$CheckboxChangedImplCopyWith<$Res> {
-  __$$CheckboxChangedImplCopyWithImpl(
-      _$CheckboxChangedImpl _value, $Res Function(_$CheckboxChangedImpl) _then)
+class __$$CheckboxChangedEventImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$CheckboxChangedEventImpl>
+    implements _$$CheckboxChangedEventImplCopyWith<$Res> {
+  __$$CheckboxChangedEventImplCopyWithImpl(_$CheckboxChangedEventImpl _value,
+      $Res Function(_$CheckboxChangedEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of SignUpEvent
@@ -253,7 +254,7 @@ class __$$CheckboxChangedImplCopyWithImpl<$Res>
   $Res call({
     Object? isChecked = null,
   }) {
-    return _then(_$CheckboxChangedImpl(
+    return _then(_$CheckboxChangedEventImpl(
       null == isChecked
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
@@ -264,8 +265,8 @@ class __$$CheckboxChangedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CheckboxChangedImpl implements CheckboxChanged {
-  const _$CheckboxChangedImpl(this.isChecked);
+class _$CheckboxChangedEventImpl implements CheckboxChangedEvent {
+  const _$CheckboxChangedEventImpl(this.isChecked);
 
   @override
   final bool isChecked;
@@ -279,7 +280,7 @@ class _$CheckboxChangedImpl implements CheckboxChanged {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CheckboxChangedImpl &&
+            other is _$CheckboxChangedEventImpl &&
             (identical(other.isChecked, isChecked) ||
                 other.isChecked == isChecked));
   }
@@ -292,9 +293,10 @@ class _$CheckboxChangedImpl implements CheckboxChanged {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CheckboxChangedImplCopyWith<_$CheckboxChangedImpl> get copyWith =>
-      __$$CheckboxChangedImplCopyWithImpl<_$CheckboxChangedImpl>(
-          this, _$identity);
+  _$$CheckboxChangedEventImplCopyWith<_$CheckboxChangedEventImpl>
+      get copyWith =>
+          __$$CheckboxChangedEventImplCopyWithImpl<_$CheckboxChangedEventImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -333,9 +335,9 @@ class _$CheckboxChangedImpl implements CheckboxChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(CheckboxChanged value) checkboxChanged,
-    required TResult Function(SubmitSignUp value) submitSignUp,
+    required TResult Function(EmailChangedEvent value) emailChanged,
+    required TResult Function(CheckboxChangedEvent value) checkboxChanged,
+    required TResult Function(SubmitSignUpEvent value) submitSignUp,
   }) {
     return checkboxChanged(this);
   }
@@ -343,9 +345,9 @@ class _$CheckboxChangedImpl implements CheckboxChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChanged value)? emailChanged,
-    TResult? Function(CheckboxChanged value)? checkboxChanged,
-    TResult? Function(SubmitSignUp value)? submitSignUp,
+    TResult? Function(EmailChangedEvent value)? emailChanged,
+    TResult? Function(CheckboxChangedEvent value)? checkboxChanged,
+    TResult? Function(SubmitSignUpEvent value)? submitSignUp,
   }) {
     return checkboxChanged?.call(this);
   }
@@ -353,9 +355,9 @@ class _$CheckboxChangedImpl implements CheckboxChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(CheckboxChanged value)? checkboxChanged,
-    TResult Function(SubmitSignUp value)? submitSignUp,
+    TResult Function(EmailChangedEvent value)? emailChanged,
+    TResult Function(CheckboxChangedEvent value)? checkboxChanged,
+    TResult Function(SubmitSignUpEvent value)? submitSignUp,
     required TResult orElse(),
   }) {
     if (checkboxChanged != null) {
@@ -365,31 +367,32 @@ class _$CheckboxChangedImpl implements CheckboxChanged {
   }
 }
 
-abstract class CheckboxChanged implements SignUpEvent {
-  const factory CheckboxChanged(final bool isChecked) = _$CheckboxChangedImpl;
+abstract class CheckboxChangedEvent implements SignUpEvent {
+  const factory CheckboxChangedEvent(final bool isChecked) =
+      _$CheckboxChangedEventImpl;
 
   bool get isChecked;
 
   /// Create a copy of SignUpEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CheckboxChangedImplCopyWith<_$CheckboxChangedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CheckboxChangedEventImplCopyWith<_$CheckboxChangedEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SubmitSignUpImplCopyWith<$Res> {
-  factory _$$SubmitSignUpImplCopyWith(
-          _$SubmitSignUpImpl value, $Res Function(_$SubmitSignUpImpl) then) =
-      __$$SubmitSignUpImplCopyWithImpl<$Res>;
+abstract class _$$SubmitSignUpEventImplCopyWith<$Res> {
+  factory _$$SubmitSignUpEventImplCopyWith(_$SubmitSignUpEventImpl value,
+          $Res Function(_$SubmitSignUpEventImpl) then) =
+      __$$SubmitSignUpEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SubmitSignUpImplCopyWithImpl<$Res>
-    extends _$SignUpEventCopyWithImpl<$Res, _$SubmitSignUpImpl>
-    implements _$$SubmitSignUpImplCopyWith<$Res> {
-  __$$SubmitSignUpImplCopyWithImpl(
-      _$SubmitSignUpImpl _value, $Res Function(_$SubmitSignUpImpl) _then)
+class __$$SubmitSignUpEventImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$SubmitSignUpEventImpl>
+    implements _$$SubmitSignUpEventImplCopyWith<$Res> {
+  __$$SubmitSignUpEventImplCopyWithImpl(_$SubmitSignUpEventImpl _value,
+      $Res Function(_$SubmitSignUpEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of SignUpEvent
@@ -398,8 +401,8 @@ class __$$SubmitSignUpImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SubmitSignUpImpl implements SubmitSignUp {
-  const _$SubmitSignUpImpl();
+class _$SubmitSignUpEventImpl implements SubmitSignUpEvent {
+  const _$SubmitSignUpEventImpl();
 
   @override
   String toString() {
@@ -409,7 +412,7 @@ class _$SubmitSignUpImpl implements SubmitSignUp {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SubmitSignUpImpl);
+        (other.runtimeType == runtimeType && other is _$SubmitSignUpEventImpl);
   }
 
   @override
@@ -452,9 +455,9 @@ class _$SubmitSignUpImpl implements SubmitSignUp {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(CheckboxChanged value) checkboxChanged,
-    required TResult Function(SubmitSignUp value) submitSignUp,
+    required TResult Function(EmailChangedEvent value) emailChanged,
+    required TResult Function(CheckboxChangedEvent value) checkboxChanged,
+    required TResult Function(SubmitSignUpEvent value) submitSignUp,
   }) {
     return submitSignUp(this);
   }
@@ -462,9 +465,9 @@ class _$SubmitSignUpImpl implements SubmitSignUp {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChanged value)? emailChanged,
-    TResult? Function(CheckboxChanged value)? checkboxChanged,
-    TResult? Function(SubmitSignUp value)? submitSignUp,
+    TResult? Function(EmailChangedEvent value)? emailChanged,
+    TResult? Function(CheckboxChangedEvent value)? checkboxChanged,
+    TResult? Function(SubmitSignUpEvent value)? submitSignUp,
   }) {
     return submitSignUp?.call(this);
   }
@@ -472,9 +475,9 @@ class _$SubmitSignUpImpl implements SubmitSignUp {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(CheckboxChanged value)? checkboxChanged,
-    TResult Function(SubmitSignUp value)? submitSignUp,
+    TResult Function(EmailChangedEvent value)? emailChanged,
+    TResult Function(CheckboxChangedEvent value)? checkboxChanged,
+    TResult Function(SubmitSignUpEvent value)? submitSignUp,
     required TResult orElse(),
   }) {
     if (submitSignUp != null) {
@@ -484,8 +487,8 @@ class _$SubmitSignUpImpl implements SubmitSignUp {
   }
 }
 
-abstract class SubmitSignUp implements SignUpEvent {
-  const factory SubmitSignUp() = _$SubmitSignUpImpl;
+abstract class SubmitSignUpEvent implements SignUpEvent {
+  const factory SubmitSignUpEvent() = _$SubmitSignUpEventImpl;
 }
 
 /// @nodoc
@@ -493,21 +496,21 @@ mixin _$SignUpState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool isEmailValid, bool isChecked) form,
-    required TResult Function() success,
+    required TResult Function(TokenModel? tokenData, String? email) success,
     required TResult Function(String message) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isEmailValid, bool isChecked)? form,
-    TResult? Function()? success,
+    TResult? Function(TokenModel? tokenData, String? email)? success,
     TResult? Function(String message)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isEmailValid, bool isChecked)? form,
-    TResult Function()? success,
+    TResult Function(TokenModel? tokenData, String? email)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) =>
@@ -515,22 +518,22 @@ mixin _$SignUpState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignUpFormState value) form,
-    required TResult Function(_SignUpSuccess value) success,
-    required TResult Function(_SignUpFailure value) failure,
+    required TResult Function(_SignUpSuccessState value) success,
+    required TResult Function(_SignUpFailureState value) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignUpFormState value)? form,
-    TResult? Function(_SignUpSuccess value)? success,
-    TResult? Function(_SignUpFailure value)? failure,
+    TResult? Function(_SignUpSuccessState value)? success,
+    TResult? Function(_SignUpFailureState value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignUpFormState value)? form,
-    TResult Function(_SignUpSuccess value)? success,
-    TResult Function(_SignUpFailure value)? failure,
+    TResult Function(_SignUpSuccessState value)? success,
+    TResult Function(_SignUpFailureState value)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -638,7 +641,7 @@ class _$SignUpFormStateImpl implements _SignUpFormState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool isEmailValid, bool isChecked) form,
-    required TResult Function() success,
+    required TResult Function(TokenModel? tokenData, String? email) success,
     required TResult Function(String message) failure,
   }) {
     return form(isEmailValid, isChecked);
@@ -648,7 +651,7 @@ class _$SignUpFormStateImpl implements _SignUpFormState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isEmailValid, bool isChecked)? form,
-    TResult? Function()? success,
+    TResult? Function(TokenModel? tokenData, String? email)? success,
     TResult? Function(String message)? failure,
   }) {
     return form?.call(isEmailValid, isChecked);
@@ -658,7 +661,7 @@ class _$SignUpFormStateImpl implements _SignUpFormState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isEmailValid, bool isChecked)? form,
-    TResult Function()? success,
+    TResult Function(TokenModel? tokenData, String? email)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -672,8 +675,8 @@ class _$SignUpFormStateImpl implements _SignUpFormState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignUpFormState value) form,
-    required TResult Function(_SignUpSuccess value) success,
-    required TResult Function(_SignUpFailure value) failure,
+    required TResult Function(_SignUpSuccessState value) success,
+    required TResult Function(_SignUpFailureState value) failure,
   }) {
     return form(this);
   }
@@ -682,8 +685,8 @@ class _$SignUpFormStateImpl implements _SignUpFormState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignUpFormState value)? form,
-    TResult? Function(_SignUpSuccess value)? success,
-    TResult? Function(_SignUpFailure value)? failure,
+    TResult? Function(_SignUpSuccessState value)? success,
+    TResult? Function(_SignUpFailureState value)? failure,
   }) {
     return form?.call(this);
   }
@@ -692,8 +695,8 @@ class _$SignUpFormStateImpl implements _SignUpFormState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignUpFormState value)? form,
-    TResult Function(_SignUpSuccess value)? success,
-    TResult Function(_SignUpFailure value)? failure,
+    TResult Function(_SignUpSuccessState value)? success,
+    TResult Function(_SignUpFailureState value)? failure,
     required TResult orElse(),
   }) {
     if (form != null) {
@@ -719,73 +722,126 @@ abstract class _SignUpFormState implements SignUpState {
 }
 
 /// @nodoc
-abstract class _$$SignUpSuccessImplCopyWith<$Res> {
-  factory _$$SignUpSuccessImplCopyWith(
-          _$SignUpSuccessImpl value, $Res Function(_$SignUpSuccessImpl) then) =
-      __$$SignUpSuccessImplCopyWithImpl<$Res>;
+abstract class _$$SignUpSuccessStateImplCopyWith<$Res> {
+  factory _$$SignUpSuccessStateImplCopyWith(_$SignUpSuccessStateImpl value,
+          $Res Function(_$SignUpSuccessStateImpl) then) =
+      __$$SignUpSuccessStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({TokenModel? tokenData, String? email});
+
+  $TokenModelCopyWith<$Res>? get tokenData;
 }
 
 /// @nodoc
-class __$$SignUpSuccessImplCopyWithImpl<$Res>
-    extends _$SignUpStateCopyWithImpl<$Res, _$SignUpSuccessImpl>
-    implements _$$SignUpSuccessImplCopyWith<$Res> {
-  __$$SignUpSuccessImplCopyWithImpl(
-      _$SignUpSuccessImpl _value, $Res Function(_$SignUpSuccessImpl) _then)
+class __$$SignUpSuccessStateImplCopyWithImpl<$Res>
+    extends _$SignUpStateCopyWithImpl<$Res, _$SignUpSuccessStateImpl>
+    implements _$$SignUpSuccessStateImplCopyWith<$Res> {
+  __$$SignUpSuccessStateImplCopyWithImpl(_$SignUpSuccessStateImpl _value,
+      $Res Function(_$SignUpSuccessStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tokenData = freezed,
+    Object? email = freezed,
+  }) {
+    return _then(_$SignUpSuccessStateImpl(
+      tokenData: freezed == tokenData
+          ? _value.tokenData
+          : tokenData // ignore: cast_nullable_to_non_nullable
+              as TokenModel?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TokenModelCopyWith<$Res>? get tokenData {
+    if (_value.tokenData == null) {
+      return null;
+    }
+
+    return $TokenModelCopyWith<$Res>(_value.tokenData!, (value) {
+      return _then(_value.copyWith(tokenData: value));
+    });
+  }
 }
 
 /// @nodoc
 
-class _$SignUpSuccessImpl implements _SignUpSuccess {
-  const _$SignUpSuccessImpl();
+class _$SignUpSuccessStateImpl implements _SignUpSuccessState {
+  const _$SignUpSuccessStateImpl({this.tokenData, this.email});
+
+  @override
+  final TokenModel? tokenData;
+  @override
+  final String? email;
 
   @override
   String toString() {
-    return 'SignUpState.success()';
+    return 'SignUpState.success(tokenData: $tokenData, email: $email)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignUpSuccessImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$SignUpSuccessStateImpl &&
+            (identical(other.tokenData, tokenData) ||
+                other.tokenData == tokenData) &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, tokenData, email);
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignUpSuccessStateImplCopyWith<_$SignUpSuccessStateImpl> get copyWith =>
+      __$$SignUpSuccessStateImplCopyWithImpl<_$SignUpSuccessStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool isEmailValid, bool isChecked) form,
-    required TResult Function() success,
+    required TResult Function(TokenModel? tokenData, String? email) success,
     required TResult Function(String message) failure,
   }) {
-    return success();
+    return success(tokenData, email);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isEmailValid, bool isChecked)? form,
-    TResult? Function()? success,
+    TResult? Function(TokenModel? tokenData, String? email)? success,
     TResult? Function(String message)? failure,
   }) {
-    return success?.call();
+    return success?.call(tokenData, email);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isEmailValid, bool isChecked)? form,
-    TResult Function()? success,
+    TResult Function(TokenModel? tokenData, String? email)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success();
+      return success(tokenData, email);
     }
     return orElse();
   }
@@ -794,8 +850,8 @@ class _$SignUpSuccessImpl implements _SignUpSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignUpFormState value) form,
-    required TResult Function(_SignUpSuccess value) success,
-    required TResult Function(_SignUpFailure value) failure,
+    required TResult Function(_SignUpSuccessState value) success,
+    required TResult Function(_SignUpFailureState value) failure,
   }) {
     return success(this);
   }
@@ -804,8 +860,8 @@ class _$SignUpSuccessImpl implements _SignUpSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignUpFormState value)? form,
-    TResult? Function(_SignUpSuccess value)? success,
-    TResult? Function(_SignUpFailure value)? failure,
+    TResult? Function(_SignUpSuccessState value)? success,
+    TResult? Function(_SignUpFailureState value)? failure,
   }) {
     return success?.call(this);
   }
@@ -814,8 +870,8 @@ class _$SignUpSuccessImpl implements _SignUpSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignUpFormState value)? form,
-    TResult Function(_SignUpSuccess value)? success,
-    TResult Function(_SignUpFailure value)? failure,
+    TResult Function(_SignUpSuccessState value)? success,
+    TResult Function(_SignUpFailureState value)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -825,25 +881,36 @@ class _$SignUpSuccessImpl implements _SignUpSuccess {
   }
 }
 
-abstract class _SignUpSuccess implements SignUpState {
-  const factory _SignUpSuccess() = _$SignUpSuccessImpl;
+abstract class _SignUpSuccessState implements SignUpState {
+  const factory _SignUpSuccessState(
+      {final TokenModel? tokenData,
+      final String? email}) = _$SignUpSuccessStateImpl;
+
+  TokenModel? get tokenData;
+  String? get email;
+
+  /// Create a copy of SignUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SignUpSuccessStateImplCopyWith<_$SignUpSuccessStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SignUpFailureImplCopyWith<$Res> {
-  factory _$$SignUpFailureImplCopyWith(
-          _$SignUpFailureImpl value, $Res Function(_$SignUpFailureImpl) then) =
-      __$$SignUpFailureImplCopyWithImpl<$Res>;
+abstract class _$$SignUpFailureStateImplCopyWith<$Res> {
+  factory _$$SignUpFailureStateImplCopyWith(_$SignUpFailureStateImpl value,
+          $Res Function(_$SignUpFailureStateImpl) then) =
+      __$$SignUpFailureStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$SignUpFailureImplCopyWithImpl<$Res>
-    extends _$SignUpStateCopyWithImpl<$Res, _$SignUpFailureImpl>
-    implements _$$SignUpFailureImplCopyWith<$Res> {
-  __$$SignUpFailureImplCopyWithImpl(
-      _$SignUpFailureImpl _value, $Res Function(_$SignUpFailureImpl) _then)
+class __$$SignUpFailureStateImplCopyWithImpl<$Res>
+    extends _$SignUpStateCopyWithImpl<$Res, _$SignUpFailureStateImpl>
+    implements _$$SignUpFailureStateImplCopyWith<$Res> {
+  __$$SignUpFailureStateImplCopyWithImpl(_$SignUpFailureStateImpl _value,
+      $Res Function(_$SignUpFailureStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of SignUpState
@@ -853,7 +920,7 @@ class __$$SignUpFailureImplCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$SignUpFailureImpl(
+    return _then(_$SignUpFailureStateImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -864,8 +931,8 @@ class __$$SignUpFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignUpFailureImpl implements _SignUpFailure {
-  const _$SignUpFailureImpl(this.message);
+class _$SignUpFailureStateImpl implements _SignUpFailureState {
+  const _$SignUpFailureStateImpl(this.message);
 
   @override
   final String message;
@@ -879,7 +946,7 @@ class _$SignUpFailureImpl implements _SignUpFailure {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SignUpFailureImpl &&
+            other is _$SignUpFailureStateImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -891,14 +958,15 @@ class _$SignUpFailureImpl implements _SignUpFailure {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SignUpFailureImplCopyWith<_$SignUpFailureImpl> get copyWith =>
-      __$$SignUpFailureImplCopyWithImpl<_$SignUpFailureImpl>(this, _$identity);
+  _$$SignUpFailureStateImplCopyWith<_$SignUpFailureStateImpl> get copyWith =>
+      __$$SignUpFailureStateImplCopyWithImpl<_$SignUpFailureStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool isEmailValid, bool isChecked) form,
-    required TResult Function() success,
+    required TResult Function(TokenModel? tokenData, String? email) success,
     required TResult Function(String message) failure,
   }) {
     return failure(message);
@@ -908,7 +976,7 @@ class _$SignUpFailureImpl implements _SignUpFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isEmailValid, bool isChecked)? form,
-    TResult? Function()? success,
+    TResult? Function(TokenModel? tokenData, String? email)? success,
     TResult? Function(String message)? failure,
   }) {
     return failure?.call(message);
@@ -918,7 +986,7 @@ class _$SignUpFailureImpl implements _SignUpFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isEmailValid, bool isChecked)? form,
-    TResult Function()? success,
+    TResult Function(TokenModel? tokenData, String? email)? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -932,8 +1000,8 @@ class _$SignUpFailureImpl implements _SignUpFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignUpFormState value) form,
-    required TResult Function(_SignUpSuccess value) success,
-    required TResult Function(_SignUpFailure value) failure,
+    required TResult Function(_SignUpSuccessState value) success,
+    required TResult Function(_SignUpFailureState value) failure,
   }) {
     return failure(this);
   }
@@ -942,8 +1010,8 @@ class _$SignUpFailureImpl implements _SignUpFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignUpFormState value)? form,
-    TResult? Function(_SignUpSuccess value)? success,
-    TResult? Function(_SignUpFailure value)? failure,
+    TResult? Function(_SignUpSuccessState value)? success,
+    TResult? Function(_SignUpFailureState value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -952,8 +1020,8 @@ class _$SignUpFailureImpl implements _SignUpFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignUpFormState value)? form,
-    TResult Function(_SignUpSuccess value)? success,
-    TResult Function(_SignUpFailure value)? failure,
+    TResult Function(_SignUpSuccessState value)? success,
+    TResult Function(_SignUpFailureState value)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -963,14 +1031,15 @@ class _$SignUpFailureImpl implements _SignUpFailure {
   }
 }
 
-abstract class _SignUpFailure implements SignUpState {
-  const factory _SignUpFailure(final String message) = _$SignUpFailureImpl;
+abstract class _SignUpFailureState implements SignUpState {
+  const factory _SignUpFailureState(final String message) =
+      _$SignUpFailureStateImpl;
 
   String get message;
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SignUpFailureImplCopyWith<_$SignUpFailureImpl> get copyWith =>
+  _$$SignUpFailureStateImplCopyWith<_$SignUpFailureStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -36,11 +36,33 @@ class _SignUpView extends StatelessWidget {
             SingleChildScrollView(
               child: BlocConsumer<SignUpBloc, SignUpState>(
                 listener: (context, state) {
-                  state.whenOrNull(success: () {
-                    AutoRouter.of(context).push(
-                      const VerificationRoute(),
-                    );
-                  });
+                  state.maybeWhen(
+                    success: (tokenData, email) {
+                      // condition subject to change
+                      if (tokenData?.token != null) {
+                        AutoRouter.of(context).replace(
+                          VerificationRoute(
+                            token: tokenData?.token,
+                            email: email,
+                          ),
+                        );
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              tokenData?.otpCode ?? "",
+                              style: body18SemiBoldTextStyle.copyWith(
+                                color: WattHubColors.whiteColor,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            backgroundColor: WattHubColors.primaryGreenColor,
+                          ),
+                        );
+                      }
+                    },
+                    orElse: () => nil,
+                  );
                 },
                 builder: (context, state) {
                   final (a, isChecked) = state.maybeWhen(
@@ -72,7 +94,7 @@ class _SignUpView extends StatelessWidget {
                           controller: signUpBloc.emailController,
                           onChanged: (value) {
                             signUpBloc.add(
-                              EmailChanged(value),
+                              EmailChangedEvent(value),
                             );
                           },
                           label: AppLocalizations.of(context).emailAddress,
@@ -91,7 +113,7 @@ class _SignUpView extends StatelessWidget {
                               onChanged: (bool? value) {
                                 if (value != null) {
                                   signUpBloc.add(
-                                    CheckboxChanged(value),
+                                    CheckboxChangedEvent(value),
                                   );
                                 }
                               },
@@ -138,9 +160,7 @@ class _SignUpView extends StatelessWidget {
                 WHElevatedButton.primary(
                   title: AppLocalizations.of(context).continueText,
                   onPressed: () {
-                    signUpBloc.add(
-                      const SubmitSignUp(),
-                    );
+                    signUpBloc.add(const SubmitSignUpEvent());
                   },
                 ).paddingSymmetric(vertical: 16.h, horizontal: 20.w)
               ],

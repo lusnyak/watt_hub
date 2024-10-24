@@ -1,21 +1,29 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 import '../../../config/locator/service_locator.dart';
-import '../../../config/routes/app_router.dart';
 import 'bloc/verification_bloc.dart';
 
 @RoutePage()
 class VerificationScreen extends StatelessWidget {
-  const VerificationScreen({super.key});
+  const VerificationScreen({
+    super.key,
+    this.token,
+    this.email,
+  });
+
+  final String? token;
+  final String? email;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<VerificationBloc>(),
+      create: (context) => getIt<VerificationBloc>()
+        ..add(VerificationEvent.setValues(token: token, email: email)),
       child: const _VerificationView(),
     );
   }
@@ -32,20 +40,28 @@ class _VerificationView extends StatelessWidget {
       body: SafeArea(
         child: BlocListener<VerificationBloc, VerificationState>(
           listener: (context, state) {
-            state.map(
-              initial: (_) {},
-              loading: (_) {},
-              success: (_) {
+            if (state is VerificationSuccess) {
+              if (state.flag == true) {
                 AutoRouter.of(context).replace(const HomeRoute());
-              },
-              failure: (failure) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(failure.error),
+              } else if (state.resendData != null) {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text(
+                    state.resendData?.otpCode ?? '',
+                    textAlign: TextAlign.center,
+                    style: body18RegularTextStyle.copyWith(
+                      color: WattHubColors.whiteColor,
+                    ),
                   ),
-                );
-              },
-            );
+                  backgroundColor: WattHubColors.primaryGreenColor,
+                ));
+              }
+            } else if (state is VerificationFailure) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(state.error),
+                ),
+              );
+            }
           },
           child: SingleChildScrollView(
             child: Column(
@@ -66,11 +82,21 @@ class _VerificationView extends StatelessWidget {
                     return Column(
                       children: [
                         WHPinPut(
+                          pinController: verificationBloc.pinController,
                           onCompleted: (val) {
-                            verificationBloc.add(
-                              VerificationEvent.verifyOtp(val),
-                            );
+                            if (state is VerificationSuccess) {
+                              verificationBloc.add(
+                                VerificationEvent.verifyOtp(
+                                  otpCode: val,
+                                  token: state.token,
+                                  email: state.email,
+                                ),
+                              );
+                            }
                           },
+                          isError: (state is VerificationSuccess)
+                              ? state.flag
+                              : null,
                         ),
                         30.h.heightBox,
                         if (state is VerificationLoading)
@@ -79,26 +105,30 @@ class _VerificationView extends StatelessWidget {
                     );
                   },
                 ),
-                Center(
-                  child: Text(
-                    AppLocalizations.of(context).didntReceiveEmail,
-                    style: body14RegularTextStyle,
-                  ),
+                20.h.heightBox,
+                Text(
+                  AppLocalizations.of(context).didntReceiveEmail,
+                  style: body14RegularTextStyle,
+                  textAlign: TextAlign.center,
                 ),
                 15.h.heightBox,
-                Center(
-                  child: WHTextButton.create(
-                      onPressed: () {
+                BlocBuilder<VerificationBloc, VerificationState>(
+                    builder: (context, state) {
+                  return WHTextButton.create(
+                    onPressed: () {
+                      if (state is VerificationSuccess) {
                         verificationBloc.add(
-                          const VerificationEvent.resendOtp(),
+                          VerificationEvent.resendOtp(state.email),
                         );
-                      },
-                      text: AppLocalizations.of(context).resend,
-                      color: WattHubColors.primaryGreenColor),
-                ),
+                      }
+                    },
+                    text: AppLocalizations.of(context).resend,
+                    color: WattHubColors.primaryGreenColor,
+                  );
+                })
               ],
-            ).expanded(),
-          ).paddingAll(20.0),
+            ),
+          ).paddingAll(20.r),
         ),
       ),
     );

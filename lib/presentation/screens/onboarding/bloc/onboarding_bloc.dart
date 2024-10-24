@@ -19,14 +19,13 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
       : pageController = PageController(),
         super(const OnboardingState.initial()) {
     on<LoadOnboardingEvent>((event, emit) {
-      SharedPreferencesService.instance.setOnBoardingLaunch(false);
+      SharedPreferencesService.instance.setOnBoardingLaunch(true);
       emit(OnboardingState.loaded(onboardingData));
     });
 
     on<NextOnboardingEvent>((event, emit) {
       if (state is _OnboardingLoadedState) {
         final currentPage = pageController.page!.toInt();
-        debugPrint(currentPage.toString());
         if (currentPage <
             (state as _OnboardingLoadedState).onboardingData.length - 1) {
           pageController.nextPage(
