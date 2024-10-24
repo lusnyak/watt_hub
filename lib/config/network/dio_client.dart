@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:watt_hub/config/network/constants.dart';
+import 'package:watt_hub/config/network/constants/constants.dart';
 
 import 'interceptor/interceptors.dart';
 
@@ -9,7 +9,7 @@ class DioClient {
   static DioClient instance = DioClient._();
 
   Dio get dio => Dio(BaseOptions(
-        baseUrl: AppConfig.baseUrl,
+        baseUrl: APIBase.url,
         connectTimeout: const Duration(seconds: 15),
         receiveTimeout: const Duration(seconds: 5),
         sendTimeout: const Duration(seconds: 10),

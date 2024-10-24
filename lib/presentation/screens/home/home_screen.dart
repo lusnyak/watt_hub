@@ -30,6 +30,7 @@ class _HomeView extends StatelessWidget {
         backgroundColor: Colors.transparent,
         extendBodyBehindAppBar: true,
         appBar: AppBar(
+          leading: nil,
           actions: [
             WHIconButton.primary(
               icon: const Icon(Icons.filter_alt),

@@ -40,7 +40,7 @@ class _SignUpView extends StatelessWidget {
                     success: (tokenData, email) {
                       // condition subject to change
                       if (tokenData?.token != null) {
-                        AutoRouter.of(context).push(
+                        AutoRouter.of(context).replace(
                           VerificationRoute(
                             token: tokenData?.token,
                             email: email,
