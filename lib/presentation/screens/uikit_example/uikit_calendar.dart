@@ -9,7 +9,6 @@ class UikitCalendar extends StatefulWidget {
 }
 
 class _UikitCalendarState extends State<UikitCalendar> {
-
   DateTime? _selectedDay;
 
   @override
@@ -26,7 +25,6 @@ class _UikitCalendarState extends State<UikitCalendar> {
               });
             },
           ),
-
         ],
       ),
     );
