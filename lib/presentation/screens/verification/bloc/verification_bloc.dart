@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
@@ -12,6 +12,8 @@ part 'verification_state.dart';
 
 @injectable
 class VerificationBloc extends Bloc<VerificationEvent, VerificationState> {
+  final TextEditingController pinController = TextEditingController();
+
   VerificationBloc() : super(const VerificationState.initial()) {
     on<ResendOtp>((event, emit) async {
       emit(const VerificationState.loading());
@@ -19,7 +21,11 @@ class VerificationBloc extends Bloc<VerificationEvent, VerificationState> {
         final TokenModel? resendData =
             await getIt<UserRepository>().userConnect(event.email);
         emit(VerificationState.success(
-            resendData: resendData, email: event.email));
+          resendData: resendData,
+          email: event.email,
+          token: resendData?.token,
+        ));
+        pinController.clear();
       } catch (e) {
         emit(const VerificationState.failure('Failed to resend OTP'));
       }
@@ -31,7 +37,10 @@ class VerificationBloc extends Bloc<VerificationEvent, VerificationState> {
         try {
           final flag = await getIt<UserRepository>()
               .userVerification(event.otpCode, event.token);
-          emit(VerificationState.success(flag: flag));
+          emit(VerificationState.success(
+            flag: flag,
+            email: event.email,
+          ));
         } catch (e) {
           emit(
             VerificationState.failure('Verification failed: ${e.toString()}'),

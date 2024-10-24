@@ -47,7 +47,10 @@ class _VerificationView extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text(
                     state.resendData?.otpCode ?? '',
-                    style: body18RegularTextStyle,
+                    textAlign: TextAlign.center,
+                    style: body18RegularTextStyle.copyWith(
+                      color: WattHubColors.whiteColor,
+                    ),
                   ),
                   backgroundColor: WattHubColors.primaryGreenColor,
                 ));
@@ -79,16 +82,21 @@ class _VerificationView extends StatelessWidget {
                     return Column(
                       children: [
                         WHPinPut(
+                          pinController: verificationBloc.pinController,
                           onCompleted: (val) {
                             if (state is VerificationSuccess) {
                               verificationBloc.add(
                                 VerificationEvent.verifyOtp(
                                   otpCode: val,
                                   token: state.token,
+                                  email: state.email,
                                 ),
                               );
                             }
                           },
+                          isError: (state is VerificationSuccess)
+                              ? state.flag
+                              : null,
                         ),
                         30.h.heightBox,
                         if (state is VerificationLoading)
@@ -109,7 +117,6 @@ class _VerificationView extends StatelessWidget {
                   return WHTextButton.create(
                     onPressed: () {
                       if (state is VerificationSuccess) {
-                        debugPrint('${state.email} email');
                         verificationBloc.add(
                           VerificationEvent.resendOtp(state.email),
                         );

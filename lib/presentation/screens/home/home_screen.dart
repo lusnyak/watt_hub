@@ -43,7 +43,7 @@ class _HomeView extends StatelessWidget {
             builder: (context, state) {
               return state.when(
                 initial: () => const SizedBox.shrink(),
-                loading: () => const Center(child: CircularProgressIndicator()),
+                loading: () => const Center(child: WHCircularSpin()),
                 error: (message) => Center(child: Text(message)),
                 viewChanged: (isList) => nil,
                 loaded: (

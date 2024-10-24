@@ -16,24 +16,26 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$VerificationEvent {
+  String? get email => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String? email) resendOtp,
-    required TResult Function(String? otpCode, String? token) verifyOtp,
+    required TResult Function(String? otpCode, String? token, String? email)
+        verifyOtp,
     required TResult Function(String? token, String? email) setValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String? email)? resendOtp,
-    TResult? Function(String? otpCode, String? token)? verifyOtp,
+    TResult? Function(String? otpCode, String? token, String? email)? verifyOtp,
     TResult? Function(String? token, String? email)? setValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? email)? resendOtp,
-    TResult Function(String? otpCode, String? token)? verifyOtp,
+    TResult Function(String? otpCode, String? token, String? email)? verifyOtp,
     TResult Function(String? token, String? email)? setValues,
     required TResult orElse(),
   }) =>
@@ -60,6 +62,12 @@ mixin _$VerificationEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Create a copy of VerificationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $VerificationEventCopyWith<VerificationEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -67,6 +75,8 @@ abstract class $VerificationEventCopyWith<$Res> {
   factory $VerificationEventCopyWith(
           VerificationEvent value, $Res Function(VerificationEvent) then) =
       _$VerificationEventCopyWithImpl<$Res, VerificationEvent>;
+  @useResult
+  $Res call({String? email});
 }
 
 /// @nodoc
@@ -81,13 +91,27 @@ class _$VerificationEventCopyWithImpl<$Res, $Val extends VerificationEvent>
 
   /// Create a copy of VerificationEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = freezed,
+  }) {
+    return _then(_value.copyWith(
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$ResendOtpImplCopyWith<$Res> {
+abstract class _$$ResendOtpImplCopyWith<$Res>
+    implements $VerificationEventCopyWith<$Res> {
   factory _$$ResendOtpImplCopyWith(
           _$ResendOtpImpl value, $Res Function(_$ResendOtpImpl) then) =
       __$$ResendOtpImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({String? email});
 }
@@ -152,7 +176,8 @@ class _$ResendOtpImpl implements ResendOtp {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String? email) resendOtp,
-    required TResult Function(String? otpCode, String? token) verifyOtp,
+    required TResult Function(String? otpCode, String? token, String? email)
+        verifyOtp,
     required TResult Function(String? token, String? email) setValues,
   }) {
     return resendOtp(email);
@@ -162,7 +187,7 @@ class _$ResendOtpImpl implements ResendOtp {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String? email)? resendOtp,
-    TResult? Function(String? otpCode, String? token)? verifyOtp,
+    TResult? Function(String? otpCode, String? token, String? email)? verifyOtp,
     TResult? Function(String? token, String? email)? setValues,
   }) {
     return resendOtp?.call(email);
@@ -172,7 +197,7 @@ class _$ResendOtpImpl implements ResendOtp {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? email)? resendOtp,
-    TResult Function(String? otpCode, String? token)? verifyOtp,
+    TResult Function(String? otpCode, String? token, String? email)? verifyOtp,
     TResult Function(String? token, String? email)? setValues,
     required TResult orElse(),
   }) {
@@ -220,22 +245,26 @@ class _$ResendOtpImpl implements ResendOtp {
 abstract class ResendOtp implements VerificationEvent {
   const factory ResendOtp(final String? email) = _$ResendOtpImpl;
 
+  @override
   String? get email;
 
   /// Create a copy of VerificationEvent
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ResendOtpImplCopyWith<_$ResendOtpImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$VerifyOtpImplCopyWith<$Res> {
+abstract class _$$VerifyOtpImplCopyWith<$Res>
+    implements $VerificationEventCopyWith<$Res> {
   factory _$$VerifyOtpImplCopyWith(
           _$VerifyOtpImpl value, $Res Function(_$VerifyOtpImpl) then) =
       __$$VerifyOtpImplCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({String? otpCode, String? token});
+  $Res call({String? otpCode, String? token, String? email});
 }
 
 /// @nodoc
@@ -253,6 +282,7 @@ class __$$VerifyOtpImplCopyWithImpl<$Res>
   $Res call({
     Object? otpCode = freezed,
     Object? token = freezed,
+    Object? email = freezed,
   }) {
     return _then(_$VerifyOtpImpl(
       otpCode: freezed == otpCode
@@ -263,6 +293,10 @@ class __$$VerifyOtpImplCopyWithImpl<$Res>
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -270,16 +304,18 @@ class __$$VerifyOtpImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$VerifyOtpImpl implements VerifyOtp {
-  const _$VerifyOtpImpl({this.otpCode, this.token});
+  const _$VerifyOtpImpl({this.otpCode, this.token, this.email});
 
   @override
   final String? otpCode;
   @override
   final String? token;
+  @override
+  final String? email;
 
   @override
   String toString() {
-    return 'VerificationEvent.verifyOtp(otpCode: $otpCode, token: $token)';
+    return 'VerificationEvent.verifyOtp(otpCode: $otpCode, token: $token, email: $email)';
   }
 
   @override
@@ -288,11 +324,12 @@ class _$VerifyOtpImpl implements VerifyOtp {
         (other.runtimeType == runtimeType &&
             other is _$VerifyOtpImpl &&
             (identical(other.otpCode, otpCode) || other.otpCode == otpCode) &&
-            (identical(other.token, token) || other.token == token));
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, otpCode, token);
+  int get hashCode => Object.hash(runtimeType, otpCode, token, email);
 
   /// Create a copy of VerificationEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -306,32 +343,33 @@ class _$VerifyOtpImpl implements VerifyOtp {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String? email) resendOtp,
-    required TResult Function(String? otpCode, String? token) verifyOtp,
+    required TResult Function(String? otpCode, String? token, String? email)
+        verifyOtp,
     required TResult Function(String? token, String? email) setValues,
   }) {
-    return verifyOtp(otpCode, token);
+    return verifyOtp(otpCode, token, email);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String? email)? resendOtp,
-    TResult? Function(String? otpCode, String? token)? verifyOtp,
+    TResult? Function(String? otpCode, String? token, String? email)? verifyOtp,
     TResult? Function(String? token, String? email)? setValues,
   }) {
-    return verifyOtp?.call(otpCode, token);
+    return verifyOtp?.call(otpCode, token, email);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? email)? resendOtp,
-    TResult Function(String? otpCode, String? token)? verifyOtp,
+    TResult Function(String? otpCode, String? token, String? email)? verifyOtp,
     TResult Function(String? token, String? email)? setValues,
     required TResult orElse(),
   }) {
     if (verifyOtp != null) {
-      return verifyOtp(otpCode, token);
+      return verifyOtp(otpCode, token, email);
     }
     return orElse();
   }
@@ -372,24 +410,31 @@ class _$VerifyOtpImpl implements VerifyOtp {
 }
 
 abstract class VerifyOtp implements VerificationEvent {
-  const factory VerifyOtp({final String? otpCode, final String? token}) =
-      _$VerifyOtpImpl;
+  const factory VerifyOtp(
+      {final String? otpCode,
+      final String? token,
+      final String? email}) = _$VerifyOtpImpl;
 
   String? get otpCode;
   String? get token;
+  @override
+  String? get email;
 
   /// Create a copy of VerificationEvent
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VerifyOtpImplCopyWith<_$VerifyOtpImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetValuesEventImplCopyWith<$Res> {
+abstract class _$$SetValuesEventImplCopyWith<$Res>
+    implements $VerificationEventCopyWith<$Res> {
   factory _$$SetValuesEventImplCopyWith(_$SetValuesEventImpl value,
           $Res Function(_$SetValuesEventImpl) then) =
       __$$SetValuesEventImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({String? token, String? email});
 }
@@ -463,7 +508,8 @@ class _$SetValuesEventImpl implements SetValuesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String? email) resendOtp,
-    required TResult Function(String? otpCode, String? token) verifyOtp,
+    required TResult Function(String? otpCode, String? token, String? email)
+        verifyOtp,
     required TResult Function(String? token, String? email) setValues,
   }) {
     return setValues(token, email);
@@ -473,7 +519,7 @@ class _$SetValuesEventImpl implements SetValuesEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String? email)? resendOtp,
-    TResult? Function(String? otpCode, String? token)? verifyOtp,
+    TResult? Function(String? otpCode, String? token, String? email)? verifyOtp,
     TResult? Function(String? token, String? email)? setValues,
   }) {
     return setValues?.call(token, email);
@@ -483,7 +529,7 @@ class _$SetValuesEventImpl implements SetValuesEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? email)? resendOtp,
-    TResult Function(String? otpCode, String? token)? verifyOtp,
+    TResult Function(String? otpCode, String? token, String? email)? verifyOtp,
     TResult Function(String? token, String? email)? setValues,
     required TResult orElse(),
   }) {
@@ -533,10 +579,12 @@ abstract class SetValuesEvent implements VerificationEvent {
       _$SetValuesEventImpl;
 
   String? get token;
+  @override
   String? get email;
 
   /// Create a copy of VerificationEvent
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SetValuesEventImplCopyWith<_$SetValuesEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
