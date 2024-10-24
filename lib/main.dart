@@ -9,5 +9,6 @@ void main() async {
   await SharedPreferencesService.instance.getSharedInstance();
   FilterStorageImpl().deleteFilterData();
   configureDependencies();
+
   runApp(WattHubApp());
 }
