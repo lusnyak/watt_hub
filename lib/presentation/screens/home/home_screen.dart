@@ -80,6 +80,7 @@ class _HomeView extends StatelessWidget {
                   orElse: () => false,
                 ))
                   FloatingActionButton(
+                    heroTag: "location",
                     onPressed: () {
                       context
                           .read<HomeBloc>()
@@ -89,6 +90,7 @@ class _HomeView extends StatelessWidget {
                   ),
                 20.widthBox,
                 FloatingActionButton(
+                  heroTag: "list",
                   onPressed: () {
                     context
                         .read<HomeBloc>()
