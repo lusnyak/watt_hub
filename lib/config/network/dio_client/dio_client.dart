@@ -12,5 +12,5 @@ abstract class DioClient {
         receiveTimeout: const Duration(seconds: 5),
         sendTimeout: const Duration(seconds: 10),
       ))
-        ..interceptors.add(ApiLoggingInterceptor());
+        ..interceptors.addAll([ApiLoggingInterceptor()]);
 }

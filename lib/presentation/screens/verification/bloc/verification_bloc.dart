@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
-import 'package:watt_hub/data/repository/user_repository.dart';
+import 'package:watt_hub/data/repository/auth_repository.dart';
 import 'package:watt_hub/domain/models/token_model/token_model.dart';
 
 part 'verification_bloc.freezed.dart';
@@ -19,7 +19,7 @@ class VerificationBloc extends Bloc<VerificationEvent, VerificationState> {
       emit(const VerificationState.loading());
       try {
         final TokenModel? resendData =
-            await getIt<UserRepository>().userConnect(event.email);
+            await getIt<AuthRepository>().userConnect(event.email);
         emit(VerificationState.success(
           resendData: resendData,
           email: event.email,
@@ -35,7 +35,7 @@ class VerificationBloc extends Bloc<VerificationEvent, VerificationState> {
       (event, emit) async {
         emit(const VerificationState.loading());
         try {
-          final flag = await getIt<UserRepository>()
+          final flag = await getIt<AuthRepository>()
               .userVerification(event.otpCode, event.token);
           emit(VerificationState.success(
             flag: flag,

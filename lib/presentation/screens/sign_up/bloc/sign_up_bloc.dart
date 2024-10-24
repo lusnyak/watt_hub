@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
-import 'package:watt_hub/data/repository/user_repository.dart';
+import 'package:watt_hub/data/repository/auth_repository.dart';
 import 'package:watt_hub/domain/models/token_model/token_model.dart';
 
 part 'sign_up_bloc.freezed.dart';
@@ -44,7 +44,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       if (formKey.currentState?.validate() ?? false) {
         try {
           final TokenModel? tokenData =
-              await getIt<UserRepository>().userConnect(emailController.text);
+              await getIt<AuthRepository>().userConnect(emailController.text);
           emit(SignUpState.success(
             tokenData: tokenData,
             email: emailController.text,
