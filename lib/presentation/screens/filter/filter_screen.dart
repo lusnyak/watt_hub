@@ -23,7 +23,6 @@ class FilterScreen extends StatelessWidget {
 
 class FilterView extends StatelessWidget {
   const FilterView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
