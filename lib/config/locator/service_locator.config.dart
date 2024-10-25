@@ -31,8 +31,6 @@ import 'package:watt_hub/data/repository/station_repository.dart' as _i198;
 import 'package:watt_hub/data/repository/user_repository.dart' as _i468;
 import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.dart'
     as _i767;
-import 'package:watt_hub/presentation/screens/add_station/block/add_station_bloc.dart'
-    as _i68;
 import 'package:watt_hub/presentation/screens/app_loading/bloc/app_loading_bloc.dart'
     as _i536;
 import 'package:watt_hub/presentation/screens/choose_station_address/bloc/choose_station_address_bloc.dart'
@@ -64,7 +62,6 @@ extension GetItInjectableX on _i174.GetIt {
     final dioClient = _$DioClient();
     gh.factory<_i60.OtpService>(() => _i60.OtpService());
     gh.factory<_i767.AddStationBlock>(() => _i767.AddStationBlock());
-    gh.factory<_i68.AddStationBlock>(() => _i68.AddStationBlock());
     gh.factory<_i536.AppLoadingBloc>(() => _i536.AppLoadingBloc());
     gh.factory<_i474.ChooseStationAddressBloc>(
         () => _i474.ChooseStationAddressBloc());

@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
-import 'package:watt_hub/presentation/screens/add_station/block/add_station_bloc.dart';
+import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.dart';
 import 'package:watt_hub/presentation/screens/add_station/widgets/image_picker_upload_button.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
