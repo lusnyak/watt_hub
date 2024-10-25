@@ -9,7 +9,6 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../config/locator/service_locator.dart';
 
-
 @RoutePage()
 class AddStationScreen extends StatelessWidget {
   const AddStationScreen({super.key});
@@ -46,14 +45,17 @@ class AddStationView extends StatelessWidget {
                         File(images[index].path),
                         fit: BoxFit.cover,
                         height: 100,
-                        width: 100,
+                        width: 85,
                       ),
                       Positioned(
                         top: -20,
                         right: -20,
                         child: IconButton(
-                          icon: const Icon(Icons.dangerous_outlined, color: WattHubColors.primaryGreenColor),
-                          onPressed: () => context.read<AddStationBlock>().add(AddStationEvent.removeImage(index)),
+                          icon: const Icon(Icons.dangerous_outlined,
+                              color: WattHubColors.primaryGreenColor),
+                          onPressed: () => context
+                              .read<AddStationBlock>()
+                              .add(AddStationEvent.removeImage(index)),
                         ),
                       ),
                     ],
@@ -73,7 +75,8 @@ class AddStationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).addStation, style: body18SemiBoldTextStyle),
+        title: Text(AppLocalizations.of(context).addStation,
+            style: body18SemiBoldTextStyle),
         centerTitle: true,
         leading: IconButton(
           onPressed: () => AutoRouter.of(context).push(const ProfileRoute()),
@@ -93,59 +96,76 @@ class AddStationView extends StatelessWidget {
                 debugPrint("$currentImages");
                 return SingleChildScrollView(
                   child: ConstrainedBox(
-                    constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
+                    constraints: BoxConstraints(
+                        minHeight: MediaQuery.of(context).size.height),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         WHElevatedButton.secondary(
                           title: AppLocalizations.of(context).chooseAddress,
                         ),
-                        Text(AppLocalizations.of(context).timePicker, style: body18SemiBoldTextStyle),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            WHElevatedButton.secondary(title: AppLocalizations.of(context).startTime),
-                            WHElevatedButton.secondary(title: AppLocalizations.of(context).endTime),
-                          ],
-                        ),
+                        Text(AppLocalizations.of(context).timePicker,
+                            style: body18SemiBoldTextStyle),
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //   children: [
+                        //     WHElevatedButton.secondary(title: AppLocalizations.of(context).startTime),
+                        //     WHElevatedButton.secondary(title: AppLocalizations.of(context).endTime),
+                        //   ],
+                        // ),
                         WHTextField.singleLine(
-                          controller: context.read<AddStationBlock>().hourlyRateController,
+                          controller: context
+                              .read<AddStationBlock>()
+                              .hourlyRateController,
                           keyboardType: TextInputType.number,
                           label: AppLocalizations.of(context).hourlyRate,
                           hintText: AppLocalizations.of(context).hourlyRate,
                         ),
                         WHTextField.singleLine(
-                          controller: context.read<AddStationBlock>().kilowattController,
+                          controller: context
+                              .read<AddStationBlock>()
+                              .kilowattController,
                           keyboardType: TextInputType.number,
                           label: AppLocalizations.of(context).kilowatt,
                           hintText: AppLocalizations.of(context).kilowatt,
                         ),
-                        Text(AppLocalizations.of(context).contactInfo, style: body18SemiBoldTextStyle),
+                        Text(AppLocalizations.of(context).contactInfo,
+                            style: body18SemiBoldTextStyle),
                         WHTextField.singleLine(
-                          controller: context.read<AddStationBlock>().phoneController,
+                          controller:
+                              context.read<AddStationBlock>().phoneController,
                           keyboardType: TextInputType.phone,
                           label: AppLocalizations.of(context).phone,
-                          hintText: AppLocalizations.of(context).yourPhoneNumber,
+                          hintText:
+                              AppLocalizations.of(context).yourPhoneNumber,
                         ),
                         WHTextField.singleLine(
-                          controller: context.read<AddStationBlock>().nameController,
+                          controller:
+                              context.read<AddStationBlock>().nameController,
                           keyboardType: TextInputType.name,
                           label: AppLocalizations.of(context).name,
                           hintText: AppLocalizations.of(context).yourName,
                         ),
-                        Text(AppLocalizations.of(context).stationImage, style: body18SemiBoldTextStyle),
-                        if (currentImages.length < 5)
-                            WHImagePicker.multiple(
-                              limit:5 - currentImages.length,
-                              onPicked: (file) {
-                                context.read<AddStationBlock>().add(AddStationEvent.imagesSelected(file));
-                              },
-                              child: const ImagePickerUploadButton(),
-                            ),
-                            _previewImages(context),
-                        WHElevatedButton.primary(
-                          title: AppLocalizations.of(context).addStation,
-                        ),
+                        Text(AppLocalizations.of(context).stationImage,
+                            style: body18SemiBoldTextStyle),
+                        SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Container(
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                height: 120.0,
+                                child: Row(children: [
+                                  if (currentImages.length < 5)
+                                    WHImagePicker.multiple(
+                                      limit: 5 - currentImages.length,
+                                      onPicked: (file) {
+                                        context.read<AddStationBlock>().add(
+                                            AddStationEvent.imagesSelected(file));
+                                      },
+                                      child: const ImagePickerUploadButton(),
+                                    ),
+                                  Expanded(child: _previewImages(context)),
+                                ]))),
+                        WHElevatedButton.primary(title: AppLocalizations.of(context).addStation,),
                       ],
                     ),
                   ),

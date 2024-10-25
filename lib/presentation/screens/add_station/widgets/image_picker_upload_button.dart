@@ -10,8 +10,8 @@ class ImagePickerUploadButton extends StatelessWidget {
         border: Border.all(color: Colors.grey, width: 2),
         borderRadius: BorderRadius.circular(8),
       ),
-      height: 100.0,
-      width: 100.0,
+      height: 85.0,
+      width: 85.0,
       child: const Icon(Icons.add),
     );
   }
