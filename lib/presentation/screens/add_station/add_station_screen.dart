@@ -9,7 +9,6 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../config/locator/service_locator.dart';
 
-
 @RoutePage()
 class AddStationScreen extends StatelessWidget {
   const AddStationScreen({super.key});
@@ -27,11 +26,13 @@ class AddStationScreen extends StatelessWidget {
 class AddStationView extends StatelessWidget {
   const AddStationView({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Add Station", style: body18SemiBoldTextStyle),
+
         centerTitle: true,
         leading: IconButton(
           onPressed: () => AutoRouter.of(context).push(const ProfileRoute()),
@@ -66,12 +67,14 @@ class AddStationView extends StatelessWidget {
                         ),
                         WHTextField.singleLine(
                           controller:  context.read<AddStationBlock>().hourlyRateController,
+
                           keyboardType: TextInputType.number,
                           label: AppLocalizations.of(context).hourlyRate,
                           hintText: AppLocalizations.of(context).hourlyRate,
                         ),
                         WHTextField.singleLine(
                           controller:  context.read<AddStationBlock>().kilowattController,
+
                           keyboardType: TextInputType.number,
                           label: AppLocalizations.of(context).kilowatt,
                           hintText: AppLocalizations.of(context).kilowatt,
@@ -85,6 +88,7 @@ class AddStationView extends StatelessWidget {
                         ),
                         WHTextField.singleLine(
                           controller:  context.read<AddStationBlock>().nameController,
+
                           keyboardType: TextInputType.name,
                           label: AppLocalizations.of(context).name,
                           hintText: AppLocalizations.of(context).yourName,
@@ -92,6 +96,7 @@ class AddStationView extends StatelessWidget {
                         Text("Add station image", style: body18SemiBoldTextStyle),
                          const MyHomePage(),
                         WHElevatedButton.primary(title: "Add station"),
+
                       ],
                     ),
                   ),
