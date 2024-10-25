@@ -106,13 +106,15 @@ class AddStationView extends StatelessWidget {
                         ),
                         Text(AppLocalizations.of(context).timePicker,
                             style: body18SemiBoldTextStyle),
-                        // Row(
-                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //   children: [
-                        //     WHElevatedButton.secondary(title: AppLocalizations.of(context).startTime),
-                        //     WHElevatedButton.secondary(title: AppLocalizations.of(context).endTime),
-                        //   ],
-                        // ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            WHElevatedButton.secondary(
+                                title: AppLocalizations.of(context).startTime),
+                            WHElevatedButton.secondary(
+                                title: AppLocalizations.of(context).endTime),
+                          ],
+                        ),
                         WHTextField.singleLine(
                           controller: context.read<AddStationBlock>().hourlyRateController,
                           keyboardType: TextInputType.number,
@@ -154,13 +156,16 @@ class AddStationView extends StatelessWidget {
                                       limit: 5 - currentImages.length,
                                       onPicked: (file) {
                                         context.read<AddStationBlock>().add(
-                                            AddStationEvent.imagesSelected(file));
+                                            AddStationEvent.imagesSelected(
+                                                file));
                                       },
                                       child: const ImagePickerUploadButton(),
                                     ),
                                   Expanded(child: _previewImages(context)),
                                 ]))),
-                        WHElevatedButton.primary(title: AppLocalizations.of(context).addStation,),
+                        WHElevatedButton.primary(
+                          title: AppLocalizations.of(context).addStation,
+                        ),
                       ],
                     ),
                   ),
