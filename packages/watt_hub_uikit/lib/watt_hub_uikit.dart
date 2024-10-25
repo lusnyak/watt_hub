@@ -17,5 +17,3 @@ export 'src/assets/assets.dart';
 export 'src/theme/theme.dart';
 export 'src/utils/extensions/extensions.dart';
 export 'package:permission_handler/permission_handler.dart';
-
-
