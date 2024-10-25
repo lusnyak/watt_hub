@@ -44,6 +44,14 @@ dev_dependencies:
   json_serializable: ^6.8.0
   flutter_lints: ^4.0.0
   retrofit_generator: ^9.1.3
+  flutter_launcher_icons: ^0.14.1
 
 flutter:
   uses-material-design: true
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+
