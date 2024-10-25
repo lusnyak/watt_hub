@@ -27,5 +27,18 @@
     "filter": "Filter",
     "rating": "Rating",
     "chooseCar": "Choos Car Type",
-    "chooseConnector": "Choose Connector"
+    "chooseConnector": "Choose Connector",
+  "chooseAddress":"Choose an address",
+  "timePicker":"Time picker",
+  "startTime":"Start time",
+  "endTime":"End time",
+  "hourlyRate":"Hourly rate",
+  "kilowatt":"Kilowatt",
+  "contactInfo":"Contact info",
+  "phone":"Phone",
+  "yourPhoneNumber":"Enter your phone number",
+  "name":"Name",
+  "yourName":"Enter your name",
+  "stationImage":"Add station image",
+  "addStation":"Add station"
 }

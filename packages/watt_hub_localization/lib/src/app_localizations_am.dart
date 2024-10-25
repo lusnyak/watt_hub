@@ -80,10 +80,10 @@ class AppLocalizationsAm extends AppLocalizations {
   String get book => 'Book';
 
   @override
-  String get kilowatt => 'kw';
+  String get kilowatt => 'կիլովատ';
 
   @override
-  String get hourlyRate => 'hr';
+  String get hourlyRate => 'Ժամային դրույքաչափ';
 
   @override
   String get filter => 'Filter';
@@ -96,4 +96,37 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get chooseConnector => 'Choose Connector';
+
+  @override
+  String get chooseAddress => 'Ընտրեք հասցե';
+
+  @override
+  String get timePicker => 'Ժամանակ ընտրող';
+
+  @override
+  String get startTime => 'Մեկնարկի ժամանակը';
+
+  @override
+  String get endTime => 'Ավարտի ժամանակը';
+
+  @override
+  String get contactInfo => 'Կոնտակտային տվյալներ';
+
+  @override
+  String get phone => 'Հեռախոս';
+
+  @override
+  String get yourPhoneNumber => 'Մուտքագրեք ձեր հեռախոսահամարը';
+
+  @override
+  String get name => 'Անուն';
+
+  @override
+  String get yourName => 'Մուտքագրեք ձեր անունը';
+
+  @override
+  String get stationImage => 'Ավելացնել կայանի պատկեր';
+
+  @override
+  String get addStation => 'Ավելացնել կայանը';
 }
