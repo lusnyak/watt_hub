@@ -56,15 +56,18 @@ class AddStationView extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        WHElevatedButton.secondary(title: "Choose an address"),
-                        Text("Time picker", style: body18SemiBoldTextStyle),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            WHElevatedButton.secondary(title: "Start time"),
-                            WHElevatedButton.secondary(title: "End time"),
-                          ],
+                        WHElevatedButton.secondary(
+                          title: AppLocalizations.of(context).chooseAddress,
                         ),
+                        Text(AppLocalizations.of(context).timePicker,
+                            style: body18SemiBoldTextStyle),
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //   children: [
+                        //     WHElevatedButton.secondary(title: AppLocalizations.of(context).startTime),
+                        //     WHElevatedButton.secondary(title: AppLocalizations.of(context).endTime),
+                        //   ],
+                        // ),
                         WHTextField.singleLine(
                           controller:  context.read<AddStationBlock>().hourlyRateController,
 
@@ -93,10 +96,26 @@ class AddStationView extends StatelessWidget {
                           label: AppLocalizations.of(context).name,
                           hintText: AppLocalizations.of(context).yourName,
                         ),
-                        Text("Add station image", style: body18SemiBoldTextStyle),
-                         const MyHomePage(),
-                        WHElevatedButton.primary(title: "Add station"),
-
+                        Text(AppLocalizations.of(context).stationImage,
+                            style: body18SemiBoldTextStyle),
+                        SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Container(
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                height: 120.0,
+                                child: Row(children: [
+                                  if (currentImages.length < 5)
+                                    WHImagePicker.multiple(
+                                      limit: 5 - currentImages.length,
+                                      onPicked: (file) {
+                                        context.read<AddStationBlock>().add(
+                                            AddStationEvent.imagesSelected(file));
+                                      },
+                                      child: const ImagePickerUploadButton(),
+                                    ),
+                                  Expanded(child: _previewImages(context)),
+                                ]))),
+                        WHElevatedButton.primary(title: AppLocalizations.of(context).addStation,),
                       ],
                     ),
                   ),
