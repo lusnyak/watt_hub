@@ -5,6 +5,8 @@ import 'package:watt_hub/config/locator/service_locator.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/data/local/profile/profile_data.dart';
 import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart';
+import 'package:watt_hub/presentation/screens/profile/sub_widget/car_info.dart';
+import 'package:watt_hub/presentation/screens/profile/sub_widget/conditional_expansion_tile.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_divider.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_item.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
@@ -87,23 +89,20 @@ class _ProfileViewState extends State<_ProfileView> {
               ),
             ),
             const ProfileMenuDivider(),
-
-            ProfileMenuItem(
-              title: 'My Vehicle',
+            ConditionalExpansionTile(
+              title: 'My Car',
               iconLeading: Icons.local_taxi_sharp,
               onTap: () =>
                   {AutoRouter.of(context).popAndPush(const VehicleListRoute())},
-              iconTrailing: Icons.chevron_right_outlined,
+              // iconTrailing: Icons.chevron_right_outlined,
+              children: [],
             ),
-            ProfileMenuItem(
-              title: 'My Station',
+            const ConditionalExpansionTile(
+              title: "My Station",
+              children: [],
               iconLeading: Icons.charging_station_outlined,
-              onTap: () => {},
-              iconTrailing: Icons.chevron_right_outlined,
             ),
-
             const ProfileMenuDivider(),
-
             ProfileMenuItem(
               title: 'Help Center',
               iconLeading: Icons.sticky_note_2_outlined,
@@ -122,34 +121,12 @@ class _ProfileViewState extends State<_ProfileView> {
               onTap: () => {},
               iconTrailing: Icons.chevron_right_outlined,
             ),
-
             ProfileMenuItem(
               title: 'Logout',
               iconLeading: Icons.logout_rounded,
               onTap: () => {},
               colorTile: WattHubColors.redColor,
             ),
-
-            // ElevatedButton(
-            //   onPressed: () => AutoRouter.of(context).push(const AddCarRoute()),
-            //   child: const Text(
-            //     'Add Car',
-            //     style: TextStyle(
-            //       color: Colors.blue,
-            //     ),
-            //   ),
-            // ),
-            // 20.heightBox,
-            // ElevatedButton(
-            //   onPressed: () =>
-            //       AutoRouter.of(context).push(const AddStationRoute()),
-            //   child: const Text(
-            //     'Add Station',
-            //     style: TextStyle(
-            //       color: Colors.blue,
-            //     ),
-            //   ),
-            // )
           ],
         ).paddingAll(24.0),
       ),
