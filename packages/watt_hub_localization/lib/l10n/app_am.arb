@@ -37,6 +37,18 @@
   "availableHours": "Հասանելի ժամեր:",
   "connectorType": "Միակցիչի տեսակը",
   "contact": "Կոնտակտային տվյալներ",
-  "select": "Ընտրել"
+  "select": "Ընտրել",
+  "chooseAddress":"Ընտրեք հասցե",
+  "timePicker":"Ժամանակ ընտրող",
+  "startTime":"Մեկնարկի ժամանակը",
+  "endTime":"Ավարտի ժամանակը",
+  "hourlyRate":"Ժամային դրույքաչափ",
+  "kilowatt":"կիլովատ",
+  "contactInfo":"Կոնտակտային տվյալներ",
+  "phone":"Հեռախոս",
+  "yourPhoneNumber":"Մուտքագրեք ձեր հեռախոսահամարը",
+  "name":"Անուն",
+  "yourName":"Մուտքագրեք ձեր անունը",
+  "stationImage":"Ավելացնել կայանի պատկեր",
+  "addStation":"Ավելացնել կայանը"
 }
-

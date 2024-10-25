@@ -59,45 +59,6 @@ class AppLocalizationsAm extends AppLocalizations {
       'Խնդրում ենք մուտքագրել վավեր էլ․փոստի հասցե';
 
   @override
-  String get home => 'Home';
-
-  @override
-  String get requests => 'Requests';
-
-  @override
-  String get profile => 'Profile';
-
-  @override
-  String get noData => 'No Data';
-
-  @override
-  String get reviews => 'reviews';
-
-  @override
-  String get view => 'View';
-
-  @override
-  String get book => 'Book';
-
-  @override
-  String get kilowatt => 'kw';
-
-  @override
-  String get hourlyRate => 'Ժամավճար:';
-
-  @override
-  String get filter => 'Filter';
-
-  @override
-  String get rating => 'Rating';
-
-  @override
-  String get chooseCar => 'Choos Car Type';
-
-  @override
-  String get chooseConnector => 'Choose Connector';
-
-  @override
   String get location => 'Գտնվելու վայրը';
 
   @override
@@ -126,4 +87,76 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get select => 'Ընտրել';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get requests => 'Requests';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get noData => 'No Data';
+
+  @override
+  String get reviews => 'reviews';
+
+  @override
+  String get view => 'View';
+
+  @override
+  String get book => 'Book';
+
+  @override
+  String get kilowatt => 'կիլովատ';
+
+  @override
+  String get hourlyRate => 'Ժամային դրույքաչափ';
+
+  @override
+  String get filter => 'Filter';
+
+  @override
+  String get rating => 'Rating';
+
+  @override
+  String get chooseCar => 'Choos Car Type';
+
+  @override
+  String get chooseConnector => 'Choose Connector';
+
+  @override
+  String get chooseAddress => 'Ընտրեք հասցե';
+
+  @override
+  String get timePicker => 'Ժամանակ ընտրող';
+
+  @override
+  String get startTime => 'Մեկնարկի ժամանակը';
+
+  @override
+  String get endTime => 'Ավարտի ժամանակը';
+
+  @override
+  String get contactInfo => 'Կոնտակտային տվյալներ';
+
+  @override
+  String get phone => 'Հեռախոս';
+
+  @override
+  String get yourPhoneNumber => 'Մուտքագրեք ձեր հեռախոսահամարը';
+
+  @override
+  String get name => 'Անուն';
+
+  @override
+  String get yourName => 'Մուտքագրեք ձեր անունը';
+
+  @override
+  String get stationImage => 'Ավելացնել կայանի պատկեր';
+
+  @override
+  String get addStation => 'Ավելացնել կայանը';
 }

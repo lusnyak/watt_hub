@@ -58,45 +58,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pleaseEnterAValidEmail => 'Please enter a valid email';
 
   @override
-  String get home => 'Home';
-
-  @override
-  String get requests => 'Requests';
-
-  @override
-  String get profile => 'Profile';
-
-  @override
-  String get noData => 'No Data';
-
-  @override
-  String get reviews => 'reviews';
-
-  @override
-  String get view => 'View';
-
-  @override
-  String get book => 'Book';
-
-  @override
-  String get kilowatt => 'kw';
-
-  @override
-  String get hourlyRate => 'Hourly rate:';
-
-  @override
-  String get filter => 'Filter';
-
-  @override
-  String get rating => 'Rating';
-
-  @override
-  String get chooseCar => 'Choos Car Type';
-
-  @override
-  String get chooseConnector => 'Choose Connector';
-
-  @override
   String get location => 'Location';
 
   @override
@@ -125,4 +86,76 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get select => 'Select';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get requests => 'Requests';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get noData => 'No Data';
+
+  @override
+  String get reviews => 'reviews';
+
+  @override
+  String get view => 'View';
+
+  @override
+  String get book => 'Book';
+
+  @override
+  String get kilowatt => 'Kilowatt';
+
+  @override
+  String get hourlyRate => 'Hourly rate';
+
+  @override
+  String get filter => 'Filter';
+
+  @override
+  String get rating => 'Rating';
+
+  @override
+  String get chooseCar => 'Choos Car Type';
+
+  @override
+  String get chooseConnector => 'Choose Connector';
+
+  @override
+  String get chooseAddress => 'Choose an address';
+
+  @override
+  String get timePicker => 'Time picker';
+
+  @override
+  String get startTime => 'Start time';
+
+  @override
+  String get endTime => 'End time';
+
+  @override
+  String get contactInfo => 'Contact info';
+
+  @override
+  String get phone => 'Phone';
+
+  @override
+  String get yourPhoneNumber => 'Enter your phone number';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get yourName => 'Enter your name';
+
+  @override
+  String get stationImage => 'Add station image';
+
+  @override
+  String get addStation => 'Add station';
 }
