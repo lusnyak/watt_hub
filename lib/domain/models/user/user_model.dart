@@ -6,12 +6,15 @@ part 'user_model.g.dart';
 @freezed
 class UserModel with _$UserModel {
   const factory UserModel({
-    required int id,
-    required String fullName,
-    required String phoneNumber,
-    required String email,
+    int? id,
+    String? fullName,
+    String? phoneNumber,
+    String? email,
+    String? otp,
+    int? roleId,
+    DateTime? createdAt,
+    DateTime? updatedAt,
   }) = _UserModel;
 
-  factory UserModel.fromJson(Map<String, dynamic> json) =>
-      _$UserModelFromJson(json);
+  factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
 }

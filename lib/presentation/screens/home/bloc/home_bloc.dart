@@ -40,7 +40,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(const HomeState.loading());
     try {
       final location = await _initializeLocation();
-      await Future.delayed(const Duration(seconds: 1));
 
       final stations = stationsData
           .map((stationJson) => StationModel.fromJson(stationJson))
@@ -64,7 +63,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   void _onToggleView(ToggleViewEvent event, Emitter<HomeState> emit) {
     if (state is LoadedState) {
       final loadedState = state as LoadedState;
-      emit(HomeState.loaded(loadedState.stations, isList: !loadedState.isList, currentLocation: event.currentLocation));
+      emit(HomeState.loaded(loadedState.stations,
+          isList: !loadedState.isList, currentLocation: event.currentLocation));
     } else {
       emit(const HomeState.viewChanged(true));
     }
