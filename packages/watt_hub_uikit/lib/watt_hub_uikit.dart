@@ -10,6 +10,7 @@ export 'package:flutter_spinkit/flutter_spinkit.dart';
 export 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
+
 /// internal
 export 'src/widgets/widgets.dart';
 export 'src/assets/assets.dart';
@@ -18,4 +19,4 @@ export 'src/utils/extensions/extensions.dart';
 export 'package:permission_handler/permission_handler.dart';
 
 
-
+export 'package:permission_handler/permission_handler.dart';

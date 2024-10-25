@@ -84,7 +84,6 @@ class AddStationView extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-
         child: BlocBuilder<AddStationBlock, AddStationState>(
           builder: (context, state) {
             return state.when(
