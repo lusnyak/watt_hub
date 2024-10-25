@@ -2,43 +2,58 @@ import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
-class WHCalendar extends StatelessWidget {
+class WHCalendar extends StatefulWidget {
   const WHCalendar({
     super.key,
-    required this.focusedDay,
     this.selectedDay,
     required this.onDaySelected,
   });
 
-  final DateTime focusedDay;
   final DateTime? selectedDay;
   final Function(DateTime selectedDay, DateTime focusedDay) onDaySelected;
 
   @override
+  State<WHCalendar> createState() => _WHCalendarState();
+}
+
+class _WHCalendarState extends State<WHCalendar> {
+  CalendarFormat _calendarFormat = CalendarFormat.month;
+
+  @override
   Widget build(BuildContext context) {
-    final firstDay = DateTime(DateTime.now().year, DateTime.now().month, 1);
+    final firstDay = DateTime.now();
     return TableCalendar(
-      focusedDay: focusedDay,
-      firstDay: DateTime.now(),
+      focusedDay: DateTime.now(),
+      firstDay: firstDay,
       lastDay: DateTime.utc(2030, 12, 31),
+      rangeStartDay: DateTime.now(),
+      availableCalendarFormats: const {
+        CalendarFormat.month: 'Month',
+        CalendarFormat.week: 'Week',
+      },
       selectedDayPredicate: (day) {
-        return isSameDay(selectedDay, day);
+        return isSameDay(widget.selectedDay, day);
       },
       onDaySelected: (selectedDay, focusedDay) {
-        if (selectedDay.isBefore(firstDay)) {
-          return;
-        }
-        onDaySelected(selectedDay, focusedDay);
+        widget.onDaySelected(selectedDay, focusedDay);
+      },
+      calendarFormat: _calendarFormat,
+      onFormatChanged: (format) {
+        setState(() {
+          _calendarFormat = format;
+        });
       },
       calendarStyle: const CalendarStyle(
         todayDecoration: BoxDecoration(
-          color: WattHubColors.primaryLightGreenColor,
+          color: WattHubColors.primaryGreenColor,
           shape: BoxShape.circle,
         ),
+
         selectedDecoration: BoxDecoration(
           color: WattHubColors.primaryGreenColor,
           shape: BoxShape.circle,
         ),
+
       ),
     );
   }
