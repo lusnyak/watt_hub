@@ -37,11 +37,10 @@ class FilterView extends StatelessWidget {
         child: BlocBuilder<FilterBloc, FilterState>(
           builder: (context, state) {
             return state.when(
-              initialState: () => nil,
-              loadingState: () =>
-                  const Center(child: CircularProgressIndicator()),
-              errorState: (message) => Center(child: Text('Error: $message')),
-              loadedState: (
+              initial: () => nil,
+              loading: () => const Center(child: CircularProgressIndicator()),
+              error: (message) => Center(child: Text('Error: $message')),
+              loaded: (
                 connectors,
                 cars,
                 initialSelectedCarId,

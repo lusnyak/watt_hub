@@ -908,69 +908,69 @@ abstract class _ApplyFiltersEvent implements FilterEvent {
 mixin _$FilterState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialState,
-    required TResult Function() loadingState,
-    required TResult Function(String message) errorState,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)
-        loadedState,
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initialState,
-    TResult? Function()? loadingState,
-    TResult? Function(String message)? errorState,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)?
-        loadedState,
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? loadingState,
-    TResult Function(String message)? errorState,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)?
-        loadedState,
+        loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitialState value) initialState,
-    required TResult Function(_LoadingState value) loadingState,
-    required TResult Function(_ErrorState value) errorState,
-    required TResult Function(_LoadedState value) loadedState,
+    required TResult Function(_InitialState value) initial,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitialState value)? initialState,
-    TResult? Function(_LoadingState value)? loadingState,
-    TResult? Function(_ErrorState value)? errorState,
-    TResult? Function(_LoadedState value)? loadedState,
+    TResult? Function(_InitialState value)? initial,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_LoadingState value)? loadingState,
-    TResult Function(_ErrorState value)? errorState,
-    TResult Function(_LoadedState value)? loadedState,
+    TResult Function(_InitialState value)? initial,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1023,7 +1023,7 @@ class _$InitialStateImpl implements _InitialState {
 
   @override
   String toString() {
-    return 'FilterState.initialState()';
+    return 'FilterState.initial()';
   }
 
   @override
@@ -1038,54 +1038,54 @@ class _$InitialStateImpl implements _InitialState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialState,
-    required TResult Function() loadingState,
-    required TResult Function(String message) errorState,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)
-        loadedState,
+        loaded,
   }) {
-    return initialState();
+    return initial();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initialState,
-    TResult? Function()? loadingState,
-    TResult? Function(String message)? errorState,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)?
-        loadedState,
+        loaded,
   }) {
-    return initialState?.call();
+    return initial?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? loadingState,
-    TResult Function(String message)? errorState,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)?
-        loadedState,
+        loaded,
     required TResult orElse(),
   }) {
-    if (initialState != null) {
-      return initialState();
+    if (initial != null) {
+      return initial();
     }
     return orElse();
   }
@@ -1093,36 +1093,36 @@ class _$InitialStateImpl implements _InitialState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitialState value) initialState,
-    required TResult Function(_LoadingState value) loadingState,
-    required TResult Function(_ErrorState value) errorState,
-    required TResult Function(_LoadedState value) loadedState,
+    required TResult Function(_InitialState value) initial,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) {
-    return initialState(this);
+    return initial(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitialState value)? initialState,
-    TResult? Function(_LoadingState value)? loadingState,
-    TResult? Function(_ErrorState value)? errorState,
-    TResult? Function(_LoadedState value)? loadedState,
+    TResult? Function(_InitialState value)? initial,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
-    return initialState?.call(this);
+    return initial?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_LoadingState value)? loadingState,
-    TResult Function(_ErrorState value)? errorState,
-    TResult Function(_LoadedState value)? loadedState,
+    TResult Function(_InitialState value)? initial,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
-    if (initialState != null) {
-      return initialState(this);
+    if (initial != null) {
+      return initial(this);
     }
     return orElse();
   }
@@ -1158,7 +1158,7 @@ class _$LoadingStateImpl implements _LoadingState {
 
   @override
   String toString() {
-    return 'FilterState.loadingState()';
+    return 'FilterState.loading()';
   }
 
   @override
@@ -1173,54 +1173,54 @@ class _$LoadingStateImpl implements _LoadingState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialState,
-    required TResult Function() loadingState,
-    required TResult Function(String message) errorState,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)
-        loadedState,
+        loaded,
   }) {
-    return loadingState();
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initialState,
-    TResult? Function()? loadingState,
-    TResult? Function(String message)? errorState,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)?
-        loadedState,
+        loaded,
   }) {
-    return loadingState?.call();
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? loadingState,
-    TResult Function(String message)? errorState,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)?
-        loadedState,
+        loaded,
     required TResult orElse(),
   }) {
-    if (loadingState != null) {
-      return loadingState();
+    if (loading != null) {
+      return loading();
     }
     return orElse();
   }
@@ -1228,36 +1228,36 @@ class _$LoadingStateImpl implements _LoadingState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitialState value) initialState,
-    required TResult Function(_LoadingState value) loadingState,
-    required TResult Function(_ErrorState value) errorState,
-    required TResult Function(_LoadedState value) loadedState,
+    required TResult Function(_InitialState value) initial,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) {
-    return loadingState(this);
+    return loading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitialState value)? initialState,
-    TResult? Function(_LoadingState value)? loadingState,
-    TResult? Function(_ErrorState value)? errorState,
-    TResult? Function(_LoadedState value)? loadedState,
+    TResult? Function(_InitialState value)? initial,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
-    return loadingState?.call(this);
+    return loading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_LoadingState value)? loadingState,
-    TResult Function(_ErrorState value)? errorState,
-    TResult Function(_LoadedState value)? loadedState,
+    TResult Function(_InitialState value)? initial,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
-    if (loadingState != null) {
-      return loadingState(this);
+    if (loading != null) {
+      return loading(this);
     }
     return orElse();
   }
@@ -1310,7 +1310,7 @@ class _$ErrorStateImpl implements _ErrorState {
 
   @override
   String toString() {
-    return 'FilterState.errorState(message: $message)';
+    return 'FilterState.error(message: $message)';
   }
 
   @override
@@ -1335,54 +1335,54 @@ class _$ErrorStateImpl implements _ErrorState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialState,
-    required TResult Function() loadingState,
-    required TResult Function(String message) errorState,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)
-        loadedState,
+        loaded,
   }) {
-    return errorState(message);
+    return error(message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initialState,
-    TResult? Function()? loadingState,
-    TResult? Function(String message)? errorState,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)?
-        loadedState,
+        loaded,
   }) {
-    return errorState?.call(message);
+    return error?.call(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? loadingState,
-    TResult Function(String message)? errorState,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)?
-        loadedState,
+        loaded,
     required TResult orElse(),
   }) {
-    if (errorState != null) {
-      return errorState(message);
+    if (error != null) {
+      return error(message);
     }
     return orElse();
   }
@@ -1390,36 +1390,36 @@ class _$ErrorStateImpl implements _ErrorState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitialState value) initialState,
-    required TResult Function(_LoadingState value) loadingState,
-    required TResult Function(_ErrorState value) errorState,
-    required TResult Function(_LoadedState value) loadedState,
+    required TResult Function(_InitialState value) initial,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) {
-    return errorState(this);
+    return error(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitialState value)? initialState,
-    TResult? Function(_LoadingState value)? loadingState,
-    TResult? Function(_ErrorState value)? errorState,
-    TResult? Function(_LoadedState value)? loadedState,
+    TResult? Function(_InitialState value)? initial,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
-    return errorState?.call(this);
+    return error?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_LoadingState value)? loadingState,
-    TResult Function(_ErrorState value)? errorState,
-    TResult Function(_LoadedState value)? loadedState,
+    TResult Function(_InitialState value)? initial,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
-    if (errorState != null) {
-      return errorState(this);
+    if (error != null) {
+      return error(this);
     }
     return orElse();
   }
@@ -1531,7 +1531,7 @@ class _$LoadedStateImpl implements _LoadedState {
 
   @override
   String toString() {
-    return 'FilterState.loadedState(connectors: $connectors, cars: $cars, initialSelectedCarId: $initialSelectedCarId, initialSelectedConnectorId: $initialSelectedConnectorId, initialRating: $initialRating)';
+    return 'FilterState.loaded(connectors: $connectors, cars: $cars, initialSelectedCarId: $initialSelectedCarId, initialSelectedConnectorId: $initialSelectedConnectorId, initialRating: $initialRating)';
   }
 
   @override
@@ -1572,56 +1572,56 @@ class _$LoadedStateImpl implements _LoadedState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialState,
-    required TResult Function() loadingState,
-    required TResult Function(String message) errorState,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)
-        loadedState,
+        loaded,
   }) {
-    return loadedState(connectors, cars, initialSelectedCarId,
+    return loaded(connectors, cars, initialSelectedCarId,
         initialSelectedConnectorId, initialRating);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initialState,
-    TResult? Function()? loadingState,
-    TResult? Function(String message)? errorState,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)?
-        loadedState,
+        loaded,
   }) {
-    return loadedState?.call(connectors, cars, initialSelectedCarId,
+    return loaded?.call(connectors, cars, initialSelectedCarId,
         initialSelectedConnectorId, initialRating);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? loadingState,
-    TResult Function(String message)? errorState,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
             List<CarTypeModel> cars,
             int? initialSelectedCarId,
             int? initialSelectedConnectorId,
             double? initialRating)?
-        loadedState,
+        loaded,
     required TResult orElse(),
   }) {
-    if (loadedState != null) {
-      return loadedState(connectors, cars, initialSelectedCarId,
+    if (loaded != null) {
+      return loaded(connectors, cars, initialSelectedCarId,
           initialSelectedConnectorId, initialRating);
     }
     return orElse();
@@ -1630,36 +1630,36 @@ class _$LoadedStateImpl implements _LoadedState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_InitialState value) initialState,
-    required TResult Function(_LoadingState value) loadingState,
-    required TResult Function(_ErrorState value) errorState,
-    required TResult Function(_LoadedState value) loadedState,
+    required TResult Function(_InitialState value) initial,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) {
-    return loadedState(this);
+    return loaded(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitialState value)? initialState,
-    TResult? Function(_LoadingState value)? loadingState,
-    TResult? Function(_ErrorState value)? errorState,
-    TResult? Function(_LoadedState value)? loadedState,
+    TResult? Function(_InitialState value)? initial,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
-    return loadedState?.call(this);
+    return loaded?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitialState value)? initialState,
-    TResult Function(_LoadingState value)? loadingState,
-    TResult Function(_ErrorState value)? errorState,
-    TResult Function(_LoadedState value)? loadedState,
+    TResult Function(_InitialState value)? initial,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
-    if (loadedState != null) {
-      return loadedState(this);
+    if (loaded != null) {
+      return loaded(this);
     }
     return orElse();
   }

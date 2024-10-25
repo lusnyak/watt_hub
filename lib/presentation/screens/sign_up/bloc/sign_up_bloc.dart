@@ -22,7 +22,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     on<EmailChangedEvent>(validateEmail);
 
     on<CheckboxChangedEvent>((event, emit) {
-      state.when(
+      state.when( 
         form: (isEmailValid, _) {
           emit(SignUpState.form(
             isEmailValid: isEmailValid,

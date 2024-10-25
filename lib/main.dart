@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
 import 'package:watt_hub/data/local/filter_storage/filter_storage_impl.dart';
+// import 'package:watt_hub/data/local/token_storage/token_storage.dart';
 import 'package:watt_hub/watt_hub_app.dart';
 
 import 'data/local/shared_preferences/shared_preferences_service.dart';
@@ -10,6 +11,7 @@ void main() async {
   await SharedPreferencesService.instance.getSharedInstance();
   FilterStorageImpl().deleteFilterData();
   configureDependencies();
+  // await getIt<TokenStorage>().deleteToken();
 
   runApp(WattHubApp());
 }
