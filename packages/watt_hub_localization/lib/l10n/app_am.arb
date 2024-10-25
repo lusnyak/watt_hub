@@ -27,6 +27,18 @@
    "filter": "Filter",
    "rating": "Rating",
    "chooseCar": "Choos Car Type",
-   "chooseConnector": "Choose Connector"
+   "chooseConnector": "Choose Connector",
+  "chooseAddress":"Ընտրեք հասցե",
+  "timePicker":"Ժամանակ ընտրող",
+  "startTime":"Մեկնարկի ժամանակը",
+  "endTime":"Ավարտի ժամանակը",
+  "hourlyRate":"Ժամային դրույքաչափ",
+  "kilowatt":"կիլովատ",
+  "contactInfo":"Կոնտակտային տվյալներ",
+  "phone":"Հեռախոս",
+  "yourPhoneNumber":"Մուտքագրեք ձեր հեռախոսահամարը",
+  "name":"Անուն",
+  "yourName":"Մուտքագրեք ձեր անունը",
+  "stationImage":"Ավելացնել կայանի պատկեր",
+  "addStation":"Ավելացնել կայանը"
 }
-

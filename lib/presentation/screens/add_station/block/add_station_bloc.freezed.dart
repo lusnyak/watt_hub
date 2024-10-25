@@ -19,32 +19,44 @@ mixin _$AddStationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(List<File> images) imagesSelected,
+    required TResult Function(int index) removeImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(List<File> images)? imagesSelected,
+    TResult? Function(int index)? removeImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(List<File> images)? imagesSelected,
+    TResult Function(int index)? removeImage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_StartedEvent value) started,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_RemoveImageEvent value) removeImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_RemoveImageEvent value)? removeImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_StartedEvent value)? started,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_RemoveImageEvent value)? removeImage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +125,8 @@ class _$StartedEventImpl implements _StartedEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(List<File> images) imagesSelected,
+    required TResult Function(int index) removeImage,
   }) {
     return started();
   }
@@ -121,6 +135,8 @@ class _$StartedEventImpl implements _StartedEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(List<File> images)? imagesSelected,
+    TResult? Function(int index)? removeImage,
   }) {
     return started?.call();
   }
@@ -129,6 +145,8 @@ class _$StartedEventImpl implements _StartedEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(List<File> images)? imagesSelected,
+    TResult Function(int index)? removeImage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -141,6 +159,8 @@ class _$StartedEventImpl implements _StartedEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_StartedEvent value) started,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_RemoveImageEvent value) removeImage,
   }) {
     return started(this);
   }
@@ -149,6 +169,8 @@ class _$StartedEventImpl implements _StartedEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_RemoveImageEvent value)? removeImage,
   }) {
     return started?.call(this);
   }
@@ -157,6 +179,8 @@ class _$StartedEventImpl implements _StartedEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_StartedEvent value)? started,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_RemoveImageEvent value)? removeImage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -171,13 +195,314 @@ abstract class _StartedEvent implements AddStationEvent {
 }
 
 /// @nodoc
+abstract class _$$ImagesSelectedEventImplCopyWith<$Res> {
+  factory _$$ImagesSelectedEventImplCopyWith(_$ImagesSelectedEventImpl value,
+          $Res Function(_$ImagesSelectedEventImpl) then) =
+      __$$ImagesSelectedEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<File> images});
+}
+
+/// @nodoc
+class __$$ImagesSelectedEventImplCopyWithImpl<$Res>
+    extends _$AddStationEventCopyWithImpl<$Res, _$ImagesSelectedEventImpl>
+    implements _$$ImagesSelectedEventImplCopyWith<$Res> {
+  __$$ImagesSelectedEventImplCopyWithImpl(_$ImagesSelectedEventImpl _value,
+      $Res Function(_$ImagesSelectedEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = null,
+  }) {
+    return _then(_$ImagesSelectedEventImpl(
+      null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<File>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
+  const _$ImagesSelectedEventImpl(final List<File> images) : _images = images;
+
+  final List<File> _images;
+  @override
+  List<File> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
+
+  @override
+  String toString() {
+    return 'AddStationEvent.imagesSelected(images: $images)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImagesSelectedEventImpl &&
+            const DeepCollectionEquality().equals(other._images, _images));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ImagesSelectedEventImplCopyWith<_$ImagesSelectedEventImpl> get copyWith =>
+      __$$ImagesSelectedEventImplCopyWithImpl<_$ImagesSelectedEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<File> images) imagesSelected,
+    required TResult Function(int index) removeImage,
+  }) {
+    return imagesSelected(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(List<File> images)? imagesSelected,
+    TResult? Function(int index)? removeImage,
+  }) {
+    return imagesSelected?.call(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<File> images)? imagesSelected,
+    TResult Function(int index)? removeImage,
+    required TResult orElse(),
+  }) {
+    if (imagesSelected != null) {
+      return imagesSelected(images);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StartedEvent value) started,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_RemoveImageEvent value) removeImage,
+  }) {
+    return imagesSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_RemoveImageEvent value)? removeImage,
+  }) {
+    return imagesSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StartedEvent value)? started,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_RemoveImageEvent value)? removeImage,
+    required TResult orElse(),
+  }) {
+    if (imagesSelected != null) {
+      return imagesSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ImagesSelectedEvent implements AddStationEvent {
+  const factory _ImagesSelectedEvent(final List<File> images) =
+      _$ImagesSelectedEventImpl;
+
+  List<File> get images;
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ImagesSelectedEventImplCopyWith<_$ImagesSelectedEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveImageEventImplCopyWith<$Res> {
+  factory _$$RemoveImageEventImplCopyWith(_$RemoveImageEventImpl value,
+          $Res Function(_$RemoveImageEventImpl) then) =
+      __$$RemoveImageEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$RemoveImageEventImplCopyWithImpl<$Res>
+    extends _$AddStationEventCopyWithImpl<$Res, _$RemoveImageEventImpl>
+    implements _$$RemoveImageEventImplCopyWith<$Res> {
+  __$$RemoveImageEventImplCopyWithImpl(_$RemoveImageEventImpl _value,
+      $Res Function(_$RemoveImageEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$RemoveImageEventImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveImageEventImpl implements _RemoveImageEvent {
+  const _$RemoveImageEventImpl(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'AddStationEvent.removeImage(index: $index)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveImageEventImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveImageEventImplCopyWith<_$RemoveImageEventImpl> get copyWith =>
+      __$$RemoveImageEventImplCopyWithImpl<_$RemoveImageEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<File> images) imagesSelected,
+    required TResult Function(int index) removeImage,
+  }) {
+    return removeImage(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(List<File> images)? imagesSelected,
+    TResult? Function(int index)? removeImage,
+  }) {
+    return removeImage?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<File> images)? imagesSelected,
+    TResult Function(int index)? removeImage,
+    required TResult orElse(),
+  }) {
+    if (removeImage != null) {
+      return removeImage(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StartedEvent value) started,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_RemoveImageEvent value) removeImage,
+  }) {
+    return removeImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_RemoveImageEvent value)? removeImage,
+  }) {
+    return removeImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StartedEvent value)? started,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_RemoveImageEvent value)? removeImage,
+    required TResult orElse(),
+  }) {
+    if (removeImage != null) {
+      return removeImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RemoveImageEvent implements AddStationEvent {
+  const factory _RemoveImageEvent(final int index) = _$RemoveImageEventImpl;
+
+  int get index;
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RemoveImageEventImplCopyWith<_$RemoveImageEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$AddStationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function() loaded,
+    required TResult Function(List<File>? images) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -185,7 +510,7 @@ mixin _$AddStationState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function()? loaded,
+    TResult? Function(List<File>? images)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -193,7 +518,7 @@ mixin _$AddStationState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function()? loaded,
+    TResult Function(List<File>? images)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -289,7 +614,7 @@ class _$InitialStateImpl implements _InitialState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function() loaded,
+    required TResult Function(List<File>? images) loaded,
   }) {
     return initial();
   }
@@ -300,7 +625,7 @@ class _$InitialStateImpl implements _InitialState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function()? loaded,
+    TResult? Function(List<File>? images)? loaded,
   }) {
     return initial?.call();
   }
@@ -311,7 +636,7 @@ class _$InitialStateImpl implements _InitialState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function()? loaded,
+    TResult Function(List<File>? images)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -406,7 +731,7 @@ class _$LoadingStateImpl implements _LoadingState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function() loaded,
+    required TResult Function(List<File>? images) loaded,
   }) {
     return loading();
   }
@@ -417,7 +742,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function()? loaded,
+    TResult? Function(List<File>? images)? loaded,
   }) {
     return loading?.call();
   }
@@ -428,7 +753,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function()? loaded,
+    TResult Function(List<File>? images)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -550,7 +875,7 @@ class _$ErrorStateImpl implements _ErrorState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function() loaded,
+    required TResult Function(List<File>? images) loaded,
   }) {
     return error(message);
   }
@@ -561,7 +886,7 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function()? loaded,
+    TResult? Function(List<File>? images)? loaded,
   }) {
     return error?.call(message);
   }
@@ -572,7 +897,7 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function()? loaded,
+    TResult Function(List<File>? images)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -636,6 +961,8 @@ abstract class _$$LoadedStateImplCopyWith<$Res> {
   factory _$$LoadedStateImplCopyWith(
           _$LoadedStateImpl value, $Res Function(_$LoadedStateImpl) then) =
       __$$LoadedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<File>? images});
 }
 
 /// @nodoc
@@ -648,26 +975,59 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
 
   /// Create a copy of AddStationState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = freezed,
+  }) {
+    return _then(_$LoadedStateImpl(
+      images: freezed == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<File>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$LoadedStateImpl implements _LoadedState {
-  const _$LoadedStateImpl();
+  const _$LoadedStateImpl({final List<File>? images}) : _images = images;
+
+  final List<File>? _images;
+  @override
+  List<File>? get images {
+    final value = _images;
+    if (value == null) return null;
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'AddStationState.loaded()';
+    return 'AddStationState.loaded(images: $images)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadedStateImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadedStateImpl &&
+            const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
+
+  /// Create a copy of AddStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadedStateImplCopyWith<_$LoadedStateImpl> get copyWith =>
+      __$$LoadedStateImplCopyWithImpl<_$LoadedStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -675,9 +1035,9 @@ class _$LoadedStateImpl implements _LoadedState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function() loaded,
+    required TResult Function(List<File>? images) loaded,
   }) {
-    return loaded();
+    return loaded(images);
   }
 
   @override
@@ -686,9 +1046,9 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function()? loaded,
+    TResult? Function(List<File>? images)? loaded,
   }) {
-    return loaded?.call();
+    return loaded?.call(images);
   }
 
   @override
@@ -697,11 +1057,11 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function()? loaded,
+    TResult Function(List<File>? images)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded();
+      return loaded(images);
     }
     return orElse();
   }
@@ -745,5 +1105,13 @@ class _$LoadedStateImpl implements _LoadedState {
 }
 
 abstract class _LoadedState implements AddStationState {
-  const factory _LoadedState() = _$LoadedStateImpl;
+  const factory _LoadedState({final List<File>? images}) = _$LoadedStateImpl;
+
+  List<File>? get images;
+
+  /// Create a copy of AddStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadedStateImplCopyWith<_$LoadedStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

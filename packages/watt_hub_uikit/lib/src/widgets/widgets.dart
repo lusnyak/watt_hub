@@ -5,3 +5,4 @@ export 'circular_spin/circular_spin.dart';
 export 'slider/sliders.dart';
 export 'popup/popup.dart';
 export 'date_picker/date_picker.dart';
+export 'image_picker/image_picker.dart';

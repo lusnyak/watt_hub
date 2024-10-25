@@ -239,13 +239,13 @@ abstract class AppLocalizations {
   /// No description provided for @kilowatt.
   ///
   /// In en, this message translates to:
-  /// **'kw'**
+  /// **'Kilowatt'**
   String get kilowatt;
 
   /// No description provided for @hourlyRate.
   ///
   /// In en, this message translates to:
-  /// **'hr'**
+  /// **'Hourly rate'**
   String get hourlyRate;
 
   /// No description provided for @filter.
@@ -271,6 +271,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose Connector'**
   String get chooseConnector;
+
+  /// No description provided for @chooseAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose an address'**
+  String get chooseAddress;
+
+  /// No description provided for @timePicker.
+  ///
+  /// In en, this message translates to:
+  /// **'Time picker'**
+  String get timePicker;
+
+  /// No description provided for @startTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Start time'**
+  String get startTime;
+
+  /// No description provided for @endTime.
+  ///
+  /// In en, this message translates to:
+  /// **'End time'**
+  String get endTime;
+
+  /// No description provided for @contactInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact info'**
+  String get contactInfo;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get phone;
+
+  /// No description provided for @yourPhoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number'**
+  String get yourPhoneNumber;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @yourName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your name'**
+  String get yourName;
+
+  /// No description provided for @stationImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Add station image'**
+  String get stationImage;
+
+  /// No description provided for @addStation.
+  ///
+  /// In en, this message translates to:
+  /// **'Add station'**
+  String get addStation;
 }
 
 class _AppLocalizationsDelegate

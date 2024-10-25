@@ -79,10 +79,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get book => 'Book';
 
   @override
-  String get kilowatt => 'kw';
+  String get kilowatt => 'Kilowatt';
 
   @override
-  String get hourlyRate => 'hr';
+  String get hourlyRate => 'Hourly rate';
 
   @override
   String get filter => 'Filter';
@@ -95,4 +95,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get chooseConnector => 'Choose Connector';
+
+  @override
+  String get chooseAddress => 'Choose an address';
+
+  @override
+  String get timePicker => 'Time picker';
+
+  @override
+  String get startTime => 'Start time';
+
+  @override
+  String get endTime => 'End time';
+
+  @override
+  String get contactInfo => 'Contact info';
+
+  @override
+  String get phone => 'Phone';
+
+  @override
+  String get yourPhoneNumber => 'Enter your phone number';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get yourName => 'Enter your name';
+
+  @override
+  String get stationImage => 'Add station image';
+
+  @override
+  String get addStation => 'Add station';
 }
