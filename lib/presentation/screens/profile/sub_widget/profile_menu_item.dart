@@ -22,15 +22,12 @@ class ProfileMenuItem extends StatelessWidget {
       iconColor: colorTile,
       splashColor: WattHubColors.primaryLightGreenColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-      contentPadding: const EdgeInsets.symmetric(vertical: 10),
+      contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
       onTap: onTap,
       title: Text(title,
           style: const TextStyle(
             fontSize: 18,
           )),
-      horizontalTitleGap: 20,
-      dense: true,
-      visualDensity: const VisualDensity(vertical: 4, horizontal: 4),
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(100), // Makes the image round
         child: Icon(
@@ -40,7 +37,7 @@ class ProfileMenuItem extends StatelessWidget {
       ),
       trailing: Icon(
         iconTrailing,
-        size: 40,
+        size: 30,
       ),
     );
   }
