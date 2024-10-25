@@ -44,14 +44,17 @@ class AddStationView extends StatelessWidget {
                         File(images[index].path),
                         fit: BoxFit.cover,
                         height: 100,
-                        width: 100,
+                        width: 85,
                       ),
                       Positioned(
                         top: -20,
                         right: -20,
                         child: IconButton(
-                          icon: const Icon(Icons.dangerous_outlined, color: WattHubColors.primaryGreenColor),
-                          onPressed: () => context.read<AddStationBlock>().add(AddStationEvent.removeImage(index)),
+                          icon: const Icon(Icons.dangerous_outlined,
+                              color: WattHubColors.primaryGreenColor),
+                          onPressed: () => context
+                              .read<AddStationBlock>()
+                              .add(AddStationEvent.removeImage(index)),
                         ),
                       ),
                     ],
@@ -130,7 +133,8 @@ class AddStationView extends StatelessWidget {
     TimeOfDay time = const TimeOfDay(hour: 18, minute: 00);
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).addStation, style: body18SemiBoldTextStyle),
+        title: Text(AppLocalizations.of(context).addStation,
+            style: body18SemiBoldTextStyle),
         centerTitle: true,
         leading: IconButton(
           onPressed: () => AutoRouter.of(context).push(const ProfileRoute()),
@@ -148,7 +152,8 @@ class AddStationView extends StatelessWidget {
               loaded: () {
                 return SingleChildScrollView(
                   child: ConstrainedBox(
-                    constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
+                    constraints: BoxConstraints(
+                        minHeight: MediaQuery.of(context).size.height),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
@@ -163,16 +168,13 @@ class AddStationView extends StatelessWidget {
                         ),
                         WHTextField.singleLine(
                           controller:  context.read<AddStationBlock>().hourlyRateController,
+
                           keyboardType: TextInputType.number,
                           label: "Hourly rate",
                           hintText: "Hourly rate",
                         ),
                         WHTextField.singleLine(
                           controller:  context.read<AddStationBlock>().kilowattController,
-                          keyboardType: TextInputType.number,
-                          label: "Kilowatt",
-                          hintText: "Kilowatt ",
-                        ),
                         Text("Contact info", style: body18SemiBoldTextStyle),
                         WHTextField.singleLine(
                           controller:  context.read<AddStationBlock>().phoneController,
@@ -189,6 +191,7 @@ class AddStationView extends StatelessWidget {
                         Text("Add station image", style: body18SemiBoldTextStyle),
                          const MyHomePage(),
                         WHElevatedButton.primary(title: "Add station"),
+
                       ],
                     ),
                   ),
