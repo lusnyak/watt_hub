@@ -166,6 +166,7 @@ class AddStationView extends StatelessWidget {
                             WHElevatedButton.secondary(title: "End time"),
                           ],
                         ),
+
                         WHTextField.singleLine(
                           controller:  context.read<AddStationBlock>().hourlyRateController,
 
@@ -191,6 +192,7 @@ class AddStationView extends StatelessWidget {
                         Text("Add station image", style: body18SemiBoldTextStyle),
                          const MyHomePage(),
                         WHElevatedButton.primary(title: "Add station"),
+
 
                       ],
                     ),
