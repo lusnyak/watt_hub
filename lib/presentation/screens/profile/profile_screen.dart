@@ -5,6 +5,8 @@ import 'package:watt_hub/config/locator/service_locator.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/data/local/profile/profile_data.dart';
 import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart';
+import 'package:watt_hub/presentation/screens/profile/sub_widget/car_info.dart';
+import 'package:watt_hub/presentation/screens/profile/sub_widget/conditional_expansion_tile.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_divider.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_item.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
@@ -16,9 +18,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-      getIt<ProfileBloc>()
-        ..add(const LoadProfileEvent()),
+      create: (context) => getIt<ProfileBloc>()..add(const LoadProfileEvent()),
       child: const _ProfileView(),
     );
   }
@@ -72,16 +72,18 @@ class _ProfileViewState extends State<_ProfileView> {
               horizontalTitleGap: 20,
               dense: true,
               visualDensity: const VisualDensity(vertical: 4, horizontal: 4),
-              leading: ClipRRect(
-                borderRadius:
-                BorderRadius.circular(100), // Makes the image round
-                child: Image.network(
-                  profileData.imageUrl,
-                  width: 80,
-                  // Sets the width of the image
-                  height: 80,
-                  // Sets the height of the image (optional, to make it square)
-                  fit: BoxFit.cover, // Ensures the image fills the container
+              leading: SizedBox(
+                width: 80,
+                height: 80,
+                child: ClipRRect(
+                  borderRadius:
+                      BorderRadius.circular(40), // Makes the image round
+                  child: Image.asset(
+                    profileData.imageUrl,
+                    width: 80,
+                    height: 80,
+                    fit: BoxFit.cover, // Ensures the image fills the container
+                  ),
                 ),
               ),
               trailing: const Icon(
@@ -90,24 +92,17 @@ class _ProfileViewState extends State<_ProfileView> {
               ),
             ),
             const ProfileMenuDivider(),
-
-            ProfileMenuItem(
-              title: 'My Vehicle',
+            const ConditionalExpansionTile(
+              title: 'My Car',
               iconLeading: Icons.local_taxi_sharp,
-              onTap: () {
-                AutoRouter.of(context).push(const VehicleListRoute());
-              },
-              iconTrailing: Icons.chevron_right_outlined,
+              children: [CarInfo()],
             ),
-            ProfileMenuItem(
-              title: 'My Station',
+            const ConditionalExpansionTile(
+              title: "My Station",
+              children: [],
               iconLeading: Icons.charging_station_outlined,
-              onTap: () => {},
-              iconTrailing: Icons.chevron_right_outlined,
             ),
-
             const ProfileMenuDivider(),
-
             ProfileMenuItem(
               title: 'Help Center',
               iconLeading: Icons.sticky_note_2_outlined,
@@ -126,34 +121,12 @@ class _ProfileViewState extends State<_ProfileView> {
               onTap: () => {},
               iconTrailing: Icons.chevron_right_outlined,
             ),
-
             ProfileMenuItem(
               title: 'Logout',
               iconLeading: Icons.logout_rounded,
               onTap: () => {},
               colorTile: WattHubColors.redColor,
             ),
-
-            // ElevatedButton(
-            //   onPressed: () => AutoRouter.of(context).push(const AddCarRoute()),
-            //   child: const Text(
-            //     'Add Car',
-            //     style: TextStyle(
-            //       color: Colors.blue,
-            //     ),
-            //   ),
-            // ),
-            // 20.heightBox,
-            // ElevatedButton(
-            //   onPressed: () =>
-            //       AutoRouter.of(context).push(const AddStationRoute()),
-            //   child: const Text(
-            //     'Add Station',
-            //     style: TextStyle(
-            //       color: Colors.blue,
-            //     ),
-            //   ),
-            // )
           ],
         ).paddingAll(24.0),
       ),

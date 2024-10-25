@@ -11,4 +11,3 @@ export 'src/widgets/widgets.dart';
 export 'src/assets/assets.dart';
 export 'src/theme/theme.dart';
 export 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
