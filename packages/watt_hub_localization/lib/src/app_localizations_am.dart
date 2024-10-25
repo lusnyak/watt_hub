@@ -13,80 +13,79 @@ class AppLocalizationsAm extends AppLocalizations {
   String get back => 'Հետ';
 
   @override
-  String get helloThere => 'Բարև ձեզ';
+  String get helloThere => 'Hello there';
 
   @override
   String get enterYourEmail =>
-      'Խնդրում ենք մուտքագրել ձեր էլփոստի հասցեն: Ստուգման գործընթացի համար հաջորդ քայլում կստանաք OTP կոդը:';
+      'Please enter your email address. You will receive an OTP code in the next step for the verification process.';
 
   @override
-  String get emailAddress => 'Էլփոստի հասցե';
+  String get emailAddress => 'Email Address';
 
   @override
-  String get continueText => 'Շարունակել';
+  String get continueText => 'Continue';
 
   @override
-  String get otpCodeVerification => 'OTP կոդի ստուգում ';
+  String get otpCodeVerification => 'OTP code verification ';
 
   @override
   String get sentAnOtpCode =>
-      'Մենք ուղարկել ենք OTP կոդը էլեկտրոնային հասցեին: Շարունակելու համար մուտքագրեք OTP կոդը:';
+      'We have sent an OTP code to email address. Enter the OTP code below to continue.';
 
   @override
-  String get didntReceiveEmail => 'Էլփոստին չե՞ք ստացել:';
+  String get didntReceiveEmail => 'Didn\'t receive email?';
 
   @override
   String get pleaseAgree =>
-      'Խնդրում ենք համաձայնել պայմաններին և մուտքագրել վավեր էլ.փոստ։';
+      'Please agree to the terms and enter a valid email.';
 
   @override
-  String get privacyPolicy => 'Գաղտնիության քաղաքականության ';
+  String get privacyPolicy => 'Privacy Policy ';
 
   @override
-  String get iAagreeToWattHub => 'Ես համաձայն եմ WattHub-ի';
+  String get iAagreeToWattHub => 'I agree to WattHub ';
 
   @override
-  String get andConfirm => 'հետ և հաստատում, որ ես 17 տարեկանից բարձր եմ:';
+  String get andConfirm => 'and confirm that I am over 17 years old.';
 
   @override
-  String get resend => 'կրկին ուղարկել';
+  String get resend => 'resend';
 
   @override
-  String get pleaseEnterEmail => 'Խնդրում ենք մուտքագրել էլ․փոստ';
+  String get pleaseEnterEmail => 'Please enter email';
 
   @override
-  String get pleaseEnterAValidEmail =>
-      'Խնդրում ենք մուտքագրել վավեր էլ․փոստի հասցե';
+  String get pleaseEnterAValidEmail => 'Please enter a valid email';
 
   @override
-  String get location => 'Գտնվելու վայրը';
+  String get location => 'Location';
 
   @override
-  String get street => 'Փողոց:';
+  String get street => 'Street:';
 
   @override
-  String get navigate => 'Նավարկել';
+  String get navigate => 'Navigate';
 
   @override
-  String get shareLocation => 'Կիսվել վայրով';
+  String get shareLocation => 'Share Location';
 
   @override
-  String get serviceInformation => 'Ծառայության տեղեկատվություն';
+  String get serviceInformation => 'Service Information';
 
   @override
-  String get max => 'Մաքս:';
+  String get max => 'Max:';
 
   @override
-  String get availableHours => 'Հասանելի ժամեր:';
+  String get availableHours => 'Available hours:';
 
   @override
-  String get connectorType => 'Միակցիչի տեսակը';
+  String get connectorType => 'Connector Type';
 
   @override
-  String get contact => 'Կոնտակտային տվյալներ';
+  String get contact => 'Contact';
 
   @override
-  String get select => 'Ընտրել';
+  String get select => 'Select';
 
   @override
   String get home => 'Home';
@@ -110,10 +109,10 @@ class AppLocalizationsAm extends AppLocalizations {
   String get book => 'Book';
 
   @override
-  String get kilowatt => 'կիլովատ';
+  String get kilowatt => 'Kilowatt';
 
   @override
-  String get hourlyRate => 'Ժամային դրույքաչափ';
+  String get hourlyRate => 'Hourly rate';
 
   @override
   String get filter => 'Filter';
@@ -128,54 +127,54 @@ class AppLocalizationsAm extends AppLocalizations {
   String get chooseConnector => 'Choose Connector';
 
   @override
-  String get chooseAddress => 'Ընտրեք հասցե';
+  String get chooseAddress => 'Choose an address';
 
   @override
-  String get timePicker => 'Ժամանակ ընտրող';
+  String get timePicker => 'Time picker';
 
   @override
-  String get startTime => 'Մեկնարկի ժամանակը';
+  String get startTime => 'Start time';
 
   @override
-  String get endTime => 'Ավարտի ժամանակը';
+  String get endTime => 'End time';
 
   @override
-  String get contactInfo => 'Կոնտակտային տվյալներ';
+  String get contactInfo => 'Contact info';
 
   @override
-  String get phone => 'Հեռախոս';
+  String get phone => 'Phone';
 
   @override
-  String get yourPhoneNumber => 'Մուտքագրեք ձեր հեռախոսահամարը';
+  String get yourPhoneNumber => 'Enter your phone number';
 
   @override
-  String get name => 'Անուն';
+  String get name => 'Name';
 
   @override
-  String get yourName => 'Մուտքագրեք ձեր անունը';
+  String get yourName => 'Enter your name';
 
   @override
-  String get stationImage => 'Ավելացնել կայանի պատկեր';
+  String get stationImage => 'Add station image';
 
   @override
-  String get addStation => 'Ավելացնել կայանը';
+  String get addStation => 'Add station';
 
   @override
-  String get error => 'սխալ';
+  String get error => 'Error';
 
   @override
-  String get start => 'սկիզբ';
+  String get start => 'Start';
 
   @override
-  String get end => 'վերջ';
+  String get end => 'End';
 
   @override
-  String get flutterMap => 'Flutter քարտեզ';
+  String get flutterMap => 'Flutter Map';
 
   @override
   String get addressNotFound => 'Address not found.';
 
   @override
   String get noLocationSelected =>
-      'Ոչ մի տեղ ընտրված չէ: Խնդրում ենք սեղմել քարտեզի վրա.';
+      'No location selected. Please tap on the map.';
 }

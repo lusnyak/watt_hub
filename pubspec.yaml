@@ -10,8 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  image_picker: ^1.1.2
-  permission_handler: ^10.2.0
   watt_hub_localization:
     path: packages/watt_hub_localization
   watt_hub_uikit:

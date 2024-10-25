@@ -36,6 +36,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
             final updatedImages = List<File>.from(currentState.images ?? [])
               ..addAll(e.images);
             emit(AddStationState.loaded(images: updatedImages));
+
           } else {
             emit(AddStationState.loaded(images: e.images));
           }
