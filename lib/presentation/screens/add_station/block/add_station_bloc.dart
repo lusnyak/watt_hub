@@ -5,7 +5,9 @@ import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
 
 part 'add_station_event.dart';
+
 part 'add_station_state.dart';
+
 part 'add_station_bloc.freezed.dart';
 
 @injectable
@@ -30,8 +32,9 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
         imagesSelected: (e) async {
           final currentState = state;
           if (currentState is _LoadedState) {
-            final updatedImages = List<File>.from(currentState.images ?? [])..addAll(e.images);
-            emit(AddStationState.loaded(images: updatedImages)) ;
+            final updatedImages = List<File>.from(currentState.images ?? [])
+              ..addAll(e.images);
+            emit(AddStationState.loaded(images: updatedImages));
           } else {
             emit(AddStationState.loaded(images: e.images));
           }
@@ -42,7 +45,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
             final updatedImages = List<File>.from(loadedState.images ?? []);
             if (e.index >= 0 && e.index < updatedImages.length) {
               updatedImages.removeAt(e.index);
-               emit(AddStationState.loaded(images: updatedImages));
+              emit(AddStationState.loaded(images: updatedImages));
             }
           }
         },
