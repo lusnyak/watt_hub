@@ -17,16 +17,18 @@ class CarInfo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Car Info'),
-                    Text('Car name'),
-                    Text('Car model'),
-                  ],
-                ),
-              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Car Info',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ).paddingOnly(bottom: 10),
+                  const Text('Car name'),
+                  const Text('Car model'),
+                  const Text('Some text'),
+                ],
+              ).expanded(),
               SizedBox(
                 width: 50,
                 height: 50,

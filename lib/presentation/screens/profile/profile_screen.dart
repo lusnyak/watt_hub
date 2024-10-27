@@ -9,6 +9,7 @@ import 'package:watt_hub/presentation/screens/profile/sub_widget/car_info.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/conditional_expansion_tile.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_divider.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_item.dart';
+import 'package:watt_hub/presentation/screens/profile/sub_widget/station_info.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
@@ -99,8 +100,8 @@ class _ProfileViewState extends State<_ProfileView> {
             ),
             const ConditionalExpansionTile(
               title: "My Station",
-              children: [],
               iconLeading: Icons.charging_station_outlined,
+              children: [StationInfo()],
             ),
             const ProfileMenuDivider(),
             ProfileMenuItem(
