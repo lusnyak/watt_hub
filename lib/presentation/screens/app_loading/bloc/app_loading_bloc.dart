@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watt_hub/config/config.dart';
@@ -12,8 +14,19 @@ part 'app_loading_bloc.freezed.dart';
 
 @injectable
 class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
+  late final StreamSubscription<List<ConnectivityResult>>
+      connectivitySubscription;
+
   AppLoadingBloc() : super(const AppLoadingState.initial()) {
     on<GetUserEvent>(onGetUser);
+    connectivitySubscription =
+        Connectivity().onConnectivityChanged.listen((result) {
+      if (result != ConnectivityResult.none) {
+        // ignore: invalid_use_of_visible_for_testing_member
+        emit(const AppLoadingState.success(null));
+        add(const GetUserEvent());
+      }
+    });
   }
 
   Future<void> onGetUser(

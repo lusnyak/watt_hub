@@ -19,32 +19,38 @@ mixin _$AppLoadingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getUser,
+    required TResult Function() showConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getUser,
+    TResult? Function()? showConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getUser,
+    TResult Function()? showConnection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetUserEvent value) getUser,
+    required TResult Function(ShowConnectionEvent value) showConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetUserEvent value)? getUser,
+    TResult? Function(ShowConnectionEvent value)? showConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetUserEvent value)? getUser,
+    TResult Function(ShowConnectionEvent value)? showConnection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +119,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getUser,
+    required TResult Function() showConnection,
   }) {
     return getUser();
   }
@@ -121,6 +128,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getUser,
+    TResult? Function()? showConnection,
   }) {
     return getUser?.call();
   }
@@ -129,6 +137,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getUser,
+    TResult Function()? showConnection,
     required TResult orElse(),
   }) {
     if (getUser != null) {
@@ -141,6 +150,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetUserEvent value) getUser,
+    required TResult Function(ShowConnectionEvent value) showConnection,
   }) {
     return getUser(this);
   }
@@ -149,6 +159,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetUserEvent value)? getUser,
+    TResult? Function(ShowConnectionEvent value)? showConnection,
   }) {
     return getUser?.call(this);
   }
@@ -157,6 +168,7 @@ class _$GetUserEventImpl implements GetUserEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetUserEvent value)? getUser,
+    TResult Function(ShowConnectionEvent value)? showConnection,
     required TResult orElse(),
   }) {
     if (getUser != null) {
@@ -168,6 +180,112 @@ class _$GetUserEventImpl implements GetUserEvent {
 
 abstract class GetUserEvent implements AppLoadingEvent {
   const factory GetUserEvent() = _$GetUserEventImpl;
+}
+
+/// @nodoc
+abstract class _$$ShowConnectionEventImplCopyWith<$Res> {
+  factory _$$ShowConnectionEventImplCopyWith(_$ShowConnectionEventImpl value,
+          $Res Function(_$ShowConnectionEventImpl) then) =
+      __$$ShowConnectionEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ShowConnectionEventImplCopyWithImpl<$Res>
+    extends _$AppLoadingEventCopyWithImpl<$Res, _$ShowConnectionEventImpl>
+    implements _$$ShowConnectionEventImplCopyWith<$Res> {
+  __$$ShowConnectionEventImplCopyWithImpl(_$ShowConnectionEventImpl _value,
+      $Res Function(_$ShowConnectionEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppLoadingEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ShowConnectionEventImpl implements ShowConnectionEvent {
+  const _$ShowConnectionEventImpl();
+
+  @override
+  String toString() {
+    return 'AppLoadingEvent.showConnection()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ShowConnectionEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getUser,
+    required TResult Function() showConnection,
+  }) {
+    return showConnection();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getUser,
+    TResult? Function()? showConnection,
+  }) {
+    return showConnection?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getUser,
+    TResult Function()? showConnection,
+    required TResult orElse(),
+  }) {
+    if (showConnection != null) {
+      return showConnection();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetUserEvent value) getUser,
+    required TResult Function(ShowConnectionEvent value) showConnection,
+  }) {
+    return showConnection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetUserEvent value)? getUser,
+    TResult? Function(ShowConnectionEvent value)? showConnection,
+  }) {
+    return showConnection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetUserEvent value)? getUser,
+    TResult Function(ShowConnectionEvent value)? showConnection,
+    required TResult orElse(),
+  }) {
+    if (showConnection != null) {
+      return showConnection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowConnectionEvent implements AppLoadingEvent {
+  const factory ShowConnectionEvent() = _$ShowConnectionEventImpl;
 }
 
 /// @nodoc

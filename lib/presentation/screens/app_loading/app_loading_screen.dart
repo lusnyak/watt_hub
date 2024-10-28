@@ -42,6 +42,7 @@ class _AppLoadingView extends StatelessWidget {
                     duration: const Duration(seconds: 3),
                   ),
                 );
+                return;
               }
               bool? isOnBoard =
                   SharedPreferencesService.instance.onBoardingLaunch();
