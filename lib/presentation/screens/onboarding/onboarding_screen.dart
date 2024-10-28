@@ -56,8 +56,7 @@ class _OnboardingView extends StatelessWidget {
                       },
                     ).expanded(),
                     SmoothPageIndicator(
-                      controller:
-                          context.read<OnboardingBloc>().pageController,
+                      controller: context.read<OnboardingBloc>().pageController,
                       count: 3,
                       effect: ExpandingDotsEffect(
                         activeDotColor: WattHubColors.primaryGreenColor,
@@ -74,7 +73,7 @@ class _OnboardingView extends StatelessWidget {
                       children: [
                         WHElevatedButton.secondary(
                           onPressed: () {
-                            AutoRouter.of(context).push(const DashboardRoute());
+                            AutoRouter.of(context).push(const SignUpRoute());
                           },
                           title: 'Skip',
                         ).expanded(),

@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watt_hub/config/config.dart';
+import 'package:watt_hub/data/local/token_storage/token_storage.dart';
 import 'package:watt_hub/data/repository/user_repository.dart';
 import 'package:watt_hub/domain/models/user/user_model.dart';
 
@@ -17,9 +18,14 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
       GetUserEvent event, Emitter<AppLoadingState> emit) async {
     emit(const AppLoadingState.loading());
     try {
-      final UserModel? userData = await getIt<UserRepository>().getMe();
+      final tokenMdl = await getIt<TokenStorage>().readToken();
 
-      emit(AppLoadingState.success(userData));
+      if (tokenMdl != null && tokenMdl.token!.isNotEmpty) {
+        final UserModel? userData = await getIt<UserRepository>().getMe();
+        emit(AppLoadingState.success(userData));
+      } else {
+        emit(const AppLoadingState.error('Something Error'));
+      }
     } catch (e) {
       emit(AppLoadingState.error(e.toString()));
     }
