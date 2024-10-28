@@ -8,6 +8,7 @@ class ApiLoggingInterceptor extends Interceptor {
   @override
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
+
     options.headers[HeaderParameterKeys.accept] = HeaderValues.applicationJson;
     final tokenMdl = await getIt<TokenStorage>().readToken();
     if (tokenMdl != null && tokenMdl.token!.isNotEmpty) {
