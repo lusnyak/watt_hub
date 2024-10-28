@@ -33,6 +33,7 @@ class _AppLoadingView extends StatelessWidget {
             } else if (state is AppLoadingErrorState) {
               bool? isOnBoard =
                   SharedPreferencesService.instance.onBoardingLaunch();
+              debugPrint('$isOnBoard isOnBoard');
               if (isOnBoard) {
                 context.router.push(const SignUpRoute());
               } else {
