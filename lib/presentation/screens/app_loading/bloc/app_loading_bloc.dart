@@ -1,8 +1,10 @@
+import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/local/token_storage/token_storage.dart';
 import 'package:watt_hub/data/repository/user_repository.dart';
 import 'package:watt_hub/domain/models/user/user_model.dart';
+import 'package:watt_hub/utils/helpers/dio_errors.dart';
 
 part 'app_loading_event.dart';
 part 'app_loading_state.dart';
@@ -26,6 +28,10 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
       } else {
         emit(const AppLoadingState.error('Something Error'));
       }
+    } on DioException catch (e) {
+      final errorMessage = getDioExceptionErrorMessage(e);
+
+      emit(AppLoadingState.error(errorMessage));
     } catch (e) {
       emit(AppLoadingState.error(e.toString()));
     }
