@@ -33,10 +33,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: DashboardRoute.page, children: [
           AutoRoute(page: HomeRoute.page),
           AutoRoute(page: RequestStationRoute.page),
-          AutoRoute(path: 'profile', page: ProfileRoute.page, children: [
-            AutoRoute(page: ProfileDetailRoute.page, path: 'detail'),
-            AutoRoute(page: VehicleListRoute.page, path: 'vehicles'),
-          ]),
+          profileTap,
         ]),
         AutoRoute(page: SignUpRoute.page),
         AutoRoute(page: VerificationRoute.page),
@@ -50,3 +47,20 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: AddCarRoute.page),
       ];
 }
+
+@RoutePage(name: 'ProfileTap')
+class ProfileTapPage extends AutoRouter {
+  const ProfileTapPage({super.key});
+}
+
+final profileTap = AutoRoute(
+  page: ProfileTap.page,
+  children: [
+    AutoRoute(
+      page: ProfileRoute.page,
+      initial: true,
+    ),
+    AutoRoute(page: ProfileDetailRoute.page),
+    AutoRoute(page: VehicleListRoute.page),
+  ],
+);

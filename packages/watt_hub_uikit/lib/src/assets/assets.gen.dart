@@ -24,9 +24,25 @@ class $AssetsImagesGen {
   AssetGenImage get onboardingThirdImg =>
       const AssetGenImage('assets/images/onboarding_third_img.png');
 
+  /// File path: assets/images/popup_location_img.png
+  AssetGenImage get popupLocationImg => const AssetGenImage('assets/images/popup_location_img.png');
+
+  /// File path: assets/images/popup_successful_img.png
+  AssetGenImage get popupSuccessfulImg =>
+      const AssetGenImage('assets/images/popup_successful_img.png');
+
+  /// File path: assets/images/profile_image.png
+  AssetGenImage get profileImage => const AssetGenImage('assets/images/profile_image.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [onboardingFirstImg, onboardingSecondImg, onboardingThirdImg];
+  List<AssetGenImage> get values => [
+        onboardingFirstImg,
+        onboardingSecondImg,
+        onboardingThirdImg,
+        popupLocationImg,
+        popupSuccessfulImg,
+        profileImage
+      ];
 }
 
 class WattHubAssets {
@@ -71,8 +87,7 @@ class AssetGenImage {
     bool matchTextDirection = false,
     bool gaplessPlayback = true,
     bool isAntiAlias = false,
-    @Deprecated('Do not specify package for a generated library asset')
-    String? package = package,
+    @Deprecated('Do not specify package for a generated library asset') String? package = package,
     FilterQuality filterQuality = FilterQuality.low,
     int? cacheWidth,
     int? cacheHeight,
@@ -107,8 +122,7 @@ class AssetGenImage {
 
   ImageProvider provider({
     AssetBundle? bundle,
-    @Deprecated('Do not specify package for a generated library asset')
-    String? package = package,
+    @Deprecated('Do not specify package for a generated library asset') String? package = package,
   }) {
     return AssetImage(
       _assetName,
