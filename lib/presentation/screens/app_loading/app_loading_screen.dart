@@ -31,9 +31,20 @@ class _AppLoadingView extends StatelessWidget {
                 context.router.push(const HomeRoute());
               }
             } else if (state is AppLoadingErrorState) {
+              if (state.message != '') {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      state.message,
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                    backgroundColor: Colors.red,
+                    duration: const Duration(seconds: 3),
+                  ),
+                );
+              }
               bool? isOnBoard =
                   SharedPreferencesService.instance.onBoardingLaunch();
-              debugPrint('$isOnBoard isOnBoard');
               if (isOnBoard) {
                 context.router.replace(const SignUpRoute());
               } else {
