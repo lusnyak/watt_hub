@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
-import 'package:watt_hub/data/local/profile/profile_data.dart';
+import 'package:watt_hub/data/fake_data/profile_data/profile_data.dart';
 import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/car_info.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/conditional_expansion_tile.dart';
@@ -85,15 +85,12 @@ class _ProfileViewState extends State<_ProfileView> {
             ConditionalExpansionTile(
               title: context.localized.myCar,
               iconLeading: Icons.local_taxi_sharp,
-              onTap: () =>
-                  {AutoRouter.of(context).popAndPush(const VehicleListRoute())},
-              // iconTrailing: Icons.chevron_right_outlined,
-              children: [],
+              children: const [CarInfo()],
             ),
             ConditionalExpansionTile(
               title: context.localized.myStation,
               iconLeading: Icons.charging_station_outlined,
-              children: [StationInfo()],
+              children: const [StationInfo()],
             ),
             const ProfileMenuDivider(),
             ProfileMenuItem(

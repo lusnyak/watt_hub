@@ -24,7 +24,8 @@ class ProfileMenuItem extends StatelessWidget {
       shape: roundedBorderShape14,
       contentPadding: paddingH10,
       onTap: onTap,
-      title: Text(title, style: body16RegularTextStyle),
+      title:
+          Text(title, style: body16RegularTextStyle.copyWith(color: colorTile)),
       leading: ClipRRect(
         borderRadius: roundedBorder50, // Makes the image round
         child: Icon(
