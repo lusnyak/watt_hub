@@ -11,6 +11,8 @@
 import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
+import 'package:watt_hub/config/network/connectivity/connectivity_checker.dart'
+    as _i618;
 import 'package:watt_hub/config/network/dio_client/dio_client.dart' as _i138;
 import 'package:watt_hub/config/network/otp_service.dart' as _i60;
 import 'package:watt_hub/data/local/filter_storage/filter_storage.dart'
@@ -56,6 +58,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
     gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
     gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
+    gh.factory<_i618.ConnectivityChecker>(() => _i618.ConnectivityChecker());
     gh.lazySingleton<_i361.Dio>(() => dioClient.dio());
     gh.lazySingleton<_i441.AuthRepository>(() => _i441.AuthRepository());
     gh.lazySingleton<_i468.UserRepository>(() => _i468.UserRepository());

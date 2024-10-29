@@ -1,16 +1,16 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
+import 'package:watt_hub/config/network/connectivity/connectivity_checker.dart';
 import 'package:watt_hub/config/network/constants/constants.dart';
 import 'package:watt_hub/data/local/token_storage/token_storage.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 
 class ApiLoggingInterceptor extends Interceptor {
   @override
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    final connectivityResult = await Connectivity().checkConnectivity();
-    if (connectivityResult == ConnectivityResult.none) {
+    bool hasConnection = await getIt<ConnectivityChecker>().hasConnection();
+    if (hasConnection) {
       return handler.reject(
         DioException(
           requestOptions: options,
