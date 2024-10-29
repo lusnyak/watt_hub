@@ -13,11 +13,24 @@ import '../../../data/fake_data/connectors_data/connectors_data.dart';
 import '../../../domain/models/connector_type/connector_type_model.dart';
 
 @RoutePage()
-class StationInfoScreen extends StatelessWidget {
+class StationInfoScreen extends StatefulWidget {
   const StationInfoScreen({super.key});
 
   @override
+  State<StationInfoScreen> createState() => _StationInfoScreenState();
+}
+
+int activeIndex = 0;
+final List<String> imgList = [
+  'https://via.placeholder.com/600x400.png?text=Image+1',
+  'https://via.placeholder.com/600x400.png?text=Image+2',
+  'https://via.placeholder.com/600x400.png?text=Image+3',
+];
+
+class _StationInfoScreenState extends State<StationInfoScreen> {
+  @override
   Widget build(BuildContext context) {
+
 
     return BlocProvider(
       create: (_) => getIt<StationInfoBloc>()
@@ -39,6 +52,7 @@ class StationInfoView extends StatelessWidget {
       'https://via.placeholder.com/600x400.png?text=Image+2',
       'https://via.placeholder.com/600x400.png?text=Image+3',
     ];
+
 
 
 
@@ -158,10 +172,31 @@ class StationInfoView extends StatelessWidget {
                     title: "Select"),
               ],
             ),
+
           ),
         ),
       ),
 
     );
   }
+
+  Widget buildImage(String urlImage, int index) => Container(
+      margin: const EdgeInsets.symmetric(horizontal: 12),
+      color: Colors.grey,
+      child: Image.network(
+        urlImage,
+        fit: BoxFit.cover,
+      ));
+
+  Widget buildIndicator() => AnimatedSmoothIndicator(
+        activeIndex: activeIndex,
+        count: imgList.length,
+        effect: SlideEffect(
+          activeDotColor: WattHubColors.primaryGreenColor,
+          dotColor: WattHubColors.primaryLightGreenColor,
+          dotHeight: 12.r,
+          dotWidth: 12.r,
+          spacing: 8,
+        ),
+      );
 }
