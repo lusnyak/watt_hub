@@ -1,13 +1,16 @@
-import 'dart:io';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.dart';
+import 'package:watt_hub/presentation/screens/add_station/widgets/add_station_preview_images.dart';
 import 'package:watt_hub/presentation/screens/add_station/widgets/image_picker_upload_button.dart';
+import 'package:watt_hub/utils/extensions/extensions.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../config/locator/service_locator.dart';
+import '../../../utils/helpers/data_helper.dart';
+import '../../../utils/helpers/time_helper_format.dart';
 
 @RoutePage()
 class AddStationScreen extends StatelessWidget {
@@ -26,9 +29,54 @@ class AddStationScreen extends StatelessWidget {
 class AddStationView extends StatelessWidget {
   const AddStationView({super.key});
 
+  Widget _previewImages(BuildContext context) {
+    final state = context.watch<AddStationBlock>().state;
+    return state.maybeWhen(
+      loaded: (images) {
+        if (images != null && images.isNotEmpty) {
+          return Container(
+            height: 100,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: images.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Stack(
+                    children: [
+                      Image.file(
+                        File(images[index].path),
+                        fit: BoxFit.cover,
+                        height: 100,
+                        width: 85,
+                      ),
+                      Positioned(
+                        top: -20,
+                        right: -20,
+                        child: IconButton(
+                          icon: const Icon(Icons.dangerous_outlined,
+                              color: WattHubColors.primaryGreenColor),
+                          onPressed: () => context
+                              .read<AddStationBlock>()
+                              .add(AddStationEvent.removeImage(index)),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          );
+        }
+        return const Text('No images selected.');
+      },
+      orElse: () => const Text('No images selected.'),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+    TimeOfDay time = const TimeOfDay(hour: 18, minute: 00);
     return Scaffold(
       appBar: AppBar(
         title: Text("Add Station", style: body18SemiBoldTextStyle),
@@ -44,11 +92,14 @@ class AddStationView extends StatelessWidget {
           builder: (context, state) {
             return state.when(
               initial: () => Container(),
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (message) => Center(child: Text('Error: $message')),
-              loaded: (images) {
+              loading: () => const Center(child: WHCircularSpin()),
+              error: (message) =>
+                  Center(child: Text('${context.localized.error}: $message')),
+              loaded: (connectors, initialSelectedConnectorId, images,
+                  startTime, endTime, address) {
                 final currentImages = images ?? [];
-                debugPrint("$currentImages");
+                final initialSelectedConnector = findById(connectors,
+                    initialSelectedConnectorId, (connector) => connector.id);
                 return SingleChildScrollView(
                   child: ConstrainedBox(
                     constraints: BoxConstraints(
@@ -61,37 +112,44 @@ class AddStationView extends StatelessWidget {
                         ),
                         Text(AppLocalizations.of(context).timePicker,
                             style: body18SemiBoldTextStyle),
-                        // Row(
-                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //   children: [
-                        //     WHElevatedButton.secondary(title: AppLocalizations.of(context).startTime),
-                        //     WHElevatedButton.secondary(title: AppLocalizations.of(context).endTime),
-                        //   ],
-                        // ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            WHElevatedButton.secondary(
+                                title: AppLocalizations.of(context).startTime),
+                            WHElevatedButton.secondary(
+                                title: AppLocalizations.of(context).endTime),
+                          ],
+                        ),
                         WHTextField.singleLine(
-                          controller:  context.read<AddStationBlock>().hourlyRateController,
-
+                          controller: context
+                              .read<AddStationBlock>()
+                              .hourlyRateController,
                           keyboardType: TextInputType.number,
                           label: AppLocalizations.of(context).hourlyRate,
                           hintText: AppLocalizations.of(context).hourlyRate,
                         ),
                         WHTextField.singleLine(
-                          controller:  context.read<AddStationBlock>().kilowattController,
-
+                          controller: context
+                              .read<AddStationBlock>()
+                              .kilowattController,
                           keyboardType: TextInputType.number,
                           label: AppLocalizations.of(context).kilowatt,
                           hintText: AppLocalizations.of(context).kilowatt,
                         ),
-                        Text("Contact info", style: body18SemiBoldTextStyle),
+                        Text(AppLocalizations.of(context).contactInfo,
+                            style: body18SemiBoldTextStyle),
                         WHTextField.singleLine(
-                          controller:  context.read<AddStationBlock>().phoneController,
+                          controller:
+                              context.read<AddStationBlock>().phoneController,
                           keyboardType: TextInputType.phone,
-                          label: "Phone",
-                          hintText: "Enter your phone number",
+                          label: AppLocalizations.of(context).phone,
+                          hintText:
+                              AppLocalizations.of(context).yourPhoneNumber,
                         ),
                         WHTextField.singleLine(
-                          controller:  context.read<AddStationBlock>().nameController,
-
+                          controller:
+                              context.read<AddStationBlock>().nameController,
                           keyboardType: TextInputType.name,
                           label: AppLocalizations.of(context).name,
                           hintText: AppLocalizations.of(context).yourName,
@@ -109,13 +167,16 @@ class AddStationView extends StatelessWidget {
                                       limit: 5 - currentImages.length,
                                       onPicked: (file) {
                                         context.read<AddStationBlock>().add(
-                                            AddStationEvent.imagesSelected(file));
+                                            AddStationEvent.imagesSelected(
+                                                file));
                                       },
                                       child: const ImagePickerUploadButton(),
                                     ),
                                   Expanded(child: _previewImages(context)),
                                 ]))),
-                        WHElevatedButton.primary(title: AppLocalizations.of(context).addStation,),
+                        WHElevatedButton.primary(
+                          title: AppLocalizations.of(context).addStation,
+                        ),
                       ],
                     ),
                   ),

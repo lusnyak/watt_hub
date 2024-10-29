@@ -129,4 +129,13 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get addStation => 'Ավելացնել կայանը';
+
+  @override
+  String get error => 'սխալ';
+
+  @override
+  String get start => 'սկիզբ';
+
+  @override
+  String get end => 'վերջ';
 }
