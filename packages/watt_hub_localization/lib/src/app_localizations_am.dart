@@ -129,4 +129,16 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get carInfo => 'Մեքենայի տվյալներ';
+
+  @override
+  String get name => 'Անուն';
+
+  @override
+  String get street => 'Փողոց';
+
+  @override
+  String get max => 'Մաքս';
+
+  @override
+  String get hourlyRateFull => 'Ժամավճար';
 }

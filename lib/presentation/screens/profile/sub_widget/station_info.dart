@@ -3,7 +3,8 @@ import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class StationInfo extends StatelessWidget {
-  const StationInfo({super.key});
+  final Map<String, dynamic> stationData;
+  const StationInfo({super.key, required this.stationData});
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +21,11 @@ class StationInfo extends StatelessWidget {
             context.localized.stationInfo,
             style: body16SemiBoldTextStyle,
           ).paddingOnly(bottom: 10.sp),
-          const Text('Street: Aram Khachatryan street'),
-          const Text('Max: 3.7kWt'),
-          const Text('Hourly rate: 10\$'),
-          const Text('Available hours: 16:00 - 18:00'),
+          Text('${context.localized.name}: ${stationData['name']}'),
+          Text('${context.localized.street}: ${stationData['address']}'),
+          Text('${context.localized.max}: ${stationData['kwt']}kWt'),
+          Text(
+              '${context.localized.hourlyRateFull}: ${stationData['hourlyRate']}\$'),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.end,

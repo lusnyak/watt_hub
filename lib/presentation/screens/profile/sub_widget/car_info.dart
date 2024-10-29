@@ -3,7 +3,8 @@ import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class CarInfo extends StatelessWidget {
-  const CarInfo({super.key});
+  final Map<String, dynamic> carData;
+  const CarInfo({super.key, required this.carData});
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +26,18 @@ class CarInfo extends StatelessWidget {
                     context.localized.carInfo,
                     style: body16SemiBoldTextStyle,
                   ).paddingOnly(bottom: 10.sp),
-                  const Text('Car name'),
-                  const Text('Car model'),
-                  const Text('Some text'),
+                  Text(carData['car_model']['title']),
+                  Text(carData['car_type']['title']),
+                  Text(carData['connector_type']['title']),
                 ],
               ).expanded(),
               SizedBox(
                 width: 50.w,
                 height: 50.h,
-                child: WattHubAssets.images.profileImage.image(),
+                child: Image.network(
+                  carData['images'][0],
+                ),
+                // child: WattHubAssets.images.profileImage.image(),
               )
             ],
           ),
