@@ -1,3 +1,7 @@
+
+
+
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
@@ -5,12 +9,16 @@ import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart'
 import 'package:watt_hub/presentation/screens/station_info/bloc/station_info_bloc.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
+import '../../../data/fake_data/connectors_data/connectors_data.dart';
+import '../../../domain/models/connector_type/connector_type_model.dart';
+
 @RoutePage()
 class StationInfoScreen extends StatelessWidget {
   const StationInfoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     return BlocProvider(
       create: (_) => getIt<StationInfoBloc>()
         ..add(const StationInfoEvent.loadConnectors()),
@@ -26,14 +34,18 @@ class StationInfoView extends StatelessWidget {
   Widget build(BuildContext context) {
     final stationInfoBloc = context.read<StationInfoBloc>();
     final imgList = [
+
       'https://via.placeholder.com/600x400.png?text=Image+1',
       'https://via.placeholder.com/600x400.png?text=Image+2',
       'https://via.placeholder.com/600x400.png?text=Image+3',
     ];
 
+
+
     return Scaffold(
       appBar: AppBar(),
       body: SafeArea(
+
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: SingleChildScrollView(
@@ -149,6 +161,7 @@ class StationInfoView extends StatelessWidget {
           ),
         ),
       ),
+
     );
   }
 }
