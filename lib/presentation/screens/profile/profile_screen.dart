@@ -10,6 +10,7 @@ import 'package:watt_hub/presentation/screens/profile/sub_widget/conditional_exp
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_divider.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_item.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/station_info.dart';
+import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
@@ -41,10 +42,10 @@ class _ProfileViewState extends State<_ProfileView> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              "Account",
+            Text(
+              context.localized.account,
               textAlign: TextAlign.start,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 22.0,
                   color: WattHubColors.darkMoodColor,
                   fontWeight: FontWeight.bold),
@@ -76,11 +77,11 @@ class _ProfileViewState extends State<_ProfileView> {
               leading: ClipRRect(
                 borderRadius:
                     BorderRadius.circular(100), // Makes the image round
-                child: Image.network(
+                child: Image.asset(
                   profileData.imageUrl,
-                  width: 80, // Sets the width of the image
-                  height:
-                      80, // Sets the height of the image (optional, to make it square)
+                  width: 60.w, // Sets the width of the image
+                  height: 60
+                      .h, // Sets the height of the image (optional, to make it square)
                   fit: BoxFit.cover, // Ensures the image fills the container
                 ),
               ),
@@ -91,39 +92,39 @@ class _ProfileViewState extends State<_ProfileView> {
             ),
             const ProfileMenuDivider(),
             ConditionalExpansionTile(
-              title: 'My Car',
+              title: context.localized.myCar,
               iconLeading: Icons.local_taxi_sharp,
               onTap: () =>
                   {AutoRouter.of(context).popAndPush(const VehicleListRoute())},
               // iconTrailing: Icons.chevron_right_outlined,
               children: [],
             ),
-            const ConditionalExpansionTile(
-              title: "My Station",
+            ConditionalExpansionTile(
+              title: context.localized.myStation,
               iconLeading: Icons.charging_station_outlined,
               children: [StationInfo()],
             ),
             const ProfileMenuDivider(),
             ProfileMenuItem(
-              title: 'Help Center',
+              title: context.localized.helpCenter,
               iconLeading: Icons.sticky_note_2_outlined,
               onTap: () => {},
               iconTrailing: Icons.chevron_right_outlined,
             ),
             ProfileMenuItem(
-              title: 'Privacy Policy',
+              title: context.localized.privacyPolicy,
               iconLeading: Icons.lock_outline_sharp,
               onTap: () => {},
               iconTrailing: Icons.chevron_right_outlined,
             ),
             ProfileMenuItem(
-              title: 'About WattHub',
+              title: context.localized.about,
               iconLeading: Icons.info_outlined,
               onTap: () => {},
               iconTrailing: Icons.chevron_right_outlined,
             ),
             ProfileMenuItem(
-              title: 'Logout',
+              title: context.localized.logout,
               iconLeading: Icons.logout_rounded,
               onTap: () => {},
               colorTile: WattHubColors.redColor,

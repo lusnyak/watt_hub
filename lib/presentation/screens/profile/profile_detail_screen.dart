@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
@@ -10,7 +11,7 @@ class ProfileDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Personal Info'),
+        title: Text(context.localized.personalInfo),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -34,12 +35,14 @@ class ProfileDetailScreen extends StatelessWidget {
                 fit: BoxFit.cover, // Ensures the image fills the container
               ),
             ).alignAtCenter().paddingSymmetric(vertical: 10),
-            WHTextField.singleLine(label: "Full Name", hintText: "John Joe")
+            WHTextField.singleLine(
+                    label: context.localized.fullName,
+                    hintText: context.localized.fullName)
                 .paddingOnly(
               bottom: 10,
             ),
             WHTextField.singleLine(
-                    label: "Phone Number", hintText: "+374 93123456")
+                    label: context.localized.phone, hintText: "+374 93123456")
                 .paddingOnly(bottom: 10),
           ]).paddingSymmetric(horizontal: 24, vertical: 20),
     );

@@ -27,5 +27,16 @@
     "filter": "Filter",
     "rating": "Rating",
     "chooseCar": "Choos Car Type",
-    "chooseConnector": "Choose Connector"
+    "chooseConnector": "Choose Connector",
+  "account":"Account",
+  "myCar": "My Car",
+  "myStation": "My Station",
+  "helpCenter":"Help Center",
+  "about": "About",
+  "logout": "Logout",
+  "fullName": "Full Name",
+  "phone": "Phone Number",
+  "personalInfo": "Personal Info",
+  "stationInfo": "Station Info",
+  "carInfo": "Car Info"
 }

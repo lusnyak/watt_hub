@@ -27,6 +27,17 @@
    "filter": "Filter",
    "rating": "Rating",
    "chooseCar": "Choos Car Type",
-   "chooseConnector": "Choose Connector"
+   "chooseConnector": "Choose Connector",
+  "account": "Հաշիվ",
+  "myCar": "Իմ մեքենան",
+  "myStation": "Իմ կայանը",
+  "helpCenter": "Օգնություն",
+  "about": "WattHub-ի մասին",
+  "logout": "Դուրս գալ",
+  "fullName": "Անուն Ազգանուն",
+  "phone": "Հեռախոսահամար",
+  "personalInfo": "Անձնական տվյալներ",
+  "stationInfo": "Կայանի տվյալներ",
+  "carInfo": "Մեքենայի տվյալներ"
 }
 
