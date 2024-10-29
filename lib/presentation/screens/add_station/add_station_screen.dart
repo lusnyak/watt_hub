@@ -1,13 +1,16 @@
-import 'dart:io';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.dart';
+import 'package:watt_hub/presentation/screens/add_station/widgets/add_station_preview_images.dart';
 import 'package:watt_hub/presentation/screens/add_station/widgets/image_picker_upload_button.dart';
+import 'package:watt_hub/utils/extensions/extensions.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../config/locator/service_locator.dart';
+import '../../../utils/helpers/data_helper.dart';
+import '../../../utils/helpers/time_helper_format.dart';
 
 @RoutePage()
 class AddStationScreen extends StatelessWidget {
@@ -89,11 +92,14 @@ class AddStationView extends StatelessWidget {
           builder: (context, state) {
             return state.when(
               initial: () => Container(),
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (message) => Center(child: Text('Error: $message')),
-              loaded: (images) {
+              loading: () => const Center(child: WHCircularSpin()),
+              error: (message) =>
+                  Center(child: Text('${context.localized.error}: $message')),
+              loaded: (connectors, initialSelectedConnectorId, images,
+                  startTime, endTime, address) {
                 final currentImages = images ?? [];
-                debugPrint("$currentImages");
+                final initialSelectedConnector = findById(connectors,
+                    initialSelectedConnectorId, (connector) => connector.id);
                 return SingleChildScrollView(
                   child: ConstrainedBox(
                     constraints: BoxConstraints(
@@ -148,25 +154,24 @@ class AddStationView extends StatelessWidget {
                         SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Container(
+
                                 width: MediaQuery.of(context).size.width * 0.9,
-                                height: 120.0,
-                                child: Row(children: [
-                                  if (currentImages.length < 5)
-                                    WHImagePicker.multiple(
-                                      limit: 5 - currentImages.length,
-                                      onPicked: (file) {
-                                        context.read<AddStationBlock>().add(
-                                            AddStationEvent.imagesSelected(
-                                                file));
-                                      },
-                                      child: const ImagePickerUploadButton(),
-                                    ),
-                                  Expanded(child: _previewImages(context)),
-                                ]))),
-                        WHElevatedButton.primary(
-                          title: AppLocalizations.of(context).addStation,
-                        ),
-                      ],
+                                height: 120.h,
+                                child: const Row(
+                                  children: [
+                                    Expanded(child: AddStationPreviewImages()),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          SizedBox(
+                            height: 20.h,
+                          ),
+                          WHElevatedButton.primary(
+                            title: AppLocalizations.of(context).addStation,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );

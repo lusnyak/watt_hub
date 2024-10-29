@@ -37,9 +37,6 @@ dependencies:
   connectivity_plus: ^6.1.0
   geocoding: ^3.0.0
 
-
-
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

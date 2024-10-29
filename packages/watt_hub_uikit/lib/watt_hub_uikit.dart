@@ -11,6 +11,7 @@ export 'package:smooth_page_indicator/smooth_page_indicator.dart';
 export 'package:permission_handler/permission_handler.dart';
 export 'package:geocoding/geocoding.dart';
 
+
 /// internal
 export 'src/widgets/widgets.dart';
 export 'src/assets/assets.dart';

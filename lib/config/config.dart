@@ -5,4 +5,3 @@ export 'locator/service_locator.dart';
 export 'package:watt_hub/config/routes/app_router.dart';
 export 'package:retrofit/retrofit.dart';
 export 'network/connectivity/connectivity_checker.dart';
-

@@ -17,4 +17,3 @@ class AddStationState with _$AddStationState {
         String? address,
   }) = _LoadedState;
 }
-
