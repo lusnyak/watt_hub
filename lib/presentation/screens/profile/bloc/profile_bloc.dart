@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:watt_hub/data/local/profile/profile_data.dart';
+import 'package:watt_hub/data/fake_data/profile_data/profile_data.dart';
 import 'package:watt_hub/domain/models/profile/profile_model.dart';
 
 part 'profile_event.dart';

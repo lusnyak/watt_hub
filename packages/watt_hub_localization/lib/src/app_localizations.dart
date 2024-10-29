@@ -206,7 +206,7 @@ abstract class AppLocalizations {
   /// **'Requests'**
   String get requests;
 
-  /// No description provided for @profile.
+  /// No description provided for @profile_data.
   ///
   /// In en, this message translates to:
   /// **'Profile'**
