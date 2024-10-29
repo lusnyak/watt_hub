@@ -397,6 +397,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add station'**
   String get addStation;
+
+  /// No description provided for @error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get error;
+
+  /// No description provided for @start.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get start;
+
+  /// No description provided for @end.
+  ///
+  /// In en, this message translates to:
+  /// **'End'**
+  String get end;
 }
 
 class _AppLocalizationsDelegate

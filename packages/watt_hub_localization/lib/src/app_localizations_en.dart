@@ -158,4 +158,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addStation => 'Add station';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get start => 'Start';
+
+  @override
+  String get end => 'End';
 }

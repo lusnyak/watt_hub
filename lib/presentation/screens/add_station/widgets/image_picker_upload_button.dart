@@ -15,5 +15,6 @@ class ImagePickerUploadButton extends StatelessWidget {
       width: 85.0,
       child: const Icon(Icons.add),
     );
+
   }
 }
