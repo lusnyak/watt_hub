@@ -8,9 +8,9 @@ class StationInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      padding: paddingV20H10,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: roundedBorder14,
           border: Border.all(color: WattHubColors.primaryLightGreenColor)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -18,8 +18,8 @@ class StationInfo extends StatelessWidget {
         children: [
           Text(
             context.localized.stationInfo,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-          ).paddingOnly(bottom: 10),
+            style: body16SemiBoldTextStyle,
+          ).paddingOnly(bottom: 10.sp),
           const Text('Street: Aram Khachatryan street'),
           const Text('Max: 3.7kWt'),
           const Text('Hourly rate: 10\$'),
