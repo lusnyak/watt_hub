@@ -175,21 +175,27 @@ mixin _$ProfileState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ProfileModel profileData) loaded,
+    required TResult Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)
+        loaded,
     required TResult Function() complete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(ProfileModel profileData)? loaded,
+    TResult? Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)?
+        loaded,
     TResult? Function()? complete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ProfileModel profileData)? loaded,
+    TResult Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)?
+        loaded,
     TResult Function()? complete,
     required TResult orElse(),
   }) =>
@@ -282,7 +288,9 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ProfileModel profileData) loaded,
+    required TResult Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)
+        loaded,
     required TResult Function() complete,
   }) {
     return initial();
@@ -292,7 +300,9 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(ProfileModel profileData)? loaded,
+    TResult? Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)?
+        loaded,
     TResult? Function()? complete,
   }) {
     return initial?.call();
@@ -302,7 +312,9 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ProfileModel profileData)? loaded,
+    TResult Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)?
+        loaded,
     TResult Function()? complete,
     required TResult orElse(),
   }) {
@@ -357,9 +369,10 @@ abstract class _$$ProfileLoadedStateImplCopyWith<$Res> {
           $Res Function(_$ProfileLoadedStateImpl) then) =
       __$$ProfileLoadedStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ProfileModel profileData});
-
-  $ProfileModelCopyWith<$Res> get profileData;
+  $Res call(
+      {Map<String, dynamic> profileData,
+      Map<String, dynamic> stationData,
+      Map<String, dynamic> carData});
 }
 
 /// @nodoc
@@ -376,37 +389,64 @@ class __$$ProfileLoadedStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? profileData = null,
+    Object? stationData = null,
+    Object? carData = null,
   }) {
     return _then(_$ProfileLoadedStateImpl(
       null == profileData
-          ? _value.profileData
+          ? _value._profileData
           : profileData // ignore: cast_nullable_to_non_nullable
-              as ProfileModel,
+              as Map<String, dynamic>,
+      null == stationData
+          ? _value._stationData
+          : stationData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      null == carData
+          ? _value._carData
+          : carData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ));
-  }
-
-  /// Create a copy of ProfileState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ProfileModelCopyWith<$Res> get profileData {
-    return $ProfileModelCopyWith<$Res>(_value.profileData, (value) {
-      return _then(_value.copyWith(profileData: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
-  const _$ProfileLoadedStateImpl(this.profileData);
+  const _$ProfileLoadedStateImpl(
+      final Map<String, dynamic> profileData,
+      final Map<String, dynamic> stationData,
+      final Map<String, dynamic> carData)
+      : _profileData = profileData,
+        _stationData = stationData,
+        _carData = carData;
 
+  final Map<String, dynamic> _profileData;
   @override
-  final ProfileModel profileData;
+  Map<String, dynamic> get profileData {
+    if (_profileData is EqualUnmodifiableMapView) return _profileData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_profileData);
+  }
+
+  final Map<String, dynamic> _stationData;
+  @override
+  Map<String, dynamic> get stationData {
+    if (_stationData is EqualUnmodifiableMapView) return _stationData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_stationData);
+  }
+
+  final Map<String, dynamic> _carData;
+  @override
+  Map<String, dynamic> get carData {
+    if (_carData is EqualUnmodifiableMapView) return _carData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_carData);
+  }
 
   @override
   String toString() {
-    return 'ProfileState.loaded(profileData: $profileData)';
+    return 'ProfileState.loaded(profileData: $profileData, stationData: $stationData, carData: $carData)';
   }
 
   @override
@@ -414,12 +454,19 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ProfileLoadedStateImpl &&
-            (identical(other.profileData, profileData) ||
-                other.profileData == profileData));
+            const DeepCollectionEquality()
+                .equals(other._profileData, _profileData) &&
+            const DeepCollectionEquality()
+                .equals(other._stationData, _stationData) &&
+            const DeepCollectionEquality().equals(other._carData, _carData));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, profileData);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_profileData),
+      const DeepCollectionEquality().hash(_stationData),
+      const DeepCollectionEquality().hash(_carData));
 
   /// Create a copy of ProfileState
   /// with the given fields replaced by the non-null parameter values.
@@ -434,32 +481,38 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ProfileModel profileData) loaded,
+    required TResult Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)
+        loaded,
     required TResult Function() complete,
   }) {
-    return loaded(profileData);
+    return loaded(profileData, stationData, carData);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(ProfileModel profileData)? loaded,
+    TResult? Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)?
+        loaded,
     TResult? Function()? complete,
   }) {
-    return loaded?.call(profileData);
+    return loaded?.call(profileData, stationData, carData);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ProfileModel profileData)? loaded,
+    TResult Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)?
+        loaded,
     TResult Function()? complete,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(profileData);
+      return loaded(profileData, stationData, carData);
     }
     return orElse();
   }
@@ -500,10 +553,14 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
 }
 
 abstract class _ProfileLoadedState implements ProfileState {
-  const factory _ProfileLoadedState(final ProfileModel profileData) =
-      _$ProfileLoadedStateImpl;
+  const factory _ProfileLoadedState(
+      final Map<String, dynamic> profileData,
+      final Map<String, dynamic> stationData,
+      final Map<String, dynamic> carData) = _$ProfileLoadedStateImpl;
 
-  ProfileModel get profileData;
+  Map<String, dynamic> get profileData;
+  Map<String, dynamic> get stationData;
+  Map<String, dynamic> get carData;
 
   /// Create a copy of ProfileState
   /// with the given fields replaced by the non-null parameter values.
@@ -555,7 +612,9 @@ class _$ProfileCompleteStateImpl implements _ProfileCompleteState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ProfileModel profileData) loaded,
+    required TResult Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)
+        loaded,
     required TResult Function() complete,
   }) {
     return complete();
@@ -565,7 +624,9 @@ class _$ProfileCompleteStateImpl implements _ProfileCompleteState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(ProfileModel profileData)? loaded,
+    TResult? Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)?
+        loaded,
     TResult? Function()? complete,
   }) {
     return complete?.call();
@@ -575,7 +636,9 @@ class _$ProfileCompleteStateImpl implements _ProfileCompleteState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ProfileModel profileData)? loaded,
+    TResult Function(Map<String, dynamic> profileData,
+            Map<String, dynamic> stationData, Map<String, dynamic> carData)?
+        loaded,
     TResult Function()? complete,
     required TResult orElse(),
   }) {

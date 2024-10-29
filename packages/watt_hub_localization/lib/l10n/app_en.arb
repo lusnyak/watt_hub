@@ -38,5 +38,9 @@
   "phone": "Phone Number",
   "personalInfo": "Personal Info",
   "stationInfo": "Station Info",
-  "carInfo": "Car Info"
+  "carInfo": "Car Info",
+  "name": "Name",
+  "street": "Street",
+  "max": "Max",
+  "hourlyRateFull": "Hourly Rate"
 }

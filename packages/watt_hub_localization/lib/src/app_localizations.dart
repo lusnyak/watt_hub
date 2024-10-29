@@ -206,7 +206,7 @@ abstract class AppLocalizations {
   /// **'Requests'**
   String get requests;
 
-  /// No description provided for @profile_data.
+  /// No description provided for @profile.
   ///
   /// In en, this message translates to:
   /// **'Profile'**
@@ -337,6 +337,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Car Info'**
   String get carInfo;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @street.
+  ///
+  /// In en, this message translates to:
+  /// **'Street'**
+  String get street;
+
+  /// No description provided for @max.
+  ///
+  /// In en, this message translates to:
+  /// **'Max'**
+  String get max;
+
+  /// No description provided for @hourlyRateFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Hourly Rate'**
+  String get hourlyRateFull;
 }
 
 class _AppLocalizationsDelegate

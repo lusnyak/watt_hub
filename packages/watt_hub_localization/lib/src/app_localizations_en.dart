@@ -128,4 +128,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get carInfo => 'Car Info';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get street => 'Street';
+
+  @override
+  String get max => 'Max';
+
+  @override
+  String get hourlyRateFull => 'Hourly Rate';
 }
