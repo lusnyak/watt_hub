@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class CarInfo extends StatelessWidget {
@@ -20,8 +21,8 @@ class CarInfo extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Car Info',
+                  Text(
+                    context.localized.carInfo,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ).paddingOnly(bottom: 10),
                   const Text('Car name'),

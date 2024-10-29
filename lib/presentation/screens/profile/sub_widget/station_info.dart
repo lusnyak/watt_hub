@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class StationInfo extends StatelessWidget {
@@ -15,8 +16,8 @@ class StationInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const Text(
-            'Station Info',
+          Text(
+            context.localized.stationInfo,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ).paddingOnly(bottom: 10),
           const Text('Street: Aram Khachatryan street'),

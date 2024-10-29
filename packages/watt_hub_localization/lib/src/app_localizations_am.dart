@@ -96,4 +96,37 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get chooseConnector => 'Choose Connector';
+
+  @override
+  String get account => 'Հաշիվ';
+
+  @override
+  String get myCar => 'Իմ մեքենան';
+
+  @override
+  String get myStation => 'Իմ կայանը';
+
+  @override
+  String get helpCenter => 'Օգնություն';
+
+  @override
+  String get about => 'WattHub-ի մասին';
+
+  @override
+  String get logout => 'Դուրս գալ';
+
+  @override
+  String get fullName => 'Անուն Ազգանուն';
+
+  @override
+  String get phone => 'Հեռախոսահամար';
+
+  @override
+  String get personalInfo => 'Անձնական տվյալներ';
+
+  @override
+  String get stationInfo => 'Կայանի տվյալներ';
+
+  @override
+  String get carInfo => 'Մեքենայի տվյալներ';
 }

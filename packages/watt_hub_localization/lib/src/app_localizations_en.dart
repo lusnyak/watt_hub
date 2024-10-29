@@ -95,4 +95,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get chooseConnector => 'Choose Connector';
+
+  @override
+  String get account => 'Account';
+
+  @override
+  String get myCar => 'My Car';
+
+  @override
+  String get myStation => 'My Station';
+
+  @override
+  String get helpCenter => 'Help Center';
+
+  @override
+  String get about => 'About';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get fullName => 'Full Name';
+
+  @override
+  String get phone => 'Phone Number';
+
+  @override
+  String get personalInfo => 'Personal Info';
+
+  @override
+  String get stationInfo => 'Station Info';
+
+  @override
+  String get carInfo => 'Car Info';
 }
