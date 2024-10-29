@@ -21,15 +21,12 @@ class ProfileMenuItem extends StatelessWidget {
       textColor: colorTile,
       iconColor: colorTile,
       splashColor: WattHubColors.primaryLightGreenColor,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-      contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+      shape: roundedBorderShape14,
+      contentPadding: paddingH10,
       onTap: onTap,
-      title: Text(title,
-          style: const TextStyle(
-            fontSize: 18,
-          )),
+      title: Text(title, style: body16RegularTextStyle),
       leading: ClipRRect(
-        borderRadius: BorderRadius.circular(100), // Makes the image round
+        borderRadius: roundedBorder50, // Makes the image round
         child: Icon(
           iconLeading,
           size: 40,

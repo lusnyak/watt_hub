@@ -24,12 +24,13 @@ class ConditionalExpansionTile extends StatelessWidget {
 
     return hasChildren
         ? ExpansionTile(
-            collapsedShape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-            tilePadding: const EdgeInsets.symmetric(horizontal: 10),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-            title: Text(title),
+            collapsedShape: roundedBorderShape14,
+            tilePadding: paddingH10,
+            shape: roundedBorderShape14,
+            title: Text(
+              title,
+              style: body16RegularTextStyle,
+            ),
             leading: Icon(
               iconLeading,
               size: 40,
@@ -42,10 +43,12 @@ class ConditionalExpansionTile extends StatelessWidget {
           )
         : ListTile(
             splashColor: WattHubColors.primaryLightGreenColor,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 10),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-            title: Text(title),
+            contentPadding: paddingH10,
+            shape: roundedBorderShape14,
+            title: Text(
+              title,
+              style: body16RegularTextStyle,
+            ),
             trailing: Icon(
               iconTrailing,
               size: 30,

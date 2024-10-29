@@ -8,9 +8,9 @@ class CarInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      padding: paddingV20H10,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: roundedBorder14,
           border: Border.all(color: WattHubColors.primaryLightGreenColor)),
       child: Column(
         children: [
@@ -23,16 +23,16 @@ class CarInfo extends StatelessWidget {
                 children: [
                   Text(
                     context.localized.carInfo,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                  ).paddingOnly(bottom: 10),
+                    style: body16SemiBoldTextStyle,
+                  ).paddingOnly(bottom: 10.sp),
                   const Text('Car name'),
                   const Text('Car model'),
                   const Text('Some text'),
                 ],
               ).expanded(),
               SizedBox(
-                width: 50,
-                height: 50,
+                width: 50.w,
+                height: 50.h,
                 child: WattHubAssets.images.profileImage.image(),
               )
             ],

@@ -45,38 +45,29 @@ class _ProfileViewState extends State<_ProfileView> {
             Text(
               context.localized.account,
               textAlign: TextAlign.start,
-              style: const TextStyle(
-                  fontSize: 22.0,
-                  color: WattHubColors.darkMoodColor,
-                  fontWeight: FontWeight.bold),
-            ).paddingLTRB(20, 80, 20, 20),
+              style: body24SemiBoldTextStyle,
+            ).paddingLTRB(20.sp, 80.sp, 20.sp, 20.sp),
             ListTile(
               splashColor: WattHubColors.primaryLightGreenColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14)),
-              contentPadding: const EdgeInsets.symmetric(vertical: 20),
+              contentPadding: paddingV20,
               onTap: () {
                 AutoRouter.of(context).push(const ProfileDetailRoute());
               },
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(profileData.fullName,
-                      style: const TextStyle(
-                        fontSize: 20,
-                      )),
-                  12.heightBox,
-                  Text(profileData.phone,
-                      style: const TextStyle(
-                          fontSize: 12, color: WattHubColors.darkMoodColor)),
+                  Text(profileData.fullName, style: body16SemiBoldTextStyle),
+                  12.h.heightBox,
+                  Text(profileData.phone, style: body14RegularTextStyle),
                 ],
               ),
               horizontalTitleGap: 20,
               dense: true,
               visualDensity: const VisualDensity(vertical: 4, horizontal: 4),
               leading: ClipRRect(
-                borderRadius:
-                    BorderRadius.circular(100), // Makes the image round
+                borderRadius: roundedBorder50, // Makes the image round
                 child: Image.asset(
                   profileData.imageUrl,
                   width: 60.w, // Sets the width of the image
@@ -85,9 +76,9 @@ class _ProfileViewState extends State<_ProfileView> {
                   fit: BoxFit.cover, // Ensures the image fills the container
                 ),
               ),
-              trailing: const Icon(
+              trailing: Icon(
                 Icons.chevron_right_outlined,
-                size: 40,
+                size: 40.sp,
               ),
             ),
             const ProfileMenuDivider(),
@@ -127,7 +118,7 @@ class _ProfileViewState extends State<_ProfileView> {
               colorTile: WattHubColors.redColor,
             ),
           ],
-        ).paddingAll(24.0),
+        ).paddingAll(24.0.sp),
       ),
     );
   }

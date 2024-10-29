@@ -19,7 +19,8 @@ class ProfileDetailScreen extends StatelessWidget {
           },
         ),
         actions: [
-          const Icon(Icons.mode_edit_outlined).paddingSymmetric(horizontal: 20)
+          const Icon(Icons.mode_edit_outlined)
+              .paddingSymmetric(horizontal: 20.w)
         ],
       ),
       body: Column(
@@ -27,11 +28,11 @@ class ProfileDetailScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(100), // Makes the image round
+              borderRadius: roundedBorder50, // Makes the image round
               child: Image.asset(
                 WattHubAssets.images.profileImage.keyName,
-                width: 200,
-                height: 200,
+                width: 200.w,
+                height: 200.h,
                 fit: BoxFit.cover, // Ensures the image fills the container
               ),
             ).alignAtCenter().paddingSymmetric(vertical: 10),
