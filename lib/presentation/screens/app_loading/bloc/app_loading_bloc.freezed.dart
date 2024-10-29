@@ -98,12 +98,18 @@ class __$$GetUserEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetUserEventImpl implements GetUserEvent {
+class _$GetUserEventImpl with DiagnosticableTreeMixin implements GetUserEvent {
   const _$GetUserEventImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppLoadingEvent.getUser()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AppLoadingEvent.getUser'));
   }
 
   @override
@@ -203,12 +209,21 @@ class __$$ShowConnectionEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ShowConnectionEventImpl implements ShowConnectionEvent {
+class _$ShowConnectionEventImpl
+    with DiagnosticableTreeMixin
+    implements ShowConnectionEvent {
   const _$ShowConnectionEventImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppLoadingEvent.showConnection()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'AppLoadingEvent.showConnection'));
   }
 
   @override
@@ -296,6 +311,9 @@ mixin _$AppLoadingState {
     required TResult Function() loading,
     required TResult Function(UserModel? userData) success,
     required TResult Function(String message) error,
+    required TResult Function() loadToOnboarding,
+    required TResult Function() loadToHome,
+    required TResult Function(String message) connectionError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -304,6 +322,9 @@ mixin _$AppLoadingState {
     TResult? Function()? loading,
     TResult? Function(UserModel? userData)? success,
     TResult? Function(String message)? error,
+    TResult? Function()? loadToOnboarding,
+    TResult? Function()? loadToHome,
+    TResult? Function(String message)? connectionError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -312,6 +333,9 @@ mixin _$AppLoadingState {
     TResult Function()? loading,
     TResult Function(UserModel? userData)? success,
     TResult Function(String message)? error,
+    TResult Function()? loadToOnboarding,
+    TResult Function()? loadToHome,
+    TResult Function(String message)? connectionError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -321,6 +345,9 @@ mixin _$AppLoadingState {
     required TResult Function(AppLoadingLoadingState value) loading,
     required TResult Function(AppLoadingSuccessState value) success,
     required TResult Function(AppLoadingErrorState value) error,
+    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(LoadToHomeState value) loadToHome,
+    required TResult Function(ConnectionError value) connectionError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -329,6 +356,9 @@ mixin _$AppLoadingState {
     TResult? Function(AppLoadingLoadingState value)? loading,
     TResult? Function(AppLoadingSuccessState value)? success,
     TResult? Function(AppLoadingErrorState value)? error,
+    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(LoadToHomeState value)? loadToHome,
+    TResult? Function(ConnectionError value)? connectionError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -337,6 +367,9 @@ mixin _$AppLoadingState {
     TResult Function(AppLoadingLoadingState value)? loading,
     TResult Function(AppLoadingSuccessState value)? success,
     TResult Function(AppLoadingErrorState value)? error,
+    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(LoadToHomeState value)? loadToHome,
+    TResult Function(ConnectionError value)? connectionError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -386,12 +419,20 @@ class __$$AppLoadingInitialStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppLoadingInitialStateImpl implements AppLoadingInitialState {
+class _$AppLoadingInitialStateImpl
+    with DiagnosticableTreeMixin
+    implements AppLoadingInitialState {
   const _$AppLoadingInitialStateImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppLoadingState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AppLoadingState.initial'));
   }
 
   @override
@@ -411,6 +452,9 @@ class _$AppLoadingInitialStateImpl implements AppLoadingInitialState {
     required TResult Function() loading,
     required TResult Function(UserModel? userData) success,
     required TResult Function(String message) error,
+    required TResult Function() loadToOnboarding,
+    required TResult Function() loadToHome,
+    required TResult Function(String message) connectionError,
   }) {
     return initial();
   }
@@ -422,6 +466,9 @@ class _$AppLoadingInitialStateImpl implements AppLoadingInitialState {
     TResult? Function()? loading,
     TResult? Function(UserModel? userData)? success,
     TResult? Function(String message)? error,
+    TResult? Function()? loadToOnboarding,
+    TResult? Function()? loadToHome,
+    TResult? Function(String message)? connectionError,
   }) {
     return initial?.call();
   }
@@ -433,6 +480,9 @@ class _$AppLoadingInitialStateImpl implements AppLoadingInitialState {
     TResult Function()? loading,
     TResult Function(UserModel? userData)? success,
     TResult Function(String message)? error,
+    TResult Function()? loadToOnboarding,
+    TResult Function()? loadToHome,
+    TResult Function(String message)? connectionError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -448,6 +498,9 @@ class _$AppLoadingInitialStateImpl implements AppLoadingInitialState {
     required TResult Function(AppLoadingLoadingState value) loading,
     required TResult Function(AppLoadingSuccessState value) success,
     required TResult Function(AppLoadingErrorState value) error,
+    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(LoadToHomeState value) loadToHome,
+    required TResult Function(ConnectionError value) connectionError,
   }) {
     return initial(this);
   }
@@ -459,6 +512,9 @@ class _$AppLoadingInitialStateImpl implements AppLoadingInitialState {
     TResult? Function(AppLoadingLoadingState value)? loading,
     TResult? Function(AppLoadingSuccessState value)? success,
     TResult? Function(AppLoadingErrorState value)? error,
+    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(LoadToHomeState value)? loadToHome,
+    TResult? Function(ConnectionError value)? connectionError,
   }) {
     return initial?.call(this);
   }
@@ -470,6 +526,9 @@ class _$AppLoadingInitialStateImpl implements AppLoadingInitialState {
     TResult Function(AppLoadingLoadingState value)? loading,
     TResult Function(AppLoadingSuccessState value)? success,
     TResult Function(AppLoadingErrorState value)? error,
+    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(LoadToHomeState value)? loadToHome,
+    TResult Function(ConnectionError value)? connectionError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -506,12 +565,20 @@ class __$$AppLoadingLoadingStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppLoadingLoadingStateImpl implements AppLoadingLoadingState {
+class _$AppLoadingLoadingStateImpl
+    with DiagnosticableTreeMixin
+    implements AppLoadingLoadingState {
   const _$AppLoadingLoadingStateImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppLoadingState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AppLoadingState.loading'));
   }
 
   @override
@@ -531,6 +598,9 @@ class _$AppLoadingLoadingStateImpl implements AppLoadingLoadingState {
     required TResult Function() loading,
     required TResult Function(UserModel? userData) success,
     required TResult Function(String message) error,
+    required TResult Function() loadToOnboarding,
+    required TResult Function() loadToHome,
+    required TResult Function(String message) connectionError,
   }) {
     return loading();
   }
@@ -542,6 +612,9 @@ class _$AppLoadingLoadingStateImpl implements AppLoadingLoadingState {
     TResult? Function()? loading,
     TResult? Function(UserModel? userData)? success,
     TResult? Function(String message)? error,
+    TResult? Function()? loadToOnboarding,
+    TResult? Function()? loadToHome,
+    TResult? Function(String message)? connectionError,
   }) {
     return loading?.call();
   }
@@ -553,6 +626,9 @@ class _$AppLoadingLoadingStateImpl implements AppLoadingLoadingState {
     TResult Function()? loading,
     TResult Function(UserModel? userData)? success,
     TResult Function(String message)? error,
+    TResult Function()? loadToOnboarding,
+    TResult Function()? loadToHome,
+    TResult Function(String message)? connectionError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -568,6 +644,9 @@ class _$AppLoadingLoadingStateImpl implements AppLoadingLoadingState {
     required TResult Function(AppLoadingLoadingState value) loading,
     required TResult Function(AppLoadingSuccessState value) success,
     required TResult Function(AppLoadingErrorState value) error,
+    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(LoadToHomeState value) loadToHome,
+    required TResult Function(ConnectionError value) connectionError,
   }) {
     return loading(this);
   }
@@ -579,6 +658,9 @@ class _$AppLoadingLoadingStateImpl implements AppLoadingLoadingState {
     TResult? Function(AppLoadingLoadingState value)? loading,
     TResult? Function(AppLoadingSuccessState value)? success,
     TResult? Function(AppLoadingErrorState value)? error,
+    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(LoadToHomeState value)? loadToHome,
+    TResult? Function(ConnectionError value)? connectionError,
   }) {
     return loading?.call(this);
   }
@@ -590,6 +672,9 @@ class _$AppLoadingLoadingStateImpl implements AppLoadingLoadingState {
     TResult Function(AppLoadingLoadingState value)? loading,
     TResult Function(AppLoadingSuccessState value)? success,
     TResult Function(AppLoadingErrorState value)? error,
+    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(LoadToHomeState value)? loadToHome,
+    TResult Function(ConnectionError value)? connectionError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -656,15 +741,25 @@ class __$$AppLoadingSuccessStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppLoadingSuccessStateImpl implements AppLoadingSuccessState {
+class _$AppLoadingSuccessStateImpl
+    with DiagnosticableTreeMixin
+    implements AppLoadingSuccessState {
   const _$AppLoadingSuccessStateImpl(this.userData);
 
   @override
   final UserModel? userData;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppLoadingState.success(userData: $userData)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppLoadingState.success'))
+      ..add(DiagnosticsProperty('userData', userData));
   }
 
   @override
@@ -695,6 +790,9 @@ class _$AppLoadingSuccessStateImpl implements AppLoadingSuccessState {
     required TResult Function() loading,
     required TResult Function(UserModel? userData) success,
     required TResult Function(String message) error,
+    required TResult Function() loadToOnboarding,
+    required TResult Function() loadToHome,
+    required TResult Function(String message) connectionError,
   }) {
     return success(userData);
   }
@@ -706,6 +804,9 @@ class _$AppLoadingSuccessStateImpl implements AppLoadingSuccessState {
     TResult? Function()? loading,
     TResult? Function(UserModel? userData)? success,
     TResult? Function(String message)? error,
+    TResult? Function()? loadToOnboarding,
+    TResult? Function()? loadToHome,
+    TResult? Function(String message)? connectionError,
   }) {
     return success?.call(userData);
   }
@@ -717,6 +818,9 @@ class _$AppLoadingSuccessStateImpl implements AppLoadingSuccessState {
     TResult Function()? loading,
     TResult Function(UserModel? userData)? success,
     TResult Function(String message)? error,
+    TResult Function()? loadToOnboarding,
+    TResult Function()? loadToHome,
+    TResult Function(String message)? connectionError,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -732,6 +836,9 @@ class _$AppLoadingSuccessStateImpl implements AppLoadingSuccessState {
     required TResult Function(AppLoadingLoadingState value) loading,
     required TResult Function(AppLoadingSuccessState value) success,
     required TResult Function(AppLoadingErrorState value) error,
+    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(LoadToHomeState value) loadToHome,
+    required TResult Function(ConnectionError value) connectionError,
   }) {
     return success(this);
   }
@@ -743,6 +850,9 @@ class _$AppLoadingSuccessStateImpl implements AppLoadingSuccessState {
     TResult? Function(AppLoadingLoadingState value)? loading,
     TResult? Function(AppLoadingSuccessState value)? success,
     TResult? Function(AppLoadingErrorState value)? error,
+    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(LoadToHomeState value)? loadToHome,
+    TResult? Function(ConnectionError value)? connectionError,
   }) {
     return success?.call(this);
   }
@@ -754,6 +864,9 @@ class _$AppLoadingSuccessStateImpl implements AppLoadingSuccessState {
     TResult Function(AppLoadingLoadingState value)? loading,
     TResult Function(AppLoadingSuccessState value)? success,
     TResult Function(AppLoadingErrorState value)? error,
+    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(LoadToHomeState value)? loadToHome,
+    TResult Function(ConnectionError value)? connectionError,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -811,15 +924,25 @@ class __$$AppLoadingErrorStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppLoadingErrorStateImpl implements AppLoadingErrorState {
+class _$AppLoadingErrorStateImpl
+    with DiagnosticableTreeMixin
+    implements AppLoadingErrorState {
   const _$AppLoadingErrorStateImpl(this.message);
 
   @override
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppLoadingState.error(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppLoadingState.error'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -850,6 +973,9 @@ class _$AppLoadingErrorStateImpl implements AppLoadingErrorState {
     required TResult Function() loading,
     required TResult Function(UserModel? userData) success,
     required TResult Function(String message) error,
+    required TResult Function() loadToOnboarding,
+    required TResult Function() loadToHome,
+    required TResult Function(String message) connectionError,
   }) {
     return error(message);
   }
@@ -861,6 +987,9 @@ class _$AppLoadingErrorStateImpl implements AppLoadingErrorState {
     TResult? Function()? loading,
     TResult? Function(UserModel? userData)? success,
     TResult? Function(String message)? error,
+    TResult? Function()? loadToOnboarding,
+    TResult? Function()? loadToHome,
+    TResult? Function(String message)? connectionError,
   }) {
     return error?.call(message);
   }
@@ -872,6 +1001,9 @@ class _$AppLoadingErrorStateImpl implements AppLoadingErrorState {
     TResult Function()? loading,
     TResult Function(UserModel? userData)? success,
     TResult Function(String message)? error,
+    TResult Function()? loadToOnboarding,
+    TResult Function()? loadToHome,
+    TResult Function(String message)? connectionError,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -887,6 +1019,9 @@ class _$AppLoadingErrorStateImpl implements AppLoadingErrorState {
     required TResult Function(AppLoadingLoadingState value) loading,
     required TResult Function(AppLoadingSuccessState value) success,
     required TResult Function(AppLoadingErrorState value) error,
+    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(LoadToHomeState value) loadToHome,
+    required TResult Function(ConnectionError value) connectionError,
   }) {
     return error(this);
   }
@@ -898,6 +1033,9 @@ class _$AppLoadingErrorStateImpl implements AppLoadingErrorState {
     TResult? Function(AppLoadingLoadingState value)? loading,
     TResult? Function(AppLoadingSuccessState value)? success,
     TResult? Function(AppLoadingErrorState value)? error,
+    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(LoadToHomeState value)? loadToHome,
+    TResult? Function(ConnectionError value)? connectionError,
   }) {
     return error?.call(this);
   }
@@ -909,6 +1047,9 @@ class _$AppLoadingErrorStateImpl implements AppLoadingErrorState {
     TResult Function(AppLoadingLoadingState value)? loading,
     TResult Function(AppLoadingSuccessState value)? success,
     TResult Function(AppLoadingErrorState value)? error,
+    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(LoadToHomeState value)? loadToHome,
+    TResult Function(ConnectionError value)? connectionError,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -929,4 +1070,474 @@ abstract class AppLoadingErrorState implements AppLoadingState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppLoadingErrorStateImplCopyWith<_$AppLoadingErrorStateImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadToOnboardingStateImplCopyWith<$Res> {
+  factory _$$LoadToOnboardingStateImplCopyWith(
+          _$LoadToOnboardingStateImpl value,
+          $Res Function(_$LoadToOnboardingStateImpl) then) =
+      __$$LoadToOnboardingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadToOnboardingStateImplCopyWithImpl<$Res>
+    extends _$AppLoadingStateCopyWithImpl<$Res, _$LoadToOnboardingStateImpl>
+    implements _$$LoadToOnboardingStateImplCopyWith<$Res> {
+  __$$LoadToOnboardingStateImplCopyWithImpl(_$LoadToOnboardingStateImpl _value,
+      $Res Function(_$LoadToOnboardingStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppLoadingState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadToOnboardingStateImpl
+    with DiagnosticableTreeMixin
+    implements LoadToOnboardingState {
+  const _$LoadToOnboardingStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AppLoadingState.loadToOnboarding()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'AppLoadingState.loadToOnboarding'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadToOnboardingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel? userData) success,
+    required TResult Function(String message) error,
+    required TResult Function() loadToOnboarding,
+    required TResult Function() loadToHome,
+    required TResult Function(String message) connectionError,
+  }) {
+    return loadToOnboarding();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel? userData)? success,
+    TResult? Function(String message)? error,
+    TResult? Function()? loadToOnboarding,
+    TResult? Function()? loadToHome,
+    TResult? Function(String message)? connectionError,
+  }) {
+    return loadToOnboarding?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel? userData)? success,
+    TResult Function(String message)? error,
+    TResult Function()? loadToOnboarding,
+    TResult Function()? loadToHome,
+    TResult Function(String message)? connectionError,
+    required TResult orElse(),
+  }) {
+    if (loadToOnboarding != null) {
+      return loadToOnboarding();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppLoadingInitialState value) initial,
+    required TResult Function(AppLoadingLoadingState value) loading,
+    required TResult Function(AppLoadingSuccessState value) success,
+    required TResult Function(AppLoadingErrorState value) error,
+    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(LoadToHomeState value) loadToHome,
+    required TResult Function(ConnectionError value) connectionError,
+  }) {
+    return loadToOnboarding(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppLoadingInitialState value)? initial,
+    TResult? Function(AppLoadingLoadingState value)? loading,
+    TResult? Function(AppLoadingSuccessState value)? success,
+    TResult? Function(AppLoadingErrorState value)? error,
+    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(LoadToHomeState value)? loadToHome,
+    TResult? Function(ConnectionError value)? connectionError,
+  }) {
+    return loadToOnboarding?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppLoadingInitialState value)? initial,
+    TResult Function(AppLoadingLoadingState value)? loading,
+    TResult Function(AppLoadingSuccessState value)? success,
+    TResult Function(AppLoadingErrorState value)? error,
+    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(LoadToHomeState value)? loadToHome,
+    TResult Function(ConnectionError value)? connectionError,
+    required TResult orElse(),
+  }) {
+    if (loadToOnboarding != null) {
+      return loadToOnboarding(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadToOnboardingState implements AppLoadingState {
+  const factory LoadToOnboardingState() = _$LoadToOnboardingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadToHomeStateImplCopyWith<$Res> {
+  factory _$$LoadToHomeStateImplCopyWith(_$LoadToHomeStateImpl value,
+          $Res Function(_$LoadToHomeStateImpl) then) =
+      __$$LoadToHomeStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadToHomeStateImplCopyWithImpl<$Res>
+    extends _$AppLoadingStateCopyWithImpl<$Res, _$LoadToHomeStateImpl>
+    implements _$$LoadToHomeStateImplCopyWith<$Res> {
+  __$$LoadToHomeStateImplCopyWithImpl(
+      _$LoadToHomeStateImpl _value, $Res Function(_$LoadToHomeStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppLoadingState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadToHomeStateImpl
+    with DiagnosticableTreeMixin
+    implements LoadToHomeState {
+  const _$LoadToHomeStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AppLoadingState.loadToHome()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AppLoadingState.loadToHome'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadToHomeStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel? userData) success,
+    required TResult Function(String message) error,
+    required TResult Function() loadToOnboarding,
+    required TResult Function() loadToHome,
+    required TResult Function(String message) connectionError,
+  }) {
+    return loadToHome();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel? userData)? success,
+    TResult? Function(String message)? error,
+    TResult? Function()? loadToOnboarding,
+    TResult? Function()? loadToHome,
+    TResult? Function(String message)? connectionError,
+  }) {
+    return loadToHome?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel? userData)? success,
+    TResult Function(String message)? error,
+    TResult Function()? loadToOnboarding,
+    TResult Function()? loadToHome,
+    TResult Function(String message)? connectionError,
+    required TResult orElse(),
+  }) {
+    if (loadToHome != null) {
+      return loadToHome();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppLoadingInitialState value) initial,
+    required TResult Function(AppLoadingLoadingState value) loading,
+    required TResult Function(AppLoadingSuccessState value) success,
+    required TResult Function(AppLoadingErrorState value) error,
+    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(LoadToHomeState value) loadToHome,
+    required TResult Function(ConnectionError value) connectionError,
+  }) {
+    return loadToHome(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppLoadingInitialState value)? initial,
+    TResult? Function(AppLoadingLoadingState value)? loading,
+    TResult? Function(AppLoadingSuccessState value)? success,
+    TResult? Function(AppLoadingErrorState value)? error,
+    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(LoadToHomeState value)? loadToHome,
+    TResult? Function(ConnectionError value)? connectionError,
+  }) {
+    return loadToHome?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppLoadingInitialState value)? initial,
+    TResult Function(AppLoadingLoadingState value)? loading,
+    TResult Function(AppLoadingSuccessState value)? success,
+    TResult Function(AppLoadingErrorState value)? error,
+    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(LoadToHomeState value)? loadToHome,
+    TResult Function(ConnectionError value)? connectionError,
+    required TResult orElse(),
+  }) {
+    if (loadToHome != null) {
+      return loadToHome(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadToHomeState implements AppLoadingState {
+  const factory LoadToHomeState() = _$LoadToHomeStateImpl;
+}
+
+/// @nodoc
+abstract class _$$ConnectionErrorImplCopyWith<$Res> {
+  factory _$$ConnectionErrorImplCopyWith(_$ConnectionErrorImpl value,
+          $Res Function(_$ConnectionErrorImpl) then) =
+      __$$ConnectionErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$ConnectionErrorImplCopyWithImpl<$Res>
+    extends _$AppLoadingStateCopyWithImpl<$Res, _$ConnectionErrorImpl>
+    implements _$$ConnectionErrorImplCopyWith<$Res> {
+  __$$ConnectionErrorImplCopyWithImpl(
+      _$ConnectionErrorImpl _value, $Res Function(_$ConnectionErrorImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppLoadingState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$ConnectionErrorImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConnectionErrorImpl
+    with DiagnosticableTreeMixin
+    implements ConnectionError {
+  const _$ConnectionErrorImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AppLoadingState.connectionError(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppLoadingState.connectionError'))
+      ..add(DiagnosticsProperty('message', message));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConnectionErrorImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  /// Create a copy of AppLoadingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConnectionErrorImplCopyWith<_$ConnectionErrorImpl> get copyWith =>
+      __$$ConnectionErrorImplCopyWithImpl<_$ConnectionErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel? userData) success,
+    required TResult Function(String message) error,
+    required TResult Function() loadToOnboarding,
+    required TResult Function() loadToHome,
+    required TResult Function(String message) connectionError,
+  }) {
+    return connectionError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel? userData)? success,
+    TResult? Function(String message)? error,
+    TResult? Function()? loadToOnboarding,
+    TResult? Function()? loadToHome,
+    TResult? Function(String message)? connectionError,
+  }) {
+    return connectionError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel? userData)? success,
+    TResult Function(String message)? error,
+    TResult Function()? loadToOnboarding,
+    TResult Function()? loadToHome,
+    TResult Function(String message)? connectionError,
+    required TResult orElse(),
+  }) {
+    if (connectionError != null) {
+      return connectionError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppLoadingInitialState value) initial,
+    required TResult Function(AppLoadingLoadingState value) loading,
+    required TResult Function(AppLoadingSuccessState value) success,
+    required TResult Function(AppLoadingErrorState value) error,
+    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(LoadToHomeState value) loadToHome,
+    required TResult Function(ConnectionError value) connectionError,
+  }) {
+    return connectionError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppLoadingInitialState value)? initial,
+    TResult? Function(AppLoadingLoadingState value)? loading,
+    TResult? Function(AppLoadingSuccessState value)? success,
+    TResult? Function(AppLoadingErrorState value)? error,
+    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(LoadToHomeState value)? loadToHome,
+    TResult? Function(ConnectionError value)? connectionError,
+  }) {
+    return connectionError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppLoadingInitialState value)? initial,
+    TResult Function(AppLoadingLoadingState value)? loading,
+    TResult Function(AppLoadingSuccessState value)? success,
+    TResult Function(AppLoadingErrorState value)? error,
+    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(LoadToHomeState value)? loadToHome,
+    TResult Function(ConnectionError value)? connectionError,
+    required TResult orElse(),
+  }) {
+    if (connectionError != null) {
+      return connectionError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ConnectionError implements AppLoadingState {
+  const factory ConnectionError(final String message) = _$ConnectionErrorImpl;
+
+  String get message;
+
+  /// Create a copy of AppLoadingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ConnectionErrorImplCopyWith<_$ConnectionErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

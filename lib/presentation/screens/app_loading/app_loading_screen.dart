@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
-import 'package:watt_hub/data/local/shared_preferences/shared_preferences_service.dart';
 import 'package:watt_hub/presentation/screens/app_loading/bloc/app_loading_bloc.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
@@ -30,27 +29,22 @@ class _AppLoadingView extends StatelessWidget {
               if (state.userData != null) {
                 context.router.push(const HomeRoute());
               }
-            } else if (state is AppLoadingErrorState) {
-              if (state.message != '') {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      state.message,
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                    backgroundColor: Colors.red,
-                    duration: const Duration(seconds: 3),
+            } else if (state is LoadToOnboardingState) {
+              context.router.replace(const OnboardingRoute());
+            } else if (state is LoadToHomeState) {
+              context.router.replace(const SignUpRoute());
+            } else if (state is ConnectionError) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    state.message,
+                    style: const TextStyle(color: Colors.white),
                   ),
-                );
-                return;
-              }
-              bool? isOnBoard =
-                  SharedPreferencesService.instance.onBoardingLaunch();
-              if (isOnBoard) {
-                context.router.replace(const SignUpRoute());
-              } else {
-                context.router.replace(const OnboardingRoute());
-              }
+                  backgroundColor: Colors.red,
+                  duration: const Duration(seconds: 3),
+                ),
+              );
+              return;
             }
           },
           child: const Center(

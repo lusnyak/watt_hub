@@ -1,12 +1,13 @@
 import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watt_hub/config/config.dart';
+import 'package:watt_hub/config/network/connectivity/connectivity_checker.dart';
+import 'package:watt_hub/data/local/shared_preferences/shared_preferences_service.dart';
 import 'package:watt_hub/data/local/token_storage/token_storage.dart';
 import 'package:watt_hub/data/repository/user_repository.dart';
 import 'package:watt_hub/domain/models/user/user_model.dart';
-import 'package:watt_hub/utils/helpers/dio_errors.dart';
 
 part 'app_loading_event.dart';
 part 'app_loading_state.dart';
@@ -20,8 +21,9 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
   AppLoadingBloc() : super(const AppLoadingState.initial()) {
     on<GetUserEvent>(onGetUser);
     connectivitySubscription =
-        Connectivity().onConnectivityChanged.listen((result) {
-      if (result != ConnectivityResult.none) {
+        Connectivity().onConnectivityChanged.listen((result) async {
+      bool hasConnection = await getIt<ConnectivityChecker>().hasConnection();
+      if (!hasConnection) {
         // ignore: invalid_use_of_visible_for_testing_member
         emit(const AppLoadingState.success(null));
         add(const GetUserEvent());
@@ -32,21 +34,32 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
   Future<void> onGetUser(
       GetUserEvent event, Emitter<AppLoadingState> emit) async {
     emit(const AppLoadingState.loading());
-    try {
-      final tokenMdl = await getIt<TokenStorage>().readToken();
+    final tokenMdl = await getIt<TokenStorage>().readToken();
 
-      if (tokenMdl != null && tokenMdl.token!.isNotEmpty) {
-        final UserModel? userData = await getIt<UserRepository>().getMe();
-        emit(AppLoadingState.success(userData));
+    if (tokenMdl == null) {
+      bool isOnBoard = SharedPreferencesService.instance.onBoardingLaunch();
+      if (!isOnBoard) {
+        emit(const AppLoadingState.loadToOnboarding());
       } else {
-        emit(const AppLoadingState.error('Something Error'));
+        emit(const AppLoadingState.loadToHome());
       }
-    } on DioException catch (e) {
-      final errorMessage = getDioExceptionErrorMessage(e);
-
-      emit(AppLoadingState.error(errorMessage));
-    } catch (e) {
-      emit(AppLoadingState.error(e.toString()));
+    } else {
+      bool hasConnection = await getIt<ConnectivityChecker>().hasConnection();
+      if (!hasConnection) {
+        try {
+          if (tokenMdl.token!.isNotEmpty) {
+            final UserModel? userData = await getIt<UserRepository>().getMe();
+            emit(AppLoadingState.success(userData));
+          } else {
+            emit(const AppLoadingState.error('Something Error'));
+          }
+        } catch (e) {
+          emit(AppLoadingState.error(e.toString()));
+        }
+      } else {
+        emit(const AppLoadingState.connectionError(
+            'No internet connection. Please check your connectivity.'));
+      }
     }
   }
 }
