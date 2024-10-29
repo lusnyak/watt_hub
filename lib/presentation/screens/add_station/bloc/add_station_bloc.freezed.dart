@@ -21,6 +21,11 @@ mixin _$AddStationEvent {
     required TResult Function() started,
     required TResult Function(List<File> images) imagesSelected,
     required TResult Function(int index) removeImage,
+    required TResult Function(ConnectorTypeModel? selectedConnector)
+        connectorTypeChangedEvent,
+    required TResult Function(String startTime) startTimeSelected,
+    required TResult Function(String endTime) endTimeSelected,
+    required TResult Function(String address) getAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +33,11 @@ mixin _$AddStationEvent {
     TResult? Function()? started,
     TResult? Function(List<File> images)? imagesSelected,
     TResult? Function(int index)? removeImage,
+    TResult? Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult? Function(String startTime)? startTimeSelected,
+    TResult? Function(String endTime)? endTimeSelected,
+    TResult? Function(String address)? getAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +45,11 @@ mixin _$AddStationEvent {
     TResult Function()? started,
     TResult Function(List<File> images)? imagesSelected,
     TResult Function(int index)? removeImage,
+    TResult Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult Function(String startTime)? startTimeSelected,
+    TResult Function(String endTime)? endTimeSelected,
+    TResult Function(String address)? getAddress,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +58,11 @@ mixin _$AddStationEvent {
     required TResult Function(_StartedEvent value) started,
     required TResult Function(_ImagesSelectedEvent value) imagesSelected,
     required TResult Function(_RemoveImageEvent value) removeImage,
+    required TResult Function(_ConnectorTypeChangedEvent value)
+        connectorTypeChangedEvent,
+    required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
+    required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
+    required TResult Function(_GetAddressEvent value) getAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +70,11 @@ mixin _$AddStationEvent {
     TResult? Function(_StartedEvent value)? started,
     TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
     TResult? Function(_RemoveImageEvent value)? removeImage,
+    TResult? Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult? Function(_GetAddressEvent value)? getAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +82,11 @@ mixin _$AddStationEvent {
     TResult Function(_StartedEvent value)? started,
     TResult Function(_ImagesSelectedEvent value)? imagesSelected,
     TResult Function(_RemoveImageEvent value)? removeImage,
+    TResult Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult Function(_GetAddressEvent value)? getAddress,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,6 +157,11 @@ class _$StartedEventImpl implements _StartedEvent {
     required TResult Function() started,
     required TResult Function(List<File> images) imagesSelected,
     required TResult Function(int index) removeImage,
+    required TResult Function(ConnectorTypeModel? selectedConnector)
+        connectorTypeChangedEvent,
+    required TResult Function(String startTime) startTimeSelected,
+    required TResult Function(String endTime) endTimeSelected,
+    required TResult Function(String address) getAddress,
   }) {
     return started();
   }
@@ -137,6 +172,11 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult? Function()? started,
     TResult? Function(List<File> images)? imagesSelected,
     TResult? Function(int index)? removeImage,
+    TResult? Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult? Function(String startTime)? startTimeSelected,
+    TResult? Function(String endTime)? endTimeSelected,
+    TResult? Function(String address)? getAddress,
   }) {
     return started?.call();
   }
@@ -147,6 +187,11 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult Function()? started,
     TResult Function(List<File> images)? imagesSelected,
     TResult Function(int index)? removeImage,
+    TResult Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult Function(String startTime)? startTimeSelected,
+    TResult Function(String endTime)? endTimeSelected,
+    TResult Function(String address)? getAddress,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -161,6 +206,11 @@ class _$StartedEventImpl implements _StartedEvent {
     required TResult Function(_StartedEvent value) started,
     required TResult Function(_ImagesSelectedEvent value) imagesSelected,
     required TResult Function(_RemoveImageEvent value) removeImage,
+    required TResult Function(_ConnectorTypeChangedEvent value)
+        connectorTypeChangedEvent,
+    required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
+    required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
+    required TResult Function(_GetAddressEvent value) getAddress,
   }) {
     return started(this);
   }
@@ -171,6 +221,11 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult? Function(_StartedEvent value)? started,
     TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
     TResult? Function(_RemoveImageEvent value)? removeImage,
+    TResult? Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult? Function(_GetAddressEvent value)? getAddress,
   }) {
     return started?.call(this);
   }
@@ -181,6 +236,11 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult Function(_StartedEvent value)? started,
     TResult Function(_ImagesSelectedEvent value)? imagesSelected,
     TResult Function(_RemoveImageEvent value)? removeImage,
+    TResult Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult Function(_GetAddressEvent value)? getAddress,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -272,6 +332,11 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     required TResult Function() started,
     required TResult Function(List<File> images) imagesSelected,
     required TResult Function(int index) removeImage,
+    required TResult Function(ConnectorTypeModel? selectedConnector)
+        connectorTypeChangedEvent,
+    required TResult Function(String startTime) startTimeSelected,
+    required TResult Function(String endTime) endTimeSelected,
+    required TResult Function(String address) getAddress,
   }) {
     return imagesSelected(images);
   }
@@ -282,6 +347,11 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     TResult? Function()? started,
     TResult? Function(List<File> images)? imagesSelected,
     TResult? Function(int index)? removeImage,
+    TResult? Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult? Function(String startTime)? startTimeSelected,
+    TResult? Function(String endTime)? endTimeSelected,
+    TResult? Function(String address)? getAddress,
   }) {
     return imagesSelected?.call(images);
   }
@@ -292,6 +362,11 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     TResult Function()? started,
     TResult Function(List<File> images)? imagesSelected,
     TResult Function(int index)? removeImage,
+    TResult Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult Function(String startTime)? startTimeSelected,
+    TResult Function(String endTime)? endTimeSelected,
+    TResult Function(String address)? getAddress,
     required TResult orElse(),
   }) {
     if (imagesSelected != null) {
@@ -306,6 +381,11 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     required TResult Function(_StartedEvent value) started,
     required TResult Function(_ImagesSelectedEvent value) imagesSelected,
     required TResult Function(_RemoveImageEvent value) removeImage,
+    required TResult Function(_ConnectorTypeChangedEvent value)
+        connectorTypeChangedEvent,
+    required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
+    required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
+    required TResult Function(_GetAddressEvent value) getAddress,
   }) {
     return imagesSelected(this);
   }
@@ -316,6 +396,11 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     TResult? Function(_StartedEvent value)? started,
     TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
     TResult? Function(_RemoveImageEvent value)? removeImage,
+    TResult? Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult? Function(_GetAddressEvent value)? getAddress,
   }) {
     return imagesSelected?.call(this);
   }
@@ -326,6 +411,11 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     TResult Function(_StartedEvent value)? started,
     TResult Function(_ImagesSelectedEvent value)? imagesSelected,
     TResult Function(_RemoveImageEvent value)? removeImage,
+    TResult Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult Function(_GetAddressEvent value)? getAddress,
     required TResult orElse(),
   }) {
     if (imagesSelected != null) {
@@ -420,6 +510,11 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     required TResult Function() started,
     required TResult Function(List<File> images) imagesSelected,
     required TResult Function(int index) removeImage,
+    required TResult Function(ConnectorTypeModel? selectedConnector)
+        connectorTypeChangedEvent,
+    required TResult Function(String startTime) startTimeSelected,
+    required TResult Function(String endTime) endTimeSelected,
+    required TResult Function(String address) getAddress,
   }) {
     return removeImage(index);
   }
@@ -430,6 +525,11 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     TResult? Function()? started,
     TResult? Function(List<File> images)? imagesSelected,
     TResult? Function(int index)? removeImage,
+    TResult? Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult? Function(String startTime)? startTimeSelected,
+    TResult? Function(String endTime)? endTimeSelected,
+    TResult? Function(String address)? getAddress,
   }) {
     return removeImage?.call(index);
   }
@@ -440,6 +540,11 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     TResult Function()? started,
     TResult Function(List<File> images)? imagesSelected,
     TResult Function(int index)? removeImage,
+    TResult Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult Function(String startTime)? startTimeSelected,
+    TResult Function(String endTime)? endTimeSelected,
+    TResult Function(String address)? getAddress,
     required TResult orElse(),
   }) {
     if (removeImage != null) {
@@ -454,6 +559,11 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     required TResult Function(_StartedEvent value) started,
     required TResult Function(_ImagesSelectedEvent value) imagesSelected,
     required TResult Function(_RemoveImageEvent value) removeImage,
+    required TResult Function(_ConnectorTypeChangedEvent value)
+        connectorTypeChangedEvent,
+    required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
+    required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
+    required TResult Function(_GetAddressEvent value) getAddress,
   }) {
     return removeImage(this);
   }
@@ -464,6 +574,11 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     TResult? Function(_StartedEvent value)? started,
     TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
     TResult? Function(_RemoveImageEvent value)? removeImage,
+    TResult? Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult? Function(_GetAddressEvent value)? getAddress,
   }) {
     return removeImage?.call(this);
   }
@@ -474,6 +589,11 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     TResult Function(_StartedEvent value)? started,
     TResult Function(_ImagesSelectedEvent value)? imagesSelected,
     TResult Function(_RemoveImageEvent value)? removeImage,
+    TResult Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult Function(_GetAddressEvent value)? getAddress,
     required TResult orElse(),
   }) {
     if (removeImage != null) {
@@ -496,13 +616,756 @@ abstract class _RemoveImageEvent implements AddStationEvent {
 }
 
 /// @nodoc
+abstract class _$$ConnectorTypeChangedEventImplCopyWith<$Res> {
+  factory _$$ConnectorTypeChangedEventImplCopyWith(
+          _$ConnectorTypeChangedEventImpl value,
+          $Res Function(_$ConnectorTypeChangedEventImpl) then) =
+      __$$ConnectorTypeChangedEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ConnectorTypeModel? selectedConnector});
+
+  $ConnectorTypeModelCopyWith<$Res>? get selectedConnector;
+}
+
+/// @nodoc
+class __$$ConnectorTypeChangedEventImplCopyWithImpl<$Res>
+    extends _$AddStationEventCopyWithImpl<$Res, _$ConnectorTypeChangedEventImpl>
+    implements _$$ConnectorTypeChangedEventImplCopyWith<$Res> {
+  __$$ConnectorTypeChangedEventImplCopyWithImpl(
+      _$ConnectorTypeChangedEventImpl _value,
+      $Res Function(_$ConnectorTypeChangedEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedConnector = freezed,
+  }) {
+    return _then(_$ConnectorTypeChangedEventImpl(
+      freezed == selectedConnector
+          ? _value.selectedConnector
+          : selectedConnector // ignore: cast_nullable_to_non_nullable
+              as ConnectorTypeModel?,
+    ));
+  }
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConnectorTypeModelCopyWith<$Res>? get selectedConnector {
+    if (_value.selectedConnector == null) {
+      return null;
+    }
+
+    return $ConnectorTypeModelCopyWith<$Res>(_value.selectedConnector!,
+        (value) {
+      return _then(_value.copyWith(selectedConnector: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
+  const _$ConnectorTypeChangedEventImpl(this.selectedConnector);
+
+  @override
+  final ConnectorTypeModel? selectedConnector;
+
+  @override
+  String toString() {
+    return 'AddStationEvent.connectorTypeChangedEvent(selectedConnector: $selectedConnector)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConnectorTypeChangedEventImpl &&
+            (identical(other.selectedConnector, selectedConnector) ||
+                other.selectedConnector == selectedConnector));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, selectedConnector);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConnectorTypeChangedEventImplCopyWith<_$ConnectorTypeChangedEventImpl>
+      get copyWith => __$$ConnectorTypeChangedEventImplCopyWithImpl<
+          _$ConnectorTypeChangedEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<File> images) imagesSelected,
+    required TResult Function(int index) removeImage,
+    required TResult Function(ConnectorTypeModel? selectedConnector)
+        connectorTypeChangedEvent,
+    required TResult Function(String startTime) startTimeSelected,
+    required TResult Function(String endTime) endTimeSelected,
+    required TResult Function(String address) getAddress,
+  }) {
+    return connectorTypeChangedEvent(selectedConnector);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(List<File> images)? imagesSelected,
+    TResult? Function(int index)? removeImage,
+    TResult? Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult? Function(String startTime)? startTimeSelected,
+    TResult? Function(String endTime)? endTimeSelected,
+    TResult? Function(String address)? getAddress,
+  }) {
+    return connectorTypeChangedEvent?.call(selectedConnector);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<File> images)? imagesSelected,
+    TResult Function(int index)? removeImage,
+    TResult Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult Function(String startTime)? startTimeSelected,
+    TResult Function(String endTime)? endTimeSelected,
+    TResult Function(String address)? getAddress,
+    required TResult orElse(),
+  }) {
+    if (connectorTypeChangedEvent != null) {
+      return connectorTypeChangedEvent(selectedConnector);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StartedEvent value) started,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_RemoveImageEvent value) removeImage,
+    required TResult Function(_ConnectorTypeChangedEvent value)
+        connectorTypeChangedEvent,
+    required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
+    required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
+    required TResult Function(_GetAddressEvent value) getAddress,
+  }) {
+    return connectorTypeChangedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_RemoveImageEvent value)? removeImage,
+    TResult? Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult? Function(_GetAddressEvent value)? getAddress,
+  }) {
+    return connectorTypeChangedEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StartedEvent value)? started,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_RemoveImageEvent value)? removeImage,
+    TResult Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult Function(_GetAddressEvent value)? getAddress,
+    required TResult orElse(),
+  }) {
+    if (connectorTypeChangedEvent != null) {
+      return connectorTypeChangedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ConnectorTypeChangedEvent implements AddStationEvent {
+  const factory _ConnectorTypeChangedEvent(
+          final ConnectorTypeModel? selectedConnector) =
+      _$ConnectorTypeChangedEventImpl;
+
+  ConnectorTypeModel? get selectedConnector;
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ConnectorTypeChangedEventImplCopyWith<_$ConnectorTypeChangedEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$StartTimeSelectedEventImplCopyWith<$Res> {
+  factory _$$StartTimeSelectedEventImplCopyWith(
+          _$StartTimeSelectedEventImpl value,
+          $Res Function(_$StartTimeSelectedEventImpl) then) =
+      __$$StartTimeSelectedEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String startTime});
+}
+
+/// @nodoc
+class __$$StartTimeSelectedEventImplCopyWithImpl<$Res>
+    extends _$AddStationEventCopyWithImpl<$Res, _$StartTimeSelectedEventImpl>
+    implements _$$StartTimeSelectedEventImplCopyWith<$Res> {
+  __$$StartTimeSelectedEventImplCopyWithImpl(
+      _$StartTimeSelectedEventImpl _value,
+      $Res Function(_$StartTimeSelectedEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? startTime = null,
+  }) {
+    return _then(_$StartTimeSelectedEventImpl(
+      null == startTime
+          ? _value.startTime
+          : startTime // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
+  const _$StartTimeSelectedEventImpl(this.startTime);
+
+  @override
+  final String startTime;
+
+  @override
+  String toString() {
+    return 'AddStationEvent.startTimeSelected(startTime: $startTime)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StartTimeSelectedEventImpl &&
+            (identical(other.startTime, startTime) ||
+                other.startTime == startTime));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, startTime);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StartTimeSelectedEventImplCopyWith<_$StartTimeSelectedEventImpl>
+      get copyWith => __$$StartTimeSelectedEventImplCopyWithImpl<
+          _$StartTimeSelectedEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<File> images) imagesSelected,
+    required TResult Function(int index) removeImage,
+    required TResult Function(ConnectorTypeModel? selectedConnector)
+        connectorTypeChangedEvent,
+    required TResult Function(String startTime) startTimeSelected,
+    required TResult Function(String endTime) endTimeSelected,
+    required TResult Function(String address) getAddress,
+  }) {
+    return startTimeSelected(startTime);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(List<File> images)? imagesSelected,
+    TResult? Function(int index)? removeImage,
+    TResult? Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult? Function(String startTime)? startTimeSelected,
+    TResult? Function(String endTime)? endTimeSelected,
+    TResult? Function(String address)? getAddress,
+  }) {
+    return startTimeSelected?.call(startTime);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<File> images)? imagesSelected,
+    TResult Function(int index)? removeImage,
+    TResult Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult Function(String startTime)? startTimeSelected,
+    TResult Function(String endTime)? endTimeSelected,
+    TResult Function(String address)? getAddress,
+    required TResult orElse(),
+  }) {
+    if (startTimeSelected != null) {
+      return startTimeSelected(startTime);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StartedEvent value) started,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_RemoveImageEvent value) removeImage,
+    required TResult Function(_ConnectorTypeChangedEvent value)
+        connectorTypeChangedEvent,
+    required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
+    required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
+    required TResult Function(_GetAddressEvent value) getAddress,
+  }) {
+    return startTimeSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_RemoveImageEvent value)? removeImage,
+    TResult? Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult? Function(_GetAddressEvent value)? getAddress,
+  }) {
+    return startTimeSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StartedEvent value)? started,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_RemoveImageEvent value)? removeImage,
+    TResult Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult Function(_GetAddressEvent value)? getAddress,
+    required TResult orElse(),
+  }) {
+    if (startTimeSelected != null) {
+      return startTimeSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StartTimeSelectedEvent implements AddStationEvent {
+  const factory _StartTimeSelectedEvent(final String startTime) =
+      _$StartTimeSelectedEventImpl;
+
+  String get startTime;
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StartTimeSelectedEventImplCopyWith<_$StartTimeSelectedEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EndTimeSelectedEventImplCopyWith<$Res> {
+  factory _$$EndTimeSelectedEventImplCopyWith(_$EndTimeSelectedEventImpl value,
+          $Res Function(_$EndTimeSelectedEventImpl) then) =
+      __$$EndTimeSelectedEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String endTime});
+}
+
+/// @nodoc
+class __$$EndTimeSelectedEventImplCopyWithImpl<$Res>
+    extends _$AddStationEventCopyWithImpl<$Res, _$EndTimeSelectedEventImpl>
+    implements _$$EndTimeSelectedEventImplCopyWith<$Res> {
+  __$$EndTimeSelectedEventImplCopyWithImpl(_$EndTimeSelectedEventImpl _value,
+      $Res Function(_$EndTimeSelectedEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? endTime = null,
+  }) {
+    return _then(_$EndTimeSelectedEventImpl(
+      null == endTime
+          ? _value.endTime
+          : endTime // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
+  const _$EndTimeSelectedEventImpl(this.endTime);
+
+  @override
+  final String endTime;
+
+  @override
+  String toString() {
+    return 'AddStationEvent.endTimeSelected(endTime: $endTime)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EndTimeSelectedEventImpl &&
+            (identical(other.endTime, endTime) || other.endTime == endTime));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, endTime);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EndTimeSelectedEventImplCopyWith<_$EndTimeSelectedEventImpl>
+      get copyWith =>
+          __$$EndTimeSelectedEventImplCopyWithImpl<_$EndTimeSelectedEventImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<File> images) imagesSelected,
+    required TResult Function(int index) removeImage,
+    required TResult Function(ConnectorTypeModel? selectedConnector)
+        connectorTypeChangedEvent,
+    required TResult Function(String startTime) startTimeSelected,
+    required TResult Function(String endTime) endTimeSelected,
+    required TResult Function(String address) getAddress,
+  }) {
+    return endTimeSelected(endTime);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(List<File> images)? imagesSelected,
+    TResult? Function(int index)? removeImage,
+    TResult? Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult? Function(String startTime)? startTimeSelected,
+    TResult? Function(String endTime)? endTimeSelected,
+    TResult? Function(String address)? getAddress,
+  }) {
+    return endTimeSelected?.call(endTime);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<File> images)? imagesSelected,
+    TResult Function(int index)? removeImage,
+    TResult Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult Function(String startTime)? startTimeSelected,
+    TResult Function(String endTime)? endTimeSelected,
+    TResult Function(String address)? getAddress,
+    required TResult orElse(),
+  }) {
+    if (endTimeSelected != null) {
+      return endTimeSelected(endTime);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StartedEvent value) started,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_RemoveImageEvent value) removeImage,
+    required TResult Function(_ConnectorTypeChangedEvent value)
+        connectorTypeChangedEvent,
+    required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
+    required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
+    required TResult Function(_GetAddressEvent value) getAddress,
+  }) {
+    return endTimeSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_RemoveImageEvent value)? removeImage,
+    TResult? Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult? Function(_GetAddressEvent value)? getAddress,
+  }) {
+    return endTimeSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StartedEvent value)? started,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_RemoveImageEvent value)? removeImage,
+    TResult Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult Function(_GetAddressEvent value)? getAddress,
+    required TResult orElse(),
+  }) {
+    if (endTimeSelected != null) {
+      return endTimeSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EndTimeSelectedEvent implements AddStationEvent {
+  const factory _EndTimeSelectedEvent(final String endTime) =
+      _$EndTimeSelectedEventImpl;
+
+  String get endTime;
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EndTimeSelectedEventImplCopyWith<_$EndTimeSelectedEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAddressEventImplCopyWith<$Res> {
+  factory _$$GetAddressEventImplCopyWith(_$GetAddressEventImpl value,
+          $Res Function(_$GetAddressEventImpl) then) =
+      __$$GetAddressEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String address});
+}
+
+/// @nodoc
+class __$$GetAddressEventImplCopyWithImpl<$Res>
+    extends _$AddStationEventCopyWithImpl<$Res, _$GetAddressEventImpl>
+    implements _$$GetAddressEventImplCopyWith<$Res> {
+  __$$GetAddressEventImplCopyWithImpl(
+      _$GetAddressEventImpl _value, $Res Function(_$GetAddressEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? address = null,
+  }) {
+    return _then(_$GetAddressEventImpl(
+      null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAddressEventImpl implements _GetAddressEvent {
+  const _$GetAddressEventImpl(this.address);
+
+  @override
+  final String address;
+
+  @override
+  String toString() {
+    return 'AddStationEvent.getAddress(address: $address)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAddressEventImpl &&
+            (identical(other.address, address) || other.address == address));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, address);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAddressEventImplCopyWith<_$GetAddressEventImpl> get copyWith =>
+      __$$GetAddressEventImplCopyWithImpl<_$GetAddressEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<File> images) imagesSelected,
+    required TResult Function(int index) removeImage,
+    required TResult Function(ConnectorTypeModel? selectedConnector)
+        connectorTypeChangedEvent,
+    required TResult Function(String startTime) startTimeSelected,
+    required TResult Function(String endTime) endTimeSelected,
+    required TResult Function(String address) getAddress,
+  }) {
+    return getAddress(address);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(List<File> images)? imagesSelected,
+    TResult? Function(int index)? removeImage,
+    TResult? Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult? Function(String startTime)? startTimeSelected,
+    TResult? Function(String endTime)? endTimeSelected,
+    TResult? Function(String address)? getAddress,
+  }) {
+    return getAddress?.call(address);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<File> images)? imagesSelected,
+    TResult Function(int index)? removeImage,
+    TResult Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult Function(String startTime)? startTimeSelected,
+    TResult Function(String endTime)? endTimeSelected,
+    TResult Function(String address)? getAddress,
+    required TResult orElse(),
+  }) {
+    if (getAddress != null) {
+      return getAddress(address);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StartedEvent value) started,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_RemoveImageEvent value) removeImage,
+    required TResult Function(_ConnectorTypeChangedEvent value)
+        connectorTypeChangedEvent,
+    required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
+    required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
+    required TResult Function(_GetAddressEvent value) getAddress,
+  }) {
+    return getAddress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_RemoveImageEvent value)? removeImage,
+    TResult? Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult? Function(_GetAddressEvent value)? getAddress,
+  }) {
+    return getAddress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StartedEvent value)? started,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_RemoveImageEvent value)? removeImage,
+    TResult Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult Function(_GetAddressEvent value)? getAddress,
+    required TResult orElse(),
+  }) {
+    if (getAddress != null) {
+      return getAddress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAddressEvent implements AddStationEvent {
+  const factory _GetAddressEvent(final String address) = _$GetAddressEventImpl;
+
+  String get address;
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetAddressEventImplCopyWith<_$GetAddressEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$AddStationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<File>? images) loaded,
+    required TResult Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -510,7 +1373,14 @@ mixin _$AddStationState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<File>? images)? loaded,
+    TResult? Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)?
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -518,7 +1388,14 @@ mixin _$AddStationState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<File>? images)? loaded,
+    TResult Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)?
+        loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -614,7 +1491,14 @@ class _$InitialStateImpl implements _InitialState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<File>? images) loaded,
+    required TResult Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)
+        loaded,
   }) {
     return initial();
   }
@@ -625,7 +1509,14 @@ class _$InitialStateImpl implements _InitialState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<File>? images)? loaded,
+    TResult? Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)?
+        loaded,
   }) {
     return initial?.call();
   }
@@ -636,7 +1527,14 @@ class _$InitialStateImpl implements _InitialState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<File>? images)? loaded,
+    TResult Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)?
+        loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -731,7 +1629,14 @@ class _$LoadingStateImpl implements _LoadingState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<File>? images) loaded,
+    required TResult Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)
+        loaded,
   }) {
     return loading();
   }
@@ -742,7 +1647,14 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<File>? images)? loaded,
+    TResult? Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)?
+        loaded,
   }) {
     return loading?.call();
   }
@@ -753,7 +1665,14 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<File>? images)? loaded,
+    TResult Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -875,7 +1794,14 @@ class _$ErrorStateImpl implements _ErrorState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<File>? images) loaded,
+    required TResult Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)
+        loaded,
   }) {
     return error(message);
   }
@@ -886,7 +1812,14 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<File>? images)? loaded,
+    TResult? Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)?
+        loaded,
   }) {
     return error?.call(message);
   }
@@ -897,7 +1830,14 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<File>? images)? loaded,
+    TResult Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)?
+        loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -962,7 +1902,13 @@ abstract class _$$LoadedStateImplCopyWith<$Res> {
           _$LoadedStateImpl value, $Res Function(_$LoadedStateImpl) then) =
       __$$LoadedStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<File>? images});
+  $Res call(
+      {List<ConnectorTypeModel> connectors,
+      int? initialSelectedConnectorId,
+      List<File>? images,
+      String? startTime,
+      String? endTime,
+      String? address});
 }
 
 /// @nodoc
@@ -978,13 +1924,38 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? connectors = null,
+    Object? initialSelectedConnectorId = freezed,
     Object? images = freezed,
+    Object? startTime = freezed,
+    Object? endTime = freezed,
+    Object? address = freezed,
   }) {
     return _then(_$LoadedStateImpl(
+      null == connectors
+          ? _value._connectors
+          : connectors // ignore: cast_nullable_to_non_nullable
+              as List<ConnectorTypeModel>,
+      initialSelectedConnectorId: freezed == initialSelectedConnectorId
+          ? _value.initialSelectedConnectorId
+          : initialSelectedConnectorId // ignore: cast_nullable_to_non_nullable
+              as int?,
       images: freezed == images
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<File>?,
+      startTime: freezed == startTime
+          ? _value.startTime
+          : startTime // ignore: cast_nullable_to_non_nullable
+              as String?,
+      endTime: freezed == endTime
+          ? _value.endTime
+          : endTime // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -992,8 +1963,25 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedStateImpl implements _LoadedState {
-  const _$LoadedStateImpl({final List<File>? images}) : _images = images;
+  const _$LoadedStateImpl(final List<ConnectorTypeModel> connectors,
+      {this.initialSelectedConnectorId,
+      final List<File>? images,
+      this.startTime,
+      this.endTime,
+      this.address})
+      : _connectors = connectors,
+        _images = images;
 
+  final List<ConnectorTypeModel> _connectors;
+  @override
+  List<ConnectorTypeModel> get connectors {
+    if (_connectors is EqualUnmodifiableListView) return _connectors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_connectors);
+  }
+
+  @override
+  final int? initialSelectedConnectorId;
   final List<File>? _images;
   @override
   List<File>? get images {
@@ -1005,8 +1993,15 @@ class _$LoadedStateImpl implements _LoadedState {
   }
 
   @override
+  final String? startTime;
+  @override
+  final String? endTime;
+  @override
+  final String? address;
+
+  @override
   String toString() {
-    return 'AddStationState.loaded(images: $images)';
+    return 'AddStationState.loaded(connectors: $connectors, initialSelectedConnectorId: $initialSelectedConnectorId, images: $images, startTime: $startTime, endTime: $endTime, address: $address)';
   }
 
   @override
@@ -1014,12 +2009,28 @@ class _$LoadedStateImpl implements _LoadedState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedStateImpl &&
-            const DeepCollectionEquality().equals(other._images, _images));
+            const DeepCollectionEquality()
+                .equals(other._connectors, _connectors) &&
+            (identical(other.initialSelectedConnectorId,
+                    initialSelectedConnectorId) ||
+                other.initialSelectedConnectorId ==
+                    initialSelectedConnectorId) &&
+            const DeepCollectionEquality().equals(other._images, _images) &&
+            (identical(other.startTime, startTime) ||
+                other.startTime == startTime) &&
+            (identical(other.endTime, endTime) || other.endTime == endTime) &&
+            (identical(other.address, address) || other.address == address));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_connectors),
+      initialSelectedConnectorId,
+      const DeepCollectionEquality().hash(_images),
+      startTime,
+      endTime,
+      address);
 
   /// Create a copy of AddStationState
   /// with the given fields replaced by the non-null parameter values.
@@ -1035,9 +2046,17 @@ class _$LoadedStateImpl implements _LoadedState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<File>? images) loaded,
+    required TResult Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)
+        loaded,
   }) {
-    return loaded(images);
+    return loaded(connectors, initialSelectedConnectorId, images, startTime,
+        endTime, address);
   }
 
   @override
@@ -1046,9 +2065,17 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<File>? images)? loaded,
+    TResult? Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)?
+        loaded,
   }) {
-    return loaded?.call(images);
+    return loaded?.call(connectors, initialSelectedConnectorId, images,
+        startTime, endTime, address);
   }
 
   @override
@@ -1057,11 +2084,19 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<File>? images)? loaded,
+    TResult Function(
+            List<ConnectorTypeModel> connectors,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            String? startTime,
+            String? endTime,
+            String? address)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(images);
+      return loaded(connectors, initialSelectedConnectorId, images, startTime,
+          endTime, address);
     }
     return orElse();
   }
@@ -1105,9 +2140,19 @@ class _$LoadedStateImpl implements _LoadedState {
 }
 
 abstract class _LoadedState implements AddStationState {
-  const factory _LoadedState({final List<File>? images}) = _$LoadedStateImpl;
+  const factory _LoadedState(final List<ConnectorTypeModel> connectors,
+      {final int? initialSelectedConnectorId,
+      final List<File>? images,
+      final String? startTime,
+      final String? endTime,
+      final String? address}) = _$LoadedStateImpl;
 
+  List<ConnectorTypeModel> get connectors;
+  int? get initialSelectedConnectorId;
   List<File>? get images;
+  String? get startTime;
+  String? get endTime;
+  String? get address;
 
   /// Create a copy of AddStationState
   /// with the given fields replaced by the non-null parameter values.

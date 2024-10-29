@@ -36,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
             20.h.heightBox,
             ElevatedButton(
               onPressed: () =>
-                  AutoRouter.of(context).push(const AddStationRoute()),
+                  AutoRouter.of(context).push(AddStationRoute()),
               child: const Text(
                 'Add Station',
                 style: TextStyle(

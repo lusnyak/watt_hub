@@ -5,4 +5,10 @@ class AddStationEvent with _$AddStationEvent {
   const factory AddStationEvent.started() = _StartedEvent;
   const factory AddStationEvent.imagesSelected(List<File> images) = _ImagesSelectedEvent;
   const factory AddStationEvent.removeImage(int index) = _RemoveImageEvent;
+  const factory AddStationEvent.connectorTypeChangedEvent(
+      ConnectorTypeModel? selectedConnector) = _ConnectorTypeChangedEvent;
+  const factory AddStationEvent.startTimeSelected(String startTime) = _StartTimeSelectedEvent;
+  const factory AddStationEvent.endTimeSelected(String endTime) = _EndTimeSelectedEvent;
+  const factory AddStationEvent.getAddress(String address) = _GetAddressEvent;
+
 }
