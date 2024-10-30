@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
-import 'package:watt_hub/data/fake_data/create_cars_data/created_cars_data.dart';
-import 'package:watt_hub/data/fake_data/profile_data/profile_data.dart';
-import 'package:watt_hub/data/fake_data/stations_data/stations_map.dart';
 import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/car_info.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/conditional_expansion_tile.dart';
@@ -40,98 +37,114 @@ class _ProfileViewState extends State<_ProfileView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocBuilder<ProfileBloc, ProfileState>(builder: (context, state) {
-        return SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                context.localized.account,
-                textAlign: TextAlign.start,
-                style: body24SemiBoldTextStyle,
-              ).paddingLTRB(20.sp, 80.sp, 20.sp, 20.sp),
-              ListTile(
-                splashColor: WattHubColors.primaryLightGreenColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14)),
-                contentPadding: paddingV20,
-                onTap: () {
-                  AutoRouter.of(context).push(const ProfileDetailRoute());
-                },
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(profileData['fullName'],
-                        style: body16SemiBoldTextStyle),
-                    12.h.heightBox,
-                    Text(profileData['phone'], style: body14RegularTextStyle),
-                  ],
+        return state.when(
+            initialState: () => nil,
+            loadingState: () {
+              return const Center(child: CircularProgressIndicator());
+            },
+            errorState: (message) => Center(child: Text('Error: $message')),
+            loadedState: (profileData, stationData, carData) {
+              return SafeArea(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        context.localized.account,
+                        textAlign: TextAlign.start,
+                        style: body24SemiBoldTextStyle,
+                      ).paddingLTRB(0.sp, 20.sp, 20.sp, 20.sp),
+                      ListTile(
+                        splashColor: WattHubColors.primaryLightGreenColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14)),
+                        contentPadding: paddingV20,
+                        onTap: () {
+                          AutoRouter.of(context)
+                              .push(const ProfileDetailRoute());
+                        },
+                        title: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(profileData.fullName,
+                                style: body16SemiBoldTextStyle),
+                            12.h.heightBox,
+                            Text(profileData.phoneNumber,
+                                style: body14RegularTextStyle),
+                          ],
+                        ),
+                        horizontalTitleGap: 20,
+                        dense: true,
+                        visualDensity:
+                            const VisualDensity(vertical: 4, horizontal: 4),
+                        leading: ClipRRect(
+                          borderRadius:
+                              roundedBorder50, // Makes the image round
+                          child: Image.asset(
+                            WattHubAssets.images.profileImage.keyName,
+                            width: 60.w,
+                            // Sets the width of the image
+                            height: 60.h,
+                            // Sets the height of the image (optional, to make it square)
+                            fit: BoxFit
+                                .cover, // Ensures the image fills the container
+                          ),
+                        ),
+                        trailing: Icon(
+                          Icons.chevron_right_outlined,
+                          size: 40.sp,
+                        ),
+                      ),
+                      const ProfileMenuDivider(),
+                      ConditionalExpansionTile(
+                        title: context.localized.myCar,
+                        iconLeading: Icons.local_taxi_sharp,
+                        children: [
+                          CarInfo(
+                            carData: carData!,
+                          )
+                        ],
+                      ),
+                      ConditionalExpansionTile(
+                        title: context.localized.myStation,
+                        iconLeading: Icons.charging_station_outlined,
+                        children: [
+                          StationInfo(
+                            stationData: stationData!,
+                          )
+                        ],
+                      ),
+                      const ProfileMenuDivider(),
+                      ProfileMenuItem(
+                        title: context.localized.helpCenter,
+                        iconLeading: Icons.sticky_note_2_outlined,
+                        onTap: () => {},
+                        iconTrailing: Icons.chevron_right_outlined,
+                      ),
+                      ProfileMenuItem(
+                        title: context.localized.privacyPolicy,
+                        iconLeading: Icons.lock_outline_sharp,
+                        onTap: () => {},
+                        iconTrailing: Icons.chevron_right_outlined,
+                      ),
+                      ProfileMenuItem(
+                        title: context.localized.about,
+                        iconLeading: Icons.info_outlined,
+                        onTap: () => {},
+                        iconTrailing: Icons.chevron_right_outlined,
+                      ),
+                      ProfileMenuItem(
+                        title: context.localized.logout,
+                        iconLeading: Icons.logout_rounded,
+                        onTap: () => {},
+                        colorTile: WattHubColors.redColor,
+                      ),
+                    ],
+                  ).paddingAll(24.0.sp),
                 ),
-                horizontalTitleGap: 20,
-                dense: true,
-                visualDensity: const VisualDensity(vertical: 4, horizontal: 4),
-                leading: ClipRRect(
-                  borderRadius: roundedBorder50, // Makes the image round
-                  child: Image.asset(
-                    profileData['imageUrl'],
-                    width: 60.w, // Sets the width of the image
-                    height: 60
-                        .h, // Sets the height of the image (optional, to make it square)
-                    fit: BoxFit.cover, // Ensures the image fills the container
-                  ),
-                ),
-                trailing: Icon(
-                  Icons.chevron_right_outlined,
-                  size: 40.sp,
-                ),
-              ),
-              const ProfileMenuDivider(),
-              ConditionalExpansionTile(
-                title: context.localized.myCar,
-                iconLeading: Icons.local_taxi_sharp,
-                children: [
-                  CarInfo(
-                    carData: createdCarData,
-                  )
-                ],
-              ),
-              ConditionalExpansionTile(
-                title: context.localized.myStation,
-                iconLeading: Icons.charging_station_outlined,
-                children: [
-                  StationInfo(
-                    stationData: stationData,
-                  )
-                ],
-              ),
-              const ProfileMenuDivider(),
-              ProfileMenuItem(
-                title: context.localized.helpCenter,
-                iconLeading: Icons.sticky_note_2_outlined,
-                onTap: () => {},
-                iconTrailing: Icons.chevron_right_outlined,
-              ),
-              ProfileMenuItem(
-                title: context.localized.privacyPolicy,
-                iconLeading: Icons.lock_outline_sharp,
-                onTap: () => {},
-                iconTrailing: Icons.chevron_right_outlined,
-              ),
-              ProfileMenuItem(
-                title: context.localized.about,
-                iconLeading: Icons.info_outlined,
-                onTap: () => {},
-                iconTrailing: Icons.chevron_right_outlined,
-              ),
-              ProfileMenuItem(
-                title: context.localized.logout,
-                iconLeading: Icons.logout_rounded,
-                onTap: () => {},
-                colorTile: WattHubColors.redColor,
-              ),
-            ],
-          ).paddingAll(24.0.sp),
-        );
+              );
+            });
       }),
     );
   }
