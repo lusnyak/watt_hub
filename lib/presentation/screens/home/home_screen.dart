@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<HomeBloc>()..add(const LoadStationEvent()),
+      create: (_) => getIt<HomeBloc>()..add(const HomeEvent.loadStationEvent()),
       child: const _HomeView(),
     );
   }
@@ -84,7 +84,7 @@ class _HomeView extends StatelessWidget {
                     onPressed: () {
                       context
                           .read<HomeBloc>()
-                          .add(CenterLocationEvent(currentLocation));
+                          .add(HomeEvent.centerLocationEvent(currentLocation));
                     },
                     child: const Icon(Icons.my_location_outlined),
                   ),
@@ -94,7 +94,7 @@ class _HomeView extends StatelessWidget {
                   onPressed: () {
                     context
                         .read<HomeBloc>()
-                        .add(ToggleViewEvent(currentLocation));
+                        .add(HomeEvent.toggleViewEvent(currentLocation));
                   },
                   child: Icon(
                     isList ? Icons.list : Icons.map,

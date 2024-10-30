@@ -14,7 +14,7 @@ part 'filter_bloc.freezed.dart';
 
 @injectable
 class FilterBloc extends Bloc<FilterEvent, FilterState> {
-  FilterBloc() : super(const FilterState.initialState()) {
+  FilterBloc() : super(const FilterState.initial()) {
     on<_StartedEvent>(_onStartedEvent);
     on<_SliderValueChangedEvent>(_onSliderValueChanged);
     on<_CarTypeChangedEvent>(_onCarTypeChanged);
@@ -24,7 +24,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
 
   Future<void> _onStartedEvent(
       _StartedEvent event, Emitter<FilterState> emit) async {
-    emit(const FilterState.loadingState());
+    emit(const FilterState.loading());
 
     try {
       final filterData = await getIt<FilterStorage>().readFilterData();
@@ -37,7 +37,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
           .map((carJson) => CarTypeModel.fromJson(carJson))
           .toList();
 
-      emit(FilterState.loadedState(
+      emit(FilterState.loaded(
         connectors,
         cars,
         initialRating: filterData?.rating,
@@ -45,7 +45,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
         initialSelectedConnectorId: filterData?.connectorId,
       ));
     } catch (e) {
-      emit(const FilterState.errorState('Failed to load filter data'));
+      emit(const FilterState.error('Failed to load filter data'));
     }
   }
 

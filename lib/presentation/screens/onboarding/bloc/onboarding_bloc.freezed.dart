@@ -40,24 +40,24 @@ mixin _$OnboardingEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadOnboardingEvent value) loadOnboarding,
-    required TResult Function(NextOnboardingEvent value) nextOnboarding,
-    required TResult Function(OnboardingPageChangedEvent value)
+    required TResult Function(_LoadOnboardingEvent value) loadOnboarding,
+    required TResult Function(_NextOnboardingEvent value) nextOnboarding,
+    required TResult Function(_OnboardingPageChangedEvent value)
         onboardingPageChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadOnboardingEvent value)? loadOnboarding,
-    TResult? Function(NextOnboardingEvent value)? nextOnboarding,
-    TResult? Function(OnboardingPageChangedEvent value)? onboardingPageChanged,
+    TResult? Function(_LoadOnboardingEvent value)? loadOnboarding,
+    TResult? Function(_NextOnboardingEvent value)? nextOnboarding,
+    TResult? Function(_OnboardingPageChangedEvent value)? onboardingPageChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadOnboardingEvent value)? loadOnboarding,
-    TResult Function(NextOnboardingEvent value)? nextOnboarding,
-    TResult Function(OnboardingPageChangedEvent value)? onboardingPageChanged,
+    TResult Function(_LoadOnboardingEvent value)? loadOnboarding,
+    TResult Function(_NextOnboardingEvent value)? nextOnboarding,
+    TResult Function(_OnboardingPageChangedEvent value)? onboardingPageChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -105,7 +105,7 @@ class __$$LoadOnboardingEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadOnboardingEventImpl implements LoadOnboardingEvent {
+class _$LoadOnboardingEventImpl implements _LoadOnboardingEvent {
   const _$LoadOnboardingEventImpl();
 
   @override
@@ -160,9 +160,9 @@ class _$LoadOnboardingEventImpl implements LoadOnboardingEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadOnboardingEvent value) loadOnboarding,
-    required TResult Function(NextOnboardingEvent value) nextOnboarding,
-    required TResult Function(OnboardingPageChangedEvent value)
+    required TResult Function(_LoadOnboardingEvent value) loadOnboarding,
+    required TResult Function(_NextOnboardingEvent value) nextOnboarding,
+    required TResult Function(_OnboardingPageChangedEvent value)
         onboardingPageChanged,
   }) {
     return loadOnboarding(this);
@@ -171,9 +171,9 @@ class _$LoadOnboardingEventImpl implements LoadOnboardingEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadOnboardingEvent value)? loadOnboarding,
-    TResult? Function(NextOnboardingEvent value)? nextOnboarding,
-    TResult? Function(OnboardingPageChangedEvent value)? onboardingPageChanged,
+    TResult? Function(_LoadOnboardingEvent value)? loadOnboarding,
+    TResult? Function(_NextOnboardingEvent value)? nextOnboarding,
+    TResult? Function(_OnboardingPageChangedEvent value)? onboardingPageChanged,
   }) {
     return loadOnboarding?.call(this);
   }
@@ -181,9 +181,9 @@ class _$LoadOnboardingEventImpl implements LoadOnboardingEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadOnboardingEvent value)? loadOnboarding,
-    TResult Function(NextOnboardingEvent value)? nextOnboarding,
-    TResult Function(OnboardingPageChangedEvent value)? onboardingPageChanged,
+    TResult Function(_LoadOnboardingEvent value)? loadOnboarding,
+    TResult Function(_NextOnboardingEvent value)? nextOnboarding,
+    TResult Function(_OnboardingPageChangedEvent value)? onboardingPageChanged,
     required TResult orElse(),
   }) {
     if (loadOnboarding != null) {
@@ -193,8 +193,8 @@ class _$LoadOnboardingEventImpl implements LoadOnboardingEvent {
   }
 }
 
-abstract class LoadOnboardingEvent implements OnboardingEvent {
-  const factory LoadOnboardingEvent() = _$LoadOnboardingEventImpl;
+abstract class _LoadOnboardingEvent implements OnboardingEvent {
+  const factory _LoadOnboardingEvent() = _$LoadOnboardingEventImpl;
 }
 
 /// @nodoc
@@ -218,7 +218,7 @@ class __$$NextOnboardingEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NextOnboardingEventImpl implements NextOnboardingEvent {
+class _$NextOnboardingEventImpl implements _NextOnboardingEvent {
   const _$NextOnboardingEventImpl();
 
   @override
@@ -273,9 +273,9 @@ class _$NextOnboardingEventImpl implements NextOnboardingEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadOnboardingEvent value) loadOnboarding,
-    required TResult Function(NextOnboardingEvent value) nextOnboarding,
-    required TResult Function(OnboardingPageChangedEvent value)
+    required TResult Function(_LoadOnboardingEvent value) loadOnboarding,
+    required TResult Function(_NextOnboardingEvent value) nextOnboarding,
+    required TResult Function(_OnboardingPageChangedEvent value)
         onboardingPageChanged,
   }) {
     return nextOnboarding(this);
@@ -284,9 +284,9 @@ class _$NextOnboardingEventImpl implements NextOnboardingEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadOnboardingEvent value)? loadOnboarding,
-    TResult? Function(NextOnboardingEvent value)? nextOnboarding,
-    TResult? Function(OnboardingPageChangedEvent value)? onboardingPageChanged,
+    TResult? Function(_LoadOnboardingEvent value)? loadOnboarding,
+    TResult? Function(_NextOnboardingEvent value)? nextOnboarding,
+    TResult? Function(_OnboardingPageChangedEvent value)? onboardingPageChanged,
   }) {
     return nextOnboarding?.call(this);
   }
@@ -294,9 +294,9 @@ class _$NextOnboardingEventImpl implements NextOnboardingEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadOnboardingEvent value)? loadOnboarding,
-    TResult Function(NextOnboardingEvent value)? nextOnboarding,
-    TResult Function(OnboardingPageChangedEvent value)? onboardingPageChanged,
+    TResult Function(_LoadOnboardingEvent value)? loadOnboarding,
+    TResult Function(_NextOnboardingEvent value)? nextOnboarding,
+    TResult Function(_OnboardingPageChangedEvent value)? onboardingPageChanged,
     required TResult orElse(),
   }) {
     if (nextOnboarding != null) {
@@ -306,8 +306,8 @@ class _$NextOnboardingEventImpl implements NextOnboardingEvent {
   }
 }
 
-abstract class NextOnboardingEvent implements OnboardingEvent {
-  const factory NextOnboardingEvent() = _$NextOnboardingEventImpl;
+abstract class _NextOnboardingEvent implements OnboardingEvent {
+  const factory _NextOnboardingEvent() = _$NextOnboardingEventImpl;
 }
 
 /// @nodoc
@@ -348,7 +348,7 @@ class __$$OnboardingPageChangedEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OnboardingPageChangedEventImpl implements OnboardingPageChangedEvent {
+class _$OnboardingPageChangedEventImpl implements _OnboardingPageChangedEvent {
   const _$OnboardingPageChangedEventImpl(this.pageIndex);
 
   @override
@@ -417,9 +417,9 @@ class _$OnboardingPageChangedEventImpl implements OnboardingPageChangedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadOnboardingEvent value) loadOnboarding,
-    required TResult Function(NextOnboardingEvent value) nextOnboarding,
-    required TResult Function(OnboardingPageChangedEvent value)
+    required TResult Function(_LoadOnboardingEvent value) loadOnboarding,
+    required TResult Function(_NextOnboardingEvent value) nextOnboarding,
+    required TResult Function(_OnboardingPageChangedEvent value)
         onboardingPageChanged,
   }) {
     return onboardingPageChanged(this);
@@ -428,9 +428,9 @@ class _$OnboardingPageChangedEventImpl implements OnboardingPageChangedEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadOnboardingEvent value)? loadOnboarding,
-    TResult? Function(NextOnboardingEvent value)? nextOnboarding,
-    TResult? Function(OnboardingPageChangedEvent value)? onboardingPageChanged,
+    TResult? Function(_LoadOnboardingEvent value)? loadOnboarding,
+    TResult? Function(_NextOnboardingEvent value)? nextOnboarding,
+    TResult? Function(_OnboardingPageChangedEvent value)? onboardingPageChanged,
   }) {
     return onboardingPageChanged?.call(this);
   }
@@ -438,9 +438,9 @@ class _$OnboardingPageChangedEventImpl implements OnboardingPageChangedEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadOnboardingEvent value)? loadOnboarding,
-    TResult Function(NextOnboardingEvent value)? nextOnboarding,
-    TResult Function(OnboardingPageChangedEvent value)? onboardingPageChanged,
+    TResult Function(_LoadOnboardingEvent value)? loadOnboarding,
+    TResult Function(_NextOnboardingEvent value)? nextOnboarding,
+    TResult Function(_OnboardingPageChangedEvent value)? onboardingPageChanged,
     required TResult orElse(),
   }) {
     if (onboardingPageChanged != null) {
@@ -450,8 +450,8 @@ class _$OnboardingPageChangedEventImpl implements OnboardingPageChangedEvent {
   }
 }
 
-abstract class OnboardingPageChangedEvent implements OnboardingEvent {
-  const factory OnboardingPageChangedEvent(final int pageIndex) =
+abstract class _OnboardingPageChangedEvent implements OnboardingEvent {
+  const factory _OnboardingPageChangedEvent(final int pageIndex) =
       _$OnboardingPageChangedEventImpl;
 
   int get pageIndex;
