@@ -13,9 +13,9 @@ class CarModel with _$CarModel {
   const factory CarModel(
       {required int id,
       required CarTypeModel carType,
-      required ConnectorTypeModel connectorTypeModel,
+      required ConnectorTypeModel connectorType,
       required UserModel user,
-      required CarModelTypeModel carModelType,
+      required CarModelTypeModel carModel,
       required List<String> images}) = _CarModel;
 
   factory CarModel.fromJson(Map<String, dynamic> json) =>

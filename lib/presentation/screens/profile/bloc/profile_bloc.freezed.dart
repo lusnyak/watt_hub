@@ -174,57 +174,57 @@ abstract class LoadProfileEvent implements ProfileEvent {
 mixin _$ProfileState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialState,
-    required TResult Function() loadingState,
-    required TResult Function(String message) errorState,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
     required TResult Function(
             UserModel userData, StationModel? stationData, CarModel? carData)
-        loadedState,
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initialState,
-    TResult? Function()? loadingState,
-    TResult? Function(String message)? errorState,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
     TResult? Function(
             UserModel userData, StationModel? stationData, CarModel? carData)?
-        loadedState,
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? loadingState,
-    TResult Function(String message)? errorState,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     TResult Function(
             UserModel userData, StationModel? stationData, CarModel? carData)?
-        loadedState,
+        loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ProfileInitialState value) initialState,
-    required TResult Function(_ProfileLoadingState value) loadingState,
-    required TResult Function(_ProfileErrorState value) errorState,
-    required TResult Function(_ProfileLoadedState value) loadedState,
+    required TResult Function(_ProfileInitialState value) initial,
+    required TResult Function(_ProfileLoadingState value) loading,
+    required TResult Function(_ProfileErrorState value) error,
+    required TResult Function(_ProfileLoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ProfileInitialState value)? initialState,
-    TResult? Function(_ProfileLoadingState value)? loadingState,
-    TResult? Function(_ProfileErrorState value)? errorState,
-    TResult? Function(_ProfileLoadedState value)? loadedState,
+    TResult? Function(_ProfileInitialState value)? initial,
+    TResult? Function(_ProfileLoadingState value)? loading,
+    TResult? Function(_ProfileErrorState value)? error,
+    TResult? Function(_ProfileLoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ProfileInitialState value)? initialState,
-    TResult Function(_ProfileLoadingState value)? loadingState,
-    TResult Function(_ProfileErrorState value)? errorState,
-    TResult Function(_ProfileLoadedState value)? loadedState,
+    TResult Function(_ProfileInitialState value)? initial,
+    TResult Function(_ProfileLoadingState value)? loading,
+    TResult Function(_ProfileErrorState value)? error,
+    TResult Function(_ProfileLoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -277,7 +277,7 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
 
   @override
   String toString() {
-    return 'ProfileState.initialState()';
+    return 'ProfileState.initial()';
   }
 
   @override
@@ -293,42 +293,42 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialState,
-    required TResult Function() loadingState,
-    required TResult Function(String message) errorState,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
     required TResult Function(
             UserModel userData, StationModel? stationData, CarModel? carData)
-        loadedState,
+        loaded,
   }) {
-    return initialState();
+    return initial();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initialState,
-    TResult? Function()? loadingState,
-    TResult? Function(String message)? errorState,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
     TResult? Function(
             UserModel userData, StationModel? stationData, CarModel? carData)?
-        loadedState,
+        loaded,
   }) {
-    return initialState?.call();
+    return initial?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? loadingState,
-    TResult Function(String message)? errorState,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     TResult Function(
             UserModel userData, StationModel? stationData, CarModel? carData)?
-        loadedState,
+        loaded,
     required TResult orElse(),
   }) {
-    if (initialState != null) {
-      return initialState();
+    if (initial != null) {
+      return initial();
     }
     return orElse();
   }
@@ -336,36 +336,36 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ProfileInitialState value) initialState,
-    required TResult Function(_ProfileLoadingState value) loadingState,
-    required TResult Function(_ProfileErrorState value) errorState,
-    required TResult Function(_ProfileLoadedState value) loadedState,
+    required TResult Function(_ProfileInitialState value) initial,
+    required TResult Function(_ProfileLoadingState value) loading,
+    required TResult Function(_ProfileErrorState value) error,
+    required TResult Function(_ProfileLoadedState value) loaded,
   }) {
-    return initialState(this);
+    return initial(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ProfileInitialState value)? initialState,
-    TResult? Function(_ProfileLoadingState value)? loadingState,
-    TResult? Function(_ProfileErrorState value)? errorState,
-    TResult? Function(_ProfileLoadedState value)? loadedState,
+    TResult? Function(_ProfileInitialState value)? initial,
+    TResult? Function(_ProfileLoadingState value)? loading,
+    TResult? Function(_ProfileErrorState value)? error,
+    TResult? Function(_ProfileLoadedState value)? loaded,
   }) {
-    return initialState?.call(this);
+    return initial?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ProfileInitialState value)? initialState,
-    TResult Function(_ProfileLoadingState value)? loadingState,
-    TResult Function(_ProfileErrorState value)? errorState,
-    TResult Function(_ProfileLoadedState value)? loadedState,
+    TResult Function(_ProfileInitialState value)? initial,
+    TResult Function(_ProfileLoadingState value)? loading,
+    TResult Function(_ProfileErrorState value)? error,
+    TResult Function(_ProfileLoadedState value)? loaded,
     required TResult orElse(),
   }) {
-    if (initialState != null) {
-      return initialState(this);
+    if (initial != null) {
+      return initial(this);
     }
     return orElse();
   }
@@ -401,7 +401,7 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
 
   @override
   String toString() {
-    return 'ProfileState.loadingState()';
+    return 'ProfileState.loading()';
   }
 
   @override
@@ -417,42 +417,42 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialState,
-    required TResult Function() loadingState,
-    required TResult Function(String message) errorState,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
     required TResult Function(
             UserModel userData, StationModel? stationData, CarModel? carData)
-        loadedState,
+        loaded,
   }) {
-    return loadingState();
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initialState,
-    TResult? Function()? loadingState,
-    TResult? Function(String message)? errorState,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
     TResult? Function(
             UserModel userData, StationModel? stationData, CarModel? carData)?
-        loadedState,
+        loaded,
   }) {
-    return loadingState?.call();
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? loadingState,
-    TResult Function(String message)? errorState,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     TResult Function(
             UserModel userData, StationModel? stationData, CarModel? carData)?
-        loadedState,
+        loaded,
     required TResult orElse(),
   }) {
-    if (loadingState != null) {
-      return loadingState();
+    if (loading != null) {
+      return loading();
     }
     return orElse();
   }
@@ -460,36 +460,36 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ProfileInitialState value) initialState,
-    required TResult Function(_ProfileLoadingState value) loadingState,
-    required TResult Function(_ProfileErrorState value) errorState,
-    required TResult Function(_ProfileLoadedState value) loadedState,
+    required TResult Function(_ProfileInitialState value) initial,
+    required TResult Function(_ProfileLoadingState value) loading,
+    required TResult Function(_ProfileErrorState value) error,
+    required TResult Function(_ProfileLoadedState value) loaded,
   }) {
-    return loadingState(this);
+    return loading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ProfileInitialState value)? initialState,
-    TResult? Function(_ProfileLoadingState value)? loadingState,
-    TResult? Function(_ProfileErrorState value)? errorState,
-    TResult? Function(_ProfileLoadedState value)? loadedState,
+    TResult? Function(_ProfileInitialState value)? initial,
+    TResult? Function(_ProfileLoadingState value)? loading,
+    TResult? Function(_ProfileErrorState value)? error,
+    TResult? Function(_ProfileLoadedState value)? loaded,
   }) {
-    return loadingState?.call(this);
+    return loading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ProfileInitialState value)? initialState,
-    TResult Function(_ProfileLoadingState value)? loadingState,
-    TResult Function(_ProfileErrorState value)? errorState,
-    TResult Function(_ProfileLoadedState value)? loadedState,
+    TResult Function(_ProfileInitialState value)? initial,
+    TResult Function(_ProfileLoadingState value)? loading,
+    TResult Function(_ProfileErrorState value)? error,
+    TResult Function(_ProfileLoadedState value)? loaded,
     required TResult orElse(),
   }) {
-    if (loadingState != null) {
-      return loadingState(this);
+    if (loading != null) {
+      return loading(this);
     }
     return orElse();
   }
@@ -542,7 +542,7 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
 
   @override
   String toString() {
-    return 'ProfileState.errorState(message: $message)';
+    return 'ProfileState.error(message: $message)';
   }
 
   @override
@@ -568,42 +568,42 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialState,
-    required TResult Function() loadingState,
-    required TResult Function(String message) errorState,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
     required TResult Function(
             UserModel userData, StationModel? stationData, CarModel? carData)
-        loadedState,
+        loaded,
   }) {
-    return errorState(message);
+    return error(message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initialState,
-    TResult? Function()? loadingState,
-    TResult? Function(String message)? errorState,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
     TResult? Function(
             UserModel userData, StationModel? stationData, CarModel? carData)?
-        loadedState,
+        loaded,
   }) {
-    return errorState?.call(message);
+    return error?.call(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? loadingState,
-    TResult Function(String message)? errorState,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     TResult Function(
             UserModel userData, StationModel? stationData, CarModel? carData)?
-        loadedState,
+        loaded,
     required TResult orElse(),
   }) {
-    if (errorState != null) {
-      return errorState(message);
+    if (error != null) {
+      return error(message);
     }
     return orElse();
   }
@@ -611,36 +611,36 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ProfileInitialState value) initialState,
-    required TResult Function(_ProfileLoadingState value) loadingState,
-    required TResult Function(_ProfileErrorState value) errorState,
-    required TResult Function(_ProfileLoadedState value) loadedState,
+    required TResult Function(_ProfileInitialState value) initial,
+    required TResult Function(_ProfileLoadingState value) loading,
+    required TResult Function(_ProfileErrorState value) error,
+    required TResult Function(_ProfileLoadedState value) loaded,
   }) {
-    return errorState(this);
+    return error(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ProfileInitialState value)? initialState,
-    TResult? Function(_ProfileLoadingState value)? loadingState,
-    TResult? Function(_ProfileErrorState value)? errorState,
-    TResult? Function(_ProfileLoadedState value)? loadedState,
+    TResult? Function(_ProfileInitialState value)? initial,
+    TResult? Function(_ProfileLoadingState value)? loading,
+    TResult? Function(_ProfileErrorState value)? error,
+    TResult? Function(_ProfileLoadedState value)? loaded,
   }) {
-    return errorState?.call(this);
+    return error?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ProfileInitialState value)? initialState,
-    TResult Function(_ProfileLoadingState value)? loadingState,
-    TResult Function(_ProfileErrorState value)? errorState,
-    TResult Function(_ProfileLoadedState value)? loadedState,
+    TResult Function(_ProfileInitialState value)? initial,
+    TResult Function(_ProfileLoadingState value)? loading,
+    TResult Function(_ProfileErrorState value)? error,
+    TResult Function(_ProfileLoadedState value)? loaded,
     required TResult orElse(),
   }) {
-    if (errorState != null) {
-      return errorState(this);
+    if (error != null) {
+      return error(this);
     }
     return orElse();
   }
@@ -759,7 +759,7 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
 
   @override
   String toString() {
-    return 'ProfileState.loadedState(userData: $userData, stationData: $stationData, carData: $carData)';
+    return 'ProfileState.loaded(userData: $userData, stationData: $stationData, carData: $carData)';
   }
 
   @override
@@ -789,42 +789,42 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialState,
-    required TResult Function() loadingState,
-    required TResult Function(String message) errorState,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
     required TResult Function(
             UserModel userData, StationModel? stationData, CarModel? carData)
-        loadedState,
+        loaded,
   }) {
-    return loadedState(userData, stationData, carData);
+    return loaded(userData, stationData, carData);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initialState,
-    TResult? Function()? loadingState,
-    TResult? Function(String message)? errorState,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
     TResult? Function(
             UserModel userData, StationModel? stationData, CarModel? carData)?
-        loadedState,
+        loaded,
   }) {
-    return loadedState?.call(userData, stationData, carData);
+    return loaded?.call(userData, stationData, carData);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? loadingState,
-    TResult Function(String message)? errorState,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     TResult Function(
             UserModel userData, StationModel? stationData, CarModel? carData)?
-        loadedState,
+        loaded,
     required TResult orElse(),
   }) {
-    if (loadedState != null) {
-      return loadedState(userData, stationData, carData);
+    if (loaded != null) {
+      return loaded(userData, stationData, carData);
     }
     return orElse();
   }
@@ -832,36 +832,36 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ProfileInitialState value) initialState,
-    required TResult Function(_ProfileLoadingState value) loadingState,
-    required TResult Function(_ProfileErrorState value) errorState,
-    required TResult Function(_ProfileLoadedState value) loadedState,
+    required TResult Function(_ProfileInitialState value) initial,
+    required TResult Function(_ProfileLoadingState value) loading,
+    required TResult Function(_ProfileErrorState value) error,
+    required TResult Function(_ProfileLoadedState value) loaded,
   }) {
-    return loadedState(this);
+    return loaded(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ProfileInitialState value)? initialState,
-    TResult? Function(_ProfileLoadingState value)? loadingState,
-    TResult? Function(_ProfileErrorState value)? errorState,
-    TResult? Function(_ProfileLoadedState value)? loadedState,
+    TResult? Function(_ProfileInitialState value)? initial,
+    TResult? Function(_ProfileLoadingState value)? loading,
+    TResult? Function(_ProfileErrorState value)? error,
+    TResult? Function(_ProfileLoadedState value)? loaded,
   }) {
-    return loadedState?.call(this);
+    return loaded?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ProfileInitialState value)? initialState,
-    TResult Function(_ProfileLoadingState value)? loadingState,
-    TResult Function(_ProfileErrorState value)? errorState,
-    TResult Function(_ProfileLoadedState value)? loadedState,
+    TResult Function(_ProfileInitialState value)? initial,
+    TResult Function(_ProfileLoadingState value)? loading,
+    TResult Function(_ProfileErrorState value)? error,
+    TResult Function(_ProfileLoadedState value)? loaded,
     required TResult orElse(),
   }) {
-    if (loadedState != null) {
-      return loadedState(this);
+    if (loaded != null) {
+      return loaded(this);
     }
     return orElse();
   }

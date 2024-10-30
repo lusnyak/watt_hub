@@ -36,7 +36,7 @@ class FilterView extends StatelessWidget {
       body: SafeArea(
         child: BlocBuilder<FilterBloc, FilterState>(
           builder: (context, state) {
-            return state.when(
+            return state.maybeWhen(
               initialState: () => nil,
               loadingState: () =>
                   const Center(child: CircularProgressIndicator()),
@@ -100,6 +100,7 @@ class FilterView extends StatelessWidget {
                   ],
                 ).paddingAll(20.r);
               },
+              orElse: () => const Center(child: CircularProgressIndicator()),
             );
           },
         ),

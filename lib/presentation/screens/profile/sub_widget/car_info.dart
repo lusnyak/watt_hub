@@ -27,9 +27,9 @@ class CarInfo extends StatelessWidget {
                     context.localized.carInfo,
                     style: body16SemiBoldTextStyle,
                   ).paddingOnly(bottom: 10.sp),
-                  Text(carData.carModelType.title),
+                  Text(carData.carModel.title),
                   Text(carData.carType.title),
-                  Text(carData.connectorTypeModel.title),
+                  Text(carData.connectorType.title),
                 ],
               ).expanded(),
               SizedBox(

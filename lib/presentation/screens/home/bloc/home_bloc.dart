@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -64,7 +63,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   void _onToggleView(ToggleViewEvent event, Emitter<HomeState> emit) {
     if (state is LoadedState) {
       final loadedState = state as LoadedState;
-      emit(HomeState.loaded(loadedState.stations, isList: !loadedState.isList, currentLocation: event.currentLocation));
+      emit(HomeState.loaded(loadedState.stations,
+          isList: !loadedState.isList, currentLocation: event.currentLocation));
     } else {
       emit(const HomeState.viewChanged(true));
     }
