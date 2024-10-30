@@ -69,10 +69,10 @@ class _ProfileViewState extends State<_ProfileView> {
                         title: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(profileData.fullName,
+                            Text(profileData.fullName!,
                                 style: body16SemiBoldTextStyle),
                             12.h.heightBox,
-                            Text(profileData.phoneNumber,
+                            Text(profileData.phoneNumber!,
                                 style: body14RegularTextStyle),
                           ],
                         ),

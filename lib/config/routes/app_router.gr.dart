@@ -219,6 +219,25 @@ class ProfileRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [ProfileTapPage]
+class ProfileTap extends PageRouteInfo<void> {
+  const ProfileTap({List<PageRouteInfo>? children})
+      : super(
+          ProfileTap.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileTap';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const ProfileTapPage();
+    },
+  );
+}
+
+/// generated route for
 /// [RequestStationScreen]
 class RequestStationRoute extends PageRouteInfo<void> {
   const RequestStationRoute({List<PageRouteInfo>? children})
