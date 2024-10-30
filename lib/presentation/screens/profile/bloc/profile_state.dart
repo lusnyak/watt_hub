@@ -2,12 +2,15 @@ part of 'profile_bloc.dart';
 
 @freezed
 class ProfileState with _$ProfileState {
-  const factory ProfileState.initial() = _ProfileInitialState;
+  const factory ProfileState.initialState() = _ProfileInitialState;
 
-  const factory ProfileState.loaded(
-      Map<String, dynamic> profileData,
-      Map<String, dynamic> stationData,
-      Map<String, dynamic> carData) = _ProfileLoadedState;
+  const factory ProfileState.loadingState() = _ProfileLoadingState;
 
-  const factory ProfileState.complete() = _ProfileCompleteState;
+  const factory ProfileState.errorState(String message) = _ProfileErrorState;
+
+  const factory ProfileState.loadedState({
+    required UserModel userData,
+    StationModel? stationData,
+    CarModel? carData,
+  }) = _ProfileLoadedState;
 }

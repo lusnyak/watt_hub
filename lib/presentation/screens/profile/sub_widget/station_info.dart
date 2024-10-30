@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class StationInfo extends StatelessWidget {
-  final Map<String, dynamic> stationData;
+  final StationModel stationData;
   const StationInfo({super.key, required this.stationData});
 
   @override
@@ -21,11 +22,11 @@ class StationInfo extends StatelessWidget {
             context.localized.stationInfo,
             style: body16SemiBoldTextStyle,
           ).paddingOnly(bottom: 10.sp),
-          Text('${context.localized.name}: ${stationData['name']}'),
-          Text('${context.localized.street}: ${stationData['address']}'),
-          Text('${context.localized.max}: ${stationData['kwt']}kWt'),
+          Text('${context.localized.name}: ${stationData.name}'),
+          // Text('${context.localized.street}: ${stationData.address}'),
+          // Text('${context.localized.max}: ${stationData.kwt}kWt'),
           Text(
-              '${context.localized.hourlyRateFull}: ${stationData['hourlyRate']}\$'),
+              '${context.localized.hourlyRateFull}: ${stationData.hourlyRate}\$'),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.end,
