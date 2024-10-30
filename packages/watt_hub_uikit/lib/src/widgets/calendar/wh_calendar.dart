@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
@@ -7,9 +8,11 @@ class WHCalendar extends StatefulWidget {
     super.key,
     this.selectedDay,
     required this.onDaySelected,
+    this.lastDay,
   });
 
   final DateTime? selectedDay;
+  final DateTime? lastDay;
   final Function(DateTime selectedDay, DateTime focusedDay) onDaySelected;
 
   @override
@@ -17,21 +20,22 @@ class WHCalendar extends StatefulWidget {
 }
 
 class _WHCalendarState extends State<WHCalendar> {
-  CalendarFormat _calendarFormat = CalendarFormat.month;
+  final CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime focusedDay = DateTime.now();
   final firstDay = DateTime.now();
+
+
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16.0), // Padding around the calendar
+      padding: EdgeInsets.all(16.r), // Padding around the calendar
       decoration: BoxDecoration(
         color: WattHubColors.grayColor,
         border: Border.all(
           color: WattHubColors.lightGray.withOpacity(0.5),
           width: 1.w,
         ),
-        // borderRadius: BorderRadius.circular(15),
         borderRadius: BorderRadius.circular(20.r),
       ),
       child: TableCalendar(
@@ -39,15 +43,13 @@ class _WHCalendarState extends State<WHCalendar> {
         focusedDay: focusedDay,
         firstDay: firstDay,
         lastDay: DateTime.utc(2030, 12, 31),
-        // rangeStartDay: DateTime.now(),
         availableCalendarFormats: const {
           CalendarFormat.month: 'Month',
-          CalendarFormat.week: 'Week',
+          // CalendarFormat.week: 'Week',
         },
         selectedDayPredicate: (day) {
           return isSameDay(widget.selectedDay, day);
         },
-
         onDaySelected: (selectedDay, focusedDay) {
           widget.onDaySelected(selectedDay, focusedDay);
           setState(() {
@@ -55,23 +57,15 @@ class _WHCalendarState extends State<WHCalendar> {
           });
         },
         calendarFormat: _calendarFormat,
-        onFormatChanged: (format) {
-          setState(() {
-            _calendarFormat = format;
-          });
-        },
-        calendarStyle: const CalendarStyle(
-          // isTodayHighlighted: false,
-
-          defaultDecoration: BoxDecoration(),
-          rowDecoration: BoxDecoration(),
-
-          holidayDecoration: BoxDecoration(),
-          todayDecoration: BoxDecoration(
+        calendarStyle: CalendarStyle(
+          todayTextStyle: body12MediumTextStyle.copyWith(
+            color: WattHubColors.lightGray,
+          ),
+          todayDecoration: const BoxDecoration(
             color: WattHubColors.primaryLightGreenColor,
             shape: BoxShape.circle,
           ),
-          selectedDecoration: BoxDecoration(
+          selectedDecoration: const BoxDecoration(
             color: WattHubColors.primaryGreenColor,
             shape: BoxShape.circle,
           ),
@@ -81,9 +75,51 @@ class _WHCalendarState extends State<WHCalendar> {
             this.focusedDay = focusedDay;
           });
         },
+        calendarBuilders: CalendarBuilders(
+          headerTitleBuilder: (context, date) {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  DateFormat.yMMMM().format(date),
+                  style: body18SemiBoldTextStyle,
+                ),
+                10.w.widthBox,
+                Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.chevron_left),
+                      onPressed: () {
+                        if (focusedDay.isAfter(DateTime(firstDay.year, firstDay.month, 1)))  {
+                          setState(() {
+                            focusedDay = DateTime(focusedDay.year,
+                                focusedDay.month - 1, focusedDay.day);
+                          });
+                        }
+                      },
+                    ),
+                    IconButton(
+                      icon: const Icon(
+                        Icons.chevron_right,
+                        color: WattHubColors.primaryGreenColor,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          focusedDay = DateTime(focusedDay.year,
+                              focusedDay.month + 1, focusedDay.day);
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ],
+            );
+          },
+        ),
         headerStyle: HeaderStyle(
           titleCentered: true,
-          titleTextStyle: body18SemiBoldTextStyle,
+          leftChevronVisible: false,
+          rightChevronVisible: false,
           headerPadding: EdgeInsets.only(
             bottom: 4.h,
           ),
