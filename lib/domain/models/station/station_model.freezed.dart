@@ -27,13 +27,13 @@ mixin _$StationModel {
   DateTime? get endTime => throw _privateConstructorUsedError;
   List<ConnectorTypeModel>? get connectorType =>
       throw _privateConstructorUsedError;
-  int? get hourlyRate => throw _privateConstructorUsedError;
-  int? get kwt => throw _privateConstructorUsedError;
+  num? get hourlyRate => throw _privateConstructorUsedError;
+  num? get kwt => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  List<String> get image => throw _privateConstructorUsedError;
+  List<String>? get image => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
-  List<ReviewModel> get reviews => throw _privateConstructorUsedError;
+  List<ReviewModel>? get reviews => throw _privateConstructorUsedError;
   double? get averageRate => throw _privateConstructorUsedError;
   UserModel? get user => throw _privateConstructorUsedError;
 
@@ -60,13 +60,13 @@ abstract class $StationModelCopyWith<$Res> {
       DateTime? startTime,
       DateTime? endTime,
       List<ConnectorTypeModel>? connectorType,
-      int? hourlyRate,
-      int? kwt,
+      num? hourlyRate,
+      num? kwt,
       String? phoneNumber,
       String? name,
-      List<String> image,
+      List<String>? image,
       String? address,
-      List<ReviewModel> reviews,
+      List<ReviewModel>? reviews,
       double? averageRate,
       UserModel? user});
 
@@ -98,9 +98,9 @@ class _$StationModelCopyWithImpl<$Res, $Val extends StationModel>
     Object? kwt = freezed,
     Object? phoneNumber = freezed,
     Object? name = freezed,
-    Object? image = null,
+    Object? image = freezed,
     Object? address = freezed,
-    Object? reviews = null,
+    Object? reviews = freezed,
     Object? averageRate = freezed,
     Object? user = freezed,
   }) {
@@ -132,11 +132,11 @@ class _$StationModelCopyWithImpl<$Res, $Val extends StationModel>
       hourlyRate: freezed == hourlyRate
           ? _value.hourlyRate
           : hourlyRate // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       kwt: freezed == kwt
           ? _value.kwt
           : kwt // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       phoneNumber: freezed == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
@@ -145,18 +145,18 @@ class _$StationModelCopyWithImpl<$Res, $Val extends StationModel>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      image: null == image
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
-      reviews: null == reviews
+      reviews: freezed == reviews
           ? _value.reviews
           : reviews // ignore: cast_nullable_to_non_nullable
-              as List<ReviewModel>,
+              as List<ReviewModel>?,
       averageRate: freezed == averageRate
           ? _value.averageRate
           : averageRate // ignore: cast_nullable_to_non_nullable
@@ -198,13 +198,13 @@ abstract class _$$StationModelImplCopyWith<$Res>
       DateTime? startTime,
       DateTime? endTime,
       List<ConnectorTypeModel>? connectorType,
-      int? hourlyRate,
-      int? kwt,
+      num? hourlyRate,
+      num? kwt,
       String? phoneNumber,
       String? name,
-      List<String> image,
+      List<String>? image,
       String? address,
-      List<ReviewModel> reviews,
+      List<ReviewModel>? reviews,
       double? averageRate,
       UserModel? user});
 
@@ -235,9 +235,9 @@ class __$$StationModelImplCopyWithImpl<$Res>
     Object? kwt = freezed,
     Object? phoneNumber = freezed,
     Object? name = freezed,
-    Object? image = null,
+    Object? image = freezed,
     Object? address = freezed,
-    Object? reviews = null,
+    Object? reviews = freezed,
     Object? averageRate = freezed,
     Object? user = freezed,
   }) {
@@ -269,11 +269,11 @@ class __$$StationModelImplCopyWithImpl<$Res>
       hourlyRate: freezed == hourlyRate
           ? _value.hourlyRate
           : hourlyRate // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       kwt: freezed == kwt
           ? _value.kwt
           : kwt // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       phoneNumber: freezed == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
@@ -282,18 +282,18 @@ class __$$StationModelImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      image: null == image
+      image: freezed == image
           ? _value._image
           : image // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
-      reviews: null == reviews
+      reviews: freezed == reviews
           ? _value._reviews
           : reviews // ignore: cast_nullable_to_non_nullable
-              as List<ReviewModel>,
+              as List<ReviewModel>?,
       averageRate: freezed == averageRate
           ? _value.averageRate
           : averageRate // ignore: cast_nullable_to_non_nullable
@@ -307,7 +307,8 @@ class __$$StationModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$StationModelImpl implements _StationModel {
   const _$StationModelImpl(
       {required this.id,
@@ -320,9 +321,9 @@ class _$StationModelImpl implements _StationModel {
       this.kwt,
       this.phoneNumber,
       this.name,
-      final List<String> image = const [],
+      final List<String>? image,
       this.address,
-      final List<ReviewModel> reviews = const [],
+      final List<ReviewModel>? reviews,
       this.averageRate,
       this.user})
       : _connectorType = connectorType,
@@ -353,31 +354,33 @@ class _$StationModelImpl implements _StationModel {
   }
 
   @override
-  final int? hourlyRate;
+  final num? hourlyRate;
   @override
-  final int? kwt;
+  final num? kwt;
   @override
   final String? phoneNumber;
   @override
   final String? name;
-  final List<String> _image;
+  final List<String>? _image;
   @override
-  @JsonKey()
-  List<String> get image {
+  List<String>? get image {
+    final value = _image;
+    if (value == null) return null;
     if (_image is EqualUnmodifiableListView) return _image;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_image);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
   final String? address;
-  final List<ReviewModel> _reviews;
+  final List<ReviewModel>? _reviews;
   @override
-  @JsonKey()
-  List<ReviewModel> get reviews {
+  List<ReviewModel>? get reviews {
+    final value = _reviews;
+    if (value == null) return null;
     if (_reviews is EqualUnmodifiableListView) return _reviews;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_reviews);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -463,13 +466,13 @@ abstract class _StationModel implements StationModel {
       final DateTime? startTime,
       final DateTime? endTime,
       final List<ConnectorTypeModel>? connectorType,
-      final int? hourlyRate,
-      final int? kwt,
+      final num? hourlyRate,
+      final num? kwt,
       final String? phoneNumber,
       final String? name,
-      final List<String> image,
+      final List<String>? image,
       final String? address,
-      final List<ReviewModel> reviews,
+      final List<ReviewModel>? reviews,
       final double? averageRate,
       final UserModel? user}) = _$StationModelImpl;
 
@@ -489,19 +492,19 @@ abstract class _StationModel implements StationModel {
   @override
   List<ConnectorTypeModel>? get connectorType;
   @override
-  int? get hourlyRate;
+  num? get hourlyRate;
   @override
-  int? get kwt;
+  num? get kwt;
   @override
   String? get phoneNumber;
   @override
   String? get name;
   @override
-  List<String> get image;
+  List<String>? get image;
   @override
   String? get address;
   @override
-  List<ReviewModel> get reviews;
+  List<ReviewModel>? get reviews;
   @override
   double? get averageRate;
   @override

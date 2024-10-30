@@ -22,20 +22,13 @@ AddStationModel _$AddStationModelFromJson(Map<String, dynamic> json) {
 mixin _$AddStationModel {
   String get lat => throw _privateConstructorUsedError;
   String get lng => throw _privateConstructorUsedError;
-  @JsonKey(name: 'start_time')
   DateTime get startTime => throw _privateConstructorUsedError;
-  @JsonKey(name: 'end_time')
   DateTime get endTime => throw _privateConstructorUsedError;
-  @JsonKey(name: 'connector_type_id')
   int get connectorTypeId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'hourly_rate')
   num get hourlyRate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'phone_number')
   String? get phoneNumber => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
-  List<String> get image => throw _privateConstructorUsedError;
-  @JsonKey(name: 'user_id')
   int get userId => throw _privateConstructorUsedError;
 
   /// Serializes this AddStationModel to a JSON map.
@@ -57,15 +50,14 @@ abstract class $AddStationModelCopyWith<$Res> {
   $Res call(
       {String lat,
       String lng,
-      @JsonKey(name: 'start_time') DateTime startTime,
-      @JsonKey(name: 'end_time') DateTime endTime,
-      @JsonKey(name: 'connector_type_id') int connectorTypeId,
-      @JsonKey(name: 'hourly_rate') num hourlyRate,
-      @JsonKey(name: 'phone_number') String? phoneNumber,
+      DateTime startTime,
+      DateTime endTime,
+      int connectorTypeId,
+      num hourlyRate,
+      String? phoneNumber,
       String? name,
       String address,
-      List<String> image,
-      @JsonKey(name: 'user_id') int userId});
+      int userId});
 }
 
 /// @nodoc
@@ -92,7 +84,6 @@ class _$AddStationModelCopyWithImpl<$Res, $Val extends AddStationModel>
     Object? phoneNumber = freezed,
     Object? name = freezed,
     Object? address = null,
-    Object? image = null,
     Object? userId = null,
   }) {
     return _then(_value.copyWith(
@@ -132,10 +123,6 @@ class _$AddStationModelCopyWithImpl<$Res, $Val extends AddStationModel>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as List<String>,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -155,15 +142,14 @@ abstract class _$$AddStationModelImplCopyWith<$Res>
   $Res call(
       {String lat,
       String lng,
-      @JsonKey(name: 'start_time') DateTime startTime,
-      @JsonKey(name: 'end_time') DateTime endTime,
-      @JsonKey(name: 'connector_type_id') int connectorTypeId,
-      @JsonKey(name: 'hourly_rate') num hourlyRate,
-      @JsonKey(name: 'phone_number') String? phoneNumber,
+      DateTime startTime,
+      DateTime endTime,
+      int connectorTypeId,
+      num hourlyRate,
+      String? phoneNumber,
       String? name,
       String address,
-      List<String> image,
-      @JsonKey(name: 'user_id') int userId});
+      int userId});
 }
 
 /// @nodoc
@@ -188,7 +174,6 @@ class __$$AddStationModelImplCopyWithImpl<$Res>
     Object? phoneNumber = freezed,
     Object? name = freezed,
     Object? address = null,
-    Object? image = null,
     Object? userId = null,
   }) {
     return _then(_$AddStationModelImpl(
@@ -228,10 +213,6 @@ class __$$AddStationModelImplCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      image: null == image
-          ? _value._image
-          : image // ignore: cast_nullable_to_non_nullable
-              as List<String>,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -241,21 +222,20 @@ class __$$AddStationModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$AddStationModelImpl implements _AddStationModel {
   const _$AddStationModelImpl(
       {required this.lat,
       required this.lng,
-      @JsonKey(name: 'start_time') required this.startTime,
-      @JsonKey(name: 'end_time') required this.endTime,
-      @JsonKey(name: 'connector_type_id') required this.connectorTypeId,
-      @JsonKey(name: 'hourly_rate') required this.hourlyRate,
-      @JsonKey(name: 'phone_number') this.phoneNumber,
+      required this.startTime,
+      required this.endTime,
+      required this.connectorTypeId,
+      required this.hourlyRate,
+      this.phoneNumber,
       this.name,
       required this.address,
-      required final List<String> image,
-      @JsonKey(name: 'user_id') required this.userId})
-      : _image = image;
+      required this.userId});
 
   factory _$AddStationModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AddStationModelImplFromJson(json);
@@ -265,39 +245,25 @@ class _$AddStationModelImpl implements _AddStationModel {
   @override
   final String lng;
   @override
-  @JsonKey(name: 'start_time')
   final DateTime startTime;
   @override
-  @JsonKey(name: 'end_time')
   final DateTime endTime;
   @override
-  @JsonKey(name: 'connector_type_id')
   final int connectorTypeId;
   @override
-  @JsonKey(name: 'hourly_rate')
   final num hourlyRate;
   @override
-  @JsonKey(name: 'phone_number')
   final String? phoneNumber;
   @override
   final String? name;
   @override
   final String address;
-  final List<String> _image;
   @override
-  List<String> get image {
-    if (_image is EqualUnmodifiableListView) return _image;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_image);
-  }
-
-  @override
-  @JsonKey(name: 'user_id')
   final int userId;
 
   @override
   String toString() {
-    return 'AddStationModel(lat: $lat, lng: $lng, startTime: $startTime, endTime: $endTime, connectorTypeId: $connectorTypeId, hourlyRate: $hourlyRate, phoneNumber: $phoneNumber, name: $name, address: $address, image: $image, userId: $userId)';
+    return 'AddStationModel(lat: $lat, lng: $lng, startTime: $startTime, endTime: $endTime, connectorTypeId: $connectorTypeId, hourlyRate: $hourlyRate, phoneNumber: $phoneNumber, name: $name, address: $address, userId: $userId)';
   }
 
   @override
@@ -318,25 +284,13 @@ class _$AddStationModelImpl implements _AddStationModel {
                 other.phoneNumber == phoneNumber) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.address, address) || other.address == address) &&
-            const DeepCollectionEquality().equals(other._image, _image) &&
             (identical(other.userId, userId) || other.userId == userId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      lat,
-      lng,
-      startTime,
-      endTime,
-      connectorTypeId,
-      hourlyRate,
-      phoneNumber,
-      name,
-      address,
-      const DeepCollectionEquality().hash(_image),
-      userId);
+  int get hashCode => Object.hash(runtimeType, lat, lng, startTime, endTime,
+      connectorTypeId, hourlyRate, phoneNumber, name, address, userId);
 
   /// Create a copy of AddStationModel
   /// with the given fields replaced by the non-null parameter values.
@@ -359,15 +313,13 @@ abstract class _AddStationModel implements AddStationModel {
   const factory _AddStationModel(
       {required final String lat,
       required final String lng,
-      @JsonKey(name: 'start_time') required final DateTime startTime,
-      @JsonKey(name: 'end_time') required final DateTime endTime,
-      @JsonKey(name: 'connector_type_id') required final int connectorTypeId,
-      @JsonKey(name: 'hourly_rate') required final num hourlyRate,
-      @JsonKey(name: 'phone_number') final String? phoneNumber,
+      required final DateTime startTime,
+      required final DateTime endTime,
+      required final int connectorTypeId,
+      required final num hourlyRate,
+      final String? phoneNumber,
       final String? name,
       required final String address,
-      required final List<String> image,
-      @JsonKey(name: 'user_id')
       required final int userId}) = _$AddStationModelImpl;
 
   factory _AddStationModel.fromJson(Map<String, dynamic> json) =
@@ -378,28 +330,20 @@ abstract class _AddStationModel implements AddStationModel {
   @override
   String get lng;
   @override
-  @JsonKey(name: 'start_time')
   DateTime get startTime;
   @override
-  @JsonKey(name: 'end_time')
   DateTime get endTime;
   @override
-  @JsonKey(name: 'connector_type_id')
   int get connectorTypeId;
   @override
-  @JsonKey(name: 'hourly_rate')
   num get hourlyRate;
   @override
-  @JsonKey(name: 'phone_number')
   String? get phoneNumber;
   @override
   String? get name;
   @override
   String get address;
   @override
-  List<String> get image;
-  @override
-  @JsonKey(name: 'user_id')
   int get userId;
 
   /// Create a copy of AddStationModel

@@ -11,28 +11,26 @@ _$StationModelImpl _$$StationModelImplFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num).toInt(),
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
-      startTime: json['startTime'] == null
+      startTime: json['start_time'] == null
           ? null
-          : DateTime.parse(json['startTime'] as String),
-      endTime: json['endTime'] == null
+          : DateTime.parse(json['start_time'] as String),
+      endTime: json['end_time'] == null
           ? null
-          : DateTime.parse(json['endTime'] as String),
-      connectorType: (json['connectorType'] as List<dynamic>?)
+          : DateTime.parse(json['end_time'] as String),
+      connectorType: (json['connector_type'] as List<dynamic>?)
           ?.map((e) => ConnectorTypeModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      hourlyRate: (json['hourlyRate'] as num?)?.toInt(),
-      kwt: (json['kwt'] as num?)?.toInt(),
-      phoneNumber: json['phoneNumber'] as String?,
+      hourlyRate: json['hourly_rate'] as num?,
+      kwt: json['kwt'] as num?,
+      phoneNumber: json['phone_number'] as String?,
       name: json['name'] as String?,
       image:
-          (json['image'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              const [],
+          (json['image'] as List<dynamic>?)?.map((e) => e as String).toList(),
       address: json['address'] as String?,
       reviews: (json['reviews'] as List<dynamic>?)
-              ?.map((e) => ReviewModel.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-      averageRate: (json['averageRate'] as num?)?.toDouble(),
+          ?.map((e) => ReviewModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      averageRate: (json['average_rate'] as num?)?.toDouble(),
       user: json['user'] == null
           ? null
           : UserModel.fromJson(json['user'] as Map<String, dynamic>),
@@ -43,16 +41,16 @@ Map<String, dynamic> _$$StationModelImplToJson(_$StationModelImpl instance) =>
       'id': instance.id,
       'latitude': instance.latitude,
       'longitude': instance.longitude,
-      'startTime': instance.startTime?.toIso8601String(),
-      'endTime': instance.endTime?.toIso8601String(),
-      'connectorType': instance.connectorType,
-      'hourlyRate': instance.hourlyRate,
+      'start_time': instance.startTime?.toIso8601String(),
+      'end_time': instance.endTime?.toIso8601String(),
+      'connector_type': instance.connectorType,
+      'hourly_rate': instance.hourlyRate,
       'kwt': instance.kwt,
-      'phoneNumber': instance.phoneNumber,
+      'phone_number': instance.phoneNumber,
       'name': instance.name,
       'image': instance.image,
       'address': instance.address,
       'reviews': instance.reviews,
-      'averageRate': instance.averageRate,
+      'average_rate': instance.averageRate,
       'user': instance.user,
     };

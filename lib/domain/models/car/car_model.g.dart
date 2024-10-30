@@ -9,13 +9,13 @@ part of 'car_model.dart';
 _$CarModelImpl _$$CarModelImplFromJson(Map<String, dynamic> json) =>
     _$CarModelImpl(
       id: (json['id'] as num?)?.toInt(),
-      carType: json['carType'] == null
+      carType: json['car_type'] == null
           ? null
-          : CarTypeModel.fromJson(json['carType'] as Map<String, dynamic>),
-      connectorType: json['connectorType'] == null
+          : CarTypeModel.fromJson(json['car_type'] as Map<String, dynamic>),
+      connectorType: json['connector_type'] == null
           ? null
           : ConnectorTypeModel.fromJson(
-              json['connectorType'] as Map<String, dynamic>),
+              json['connector_type'] as Map<String, dynamic>),
       images:
           (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
       user: json['user'] == null
@@ -26,8 +26,8 @@ _$CarModelImpl _$$CarModelImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CarModelImplToJson(_$CarModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'carType': instance.carType,
-      'connectorType': instance.connectorType,
+      'car_type': instance.carType,
+      'connector_type': instance.connectorType,
       'images': instance.images,
       'user': instance.user,
     };

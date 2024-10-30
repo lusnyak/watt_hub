@@ -193,7 +193,8 @@ class __$$ReviewModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$ReviewModelImpl implements _ReviewModel {
   const _$ReviewModelImpl(
       {required this.id, this.rate, this.message, this.user, this.station});

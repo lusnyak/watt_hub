@@ -48,7 +48,7 @@ void showStationInfo(BuildContext context, StationModel station) {
               ),
               10.w.widthBox,
               Text(
-                '(${station.reviews.length} ${context.localized.reviews})',
+                '(${station.reviews?.length} ${context.localized.reviews})',
                 style: body14RegularTextStyle.copyWith(color: Colors.grey),
               ),
             ],

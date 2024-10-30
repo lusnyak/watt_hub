@@ -18,7 +18,6 @@ _$AddStationModelImpl _$$AddStationModelImplFromJson(
       phoneNumber: json['phone_number'] as String?,
       name: json['name'] as String?,
       address: json['address'] as String,
-      image: (json['image'] as List<dynamic>).map((e) => e as String).toList(),
       userId: (json['user_id'] as num).toInt(),
     );
 
@@ -34,6 +33,5 @@ Map<String, dynamic> _$$AddStationModelImplToJson(
       'phone_number': instance.phoneNumber,
       'name': instance.name,
       'address': instance.address,
-      'image': instance.image,
       'user_id': instance.userId,
     };

@@ -7,6 +7,7 @@ part 'review_model.g.dart';
 
 @freezed
 class ReviewModel with _$ReviewModel {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory ReviewModel({
     required int id,
     int? rate,

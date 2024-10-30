@@ -209,7 +209,8 @@ class __$$CarModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$CarModelImpl implements _CarModel {
   const _$CarModelImpl(
       {this.id,
