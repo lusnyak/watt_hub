@@ -13,7 +13,9 @@ class StationInfoBloc extends Bloc<StationInfoEvent, StationInfoState> {
       : super(
           const StationInfoState(),
         ) {
+
     on<_ChangeCarouselIndexEvent>(
+
       (event, emit) {
         emit(
           state.copyWith(activeCarouselIndex: event.index),
@@ -21,7 +23,9 @@ class StationInfoBloc extends Bloc<StationInfoEvent, StationInfoState> {
       },
     );
 
+
     on<_LoadConnectorsEvent>(
+
       (event, emit) {
         final connectors = connectorsData
             .map(

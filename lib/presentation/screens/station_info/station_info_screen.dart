@@ -2,6 +2,8 @@
 
 
 
+
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
@@ -9,27 +11,26 @@ import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart'
 import 'package:watt_hub/presentation/screens/station_info/bloc/station_info_bloc.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
-import '../../../data/fake_data/connectors_data/connectors_data.dart';
-import '../../../domain/models/connector_type/connector_type_model.dart';
-
 @RoutePage()
-class StationInfoScreen extends StatefulWidget {
+class StationInfoScreen extends StatelessWidget {
   const StationInfoScreen({super.key});
 
   @override
-  State<StationInfoScreen> createState() => _StationInfoScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => getIt<StationInfoBloc>()
+        ..add(const StationInfoEvent.loadConnectors()),
+      child: const StationInfoView(),
+    );
+  }
 }
 
-int activeIndex = 0;
-final List<String> imgList = [
-  'https://via.placeholder.com/600x400.png?text=Image+1',
-  'https://via.placeholder.com/600x400.png?text=Image+2',
-  'https://via.placeholder.com/600x400.png?text=Image+3',
-];
+class StationInfoView extends StatelessWidget {
+  const StationInfoView({super.key});
 
-class _StationInfoScreenState extends State<StationInfoScreen> {
   @override
   Widget build(BuildContext context) {
+
 
 
     return BlocProvider(
@@ -48,12 +49,11 @@ class StationInfoView extends StatelessWidget {
     final stationInfoBloc = context.read<StationInfoBloc>();
     final imgList = [
 
+
       'https://via.placeholder.com/600x400.png?text=Image+1',
       'https://via.placeholder.com/600x400.png?text=Image+2',
       'https://via.placeholder.com/600x400.png?text=Image+3',
     ];
-
-
 
 
     return Scaffold(
@@ -173,30 +173,12 @@ class StationInfoView extends StatelessWidget {
               ],
             ),
 
+
           ),
         ),
       ),
 
+
     );
   }
-
-  Widget buildImage(String urlImage, int index) => Container(
-      margin: const EdgeInsets.symmetric(horizontal: 12),
-      color: Colors.grey,
-      child: Image.network(
-        urlImage,
-        fit: BoxFit.cover,
-      ));
-
-  Widget buildIndicator() => AnimatedSmoothIndicator(
-        activeIndex: activeIndex,
-        count: imgList.length,
-        effect: SlideEffect(
-          activeDotColor: WattHubColors.primaryGreenColor,
-          dotColor: WattHubColors.primaryLightGreenColor,
-          dotHeight: 12.r,
-          dotWidth: 12.r,
-          spacing: 8,
-        ),
-      );
 }
