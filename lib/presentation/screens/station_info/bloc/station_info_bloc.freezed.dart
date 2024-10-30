@@ -37,21 +37,21 @@ mixin _$StationInfoEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChangeCarouselIndexEvent value)
+    required TResult Function(_ChangeCarouselIndexEvent value)
         changeCarouselIndex,
-    required TResult Function(LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_LoadConnectorsEvent value) loadConnectors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChangeCarouselIndexEvent value)? changeCarouselIndex,
-    TResult? Function(LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ChangeCarouselIndexEvent value)? changeCarouselIndex,
+    TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChangeCarouselIndexEvent value)? changeCarouselIndex,
-    TResult Function(LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ChangeCarouselIndexEvent value)? changeCarouselIndex,
+    TResult Function(_LoadConnectorsEvent value)? loadConnectors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,7 +115,7 @@ class __$$ChangeCarouselIndexEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeCarouselIndexEventImpl implements ChangeCarouselIndexEvent {
+class _$ChangeCarouselIndexEventImpl implements _ChangeCarouselIndexEvent {
   const _$ChangeCarouselIndexEventImpl(this.index);
 
   @override
@@ -180,9 +180,9 @@ class _$ChangeCarouselIndexEventImpl implements ChangeCarouselIndexEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChangeCarouselIndexEvent value)
+    required TResult Function(_ChangeCarouselIndexEvent value)
         changeCarouselIndex,
-    required TResult Function(LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_LoadConnectorsEvent value) loadConnectors,
   }) {
     return changeCarouselIndex(this);
   }
@@ -190,8 +190,8 @@ class _$ChangeCarouselIndexEventImpl implements ChangeCarouselIndexEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChangeCarouselIndexEvent value)? changeCarouselIndex,
-    TResult? Function(LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ChangeCarouselIndexEvent value)? changeCarouselIndex,
+    TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
   }) {
     return changeCarouselIndex?.call(this);
   }
@@ -199,8 +199,8 @@ class _$ChangeCarouselIndexEventImpl implements ChangeCarouselIndexEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChangeCarouselIndexEvent value)? changeCarouselIndex,
-    TResult Function(LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ChangeCarouselIndexEvent value)? changeCarouselIndex,
+    TResult Function(_LoadConnectorsEvent value)? loadConnectors,
     required TResult orElse(),
   }) {
     if (changeCarouselIndex != null) {
@@ -210,8 +210,8 @@ class _$ChangeCarouselIndexEventImpl implements ChangeCarouselIndexEvent {
   }
 }
 
-abstract class ChangeCarouselIndexEvent implements StationInfoEvent {
-  const factory ChangeCarouselIndexEvent(final int index) =
+abstract class _ChangeCarouselIndexEvent implements StationInfoEvent {
+  const factory _ChangeCarouselIndexEvent(final int index) =
       _$ChangeCarouselIndexEventImpl;
 
   int get index;
@@ -244,7 +244,7 @@ class __$$LoadConnectorsEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadConnectorsEventImpl implements LoadConnectorsEvent {
+class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
   const _$LoadConnectorsEventImpl();
 
   @override
@@ -296,9 +296,9 @@ class _$LoadConnectorsEventImpl implements LoadConnectorsEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChangeCarouselIndexEvent value)
+    required TResult Function(_ChangeCarouselIndexEvent value)
         changeCarouselIndex,
-    required TResult Function(LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_LoadConnectorsEvent value) loadConnectors,
   }) {
     return loadConnectors(this);
   }
@@ -306,8 +306,8 @@ class _$LoadConnectorsEventImpl implements LoadConnectorsEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChangeCarouselIndexEvent value)? changeCarouselIndex,
-    TResult? Function(LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ChangeCarouselIndexEvent value)? changeCarouselIndex,
+    TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
   }) {
     return loadConnectors?.call(this);
   }
@@ -315,8 +315,8 @@ class _$LoadConnectorsEventImpl implements LoadConnectorsEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChangeCarouselIndexEvent value)? changeCarouselIndex,
-    TResult Function(LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ChangeCarouselIndexEvent value)? changeCarouselIndex,
+    TResult Function(_LoadConnectorsEvent value)? loadConnectors,
     required TResult orElse(),
   }) {
     if (loadConnectors != null) {
@@ -326,8 +326,8 @@ class _$LoadConnectorsEventImpl implements LoadConnectorsEvent {
   }
 }
 
-abstract class LoadConnectorsEvent implements StationInfoEvent {
-  const factory LoadConnectorsEvent() = _$LoadConnectorsEventImpl;
+abstract class _LoadConnectorsEvent implements StationInfoEvent {
+  const factory _LoadConnectorsEvent() = _$LoadConnectorsEventImpl;
 }
 
 /// @nodoc
