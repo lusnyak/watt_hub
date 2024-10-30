@@ -1,7 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:watt_hub/config/config.dart';
+import 'package:injectable/injectable.dart';
 
-@injectable
+@lazySingleton
 class ConnectivityChecker {
   Future<bool> hasConnection() async {
     final connectivityResult = await Connectivity().checkConnectivity();

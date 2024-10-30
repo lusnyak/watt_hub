@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
-import 'package:watt_hub/config/network/connectivity/connectivity_checker.dart';
 import 'package:watt_hub/config/network/constants/constants.dart';
 import 'package:watt_hub/data/local/token_storage/token_storage.dart';
 

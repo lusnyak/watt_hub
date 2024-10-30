@@ -3,7 +3,6 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watt_hub/config/config.dart';
-import 'package:watt_hub/config/network/connectivity/connectivity_checker.dart';
 import 'package:watt_hub/data/local/shared_preferences/shared_preferences_service.dart';
 import 'package:watt_hub/data/local/token_storage/token_storage.dart';
 import 'package:watt_hub/data/repository/user_repository.dart';

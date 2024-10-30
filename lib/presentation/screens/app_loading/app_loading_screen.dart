@@ -25,31 +25,41 @@ class _AppLoadingView extends StatelessWidget {
       body: SafeArea(
         child: BlocListener<AppLoadingBloc, AppLoadingState>(
           listener: (context, state) {
-            if (state is AppLoadingSuccessState) {
-              if (state.userData != null) {
-                context.router.push(const HomeRoute());
-              }
-            } else if (state is LoadToOnboardingState) {
-              context.router.replace(const OnboardingRoute());
-            } else if (state is LoadToHomeState) {
-              context.router.replace(const SignUpRoute());
-            } else if (state is ConnectionError) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                    state.message,
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                  backgroundColor: Colors.red,
-                  duration: const Duration(seconds: 3),
-                ),
-              );
-              return;
-            }
+            state.maybeWhen(
+              orElse: () {},
+              success: (userData) {
+                if (userData != null) {
+                  context.router.replace(const HomeRoute());
+                }
+              },
+              loadToOnboarding: () {
+                context.router.replace(const OnboardingRoute());
+              },
+              loadToHome: () {
+                context.router.replace(const SignUpRoute());
+              },
+              error: (message) {
+                context.showSnackBar(message: message);
+              },
+              connectionError: (message) {
+                context.showSnackBar(message: message);
+              },
+            );
           },
-          child: const Center(
-            child: WHCircularSpin(),
-          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                WattHubAssets.images.logo.keyName,
+                height: 96.r,
+                width: 96.r,
+                fit: BoxFit.fitHeight,
+              ),
+              24.h.heightBox,
+              const WHCircularSpin(),
+            ],
+          ).toCenter(),
         ),
       ),
     );
