@@ -16,29 +16,30 @@ abstract class StationRemoteApi {
   /// TODO: - kkrknkvim remote mej dzer functionneri methodneri
   /// anuny piti exni nuyyny inch backic kuga , endpointi pes
   /// ete endpointy stations e uremn dzer methody stations piti exni ,
-  /// heto repositoriai mej inch kuzeq greq
+  /// heto repositoriai mej inch kuzeq greq - done
   @GET(EndPoints.stations)
-  Future<List<StationModel>?> getAllStations();
+  Future<List<StationModel>?> stations();
 
   /// TODO: - inch tesak parameter en , body, formdata, query,
-  /// nshac che , usumnasirel retrofity
+  /// nshac che , usumnasirel retrofity - done
   @POST(EndPoints.stationsFilter)
-  Future<List<StationModel>?> getFilteredStations(
-    String? lng,
-    String? lat,
-    int? radius,
+  Future<List<StationModel>?> stationsFilter(
+    @Body() String? lng,
+    @Body() String? lat,
+    @Body() int? radius,
   );
 
-  /// TODO: - anushadrutyun - endpointy sxal e drac
-  @GET(EndPoints.stations)
-  Future<StationModel?> getStationById(@Path("id") String id);
+  /// TODO: - anushadrutyun - endpointy sxal e drac - done
+  @GET(EndPoints.stationsId)
+  Future<StationModel?> stationsId(@Path("id") String id);
 
+  // Question about this line
   @POST(EndPoints.stations)
   Future<StationModel?> addOwnStation(AddStationModel stationData);
 
   @GET(EndPoints.stationMy)
-  Future<StationModel?> getMyStation();
+  Future<StationModel?> stationMy();
 
   @GET(EndPoints.userStations)
-  Future<List<StationModel>?> getUserStations(@Path("id") String id);
+  Future<List<StationModel>?> userStations(@Path("id") String id);
 }

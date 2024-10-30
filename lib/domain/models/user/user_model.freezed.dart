@@ -195,7 +195,8 @@ class __$$UserModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$UserModelImpl implements _UserModel {
   const _$UserModelImpl(
       {required this.id,

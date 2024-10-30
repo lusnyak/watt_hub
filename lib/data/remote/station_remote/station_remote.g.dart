@@ -6,7 +6,7 @@ part of 'station_remote.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
 class _StationRemoteApi implements StationRemoteApi {
   _StationRemoteApi(
@@ -24,7 +24,7 @@ class _StationRemoteApi implements StationRemoteApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<StationModel>?> getAllStations() async {
+  Future<List<StationModel>?> stations() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -59,7 +59,7 @@ class _StationRemoteApi implements StationRemoteApi {
   }
 
   @override
-  Future<List<StationModel>?> getFilteredStations(
+  Future<List<StationModel>?> stationsFilter(
     String? lng,
     String? lat,
     int? radius,
@@ -99,7 +99,7 @@ class _StationRemoteApi implements StationRemoteApi {
   }
 
   @override
-  Future<StationModel?> getStationById(String id) async {
+  Future<StationModel?> stationsId(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -167,7 +167,7 @@ class _StationRemoteApi implements StationRemoteApi {
   }
 
   @override
-  Future<StationModel?> getMyStation() async {
+  Future<StationModel?> stationMy() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -201,7 +201,7 @@ class _StationRemoteApi implements StationRemoteApi {
   }
 
   @override
-  Future<List<StationModel>?> getUserStations(String id) async {
+  Future<List<StationModel>?> userStations(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};

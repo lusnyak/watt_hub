@@ -6,8 +6,9 @@ part 'add_station_model.g.dart';
 
 @freezed
 class AddStationModel with _$AddStationModel {
-  /// TODO: - usumnasirel hetevyal toxy
+  /// TODO: - usumnasirel hetevyal toxy - done
   @JsonSerializable(fieldRename: FieldRename.snake)
+
   /// -----
   const factory AddStationModel({
     required String lat,
