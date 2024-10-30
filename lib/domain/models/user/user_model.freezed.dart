@@ -20,7 +20,7 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-  int? get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String? get fullName => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
@@ -45,7 +45,7 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
   $Res call(
-      {int? id,
+      {int id,
       String? fullName,
       String? phoneNumber,
       String? email,
@@ -70,7 +70,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? fullName = freezed,
     Object? phoneNumber = freezed,
     Object? email = freezed,
@@ -80,10 +80,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       fullName: freezed == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
@@ -125,7 +125,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? id,
+      {int id,
       String? fullName,
       String? phoneNumber,
       String? email,
@@ -148,7 +148,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? fullName = freezed,
     Object? phoneNumber = freezed,
     Object? email = freezed,
@@ -158,10 +158,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? updatedAt = freezed,
   }) {
     return _then(_$UserModelImpl(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       fullName: freezed == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
@@ -198,7 +198,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserModelImpl implements _UserModel {
   const _$UserModelImpl(
-      {this.id,
+      {required this.id,
       this.fullName,
       this.phoneNumber,
       this.email,
@@ -211,7 +211,7 @@ class _$UserModelImpl implements _UserModel {
       _$$UserModelImplFromJson(json);
 
   @override
-  final int? id;
+  final int id;
   @override
   final String? fullName;
   @override
@@ -274,7 +274,7 @@ class _$UserModelImpl implements _UserModel {
 
 abstract class _UserModel implements UserModel {
   const factory _UserModel(
-      {final int? id,
+      {required final int id,
       final String? fullName,
       final String? phoneNumber,
       final String? email,
@@ -287,7 +287,7 @@ abstract class _UserModel implements UserModel {
       _$UserModelImpl.fromJson;
 
   @override
-  int? get id;
+  int get id;
   @override
   String? get fullName;
   @override
