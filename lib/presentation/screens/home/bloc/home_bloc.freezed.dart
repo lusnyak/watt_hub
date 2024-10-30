@@ -19,7 +19,7 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(LatLng? currentLocation) toggleViewEvent,
     required TResult Function(dynamic currentLocation) centerLocationEvent,
     required TResult Function(StationModel station, LatLng? currentLocation)
         centerOnStation,
@@ -29,7 +29,7 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(LatLng? currentLocation)? toggleViewEvent,
     TResult? Function(dynamic currentLocation)? centerLocationEvent,
     TResult? Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
@@ -39,7 +39,7 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(LatLng? currentLocation)? toggleViewEvent,
     TResult Function(dynamic currentLocation)? centerLocationEvent,
     TResult Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
@@ -50,7 +50,7 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadStationEvent value) loadStationEvent,
-    required TResult Function(_ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(_ToggleViewEvent value) toggleViewEvent,
     required TResult Function(_CenterLocationEvent value) centerLocationEvent,
     required TResult Function(_CenterOnStationEvent value) centerOnStation,
     required TResult Function(_LoadFiltersEvent value) loadFiltersEvent,
@@ -59,7 +59,7 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadStationEvent value)? loadStationEvent,
-    TResult? Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult? Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult? Function(_CenterOnStationEvent value)? centerOnStation,
     TResult? Function(_LoadFiltersEvent value)? loadFiltersEvent,
@@ -68,7 +68,7 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadStationEvent value)? loadStationEvent,
-    TResult Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult Function(_CenterOnStationEvent value)? centerOnStation,
     TResult Function(_LoadFiltersEvent value)? loadFiltersEvent,
@@ -139,7 +139,7 @@ class _$LoadStationEventImpl implements _LoadStationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(LatLng? currentLocation) toggleViewEvent,
     required TResult Function(dynamic currentLocation) centerLocationEvent,
     required TResult Function(StationModel station, LatLng? currentLocation)
         centerOnStation,
@@ -152,7 +152,7 @@ class _$LoadStationEventImpl implements _LoadStationEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(LatLng? currentLocation)? toggleViewEvent,
     TResult? Function(dynamic currentLocation)? centerLocationEvent,
     TResult? Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
@@ -165,7 +165,7 @@ class _$LoadStationEventImpl implements _LoadStationEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(LatLng? currentLocation)? toggleViewEvent,
     TResult Function(dynamic currentLocation)? centerLocationEvent,
     TResult Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
@@ -182,7 +182,7 @@ class _$LoadStationEventImpl implements _LoadStationEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadStationEvent value) loadStationEvent,
-    required TResult Function(_ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(_ToggleViewEvent value) toggleViewEvent,
     required TResult Function(_CenterLocationEvent value) centerLocationEvent,
     required TResult Function(_CenterOnStationEvent value) centerOnStation,
     required TResult Function(_LoadFiltersEvent value) loadFiltersEvent,
@@ -194,7 +194,7 @@ class _$LoadStationEventImpl implements _LoadStationEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadStationEvent value)? loadStationEvent,
-    TResult? Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult? Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult? Function(_CenterOnStationEvent value)? centerOnStation,
     TResult? Function(_LoadFiltersEvent value)? loadFiltersEvent,
@@ -206,7 +206,7 @@ class _$LoadStationEventImpl implements _LoadStationEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadStationEvent value)? loadStationEvent,
-    TResult Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult Function(_CenterOnStationEvent value)? centerOnStation,
     TResult Function(_LoadFiltersEvent value)? loadFiltersEvent,
@@ -266,7 +266,7 @@ class _$ToggleViewEventImpl implements _ToggleViewEvent {
 
   @override
   String toString() {
-    return 'HomeEvent.toggleViewEventEvent(currentLocation: $currentLocation)';
+    return 'HomeEvent.toggleViewEvent(currentLocation: $currentLocation)';
   }
 
   @override
@@ -294,41 +294,41 @@ class _$ToggleViewEventImpl implements _ToggleViewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(LatLng? currentLocation) toggleViewEvent,
     required TResult Function(dynamic currentLocation) centerLocationEvent,
     required TResult Function(StationModel station, LatLng? currentLocation)
         centerOnStation,
     required TResult Function() loadFiltersEvent,
   }) {
-    return toggleViewEventEvent(currentLocation);
+    return toggleViewEvent(currentLocation);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(LatLng? currentLocation)? toggleViewEvent,
     TResult? Function(dynamic currentLocation)? centerLocationEvent,
     TResult? Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
     TResult? Function()? loadFiltersEvent,
   }) {
-    return toggleViewEventEvent?.call(currentLocation);
+    return toggleViewEvent?.call(currentLocation);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(LatLng? currentLocation)? toggleViewEvent,
     TResult Function(dynamic currentLocation)? centerLocationEvent,
     TResult Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
     TResult Function()? loadFiltersEvent,
     required TResult orElse(),
   }) {
-    if (toggleViewEventEvent != null) {
-      return toggleViewEventEvent(currentLocation);
+    if (toggleViewEvent != null) {
+      return toggleViewEvent(currentLocation);
     }
     return orElse();
   }
@@ -337,38 +337,38 @@ class _$ToggleViewEventImpl implements _ToggleViewEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadStationEvent value) loadStationEvent,
-    required TResult Function(_ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(_ToggleViewEvent value) toggleViewEvent,
     required TResult Function(_CenterLocationEvent value) centerLocationEvent,
     required TResult Function(_CenterOnStationEvent value) centerOnStation,
     required TResult Function(_LoadFiltersEvent value) loadFiltersEvent,
   }) {
-    return toggleViewEventEvent(this);
+    return toggleViewEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadStationEvent value)? loadStationEvent,
-    TResult? Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult? Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult? Function(_CenterOnStationEvent value)? centerOnStation,
     TResult? Function(_LoadFiltersEvent value)? loadFiltersEvent,
   }) {
-    return toggleViewEventEvent?.call(this);
+    return toggleViewEvent?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadStationEvent value)? loadStationEvent,
-    TResult Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult Function(_CenterOnStationEvent value)? centerOnStation,
     TResult Function(_LoadFiltersEvent value)? loadFiltersEvent,
     required TResult orElse(),
   }) {
-    if (toggleViewEventEvent != null) {
-      return toggleViewEventEvent(this);
+    if (toggleViewEvent != null) {
+      return toggleViewEvent(this);
     }
     return orElse();
   }
@@ -456,7 +456,7 @@ class _$CenterLocationEventImpl implements _CenterLocationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(LatLng? currentLocation) toggleViewEvent,
     required TResult Function(dynamic currentLocation) centerLocationEvent,
     required TResult Function(StationModel station, LatLng? currentLocation)
         centerOnStation,
@@ -469,7 +469,7 @@ class _$CenterLocationEventImpl implements _CenterLocationEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(LatLng? currentLocation)? toggleViewEvent,
     TResult? Function(dynamic currentLocation)? centerLocationEvent,
     TResult? Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
@@ -482,7 +482,7 @@ class _$CenterLocationEventImpl implements _CenterLocationEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(LatLng? currentLocation)? toggleViewEvent,
     TResult Function(dynamic currentLocation)? centerLocationEvent,
     TResult Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
@@ -499,7 +499,7 @@ class _$CenterLocationEventImpl implements _CenterLocationEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadStationEvent value) loadStationEvent,
-    required TResult Function(_ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(_ToggleViewEvent value) toggleViewEvent,
     required TResult Function(_CenterLocationEvent value) centerLocationEvent,
     required TResult Function(_CenterOnStationEvent value) centerOnStation,
     required TResult Function(_LoadFiltersEvent value) loadFiltersEvent,
@@ -511,7 +511,7 @@ class _$CenterLocationEventImpl implements _CenterLocationEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadStationEvent value)? loadStationEvent,
-    TResult? Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult? Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult? Function(_CenterOnStationEvent value)? centerOnStation,
     TResult? Function(_LoadFiltersEvent value)? loadFiltersEvent,
@@ -523,7 +523,7 @@ class _$CenterLocationEventImpl implements _CenterLocationEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadStationEvent value)? loadStationEvent,
-    TResult Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult Function(_CenterOnStationEvent value)? centerOnStation,
     TResult Function(_LoadFiltersEvent value)? loadFiltersEvent,
@@ -641,7 +641,7 @@ class _$CenterOnStationEventImpl implements _CenterOnStationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(LatLng? currentLocation) toggleViewEvent,
     required TResult Function(dynamic currentLocation) centerLocationEvent,
     required TResult Function(StationModel station, LatLng? currentLocation)
         centerOnStation,
@@ -654,7 +654,7 @@ class _$CenterOnStationEventImpl implements _CenterOnStationEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(LatLng? currentLocation)? toggleViewEvent,
     TResult? Function(dynamic currentLocation)? centerLocationEvent,
     TResult? Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
@@ -667,7 +667,7 @@ class _$CenterOnStationEventImpl implements _CenterOnStationEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(LatLng? currentLocation)? toggleViewEvent,
     TResult Function(dynamic currentLocation)? centerLocationEvent,
     TResult Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
@@ -684,7 +684,7 @@ class _$CenterOnStationEventImpl implements _CenterOnStationEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadStationEvent value) loadStationEvent,
-    required TResult Function(_ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(_ToggleViewEvent value) toggleViewEvent,
     required TResult Function(_CenterLocationEvent value) centerLocationEvent,
     required TResult Function(_CenterOnStationEvent value) centerOnStation,
     required TResult Function(_LoadFiltersEvent value) loadFiltersEvent,
@@ -696,7 +696,7 @@ class _$CenterOnStationEventImpl implements _CenterOnStationEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadStationEvent value)? loadStationEvent,
-    TResult? Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult? Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult? Function(_CenterOnStationEvent value)? centerOnStation,
     TResult? Function(_LoadFiltersEvent value)? loadFiltersEvent,
@@ -708,7 +708,7 @@ class _$CenterOnStationEventImpl implements _CenterOnStationEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadStationEvent value)? loadStationEvent,
-    TResult Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult Function(_CenterOnStationEvent value)? centerOnStation,
     TResult Function(_LoadFiltersEvent value)? loadFiltersEvent,
@@ -778,7 +778,7 @@ class _$LoadFiltersEventImpl implements _LoadFiltersEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadStationEvent,
-    required TResult Function(LatLng? currentLocation) toggleViewEventEvent,
+    required TResult Function(LatLng? currentLocation) toggleViewEvent,
     required TResult Function(dynamic currentLocation) centerLocationEvent,
     required TResult Function(StationModel station, LatLng? currentLocation)
         centerOnStation,
@@ -791,7 +791,7 @@ class _$LoadFiltersEventImpl implements _LoadFiltersEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadStationEvent,
-    TResult? Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult? Function(LatLng? currentLocation)? toggleViewEvent,
     TResult? Function(dynamic currentLocation)? centerLocationEvent,
     TResult? Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
@@ -804,7 +804,7 @@ class _$LoadFiltersEventImpl implements _LoadFiltersEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadStationEvent,
-    TResult Function(LatLng? currentLocation)? toggleViewEventEvent,
+    TResult Function(LatLng? currentLocation)? toggleViewEvent,
     TResult Function(dynamic currentLocation)? centerLocationEvent,
     TResult Function(StationModel station, LatLng? currentLocation)?
         centerOnStation,
@@ -821,7 +821,7 @@ class _$LoadFiltersEventImpl implements _LoadFiltersEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadStationEvent value) loadStationEvent,
-    required TResult Function(_ToggleViewEvent value) toggleViewEventEvent,
+    required TResult Function(_ToggleViewEvent value) toggleViewEvent,
     required TResult Function(_CenterLocationEvent value) centerLocationEvent,
     required TResult Function(_CenterOnStationEvent value) centerOnStation,
     required TResult Function(_LoadFiltersEvent value) loadFiltersEvent,
@@ -833,7 +833,7 @@ class _$LoadFiltersEventImpl implements _LoadFiltersEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadStationEvent value)? loadStationEvent,
-    TResult? Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult? Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult? Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult? Function(_CenterOnStationEvent value)? centerOnStation,
     TResult? Function(_LoadFiltersEvent value)? loadFiltersEvent,
@@ -845,7 +845,7 @@ class _$LoadFiltersEventImpl implements _LoadFiltersEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadStationEvent value)? loadStationEvent,
-    TResult Function(_ToggleViewEvent value)? toggleViewEventEvent,
+    TResult Function(_ToggleViewEvent value)? toggleViewEvent,
     TResult Function(_CenterLocationEvent value)? centerLocationEvent,
     TResult Function(_CenterOnStationEvent value)? centerOnStation,
     TResult Function(_LoadFiltersEvent value)? loadFiltersEvent,
