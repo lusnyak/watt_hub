@@ -10,11 +10,11 @@ _$CarModelImpl _$$CarModelImplFromJson(Map<String, dynamic> json) =>
     _$CarModelImpl(
       id: (json['id'] as num).toInt(),
       carType: CarTypeModel.fromJson(json['carType'] as Map<String, dynamic>),
-      connectorTypeModel: ConnectorTypeModel.fromJson(
-          json['connectorTypeModel'] as Map<String, dynamic>),
+      connectorType: ConnectorTypeModel.fromJson(
+          json['connectorType'] as Map<String, dynamic>),
       user: UserModel.fromJson(json['user'] as Map<String, dynamic>),
-      carModelType: CarModelTypeModel.fromJson(
-          json['carModelType'] as Map<String, dynamic>),
+      carModel:
+          CarModelTypeModel.fromJson(json['carModel'] as Map<String, dynamic>),
       images:
           (json['images'] as List<dynamic>).map((e) => e as String).toList(),
     );
@@ -23,8 +23,8 @@ Map<String, dynamic> _$$CarModelImplToJson(_$CarModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'carType': instance.carType,
-      'connectorTypeModel': instance.connectorTypeModel,
+      'connectorType': instance.connectorType,
       'user': instance.user,
-      'carModelType': instance.carModelType,
+      'carModel': instance.carModel,
       'images': instance.images,
     };

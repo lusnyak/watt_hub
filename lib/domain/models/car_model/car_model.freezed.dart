@@ -22,10 +22,9 @@ CarModel _$CarModelFromJson(Map<String, dynamic> json) {
 mixin _$CarModel {
   int get id => throw _privateConstructorUsedError;
   CarTypeModel get carType => throw _privateConstructorUsedError;
-  ConnectorTypeModel get connectorTypeModel =>
-      throw _privateConstructorUsedError;
+  ConnectorTypeModel get connectorType => throw _privateConstructorUsedError;
   UserModel get user => throw _privateConstructorUsedError;
-  CarModelTypeModel get carModelType => throw _privateConstructorUsedError;
+  CarModelTypeModel get carModel => throw _privateConstructorUsedError;
   List<String> get images => throw _privateConstructorUsedError;
 
   /// Serializes this CarModel to a JSON map.
@@ -46,15 +45,15 @@ abstract class $CarModelCopyWith<$Res> {
   $Res call(
       {int id,
       CarTypeModel carType,
-      ConnectorTypeModel connectorTypeModel,
+      ConnectorTypeModel connectorType,
       UserModel user,
-      CarModelTypeModel carModelType,
+      CarModelTypeModel carModel,
       List<String> images});
 
   $CarTypeModelCopyWith<$Res> get carType;
-  $ConnectorTypeModelCopyWith<$Res> get connectorTypeModel;
+  $ConnectorTypeModelCopyWith<$Res> get connectorType;
   $UserModelCopyWith<$Res> get user;
-  $CarModelTypeModelCopyWith<$Res> get carModelType;
+  $CarModelTypeModelCopyWith<$Res> get carModel;
 }
 
 /// @nodoc
@@ -74,9 +73,9 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
   $Res call({
     Object? id = null,
     Object? carType = null,
-    Object? connectorTypeModel = null,
+    Object? connectorType = null,
     Object? user = null,
-    Object? carModelType = null,
+    Object? carModel = null,
     Object? images = null,
   }) {
     return _then(_value.copyWith(
@@ -88,17 +87,17 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
           ? _value.carType
           : carType // ignore: cast_nullable_to_non_nullable
               as CarTypeModel,
-      connectorTypeModel: null == connectorTypeModel
-          ? _value.connectorTypeModel
-          : connectorTypeModel // ignore: cast_nullable_to_non_nullable
+      connectorType: null == connectorType
+          ? _value.connectorType
+          : connectorType // ignore: cast_nullable_to_non_nullable
               as ConnectorTypeModel,
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserModel,
-      carModelType: null == carModelType
-          ? _value.carModelType
-          : carModelType // ignore: cast_nullable_to_non_nullable
+      carModel: null == carModel
+          ? _value.carModel
+          : carModel // ignore: cast_nullable_to_non_nullable
               as CarModelTypeModel,
       images: null == images
           ? _value.images
@@ -121,10 +120,9 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ConnectorTypeModelCopyWith<$Res> get connectorTypeModel {
-    return $ConnectorTypeModelCopyWith<$Res>(_value.connectorTypeModel,
-        (value) {
-      return _then(_value.copyWith(connectorTypeModel: value) as $Val);
+  $ConnectorTypeModelCopyWith<$Res> get connectorType {
+    return $ConnectorTypeModelCopyWith<$Res>(_value.connectorType, (value) {
+      return _then(_value.copyWith(connectorType: value) as $Val);
     });
   }
 
@@ -142,9 +140,9 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $CarModelTypeModelCopyWith<$Res> get carModelType {
-    return $CarModelTypeModelCopyWith<$Res>(_value.carModelType, (value) {
-      return _then(_value.copyWith(carModelType: value) as $Val);
+  $CarModelTypeModelCopyWith<$Res> get carModel {
+    return $CarModelTypeModelCopyWith<$Res>(_value.carModel, (value) {
+      return _then(_value.copyWith(carModel: value) as $Val);
     });
   }
 }
@@ -160,19 +158,19 @@ abstract class _$$CarModelImplCopyWith<$Res>
   $Res call(
       {int id,
       CarTypeModel carType,
-      ConnectorTypeModel connectorTypeModel,
+      ConnectorTypeModel connectorType,
       UserModel user,
-      CarModelTypeModel carModelType,
+      CarModelTypeModel carModel,
       List<String> images});
 
   @override
   $CarTypeModelCopyWith<$Res> get carType;
   @override
-  $ConnectorTypeModelCopyWith<$Res> get connectorTypeModel;
+  $ConnectorTypeModelCopyWith<$Res> get connectorType;
   @override
   $UserModelCopyWith<$Res> get user;
   @override
-  $CarModelTypeModelCopyWith<$Res> get carModelType;
+  $CarModelTypeModelCopyWith<$Res> get carModel;
 }
 
 /// @nodoc
@@ -190,9 +188,9 @@ class __$$CarModelImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? carType = null,
-    Object? connectorTypeModel = null,
+    Object? connectorType = null,
     Object? user = null,
-    Object? carModelType = null,
+    Object? carModel = null,
     Object? images = null,
   }) {
     return _then(_$CarModelImpl(
@@ -204,17 +202,17 @@ class __$$CarModelImplCopyWithImpl<$Res>
           ? _value.carType
           : carType // ignore: cast_nullable_to_non_nullable
               as CarTypeModel,
-      connectorTypeModel: null == connectorTypeModel
-          ? _value.connectorTypeModel
-          : connectorTypeModel // ignore: cast_nullable_to_non_nullable
+      connectorType: null == connectorType
+          ? _value.connectorType
+          : connectorType // ignore: cast_nullable_to_non_nullable
               as ConnectorTypeModel,
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserModel,
-      carModelType: null == carModelType
-          ? _value.carModelType
-          : carModelType // ignore: cast_nullable_to_non_nullable
+      carModel: null == carModel
+          ? _value.carModel
+          : carModel // ignore: cast_nullable_to_non_nullable
               as CarModelTypeModel,
       images: null == images
           ? _value._images
@@ -230,9 +228,9 @@ class _$CarModelImpl implements _CarModel {
   const _$CarModelImpl(
       {required this.id,
       required this.carType,
-      required this.connectorTypeModel,
+      required this.connectorType,
       required this.user,
-      required this.carModelType,
+      required this.carModel,
       required final List<String> images})
       : _images = images;
 
@@ -244,11 +242,11 @@ class _$CarModelImpl implements _CarModel {
   @override
   final CarTypeModel carType;
   @override
-  final ConnectorTypeModel connectorTypeModel;
+  final ConnectorTypeModel connectorType;
   @override
   final UserModel user;
   @override
-  final CarModelTypeModel carModelType;
+  final CarModelTypeModel carModel;
   final List<String> _images;
   @override
   List<String> get images {
@@ -259,7 +257,7 @@ class _$CarModelImpl implements _CarModel {
 
   @override
   String toString() {
-    return 'CarModel(id: $id, carType: $carType, connectorTypeModel: $connectorTypeModel, user: $user, carModelType: $carModelType, images: $images)';
+    return 'CarModel(id: $id, carType: $carType, connectorType: $connectorType, user: $user, carModel: $carModel, images: $images)';
   }
 
   @override
@@ -269,18 +267,18 @@ class _$CarModelImpl implements _CarModel {
             other is _$CarModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.carType, carType) || other.carType == carType) &&
-            (identical(other.connectorTypeModel, connectorTypeModel) ||
-                other.connectorTypeModel == connectorTypeModel) &&
+            (identical(other.connectorType, connectorType) ||
+                other.connectorType == connectorType) &&
             (identical(other.user, user) || other.user == user) &&
-            (identical(other.carModelType, carModelType) ||
-                other.carModelType == carModelType) &&
+            (identical(other.carModel, carModel) ||
+                other.carModel == carModel) &&
             const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, carType, connectorTypeModel,
-      user, carModelType, const DeepCollectionEquality().hash(_images));
+  int get hashCode => Object.hash(runtimeType, id, carType, connectorType, user,
+      carModel, const DeepCollectionEquality().hash(_images));
 
   /// Create a copy of CarModel
   /// with the given fields replaced by the non-null parameter values.
@@ -302,9 +300,9 @@ abstract class _CarModel implements CarModel {
   const factory _CarModel(
       {required final int id,
       required final CarTypeModel carType,
-      required final ConnectorTypeModel connectorTypeModel,
+      required final ConnectorTypeModel connectorType,
       required final UserModel user,
-      required final CarModelTypeModel carModelType,
+      required final CarModelTypeModel carModel,
       required final List<String> images}) = _$CarModelImpl;
 
   factory _CarModel.fromJson(Map<String, dynamic> json) =
@@ -315,11 +313,11 @@ abstract class _CarModel implements CarModel {
   @override
   CarTypeModel get carType;
   @override
-  ConnectorTypeModel get connectorTypeModel;
+  ConnectorTypeModel get connectorType;
   @override
   UserModel get user;
   @override
-  CarModelTypeModel get carModelType;
+  CarModelTypeModel get carModel;
   @override
   List<String> get images;
 

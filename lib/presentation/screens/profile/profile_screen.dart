@@ -38,12 +38,14 @@ class _ProfileViewState extends State<_ProfileView> {
     return Scaffold(
       body: BlocBuilder<ProfileBloc, ProfileState>(builder: (context, state) {
         return state.when(
-            initialState: () => nil,
-            loadingState: () {
-              return const Center(child: CircularProgressIndicator());
-            },
-            errorState: (message) => Center(child: Text('Error: $message')),
-            loadedState: (profileData, stationData, carData) {
+            initial: () => const SizedBox.shrink(),
+            loading: () => const Center(child: WHCircularSpin()),
+            error: (message) => Center(child: Text('Error: $message')),
+            loaded: (
+              profileData,
+              stationData,
+              carData,
+            ) {
               return SafeArea(
                 child: SingleChildScrollView(
                   child: Column(
@@ -82,7 +84,8 @@ class _ProfileViewState extends State<_ProfileView> {
                           borderRadius:
                               roundedBorder50, // Makes the image round
                           child: Image.asset(
-                            WattHubAssets.images.profileImage.keyName,
+                            WattHubAssets.images.profileImage
+                                .keyName, //Default, Now user model don't have image property
                             width: 60.w,
                             // Sets the width of the image
                             height: 60.h,

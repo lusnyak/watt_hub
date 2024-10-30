@@ -1,14 +1,14 @@
 final Map<String, dynamic> createdCarData = {
   'id': 1,
-  'car_type': {
+  'carType': {
     'id': 1,
     'title': 'SUV',
   },
-  'car_model': {
+  'carModel': {
     'id': 1,
     'title': 'Tesla Model X',
   },
-  'connector_type': {
+  'connectorType': {
     'id': 2,
     'title': 'CCS Combo 2',
   },
@@ -18,8 +18,8 @@ final Map<String, dynamic> createdCarData = {
   ],
   'user': {
     'id': 1,
-    'full_name': 'John Doe',
-    'phone_number': '+1234567890',
+    'fullName': 'John Doe',
+    'phoneNumber': '+1234567890',
     'email': 'johndoe@example.com',
   },
 };
