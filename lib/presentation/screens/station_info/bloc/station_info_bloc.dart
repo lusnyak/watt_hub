@@ -14,7 +14,9 @@ class StationInfoBloc extends Bloc<StationInfoEvent, StationInfoState> {
           const StationInfoState(),
         ) {
 
+
     on<_ChangeCarouselIndexEvent>(
+
 
       (event, emit) {
         emit(
@@ -24,7 +26,9 @@ class StationInfoBloc extends Bloc<StationInfoEvent, StationInfoState> {
     );
 
 
+
     on<_LoadConnectorsEvent>(
+
 
       (event, emit) {
         final connectors = connectorsData
