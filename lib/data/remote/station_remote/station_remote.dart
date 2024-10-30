@@ -13,9 +13,15 @@ abstract class StationRemoteApi {
   @factoryMethod
   factory StationRemoteApi(Dio dio) = _StationRemoteApi;
 
+  /// TODO: - kkrknkvim remote mej dzer functionneri methodneri
+  /// anuny piti exni nuyyny inch backic kuga , endpointi pes
+  /// ete endpointy stations e uremn dzer methody stations piti exni ,
+  /// heto repositoriai mej inch kuzeq greq
   @GET(EndPoints.stations)
   Future<List<StationModel>?> getAllStations();
 
+  /// TODO: - inch tesak parameter en , body, formdata, query,
+  /// nshac che , usumnasirel retrofity
   @POST(EndPoints.stationsFilter)
   Future<List<StationModel>?> getFilteredStations(
     String? lng,
@@ -23,6 +29,7 @@ abstract class StationRemoteApi {
     int? radius,
   );
 
+  /// TODO: - anushadrutyun - endpointy sxal e drac
   @GET(EndPoints.stations)
   Future<StationModel?> getStationById(@Path("id") String id);
 

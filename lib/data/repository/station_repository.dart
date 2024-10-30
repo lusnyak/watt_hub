@@ -5,6 +5,11 @@ import 'package:watt_hub/domain/models/station/station_model.dart';
 
 @lazySingleton
 class StationRepository {
+  /// TODO: - repositorinery zaprosneri handlingi hamar e ,
+  /// cankali e catcherror depqum veradarcnel dadadrk masiv ,
+  /// hetagayum bloci mej null stugumneric zerc mnalu hamar
+  /// verabervum e bolorin
+  ///
   Future<List<StationModel>?> getAllStations() async {
     return await getIt<StationRemoteApi>().getAllStations();
   }
