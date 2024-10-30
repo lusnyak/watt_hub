@@ -18,20 +18,19 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
       connectivitySubscription;
 
   AppLoadingBloc() : super(const AppLoadingState.initial()) {
-    on<GetUserEvent>(onGetUser);
+    on<_GetUserEvent>(onGetUser);
     connectivitySubscription =
         Connectivity().onConnectivityChanged.listen((result) async {
       bool hasConnection = await getIt<ConnectivityChecker>().hasConnection();
       if (!hasConnection) {
         // ignore: invalid_use_of_visible_for_testing_member
         emit(const AppLoadingState.success(null));
-        add(const GetUserEvent());
+        add(const AppLoadingEvent.getUser());
       }
     });
   }
 
-  Future<void> onGetUser(
-      GetUserEvent event, Emitter<AppLoadingState> emit) async {
+  Future<void> onGetUser( event, emit) async {
     emit(const AppLoadingState.loading());
     final tokenMdl = await getIt<TokenStorage>().readToken();
 

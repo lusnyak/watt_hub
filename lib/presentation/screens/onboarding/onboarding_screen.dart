@@ -16,7 +16,7 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          getIt<OnboardingBloc>()..add(const LoadOnboardingEvent()),
+          getIt<OnboardingBloc>()..add(const OnboardingEvent.loadOnboarding()),
       child: const _OnboardingView(),
     );
   }

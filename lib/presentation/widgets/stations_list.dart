@@ -24,7 +24,7 @@ class StationsList extends StatelessWidget {
         return StationListItem(
           stationListItem: stationItem,
           onTap: () => context.read<HomeBloc>().add(
-                CenterOnStationEvent(stationItem, currentLocation),
+                HomeEvent.centerOnStation(stationItem, currentLocation),
               ),
         );
       },

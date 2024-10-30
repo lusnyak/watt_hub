@@ -8,7 +8,9 @@ import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/utils/helpers/location_helper.dart';
 
 part 'home_bloc.freezed.dart';
+
 part 'home_event.dart';
+
 part 'home_state.dart';
 
 @injectable
@@ -17,11 +19,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final MapController mapController = MapController();
 
   HomeBloc() : super(const HomeState.initial()) {
-    on<LoadStationEvent>(_onLoadStation);
-    on<ToggleViewEvent>(_onToggleView);
-    on<CenterLocationEvent>(_onCenterLocation);
-    on<CenterOnStationEvent>(_onCenterOnStation);
-    on<LoadFiltersEvent>(_onLoadFilters);
+    on<_LoadStationEvent>(_onLoadStation);
+    on<_ToggleViewEvent>(_onToggleView);
+    on<_CenterLocationEvent>(_onCenterLocation);
+    on<_CenterOnStationEvent>(_onCenterOnStation);
+    on<_LoadFiltersEvent>(_onLoadFilters);
   }
 
   Future<LatLng?> _initializeLocation() async {
@@ -32,10 +34,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     return null;
   }
 
-  Future<void> _onLoadStation(
-    LoadStationEvent event,
-    Emitter<HomeState> emit,
-  ) async {
+  Future<void> _onLoadStation(event, emit) async {
     emit(const HomeState.loading());
     try {
       final location = await _initializeLocation();
@@ -54,12 +53,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
   }
 
-  Future<void> _onLoadFilters(
-    LoadFiltersEvent event,
-    Emitter<HomeState> emit,
-  ) async {}
+  Future<void> _onLoadFilters(event, emit) async {}
 
-  void _onToggleView(ToggleViewEvent event, Emitter<HomeState> emit) {
+  void _onToggleView(event, emit) {
     if (state is LoadedState) {
       final loadedState = state as LoadedState;
       emit(HomeState.loaded(loadedState.stations,
@@ -69,18 +65,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
   }
 
-  void _onCenterLocation(
-      CenterLocationEvent event, Emitter<HomeState> emit) async {
+  void _onCenterLocation(event, emit) async {
     final location = event.currentLocation;
     if (location != null) {
       mapController.move(location, 18.0);
     }
   }
 
-  void _onCenterOnStation(
-    CenterOnStationEvent event,
-    Emitter<HomeState> emit,
-  ) {
+  void _onCenterOnStation(event, emit) {
     final stationLocation = LatLng(
       event.station.latitude,
       event.station.longitude,

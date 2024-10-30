@@ -93,8 +93,8 @@ class _SignUpView extends StatelessWidget {
                         WHTextField.singleLine(
                           controller: signUpBloc.emailController,
                           onChanged: (value) {
-                            signUpBloc.add(
-                              EmailChangedEvent(value),
+                            signUpBloc.add( SignUpEvent.emailChanged(value)
+                           ,
                             );
                           },
                           label: AppLocalizations.of(context).emailAddress,
@@ -113,7 +113,7 @@ class _SignUpView extends StatelessWidget {
                               onChanged: (bool? value) {
                                 if (value != null) {
                                   signUpBloc.add(
-                                    CheckboxChangedEvent(value),
+                                      SignUpEvent.checkboxChanged(value),
                                   );
                                 }
                               },
@@ -160,7 +160,7 @@ class _SignUpView extends StatelessWidget {
                 WHElevatedButton.primary(
                   title: AppLocalizations.of(context).continueText,
                   onPressed: () {
-                    signUpBloc.add(const SubmitSignUpEvent());
+                    signUpBloc.add(const SignUpEvent.submitSignUp());
                   },
                 ).paddingSymmetric(vertical: 16.h, horizontal: 20.w)
               ],

@@ -40,23 +40,23 @@ mixin _$SignUpEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChangedEvent value) emailChanged,
-    required TResult Function(CheckboxChangedEvent value) checkboxChanged,
-    required TResult Function(SubmitSignUpEvent value) submitSignUp,
+    required TResult Function(_EmailChangedEvent value) emailChanged,
+    required TResult Function(_CheckboxChangedEvent value) checkboxChanged,
+    required TResult Function(_SubmitSignUpEvent value) submitSignUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChangedEvent value)? emailChanged,
-    TResult? Function(CheckboxChangedEvent value)? checkboxChanged,
-    TResult? Function(SubmitSignUpEvent value)? submitSignUp,
+    TResult? Function(_EmailChangedEvent value)? emailChanged,
+    TResult? Function(_CheckboxChangedEvent value)? checkboxChanged,
+    TResult? Function(_SubmitSignUpEvent value)? submitSignUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChangedEvent value)? emailChanged,
-    TResult Function(CheckboxChangedEvent value)? checkboxChanged,
-    TResult Function(SubmitSignUpEvent value)? submitSignUp,
+    TResult Function(_EmailChangedEvent value)? emailChanged,
+    TResult Function(_CheckboxChangedEvent value)? checkboxChanged,
+    TResult Function(_SubmitSignUpEvent value)? submitSignUp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -118,7 +118,7 @@ class __$$EmailChangedEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EmailChangedEventImpl implements EmailChangedEvent {
+class _$EmailChangedEventImpl implements _EmailChangedEvent {
   const _$EmailChangedEventImpl(this.email);
 
   @override
@@ -186,9 +186,9 @@ class _$EmailChangedEventImpl implements EmailChangedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChangedEvent value) emailChanged,
-    required TResult Function(CheckboxChangedEvent value) checkboxChanged,
-    required TResult Function(SubmitSignUpEvent value) submitSignUp,
+    required TResult Function(_EmailChangedEvent value) emailChanged,
+    required TResult Function(_CheckboxChangedEvent value) checkboxChanged,
+    required TResult Function(_SubmitSignUpEvent value) submitSignUp,
   }) {
     return emailChanged(this);
   }
@@ -196,9 +196,9 @@ class _$EmailChangedEventImpl implements EmailChangedEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChangedEvent value)? emailChanged,
-    TResult? Function(CheckboxChangedEvent value)? checkboxChanged,
-    TResult? Function(SubmitSignUpEvent value)? submitSignUp,
+    TResult? Function(_EmailChangedEvent value)? emailChanged,
+    TResult? Function(_CheckboxChangedEvent value)? checkboxChanged,
+    TResult? Function(_SubmitSignUpEvent value)? submitSignUp,
   }) {
     return emailChanged?.call(this);
   }
@@ -206,9 +206,9 @@ class _$EmailChangedEventImpl implements EmailChangedEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChangedEvent value)? emailChanged,
-    TResult Function(CheckboxChangedEvent value)? checkboxChanged,
-    TResult Function(SubmitSignUpEvent value)? submitSignUp,
+    TResult Function(_EmailChangedEvent value)? emailChanged,
+    TResult Function(_CheckboxChangedEvent value)? checkboxChanged,
+    TResult Function(_SubmitSignUpEvent value)? submitSignUp,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -218,8 +218,9 @@ class _$EmailChangedEventImpl implements EmailChangedEvent {
   }
 }
 
-abstract class EmailChangedEvent implements SignUpEvent {
-  const factory EmailChangedEvent(final String email) = _$EmailChangedEventImpl;
+abstract class _EmailChangedEvent implements SignUpEvent {
+  const factory _EmailChangedEvent(final String email) =
+      _$EmailChangedEventImpl;
 
   String get email;
 
@@ -265,7 +266,7 @@ class __$$CheckboxChangedEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CheckboxChangedEventImpl implements CheckboxChangedEvent {
+class _$CheckboxChangedEventImpl implements _CheckboxChangedEvent {
   const _$CheckboxChangedEventImpl(this.isChecked);
 
   @override
@@ -335,9 +336,9 @@ class _$CheckboxChangedEventImpl implements CheckboxChangedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChangedEvent value) emailChanged,
-    required TResult Function(CheckboxChangedEvent value) checkboxChanged,
-    required TResult Function(SubmitSignUpEvent value) submitSignUp,
+    required TResult Function(_EmailChangedEvent value) emailChanged,
+    required TResult Function(_CheckboxChangedEvent value) checkboxChanged,
+    required TResult Function(_SubmitSignUpEvent value) submitSignUp,
   }) {
     return checkboxChanged(this);
   }
@@ -345,9 +346,9 @@ class _$CheckboxChangedEventImpl implements CheckboxChangedEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChangedEvent value)? emailChanged,
-    TResult? Function(CheckboxChangedEvent value)? checkboxChanged,
-    TResult? Function(SubmitSignUpEvent value)? submitSignUp,
+    TResult? Function(_EmailChangedEvent value)? emailChanged,
+    TResult? Function(_CheckboxChangedEvent value)? checkboxChanged,
+    TResult? Function(_SubmitSignUpEvent value)? submitSignUp,
   }) {
     return checkboxChanged?.call(this);
   }
@@ -355,9 +356,9 @@ class _$CheckboxChangedEventImpl implements CheckboxChangedEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChangedEvent value)? emailChanged,
-    TResult Function(CheckboxChangedEvent value)? checkboxChanged,
-    TResult Function(SubmitSignUpEvent value)? submitSignUp,
+    TResult Function(_EmailChangedEvent value)? emailChanged,
+    TResult Function(_CheckboxChangedEvent value)? checkboxChanged,
+    TResult Function(_SubmitSignUpEvent value)? submitSignUp,
     required TResult orElse(),
   }) {
     if (checkboxChanged != null) {
@@ -367,8 +368,8 @@ class _$CheckboxChangedEventImpl implements CheckboxChangedEvent {
   }
 }
 
-abstract class CheckboxChangedEvent implements SignUpEvent {
-  const factory CheckboxChangedEvent(final bool isChecked) =
+abstract class _CheckboxChangedEvent implements SignUpEvent {
+  const factory _CheckboxChangedEvent(final bool isChecked) =
       _$CheckboxChangedEventImpl;
 
   bool get isChecked;
@@ -401,7 +402,7 @@ class __$$SubmitSignUpEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SubmitSignUpEventImpl implements SubmitSignUpEvent {
+class _$SubmitSignUpEventImpl implements _SubmitSignUpEvent {
   const _$SubmitSignUpEventImpl();
 
   @override
@@ -455,9 +456,9 @@ class _$SubmitSignUpEventImpl implements SubmitSignUpEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChangedEvent value) emailChanged,
-    required TResult Function(CheckboxChangedEvent value) checkboxChanged,
-    required TResult Function(SubmitSignUpEvent value) submitSignUp,
+    required TResult Function(_EmailChangedEvent value) emailChanged,
+    required TResult Function(_CheckboxChangedEvent value) checkboxChanged,
+    required TResult Function(_SubmitSignUpEvent value) submitSignUp,
   }) {
     return submitSignUp(this);
   }
@@ -465,9 +466,9 @@ class _$SubmitSignUpEventImpl implements SubmitSignUpEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChangedEvent value)? emailChanged,
-    TResult? Function(CheckboxChangedEvent value)? checkboxChanged,
-    TResult? Function(SubmitSignUpEvent value)? submitSignUp,
+    TResult? Function(_EmailChangedEvent value)? emailChanged,
+    TResult? Function(_CheckboxChangedEvent value)? checkboxChanged,
+    TResult? Function(_SubmitSignUpEvent value)? submitSignUp,
   }) {
     return submitSignUp?.call(this);
   }
@@ -475,9 +476,9 @@ class _$SubmitSignUpEventImpl implements SubmitSignUpEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChangedEvent value)? emailChanged,
-    TResult Function(CheckboxChangedEvent value)? checkboxChanged,
-    TResult Function(SubmitSignUpEvent value)? submitSignUp,
+    TResult Function(_EmailChangedEvent value)? emailChanged,
+    TResult Function(_CheckboxChangedEvent value)? checkboxChanged,
+    TResult Function(_SubmitSignUpEvent value)? submitSignUp,
     required TResult orElse(),
   }) {
     if (submitSignUp != null) {
@@ -487,8 +488,8 @@ class _$SubmitSignUpEventImpl implements SubmitSignUpEvent {
   }
 }
 
-abstract class SubmitSignUpEvent implements SignUpEvent {
-  const factory SubmitSignUpEvent() = _$SubmitSignUpEventImpl;
+abstract class _SubmitSignUpEvent implements SignUpEvent {
+  const factory _SubmitSignUpEvent() = _$SubmitSignUpEventImpl;
 }
 
 /// @nodoc

@@ -37,20 +37,20 @@ mixin _$AppLoadingEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetUserEvent value) getUser,
-    required TResult Function(ShowConnectionEvent value) showConnection,
+    required TResult Function(_GetUserEvent value) getUser,
+    required TResult Function(_ShowConnectionEvent value) showConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetUserEvent value)? getUser,
-    TResult? Function(ShowConnectionEvent value)? showConnection,
+    TResult? Function(_GetUserEvent value)? getUser,
+    TResult? Function(_ShowConnectionEvent value)? showConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetUserEvent value)? getUser,
-    TResult Function(ShowConnectionEvent value)? showConnection,
+    TResult Function(_GetUserEvent value)? getUser,
+    TResult Function(_ShowConnectionEvent value)? showConnection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -98,7 +98,7 @@ class __$$GetUserEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetUserEventImpl with DiagnosticableTreeMixin implements GetUserEvent {
+class _$GetUserEventImpl with DiagnosticableTreeMixin implements _GetUserEvent {
   const _$GetUserEventImpl();
 
   @override
@@ -155,8 +155,8 @@ class _$GetUserEventImpl with DiagnosticableTreeMixin implements GetUserEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetUserEvent value) getUser,
-    required TResult Function(ShowConnectionEvent value) showConnection,
+    required TResult Function(_GetUserEvent value) getUser,
+    required TResult Function(_ShowConnectionEvent value) showConnection,
   }) {
     return getUser(this);
   }
@@ -164,8 +164,8 @@ class _$GetUserEventImpl with DiagnosticableTreeMixin implements GetUserEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetUserEvent value)? getUser,
-    TResult? Function(ShowConnectionEvent value)? showConnection,
+    TResult? Function(_GetUserEvent value)? getUser,
+    TResult? Function(_ShowConnectionEvent value)? showConnection,
   }) {
     return getUser?.call(this);
   }
@@ -173,8 +173,8 @@ class _$GetUserEventImpl with DiagnosticableTreeMixin implements GetUserEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetUserEvent value)? getUser,
-    TResult Function(ShowConnectionEvent value)? showConnection,
+    TResult Function(_GetUserEvent value)? getUser,
+    TResult Function(_ShowConnectionEvent value)? showConnection,
     required TResult orElse(),
   }) {
     if (getUser != null) {
@@ -184,8 +184,8 @@ class _$GetUserEventImpl with DiagnosticableTreeMixin implements GetUserEvent {
   }
 }
 
-abstract class GetUserEvent implements AppLoadingEvent {
-  const factory GetUserEvent() = _$GetUserEventImpl;
+abstract class _GetUserEvent implements AppLoadingEvent {
+  const factory _GetUserEvent() = _$GetUserEventImpl;
 }
 
 /// @nodoc
@@ -211,7 +211,7 @@ class __$$ShowConnectionEventImplCopyWithImpl<$Res>
 
 class _$ShowConnectionEventImpl
     with DiagnosticableTreeMixin
-    implements ShowConnectionEvent {
+    implements _ShowConnectionEvent {
   const _$ShowConnectionEventImpl();
 
   @override
@@ -270,8 +270,8 @@ class _$ShowConnectionEventImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetUserEvent value) getUser,
-    required TResult Function(ShowConnectionEvent value) showConnection,
+    required TResult Function(_GetUserEvent value) getUser,
+    required TResult Function(_ShowConnectionEvent value) showConnection,
   }) {
     return showConnection(this);
   }
@@ -279,8 +279,8 @@ class _$ShowConnectionEventImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetUserEvent value)? getUser,
-    TResult? Function(ShowConnectionEvent value)? showConnection,
+    TResult? Function(_GetUserEvent value)? getUser,
+    TResult? Function(_ShowConnectionEvent value)? showConnection,
   }) {
     return showConnection?.call(this);
   }
@@ -288,8 +288,8 @@ class _$ShowConnectionEventImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetUserEvent value)? getUser,
-    TResult Function(ShowConnectionEvent value)? showConnection,
+    TResult Function(_GetUserEvent value)? getUser,
+    TResult Function(_ShowConnectionEvent value)? showConnection,
     required TResult orElse(),
   }) {
     if (showConnection != null) {
@@ -299,8 +299,8 @@ class _$ShowConnectionEventImpl
   }
 }
 
-abstract class ShowConnectionEvent implements AppLoadingEvent {
-  const factory ShowConnectionEvent() = _$ShowConnectionEventImpl;
+abstract class _ShowConnectionEvent implements AppLoadingEvent {
+  const factory _ShowConnectionEvent() = _$ShowConnectionEventImpl;
 }
 
 /// @nodoc
