@@ -4,6 +4,8 @@
 
 
 
+
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
@@ -71,6 +73,7 @@ class StationInfoView extends StatelessWidget {
                   builder: (context, state) {
                     return Column(
                       children: [
+                        ///TODO: - unenal uikit mej element
                         CarouselSlider.builder(
                           options: CarouselOptions(
                             height: 130.0,
@@ -102,6 +105,7 @@ class StationInfoView extends StatelessWidget {
                           },
                         ),
                         20.h.heightBox,
+                        /// TODO: - unenal uikit mej element , miavorel karuseli mej
                         AnimatedSmoothIndicator(
                           activeIndex: state.activeCarouselIndex,
                           count: imgList.length,
