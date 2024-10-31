@@ -8,6 +8,7 @@ export 'package:pinput/pinput.dart';
 export 'package:dropdown_button2/dropdown_button2.dart';
 export 'package:flutter_spinkit/flutter_spinkit.dart';
 export 'package:smooth_page_indicator/smooth_page_indicator.dart';
+export 'package:carousel_slider/carousel_slider.dart';
 
 
 /// internal
