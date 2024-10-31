@@ -15,7 +15,7 @@ class VerificationBloc extends Bloc<VerificationEvent, VerificationState> {
   final TextEditingController pinController = TextEditingController();
 
   VerificationBloc() : super(const VerificationState.initial()) {
-    on<ResendOtp>((event, emit) async {
+    on<_ResendOtpEvent>((event, emit) async {
       emit(const VerificationState.loading());
       try {
         final TokenModel? resendData =
@@ -31,7 +31,7 @@ class VerificationBloc extends Bloc<VerificationEvent, VerificationState> {
       }
     });
 
-    on<VerifyOtp>(
+    on<_VerifyOtpEvent>(
       (event, emit) async {
         emit(const VerificationState.loading());
         try {
@@ -49,7 +49,7 @@ class VerificationBloc extends Bloc<VerificationEvent, VerificationState> {
       },
     );
 
-    on<SetValuesEvent>((event, emit) {
+    on<_SetValuesEvent>((event, emit) {
       if (event.token != null) {
         emit(VerificationState.success(token: event.token, email: event.email));
       }

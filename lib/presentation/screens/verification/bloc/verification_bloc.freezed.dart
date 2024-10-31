@@ -42,23 +42,23 @@ mixin _$VerificationEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ResendOtp value) resendOtp,
-    required TResult Function(VerifyOtp value) verifyOtp,
-    required TResult Function(SetValuesEvent value) setValues,
+    required TResult Function(_ResendOtpEvent value) resendOtp,
+    required TResult Function(_VerifyOtpEvent value) verifyOtp,
+    required TResult Function(_SetValuesEvent value) setValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ResendOtp value)? resendOtp,
-    TResult? Function(VerifyOtp value)? verifyOtp,
-    TResult? Function(SetValuesEvent value)? setValues,
+    TResult? Function(_ResendOtpEvent value)? resendOtp,
+    TResult? Function(_VerifyOtpEvent value)? verifyOtp,
+    TResult? Function(_SetValuesEvent value)? setValues,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ResendOtp value)? resendOtp,
-    TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(SetValuesEvent value)? setValues,
+    TResult Function(_ResendOtpEvent value)? resendOtp,
+    TResult Function(_VerifyOtpEvent value)? verifyOtp,
+    TResult Function(_SetValuesEvent value)? setValues,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,22 +106,22 @@ class _$VerificationEventCopyWithImpl<$Res, $Val extends VerificationEvent>
 }
 
 /// @nodoc
-abstract class _$$ResendOtpImplCopyWith<$Res>
+abstract class _$$ResendOtpEventImplCopyWith<$Res>
     implements $VerificationEventCopyWith<$Res> {
-  factory _$$ResendOtpImplCopyWith(
-          _$ResendOtpImpl value, $Res Function(_$ResendOtpImpl) then) =
-      __$$ResendOtpImplCopyWithImpl<$Res>;
+  factory _$$ResendOtpEventImplCopyWith(_$ResendOtpEventImpl value,
+          $Res Function(_$ResendOtpEventImpl) then) =
+      __$$ResendOtpEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? email});
 }
 
 /// @nodoc
-class __$$ResendOtpImplCopyWithImpl<$Res>
-    extends _$VerificationEventCopyWithImpl<$Res, _$ResendOtpImpl>
-    implements _$$ResendOtpImplCopyWith<$Res> {
-  __$$ResendOtpImplCopyWithImpl(
-      _$ResendOtpImpl _value, $Res Function(_$ResendOtpImpl) _then)
+class __$$ResendOtpEventImplCopyWithImpl<$Res>
+    extends _$VerificationEventCopyWithImpl<$Res, _$ResendOtpEventImpl>
+    implements _$$ResendOtpEventImplCopyWith<$Res> {
+  __$$ResendOtpEventImplCopyWithImpl(
+      _$ResendOtpEventImpl _value, $Res Function(_$ResendOtpEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of VerificationEvent
@@ -131,7 +131,7 @@ class __$$ResendOtpImplCopyWithImpl<$Res>
   $Res call({
     Object? email = freezed,
   }) {
-    return _then(_$ResendOtpImpl(
+    return _then(_$ResendOtpEventImpl(
       freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -142,8 +142,8 @@ class __$$ResendOtpImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ResendOtpImpl implements ResendOtp {
-  const _$ResendOtpImpl(this.email);
+class _$ResendOtpEventImpl implements _ResendOtpEvent {
+  const _$ResendOtpEventImpl(this.email);
 
   @override
   final String? email;
@@ -157,7 +157,7 @@ class _$ResendOtpImpl implements ResendOtp {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResendOtpImpl &&
+            other is _$ResendOtpEventImpl &&
             (identical(other.email, email) || other.email == email));
   }
 
@@ -169,8 +169,9 @@ class _$ResendOtpImpl implements ResendOtp {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ResendOtpImplCopyWith<_$ResendOtpImpl> get copyWith =>
-      __$$ResendOtpImplCopyWithImpl<_$ResendOtpImpl>(this, _$identity);
+  _$$ResendOtpEventImplCopyWith<_$ResendOtpEventImpl> get copyWith =>
+      __$$ResendOtpEventImplCopyWithImpl<_$ResendOtpEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -210,9 +211,9 @@ class _$ResendOtpImpl implements ResendOtp {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ResendOtp value) resendOtp,
-    required TResult Function(VerifyOtp value) verifyOtp,
-    required TResult Function(SetValuesEvent value) setValues,
+    required TResult Function(_ResendOtpEvent value) resendOtp,
+    required TResult Function(_VerifyOtpEvent value) verifyOtp,
+    required TResult Function(_SetValuesEvent value) setValues,
   }) {
     return resendOtp(this);
   }
@@ -220,9 +221,9 @@ class _$ResendOtpImpl implements ResendOtp {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ResendOtp value)? resendOtp,
-    TResult? Function(VerifyOtp value)? verifyOtp,
-    TResult? Function(SetValuesEvent value)? setValues,
+    TResult? Function(_ResendOtpEvent value)? resendOtp,
+    TResult? Function(_VerifyOtpEvent value)? verifyOtp,
+    TResult? Function(_SetValuesEvent value)? setValues,
   }) {
     return resendOtp?.call(this);
   }
@@ -230,9 +231,9 @@ class _$ResendOtpImpl implements ResendOtp {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ResendOtp value)? resendOtp,
-    TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(SetValuesEvent value)? setValues,
+    TResult Function(_ResendOtpEvent value)? resendOtp,
+    TResult Function(_VerifyOtpEvent value)? verifyOtp,
+    TResult Function(_SetValuesEvent value)? setValues,
     required TResult orElse(),
   }) {
     if (resendOtp != null) {
@@ -242,8 +243,8 @@ class _$ResendOtpImpl implements ResendOtp {
   }
 }
 
-abstract class ResendOtp implements VerificationEvent {
-  const factory ResendOtp(final String? email) = _$ResendOtpImpl;
+abstract class _ResendOtpEvent implements VerificationEvent {
+  const factory _ResendOtpEvent(final String? email) = _$ResendOtpEventImpl;
 
   @override
   String? get email;
@@ -252,27 +253,27 @@ abstract class ResendOtp implements VerificationEvent {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ResendOtpImplCopyWith<_$ResendOtpImpl> get copyWith =>
+  _$$ResendOtpEventImplCopyWith<_$ResendOtpEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$VerifyOtpImplCopyWith<$Res>
+abstract class _$$VerifyOtpEventImplCopyWith<$Res>
     implements $VerificationEventCopyWith<$Res> {
-  factory _$$VerifyOtpImplCopyWith(
-          _$VerifyOtpImpl value, $Res Function(_$VerifyOtpImpl) then) =
-      __$$VerifyOtpImplCopyWithImpl<$Res>;
+  factory _$$VerifyOtpEventImplCopyWith(_$VerifyOtpEventImpl value,
+          $Res Function(_$VerifyOtpEventImpl) then) =
+      __$$VerifyOtpEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? otpCode, String? token, String? email});
 }
 
 /// @nodoc
-class __$$VerifyOtpImplCopyWithImpl<$Res>
-    extends _$VerificationEventCopyWithImpl<$Res, _$VerifyOtpImpl>
-    implements _$$VerifyOtpImplCopyWith<$Res> {
-  __$$VerifyOtpImplCopyWithImpl(
-      _$VerifyOtpImpl _value, $Res Function(_$VerifyOtpImpl) _then)
+class __$$VerifyOtpEventImplCopyWithImpl<$Res>
+    extends _$VerificationEventCopyWithImpl<$Res, _$VerifyOtpEventImpl>
+    implements _$$VerifyOtpEventImplCopyWith<$Res> {
+  __$$VerifyOtpEventImplCopyWithImpl(
+      _$VerifyOtpEventImpl _value, $Res Function(_$VerifyOtpEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of VerificationEvent
@@ -284,7 +285,7 @@ class __$$VerifyOtpImplCopyWithImpl<$Res>
     Object? token = freezed,
     Object? email = freezed,
   }) {
-    return _then(_$VerifyOtpImpl(
+    return _then(_$VerifyOtpEventImpl(
       otpCode: freezed == otpCode
           ? _value.otpCode
           : otpCode // ignore: cast_nullable_to_non_nullable
@@ -303,8 +304,8 @@ class __$$VerifyOtpImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$VerifyOtpImpl implements VerifyOtp {
-  const _$VerifyOtpImpl({this.otpCode, this.token, this.email});
+class _$VerifyOtpEventImpl implements _VerifyOtpEvent {
+  const _$VerifyOtpEventImpl({this.otpCode, this.token, this.email});
 
   @override
   final String? otpCode;
@@ -322,7 +323,7 @@ class _$VerifyOtpImpl implements VerifyOtp {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$VerifyOtpImpl &&
+            other is _$VerifyOtpEventImpl &&
             (identical(other.otpCode, otpCode) || other.otpCode == otpCode) &&
             (identical(other.token, token) || other.token == token) &&
             (identical(other.email, email) || other.email == email));
@@ -336,8 +337,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$VerifyOtpImplCopyWith<_$VerifyOtpImpl> get copyWith =>
-      __$$VerifyOtpImplCopyWithImpl<_$VerifyOtpImpl>(this, _$identity);
+  _$$VerifyOtpEventImplCopyWith<_$VerifyOtpEventImpl> get copyWith =>
+      __$$VerifyOtpEventImplCopyWithImpl<_$VerifyOtpEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -377,9 +379,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ResendOtp value) resendOtp,
-    required TResult Function(VerifyOtp value) verifyOtp,
-    required TResult Function(SetValuesEvent value) setValues,
+    required TResult Function(_ResendOtpEvent value) resendOtp,
+    required TResult Function(_VerifyOtpEvent value) verifyOtp,
+    required TResult Function(_SetValuesEvent value) setValues,
   }) {
     return verifyOtp(this);
   }
@@ -387,9 +389,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ResendOtp value)? resendOtp,
-    TResult? Function(VerifyOtp value)? verifyOtp,
-    TResult? Function(SetValuesEvent value)? setValues,
+    TResult? Function(_ResendOtpEvent value)? resendOtp,
+    TResult? Function(_VerifyOtpEvent value)? verifyOtp,
+    TResult? Function(_SetValuesEvent value)? setValues,
   }) {
     return verifyOtp?.call(this);
   }
@@ -397,9 +399,9 @@ class _$VerifyOtpImpl implements VerifyOtp {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ResendOtp value)? resendOtp,
-    TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(SetValuesEvent value)? setValues,
+    TResult Function(_ResendOtpEvent value)? resendOtp,
+    TResult Function(_VerifyOtpEvent value)? verifyOtp,
+    TResult Function(_SetValuesEvent value)? setValues,
     required TResult orElse(),
   }) {
     if (verifyOtp != null) {
@@ -409,11 +411,11 @@ class _$VerifyOtpImpl implements VerifyOtp {
   }
 }
 
-abstract class VerifyOtp implements VerificationEvent {
-  const factory VerifyOtp(
+abstract class _VerifyOtpEvent implements VerificationEvent {
+  const factory _VerifyOtpEvent(
       {final String? otpCode,
       final String? token,
-      final String? email}) = _$VerifyOtpImpl;
+      final String? email}) = _$VerifyOtpEventImpl;
 
   String? get otpCode;
   String? get token;
@@ -424,7 +426,7 @@ abstract class VerifyOtp implements VerificationEvent {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$VerifyOtpImplCopyWith<_$VerifyOtpImpl> get copyWith =>
+  _$$VerifyOtpEventImplCopyWith<_$VerifyOtpEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -470,7 +472,7 @@ class __$$SetValuesEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetValuesEventImpl implements SetValuesEvent {
+class _$SetValuesEventImpl implements _SetValuesEvent {
   const _$SetValuesEventImpl({this.token, this.email});
 
   @override
@@ -542,9 +544,9 @@ class _$SetValuesEventImpl implements SetValuesEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ResendOtp value) resendOtp,
-    required TResult Function(VerifyOtp value) verifyOtp,
-    required TResult Function(SetValuesEvent value) setValues,
+    required TResult Function(_ResendOtpEvent value) resendOtp,
+    required TResult Function(_VerifyOtpEvent value) verifyOtp,
+    required TResult Function(_SetValuesEvent value) setValues,
   }) {
     return setValues(this);
   }
@@ -552,9 +554,9 @@ class _$SetValuesEventImpl implements SetValuesEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ResendOtp value)? resendOtp,
-    TResult? Function(VerifyOtp value)? verifyOtp,
-    TResult? Function(SetValuesEvent value)? setValues,
+    TResult? Function(_ResendOtpEvent value)? resendOtp,
+    TResult? Function(_VerifyOtpEvent value)? verifyOtp,
+    TResult? Function(_SetValuesEvent value)? setValues,
   }) {
     return setValues?.call(this);
   }
@@ -562,9 +564,9 @@ class _$SetValuesEventImpl implements SetValuesEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ResendOtp value)? resendOtp,
-    TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(SetValuesEvent value)? setValues,
+    TResult Function(_ResendOtpEvent value)? resendOtp,
+    TResult Function(_VerifyOtpEvent value)? verifyOtp,
+    TResult Function(_SetValuesEvent value)? setValues,
     required TResult orElse(),
   }) {
     if (setValues != null) {
@@ -574,8 +576,8 @@ class _$SetValuesEventImpl implements SetValuesEvent {
   }
 }
 
-abstract class SetValuesEvent implements VerificationEvent {
-  const factory SetValuesEvent({final String? token, final String? email}) =
+abstract class _SetValuesEvent implements VerificationEvent {
+  const factory _SetValuesEvent({final String? token, final String? email}) =
       _$SetValuesEventImpl;
 
   String? get token;

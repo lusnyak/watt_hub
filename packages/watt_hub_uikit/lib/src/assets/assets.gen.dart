@@ -12,6 +12,9 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+
   /// File path: assets/images/onboarding_first_img.png
   AssetGenImage get onboardingFirstImg =>
       const AssetGenImage('assets/images/onboarding_first_img.png');
@@ -33,6 +36,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        logo,
         onboardingFirstImg,
         onboardingSecondImg,
         onboardingThirdImg,
@@ -81,7 +85,7 @@ class AssetGenImage {
     ImageRepeat repeat = ImageRepeat.noRepeat,
     Rect? centerSlice,
     bool matchTextDirection = false,
-    bool gaplessPlayback = true,
+    bool gaplessPlayback = false,
     bool isAntiAlias = false,
     @Deprecated('Do not specify package for a generated library asset') String? package = package,
     FilterQuality filterQuality = FilterQuality.low,
