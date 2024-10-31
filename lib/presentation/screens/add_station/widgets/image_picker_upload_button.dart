@@ -5,16 +5,6 @@ class ImagePickerUploadButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return  Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey, width: 2),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      height: 85.0,
-      width: 85.0,
-      child: const Icon(Icons.add),
-    );
-
+    return  const Icon(Icons.add);
   }
 }

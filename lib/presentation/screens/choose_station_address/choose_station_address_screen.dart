@@ -31,8 +31,7 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(context.localized.flutterMap)),
-
+      appBar: AppBar(title: const Text("Flutter Map")),
       body: BlocBuilder<ChooseStationAddressBloc, ChooseStationAddressState>(
         builder: (context, state) {
           return state.when(
@@ -45,8 +44,8 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
                 options: MapOptions(
                   onTap: (tapPosition, point) {
                     context.read<ChooseStationAddressBloc>().add(
-                          ChooseStationAddressEvent.locationTapped(point),
-                        );
+                      ChooseStationAddressEvent.locationTapped(point),
+                    );
                   },
                   initialCenter: location ?? const LatLng(40.7942, 43.84528),
                   initialZoom: 18.0,
@@ -54,7 +53,7 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
                 children: [
                   TileLayer(
                     urlTemplate:
-                        'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                     userAgentPackageName: 'com.example.app',
                   ),
                   MarkerClusterLayerWidget(
@@ -65,19 +64,19 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
                       maxZoom: 15,
                       markers: location != null
                           ? [
-                              Marker(
-                                width: 80.w,
-                                height: 80.h,
-                                point: context
-                                    .read<ChooseStationAddressBloc>()
-                                    .clickedLocation!,
-                                child: Icon(
-                                  Icons.location_on_outlined,
-                                  size: 56.r,
-                                  color: WattHubColors.primaryGreenColor,
-                                ),
-                              ),
-                            ]
+                        Marker(
+                          width: 80.w,
+                          height: 80.h,
+                          point: context
+                              .read<ChooseStationAddressBloc>()
+                              .clickedLocation!,
+                          child: Icon(
+                            Icons.location_on_outlined,
+                            size: 56.r,
+                            color: WattHubColors.primaryGreenColor,
+                          ),
+                        ),
+                      ]
                           : [],
                       builder: (BuildContext context, List<Marker> markers) {
                         return Container(
