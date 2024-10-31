@@ -10,7 +10,7 @@ _$ConnectorTypeModelImpl _$$ConnectorTypeModelImplFromJson(
         Map<String, dynamic> json) =>
     _$ConnectorTypeModelImpl(
       id: (json['id'] as num).toInt(),
-      title: json['title'] as String,
+      title: json['title'] as String?,
     );
 
 Map<String, dynamic> _$$ConnectorTypeModelImplToJson(
