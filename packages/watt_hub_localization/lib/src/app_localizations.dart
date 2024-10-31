@@ -415,6 +415,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'End'**
   String get end;
+
+  /// No description provided for @flutterMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter Map'**
+  String get flutterMap;
+
+  /// No description provided for @addressNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Address not found.'**
+  String get addressNotFound;
+
+  /// No description provided for @noLocationSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'No location selected. Please tap on the map.'**
+  String get noLocationSelected;
 }
 
 class _AppLocalizationsDelegate

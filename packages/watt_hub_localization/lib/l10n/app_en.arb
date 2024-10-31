@@ -53,5 +53,8 @@
   "addStation":"Add station",
   "error":"Error",
   "start":"Start",
-  "end":"End"
+  "end":"End",
+  "flutterMap":"Flutter Map",
+  "addressNotFound":"Address not found.",
+  "noLocationSelected":"No location selected. Please tap on the map."
 }

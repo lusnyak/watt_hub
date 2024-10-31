@@ -167,4 +167,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get end => 'End';
+
+  @override
+  String get flutterMap => 'Flutter Map';
+
+  @override
+  String get addressNotFound => 'Address not found.';
+
+  @override
+  String get noLocationSelected =>
+      'No location selected. Please tap on the map.';
 }
