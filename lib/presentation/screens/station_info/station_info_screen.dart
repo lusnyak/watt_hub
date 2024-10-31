@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
 import 'package:watt_hub/presentation/screens/station_info/bloc/station_info_bloc.dart';
+import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
@@ -86,29 +87,35 @@ class StationInfoView extends StatelessWidget {
                   },
                 ),
                 20.h.heightBox,
-                Text("Location", style: body18SemiBoldTextStyle),
-                Text("Street: Aram Khachatryan 14/3, Yerevan, Armenia",
+                Text(AppLocalizations.of(context).location,
+                    style: body18SemiBoldTextStyle),
+                Text(
+                    "${AppLocalizations.of(context).street} Aram Khachatryan 14/3, Yerevan, Armenia",
                     style: body16RegularTextStyle),
                 20.h.heightBox,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: WHElevatedButton.primary(
-                          onPressed: () {}, title: "Navigate"),
-                    ),
+                    WHElevatedButton.primary(
+                            onPressed: () {},
+                            title: AppLocalizations.of(context).navigate)
+                        .expanded(),
                     15.w.widthBox,
-                    Expanded(
-                      child: WHOutlinedButton(
-                          onPressed: () {}, title: "Share Location"),
-                    ),
+                    WHOutlinedButton(
+                            onPressed: () {},
+                            title: AppLocalizations.of(context).shareLocation)
+                        .expanded(),
                   ],
                 ),
                 20.h.heightBox,
-                Text("Service Information", style: body18SemiBoldTextStyle),
-                Text("Max: 3.7kWt", style: body16RegularTextStyle),
-                Text("Hourly rate: 10\$", style: body16RegularTextStyle),
-                Text("Available hours: 10:00-18:00",
+                Text(AppLocalizations.of(context).serviceInformation,
+                    style: body18SemiBoldTextStyle),
+                Text("${AppLocalizations.of(context).max} 3.7kWt",
+                    style: body16RegularTextStyle),
+                Text("${AppLocalizations.of(context).hourlyRate} 10\$",
+                    style: body16RegularTextStyle),
+                Text(
+                    "${AppLocalizations.of(context).availableHours} 10:00-18:00",
                     style: body16RegularTextStyle),
                 20.h.heightBox,
                 BlocBuilder<StationInfoBloc, StationInfoState>(
@@ -117,12 +124,13 @@ class StationInfoView extends StatelessWidget {
                       onChanged: (value) {},
                       itemLabel: (connector) => connector.title,
                       items: state.connectors,
-                      hintText: "Connector Type",
+                      hintText: AppLocalizations.of(context).connectorType,
                     );
                   },
                 ),
                 20.h.heightBox,
-                Text("Contact", style: body18SemiBoldTextStyle),
+                Text(AppLocalizations.of(context).contact,
+                    style: body18SemiBoldTextStyle),
                 Row(
                   children: [
                     const Icon(Icons.phone_outlined),
@@ -137,7 +145,7 @@ class StationInfoView extends StatelessWidget {
                         const DetailRoute(),
                       );
                     },
-                    title: "Select"),
+                    title: AppLocalizations.of(context).select),
               ],
             ),
 

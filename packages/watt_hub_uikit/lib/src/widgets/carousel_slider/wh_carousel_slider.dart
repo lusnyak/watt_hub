@@ -1,8 +1,6 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:watt_hub_uikit/src/theme/theme.dart';
 
-import '../widgets.dart';
+import '../../../watt_hub_uikit.dart';
 
 class WHCarouselSlider extends StatefulWidget {
   final List<String> imgList;
@@ -10,10 +8,6 @@ class WHCarouselSlider extends StatefulWidget {
   final bool autoPlay;
   final bool showIndicator;
   final Color activeDotColor;
-  final Color dotColor;
-  final double dotHeight;
-  final double dotWidth;
-  final double spacing;
   final double aspectRatio;
   final Duration autoPlayInterval;
 
@@ -24,10 +18,6 @@ class WHCarouselSlider extends StatefulWidget {
     this.autoPlay = false,
     this.showIndicator = true,
     this.activeDotColor = WattHubColors.primaryGreenColor,
-    this.dotColor = WattHubColors.primaryLightGreenColor,
-    this.dotHeight = 12.0,
-    this.dotWidth = 12.0,
-    this.spacing = 8.0,
     this.aspectRatio = 16 / 9,
     this.autoPlayInterval = const Duration(seconds: 3),
   });
@@ -64,30 +54,29 @@ class WHCarouselSliderState extends State<WHCarouselSlider> {
           itemCount: widget.imgList.length,
           itemBuilder: (context, index, realIndex) {
             final urlImage = widget.imgList[index];
-            return Container(
-              margin: const EdgeInsets.symmetric(horizontal: 12),
-              color: Colors.grey,
-              child: Image.network(
-                urlImage,
-                fit: BoxFit.cover,
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return const Center(child: WHCircularSpin());
-                },
-                errorBuilder: (context, error, stackTrace) =>
-                    const Icon(Icons.broken_image, color: Colors.grey),
+            return CachedNetworkImage(
+              imageUrl: urlImage,
+              imageBuilder: (context, imageProvider) => Container(
+                color: Colors.grey,
+                child: Image.network(
+                  urlImage,
+                  fit: BoxFit.cover,
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return const Center(child: WHCircularSpin());
+                  },
+                  errorBuilder: (context, error, stackTrace) =>
+                      const Icon(Icons.broken_image, color: Colors.grey),
+                ),
               ),
             );
           },
         ),
         if (widget.showIndicator)
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: WHAnimatedSmoothIndicator(
-              activeIndex: activeIndex,
-              count: widget.imgList.length,
-            ),
-          ),
+          WHAnimatedSmoothIndicator(
+            activeIndex: activeIndex,
+            count: widget.imgList.length,
+          ).paddingOnly(top: 8.0),
       ],
     );
   }
