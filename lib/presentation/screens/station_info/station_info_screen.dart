@@ -7,7 +7,9 @@
 
 
 
+
 import 'package:carousel_slider/carousel_slider.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
@@ -26,6 +28,7 @@ class StationInfoScreen extends StatelessWidget {
       create: (_) => getIt<StationInfoBloc>()
         ..add(const StationInfoEvent.loadConnectors()),
       child: const _StationInfoView(),
+
     );
   }
 }
@@ -43,16 +46,19 @@ class _StationInfoView extends StatelessWidget {
       create: (_) => getIt<StationInfoBloc>()
         ..add(const StationInfoEvent.loadConnectors()),
       child: const StationInfoView(),
+
     );
   }
 }
 
-class StationInfoView extends StatelessWidget {
-  const StationInfoView({super.key});
+class _StationInfoView extends StatelessWidget {
+  const _StationInfoView();
 
   @override
   Widget build(BuildContext context) {
+
     final stationInfoBloc = context.read<StationInfoBloc>();
+
 
     final imgList = [
 
