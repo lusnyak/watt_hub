@@ -31,7 +31,7 @@ class StationRepository {
   }
 
   Future<StationModel?> addOwnStation(AddStationModel stationData) async {
-    return await getIt<StationRemoteApi>().addOwnStation(stationData);
+    return await getIt<StationRemoteApi>().addStation(stationData);
   }
 
   Future<StationModel?> getStationById(String id) async {

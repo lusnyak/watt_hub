@@ -6,7 +6,7 @@ part of 'station_remote.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _StationRemoteApi implements StationRemoteApi {
   _StationRemoteApi(
@@ -68,7 +68,7 @@ class _StationRemoteApi implements StationRemoteApi {
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final _data = lng;
     final _options = _setStreamType<List<StationModel>>(Options(
       method: 'POST',
       headers: _headers,
@@ -111,7 +111,7 @@ class _StationRemoteApi implements StationRemoteApi {
     )
         .compose(
           _dio.options,
-          '/stations',
+          '/stations/${id}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -133,7 +133,7 @@ class _StationRemoteApi implements StationRemoteApi {
   }
 
   @override
-  Future<StationModel?> addOwnStation(AddStationModel stationData) async {
+  Future<StationModel?> addStation(AddStationModel stationData) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -145,7 +145,7 @@ class _StationRemoteApi implements StationRemoteApi {
     )
         .compose(
           _dio.options,
-          '/stations',
+          '/stations/',
           queryParameters: queryParameters,
           data: _data,
         )

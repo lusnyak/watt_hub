@@ -34,8 +34,8 @@ abstract class StationRemoteApi {
   Future<StationModel?> stationsId(@Path("id") String id);
 
   // Question about this line
-  @POST(EndPoints.stations)
-  Future<StationModel?> addOwnStation(AddStationModel stationData);
+  @POST(EndPoints.addStation)
+  Future<StationModel?> addStation(AddStationModel stationData);
 
   @GET(EndPoints.stationMy)
   Future<StationModel?> stationMy();
