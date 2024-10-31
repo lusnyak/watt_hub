@@ -4,8 +4,8 @@ part 'add_station_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class AddStationModel {
-  final String? lat;
-  final String? lng;
+  final double? lat;
+  final double? lng;
   final DateTime? startTime;
   final DateTime? endTime;
   final int? connectorTypeId;

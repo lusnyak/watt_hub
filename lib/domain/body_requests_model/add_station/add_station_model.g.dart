@@ -8,8 +8,8 @@ part of 'add_station_model.dart';
 
 AddStationModel _$AddStationModelFromJson(Map<String, dynamic> json) =>
     AddStationModel(
-      lat: json['lat'] as String?,
-      lng: json['lng'] as String?,
+      lat: (json['lat'] as num?)?.toDouble(),
+      lng: (json['lng'] as num?)?.toDouble(),
       startTime: json['start_time'] == null
           ? null
           : DateTime.parse(json['start_time'] as String),
