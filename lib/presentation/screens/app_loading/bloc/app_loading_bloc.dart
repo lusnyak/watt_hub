@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watt_hub/config/config.dart';
@@ -7,6 +8,7 @@ import 'package:watt_hub/data/local/shared_preferences/shared_preferences_servic
 import 'package:watt_hub/data/local/token_storage/token_storage.dart';
 import 'package:watt_hub/data/repository/user_repository.dart';
 import 'package:watt_hub/domain/models/user/user_model.dart';
+import 'package:watt_hub/utils/helpers/dio_errors.dart';
 
 part 'app_loading_event.dart';
 part 'app_loading_state.dart';
@@ -30,7 +32,7 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
     });
   }
 
-  Future<void> onGetUser( event, emit) async {
+  Future<void> onGetUser(event, emit) async {
     emit(const AppLoadingState.loading());
     final tokenMdl = await getIt<TokenStorage>().readToken();
 
@@ -51,10 +53,14 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
           } else {
             emit(const AppLoadingState.error('Something Error'));
           }
+        } on DioException catch (e) {
+          final dioError = getDioExceptionErrorMessage(e);
+          emit(AppLoadingState.connectionError(dioError));
         } catch (e) {
           emit(AppLoadingState.error(e.toString()));
         }
       } else {
+        debugPrint('connectionError connectionError');
         emit(const AppLoadingState.connectionError(
             'No internet connection. Please check your connectivity.'));
       }

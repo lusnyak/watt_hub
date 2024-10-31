@@ -21,7 +21,7 @@ CarTypeModel _$CarTypeModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CarTypeModel {
   int get id => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
 
   /// Serializes this CarTypeModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $CarTypeModelCopyWith<$Res> {
           CarTypeModel value, $Res Function(CarTypeModel) then) =
       _$CarTypeModelCopyWithImpl<$Res, CarTypeModel>;
   @useResult
-  $Res call({int id, String title});
+  $Res call({int id, String? title});
 }
 
 /// @nodoc
@@ -58,17 +58,17 @@ class _$CarTypeModelCopyWithImpl<$Res, $Val extends CarTypeModel>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
+    Object? title = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title: null == title
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$CarTypeModelImplCopyWith<$Res>
       __$$CarTypeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String title});
+  $Res call({int id, String? title});
 }
 
 /// @nodoc
@@ -98,17 +98,17 @@ class __$$CarTypeModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
+    Object? title = freezed,
   }) {
     return _then(_$CarTypeModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title: null == title
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -116,7 +116,7 @@ class __$$CarTypeModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CarTypeModelImpl implements _CarTypeModel {
-  const _$CarTypeModelImpl({required this.id, required this.title});
+  const _$CarTypeModelImpl({required this.id, this.title});
 
   factory _$CarTypeModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CarTypeModelImplFromJson(json);
@@ -124,7 +124,7 @@ class _$CarTypeModelImpl implements _CarTypeModel {
   @override
   final int id;
   @override
-  final String title;
+  final String? title;
 
   @override
   String toString() {
@@ -161,9 +161,8 @@ class _$CarTypeModelImpl implements _CarTypeModel {
 }
 
 abstract class _CarTypeModel implements CarTypeModel {
-  const factory _CarTypeModel(
-      {required final int id,
-      required final String title}) = _$CarTypeModelImpl;
+  const factory _CarTypeModel({required final int id, final String? title}) =
+      _$CarTypeModelImpl;
 
   factory _CarTypeModel.fromJson(Map<String, dynamic> json) =
       _$CarTypeModelImpl.fromJson;
@@ -171,7 +170,7 @@ abstract class _CarTypeModel implements CarTypeModel {
   @override
   int get id;
   @override
-  String get title;
+  String? get title;
 
   /// Create a copy of CarTypeModel
   /// with the given fields replaced by the non-null parameter values.

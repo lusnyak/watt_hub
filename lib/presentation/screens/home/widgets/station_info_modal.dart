@@ -19,11 +19,11 @@ void showStationInfo(BuildContext context, StationModel station) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                station.name,
+                station.name ?? '',
                 style: body16SemiBoldTextStyle,
               ),
               Text(
-                station.address,
+                station.address ?? '',
                 style: body14RegularTextStyle,
               ),
             ],
@@ -37,7 +37,7 @@ void showStationInfo(BuildContext context, StationModel station) {
               ),
               10.w.widthBox,
               RatingBarIndicator(
-                rating: station.averageRate,
+                rating: station.averageRate ?? 1,
                 itemBuilder: (context, index) => const Icon(
                   Icons.star,
                   color: Colors.amber,
@@ -48,7 +48,7 @@ void showStationInfo(BuildContext context, StationModel station) {
               ),
               10.w.widthBox,
               Text(
-                '(${station.reviews.length} ${context.localized.reviews})',
+                '(${station.reviews?.length} ${context.localized.reviews})',
                 style: body14RegularTextStyle.copyWith(color: Colors.grey),
               ),
             ],

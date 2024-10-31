@@ -7,7 +7,7 @@ part 'car_type_model.g.dart';
 class CarTypeModel with _$CarTypeModel {
   const factory CarTypeModel({
     required int id,
-    required String title,
+    String? title,
   }) = _CarTypeModel;
 
   factory CarTypeModel.fromJson(Map<String, dynamic> json) =>

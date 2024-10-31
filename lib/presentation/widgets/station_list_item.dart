@@ -18,7 +18,7 @@ class StationListItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              stationListItem.name,
+              stationListItem.name ?? '',
               style: body18SemiBoldTextStyle,
             ),
             8.h.heightBox,
@@ -30,7 +30,7 @@ class StationListItem extends StatelessWidget {
                 ),
                 4.w.widthBox,
                 Text(
-                  stationListItem.address,
+                  stationListItem.address ?? '',
                   style: const TextStyle(color: Colors.grey),
                 ).expanded(),
               ],

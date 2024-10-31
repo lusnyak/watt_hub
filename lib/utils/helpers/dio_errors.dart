@@ -11,6 +11,12 @@ String getDioExceptionErrorMessage(DioException err) {
     case DioExceptionType.unknown:
       return 'An unexpected error occurred. Please try again.';
     default:
-      return 'An unexpected error occurred';
+      if (err.response != null) {
+        if (err.response?.statusCode == 503) {
+          return 'Server is temporarily unavailable. Please try again later.';
+        }
+        return 'Server error: ${err.response?.statusCode}. Please try again later.';
+      }
+      return 'An unexpected error occurred.';
   }
 }
