@@ -133,11 +133,24 @@ class _StationRemoteApi implements StationRemoteApi {
   }
 
   @override
-  Future<StationModel?> addStation(AddStationModel stationData) async {
+  Future<StationModel?> addStation(
+    String? lat,
+    String? lng,
+    String? startTime,
+    String? endTime,
+    int? connectorTypeId,
+    double? hourlyRate,
+    String? phoneNumber,
+    String? name,
+    String? address,
+    String? image,
+    String? userId,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final _data = lat;
     final _options = _setStreamType<StationModel>(Options(
       method: 'POST',
       headers: _headers,

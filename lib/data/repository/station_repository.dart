@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/remote/station_remote/station_remote.dart';
-import 'package:watt_hub/domain/body_requests_model/add_station/add_station_model.dart';
 import 'package:watt_hub/domain/models/station/station_model.dart';
 
 @lazySingleton
@@ -30,8 +29,32 @@ class StationRepository {
         .catchError((e) => [] as FutureOr<List<StationModel>?>);
   }
 
-  Future<StationModel?> addOwnStation(AddStationModel stationData) async {
-    return await getIt<StationRemoteApi>().addStation(stationData);
+  Future<StationModel?> addOwnStation(
+    String? lat,
+    String? lng,
+    String? startTime,
+    String? endTime,
+    int? connectorTypeId,
+    double? hourlyRate,
+    String? phoneNumber,
+    String? name,
+    String? address,
+    String? image,
+    String? userId,
+  ) async {
+    return await getIt<StationRemoteApi>().addStation(
+      lat,
+      lng,
+      startTime,
+      endTime,
+      connectorTypeId,
+      hourlyRate,
+      phoneNumber,
+      name,
+      address,
+      image,
+      userId,
+    );
   }
 
   Future<StationModel?> getStationById(String id) async {

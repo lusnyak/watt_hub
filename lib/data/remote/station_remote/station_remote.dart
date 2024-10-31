@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/config/network/constants/constants.dart';
 import 'package:watt_hub/config/network/constants/end_points.dart';
-import 'package:watt_hub/domain/body_requests_model/add_station/add_station_model.dart';
 import 'package:watt_hub/domain/models/station/station_model.dart';
 
 part 'station_remote.g.dart';
@@ -34,7 +33,19 @@ abstract class StationRemoteApi {
   Future<StationModel?> stationsId(@Path("id") String id);
 
   @POST(EndPoints.addStation)
-  Future<StationModel?> addStation(AddStationModel stationData);
+  Future<StationModel?> addStation(
+    @Body() String? lat,
+    @Body() String? lng,
+    @Body() String? startTime,
+    @Body() String? endTime,
+    @Body() int? connectorTypeId,
+    @Body() double? hourlyRate,
+    @Body() String? phoneNumber,
+    @Body() String? name,
+    @Body() String? address,
+    @Body() String? image,
+    @Body() String? userId,
+  );
 
   @GET(EndPoints.stationMy)
   Future<StationModel?> stationMy();
