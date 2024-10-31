@@ -30,8 +30,8 @@ class StationRepository {
   }
 
   Future<StationModel?> addOwnStation(
-    String? lat,
-    String? lng,
+    double? lat,
+    double? lng,
     String? startTime,
     String? endTime,
     int? connectorTypeId,

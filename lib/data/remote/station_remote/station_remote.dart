@@ -34,8 +34,8 @@ abstract class StationRemoteApi {
 
   @POST(EndPoints.addStation)
   Future<StationModel?> addStation(
-    @Body() String? lat,
-    @Body() String? lng,
+    @Body() double? lat,
+    @Body() double? lng,
     @Body() String? startTime,
     @Body() String? endTime,
     @Body() int? connectorTypeId,

@@ -134,8 +134,8 @@ class _StationRemoteApi implements StationRemoteApi {
 
   @override
   Future<StationModel?> addStation(
-    String? lat,
-    String? lng,
+    double? lat,
+    double? lng,
     String? startTime,
     String? endTime,
     int? connectorTypeId,
