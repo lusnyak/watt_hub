@@ -33,6 +33,7 @@ dependencies:
   flutter_map_marker_cluster: ^1.4.0
   retrofit: ^4.4.1
   flutter_secure_storage: ^9.2.2
+  geocoding: ^3.0.0
   flutter_native_splash: ^2.4.2
   connectivity_plus: ^6.1.0
   geocoding: ^3.0.0

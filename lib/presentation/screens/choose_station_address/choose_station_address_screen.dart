@@ -32,6 +32,7 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(context.localized.flutterMap)),
+
       body: BlocBuilder<ChooseStationAddressBloc, ChooseStationAddressState>(
         builder: (context, state) {
           return state.when(
