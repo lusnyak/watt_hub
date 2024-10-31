@@ -1,28 +1,35 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'add_station_model.freezed.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'add_station_model.g.dart';
 
-@freezed
-class AddStationModel with _$AddStationModel {
-  /// TODO: - usumnasirel hetevyal toxy - done
-  @JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake)
+class AddStationModel {
+  final String? lat;
+  final String? lng;
+  final DateTime? startTime;
+  final DateTime? endTime;
+  final int? connectorTypeId;
+  final num? hourlyRate;
+  final String? phoneNumber;
+  final String? name;
+  final String? address;
+  final int? userId;
 
-  /// -----
-  const factory AddStationModel({
-    required String lat,
-    required String lng,
-    required DateTime startTime,
-    required DateTime endTime,
-    required int connectorTypeId,
-    required num hourlyRate,
-    String? phoneNumber,
-    String? name,
-    required String address,
-    required int userId,
-  }) = _AddStationModel;
+  AddStationModel({
+    this.lat,
+    this.lng,
+    this.startTime,
+    this.endTime,
+    this.connectorTypeId,
+    this.hourlyRate,
+    this.phoneNumber,
+    this.name,
+    this.address,
+    this.userId,
+  });
 
   factory AddStationModel.fromJson(Map<String, dynamic> json) =>
       _$AddStationModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AddStationModelToJson(this);
 }

@@ -60,15 +60,12 @@ class _StationRemoteApi implements StationRemoteApi {
 
   @override
   Future<List<StationModel>?> stationsFilter(
-    String? lng,
-    String? lat,
-    int? radius,
-  ) async {
+      FilterStationsModel filterData) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = lng;
+    final _data = <String, dynamic>{};
+    _data.addAll(filterData.toJson());
     final _options = _setStreamType<List<StationModel>>(Options(
       method: 'POST',
       headers: _headers,
@@ -133,24 +130,12 @@ class _StationRemoteApi implements StationRemoteApi {
   }
 
   @override
-  Future<StationModel?> addStation(
-    double? lat,
-    double? lng,
-    String? startTime,
-    String? endTime,
-    int? connectorTypeId,
-    double? hourlyRate,
-    String? phoneNumber,
-    String? name,
-    String? address,
-    String? image,
-    String? userId,
-  ) async {
+  Future<StationModel?> addStation(AddStationModel stationData) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = lat;
+    final _data = <String, dynamic>{};
+    _data.addAll(stationData.toJson());
     final _options = _setStreamType<StationModel>(Options(
       method: 'POST',
       headers: _headers,

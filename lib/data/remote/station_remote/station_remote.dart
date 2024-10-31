@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/config/network/constants/constants.dart';
 import 'package:watt_hub/config/network/constants/end_points.dart';
+import 'package:watt_hub/domain/body_requests_model/add_station/add_station_model.dart';
+import 'package:watt_hub/domain/body_requests_model/filter_stations/filter_stations_model.dart';
 import 'package:watt_hub/domain/models/station/station_model.dart';
 
 part 'station_remote.g.dart';
@@ -23,9 +25,7 @@ abstract class StationRemoteApi {
   /// nshac che , usumnasirel retrofity - done
   @POST(EndPoints.stationsFilter)
   Future<List<StationModel>?> stationsFilter(
-    @Body() String? lng,
-    @Body() String? lat,
-    @Body() int? radius,
+    @Body() FilterStationsModel filterData,
   );
 
   /// TODO: - anushadrutyun - endpointy sxal e drac - done
@@ -33,19 +33,7 @@ abstract class StationRemoteApi {
   Future<StationModel?> stationsId(@Path("id") String id);
 
   @POST(EndPoints.addStation)
-  Future<StationModel?> addStation(
-    @Body() double? lat,
-    @Body() double? lng,
-    @Body() String? startTime,
-    @Body() String? endTime,
-    @Body() int? connectorTypeId,
-    @Body() double? hourlyRate,
-    @Body() String? phoneNumber,
-    @Body() String? name,
-    @Body() String? address,
-    @Body() String? image,
-    @Body() String? userId,
-  );
+  Future<StationModel?> addStation(@Body() AddStationModel stationData);
 
   @GET(EndPoints.stationMy)
   Future<StationModel?> stationMy();
