@@ -57,7 +57,7 @@ class ConditionalExpansionTile extends StatelessWidget {
               iconLeading,
               size: 40,
             ),
-            onTap: onTap ?? () {}, // If no onTap provided, do nothing
+            onTap: onTap, // If no onTap provided, do nothing
           );
   }
 }

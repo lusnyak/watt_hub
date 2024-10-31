@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart';
-import 'package:watt_hub/presentation/screens/profile/sub_widget/car_info.dart';
+import 'package:watt_hub/presentation/screens/profile/sub_widget/car_info_list.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/conditional_expansion_tile.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_divider.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_item.dart';
@@ -69,10 +69,10 @@ class _ProfileViewState extends State<_ProfileView> {
                         title: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(profileData.fullName!,
+                            Text(profileData.fullName ?? '',
                                 style: body16SemiBoldTextStyle),
                             12.h.heightBox,
-                            Text(profileData.phoneNumber!,
+                            Text(profileData.phoneNumber ?? '',
                                 style: body14RegularTextStyle),
                           ],
                         ),
@@ -101,20 +101,25 @@ class _ProfileViewState extends State<_ProfileView> {
                       ),
                       const ProfileMenuDivider(),
                       ConditionalExpansionTile(
-                        title: context.localized.myCar,
-                        iconLeading: Icons.local_taxi_sharp,
-                        children: [
-                          CarInfo(
-                            carData: carData!,
-                          )
-                        ],
-                      ),
+                          title: context.localized.myCar,
+                          iconLeading: Icons.local_taxi_sharp,
+                          children: [
+                            if (carData != null && carData.isNotEmpty)
+                              CarsInfoList(
+                                carsData: carData,
+                              ),
+                          ],
+                          onTap: () {
+                            if (carData!.isEmpty) {
+                              AutoRouter.of(context).push(const AddCarRoute());
+                            }
+                          }),
                       ConditionalExpansionTile(
                         title: context.localized.myStation,
                         iconLeading: Icons.charging_station_outlined,
                         children: [
                           StationInfo(
-                            stationData: stationData!,
+                            stationData: stationData,
                           )
                         ],
                       ),

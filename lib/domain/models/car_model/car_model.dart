@@ -10,6 +10,7 @@ part 'car_model.g.dart';
 
 @freezed
 class CarModel with _$CarModel {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory CarModel(
       {required int id,
       required CarTypeModel carType,

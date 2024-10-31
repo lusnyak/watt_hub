@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:watt_hub/domain/models/car_model/car_model.dart';
-import 'package:watt_hub/utils/extensions/localization_extensions.dart';
+import 'package:watt_hub/utils/utils.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
-class CarInfo extends StatelessWidget {
+class ProfileCarItem extends StatelessWidget {
   final CarModel carData;
-  const CarInfo({super.key, required this.carData});
+  const ProfileCarItem({super.key, required this.carData});
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +55,6 @@ class CarInfo extends StatelessWidget {
           )
         ],
       ),
-    );
+    ).paddingOnly(bottom: 10);
   }
 }

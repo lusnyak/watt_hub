@@ -11,6 +11,6 @@ class ProfileState with _$ProfileState {
   const factory ProfileState.loaded({
     required UserModel userData,
     StationModel? stationData,
-    CarModel? carData,
+    List<CarModel>? carData,
   }) = _ProfileLoadedState;
 }

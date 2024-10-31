@@ -31,8 +31,8 @@ final List<Map<String, dynamic>> createdCarsData = [
     'car_model': {'id': 1, 'title': 'Tesla Model X'},
     'connector_type': {'id': 2, 'title': 'CCS Combo 2'},
     'images': [
-      'https://example.com/image1.jpg',
-      'https://example.com/image2.jpg',
+      'https://cdn.pixabay.com/photo/2012/04/13/21/05/car-33633_1280.png',
+      'https://cdn.pixabay.com/photo/2012/04/13/21/05/car-33633_1280.png',
     ],
     'user': {
       'id': 1,
@@ -47,8 +47,8 @@ final List<Map<String, dynamic>> createdCarsData = [
     'car_model': {'id': 2, 'title': 'BMW i8'},
     'connector_type': {'id': 3, 'title': 'Type 2'},
     'images': [
-      'https://example.com/image3.jpg',
-      'https://example.com/image4.jpg',
+      'https://cdn.pixabay.com/photo/2012/04/13/21/05/car-33633_1280.png',
+      'https://cdn.pixabay.com/photo/2012/04/13/21/05/car-33633_1280.png',
     ],
     'user': {
       'id': 2,

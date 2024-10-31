@@ -1,7 +1,7 @@
 final Map<String, dynamic> userData = {
   'id': 1,
-  'fullName': 'John Doe',
-  'phoneNumber': '+1234567890',
+  'full_name': 'John Doe',
+  'phone_number': '+1234567890',
   'email': 'johndoe@example.com',
 };
 

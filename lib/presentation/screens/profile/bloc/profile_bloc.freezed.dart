@@ -177,8 +177,8 @@ mixin _$ProfileState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)
+    required TResult Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -187,8 +187,8 @@ mixin _$ProfileState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)?
+    TResult? Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -197,8 +197,8 @@ mixin _$ProfileState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)?
+    TResult Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -296,8 +296,8 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)
+    required TResult Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)
         loaded,
   }) {
     return initial();
@@ -309,8 +309,8 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)?
+    TResult? Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)?
         loaded,
   }) {
     return initial?.call();
@@ -322,8 +322,8 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)?
+    TResult Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)?
         loaded,
     required TResult orElse(),
   }) {
@@ -420,8 +420,8 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)
+    required TResult Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)
         loaded,
   }) {
     return loading();
@@ -433,8 +433,8 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)?
+    TResult? Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)?
         loaded,
   }) {
     return loading?.call();
@@ -446,8 +446,8 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)?
+    TResult Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)?
         loaded,
     required TResult orElse(),
   }) {
@@ -571,8 +571,8 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)
+    required TResult Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)
         loaded,
   }) {
     return error(message);
@@ -584,8 +584,8 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)?
+    TResult? Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)?
         loaded,
   }) {
     return error?.call(message);
@@ -597,8 +597,8 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)?
+    TResult Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)?
         loaded,
     required TResult orElse(),
   }) {
@@ -665,11 +665,11 @@ abstract class _$$ProfileLoadedStateImplCopyWith<$Res> {
           $Res Function(_$ProfileLoadedStateImpl) then) =
       __$$ProfileLoadedStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserModel userData, StationModel? stationData, CarModel? carData});
+  $Res call(
+      {UserModel userData, StationModel? stationData, List<CarModel>? carData});
 
   $UserModelCopyWith<$Res> get userData;
   $StationModelCopyWith<$Res>? get stationData;
-  $CarModelCopyWith<$Res>? get carData;
 }
 
 /// @nodoc
@@ -699,9 +699,9 @@ class __$$ProfileLoadedStateImplCopyWithImpl<$Res>
           : stationData // ignore: cast_nullable_to_non_nullable
               as StationModel?,
       carData: freezed == carData
-          ? _value.carData
+          ? _value._carData
           : carData // ignore: cast_nullable_to_non_nullable
-              as CarModel?,
+              as List<CarModel>?,
     ));
   }
 
@@ -728,34 +728,28 @@ class __$$ProfileLoadedStateImplCopyWithImpl<$Res>
       return _then(_value.copyWith(stationData: value));
     });
   }
-
-  /// Create a copy of ProfileState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $CarModelCopyWith<$Res>? get carData {
-    if (_value.carData == null) {
-      return null;
-    }
-
-    return $CarModelCopyWith<$Res>(_value.carData!, (value) {
-      return _then(_value.copyWith(carData: value));
-    });
-  }
 }
 
 /// @nodoc
 
 class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
   const _$ProfileLoadedStateImpl(
-      {required this.userData, this.stationData, this.carData});
+      {required this.userData, this.stationData, final List<CarModel>? carData})
+      : _carData = carData;
 
   @override
   final UserModel userData;
   @override
   final StationModel? stationData;
+  final List<CarModel>? _carData;
   @override
-  final CarModel? carData;
+  List<CarModel>? get carData {
+    final value = _carData;
+    if (value == null) return null;
+    if (_carData is EqualUnmodifiableListView) return _carData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -771,11 +765,12 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
                 other.userData == userData) &&
             (identical(other.stationData, stationData) ||
                 other.stationData == stationData) &&
-            (identical(other.carData, carData) || other.carData == carData));
+            const DeepCollectionEquality().equals(other._carData, _carData));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userData, stationData, carData);
+  int get hashCode => Object.hash(runtimeType, userData, stationData,
+      const DeepCollectionEquality().hash(_carData));
 
   /// Create a copy of ProfileState
   /// with the given fields replaced by the non-null parameter values.
@@ -792,8 +787,8 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)
+    required TResult Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)
         loaded,
   }) {
     return loaded(userData, stationData, carData);
@@ -805,8 +800,8 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)?
+    TResult? Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)?
         loaded,
   }) {
     return loaded?.call(userData, stationData, carData);
@@ -818,8 +813,8 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(
-            UserModel userData, StationModel? stationData, CarModel? carData)?
+    TResult Function(UserModel userData, StationModel? stationData,
+            List<CarModel>? carData)?
         loaded,
     required TResult orElse(),
   }) {
@@ -871,11 +866,11 @@ abstract class _ProfileLoadedState implements ProfileState {
   const factory _ProfileLoadedState(
       {required final UserModel userData,
       final StationModel? stationData,
-      final CarModel? carData}) = _$ProfileLoadedStateImpl;
+      final List<CarModel>? carData}) = _$ProfileLoadedStateImpl;
 
   UserModel get userData;
   StationModel? get stationData;
-  CarModel? get carData;
+  List<CarModel>? get carData;
 
   /// Create a copy of ProfileState
   /// with the given fields replaced by the non-null parameter values.

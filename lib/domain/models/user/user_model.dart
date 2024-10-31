@@ -5,6 +5,7 @@ part 'user_model.g.dart';
 
 @freezed
 class UserModel with _$UserModel {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory UserModel({
     int? id,
     String? fullName,
@@ -16,5 +17,6 @@ class UserModel with _$UserModel {
     DateTime? updatedAt,
   }) = _UserModel;
 
-  factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      _$UserModelFromJson(json);
 }
