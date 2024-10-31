@@ -138,4 +138,14 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get end => 'վերջ';
+
+  @override
+  String get flutterMap => 'Flutter քարտեզ';
+
+  @override
+  String get addressNotFound => 'Address not found.';
+
+  @override
+  String get noLocationSelected =>
+      'Ոչ մի տեղ ընտրված չէ: Խնդրում ենք սեղմել քարտեզի վրա.';
 }

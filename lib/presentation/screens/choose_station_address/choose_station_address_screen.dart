@@ -31,7 +31,7 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Flutter Map")),
+      appBar: AppBar(title: Text(context.localized.flutterMap)),
       body: BlocBuilder<ChooseStationAddressBloc, ChooseStationAddressState>(
         builder: (context, state) {
           return state.when(
