@@ -33,8 +33,6 @@ import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.
     as _i767;
 import 'package:watt_hub/presentation/screens/app_loading/bloc/app_loading_bloc.dart'
     as _i536;
-import 'package:watt_hub/presentation/screens/choose_station_address/bloc/choose_station_address_bloc.dart'
-    as _i474;
 import 'package:watt_hub/presentation/screens/filter/bloc/filter_bloc.dart'
     as _i293;
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart'
@@ -63,8 +61,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i60.OtpService>(() => _i60.OtpService());
     gh.factory<_i767.AddStationBlock>(() => _i767.AddStationBlock());
     gh.factory<_i536.AppLoadingBloc>(() => _i536.AppLoadingBloc());
-    gh.factory<_i474.ChooseStationAddressBloc>(
-        () => _i474.ChooseStationAddressBloc());
     gh.factory<_i293.FilterBloc>(() => _i293.FilterBloc());
     gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
     gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());

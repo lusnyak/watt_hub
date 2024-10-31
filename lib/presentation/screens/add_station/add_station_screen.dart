@@ -18,65 +18,6 @@ class AddStationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) =>
-          getIt<AddStationBlock>()..add(const AddStationEvent.started()),
-      child: const AddStationView(),
-    );
-  }
-}
-
-class AddStationView extends StatelessWidget {
-  const AddStationView({super.key});
-
-  Widget _previewImages(BuildContext context) {
-    final state = context.watch<AddStationBlock>().state;
-    return state.maybeWhen(
-      loaded: (images) {
-        if (images != null && images.isNotEmpty) {
-          return Container(
-            height: 100,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: images.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Stack(
-                    children: [
-                      Image.file(
-                        File(images[index].path),
-                        fit: BoxFit.cover,
-                        height: 100,
-                        width: 100,
-                      ),
-                      Positioned(
-                        top: -20,
-                        right: -20,
-                        child: IconButton(
-                          icon: const Icon(Icons.dangerous_outlined,
-                              color: WattHubColors.primaryGreenColor),
-                          onPressed: () => context
-                              .read<AddStationBlock>()
-                              .add(AddStationEvent.removeImage(index)),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-          );
-        }
-        return const Text('No images selected.');
-      },
-      orElse: () => const Text('No images selected.'),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    TimeOfDay time = const TimeOfDay(hour: 18, minute: 00);
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).addStation,
@@ -88,97 +29,30 @@ class AddStationView extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: BlocBuilder<AddStationBlock, AddStationState>(
-          builder: (context, state) {
-            return state.when(
-              initial: () => Container(),
-              loading: () => const Center(child: WHCircularSpin()),
-              error: (message) =>
-                  Center(child: Text('${context.localized.error}: $message')),
-              loaded: (connectors, initialSelectedConnectorId, images,
-                  startTime, endTime, address) {
-                final currentImages = images ?? [];
-                final initialSelectedConnector = findById(connectors,
-                    initialSelectedConnectorId, (connector) => connector.id);
-                return SingleChildScrollView(
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                        minHeight: MediaQuery.of(context).size.height),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        WHElevatedButton.secondary(
-                          title: AppLocalizations.of(context).chooseAddress,
-                        ),
-                        Text(AppLocalizations.of(context).timePicker,
-                            style: body18SemiBoldTextStyle),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            WHElevatedButton.secondary(
-                                title: AppLocalizations.of(context).startTime),
-                            WHElevatedButton.secondary(
-                                title: AppLocalizations.of(context).endTime),
-                          ],
-                        ),
-                        WHTextField.singleLine(
-                          controller: context.read<AddStationBlock>().hourlyRateController,
-                          keyboardType: TextInputType.number,
-                          label: AppLocalizations.of(context).hourlyRate,
-                          hintText: AppLocalizations.of(context).hourlyRate,
-                        ),
-                        WHTextField.singleLine(
-                          controller: context.read<AddStationBlock>().kilowattController,
-                          keyboardType: TextInputType.number,
-                          label: AppLocalizations.of(context).kilowatt,
-                          hintText: AppLocalizations.of(context).kilowatt,
-                        ),
-                        Text(AppLocalizations.of(context).contactInfo, style: body18SemiBoldTextStyle),
-                        WHTextField.singleLine(
-                          controller:
-                              context.read<AddStationBlock>().phoneController,
-                          keyboardType: TextInputType.phone,
-                          label: AppLocalizations.of(context).phone,
-                          hintText:
-                              AppLocalizations.of(context).yourPhoneNumber,
-                        ),
-                        WHTextField.singleLine(
-                          controller:
-                              context.read<AddStationBlock>().nameController,
-                          keyboardType: TextInputType.name,
-                          label: AppLocalizations.of(context).name,
-                          hintText: AppLocalizations.of(context).yourName,
-                        ),
-                        Text(AppLocalizations.of(context).stationImage,
-                            style: body18SemiBoldTextStyle),
-                        SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Container(
-
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                height: 120.h,
-                                child: const Row(
-                                  children: [
-                                    Expanded(child: AddStationPreviewImages()),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
-                          WHElevatedButton.primary(
-                            title: AppLocalizations.of(context).addStation,
-                          ),
-                        ],
-                      ),
-                    ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Text(
+              "Add Station Screen!",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 24.0,
+                color: Colors.blue,
+              ),
+            ),
+            20.h.heightBox,
+            ElevatedButton(
+                onPressed: () => AutoRouter.of(context)
+                    .push(const ChooseStationAddressRoute()),
+                child: const Text(
+                  "Choose Station Address",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.blue,
                   ),
-                );
-              },
-            );
-          },
-
+                ))
+          ],
         ),
       ).paddingAll(20.0),
     );

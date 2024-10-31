@@ -42,6 +42,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
             emit(AddStationState.loaded(images: updatedImages));
           } else {
             emit(AddStationState.loaded(images: e.images));
+
           }
         },
         removeImage: (e) async {
@@ -54,6 +55,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
             }
           }
         },
+
       );
     });
   }
