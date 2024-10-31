@@ -16,17 +16,19 @@ part 'profile_bloc.freezed.dart';
 @injectable
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ProfileBloc() : super(const ProfileState.initial()) {
-    on<LoadProfileEvent>((event, emit) async {
+    on<_LoadProfileEvent>((event, emit) async {
       emit(const ProfileState.loading());
       try {
         final myUserData = UserModel.fromJson(userData);
-        final myStationData = StationModel.fromJson(stationData);
+        final List<StationModel> myStationData = stationsData
+            .map((station) => StationModel.fromJson(station))
+            .toList();
         final List<CarModel> myCarData =
             createdCarsData.map((car) => CarModel.fromJson(car)).toList();
         emit(ProfileState.loaded(
             userData: myUserData,
-            stationData: myStationData,
-            carData: myCarData));
+            stationsData: myStationData,
+            carsData: myCarData));
       } catch (error) {
         emit(ProfileState.error(error.toString())); // Emit error state
       }

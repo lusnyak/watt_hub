@@ -3,9 +3,9 @@ import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
-class StationInfo extends StatelessWidget {
-  final StationModel? stationData;
-  const StationInfo({super.key, required this.stationData});
+class ProfileStationItem extends StatelessWidget {
+  final StationModel stationData;
+  const ProfileStationItem({super.key, required this.stationData});
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +22,11 @@ class StationInfo extends StatelessWidget {
             context.localized.stationInfo,
             style: body16SemiBoldTextStyle,
           ).paddingOnly(bottom: 10.sp),
-          Text('${context.localized.name}: ${stationData?.name}'),
-          // Text('${context.localized.street}: ${stationData.address}'),
-          // Text('${context.localized.max}: ${stationData.kwt}kWt'),
+          Text('${context.localized.name}: ${stationData.name}'),
+          Text('${context.localized.street}: ${stationData.address}'),
+          Text('${context.localized.max}: ${stationData.kwt}kWt'),
           Text(
-              '${context.localized.hourlyRateFull}: ${stationData?.hourlyRate}\$'),
+              '${context.localized.hourlyRateFull}: ${stationData.hourlyRate}\$'),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.end,
@@ -34,12 +34,12 @@ class StationInfo extends StatelessWidget {
               const InkWell(
                 child: Icon(Icons.mode_edit_outlined),
               ),
-              20.widthBox,
+              20.w.widthBox,
               const InkWell(child: Icon(Icons.delete_outline_outlined)),
             ],
           )
         ],
       ),
-    );
+    ).paddingOnly(bottom: 10.sp);
   }
 }

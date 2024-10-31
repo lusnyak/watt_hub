@@ -8,8 +8,10 @@ import 'package:watt_hub/presentation/screens/profile/sub_widget/car_info_list.d
 import 'package:watt_hub/presentation/screens/profile/sub_widget/conditional_expansion_tile.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_divider.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_item.dart';
-import 'package:watt_hub/presentation/screens/profile/sub_widget/station_info.dart';
+import 'package:watt_hub/presentation/screens/profile/sub_widget/station_info_list.dart';
+import 'package:watt_hub/utils/constants/constants.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
+import 'package:watt_hub/utils/helpers/helpers.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
@@ -19,20 +21,16 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<ProfileBloc>()..add(const LoadProfileEvent()),
+      create: (context) =>
+          getIt<ProfileBloc>()..add(const ProfileEvent.loadProfile()),
       child: const _ProfileView(),
     );
   }
 }
 
-class _ProfileView extends StatefulWidget {
+class _ProfileView extends StatelessWidget {
   const _ProfileView();
 
-  @override
-  State<_ProfileView> createState() => _ProfileViewState();
-}
-
-class _ProfileViewState extends State<_ProfileView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,8 +41,8 @@ class _ProfileViewState extends State<_ProfileView> {
             error: (message) => Center(child: Text('Error: $message')),
             loaded: (
               profileData,
-              stationData,
-              carData,
+              stationsData,
+              carsData,
             ) {
               return SafeArea(
                 child: SingleChildScrollView(
@@ -87,11 +85,8 @@ class _ProfileViewState extends State<_ProfileView> {
                             WattHubAssets.images.profileImage
                                 .keyName, //Default, Now user model don't have image property
                             width: 60.w,
-                            // Sets the width of the image
                             height: 60.h,
-                            // Sets the height of the image (optional, to make it square)
-                            fit: BoxFit
-                                .cover, // Ensures the image fills the container
+                            fit: BoxFit.cover,
                           ),
                         ),
                         trailing: Icon(
@@ -104,25 +99,31 @@ class _ProfileViewState extends State<_ProfileView> {
                           title: context.localized.myCar,
                           iconLeading: Icons.local_taxi_sharp,
                           children: [
-                            if (carData != null && carData.isNotEmpty)
+                            if (carsData != null && carsData.isNotEmpty)
                               CarsInfoList(
-                                carsData: carData,
+                                carsData: carsData,
                               ),
                           ],
                           onTap: () {
-                            if (carData!.isEmpty) {
+                            if (carsData!.isEmpty) {
                               AutoRouter.of(context).push(const AddCarRoute());
                             }
                           }),
                       ConditionalExpansionTile(
-                        title: context.localized.myStation,
-                        iconLeading: Icons.charging_station_outlined,
-                        children: [
-                          StationInfo(
-                            stationData: stationData,
-                          )
-                        ],
-                      ),
+                          title: context.localized.myStation,
+                          iconLeading: Icons.charging_station_outlined,
+                          children: [
+                            if (stationsData != null && stationsData.isNotEmpty)
+                              StationInfoList(
+                                stationsData: stationsData,
+                              ),
+                          ],
+                          onTap: () {
+                            if (stationsData!.isEmpty) {
+                              AutoRouter.of(context)
+                                  .push(const AddStationRoute());
+                            }
+                          }),
                       const ProfileMenuDivider(),
                       ProfileMenuItem(
                         title: context.localized.helpCenter,
@@ -133,7 +134,9 @@ class _ProfileViewState extends State<_ProfileView> {
                       ProfileMenuItem(
                         title: context.localized.privacyPolicy,
                         iconLeading: Icons.lock_outline_sharp,
-                        onTap: () => {},
+                        onTap: () async {
+                          await launchURL(AppConstants.privacyPolicyUrl);
+                        },
                         iconTrailing: Icons.chevron_right_outlined,
                       ),
                       ProfileMenuItem(
