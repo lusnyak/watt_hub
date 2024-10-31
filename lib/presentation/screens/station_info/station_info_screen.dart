@@ -6,7 +6,9 @@
 
 
 
+
 import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
@@ -22,16 +24,17 @@ class StationInfoScreen extends StatelessWidget {
     return BlocProvider(
       create: (_) => getIt<StationInfoBloc>()
         ..add(const StationInfoEvent.loadConnectors()),
-      child: const StationInfoView(),
+      child: const _StationInfoView(),
     );
   }
 }
 
-class StationInfoView extends StatelessWidget {
-  const StationInfoView({super.key});
+class _StationInfoView extends StatelessWidget {
+  const _StationInfoView();
 
   @override
   Widget build(BuildContext context) {
+
 
 
 
@@ -49,6 +52,7 @@ class StationInfoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final stationInfoBloc = context.read<StationInfoBloc>();
+
     final imgList = [
 
 
@@ -73,50 +77,10 @@ class StationInfoView extends StatelessWidget {
                   builder: (context, state) {
                     return Column(
                       children: [
-                        ///TODO: - unenal uikit mej element
-                        CarouselSlider.builder(
-                          options: CarouselOptions(
-                            height: 130.0,
-                            autoPlay: false,
-                            enlargeCenterPage: true,
-                            aspectRatio: 16 / 9,
-                            enableInfiniteScroll: false,
-                            onPageChanged: (index, reason) {
-                              stationInfoBloc.add(
-                                StationInfoEvent.changeCarouselIndex(index),
-                              );
-                            },
-                          ),
-                          itemCount: imgList.length,
-                          itemBuilder: (context, index, realIndex) {
-                            final urlImage = imgList[index];
-                            return Container(
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 12),
-                              color: Colors.grey,
-                              child: Image.network(
-                                urlImage,
-                                fit: BoxFit.cover,
-                                errorBuilder: (context, error, stackTrace) =>
-                                    const Icon(Icons.broken_image,
-                                        color: Colors.grey),
-                              ),
-                            );
-                          },
-                        ),
-                        20.h.heightBox,
-                        /// TODO: - unenal uikit mej element , miavorel karuseli mej
-                        AnimatedSmoothIndicator(
-                          activeIndex: state.activeCarouselIndex,
-                          count: imgList.length,
-                          effect: const SlideEffect(
-                            activeDotColor: WattHubColors.primaryGreenColor,
-                            dotColor: WattHubColors.primaryLightGreenColor,
-                            dotHeight: 12,
-                            dotWidth: 12,
-                            spacing: 8,
-                          ),
-                        ),
+                        ///TODO: - unenal uikit mej element - Done
+                        WHCarouselSlider(imgList: imgList),
+
+                        /// TODO: - unenal uikit mej element , miavorel karuseli mej - Done
                       ],
                     );
                   },
