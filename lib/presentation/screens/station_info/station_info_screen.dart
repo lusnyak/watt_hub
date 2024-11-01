@@ -24,11 +24,11 @@ class _StationInfoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final imgList = [
-      'https://via.placeholder.com/600x400.png?text=Image+1',
-      'https://via.placeholder.com/600x400.png?text=Image+2',
-      'https://via.placeholder.com/600x400.png?text=Image+3',
+      'https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_default/v1/editorial/tesla-supercharger-us-my22-1001x565-(2).jpg',
+      'https://www.motortrend.com/uploads/2023/03/2022Wallbox-Charger-1.jpg',
+      'https://joltify.co.uk/wp-content/uploads/Hypervolt-EV-charger-white-Charging-Car-1080x675.png',
+      'https://www.racv.com.au/content/dam/racv-assets/images/images/solar/1600x900/fairfield-house-tesla-wall-charger-1600x900.jpg'
     ];
 
     return Scaffold(
@@ -43,11 +43,7 @@ class _StationInfoView extends StatelessWidget {
                 children: [
                   WHCarouselSlider(imgList: imgList),
                   20.h.heightBox,
-                  Text(AppLocalizations.of(context).location,
-                      style: body18SemiBoldTextStyle),
-                  Text(
-                      "${AppLocalizations.of(context).street} Aram Khachatryan 14/3, Yerevan, Armenia",
-                      style: body16RegularTextStyle),
+                  location(context),
                   20.h.heightBox,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,36 +60,20 @@ class _StationInfoView extends StatelessWidget {
                     ],
                   ),
                   20.h.heightBox,
-                  Text(AppLocalizations.of(context).serviceInformation,
-                      style: body18SemiBoldTextStyle),
-                  Text("${AppLocalizations.of(context).max} 3.7kWt",
-                      style: body16RegularTextStyle),
-                  Text("${AppLocalizations.of(context).hourlyRate} 10\$",
-                      style: body16RegularTextStyle),
-                  Text(
-                      "${AppLocalizations.of(context).availableHours} 10:00-18:00",
-                      style: body16RegularTextStyle),
+                  serviceInformation(context),
                   20.h.heightBox,
                   BlocBuilder<StationInfoBloc, StationInfoState>(
                     builder: (context, state) {
                       return WhDropDownButton<ConnectorTypeModel>(
                         onChanged: (value) {},
-                        itemLabel: (connector) => connector.title,
+                        itemLabel: (connector) => connector.title ?? "",
                         items: state.connectors,
                         hintText: AppLocalizations.of(context).connectorType,
                       );
                     },
                   ),
                   20.h.heightBox,
-                  Text(AppLocalizations.of(context).contact,
-                      style: body18SemiBoldTextStyle),
-                  Row(
-                    children: [
-                      const Icon(Icons.phone_outlined),
-                      10.w.widthBox,
-                      Text("+37410161695", style: body16RegularTextStyle),
-                    ],
-                  ),
+                  contact(context),
                   20.h.heightBox,
                   WHElevatedButton.primary(
                       onPressed: () {
@@ -105,9 +85,58 @@ class _StationInfoView extends StatelessWidget {
                 ],
               ),
             ).paddingSymmetric(horizontal: 20.w);
-          }
+          },
         ),
       ),
+    );
+  }
+
+  Widget location(context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(AppLocalizations.of(context).location,
+            style: body18SemiBoldTextStyle),
+        Text(
+            "${AppLocalizations.of(context).street} Aram Khachatryan 14/3, Yerevan, Armenia",
+            style: body16RegularTextStyle),
+      ],
+    );
+  }
+
+  Widget serviceInformation(context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(AppLocalizations.of(context).serviceInformation,
+            style: body18SemiBoldTextStyle),
+        Text("${AppLocalizations.of(context).max} 3.7kWt",
+            style: body16RegularTextStyle),
+        Text("${AppLocalizations.of(context).hourlyRate} 10\$",
+            style: body16RegularTextStyle),
+        Text("${AppLocalizations.of(context).availableHours} 10:00-18:00",
+            style: body16RegularTextStyle),
+      ],
+    );
+  }
+
+  Widget contact(context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(AppLocalizations.of(context).contact,
+            style: body18SemiBoldTextStyle),
+        Row(
+          children: [
+            const Icon(Icons.phone_outlined),
+            10.w.widthBox,
+            Text("+37410161695", style: body16RegularTextStyle),
+          ],
+        ),
+      ],
     );
   }
 }
