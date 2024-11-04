@@ -95,12 +95,14 @@ class AddStationScreen extends StatelessWidget {
                                                 AddStationEvent
                                                     .startTimeSelected(
                                                         formattedTime));
+
                                           }
                                         },
                                       );
                                     },
                                     title:
                                         "${context.localized.start} - ${startTime ?? ""}"),
+
                               ),
                               SizedBox(
                                 width: 20.w,
@@ -115,6 +117,7 @@ class AddStationScreen extends StatelessWidget {
                                           if (newDate != null) {
                                             final formattedTime =
                                                 formatTimeOfDay(newDate);
+
                                             context.read<AddStationBlock>().add(
                                                 AddStationEvent.endTimeSelected(
                                                     formattedTime));
@@ -124,6 +127,7 @@ class AddStationScreen extends StatelessWidget {
                                     },
                                     title:
                                         "${context.localized.end}-  ${endTime ?? ""}"),
+
                               ),
                             ],
                           ),
@@ -173,6 +177,7 @@ class AddStationScreen extends StatelessWidget {
                           WHTextField.singleLine(
                             controller:
                                 context.read<AddStationBlock>().nameController,
+
                             keyboardType: TextInputType.name,
                             label: AppLocalizations.of(context).name,
                             hintText: AppLocalizations.of(context).yourName,
@@ -219,8 +224,10 @@ class AddStationScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                ))
-          ],
+                );
+              },
+            );
+          },
         ),
       ).paddingAll(20.0),
     );

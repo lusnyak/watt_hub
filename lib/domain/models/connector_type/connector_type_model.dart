@@ -13,5 +13,6 @@ class ConnectorTypeModel with _$ConnectorTypeModel {
 
   factory ConnectorTypeModel.fromJson(Map<String, dynamic> json) =>
       _$ConnectorTypeModelFromJson(json);
+
 }
 

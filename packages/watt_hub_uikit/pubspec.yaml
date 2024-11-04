@@ -26,6 +26,7 @@ dependencies:
   permission_handler: ^10.2.0
   image_picker_android:
   image_picker_platform_interface:
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

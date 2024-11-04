@@ -22,3 +22,4 @@ class AddStationEvent with _$AddStationEvent {
 
   const factory AddStationEvent.createStation() = _CreateStationEvent;
 }
+

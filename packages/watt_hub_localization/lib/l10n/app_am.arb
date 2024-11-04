@@ -44,6 +44,8 @@
   "addStation":"Ավելացնել կայանը",
    "error":"սխալ",
     "start":"սկիզբ",
-    "end":"վերջ"
+    "end":"վերջ",
+    "flutterMap":"Flutter քարտեզ",
+    "addressNotFound.":"Հասցեն չի գտնվել.",
+    "noLocationSelected":"Ոչ մի տեղ ընտրված չէ: Խնդրում ենք սեղմել քարտեզի վրա."
 }
-

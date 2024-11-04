@@ -30,6 +30,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
           try {
             await Future.delayed(const Duration(seconds: 2));
             emit(const AddStationState.loaded());
+
           } catch (e) {
             emit(AddStationState.error(e.toString()));
           }
@@ -43,6 +44,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
           } else {
             emit(AddStationState.loaded(images: e.images));
 
+
           }
         },
         removeImage: (e) async {
@@ -55,6 +57,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
             }
           }
         },
+
 
         getAddress: (e)async{
           if(state is _LoadedState){
@@ -90,6 +93,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
             );
           }
         },
+
       );
     });
   }

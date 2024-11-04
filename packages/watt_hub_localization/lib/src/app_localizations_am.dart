@@ -170,12 +170,12 @@ class AppLocalizationsAm extends AppLocalizations {
   String get end => 'վերջ';
 
   @override
-  String get flutterMap => 'Flutter Map';
+  String get flutterMap => 'Flutter քարտեզ';
 
   @override
   String get addressNotFound => 'Address not found.';
 
   @override
   String get noLocationSelected =>
-      'No location selected. Please tap on the map.';
+      'Ոչ մի տեղ ընտրված չէ: Խնդրում ենք սեղմել քարտեզի վրա.';
 }
