@@ -83,7 +83,6 @@ class WHCarouselSliderState extends State<WHCarouselSlider> {
                 ),
               ),
               imageBuilder: (context, imageProvider) => Container(
-                color: WattHubColors.lightGray,
                 decoration: BoxDecoration(
                   color: WattHubColors.lightGray,
                   image: DecorationImage(
@@ -99,7 +98,7 @@ class WHCarouselSliderState extends State<WHCarouselSlider> {
           WHAnimatedSmoothIndicator(
             activeIndex: activeIndex,
             count: widget.imgList.length,
-          ).paddingOnly(top: 8.0),
+          ).paddingOnly(top: 8.0).toCenter(),
       ],
     );
   }
