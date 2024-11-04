@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/fake_data/car_models_data/car_models_data.dart';
 import 'package:watt_hub/data/fake_data/car_types_data/car_types_data.dart';
@@ -7,12 +8,14 @@ import 'package:watt_hub/domain/models/car/car_model.dart';
 import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
 import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
 
+
 part 'add_car_bloc.freezed.dart';
 part 'add_car_event.dart';
 part 'add_car_state.dart';
 
 @injectable
 class AddCarBloc extends Bloc<AddCarEvent, AddCarState> {
+
   AddCarBloc()
       : super(
           const AddCarState(),
@@ -53,10 +56,12 @@ class AddCarBloc extends Bloc<AddCarEvent, AddCarState> {
               state.copyWith(selectedConnector: e.connector),
             );
           },
+
         );
       },
     );
   }
+
 
   Future<List<CarTypeModel>> fetchCarTypes() async {
     return carTypesData
@@ -81,4 +86,5 @@ class AddCarBloc extends Bloc<AddCarEvent, AddCarState> {
         )
         .toList();
   }
+
 }
