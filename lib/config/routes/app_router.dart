@@ -10,7 +10,7 @@ import 'package:watt_hub/presentation/screens/filter/filter_screen.dart';
 import 'package:watt_hub/presentation/screens/home/home_screen.dart';
 import 'package:watt_hub/presentation/screens/onboarding/onboarding_screen.dart';
 import 'package:watt_hub/presentation/screens/profile/profile_screen.dart';
-import 'package:watt_hub/presentation/screens/request_station/requests_screen.dart';
+import 'package:watt_hub/presentation/screens/requests/requests_screen.dart';
 import 'package:watt_hub/presentation/screens/sign_up/sign_up_screen.dart';
 import 'package:watt_hub/presentation/screens/splash/splash_screen.dart';
 import 'package:watt_hub/presentation/screens/station_info/station_info_screen.dart';

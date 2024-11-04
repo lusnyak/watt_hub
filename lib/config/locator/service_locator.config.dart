@@ -37,6 +37,8 @@ import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart'
     as _i944;
 import 'package:watt_hub/presentation/screens/onboarding/bloc/onboarding_bloc.dart'
     as _i764;
+import 'package:watt_hub/presentation/screens/requests/bloc/requests_bloc.dart'
+    as _i845;
 import 'package:watt_hub/presentation/screens/sign_up/bloc/sign_up_bloc.dart'
     as _i141;
 import 'package:watt_hub/presentation/screens/station_info/bloc/station_info_bloc.dart'
@@ -64,6 +66,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
     gh.factory<_i400.StationInfoBloc>(() => _i400.StationInfoBloc());
     gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
+    gh.factory<_i845.RequestsBloc>(() => _i845.RequestsBloc());
     gh.lazySingleton<_i618.ConnectivityChecker>(
         () => _i618.ConnectivityChecker());
     gh.lazySingleton<_i361.Dio>(() => dioClient.dio());
