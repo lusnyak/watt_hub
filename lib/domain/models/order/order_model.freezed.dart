@@ -29,9 +29,7 @@ mixin _$OrderModel {
   ConnectorTypeModel? get connectorType => throw _privateConstructorUsedError;
   String? get comment => throw _privateConstructorUsedError;
   UserModel? get creator => throw _privateConstructorUsedError;
-  @JsonKey(name: 'status')
-  OrderStatus? get status => throw _privateConstructorUsedError;
-  @JsonKey(name: 'station')
+  String? get status => throw _privateConstructorUsedError;
   StationModel? get station => throw _privateConstructorUsedError;
   String? get reason => throw _privateConstructorUsedError;
 
@@ -58,8 +56,8 @@ abstract class $OrderModelCopyWith<$Res> {
       @JsonKey(name: 'connector_type') ConnectorTypeModel? connectorType,
       String? comment,
       UserModel? creator,
-      @JsonKey(name: 'status') OrderStatus? status,
-      @JsonKey(name: 'station') StationModel? station,
+      String? status,
+      StationModel? station,
       String? reason});
 
   $ConnectorTypeModelCopyWith<$Res>? get connectorType;
@@ -190,8 +188,8 @@ abstract class _$$OrderModelImplCopyWith<$Res>
       @JsonKey(name: 'connector_type') ConnectorTypeModel? connectorType,
       String? comment,
       UserModel? creator,
-      @JsonKey(name: 'status') OrderStatus? status,
-      @JsonKey(name: 'station') StationModel? station,
+      String? status,
+      StationModel? station,
       String? reason});
 
   @override
@@ -276,9 +274,10 @@ class _$OrderModelImpl implements _OrderModel {
       @JsonKey(name: 'connector_type') this.connectorType,
       this.comment,
       this.creator,
-      @JsonKey(name: 'status') this.status,
-      @JsonKey(name: 'station') this.station,
-      this.reason});
+      this.status,
+      this.station,
+      this.reason})
+      : _connectorType = connectorType;
 
   factory _$OrderModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderModelImplFromJson(json);
@@ -360,8 +359,8 @@ abstract class _OrderModel implements OrderModel {
       @JsonKey(name: 'connector_type') final ConnectorTypeModel? connectorType,
       final String? comment,
       final UserModel? creator,
-      @JsonKey(name: 'status') final OrderStatus? status,
-      @JsonKey(name: 'station') final StationModel? station,
+      final String? status,
+      final StationModel? station,
       final String? reason}) = _$OrderModelImpl;
 
   factory _OrderModel.fromJson(Map<String, dynamic> json) =
