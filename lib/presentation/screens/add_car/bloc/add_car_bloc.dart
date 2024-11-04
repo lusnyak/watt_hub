@@ -7,6 +7,7 @@ import 'package:watt_hub/domain/models/car/car_model.dart';
 import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
 import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
 
+
 part 'add_car_bloc.freezed.dart';
 part 'add_car_event.dart';
 part 'add_car_state.dart';
@@ -81,4 +82,5 @@ class AddCarBloc extends Bloc<AddCarEvent, AddCarState> {
         )
         .toList();
   }
+
 }
