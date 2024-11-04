@@ -331,6 +331,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select'**
   String get select;
+
+  /// No description provided for @addCar.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Car'**
+  String get addCar;
+
+  /// No description provided for @carType.
+  ///
+  /// In en, this message translates to:
+  /// **'Car Type'**
+  String get carType;
+
+  /// No description provided for @carModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Car Model'**
+  String get carModel;
 }
 
 class _AppLocalizationsDelegate

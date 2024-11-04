@@ -37,5 +37,8 @@
   "availableHours": "Available hours:",
   "connectorType": "Connector Type",
   "contact": "Contact",
-  "select": "Select"
+  "select": "Select",
+  "addCar": "Add Car",
+  "carType": "Car Type",
+  "carModel": "Car Model"
 }

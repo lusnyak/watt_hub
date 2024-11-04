@@ -21,6 +21,7 @@ _$CarModelImpl _$$CarModelImplFromJson(Map<String, dynamic> json) =>
       user: json['user'] == null
           ? null
           : UserModel.fromJson(json['user'] as Map<String, dynamic>),
+      title: json['title'] as String?,
     );
 
 Map<String, dynamic> _$$CarModelImplToJson(_$CarModelImpl instance) =>
@@ -30,4 +31,5 @@ Map<String, dynamic> _$$CarModelImplToJson(_$CarModelImpl instance) =>
       'connector_type': instance.connectorType,
       'images': instance.images,
       'user': instance.user,
+      'title': instance.title,
     };

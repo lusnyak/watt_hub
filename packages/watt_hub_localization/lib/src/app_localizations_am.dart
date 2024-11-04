@@ -126,4 +126,13 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get select => 'Ընտրել';
+
+  @override
+  String get addCar => 'Ավելացնել մեքենա';
+
+  @override
+  String get carType => 'Մեքենայի տեսակը';
+
+  @override
+  String get carModel => 'Մեքենայի մոդելը';
 }

@@ -15,6 +15,7 @@ class CarModel with _$CarModel {
     ConnectorTypeModel? connectorType,
     List<String>? images,
     UserModel? user,
+    String? title,
   }) = _CarModel;
 
   factory CarModel.fromJson(Map<String, dynamic> json) =>
