@@ -245,7 +245,7 @@ abstract class AppLocalizations {
   /// No description provided for @hourlyRate.
   ///
   /// In en, this message translates to:
-  /// **'hr'**
+  /// **'Hourly rate:'**
   String get hourlyRate;
 
   /// No description provided for @filter.
@@ -271,6 +271,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose Connector'**
   String get chooseConnector;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @street.
+  ///
+  /// In en, this message translates to:
+  /// **'Street:'**
+  String get street;
+
+  /// No description provided for @navigate.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigate'**
+  String get navigate;
+
+  /// No description provided for @shareLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Location'**
+  String get shareLocation;
+
+  /// No description provided for @serviceInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Service Information'**
+  String get serviceInformation;
+
+  /// No description provided for @max.
+  ///
+  /// In en, this message translates to:
+  /// **'Max:'**
+  String get max;
+
+  /// No description provided for @availableHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Available hours:'**
+  String get availableHours;
+
+  /// No description provided for @connectorType.
+  ///
+  /// In en, this message translates to:
+  /// **'Connector Type'**
+  String get connectorType;
+
+  /// No description provided for @contact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact'**
+  String get contact;
+
+  /// No description provided for @select.
+  ///
+  /// In en, this message translates to:
+  /// **'Select'**
+  String get select;
 }
 
 class _AppLocalizationsDelegate

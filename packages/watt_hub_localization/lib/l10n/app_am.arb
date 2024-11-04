@@ -23,10 +23,20 @@
    "view": "View",
    "book": "Book",
    "kilowatt": "kw",
-   "hourlyRate": "hr",
+   "hourlyRate": "Ժամավճար:",
    "filter": "Filter",
    "rating": "Rating",
    "chooseCar": "Choos Car Type",
-   "chooseConnector": "Choose Connector"
+   "chooseConnector": "Choose Connector",
+  "location": "Գտնվելու վայրը",
+  "street": "Փողոց:",
+  "navigate": "Նավարկել",
+  "shareLocation": "Կիսվել վայրով",
+  "serviceInformation": "Ծառայության տեղեկատվություն",
+  "max": "Մաքս:",
+  "availableHours": "Հասանելի ժամեր:",
+  "connectorType": "Միակցիչի տեսակը",
+  "contact": "Կոնտակտային տվյալներ",
+  "select": "Ընտրել"
 }
 

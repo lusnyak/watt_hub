@@ -37,6 +37,9 @@ dependencies:
   flutter_native_splash: ^2.4.2
   connectivity_plus: ^6.1.0
 
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
