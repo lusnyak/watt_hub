@@ -59,7 +59,7 @@ ButtonStyle get primaryIconButtonStyle => ButtonStyle(
 ButtonStyle get secondaryIconButtonStyle => ButtonStyle(
       foregroundColor:
           const WidgetStatePropertyAll(WattHubColors.primaryGreenColor),
-      backgroundColor: const WidgetStatePropertyAll(WattHubColors.grayColor),
+      backgroundColor: const WidgetStatePropertyAll(WattHubColors.lightGrayColor),
       shape: const WidgetStatePropertyAll(CircleBorder()),
       elevation: const WidgetStatePropertyAll(0),
       alignment: Alignment.center,
