@@ -25,6 +25,7 @@ mixin _$CarModel {
   ConnectorTypeModel? get connectorType => throw _privateConstructorUsedError;
   List<String>? get images => throw _privateConstructorUsedError;
   UserModel? get user => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
 
   /// Serializes this CarModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,7 +47,8 @@ abstract class $CarModelCopyWith<$Res> {
       CarTypeModel? carType,
       ConnectorTypeModel? connectorType,
       List<String>? images,
-      UserModel? user});
+      UserModel? user,
+      String? title});
 
   $CarTypeModelCopyWith<$Res>? get carType;
   $ConnectorTypeModelCopyWith<$Res>? get connectorType;
@@ -73,6 +75,7 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
     Object? connectorType = freezed,
     Object? images = freezed,
     Object? user = freezed,
+    Object? title = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -95,6 +98,10 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserModel?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -154,7 +161,8 @@ abstract class _$$CarModelImplCopyWith<$Res>
       CarTypeModel? carType,
       ConnectorTypeModel? connectorType,
       List<String>? images,
-      UserModel? user});
+      UserModel? user,
+      String? title});
 
   @override
   $CarTypeModelCopyWith<$Res>? get carType;
@@ -182,6 +190,7 @@ class __$$CarModelImplCopyWithImpl<$Res>
     Object? connectorType = freezed,
     Object? images = freezed,
     Object? user = freezed,
+    Object? title = freezed,
   }) {
     return _then(_$CarModelImpl(
       id: freezed == id
@@ -204,6 +213,10 @@ class __$$CarModelImplCopyWithImpl<$Res>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserModel?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -217,7 +230,8 @@ class _$CarModelImpl implements _CarModel {
       this.carType,
       this.connectorType,
       final List<String>? images,
-      this.user})
+      this.user,
+      this.title})
       : _images = images;
 
   factory _$CarModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -241,10 +255,12 @@ class _$CarModelImpl implements _CarModel {
 
   @override
   final UserModel? user;
+  @override
+  final String? title;
 
   @override
   String toString() {
-    return 'CarModel(id: $id, carType: $carType, connectorType: $connectorType, images: $images, user: $user)';
+    return 'CarModel(id: $id, carType: $carType, connectorType: $connectorType, images: $images, user: $user, title: $title)';
   }
 
   @override
@@ -257,13 +273,14 @@ class _$CarModelImpl implements _CarModel {
             (identical(other.connectorType, connectorType) ||
                 other.connectorType == connectorType) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
-            (identical(other.user, user) || other.user == user));
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.title, title) || other.title == title));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, carType, connectorType,
-      const DeepCollectionEquality().hash(_images), user);
+      const DeepCollectionEquality().hash(_images), user, title);
 
   /// Create a copy of CarModel
   /// with the given fields replaced by the non-null parameter values.
@@ -287,7 +304,8 @@ abstract class _CarModel implements CarModel {
       final CarTypeModel? carType,
       final ConnectorTypeModel? connectorType,
       final List<String>? images,
-      final UserModel? user}) = _$CarModelImpl;
+      final UserModel? user,
+      final String? title}) = _$CarModelImpl;
 
   factory _CarModel.fromJson(Map<String, dynamic> json) =
       _$CarModelImpl.fromJson;
@@ -302,6 +320,8 @@ abstract class _CarModel implements CarModel {
   List<String>? get images;
   @override
   UserModel? get user;
+  @override
+  String? get title;
 
   /// Create a copy of CarModel
   /// with the given fields replaced by the non-null parameter values.
