@@ -197,7 +197,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get error => 'սխալ';
 
   @override
-  String get start => 'սկիզբ';
+  String get start => 'Սկսել';
 
   @override
   String get end => 'վերջ';
@@ -247,9 +247,6 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get cancel => 'Չեղարկել';
-
-  @override
-  String get start => 'Սկսել';
 
   @override
   String get canceled => 'Չեղարկված';

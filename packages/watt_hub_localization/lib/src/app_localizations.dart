@@ -572,12 +572,6 @@ abstract class AppLocalizations {
   /// **'Cancel'**
   String get cancel;
 
-  /// No description provided for @start.
-  ///
-  /// In en, this message translates to:
-  /// **'Start'**
-  String get start;
-
   /// No description provided for @canceled.
   ///
   /// In en, this message translates to:
