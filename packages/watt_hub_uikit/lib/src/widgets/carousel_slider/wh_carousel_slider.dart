@@ -84,7 +84,6 @@ class WHCarouselSliderState extends State<WHCarouselSlider> {
               ),
               imageBuilder: (context, imageProvider) => Container(
 
-                color: WattHubColors.lightGrayColor,
 
                 decoration: BoxDecoration(
                   color: WattHubColors.lightGrayColor,
