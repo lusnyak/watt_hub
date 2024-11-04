@@ -410,6 +410,7 @@ abstract class AppLocalizations {
   /// **'Select'**
   String get select;
 
+
   /// No description provided for @chooseAddress.
   ///
   /// In en, this message translates to:
@@ -499,6 +500,25 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No location selected. Please tap on the map.'**
   String get noLocationSelected;
+
+  /// No description provided for @addCar.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Car'**
+  String get addCar;
+
+  /// No description provided for @carType.
+  ///
+  /// In en, this message translates to:
+  /// **'Car Type'**
+  String get carType;
+
+  /// No description provided for @carModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Car Model'**
+  String get carModel;
+
 }
 
 class _AppLocalizationsDelegate

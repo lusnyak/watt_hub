@@ -29,6 +29,8 @@ import 'package:watt_hub/data/remote/user_remote/user_remote.dart' as _i87;
 import 'package:watt_hub/data/repository/auth_repository.dart' as _i441;
 import 'package:watt_hub/data/repository/station_repository.dart' as _i198;
 import 'package:watt_hub/data/repository/user_repository.dart' as _i468;
+import 'package:watt_hub/presentation/screens/add_car/bloc/add_car_bloc.dart'
+    as _i352;
 import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.dart'
     as _i767;
 import 'package:watt_hub/presentation/screens/app_loading/bloc/app_loading_bloc.dart'
@@ -63,19 +65,18 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final dioClient = _$DioClient();
     gh.factory<_i60.OtpService>(() => _i60.OtpService());
+    gh.factory<_i352.AddCarBloc>(() => _i352.AddCarBloc());
     gh.factory<_i767.AddStationBlock>(() => _i767.AddStationBlock());
     gh.factory<_i536.AppLoadingBloc>(() => _i536.AppLoadingBloc());
     gh.factory<_i474.ChooseStationAddressBloc>(
         () => _i474.ChooseStationAddressBloc());
     gh.factory<_i293.FilterBloc>(() => _i293.FilterBloc());
     gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
-    gh.factory<_i400.StationInfoBloc>(() => _i400.StationInfoBloc());
-    gh.factory<_i536.AppLoadingBloc>(() => _i536.AppLoadingBloc());
-    gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
-    gh.factory<_i177.ProfileBloc>(() => _i177.ProfileBloc());
-    gh.factory<_i293.FilterBloc>(() => _i293.FilterBloc());
-    gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
     gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
+    gh.factory<_i177.ProfileBloc>(() => _i177.ProfileBloc());
+    gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
+    gh.factory<_i400.StationInfoBloc>(() => _i400.StationInfoBloc());
+    gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
     gh.lazySingleton<_i618.ConnectivityChecker>(
         () => _i618.ConnectivityChecker());
     gh.lazySingleton<_i361.Dio>(() => dioClient.dio());
@@ -89,8 +90,6 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i920.StationRemoteApi(gh<_i361.Dio>()));
     gh.lazySingleton<_i87.UserRemoteApi>(
         () => _i87.UserRemoteApi(gh<_i361.Dio>()));
-    gh.lazySingleton<_i1029.AuthRemoteApi>(
-        () => _i1029.AuthRemoteApi(gh<_i361.Dio>()));
     gh.factory<_i749.FilterStorage>(() => _i309.FilterStorageImpl());
     return this;
   }
