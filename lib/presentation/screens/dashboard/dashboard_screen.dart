@@ -11,7 +11,7 @@ class DashboardScreen extends StatelessWidget {
     return AutoTabsScaffold(
       routes: const [
         HomeRoute(),
-        RequestStationRoute(),
+        RequestsRoute(),
         ProfileRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
