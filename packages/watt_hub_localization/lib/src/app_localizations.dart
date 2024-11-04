@@ -331,6 +331,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select'**
   String get select;
+
+  /// No description provided for @my.
+  ///
+  /// In en, this message translates to:
+  /// **'My'**
+  String get my;
+
+  /// No description provided for @station.
+  ///
+  /// In en, this message translates to:
+  /// **'Station'**
+  String get station;
 }
 
 class _AppLocalizationsDelegate
