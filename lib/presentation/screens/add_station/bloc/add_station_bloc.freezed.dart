@@ -26,6 +26,7 @@ mixin _$AddStationEvent {
     required TResult Function(String startTime) startTimeSelected,
     required TResult Function(String endTime) endTimeSelected,
     required TResult Function(String address) getAddress,
+    required TResult Function() createStation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +39,7 @@ mixin _$AddStationEvent {
     TResult? Function(String startTime)? startTimeSelected,
     TResult? Function(String endTime)? endTimeSelected,
     TResult? Function(String address)? getAddress,
+    TResult? Function()? createStation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +52,7 @@ mixin _$AddStationEvent {
     TResult Function(String startTime)? startTimeSelected,
     TResult Function(String endTime)? endTimeSelected,
     TResult Function(String address)? getAddress,
+    TResult Function()? createStation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +66,7 @@ mixin _$AddStationEvent {
     required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
     required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
     required TResult Function(_GetAddressEvent value) getAddress,
+    required TResult Function(_CreateStationEvent value) createStation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +79,7 @@ mixin _$AddStationEvent {
     TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult? Function(_GetAddressEvent value)? getAddress,
+    TResult? Function(_CreateStationEvent value)? createStation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,6 +92,7 @@ mixin _$AddStationEvent {
     TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult Function(_GetAddressEvent value)? getAddress,
+    TResult Function(_CreateStationEvent value)? createStation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -162,6 +168,7 @@ class _$StartedEventImpl implements _StartedEvent {
     required TResult Function(String startTime) startTimeSelected,
     required TResult Function(String endTime) endTimeSelected,
     required TResult Function(String address) getAddress,
+    required TResult Function() createStation,
   }) {
     return started();
   }
@@ -177,6 +184,7 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult? Function(String startTime)? startTimeSelected,
     TResult? Function(String endTime)? endTimeSelected,
     TResult? Function(String address)? getAddress,
+    TResult? Function()? createStation,
   }) {
     return started?.call();
   }
@@ -192,6 +200,7 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult Function(String startTime)? startTimeSelected,
     TResult Function(String endTime)? endTimeSelected,
     TResult Function(String address)? getAddress,
+    TResult Function()? createStation,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -211,6 +220,7 @@ class _$StartedEventImpl implements _StartedEvent {
     required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
     required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
     required TResult Function(_GetAddressEvent value) getAddress,
+    required TResult Function(_CreateStationEvent value) createStation,
   }) {
     return started(this);
   }
@@ -226,6 +236,7 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult? Function(_GetAddressEvent value)? getAddress,
+    TResult? Function(_CreateStationEvent value)? createStation,
   }) {
     return started?.call(this);
   }
@@ -241,6 +252,7 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult Function(_GetAddressEvent value)? getAddress,
+    TResult Function(_CreateStationEvent value)? createStation,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -337,6 +349,7 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     required TResult Function(String startTime) startTimeSelected,
     required TResult Function(String endTime) endTimeSelected,
     required TResult Function(String address) getAddress,
+    required TResult Function() createStation,
   }) {
     return imagesSelected(images);
   }
@@ -352,6 +365,7 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     TResult? Function(String startTime)? startTimeSelected,
     TResult? Function(String endTime)? endTimeSelected,
     TResult? Function(String address)? getAddress,
+    TResult? Function()? createStation,
   }) {
     return imagesSelected?.call(images);
   }
@@ -367,6 +381,7 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     TResult Function(String startTime)? startTimeSelected,
     TResult Function(String endTime)? endTimeSelected,
     TResult Function(String address)? getAddress,
+    TResult Function()? createStation,
     required TResult orElse(),
   }) {
     if (imagesSelected != null) {
@@ -386,6 +401,7 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
     required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
     required TResult Function(_GetAddressEvent value) getAddress,
+    required TResult Function(_CreateStationEvent value) createStation,
   }) {
     return imagesSelected(this);
   }
@@ -401,6 +417,7 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult? Function(_GetAddressEvent value)? getAddress,
+    TResult? Function(_CreateStationEvent value)? createStation,
   }) {
     return imagesSelected?.call(this);
   }
@@ -416,6 +433,7 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult Function(_GetAddressEvent value)? getAddress,
+    TResult Function(_CreateStationEvent value)? createStation,
     required TResult orElse(),
   }) {
     if (imagesSelected != null) {
@@ -515,6 +533,7 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     required TResult Function(String startTime) startTimeSelected,
     required TResult Function(String endTime) endTimeSelected,
     required TResult Function(String address) getAddress,
+    required TResult Function() createStation,
   }) {
     return removeImage(index);
   }
@@ -530,6 +549,7 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     TResult? Function(String startTime)? startTimeSelected,
     TResult? Function(String endTime)? endTimeSelected,
     TResult? Function(String address)? getAddress,
+    TResult? Function()? createStation,
   }) {
     return removeImage?.call(index);
   }
@@ -545,6 +565,7 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     TResult Function(String startTime)? startTimeSelected,
     TResult Function(String endTime)? endTimeSelected,
     TResult Function(String address)? getAddress,
+    TResult Function()? createStation,
     required TResult orElse(),
   }) {
     if (removeImage != null) {
@@ -564,6 +585,7 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
     required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
     required TResult Function(_GetAddressEvent value) getAddress,
+    required TResult Function(_CreateStationEvent value) createStation,
   }) {
     return removeImage(this);
   }
@@ -579,6 +601,7 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult? Function(_GetAddressEvent value)? getAddress,
+    TResult? Function(_CreateStationEvent value)? createStation,
   }) {
     return removeImage?.call(this);
   }
@@ -594,6 +617,7 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult Function(_GetAddressEvent value)? getAddress,
+    TResult Function(_CreateStationEvent value)? createStation,
     required TResult orElse(),
   }) {
     if (removeImage != null) {
@@ -712,6 +736,7 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     required TResult Function(String startTime) startTimeSelected,
     required TResult Function(String endTime) endTimeSelected,
     required TResult Function(String address) getAddress,
+    required TResult Function() createStation,
   }) {
     return connectorTypeChangedEvent(selectedConnector);
   }
@@ -727,6 +752,7 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     TResult? Function(String startTime)? startTimeSelected,
     TResult? Function(String endTime)? endTimeSelected,
     TResult? Function(String address)? getAddress,
+    TResult? Function()? createStation,
   }) {
     return connectorTypeChangedEvent?.call(selectedConnector);
   }
@@ -742,6 +768,7 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     TResult Function(String startTime)? startTimeSelected,
     TResult Function(String endTime)? endTimeSelected,
     TResult Function(String address)? getAddress,
+    TResult Function()? createStation,
     required TResult orElse(),
   }) {
     if (connectorTypeChangedEvent != null) {
@@ -761,6 +788,7 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
     required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
     required TResult Function(_GetAddressEvent value) getAddress,
+    required TResult Function(_CreateStationEvent value) createStation,
   }) {
     return connectorTypeChangedEvent(this);
   }
@@ -776,6 +804,7 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult? Function(_GetAddressEvent value)? getAddress,
+    TResult? Function(_CreateStationEvent value)? createStation,
   }) {
     return connectorTypeChangedEvent?.call(this);
   }
@@ -791,6 +820,7 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult Function(_GetAddressEvent value)? getAddress,
+    TResult Function(_CreateStationEvent value)? createStation,
     required TResult orElse(),
   }) {
     if (connectorTypeChangedEvent != null) {
@@ -894,6 +924,7 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
     required TResult Function(String startTime) startTimeSelected,
     required TResult Function(String endTime) endTimeSelected,
     required TResult Function(String address) getAddress,
+    required TResult Function() createStation,
   }) {
     return startTimeSelected(startTime);
   }
@@ -909,6 +940,7 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
     TResult? Function(String startTime)? startTimeSelected,
     TResult? Function(String endTime)? endTimeSelected,
     TResult? Function(String address)? getAddress,
+    TResult? Function()? createStation,
   }) {
     return startTimeSelected?.call(startTime);
   }
@@ -924,6 +956,7 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
     TResult Function(String startTime)? startTimeSelected,
     TResult Function(String endTime)? endTimeSelected,
     TResult Function(String address)? getAddress,
+    TResult Function()? createStation,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -943,6 +976,7 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
     required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
     required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
     required TResult Function(_GetAddressEvent value) getAddress,
+    required TResult Function(_CreateStationEvent value) createStation,
   }) {
     return startTimeSelected(this);
   }
@@ -958,6 +992,7 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
     TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult? Function(_GetAddressEvent value)? getAddress,
+    TResult? Function(_CreateStationEvent value)? createStation,
   }) {
     return startTimeSelected?.call(this);
   }
@@ -973,6 +1008,7 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
     TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult Function(_GetAddressEvent value)? getAddress,
+    TResult Function(_CreateStationEvent value)? createStation,
     required TResult orElse(),
   }) {
     if (startTimeSelected != null) {
@@ -1073,6 +1109,7 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
     required TResult Function(String startTime) startTimeSelected,
     required TResult Function(String endTime) endTimeSelected,
     required TResult Function(String address) getAddress,
+    required TResult Function() createStation,
   }) {
     return endTimeSelected(endTime);
   }
@@ -1088,6 +1125,7 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
     TResult? Function(String startTime)? startTimeSelected,
     TResult? Function(String endTime)? endTimeSelected,
     TResult? Function(String address)? getAddress,
+    TResult? Function()? createStation,
   }) {
     return endTimeSelected?.call(endTime);
   }
@@ -1103,6 +1141,7 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
     TResult Function(String startTime)? startTimeSelected,
     TResult Function(String endTime)? endTimeSelected,
     TResult Function(String address)? getAddress,
+    TResult Function()? createStation,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -1122,6 +1161,7 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
     required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
     required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
     required TResult Function(_GetAddressEvent value) getAddress,
+    required TResult Function(_CreateStationEvent value) createStation,
   }) {
     return endTimeSelected(this);
   }
@@ -1137,6 +1177,7 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
     TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult? Function(_GetAddressEvent value)? getAddress,
+    TResult? Function(_CreateStationEvent value)? createStation,
   }) {
     return endTimeSelected?.call(this);
   }
@@ -1152,6 +1193,7 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
     TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult Function(_GetAddressEvent value)? getAddress,
+    TResult Function(_CreateStationEvent value)? createStation,
     required TResult orElse(),
   }) {
     if (endTimeSelected != null) {
@@ -1251,6 +1293,7 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
     required TResult Function(String startTime) startTimeSelected,
     required TResult Function(String endTime) endTimeSelected,
     required TResult Function(String address) getAddress,
+    required TResult Function() createStation,
   }) {
     return getAddress(address);
   }
@@ -1266,6 +1309,7 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
     TResult? Function(String startTime)? startTimeSelected,
     TResult? Function(String endTime)? endTimeSelected,
     TResult? Function(String address)? getAddress,
+    TResult? Function()? createStation,
   }) {
     return getAddress?.call(address);
   }
@@ -1281,6 +1325,7 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
     TResult Function(String startTime)? startTimeSelected,
     TResult Function(String endTime)? endTimeSelected,
     TResult Function(String address)? getAddress,
+    TResult Function()? createStation,
     required TResult orElse(),
   }) {
     if (getAddress != null) {
@@ -1300,6 +1345,7 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
     required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
     required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
     required TResult Function(_GetAddressEvent value) getAddress,
+    required TResult Function(_CreateStationEvent value) createStation,
   }) {
     return getAddress(this);
   }
@@ -1315,6 +1361,7 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
     TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult? Function(_GetAddressEvent value)? getAddress,
+    TResult? Function(_CreateStationEvent value)? createStation,
   }) {
     return getAddress?.call(this);
   }
@@ -1330,6 +1377,7 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
     TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
     TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
     TResult Function(_GetAddressEvent value)? getAddress,
+    TResult Function(_CreateStationEvent value)? createStation,
     required TResult orElse(),
   }) {
     if (getAddress != null) {
@@ -1349,6 +1397,153 @@ abstract class _GetAddressEvent implements AddStationEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAddressEventImplCopyWith<_$GetAddressEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CreateStationEventImplCopyWith<$Res> {
+  factory _$$CreateStationEventImplCopyWith(_$CreateStationEventImpl value,
+          $Res Function(_$CreateStationEventImpl) then) =
+      __$$CreateStationEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CreateStationEventImplCopyWithImpl<$Res>
+    extends _$AddStationEventCopyWithImpl<$Res, _$CreateStationEventImpl>
+    implements _$$CreateStationEventImplCopyWith<$Res> {
+  __$$CreateStationEventImplCopyWithImpl(_$CreateStationEventImpl _value,
+      $Res Function(_$CreateStationEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddStationEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CreateStationEventImpl implements _CreateStationEvent {
+  const _$CreateStationEventImpl();
+
+  @override
+  String toString() {
+    return 'AddStationEvent.createStation()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CreateStationEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<File> images) imagesSelected,
+    required TResult Function(int index) removeImage,
+    required TResult Function(ConnectorTypeModel? selectedConnector)
+        connectorTypeChangedEvent,
+    required TResult Function(String startTime) startTimeSelected,
+    required TResult Function(String endTime) endTimeSelected,
+    required TResult Function(String address) getAddress,
+    required TResult Function() createStation,
+  }) {
+    return createStation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(List<File> images)? imagesSelected,
+    TResult? Function(int index)? removeImage,
+    TResult? Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult? Function(String startTime)? startTimeSelected,
+    TResult? Function(String endTime)? endTimeSelected,
+    TResult? Function(String address)? getAddress,
+    TResult? Function()? createStation,
+  }) {
+    return createStation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<File> images)? imagesSelected,
+    TResult Function(int index)? removeImage,
+    TResult Function(ConnectorTypeModel? selectedConnector)?
+        connectorTypeChangedEvent,
+    TResult Function(String startTime)? startTimeSelected,
+    TResult Function(String endTime)? endTimeSelected,
+    TResult Function(String address)? getAddress,
+    TResult Function()? createStation,
+    required TResult orElse(),
+  }) {
+    if (createStation != null) {
+      return createStation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StartedEvent value) started,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_RemoveImageEvent value) removeImage,
+    required TResult Function(_ConnectorTypeChangedEvent value)
+        connectorTypeChangedEvent,
+    required TResult Function(_StartTimeSelectedEvent value) startTimeSelected,
+    required TResult Function(_EndTimeSelectedEvent value) endTimeSelected,
+    required TResult Function(_GetAddressEvent value) getAddress,
+    required TResult Function(_CreateStationEvent value) createStation,
+  }) {
+    return createStation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_StartedEvent value)? started,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_RemoveImageEvent value)? removeImage,
+    TResult? Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult? Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult? Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult? Function(_GetAddressEvent value)? getAddress,
+    TResult? Function(_CreateStationEvent value)? createStation,
+  }) {
+    return createStation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StartedEvent value)? started,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_RemoveImageEvent value)? removeImage,
+    TResult Function(_ConnectorTypeChangedEvent value)?
+        connectorTypeChangedEvent,
+    TResult Function(_StartTimeSelectedEvent value)? startTimeSelected,
+    TResult Function(_EndTimeSelectedEvent value)? endTimeSelected,
+    TResult Function(_GetAddressEvent value)? getAddress,
+    TResult Function(_CreateStationEvent value)? createStation,
+    required TResult orElse(),
+  }) {
+    if (createStation != null) {
+      return createStation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreateStationEvent implements AddStationEvent {
+  const factory _CreateStationEvent() = _$CreateStationEventImpl;
 }
 
 /// @nodoc

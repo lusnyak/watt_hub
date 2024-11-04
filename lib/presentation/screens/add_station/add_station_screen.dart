@@ -18,6 +18,7 @@ class AddStationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).addStation,
@@ -29,27 +30,194 @@ class AddStationScreen extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Text(
-              "Add Station Screen!",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 24.0,
-                color: Colors.blue,
-              ),
-            ),
-            20.h.heightBox,
-            ElevatedButton(
-                onPressed: () => AutoRouter.of(context)
-                    .push(const ChooseStationAddressRoute()),
-                child: const Text(
-                  "Choose Station Address",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.blue,
+        child: BlocBuilder<AddStationBlock, AddStationState>(
+          builder: (context, state) {
+            return state.when(
+              initial: () => Container(),
+              loading: () => const Center(child: WHCircularSpin()),
+              error: (message) =>
+                  Center(child: Text('${context.localized.error}: $message')),
+              loaded: (connectors, initialSelectedConnectorId, images,
+                  startTime, endTime, address) {
+                final currentImages = images ?? [];
+                final initialSelectedConnector = findById(connectors,
+                    initialSelectedConnectorId, (connector) => connector.id);
+                return SingleChildScrollView(
+                  child: Form(
+                    key: context.read<AddStationBlock>().formkey,
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                          minHeight: MediaQuery.of(context).size.height),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          WHElevatedButton.secondary(
+                            title: AppLocalizations.of(context).chooseAddress,
+                            onPressed: () async {
+                              final address = await context.router.push<String>(
+                                  const ChooseStationAddressRoute());
+                              if (address != null) {
+                                context
+                                    .read<AddStationBlock>()
+                                    .add(AddStationEvent.getAddress(address));
+                                debugPrint("Selected address: $address");
+                              } else {
+                                debugPrint("No address selected.");
+                              }
+                            },
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text(address ?? "", style: body14MediumTextStyle),
+                          SizedBox(
+                            height: 20.h,
+                          ),
+                          Text(AppLocalizations.of(context).timePicker,
+                              style: body18SemiBoldTextStyle),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: WHOutlinedButton(
+                                    onPressed: () {
+                                      WhDatePicker.of(context)
+                                          .showTimePicker(initialTime: time)
+                                          .then(
+                                        (newDate) {
+                                          if (newDate != null) {
+                                            final formattedTime =
+                                                formatTimeOfDay(newDate);
+                                            context.read<AddStationBlock>().add(
+                                                AddStationEvent
+                                                    .startTimeSelected(
+                                                        formattedTime));
+                                          }
+                                        },
+                                      );
+                                    },
+                                    title:
+                                        "${context.localized.start} - ${startTime ?? ""}"),
+                              ),
+                              SizedBox(
+                                width: 20.w,
+                              ),
+                              Expanded(
+                                child: WHOutlinedButton(
+                                    onPressed: () {
+                                      WhDatePicker.of(context)
+                                          .showTimePicker(initialTime: time)
+                                          .then(
+                                        (newDate) {
+                                          if (newDate != null) {
+                                            final formattedTime =
+                                                formatTimeOfDay(newDate);
+                                            context.read<AddStationBlock>().add(
+                                                AddStationEvent.endTimeSelected(
+                                                    formattedTime));
+                                          }
+                                        },
+                                      );
+                                    },
+                                    title:
+                                        "${context.localized.end}-  ${endTime ?? ""}"),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10.h),
+                          WhDropDownButton(
+                            items: connectors,
+                            itemLabel: (connector) => connector.title,
+                            onChanged: (value) {
+                              if (value != null) {
+                                context.read<AddStationBlock>().add(
+                                    AddStationEvent.connectorTypeChangedEvent(
+                                        value));
+                              }
+                            },
+                            hintText: context.localized.chooseConnector,
+                            value: initialSelectedConnector,
+                          ),
+                          WHTextField.singleLine(
+                            controller: context
+                                .read<AddStationBlock>()
+                                .hourlyRateController,
+                            keyboardType: TextInputType.number,
+                            label: AppLocalizations.of(context).hourlyRate,
+                            hintText: AppLocalizations.of(context).hourlyRate,
+                          ),
+                          WHTextField.singleLine(
+                            controller: context
+                                .read<AddStationBlock>()
+                                .kilowattController,
+                            keyboardType: TextInputType.number,
+                            label: AppLocalizations.of(context).kilowatt,
+                            hintText: AppLocalizations.of(context).kilowatt,
+                          ),
+                          SizedBox(
+                            height: 20.h,
+                          ),
+                          Text(AppLocalizations.of(context).contactInfo,
+                              style: body18SemiBoldTextStyle),
+                          WHTextField.singleLine(
+                            controller:
+                                context.read<AddStationBlock>().phoneController,
+                            keyboardType: TextInputType.phone,
+                            label: AppLocalizations.of(context).phone,
+                            hintText:
+                                AppLocalizations.of(context).yourPhoneNumber,
+                          ),
+                          WHTextField.singleLine(
+                            controller:
+                                context.read<AddStationBlock>().nameController,
+                            keyboardType: TextInputType.name,
+                            label: AppLocalizations.of(context).name,
+                            hintText: AppLocalizations.of(context).yourName,
+                          ),
+                          SizedBox(
+                            height: 20.h,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(AppLocalizations.of(context).stationImage,
+                                  style: body18SemiBoldTextStyle),
+                              if (currentImages.length < 5)
+                                WHImagePicker.multiple(
+                                  limit: 5 - currentImages.length,
+                                  onPicked: (file) {
+                                    context.read<AddStationBlock>().add(
+                                        AddStationEvent.imagesSelected(file));
+                                  },
+                                  child: const ImagePickerUploadButton(),
+                                ),
+                            ],
+                          ),
+                          if (currentImages.isNotEmpty)
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                height: 120.h,
+                                child: const Row(
+                                  children: [
+                                    Expanded(child: AddStationPreviewImages()),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          SizedBox(
+                            height: 20.h,
+                          ),
+                          WHElevatedButton.primary(
+                            title: AppLocalizations.of(context).addStation,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ))
           ],

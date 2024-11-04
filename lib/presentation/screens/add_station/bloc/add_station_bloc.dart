@@ -56,6 +56,40 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
           }
         },
 
+        getAddress: (e)async{
+          if(state is _LoadedState){
+            final currentState = state as _LoadedState;
+            emit(currentState.copyWith(
+                address:e.address));
+          }
+        },
+        connectorTypeChangedEvent: (e) async {
+          if (state is _LoadedState) {
+            final currentState = state as _LoadedState;
+            emit(currentState.copyWith(
+                initialSelectedConnectorId: e.selectedConnector?.id));
+          }
+        },
+        startTimeSelected: (e) async {
+          if (state is _LoadedState) {
+            final currentState = state as _LoadedState;
+            emit(currentState.copyWith(startTime: e.startTime));
+          }
+        },
+        endTimeSelected: (e) async {
+          if (state is _LoadedState) {
+            final currentState = state as _LoadedState;
+            emit(currentState.copyWith(endTime: e.endTime));
+          }
+        },
+        createStation: (e) {
+          if (state is _LoadedState) {
+            final currentState = state as _LoadedState;
+            final createStationData = (
+
+            );
+          }
+        },
       );
     });
   }
