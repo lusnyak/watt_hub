@@ -13,9 +13,10 @@ _$OrderModelImpl _$$OrderModelImplFromJson(Map<String, dynamic> json) =>
           ? null
           : DateTime.parse(json['order_time'] as String),
       expectedHour: (json['expected_hour'] as num?)?.toDouble(),
-      connectorType: (json['connectorType'] as List<dynamic>?)
-          ?.map((e) => ConnectorTypeModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      connectorType: json['connector_type'] == null
+          ? null
+          : ConnectorTypeModel.fromJson(
+              json['connector_type'] as Map<String, dynamic>),
       comment: json['comment'] as String?,
       creator: json['creator'] == null
           ? null
@@ -32,7 +33,7 @@ Map<String, dynamic> _$$OrderModelImplToJson(_$OrderModelImpl instance) =>
       'id': instance.id,
       'order_time': instance.orderTime?.toIso8601String(),
       'expected_hour': instance.expectedHour,
-      'connectorType': instance.connectorType,
+      'connector_type': instance.connectorType,
       'comment': instance.comment,
       'creator': instance.creator,
       'status': instance.status,
