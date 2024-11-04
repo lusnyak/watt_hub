@@ -82,5 +82,7 @@
   "end":"End",
   "flutterMap":"Choose location",
   "addressNotFound":"Address not found.",
-  "noLocationSelected":"No location selected. Please tap on the map."
+  "noLocationSelected":"No location selected. Please tap on the map.",
+  "my": "My",
+  "station": "Station"
 }

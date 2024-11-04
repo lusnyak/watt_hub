@@ -210,4 +210,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get noLocationSelected =>
       'No location selected. Please tap on the map.';
+
+  @override
+  String get my => 'My';
+
+  @override
+  String get station => 'Station';
 }

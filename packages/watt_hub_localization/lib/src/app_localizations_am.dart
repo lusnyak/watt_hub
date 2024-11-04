@@ -211,4 +211,10 @@ class AppLocalizationsAm extends AppLocalizations {
   @override
   String get noLocationSelected =>
       'Ոչ մի տեղ ընտրված չէ: Խնդրում ենք սեղմել քարտեզի վրա.';
+
+  @override
+  String get my => 'Հարցումներ ինձ';
+
+  @override
+  String get station => 'Կայանատեղիի հարցումներ';
 }
