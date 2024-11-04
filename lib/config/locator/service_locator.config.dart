@@ -68,15 +68,15 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i618.ConnectivityChecker());
     gh.lazySingleton<_i361.Dio>(() => dioClient.dio());
     gh.lazySingleton<_i441.AuthRepository>(() => _i441.AuthRepository());
-    gh.lazySingleton<_i468.UserRepository>(() => _i468.UserRepository());
     gh.lazySingleton<_i198.StationRepository>(() => _i198.StationRepository());
+    gh.lazySingleton<_i468.UserRepository>(() => _i468.UserRepository());
     gh.factory<_i231.TokenStorage>(() => _i957.TokenStorageImpl());
     gh.lazySingleton<_i1029.AuthRemoteApi>(
         () => _i1029.AuthRemoteApi(gh<_i361.Dio>()));
-    gh.lazySingleton<_i87.UserRemoteApi>(
-        () => _i87.UserRemoteApi(gh<_i361.Dio>()));
     gh.lazySingleton<_i920.StationRemoteApi>(
         () => _i920.StationRemoteApi(gh<_i361.Dio>()));
+    gh.lazySingleton<_i87.UserRemoteApi>(
+        () => _i87.UserRemoteApi(gh<_i361.Dio>()));
     gh.factory<_i749.FilterStorage>(() => _i309.FilterStorageImpl());
     return this;
   }

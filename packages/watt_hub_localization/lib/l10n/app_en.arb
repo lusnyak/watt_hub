@@ -37,5 +37,6 @@
   "availableHours": "Available hours:",
   "connectorType": "Connector Type",
   "contact": "Contact",
-  "select": "Select"
+  "select": "Select",
+  "requests": "Requests"
 }

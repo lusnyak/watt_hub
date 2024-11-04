@@ -1,0 +1,4 @@
+enum SegmentOption {
+  my,
+  station,
+}
