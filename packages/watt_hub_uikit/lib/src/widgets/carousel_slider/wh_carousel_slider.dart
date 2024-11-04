@@ -1,6 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
-import '../../../watt_hub_uikit.dart';
+import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class WHCarouselSlider extends StatefulWidget {
   final List<String> imgList;
@@ -36,6 +37,9 @@ class WHCarouselSliderState extends State<WHCarouselSlider> {
     }
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         CarouselSlider.builder(
           options: CarouselOptions(
@@ -46,9 +50,11 @@ class WHCarouselSliderState extends State<WHCarouselSlider> {
             aspectRatio: widget.aspectRatio,
             enableInfiniteScroll: false,
             onPageChanged: (index, reason) {
-              setState(() {
-                activeIndex = index;
-              });
+              if (mounted) {
+                setState(() {
+                  activeIndex = index;
+                });
+              }
             },
           ),
           itemCount: widget.imgList.length,
@@ -56,17 +62,34 @@ class WHCarouselSliderState extends State<WHCarouselSlider> {
             final urlImage = widget.imgList[index];
             return CachedNetworkImage(
               imageUrl: urlImage,
+              placeholder: (context, err) => Container(
+                decoration: const BoxDecoration(
+                  color: WattHubColors.lightGray,
+                ),
+                alignment: Alignment.center,
+                child: const Icon(
+                  Icons.image_rounded,
+                  color: WattHubColors.primaryBlackColor,
+                ),
+              ),
+              errorWidget: (context, _, __) => Container(
+                decoration: const BoxDecoration(
+                  color: WattHubColors.lightGray,
+                ),
+                alignment: Alignment.center,
+                child: const Icon(
+                  Icons.broken_image_rounded,
+                  color: WattHubColors.primaryBlackColor,
+                ),
+              ),
               imageBuilder: (context, imageProvider) => Container(
-                color: Colors.grey,
-                child: Image.network(
-                  urlImage,
-                  fit: BoxFit.cover,
-                  loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress == null) return child;
-                    return const Center(child: WHCircularSpin());
-                  },
-                  errorBuilder: (context, error, stackTrace) =>
-                      const Icon(Icons.broken_image, color: Colors.grey),
+                color: WattHubColors.lightGray,
+                decoration: BoxDecoration(
+                  color: WattHubColors.lightGray,
+                  image: DecorationImage(
+                    image: imageProvider,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             );
