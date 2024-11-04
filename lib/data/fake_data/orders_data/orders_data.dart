@@ -13,8 +13,7 @@ final Map<String, dynamic> orderData = {
     'phone_number': '+1234567890',
     'email': 'johndoe@example.com',
   },
-  'status':
-      'Pending', // Example status, can be 'Pending', 'Completed', 'Cancelled', etc.
+  'status': 'Pending',
   'station': {
     'id': 1,
     'latitude': 40.7128,
@@ -49,7 +48,7 @@ final Map<String, dynamic> orderData = {
 final List<Map<String, dynamic>> ordersData = [
   {
     'id': 1,
-    'order_time': '2024-10-15T10:30:00Z',
+    'order_time': '2024-10-15 10:30:00',
     'expected_hour': 2,
     'connector_type': {
       'id': 2,
@@ -62,17 +61,19 @@ final List<Map<String, dynamic>> ordersData = [
       'phone_number': '+1234567890',
       'email': 'johndoe@example.com',
     },
-    'status': 'Pending', // Example status
+    'status': 'Pending',
     'station': {
       'id': 1,
       'latitude': 40.7128,
       'longitude': -74.0060,
-      'start_time': '08:00',
-      'end_time': '20:00',
-      'connector_type': {
-        'id': 2,
-        'title': 'CCS Combo 2',
-      },
+      'start_time': '2023-10-01 08:00:00',
+      'end_time': '2023-10-01 20:00:00',
+      'connector_type': [
+        {
+          'id': 2,
+          'title': 'CCS Combo 2',
+        },
+      ],
       'hourly_rate': 10,
       'kwt': 50,
       'phone_number': '+1987654321',
@@ -95,7 +96,7 @@ final List<Map<String, dynamic>> ordersData = [
   },
   {
     'id': 2,
-    'order_time': '2024-10-15T11:00:00Z',
+    'order_time': '2024-10-15 11:00:00',
     'expected_hour': 1,
     'connector_type': {
       'id': 1,
@@ -108,17 +109,19 @@ final List<Map<String, dynamic>> ordersData = [
       'phone_number': '+1122334455',
       'email': 'alice.johnson@example.com',
     },
-    'status': 'Completed', // Example status
+    'status': 'Completed',
     'station': {
       'id': 2,
       'latitude': 34.0522,
       'longitude': -118.2437,
-      'start_time': '07:00',
-      'end_time': '22:00',
-      'connector_type': {
-        'id': 1,
-        'title': 'Type 1',
-      },
+      'start_time': '2023-10-01 07:00:00',
+      'end_time': '2023-10-01 22:00:00',
+      'connector_type': [
+        {
+          'id': 1,
+          'title': 'Type 1',
+        },
+      ],
       'hourly_rate': 15,
       'kwt': 60,
       'phone_number': '+1098765432',

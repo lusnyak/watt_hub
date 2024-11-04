@@ -14,7 +14,8 @@ class RequestsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<RequestsBloc>(),
+      create: (context) => getIt<RequestsBloc>()
+        ..add(const RequestsEvent.loadMyRequests(SegmentOption.my)),
       child: const RequestsView(),
     );
   }
@@ -36,7 +37,8 @@ class RequestsView extends StatelessWidget {
       child:
           BlocBuilder<RequestsBloc, RequestsState>(builder: (context, state) {
         return state.maybeMap(
-            selectedState: (state) => Column(
+            loading: (state) => const WHCircularSpin(),
+            loaded: (state) => Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     CupertinoSlidingSegmentedControl<SegmentOption>(
@@ -45,7 +47,7 @@ class RequestsView extends StatelessWidget {
                         if (value != null) {
                           context
                               .read<RequestsBloc>()
-                              .add(RequestsEvent.selectRequestState(value));
+                              .add(RequestsEvent.loadMyRequests(value));
                         }
                       },
                       children: <SegmentOption, Widget>{
@@ -56,9 +58,16 @@ class RequestsView extends StatelessWidget {
                       },
                     ).paddingOnly(top: 20.h),
                     state.selectedOption == SegmentOption.my
-                        ? const MyRequests()
-                        : const StationRequests(),
+                        ? MyRequests(
+                            myRequestsData: state.myRequests,
+                          )
+                        : StationRequests(
+                            stationRequests: state.stationRequests,
+                          ),
                   ],
+                ),
+            error: (state) => Center(
+                  child: Text(state.message),
                 ),
             orElse: () => nil);
       }).paddingSymmetric(horizontal: 20.0),
