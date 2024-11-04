@@ -19,33 +19,33 @@ mixin _$RequestsEvent {
   SegmentOption get selectedOption => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SegmentOption selectedOption) selectRequestState,
+    required TResult Function(SegmentOption selectedOption) loadMyRequests,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SegmentOption selectedOption)? selectRequestState,
+    TResult? Function(SegmentOption selectedOption)? loadMyRequests,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SegmentOption selectedOption)? selectRequestState,
+    TResult Function(SegmentOption selectedOption)? loadMyRequests,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SelectRequestState value) selectRequestState,
+    required TResult Function(_LoadMyRequestsEvent value) loadMyRequests,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SelectRequestState value)? selectRequestState,
+    TResult? Function(_LoadMyRequestsEvent value)? loadMyRequests,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SelectRequestState value)? selectRequestState,
+    TResult Function(_LoadMyRequestsEvent value)? loadMyRequests,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -93,22 +93,22 @@ class _$RequestsEventCopyWithImpl<$Res, $Val extends RequestsEvent>
 }
 
 /// @nodoc
-abstract class _$$SelectRequestStateImplCopyWith<$Res>
+abstract class _$$LoadMyRequestsEventImplCopyWith<$Res>
     implements $RequestsEventCopyWith<$Res> {
-  factory _$$SelectRequestStateImplCopyWith(_$SelectRequestStateImpl value,
-          $Res Function(_$SelectRequestStateImpl) then) =
-      __$$SelectRequestStateImplCopyWithImpl<$Res>;
+  factory _$$LoadMyRequestsEventImplCopyWith(_$LoadMyRequestsEventImpl value,
+          $Res Function(_$LoadMyRequestsEventImpl) then) =
+      __$$LoadMyRequestsEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({SegmentOption selectedOption});
 }
 
 /// @nodoc
-class __$$SelectRequestStateImplCopyWithImpl<$Res>
-    extends _$RequestsEventCopyWithImpl<$Res, _$SelectRequestStateImpl>
-    implements _$$SelectRequestStateImplCopyWith<$Res> {
-  __$$SelectRequestStateImplCopyWithImpl(_$SelectRequestStateImpl _value,
-      $Res Function(_$SelectRequestStateImpl) _then)
+class __$$LoadMyRequestsEventImplCopyWithImpl<$Res>
+    extends _$RequestsEventCopyWithImpl<$Res, _$LoadMyRequestsEventImpl>
+    implements _$$LoadMyRequestsEventImplCopyWith<$Res> {
+  __$$LoadMyRequestsEventImplCopyWithImpl(_$LoadMyRequestsEventImpl _value,
+      $Res Function(_$LoadMyRequestsEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of RequestsEvent
@@ -118,7 +118,7 @@ class __$$SelectRequestStateImplCopyWithImpl<$Res>
   $Res call({
     Object? selectedOption = null,
   }) {
-    return _then(_$SelectRequestStateImpl(
+    return _then(_$LoadMyRequestsEventImpl(
       null == selectedOption
           ? _value.selectedOption
           : selectedOption // ignore: cast_nullable_to_non_nullable
@@ -129,22 +129,22 @@ class __$$SelectRequestStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectRequestStateImpl implements _SelectRequestState {
-  const _$SelectRequestStateImpl(this.selectedOption);
+class _$LoadMyRequestsEventImpl implements _LoadMyRequestsEvent {
+  const _$LoadMyRequestsEventImpl(this.selectedOption);
 
   @override
   final SegmentOption selectedOption;
 
   @override
   String toString() {
-    return 'RequestsEvent.selectRequestState(selectedOption: $selectedOption)';
+    return 'RequestsEvent.loadMyRequests(selectedOption: $selectedOption)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectRequestStateImpl &&
+            other is _$LoadMyRequestsEventImpl &&
             (identical(other.selectedOption, selectedOption) ||
                 other.selectedOption == selectedOption));
   }
@@ -157,34 +157,34 @@ class _$SelectRequestStateImpl implements _SelectRequestState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectRequestStateImplCopyWith<_$SelectRequestStateImpl> get copyWith =>
-      __$$SelectRequestStateImplCopyWithImpl<_$SelectRequestStateImpl>(
+  _$$LoadMyRequestsEventImplCopyWith<_$LoadMyRequestsEventImpl> get copyWith =>
+      __$$LoadMyRequestsEventImplCopyWithImpl<_$LoadMyRequestsEventImpl>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SegmentOption selectedOption) selectRequestState,
+    required TResult Function(SegmentOption selectedOption) loadMyRequests,
   }) {
-    return selectRequestState(selectedOption);
+    return loadMyRequests(selectedOption);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SegmentOption selectedOption)? selectRequestState,
+    TResult? Function(SegmentOption selectedOption)? loadMyRequests,
   }) {
-    return selectRequestState?.call(selectedOption);
+    return loadMyRequests?.call(selectedOption);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SegmentOption selectedOption)? selectRequestState,
+    TResult Function(SegmentOption selectedOption)? loadMyRequests,
     required TResult orElse(),
   }) {
-    if (selectRequestState != null) {
-      return selectRequestState(selectedOption);
+    if (loadMyRequests != null) {
+      return loadMyRequests(selectedOption);
     }
     return orElse();
   }
@@ -192,35 +192,35 @@ class _$SelectRequestStateImpl implements _SelectRequestState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SelectRequestState value) selectRequestState,
+    required TResult Function(_LoadMyRequestsEvent value) loadMyRequests,
   }) {
-    return selectRequestState(this);
+    return loadMyRequests(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SelectRequestState value)? selectRequestState,
+    TResult? Function(_LoadMyRequestsEvent value)? loadMyRequests,
   }) {
-    return selectRequestState?.call(this);
+    return loadMyRequests?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SelectRequestState value)? selectRequestState,
+    TResult Function(_LoadMyRequestsEvent value)? loadMyRequests,
     required TResult orElse(),
   }) {
-    if (selectRequestState != null) {
-      return selectRequestState(this);
+    if (loadMyRequests != null) {
+      return loadMyRequests(this);
     }
     return orElse();
   }
 }
 
-abstract class _SelectRequestState implements RequestsEvent {
-  const factory _SelectRequestState(final SegmentOption selectedOption) =
-      _$SelectRequestStateImpl;
+abstract class _LoadMyRequestsEvent implements RequestsEvent {
+  const factory _LoadMyRequestsEvent(final SegmentOption selectedOption) =
+      _$LoadMyRequestsEventImpl;
 
   @override
   SegmentOption get selectedOption;
@@ -229,7 +229,7 @@ abstract class _SelectRequestState implements RequestsEvent {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SelectRequestStateImplCopyWith<_$SelectRequestStateImpl> get copyWith =>
+  _$$LoadMyRequestsEventImplCopyWith<_$LoadMyRequestsEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -238,38 +238,56 @@ mixin _$RequestsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(SegmentOption selectedOption) selectedState,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function(SegmentOption selectedOption,
+            List<OrderModel> myRequests, List<OrderModel> stationRequests)
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(SegmentOption selectedOption)? selectedState,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function(SegmentOption selectedOption, List<OrderModel> myRequests,
+            List<OrderModel> stationRequests)?
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(SegmentOption selectedOption)? selectedState,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function(SegmentOption selectedOption, List<OrderModel> myRequests,
+            List<OrderModel> stationRequests)?
+        loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_RequestsState value) selectedState,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_RequestsState value)? selectedState,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RequestsState value)? selectedState,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -338,7 +356,11 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(SegmentOption selectedOption) selectedState,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function(SegmentOption selectedOption,
+            List<OrderModel> myRequests, List<OrderModel> stationRequests)
+        loaded,
   }) {
     return initial();
   }
@@ -347,7 +369,11 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(SegmentOption selectedOption)? selectedState,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function(SegmentOption selectedOption, List<OrderModel> myRequests,
+            List<OrderModel> stationRequests)?
+        loaded,
   }) {
     return initial?.call();
   }
@@ -356,7 +382,11 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(SegmentOption selectedOption)? selectedState,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function(SegmentOption selectedOption, List<OrderModel> myRequests,
+            List<OrderModel> stationRequests)?
+        loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -369,7 +399,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_RequestsState value) selectedState,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) {
     return initial(this);
   }
@@ -378,7 +410,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_RequestsState value)? selectedState,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -387,7 +421,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RequestsState value)? selectedState,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -402,98 +438,82 @@ abstract class _Initial implements RequestsState {
 }
 
 /// @nodoc
-abstract class _$$RequestsStateImplCopyWith<$Res> {
-  factory _$$RequestsStateImplCopyWith(
-          _$RequestsStateImpl value, $Res Function(_$RequestsStateImpl) then) =
-      __$$RequestsStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({SegmentOption selectedOption});
+abstract class _$$LoadingStateImplCopyWith<$Res> {
+  factory _$$LoadingStateImplCopyWith(
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RequestsStateImplCopyWithImpl<$Res>
-    extends _$RequestsStateCopyWithImpl<$Res, _$RequestsStateImpl>
-    implements _$$RequestsStateImplCopyWith<$Res> {
-  __$$RequestsStateImplCopyWithImpl(
-      _$RequestsStateImpl _value, $Res Function(_$RequestsStateImpl) _then)
+class __$$LoadingStateImplCopyWithImpl<$Res>
+    extends _$RequestsStateCopyWithImpl<$Res, _$LoadingStateImpl>
+    implements _$$LoadingStateImplCopyWith<$Res> {
+  __$$LoadingStateImplCopyWithImpl(
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of RequestsState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? selectedOption = null,
-  }) {
-    return _then(_$RequestsStateImpl(
-      selectedOption: null == selectedOption
-          ? _value.selectedOption
-          : selectedOption // ignore: cast_nullable_to_non_nullable
-              as SegmentOption,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$RequestsStateImpl implements _RequestsState {
-  const _$RequestsStateImpl({required this.selectedOption});
-
-  @override
-  final SegmentOption selectedOption;
+class _$LoadingStateImpl implements _LoadingState {
+  const _$LoadingStateImpl();
 
   @override
   String toString() {
-    return 'RequestsState.selectedState(selectedOption: $selectedOption)';
+    return 'RequestsState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RequestsStateImpl &&
-            (identical(other.selectedOption, selectedOption) ||
-                other.selectedOption == selectedOption));
+        (other.runtimeType == runtimeType && other is _$LoadingStateImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedOption);
-
-  /// Create a copy of RequestsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RequestsStateImplCopyWith<_$RequestsStateImpl> get copyWith =>
-      __$$RequestsStateImplCopyWithImpl<_$RequestsStateImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(SegmentOption selectedOption) selectedState,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function(SegmentOption selectedOption,
+            List<OrderModel> myRequests, List<OrderModel> stationRequests)
+        loaded,
   }) {
-    return selectedState(selectedOption);
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(SegmentOption selectedOption)? selectedState,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function(SegmentOption selectedOption, List<OrderModel> myRequests,
+            List<OrderModel> stationRequests)?
+        loaded,
   }) {
-    return selectedState?.call(selectedOption);
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(SegmentOption selectedOption)? selectedState,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function(SegmentOption selectedOption, List<OrderModel> myRequests,
+            List<OrderModel> stationRequests)?
+        loaded,
     required TResult orElse(),
   }) {
-    if (selectedState != null) {
-      return selectedState(selectedOption);
+    if (loading != null) {
+      return loading();
     }
     return orElse();
   }
@@ -502,43 +522,406 @@ class _$RequestsStateImpl implements _RequestsState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_RequestsState value) selectedState,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
   }) {
-    return selectedState(this);
+    return loading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_RequestsState value)? selectedState,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
-    return selectedState?.call(this);
+    return loading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RequestsState value)? selectedState,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
-    if (selectedState != null) {
-      return selectedState(this);
+    if (loading != null) {
+      return loading(this);
     }
     return orElse();
   }
 }
 
-abstract class _RequestsState implements RequestsState {
-  const factory _RequestsState({required final SegmentOption selectedOption}) =
-      _$RequestsStateImpl;
+abstract class _LoadingState implements RequestsState {
+  const factory _LoadingState() = _$LoadingStateImpl;
+}
 
-  SegmentOption get selectedOption;
+/// @nodoc
+abstract class _$$ErrorStateImplCopyWith<$Res> {
+  factory _$$ErrorStateImplCopyWith(
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$ErrorStateImplCopyWithImpl<$Res>
+    extends _$RequestsStateCopyWithImpl<$Res, _$ErrorStateImpl>
+    implements _$$ErrorStateImplCopyWith<$Res> {
+  __$$ErrorStateImplCopyWithImpl(
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RequestsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$ErrorStateImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ErrorStateImpl implements _ErrorState {
+  const _$ErrorStateImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'RequestsState.error(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorStateImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
 
   /// Create a copy of RequestsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RequestsStateImplCopyWith<_$RequestsStateImpl> get copyWith =>
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
+      __$$ErrorStateImplCopyWithImpl<_$ErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function(SegmentOption selectedOption,
+            List<OrderModel> myRequests, List<OrderModel> stationRequests)
+        loaded,
+  }) {
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function(SegmentOption selectedOption, List<OrderModel> myRequests,
+            List<OrderModel> stationRequests)?
+        loaded,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function(SegmentOption selectedOption, List<OrderModel> myRequests,
+            List<OrderModel> stationRequests)?
+        loaded,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ErrorState implements RequestsState {
+  const factory _ErrorState(final String message) = _$ErrorStateImpl;
+
+  String get message;
+
+  /// Create a copy of RequestsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadedStateImplCopyWith<$Res> {
+  factory _$$LoadedStateImplCopyWith(
+          _$LoadedStateImpl value, $Res Function(_$LoadedStateImpl) then) =
+      __$$LoadedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {SegmentOption selectedOption,
+      List<OrderModel> myRequests,
+      List<OrderModel> stationRequests});
+}
+
+/// @nodoc
+class __$$LoadedStateImplCopyWithImpl<$Res>
+    extends _$RequestsStateCopyWithImpl<$Res, _$LoadedStateImpl>
+    implements _$$LoadedStateImplCopyWith<$Res> {
+  __$$LoadedStateImplCopyWithImpl(
+      _$LoadedStateImpl _value, $Res Function(_$LoadedStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RequestsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedOption = null,
+    Object? myRequests = null,
+    Object? stationRequests = null,
+  }) {
+    return _then(_$LoadedStateImpl(
+      selectedOption: null == selectedOption
+          ? _value.selectedOption
+          : selectedOption // ignore: cast_nullable_to_non_nullable
+              as SegmentOption,
+      myRequests: null == myRequests
+          ? _value._myRequests
+          : myRequests // ignore: cast_nullable_to_non_nullable
+              as List<OrderModel>,
+      stationRequests: null == stationRequests
+          ? _value._stationRequests
+          : stationRequests // ignore: cast_nullable_to_non_nullable
+              as List<OrderModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadedStateImpl implements _LoadedState {
+  const _$LoadedStateImpl(
+      {this.selectedOption = SegmentOption.my,
+      final List<OrderModel> myRequests = const [],
+      final List<OrderModel> stationRequests = const []})
+      : _myRequests = myRequests,
+        _stationRequests = stationRequests;
+
+  @override
+  @JsonKey()
+  final SegmentOption selectedOption;
+  final List<OrderModel> _myRequests;
+  @override
+  @JsonKey()
+  List<OrderModel> get myRequests {
+    if (_myRequests is EqualUnmodifiableListView) return _myRequests;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_myRequests);
+  }
+
+  final List<OrderModel> _stationRequests;
+  @override
+  @JsonKey()
+  List<OrderModel> get stationRequests {
+    if (_stationRequests is EqualUnmodifiableListView) return _stationRequests;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_stationRequests);
+  }
+
+  @override
+  String toString() {
+    return 'RequestsState.loaded(selectedOption: $selectedOption, myRequests: $myRequests, stationRequests: $stationRequests)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadedStateImpl &&
+            (identical(other.selectedOption, selectedOption) ||
+                other.selectedOption == selectedOption) &&
+            const DeepCollectionEquality()
+                .equals(other._myRequests, _myRequests) &&
+            const DeepCollectionEquality()
+                .equals(other._stationRequests, _stationRequests));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      selectedOption,
+      const DeepCollectionEquality().hash(_myRequests),
+      const DeepCollectionEquality().hash(_stationRequests));
+
+  /// Create a copy of RequestsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadedStateImplCopyWith<_$LoadedStateImpl> get copyWith =>
+      __$$LoadedStateImplCopyWithImpl<_$LoadedStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function(SegmentOption selectedOption,
+            List<OrderModel> myRequests, List<OrderModel> stationRequests)
+        loaded,
+  }) {
+    return loaded(selectedOption, myRequests, stationRequests);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function(SegmentOption selectedOption, List<OrderModel> myRequests,
+            List<OrderModel> stationRequests)?
+        loaded,
+  }) {
+    return loaded?.call(selectedOption, myRequests, stationRequests);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function(SegmentOption selectedOption, List<OrderModel> myRequests,
+            List<OrderModel> stationRequests)?
+        loaded,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(selectedOption, myRequests, stationRequests);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
+  }) {
+    return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadedState implements RequestsState {
+  const factory _LoadedState(
+      {final SegmentOption selectedOption,
+      final List<OrderModel> myRequests,
+      final List<OrderModel> stationRequests}) = _$LoadedStateImpl;
+
+  SegmentOption get selectedOption;
+  List<OrderModel> get myRequests;
+  List<OrderModel> get stationRequests;
+
+  /// Create a copy of RequestsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadedStateImplCopyWith<_$LoadedStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

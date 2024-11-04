@@ -25,11 +25,12 @@ mixin _$OrderModel {
   DateTime? get orderTime => throw _privateConstructorUsedError;
   @JsonKey(name: 'expected_hour')
   double? get expectedHour => throw _privateConstructorUsedError;
-  List<ConnectorTypeModel>? get connectorType =>
-      throw _privateConstructorUsedError;
+  @JsonKey(name: 'connector_type')
+  ConnectorTypeModel? get connectorType => throw _privateConstructorUsedError;
   String? get comment => throw _privateConstructorUsedError;
   UserModel? get creator => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'station')
   StationModel? get station => throw _privateConstructorUsedError;
   String? get reason => throw _privateConstructorUsedError;
 
@@ -53,13 +54,14 @@ abstract class $OrderModelCopyWith<$Res> {
       {int? id,
       @JsonKey(name: 'order_time') DateTime? orderTime,
       @JsonKey(name: 'expected_hour') double? expectedHour,
-      List<ConnectorTypeModel>? connectorType,
+      @JsonKey(name: 'connector_type') ConnectorTypeModel? connectorType,
       String? comment,
       UserModel? creator,
       String? status,
-      StationModel? station,
+      @JsonKey(name: 'station') StationModel? station,
       String? reason});
 
+  $ConnectorTypeModelCopyWith<$Res>? get connectorType;
   $UserModelCopyWith<$Res>? get creator;
   $StationModelCopyWith<$Res>? get station;
 }
@@ -105,7 +107,7 @@ class _$OrderModelCopyWithImpl<$Res, $Val extends OrderModel>
       connectorType: freezed == connectorType
           ? _value.connectorType
           : connectorType // ignore: cast_nullable_to_non_nullable
-              as List<ConnectorTypeModel>?,
+              as ConnectorTypeModel?,
       comment: freezed == comment
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
@@ -127,6 +129,20 @@ class _$OrderModelCopyWithImpl<$Res, $Val extends OrderModel>
           : reason // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
+  }
+
+  /// Create a copy of OrderModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConnectorTypeModelCopyWith<$Res>? get connectorType {
+    if (_value.connectorType == null) {
+      return null;
+    }
+
+    return $ConnectorTypeModelCopyWith<$Res>(_value.connectorType!, (value) {
+      return _then(_value.copyWith(connectorType: value) as $Val);
+    });
   }
 
   /// Create a copy of OrderModel
@@ -170,13 +186,15 @@ abstract class _$$OrderModelImplCopyWith<$Res>
       {int? id,
       @JsonKey(name: 'order_time') DateTime? orderTime,
       @JsonKey(name: 'expected_hour') double? expectedHour,
-      List<ConnectorTypeModel>? connectorType,
+      @JsonKey(name: 'connector_type') ConnectorTypeModel? connectorType,
       String? comment,
       UserModel? creator,
       String? status,
-      StationModel? station,
+      @JsonKey(name: 'station') StationModel? station,
       String? reason});
 
+  @override
+  $ConnectorTypeModelCopyWith<$Res>? get connectorType;
   @override
   $UserModelCopyWith<$Res>? get creator;
   @override
@@ -220,9 +238,9 @@ class __$$OrderModelImplCopyWithImpl<$Res>
           : expectedHour // ignore: cast_nullable_to_non_nullable
               as double?,
       connectorType: freezed == connectorType
-          ? _value._connectorType
+          ? _value.connectorType
           : connectorType // ignore: cast_nullable_to_non_nullable
-              as List<ConnectorTypeModel>?,
+              as ConnectorTypeModel?,
       comment: freezed == comment
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
@@ -254,13 +272,12 @@ class _$OrderModelImpl implements _OrderModel {
       {this.id,
       @JsonKey(name: 'order_time') this.orderTime,
       @JsonKey(name: 'expected_hour') this.expectedHour,
-      final List<ConnectorTypeModel>? connectorType,
+      @JsonKey(name: 'connector_type') this.connectorType,
       this.comment,
       this.creator,
       this.status,
-      this.station,
-      this.reason})
-      : _connectorType = connectorType;
+      @JsonKey(name: 'station') this.station,
+      this.reason});
 
   factory _$OrderModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderModelImplFromJson(json);
@@ -273,16 +290,9 @@ class _$OrderModelImpl implements _OrderModel {
   @override
   @JsonKey(name: 'expected_hour')
   final double? expectedHour;
-  final List<ConnectorTypeModel>? _connectorType;
   @override
-  List<ConnectorTypeModel>? get connectorType {
-    final value = _connectorType;
-    if (value == null) return null;
-    if (_connectorType is EqualUnmodifiableListView) return _connectorType;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  @JsonKey(name: 'connector_type')
+  final ConnectorTypeModel? connectorType;
   @override
   final String? comment;
   @override
@@ -290,6 +300,7 @@ class _$OrderModelImpl implements _OrderModel {
   @override
   final String? status;
   @override
+  @JsonKey(name: 'station')
   final StationModel? station;
   @override
   final String? reason;
@@ -309,8 +320,8 @@ class _$OrderModelImpl implements _OrderModel {
                 other.orderTime == orderTime) &&
             (identical(other.expectedHour, expectedHour) ||
                 other.expectedHour == expectedHour) &&
-            const DeepCollectionEquality()
-                .equals(other._connectorType, _connectorType) &&
+            (identical(other.connectorType, connectorType) ||
+                other.connectorType == connectorType) &&
             (identical(other.comment, comment) || other.comment == comment) &&
             (identical(other.creator, creator) || other.creator == creator) &&
             (identical(other.status, status) || other.status == status) &&
@@ -320,17 +331,8 @@ class _$OrderModelImpl implements _OrderModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      orderTime,
-      expectedHour,
-      const DeepCollectionEquality().hash(_connectorType),
-      comment,
-      creator,
-      status,
-      station,
-      reason);
+  int get hashCode => Object.hash(runtimeType, id, orderTime, expectedHour,
+      connectorType, comment, creator, status, station, reason);
 
   /// Create a copy of OrderModel
   /// with the given fields replaced by the non-null parameter values.
@@ -353,11 +355,11 @@ abstract class _OrderModel implements OrderModel {
       {final int? id,
       @JsonKey(name: 'order_time') final DateTime? orderTime,
       @JsonKey(name: 'expected_hour') final double? expectedHour,
-      final List<ConnectorTypeModel>? connectorType,
+      @JsonKey(name: 'connector_type') final ConnectorTypeModel? connectorType,
       final String? comment,
       final UserModel? creator,
       final String? status,
-      final StationModel? station,
+      @JsonKey(name: 'station') final StationModel? station,
       final String? reason}) = _$OrderModelImpl;
 
   factory _OrderModel.fromJson(Map<String, dynamic> json) =
@@ -372,7 +374,8 @@ abstract class _OrderModel implements OrderModel {
   @JsonKey(name: 'expected_hour')
   double? get expectedHour;
   @override
-  List<ConnectorTypeModel>? get connectorType;
+  @JsonKey(name: 'connector_type')
+  ConnectorTypeModel? get connectorType;
   @override
   String? get comment;
   @override
@@ -380,6 +383,7 @@ abstract class _OrderModel implements OrderModel {
   @override
   String? get status;
   @override
+  @JsonKey(name: 'station')
   StationModel? get station;
   @override
   String? get reason;
