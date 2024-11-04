@@ -51,5 +51,7 @@
   "connectorType": "Connector Type",
   "contact": "Contact",
   "select": "Select",
-  "requests": "Requests"
+  "requests": "Requests",
+  "my": "My",
+  "station": "Station"
 }

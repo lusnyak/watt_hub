@@ -165,4 +165,10 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get select => 'Ընտրել';
+
+  @override
+  String get my => 'Հարցումներ ինձ';
+
+  @override
+  String get station => 'Կայանատեղիի հարցումներ';
 }

@@ -164,4 +164,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get select => 'Select';
+
+  @override
+  String get my => 'My';
+
+  @override
+  String get station => 'Station';
 }
