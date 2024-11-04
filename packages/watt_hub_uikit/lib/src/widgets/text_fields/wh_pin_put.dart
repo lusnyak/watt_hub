@@ -25,7 +25,7 @@ class WHPinPut extends StatelessWidget {
           border: isError != null && isError == false
               ? Border.all(color: WattHubColors.redColor)
               : Border.all(
-                  color: WattHubColors.grayColor,
+                  color: WattHubColors.lightGrayColor,
                 )),
       focusedPinTheme: defaultPinTheme.copyDecorationWith(
         border: Border.all(color: WattHubColors.primaryGreenColor),

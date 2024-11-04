@@ -13,7 +13,7 @@ PinTheme get defaultPinTheme => PinTheme(
         border: Border.all(
           color: const Color.fromRGBO(234, 239, 243, 1),
         ),
-        color: WattHubColors.grayColor,
+        color: WattHubColors.lightGrayColor,
         borderRadius: BorderRadius.circular(20),
       ),
     );

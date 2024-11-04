@@ -18,10 +18,10 @@ class _UikitCalendarState extends State<UikitCalendar> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           WHCalendar(
-            selectedDay: _selectedDay,
-            onDaySelected: (selectedDay, focusedDay) {
+            selectedDate: _selectedDay,
+            onDaySelected: (selectedDate, focusedDate) {
               setState(() {
-                _selectedDay = selectedDay;
+                _selectedDay = selectedDate;
               });
             },
           ),

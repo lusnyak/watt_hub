@@ -7,7 +7,7 @@ InputDecoration get searchInputDecoration => const InputDecoration();
 InputDecoration get mainInputDecoration => InputDecoration(
       alignLabelWithHint: false,
       hintStyle: body16RegularTextStyle.copyWith(
-        color: WattHubColors.lightGray,
+        color: WattHubColors.lighterGrayColor,
       ),
       labelStyle: const TextStyle(
         color: WattHubColors.primaryBlackColor,
@@ -20,7 +20,7 @@ InputDecoration get mainInputDecoration => InputDecoration(
  InputDecorationTheme get inputDecorationTheme => InputDecorationTheme(
       alignLabelWithHint: false,
       hintStyle: body16RegularTextStyle.copyWith(
-        color: WattHubColors.lightGray,
+        color: WattHubColors.lighterGrayColor,
       ),
       labelStyle: const TextStyle(
         color: WattHubColors.primaryBlackColor,
