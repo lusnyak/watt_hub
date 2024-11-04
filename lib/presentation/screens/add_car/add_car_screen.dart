@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
+import 'package:watt_hub_localization/watt_hub_localization.dart';
+import 'package:watt_hub_uikit/watt_hub_uikit.dart';
+
+import '../../../config/config.dart';
+import '../../../domain/models/car/car_model.dart';
+import '../../../domain/models/connector_type/connector_type_model.dart';
+import 'bloc/add_car_bloc.dart';
 
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/domain/models/car/car_model.dart';
@@ -42,7 +50,7 @@ class _AddCarView extends StatelessWidget {
       ),
       body: SafeArea(
         child: Center(
-
+          
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -108,6 +116,7 @@ class _AddCarView extends StatelessWidget {
             ],
           ),
         ).paddingAll(20.w),
+
 
       ),
     );

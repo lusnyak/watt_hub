@@ -21,6 +21,8 @@ mixin _$AddCarEvent {
     required TResult Function() loadCarTypes,
     required TResult Function() loadCarModels,
     required TResult Function() loadConnectors,
+    required TResult Function(File images) imagesSelected,
+    required TResult Function() removeImages,
     required TResult Function(CarTypeModel carType) selectCarType,
     required TResult Function(CarModel carModel) selectCarModel,
     required TResult Function(ConnectorTypeModel connector) selectConnector,
@@ -31,6 +33,8 @@ mixin _$AddCarEvent {
     TResult? Function()? loadCarTypes,
     TResult? Function()? loadCarModels,
     TResult? Function()? loadConnectors,
+    TResult? Function(File images)? imagesSelected,
+    TResult? Function()? removeImages,
     TResult? Function(CarTypeModel carType)? selectCarType,
     TResult? Function(CarModel carModel)? selectCarModel,
     TResult? Function(ConnectorTypeModel connector)? selectConnector,
@@ -41,6 +45,8 @@ mixin _$AddCarEvent {
     TResult Function()? loadCarTypes,
     TResult Function()? loadCarModels,
     TResult Function()? loadConnectors,
+    TResult Function(File images)? imagesSelected,
+    TResult Function()? removeImages,
     TResult Function(CarTypeModel carType)? selectCarType,
     TResult Function(CarModel carModel)? selectCarModel,
     TResult Function(ConnectorTypeModel connector)? selectConnector,
@@ -52,6 +58,8 @@ mixin _$AddCarEvent {
     required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
     required TResult Function(_LoadCarModelsEvent value) loadCarModels,
     required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_removeImagesEvent value) removeImages,
     required TResult Function(_SelectCarTypeEvent value) selectCarType,
     required TResult Function(_SelectCarModelEvent value) selectCarModel,
     required TResult Function(_SelectConnectorEvent value) selectConnector,
@@ -62,6 +70,8 @@ mixin _$AddCarEvent {
     TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_removeImagesEvent value)? removeImages,
     TResult? Function(_SelectCarTypeEvent value)? selectCarType,
     TResult? Function(_SelectCarModelEvent value)? selectCarModel,
     TResult? Function(_SelectConnectorEvent value)? selectConnector,
@@ -72,6 +82,8 @@ mixin _$AddCarEvent {
     TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_removeImagesEvent value)? removeImages,
     TResult Function(_SelectCarTypeEvent value)? selectCarType,
     TResult Function(_SelectCarModelEvent value)? selectCarModel,
     TResult Function(_SelectConnectorEvent value)? selectConnector,
@@ -145,6 +157,8 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     required TResult Function() loadCarTypes,
     required TResult Function() loadCarModels,
     required TResult Function() loadConnectors,
+    required TResult Function(File images) imagesSelected,
+    required TResult Function() removeImages,
     required TResult Function(CarTypeModel carType) selectCarType,
     required TResult Function(CarModel carModel) selectCarModel,
     required TResult Function(ConnectorTypeModel connector) selectConnector,
@@ -158,6 +172,8 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     TResult? Function()? loadCarTypes,
     TResult? Function()? loadCarModels,
     TResult? Function()? loadConnectors,
+    TResult? Function(File images)? imagesSelected,
+    TResult? Function()? removeImages,
     TResult? Function(CarTypeModel carType)? selectCarType,
     TResult? Function(CarModel carModel)? selectCarModel,
     TResult? Function(ConnectorTypeModel connector)? selectConnector,
@@ -171,6 +187,8 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     TResult Function()? loadCarTypes,
     TResult Function()? loadCarModels,
     TResult Function()? loadConnectors,
+    TResult Function(File images)? imagesSelected,
+    TResult Function()? removeImages,
     TResult Function(CarTypeModel carType)? selectCarType,
     TResult Function(CarModel carModel)? selectCarModel,
     TResult Function(ConnectorTypeModel connector)? selectConnector,
@@ -188,6 +206,8 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
     required TResult Function(_LoadCarModelsEvent value) loadCarModels,
     required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_removeImagesEvent value) removeImages,
     required TResult Function(_SelectCarTypeEvent value) selectCarType,
     required TResult Function(_SelectCarModelEvent value) selectCarModel,
     required TResult Function(_SelectConnectorEvent value) selectConnector,
@@ -201,6 +221,8 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_removeImagesEvent value)? removeImages,
     TResult? Function(_SelectCarTypeEvent value)? selectCarType,
     TResult? Function(_SelectCarModelEvent value)? selectCarModel,
     TResult? Function(_SelectConnectorEvent value)? selectConnector,
@@ -214,6 +236,8 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_removeImagesEvent value)? removeImages,
     TResult Function(_SelectCarTypeEvent value)? selectCarType,
     TResult Function(_SelectCarModelEvent value)? selectCarModel,
     TResult Function(_SelectConnectorEvent value)? selectConnector,
@@ -274,6 +298,8 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     required TResult Function() loadCarTypes,
     required TResult Function() loadCarModels,
     required TResult Function() loadConnectors,
+    required TResult Function(File images) imagesSelected,
+    required TResult Function() removeImages,
     required TResult Function(CarTypeModel carType) selectCarType,
     required TResult Function(CarModel carModel) selectCarModel,
     required TResult Function(ConnectorTypeModel connector) selectConnector,
@@ -287,6 +313,8 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     TResult? Function()? loadCarTypes,
     TResult? Function()? loadCarModels,
     TResult? Function()? loadConnectors,
+    TResult? Function(File images)? imagesSelected,
+    TResult? Function()? removeImages,
     TResult? Function(CarTypeModel carType)? selectCarType,
     TResult? Function(CarModel carModel)? selectCarModel,
     TResult? Function(ConnectorTypeModel connector)? selectConnector,
@@ -300,6 +328,8 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     TResult Function()? loadCarTypes,
     TResult Function()? loadCarModels,
     TResult Function()? loadConnectors,
+    TResult Function(File images)? imagesSelected,
+    TResult Function()? removeImages,
     TResult Function(CarTypeModel carType)? selectCarType,
     TResult Function(CarModel carModel)? selectCarModel,
     TResult Function(ConnectorTypeModel connector)? selectConnector,
@@ -317,6 +347,8 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
     required TResult Function(_LoadCarModelsEvent value) loadCarModels,
     required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_removeImagesEvent value) removeImages,
     required TResult Function(_SelectCarTypeEvent value) selectCarType,
     required TResult Function(_SelectCarModelEvent value) selectCarModel,
     required TResult Function(_SelectConnectorEvent value) selectConnector,
@@ -330,6 +362,8 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_removeImagesEvent value)? removeImages,
     TResult? Function(_SelectCarTypeEvent value)? selectCarType,
     TResult? Function(_SelectCarModelEvent value)? selectCarModel,
     TResult? Function(_SelectConnectorEvent value)? selectConnector,
@@ -343,6 +377,8 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_removeImagesEvent value)? removeImages,
     TResult Function(_SelectCarTypeEvent value)? selectCarType,
     TResult Function(_SelectCarModelEvent value)? selectCarModel,
     TResult Function(_SelectConnectorEvent value)? selectConnector,
@@ -404,6 +440,8 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     required TResult Function() loadCarTypes,
     required TResult Function() loadCarModels,
     required TResult Function() loadConnectors,
+    required TResult Function(File images) imagesSelected,
+    required TResult Function() removeImages,
     required TResult Function(CarTypeModel carType) selectCarType,
     required TResult Function(CarModel carModel) selectCarModel,
     required TResult Function(ConnectorTypeModel connector) selectConnector,
@@ -417,6 +455,8 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     TResult? Function()? loadCarTypes,
     TResult? Function()? loadCarModels,
     TResult? Function()? loadConnectors,
+    TResult? Function(File images)? imagesSelected,
+    TResult? Function()? removeImages,
     TResult? Function(CarTypeModel carType)? selectCarType,
     TResult? Function(CarModel carModel)? selectCarModel,
     TResult? Function(ConnectorTypeModel connector)? selectConnector,
@@ -430,6 +470,8 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     TResult Function()? loadCarTypes,
     TResult Function()? loadCarModels,
     TResult Function()? loadConnectors,
+    TResult Function(File images)? imagesSelected,
+    TResult Function()? removeImages,
     TResult Function(CarTypeModel carType)? selectCarType,
     TResult Function(CarModel carModel)? selectCarModel,
     TResult Function(ConnectorTypeModel connector)? selectConnector,
@@ -447,6 +489,8 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
     required TResult Function(_LoadCarModelsEvent value) loadCarModels,
     required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_removeImagesEvent value) removeImages,
     required TResult Function(_SelectCarTypeEvent value) selectCarType,
     required TResult Function(_SelectCarModelEvent value) selectCarModel,
     required TResult Function(_SelectConnectorEvent value) selectConnector,
@@ -460,6 +504,8 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_removeImagesEvent value)? removeImages,
     TResult? Function(_SelectCarTypeEvent value)? selectCarType,
     TResult? Function(_SelectCarModelEvent value)? selectCarModel,
     TResult? Function(_SelectConnectorEvent value)? selectConnector,
@@ -473,6 +519,8 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_removeImagesEvent value)? removeImages,
     TResult Function(_SelectCarTypeEvent value)? selectCarType,
     TResult Function(_SelectCarModelEvent value)? selectCarModel,
     TResult Function(_SelectConnectorEvent value)? selectConnector,
@@ -487,6 +535,325 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
 
 abstract class _LoadConnectorsEvent implements AddCarEvent {
   const factory _LoadConnectorsEvent() = _$LoadConnectorsEventImpl;
+}
+
+/// @nodoc
+abstract class _$$ImagesSelectedEventImplCopyWith<$Res> {
+  factory _$$ImagesSelectedEventImplCopyWith(_$ImagesSelectedEventImpl value,
+          $Res Function(_$ImagesSelectedEventImpl) then) =
+      __$$ImagesSelectedEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({File images});
+}
+
+/// @nodoc
+class __$$ImagesSelectedEventImplCopyWithImpl<$Res>
+    extends _$AddCarEventCopyWithImpl<$Res, _$ImagesSelectedEventImpl>
+    implements _$$ImagesSelectedEventImplCopyWith<$Res> {
+  __$$ImagesSelectedEventImplCopyWithImpl(_$ImagesSelectedEventImpl _value,
+      $Res Function(_$ImagesSelectedEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = null,
+  }) {
+    return _then(_$ImagesSelectedEventImpl(
+      null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as File,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
+  const _$ImagesSelectedEventImpl(this.images);
+
+  @override
+  final File images;
+
+  @override
+  String toString() {
+    return 'AddCarEvent.imagesSelected(images: $images)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImagesSelectedEventImpl &&
+            (identical(other.images, images) || other.images == images));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, images);
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ImagesSelectedEventImplCopyWith<_$ImagesSelectedEventImpl> get copyWith =>
+      __$$ImagesSelectedEventImplCopyWithImpl<_$ImagesSelectedEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadCarTypes,
+    required TResult Function() loadCarModels,
+    required TResult Function() loadConnectors,
+    required TResult Function(File images) imagesSelected,
+    required TResult Function() removeImages,
+    required TResult Function(CarTypeModel carType) selectCarType,
+    required TResult Function(CarModel carModel) selectCarModel,
+    required TResult Function(ConnectorTypeModel connector) selectConnector,
+  }) {
+    return imagesSelected(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadCarTypes,
+    TResult? Function()? loadCarModels,
+    TResult? Function()? loadConnectors,
+    TResult? Function(File images)? imagesSelected,
+    TResult? Function()? removeImages,
+    TResult? Function(CarTypeModel carType)? selectCarType,
+    TResult? Function(CarModel carModel)? selectCarModel,
+    TResult? Function(ConnectorTypeModel connector)? selectConnector,
+  }) {
+    return imagesSelected?.call(images);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadCarTypes,
+    TResult Function()? loadCarModels,
+    TResult Function()? loadConnectors,
+    TResult Function(File images)? imagesSelected,
+    TResult Function()? removeImages,
+    TResult Function(CarTypeModel carType)? selectCarType,
+    TResult Function(CarModel carModel)? selectCarModel,
+    TResult Function(ConnectorTypeModel connector)? selectConnector,
+    required TResult orElse(),
+  }) {
+    if (imagesSelected != null) {
+      return imagesSelected(images);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
+    required TResult Function(_LoadCarModelsEvent value) loadCarModels,
+    required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_removeImagesEvent value) removeImages,
+    required TResult Function(_SelectCarTypeEvent value) selectCarType,
+    required TResult Function(_SelectCarModelEvent value) selectCarModel,
+    required TResult Function(_SelectConnectorEvent value) selectConnector,
+  }) {
+    return imagesSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
+    TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
+    TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_removeImagesEvent value)? removeImages,
+    TResult? Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult? Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult? Function(_SelectConnectorEvent value)? selectConnector,
+  }) {
+    return imagesSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
+    TResult Function(_LoadCarModelsEvent value)? loadCarModels,
+    TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_removeImagesEvent value)? removeImages,
+    TResult Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult Function(_SelectConnectorEvent value)? selectConnector,
+    required TResult orElse(),
+  }) {
+    if (imagesSelected != null) {
+      return imagesSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ImagesSelectedEvent implements AddCarEvent {
+  const factory _ImagesSelectedEvent(final File images) =
+      _$ImagesSelectedEventImpl;
+
+  File get images;
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ImagesSelectedEventImplCopyWith<_$ImagesSelectedEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$removeImagesEventImplCopyWith<$Res> {
+  factory _$$removeImagesEventImplCopyWith(_$removeImagesEventImpl value,
+          $Res Function(_$removeImagesEventImpl) then) =
+      __$$removeImagesEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$removeImagesEventImplCopyWithImpl<$Res>
+    extends _$AddCarEventCopyWithImpl<$Res, _$removeImagesEventImpl>
+    implements _$$removeImagesEventImplCopyWith<$Res> {
+  __$$removeImagesEventImplCopyWithImpl(_$removeImagesEventImpl _value,
+      $Res Function(_$removeImagesEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$removeImagesEventImpl implements _removeImagesEvent {
+  const _$removeImagesEventImpl();
+
+  @override
+  String toString() {
+    return 'AddCarEvent.removeImages()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$removeImagesEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadCarTypes,
+    required TResult Function() loadCarModels,
+    required TResult Function() loadConnectors,
+    required TResult Function(File images) imagesSelected,
+    required TResult Function() removeImages,
+    required TResult Function(CarTypeModel carType) selectCarType,
+    required TResult Function(CarModel carModel) selectCarModel,
+    required TResult Function(ConnectorTypeModel connector) selectConnector,
+  }) {
+    return removeImages();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadCarTypes,
+    TResult? Function()? loadCarModels,
+    TResult? Function()? loadConnectors,
+    TResult? Function(File images)? imagesSelected,
+    TResult? Function()? removeImages,
+    TResult? Function(CarTypeModel carType)? selectCarType,
+    TResult? Function(CarModel carModel)? selectCarModel,
+    TResult? Function(ConnectorTypeModel connector)? selectConnector,
+  }) {
+    return removeImages?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadCarTypes,
+    TResult Function()? loadCarModels,
+    TResult Function()? loadConnectors,
+    TResult Function(File images)? imagesSelected,
+    TResult Function()? removeImages,
+    TResult Function(CarTypeModel carType)? selectCarType,
+    TResult Function(CarModel carModel)? selectCarModel,
+    TResult Function(ConnectorTypeModel connector)? selectConnector,
+    required TResult orElse(),
+  }) {
+    if (removeImages != null) {
+      return removeImages();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
+    required TResult Function(_LoadCarModelsEvent value) loadCarModels,
+    required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_removeImagesEvent value) removeImages,
+    required TResult Function(_SelectCarTypeEvent value) selectCarType,
+    required TResult Function(_SelectCarModelEvent value) selectCarModel,
+    required TResult Function(_SelectConnectorEvent value) selectConnector,
+  }) {
+    return removeImages(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
+    TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
+    TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_removeImagesEvent value)? removeImages,
+    TResult? Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult? Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult? Function(_SelectConnectorEvent value)? selectConnector,
+  }) {
+    return removeImages?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
+    TResult Function(_LoadCarModelsEvent value)? loadCarModels,
+    TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_removeImagesEvent value)? removeImages,
+    TResult Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult Function(_SelectConnectorEvent value)? selectConnector,
+    required TResult orElse(),
+  }) {
+    if (removeImages != null) {
+      return removeImages(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _removeImagesEvent implements AddCarEvent {
+  const factory _removeImagesEvent() = _$removeImagesEventImpl;
 }
 
 /// @nodoc
@@ -573,6 +940,8 @@ class _$SelectCarTypeEventImpl implements _SelectCarTypeEvent {
     required TResult Function() loadCarTypes,
     required TResult Function() loadCarModels,
     required TResult Function() loadConnectors,
+    required TResult Function(File images) imagesSelected,
+    required TResult Function() removeImages,
     required TResult Function(CarTypeModel carType) selectCarType,
     required TResult Function(CarModel carModel) selectCarModel,
     required TResult Function(ConnectorTypeModel connector) selectConnector,
@@ -586,6 +955,8 @@ class _$SelectCarTypeEventImpl implements _SelectCarTypeEvent {
     TResult? Function()? loadCarTypes,
     TResult? Function()? loadCarModels,
     TResult? Function()? loadConnectors,
+    TResult? Function(File images)? imagesSelected,
+    TResult? Function()? removeImages,
     TResult? Function(CarTypeModel carType)? selectCarType,
     TResult? Function(CarModel carModel)? selectCarModel,
     TResult? Function(ConnectorTypeModel connector)? selectConnector,
@@ -599,6 +970,8 @@ class _$SelectCarTypeEventImpl implements _SelectCarTypeEvent {
     TResult Function()? loadCarTypes,
     TResult Function()? loadCarModels,
     TResult Function()? loadConnectors,
+    TResult Function(File images)? imagesSelected,
+    TResult Function()? removeImages,
     TResult Function(CarTypeModel carType)? selectCarType,
     TResult Function(CarModel carModel)? selectCarModel,
     TResult Function(ConnectorTypeModel connector)? selectConnector,
@@ -616,6 +989,8 @@ class _$SelectCarTypeEventImpl implements _SelectCarTypeEvent {
     required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
     required TResult Function(_LoadCarModelsEvent value) loadCarModels,
     required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_removeImagesEvent value) removeImages,
     required TResult Function(_SelectCarTypeEvent value) selectCarType,
     required TResult Function(_SelectCarModelEvent value) selectCarModel,
     required TResult Function(_SelectConnectorEvent value) selectConnector,
@@ -629,6 +1004,8 @@ class _$SelectCarTypeEventImpl implements _SelectCarTypeEvent {
     TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_removeImagesEvent value)? removeImages,
     TResult? Function(_SelectCarTypeEvent value)? selectCarType,
     TResult? Function(_SelectCarModelEvent value)? selectCarModel,
     TResult? Function(_SelectConnectorEvent value)? selectConnector,
@@ -642,6 +1019,8 @@ class _$SelectCarTypeEventImpl implements _SelectCarTypeEvent {
     TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_removeImagesEvent value)? removeImages,
     TResult Function(_SelectCarTypeEvent value)? selectCarType,
     TResult Function(_SelectCarModelEvent value)? selectCarModel,
     TResult Function(_SelectConnectorEvent value)? selectConnector,
@@ -752,6 +1131,8 @@ class _$SelectCarModelEventImpl implements _SelectCarModelEvent {
     required TResult Function() loadCarTypes,
     required TResult Function() loadCarModels,
     required TResult Function() loadConnectors,
+    required TResult Function(File images) imagesSelected,
+    required TResult Function() removeImages,
     required TResult Function(CarTypeModel carType) selectCarType,
     required TResult Function(CarModel carModel) selectCarModel,
     required TResult Function(ConnectorTypeModel connector) selectConnector,
@@ -765,6 +1146,8 @@ class _$SelectCarModelEventImpl implements _SelectCarModelEvent {
     TResult? Function()? loadCarTypes,
     TResult? Function()? loadCarModels,
     TResult? Function()? loadConnectors,
+    TResult? Function(File images)? imagesSelected,
+    TResult? Function()? removeImages,
     TResult? Function(CarTypeModel carType)? selectCarType,
     TResult? Function(CarModel carModel)? selectCarModel,
     TResult? Function(ConnectorTypeModel connector)? selectConnector,
@@ -778,6 +1161,8 @@ class _$SelectCarModelEventImpl implements _SelectCarModelEvent {
     TResult Function()? loadCarTypes,
     TResult Function()? loadCarModels,
     TResult Function()? loadConnectors,
+    TResult Function(File images)? imagesSelected,
+    TResult Function()? removeImages,
     TResult Function(CarTypeModel carType)? selectCarType,
     TResult Function(CarModel carModel)? selectCarModel,
     TResult Function(ConnectorTypeModel connector)? selectConnector,
@@ -795,6 +1180,8 @@ class _$SelectCarModelEventImpl implements _SelectCarModelEvent {
     required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
     required TResult Function(_LoadCarModelsEvent value) loadCarModels,
     required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_removeImagesEvent value) removeImages,
     required TResult Function(_SelectCarTypeEvent value) selectCarType,
     required TResult Function(_SelectCarModelEvent value) selectCarModel,
     required TResult Function(_SelectConnectorEvent value) selectConnector,
@@ -808,6 +1195,8 @@ class _$SelectCarModelEventImpl implements _SelectCarModelEvent {
     TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_removeImagesEvent value)? removeImages,
     TResult? Function(_SelectCarTypeEvent value)? selectCarType,
     TResult? Function(_SelectCarModelEvent value)? selectCarModel,
     TResult? Function(_SelectConnectorEvent value)? selectConnector,
@@ -821,6 +1210,8 @@ class _$SelectCarModelEventImpl implements _SelectCarModelEvent {
     TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_removeImagesEvent value)? removeImages,
     TResult Function(_SelectCarTypeEvent value)? selectCarType,
     TResult Function(_SelectCarModelEvent value)? selectCarModel,
     TResult Function(_SelectConnectorEvent value)? selectConnector,
@@ -932,6 +1323,8 @@ class _$SelectConnectorEventImpl implements _SelectConnectorEvent {
     required TResult Function() loadCarTypes,
     required TResult Function() loadCarModels,
     required TResult Function() loadConnectors,
+    required TResult Function(File images) imagesSelected,
+    required TResult Function() removeImages,
     required TResult Function(CarTypeModel carType) selectCarType,
     required TResult Function(CarModel carModel) selectCarModel,
     required TResult Function(ConnectorTypeModel connector) selectConnector,
@@ -945,6 +1338,8 @@ class _$SelectConnectorEventImpl implements _SelectConnectorEvent {
     TResult? Function()? loadCarTypes,
     TResult? Function()? loadCarModels,
     TResult? Function()? loadConnectors,
+    TResult? Function(File images)? imagesSelected,
+    TResult? Function()? removeImages,
     TResult? Function(CarTypeModel carType)? selectCarType,
     TResult? Function(CarModel carModel)? selectCarModel,
     TResult? Function(ConnectorTypeModel connector)? selectConnector,
@@ -958,6 +1353,8 @@ class _$SelectConnectorEventImpl implements _SelectConnectorEvent {
     TResult Function()? loadCarTypes,
     TResult Function()? loadCarModels,
     TResult Function()? loadConnectors,
+    TResult Function(File images)? imagesSelected,
+    TResult Function()? removeImages,
     TResult Function(CarTypeModel carType)? selectCarType,
     TResult Function(CarModel carModel)? selectCarModel,
     TResult Function(ConnectorTypeModel connector)? selectConnector,
@@ -975,6 +1372,8 @@ class _$SelectConnectorEventImpl implements _SelectConnectorEvent {
     required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
     required TResult Function(_LoadCarModelsEvent value) loadCarModels,
     required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_ImagesSelectedEvent value) imagesSelected,
+    required TResult Function(_removeImagesEvent value) removeImages,
     required TResult Function(_SelectCarTypeEvent value) selectCarType,
     required TResult Function(_SelectCarModelEvent value) selectCarModel,
     required TResult Function(_SelectConnectorEvent value) selectConnector,
@@ -988,6 +1387,8 @@ class _$SelectConnectorEventImpl implements _SelectConnectorEvent {
     TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult? Function(_removeImagesEvent value)? removeImages,
     TResult? Function(_SelectCarTypeEvent value)? selectCarType,
     TResult? Function(_SelectCarModelEvent value)? selectCarModel,
     TResult? Function(_SelectConnectorEvent value)? selectConnector,
@@ -1001,6 +1402,8 @@ class _$SelectConnectorEventImpl implements _SelectConnectorEvent {
     TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_ImagesSelectedEvent value)? imagesSelected,
+    TResult Function(_removeImagesEvent value)? removeImages,
     TResult Function(_SelectCarTypeEvent value)? selectCarType,
     TResult Function(_SelectCarModelEvent value)? selectCarModel,
     TResult Function(_SelectConnectorEvent value)? selectConnector,
@@ -1031,6 +1434,7 @@ mixin _$AddCarState {
   List<CarTypeModel> get carTypes => throw _privateConstructorUsedError;
   List<CarModel> get carModels => throw _privateConstructorUsedError;
   List<ConnectorTypeModel> get connectors => throw _privateConstructorUsedError;
+  File? get images => throw _privateConstructorUsedError;
   CarTypeModel? get selectedCarType => throw _privateConstructorUsedError;
   CarModel? get selectedCarModel => throw _privateConstructorUsedError;
   ConnectorTypeModel? get selectedConnector =>
@@ -1053,6 +1457,7 @@ abstract class $AddCarStateCopyWith<$Res> {
       {List<CarTypeModel> carTypes,
       List<CarModel> carModels,
       List<ConnectorTypeModel> connectors,
+      File? images,
       CarTypeModel? selectedCarType,
       CarModel? selectedCarModel,
       ConnectorTypeModel? selectedConnector});
@@ -1080,6 +1485,7 @@ class _$AddCarStateCopyWithImpl<$Res, $Val extends AddCarState>
     Object? carTypes = null,
     Object? carModels = null,
     Object? connectors = null,
+    Object? images = freezed,
     Object? selectedCarType = freezed,
     Object? selectedCarModel = freezed,
     Object? selectedConnector = freezed,
@@ -1097,6 +1503,10 @@ class _$AddCarStateCopyWithImpl<$Res, $Val extends AddCarState>
           ? _value.connectors
           : connectors // ignore: cast_nullable_to_non_nullable
               as List<ConnectorTypeModel>,
+      images: freezed == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as File?,
       selectedCarType: freezed == selectedCarType
           ? _value.selectedCarType
           : selectedCarType // ignore: cast_nullable_to_non_nullable
@@ -1168,6 +1578,7 @@ abstract class _$$AddCarStateImplCopyWith<$Res>
       {List<CarTypeModel> carTypes,
       List<CarModel> carModels,
       List<ConnectorTypeModel> connectors,
+      File? images,
       CarTypeModel? selectedCarType,
       CarModel? selectedCarModel,
       ConnectorTypeModel? selectedConnector});
@@ -1196,6 +1607,7 @@ class __$$AddCarStateImplCopyWithImpl<$Res>
     Object? carTypes = null,
     Object? carModels = null,
     Object? connectors = null,
+    Object? images = freezed,
     Object? selectedCarType = freezed,
     Object? selectedCarModel = freezed,
     Object? selectedConnector = freezed,
@@ -1213,6 +1625,10 @@ class __$$AddCarStateImplCopyWithImpl<$Res>
           ? _value._connectors
           : connectors // ignore: cast_nullable_to_non_nullable
               as List<ConnectorTypeModel>,
+      images: freezed == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as File?,
       selectedCarType: freezed == selectedCarType
           ? _value.selectedCarType
           : selectedCarType // ignore: cast_nullable_to_non_nullable
@@ -1236,6 +1652,7 @@ class _$AddCarStateImpl implements _AddCarState {
       {final List<CarTypeModel> carTypes = const [],
       final List<CarModel> carModels = const [],
       final List<ConnectorTypeModel> connectors = const [],
+      this.images,
       this.selectedCarType,
       this.selectedCarModel,
       this.selectedConnector})
@@ -1271,6 +1688,8 @@ class _$AddCarStateImpl implements _AddCarState {
   }
 
   @override
+  final File? images;
+  @override
   final CarTypeModel? selectedCarType;
   @override
   final CarModel? selectedCarModel;
@@ -1279,7 +1698,7 @@ class _$AddCarStateImpl implements _AddCarState {
 
   @override
   String toString() {
-    return 'AddCarState(carTypes: $carTypes, carModels: $carModels, connectors: $connectors, selectedCarType: $selectedCarType, selectedCarModel: $selectedCarModel, selectedConnector: $selectedConnector)';
+    return 'AddCarState(carTypes: $carTypes, carModels: $carModels, connectors: $connectors, images: $images, selectedCarType: $selectedCarType, selectedCarModel: $selectedCarModel, selectedConnector: $selectedConnector)';
   }
 
   @override
@@ -1292,6 +1711,7 @@ class _$AddCarStateImpl implements _AddCarState {
                 .equals(other._carModels, _carModels) &&
             const DeepCollectionEquality()
                 .equals(other._connectors, _connectors) &&
+            (identical(other.images, images) || other.images == images) &&
             (identical(other.selectedCarType, selectedCarType) ||
                 other.selectedCarType == selectedCarType) &&
             (identical(other.selectedCarModel, selectedCarModel) ||
@@ -1306,6 +1726,7 @@ class _$AddCarStateImpl implements _AddCarState {
       const DeepCollectionEquality().hash(_carTypes),
       const DeepCollectionEquality().hash(_carModels),
       const DeepCollectionEquality().hash(_connectors),
+      images,
       selectedCarType,
       selectedCarModel,
       selectedConnector);
@@ -1324,6 +1745,7 @@ abstract class _AddCarState implements AddCarState {
       {final List<CarTypeModel> carTypes,
       final List<CarModel> carModels,
       final List<ConnectorTypeModel> connectors,
+      final File? images,
       final CarTypeModel? selectedCarType,
       final CarModel? selectedCarModel,
       final ConnectorTypeModel? selectedConnector}) = _$AddCarStateImpl;
@@ -1334,6 +1756,8 @@ abstract class _AddCarState implements AddCarState {
   List<CarModel> get carModels;
   @override
   List<ConnectorTypeModel> get connectors;
+  @override
+  File? get images;
   @override
   CarTypeModel? get selectedCarType;
   @override
