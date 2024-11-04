@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/fake_data/orders_data/orders_data.dart';
 import 'package:watt_hub/domain/enums/enums.dart';
