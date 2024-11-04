@@ -62,7 +62,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get home => 'Home';
 
   @override
-  String get requests => 'Requests';
+  String get requests => 'Հարցումներ';
 
   @override
   String get profile => 'Profile';

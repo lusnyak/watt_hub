@@ -50,6 +50,7 @@
   "availableHours": "Հասանելի ժամեր:",
   "connectorType": "Միակցիչի տեսակը",
   "contact": "Կոնտակտային տվյալներ",
-  "select": "Ընտրել"
+  "select": "Ընտրել",
+  "requests": "Հարցումներ"
 }
 
