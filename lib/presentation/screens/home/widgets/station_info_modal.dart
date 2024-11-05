@@ -40,7 +40,7 @@ void showStationInfo(BuildContext context, StationModel station) {
                 rating: station.averageRate ?? 1,
                 itemBuilder: (context, index) => const Icon(
                   Icons.star,
-                  color: Colors.amber,
+                  color: WattHubColors.amberColor,
                 ),
                 itemCount: 5,
                 itemSize: 25.r,
@@ -49,7 +49,8 @@ void showStationInfo(BuildContext context, StationModel station) {
               10.w.widthBox,
               Text(
                 '(${station.reviews?.length} ${context.localized.reviews})',
-                style: body14RegularTextStyle.copyWith(color: Colors.grey),
+                style: body14RegularTextStyle.copyWith(
+                    color: WattHubColors.greyColor),
               ),
             ],
           ),
