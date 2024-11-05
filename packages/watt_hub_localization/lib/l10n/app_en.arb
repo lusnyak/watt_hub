@@ -56,6 +56,9 @@
   "station": "Station",
   "chargingTime": "Charging time",
   "contactNumber": "Contact number",
-  "h": "h",
-  "cost": "Cost"
+  "hour": "hour",
+  "cost": "Cost",
+  "maxPower": "Max Power",
+  "duration": "Duration",
+  "amount": "Amount"
 }
