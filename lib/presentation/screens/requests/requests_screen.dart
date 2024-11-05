@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/domain/enums/enums.dart';
 import 'package:watt_hub/presentation/screens/requests/bloc/requests_bloc.dart';
-import 'package:watt_hub/presentation/screens/requests/widgets/my_requests.dart';
-import 'package:watt_hub/presentation/screens/requests/widgets/station_requests.dart';
+import 'package:watt_hub/presentation/screens/requests/widgets/requests_group_list.dart';
 import 'package:watt_hub/utils/extensions/extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
@@ -67,9 +66,7 @@ class RequestsView extends StatelessWidget {
                       const Center(child: Text('Welcome to Requests!')),
                   error: (message) => Center(child: Text(message)),
                   loaded: (selectedOption, myRequests, stationRequests) =>
-                      selectedOption == SegmentOption.my
-                          ? MyRequests(myRequestsData: myRequests)
-                          : StationRequests(stationRequests: stationRequests),
+                      RequestsGroupList(stationRequests: stationRequests),
                   orElse: () => nil,
                 ),
             ],
