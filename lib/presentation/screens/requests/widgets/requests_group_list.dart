@@ -5,18 +5,21 @@ import 'package:watt_hub/presentation/screens/requests/widgets/requests_list_ite
 import 'package:watt_hub/utils/helpers/calculate_cost_helper.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
-class MyRequests extends StatelessWidget {
-  const MyRequests({
+class RequestsGroupList extends StatelessWidget {
+  const RequestsGroupList({
     super.key,
-    required this.myRequestsData,
+    this.stationRequests,
+    this.myRequestsData,
   });
 
-  final List<OrderModel> myRequestsData;
+  final List<OrderModel>? stationRequests;
+  final List<OrderModel>? myRequestsData;
 
   @override
   Widget build(BuildContext context) {
+    final requestsData = stationRequests ?? myRequestsData;
     return GroupedListView<OrderModel, String>(
-      elements: myRequestsData,
+      elements: requestsData ?? [],
       groupBy: (element) => element.status ?? '',
       groupSeparatorBuilder: (String groupValue) => Text(
         groupValue,
@@ -31,8 +34,8 @@ class MyRequests extends StatelessWidget {
           address: element.station?.address,
           orderTime: element.orderTime,
           expectedHour: element.expectedHour,
-          connectorType: element.connectorType?.title,
           phoneNumber: element.station?.phoneNumber,
+          connectorType: element.connectorType?.title,
           cost: totalCost,
         );
       },
