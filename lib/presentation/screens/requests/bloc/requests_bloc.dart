@@ -24,7 +24,7 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
   }
 
   Future<void> _onLoadMyRequests(event, emit) async {
-    emit(const RequestsState.loading());
+    emit(RequestsState.loading(selectedOption: event.selectedOption));
     try {
       await 2.delay();
 
