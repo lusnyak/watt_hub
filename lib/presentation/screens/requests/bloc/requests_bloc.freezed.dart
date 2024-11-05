@@ -268,26 +268,26 @@ mixin _$RequestsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
-    required TResult Function(_LoadedState value) loaded,
+    required TResult Function(InitialState value) initial,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(LoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
-    TResult? Function(_LoadedState value)? loaded,
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(LoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
-    TResult Function(_LoadedState value)? loaded,
+    TResult Function(InitialState value)? initial,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(ErrorState value)? error,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -315,18 +315,18 @@ class _$RequestsStateCopyWithImpl<$Res, $Val extends RequestsState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+abstract class _$$InitialStateImplCopyWith<$Res> {
+  factory _$$InitialStateImplCopyWith(
+          _$InitialStateImpl value, $Res Function(_$InitialStateImpl) then) =
+      __$$InitialStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$RequestsStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+class __$$InitialStateImplCopyWithImpl<$Res>
+    extends _$RequestsStateCopyWithImpl<$Res, _$InitialStateImpl>
+    implements _$$InitialStateImplCopyWith<$Res> {
+  __$$InitialStateImplCopyWithImpl(
+      _$InitialStateImpl _value, $Res Function(_$InitialStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of RequestsState
@@ -335,8 +335,8 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+class _$InitialStateImpl implements InitialState {
+  const _$InitialStateImpl();
 
   @override
   String toString() {
@@ -346,7 +346,7 @@ class _$InitialImpl implements _Initial {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType && other is _$InitialStateImpl);
   }
 
   @override
@@ -398,10 +398,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
-    required TResult Function(_LoadedState value) loaded,
+    required TResult Function(InitialState value) initial,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(LoadedState value) loaded,
   }) {
     return initial(this);
   }
@@ -409,10 +409,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
-    TResult? Function(_LoadedState value)? loaded,
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(LoadedState value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -420,10 +420,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
-    TResult Function(_LoadedState value)? loaded,
+    TResult Function(InitialState value)? initial,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(ErrorState value)? error,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -433,8 +433,8 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements RequestsState {
-  const factory _Initial() = _$InitialImpl;
+abstract class InitialState implements RequestsState {
+  const factory InitialState() = _$InitialStateImpl;
 }
 
 /// @nodoc
@@ -458,7 +458,7 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingStateImpl implements _LoadingState {
+class _$LoadingStateImpl implements LoadingState {
   const _$LoadingStateImpl();
 
   @override
@@ -521,10 +521,10 @@ class _$LoadingStateImpl implements _LoadingState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
-    required TResult Function(_LoadedState value) loaded,
+    required TResult Function(InitialState value) initial,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(LoadedState value) loaded,
   }) {
     return loading(this);
   }
@@ -532,10 +532,10 @@ class _$LoadingStateImpl implements _LoadingState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
-    TResult? Function(_LoadedState value)? loaded,
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(LoadedState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -543,10 +543,10 @@ class _$LoadingStateImpl implements _LoadingState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
-    TResult Function(_LoadedState value)? loaded,
+    TResult Function(InitialState value)? initial,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(ErrorState value)? error,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -556,8 +556,8 @@ class _$LoadingStateImpl implements _LoadingState {
   }
 }
 
-abstract class _LoadingState implements RequestsState {
-  const factory _LoadingState() = _$LoadingStateImpl;
+abstract class LoadingState implements RequestsState {
+  const factory LoadingState() = _$LoadingStateImpl;
 }
 
 /// @nodoc
@@ -595,7 +595,7 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorStateImpl implements _ErrorState {
+class _$ErrorStateImpl implements ErrorState {
   const _$ErrorStateImpl(this.message);
 
   @override
@@ -671,10 +671,10 @@ class _$ErrorStateImpl implements _ErrorState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
-    required TResult Function(_LoadedState value) loaded,
+    required TResult Function(InitialState value) initial,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(LoadedState value) loaded,
   }) {
     return error(this);
   }
@@ -682,10 +682,10 @@ class _$ErrorStateImpl implements _ErrorState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
-    TResult? Function(_LoadedState value)? loaded,
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(LoadedState value)? loaded,
   }) {
     return error?.call(this);
   }
@@ -693,10 +693,10 @@ class _$ErrorStateImpl implements _ErrorState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
-    TResult Function(_LoadedState value)? loaded,
+    TResult Function(InitialState value)? initial,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(ErrorState value)? error,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -706,8 +706,8 @@ class _$ErrorStateImpl implements _ErrorState {
   }
 }
 
-abstract class _ErrorState implements RequestsState {
-  const factory _ErrorState(final String message) = _$ErrorStateImpl;
+abstract class ErrorState implements RequestsState {
+  const factory ErrorState(final String message) = _$ErrorStateImpl;
 
   String get message;
 
@@ -766,7 +766,7 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadedStateImpl implements _LoadedState {
+class _$LoadedStateImpl implements LoadedState {
   const _$LoadedStateImpl(
       {this.selectedOption = SegmentOption.my,
       final List<OrderModel> myRequests = const [],
@@ -874,10 +874,10 @@ class _$LoadedStateImpl implements _LoadedState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
-    required TResult Function(_LoadedState value) loaded,
+    required TResult Function(InitialState value) initial,
+    required TResult Function(LoadingState value) loading,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(LoadedState value) loaded,
   }) {
     return loaded(this);
   }
@@ -885,10 +885,10 @@ class _$LoadedStateImpl implements _LoadedState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
-    TResult? Function(_LoadedState value)? loaded,
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(LoadedState value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -896,10 +896,10 @@ class _$LoadedStateImpl implements _LoadedState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
-    TResult Function(_LoadedState value)? loaded,
+    TResult Function(InitialState value)? initial,
+    TResult Function(LoadingState value)? loading,
+    TResult Function(ErrorState value)? error,
+    TResult Function(LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -909,8 +909,8 @@ class _$LoadedStateImpl implements _LoadedState {
   }
 }
 
-abstract class _LoadedState implements RequestsState {
-  const factory _LoadedState(
+abstract class LoadedState implements RequestsState {
+  const factory LoadedState(
       {final SegmentOption selectedOption,
       final List<OrderModel> myRequests,
       final List<OrderModel> stationRequests}) = _$LoadedStateImpl;
