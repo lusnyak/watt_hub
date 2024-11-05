@@ -34,6 +34,7 @@ class RequestsListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shadowColor: statusColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -57,7 +58,6 @@ class RequestsListItem extends StatelessWidget {
                 label: '${status?.name}',
                 backgroundColor: statusColor,
               ),
-              // Text('${status?.name}'),
             ],
           ),
           const Divider(),
