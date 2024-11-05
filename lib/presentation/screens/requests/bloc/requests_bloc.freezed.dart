@@ -472,12 +472,8 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingStateImpl implements LoadingState {
-  const _$LoadingStateImpl({this.selectedOption = SegmentOption.my});
-
-  @override
-  @JsonKey()
-  final SegmentOption selectedOption;
+class _$LoadingStateImpl implements _LoadingState {
+  const _$LoadingStateImpl();
 
   @override
   String toString() {
@@ -585,17 +581,8 @@ class _$LoadingStateImpl implements LoadingState {
   }
 }
 
-abstract class LoadingState implements RequestsState {
-  const factory LoadingState({final SegmentOption selectedOption}) =
-      _$LoadingStateImpl;
-
-  SegmentOption get selectedOption;
-
-  /// Create a copy of RequestsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoadingStateImplCopyWith<_$LoadingStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _LoadingState implements RequestsState {
+  const factory _LoadingState() = _$LoadingStateImpl;
 }
 
 /// @nodoc
