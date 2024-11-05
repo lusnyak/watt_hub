@@ -472,7 +472,7 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingStateImpl implements _LoadingState {
+class _$LoadingStateImpl implements LoadingState {
   const _$LoadingStateImpl();
 
   @override
@@ -581,8 +581,8 @@ class _$LoadingStateImpl implements _LoadingState {
   }
 }
 
-abstract class _LoadingState implements RequestsState {
-  const factory _LoadingState() = _$LoadingStateImpl;
+abstract class LoadingState implements RequestsState {
+  const factory LoadingState() = _$LoadingStateImpl;
 }
 
 /// @nodoc
