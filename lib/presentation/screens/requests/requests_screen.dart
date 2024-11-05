@@ -34,19 +34,17 @@ class RequestsView extends StatelessWidget {
         ),
         backgroundColor: WattHubColors.whiteColor,
       ),
-      child:
-          BlocBuilder<RequestsBloc, RequestsState>(builder: (context, state) {
-        return state.when(
-          initial: () => nil, // or some placeholder widget
-          loading: () => const Center(child: WHCircularSpin()),
-          error: (message) => Center(
-            child: Text(message),
-          ),
-          loaded: (selectedOption, myRequests, stationRequests) => Column(
+      child: BlocBuilder<RequestsBloc, RequestsState>(
+        builder: (context, state) {
+          return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               CupertinoSlidingSegmentedControl<SegmentOption>(
-                groupValue: selectedOption,
+                groupValue: state.maybeMap(
+                  loaded: (state) => state.selectedOption,
+                  loading: (state) => state.selectedOption,
+                  orElse: () => SegmentOption.my, // Fallback to a default
+                ),
                 onValueChanged: (value) {
                   if (value != null) {
                     context
@@ -61,13 +59,23 @@ class RequestsView extends StatelessWidget {
                       .paddingSymmetric(vertical: 8.h),
                 },
               ).paddingOnly(top: 20.h),
-              selectedOption == SegmentOption.my
-                  ? MyRequests(myRequestsData: myRequests)
-                  : StationRequests(stationRequests: stationRequests),
+              if (state is LoadingState)
+                const Center(child: WHCircularSpin()).expanded()
+              else
+                state.maybeWhen(
+                  initial: () =>
+                      const Center(child: Text('Welcome to Requests!')),
+                  error: (message) => Center(child: Text(message)),
+                  loaded: (selectedOption, myRequests, stationRequests) =>
+                      selectedOption == SegmentOption.my
+                          ? MyRequests(myRequestsData: myRequests)
+                          : StationRequests(stationRequests: stationRequests),
+                  orElse: () => nil,
+                ),
             ],
-          ),
-        );
-      }).paddingSymmetric(horizontal: 20.0),
+          );
+        },
+      ).paddingSymmetric(horizontal: 20.0),
     );
   }
 }
