@@ -139,8 +139,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get contactNumber => 'Contact number';
 
   @override
-  String get h => 'h';
+  String get hour => 'hour';
 
   @override
   String get cost => 'Cost';
+
+  @override
+  String get maxPower => 'Max Power';
+
+  @override
+  String get duration => 'Duration';
+
+  @override
+  String get amount => 'Amount';
 }

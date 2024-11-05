@@ -356,17 +356,35 @@ abstract class AppLocalizations {
   /// **'Contact number'**
   String get contactNumber;
 
-  /// No description provided for @h.
+  /// No description provided for @hour.
   ///
   /// In en, this message translates to:
-  /// **'h'**
-  String get h;
+  /// **'hour'**
+  String get hour;
 
   /// No description provided for @cost.
   ///
   /// In en, this message translates to:
   /// **'Cost'**
   String get cost;
+
+  /// No description provided for @maxPower.
+  ///
+  /// In en, this message translates to:
+  /// **'Max Power'**
+  String get maxPower;
+
+  /// No description provided for @duration.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration'**
+  String get duration;
+
+  /// No description provided for @amount.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount'**
+  String get amount;
 }
 
 class _AppLocalizationsDelegate
