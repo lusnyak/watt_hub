@@ -10,7 +10,8 @@ class AppLoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<AppLoadingBloc>()..add(const AppLoadingEvent.getUser()),
+      create: (_) =>
+          getIt<AppLoadingBloc>()..add(const AppLoadingEvent.getUser()),
       child: const _AppLoadingView(),
     );
   }

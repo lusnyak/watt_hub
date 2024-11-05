@@ -83,7 +83,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get kilowatt => 'kw';
 
   @override
-  String get hourlyRate => 'hr';
+  String get hourlyRate => 'Ժամավճար:';
 
   @override
   String get filter => 'Filter';
@@ -141,4 +141,31 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get hourlyRateFull => 'Ժամավճար';
+
+  @override
+  String get location => 'Գտնվելու վայրը';
+
+  @override
+  String get street => 'Փողոց:';
+
+  @override
+  String get navigate => 'Նավարկել';
+
+  @override
+  String get shareLocation => 'Կիսվել վայրով';
+
+  @override
+  String get serviceInformation => 'Ծառայության տեղեկատվություն';
+
+  @override
+  String get availableHours => 'Հասանելի ժամեր:';
+
+  @override
+  String get connectorType => 'Միակցիչի տեսակը';
+
+  @override
+  String get contact => 'Կոնտակտային տվյալներ';
+
+  @override
+  String get select => 'Ընտրել';
 }

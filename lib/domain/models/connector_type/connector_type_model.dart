@@ -7,7 +7,7 @@ part 'connector_type_model.g.dart';
 class ConnectorTypeModel with _$ConnectorTypeModel {
   const factory ConnectorTypeModel({
     required int id,
-    required String title,
+    String? title,
   }) = _ConnectorTypeModel;
 
   factory ConnectorTypeModel.fromJson(Map<String, dynamic> json) =>

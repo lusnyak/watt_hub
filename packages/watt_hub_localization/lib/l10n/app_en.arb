@@ -43,4 +43,13 @@
   "street": "Street",
   "max": "Max",
   "hourlyRateFull": "Hourly Rate"
+  "location": "Location",
+  "street": "Street:",
+  "navigate": "Navigate",
+  "shareLocation": "Share Location",
+  "serviceInformation": "Service Information",
+  "availableHours": "Available hours:",
+  "connectorType": "Connector Type",
+  "contact": "Contact",
+  "select": "Select"
 }

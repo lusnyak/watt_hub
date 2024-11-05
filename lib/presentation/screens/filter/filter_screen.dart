@@ -60,7 +60,7 @@ class FilterView extends StatelessWidget {
                   children: [
                     WhDropDownButton(
                       items: cars,
-                      itemLabel: (car) => car.title,
+                      itemLabel: (car) => car.title ?? '',
                       onChanged: (value) {
                         if (value != null) {
                           context
@@ -74,7 +74,7 @@ class FilterView extends StatelessWidget {
                     40.h.heightBox,
                     WhDropDownButton(
                       items: connectors,
-                      itemLabel: (connector) => connector.title,
+                      itemLabel: (connector) => connector.title ?? '',
                       onChanged: (value) {
                         if (value != null) {
                           context.read<FilterBloc>().add(
