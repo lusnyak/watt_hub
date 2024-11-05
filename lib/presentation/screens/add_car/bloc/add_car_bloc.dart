@@ -1,12 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:watt_hub/config/config.dart';
-import 'package:watt_hub/data/fake_data/car_models_data/car_models_data.dart';
-import 'package:watt_hub/data/fake_data/car_types_data/car_types_data.dart';
-import 'package:watt_hub/data/fake_data/connectors_data/connectors_data.dart';
-import 'package:watt_hub/domain/models/car/car_model.dart';
-import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
-import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
 
+import '../../../../config/config.dart';
+import '../../../../data/fake_data/car_models_data/car_models_data.dart';
+import '../../../../data/fake_data/car_types_data/car_types_data.dart';
+import '../../../../data/fake_data/connectors_data/connectors_data.dart';
+import '../../../../domain/models/car/car_model.dart';
+import '../../../../domain/models/car_type/car_type_model.dart';
+import '../../../../domain/models/connector_type/connector_type_model.dart';
 
 part 'add_car_bloc.freezed.dart';
 part 'add_car_event.dart';
@@ -58,29 +58,4 @@ class AddCarBloc extends Bloc<AddCarEvent, AddCarState> {
       },
     );
   }
-
-  Future<List<CarTypeModel>> fetchCarTypes() async {
-    return carTypesData
-        .map(
-          (data) => CarTypeModel.fromJson(data),
-        )
-        .toList();
-  }
-
-  Future<List<CarModel>> fetchCarModels() async {
-    return carModelsData
-        .map(
-          (data) => CarModel.fromJson(data),
-        )
-        .toList();
-  }
-
-  Future<List<ConnectorTypeModel>> fetchConnectors() async {
-    return connectorsData
-        .map(
-          (data) => ConnectorTypeModel.fromJson(data),
-        )
-        .toList();
-  }
-
 }
