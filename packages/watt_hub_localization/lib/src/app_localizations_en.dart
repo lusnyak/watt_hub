@@ -170,4 +170,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get station => 'Station';
+
+  @override
+  String get chargingTime => 'Charging time';
+
+  @override
+  String get contactNumber => 'Contact number';
+
+  @override
+  String get h => 'h';
+
+  @override
+  String get cost => 'Cost';
 }

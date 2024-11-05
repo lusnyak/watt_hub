@@ -53,5 +53,9 @@
   "select": "Select",
   "requests": "Requests",
   "my": "My",
-  "station": "Station"
+  "station": "Station",
+  "chargingTime": "Charging time",
+  "contactNumber": "Contact number",
+  "h": "h",
+  "cost": "Cost"
 }
