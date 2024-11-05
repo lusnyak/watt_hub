@@ -24,12 +24,13 @@ class RequestsListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Text(orderTime!.formattedDate()),
+          Text(orderTime!.formattedTime()),
           Text(
             address ?? '',
           ),
-          Text(orderTime!.formattedDate()),
-          Text(orderTime!.formattedTime()),
           Text(connectorType ?? ''),
           Text(
               '${context.localized.chargingTime}: ${expectedHour!.toInt()}${context.localized.h}'),
