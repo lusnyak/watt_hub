@@ -21,6 +21,9 @@ mixin _$AddCarEvent {
     required TResult Function() loadCarTypes,
     required TResult Function() loadCarModels,
     required TResult Function() loadConnectors,
+    required TResult Function(CarTypeModel carType) selectCarType,
+    required TResult Function(CarModel carModel) selectCarModel,
+    required TResult Function(ConnectorTypeModel connector) selectConnector,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +31,9 @@ mixin _$AddCarEvent {
     TResult? Function()? loadCarTypes,
     TResult? Function()? loadCarModels,
     TResult? Function()? loadConnectors,
+    TResult? Function(CarTypeModel carType)? selectCarType,
+    TResult? Function(CarModel carModel)? selectCarModel,
+    TResult? Function(ConnectorTypeModel connector)? selectConnector,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +41,9 @@ mixin _$AddCarEvent {
     TResult Function()? loadCarTypes,
     TResult Function()? loadCarModels,
     TResult Function()? loadConnectors,
+    TResult Function(CarTypeModel carType)? selectCarType,
+    TResult Function(CarModel carModel)? selectCarModel,
+    TResult Function(ConnectorTypeModel connector)? selectConnector,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +52,9 @@ mixin _$AddCarEvent {
     required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
     required TResult Function(_LoadCarModelsEvent value) loadCarModels,
     required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_SelectCarTypeEvent value) selectCarType,
+    required TResult Function(_SelectCarModelEvent value) selectCarModel,
+    required TResult Function(_SelectConnectorEvent value) selectConnector,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +62,9 @@ mixin _$AddCarEvent {
     TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult? Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult? Function(_SelectConnectorEvent value)? selectConnector,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +72,9 @@ mixin _$AddCarEvent {
     TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult Function(_SelectConnectorEvent value)? selectConnector,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,6 +145,9 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     required TResult Function() loadCarTypes,
     required TResult Function() loadCarModels,
     required TResult Function() loadConnectors,
+    required TResult Function(CarTypeModel carType) selectCarType,
+    required TResult Function(CarModel carModel) selectCarModel,
+    required TResult Function(ConnectorTypeModel connector) selectConnector,
   }) {
     return loadCarTypes();
   }
@@ -137,6 +158,9 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     TResult? Function()? loadCarTypes,
     TResult? Function()? loadCarModels,
     TResult? Function()? loadConnectors,
+    TResult? Function(CarTypeModel carType)? selectCarType,
+    TResult? Function(CarModel carModel)? selectCarModel,
+    TResult? Function(ConnectorTypeModel connector)? selectConnector,
   }) {
     return loadCarTypes?.call();
   }
@@ -147,6 +171,9 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     TResult Function()? loadCarTypes,
     TResult Function()? loadCarModels,
     TResult Function()? loadConnectors,
+    TResult Function(CarTypeModel carType)? selectCarType,
+    TResult Function(CarModel carModel)? selectCarModel,
+    TResult Function(ConnectorTypeModel connector)? selectConnector,
     required TResult orElse(),
   }) {
     if (loadCarTypes != null) {
@@ -161,6 +188,9 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
     required TResult Function(_LoadCarModelsEvent value) loadCarModels,
     required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_SelectCarTypeEvent value) selectCarType,
+    required TResult Function(_SelectCarModelEvent value) selectCarModel,
+    required TResult Function(_SelectConnectorEvent value) selectConnector,
   }) {
     return loadCarTypes(this);
   }
@@ -171,6 +201,9 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult? Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult? Function(_SelectConnectorEvent value)? selectConnector,
   }) {
     return loadCarTypes?.call(this);
   }
@@ -181,6 +214,9 @@ class _$LoadCarTypesEventImpl implements _LoadCarTypesEvent {
     TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult Function(_SelectConnectorEvent value)? selectConnector,
     required TResult orElse(),
   }) {
     if (loadCarTypes != null) {
@@ -238,6 +274,9 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     required TResult Function() loadCarTypes,
     required TResult Function() loadCarModels,
     required TResult Function() loadConnectors,
+    required TResult Function(CarTypeModel carType) selectCarType,
+    required TResult Function(CarModel carModel) selectCarModel,
+    required TResult Function(ConnectorTypeModel connector) selectConnector,
   }) {
     return loadCarModels();
   }
@@ -248,6 +287,9 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     TResult? Function()? loadCarTypes,
     TResult? Function()? loadCarModels,
     TResult? Function()? loadConnectors,
+    TResult? Function(CarTypeModel carType)? selectCarType,
+    TResult? Function(CarModel carModel)? selectCarModel,
+    TResult? Function(ConnectorTypeModel connector)? selectConnector,
   }) {
     return loadCarModels?.call();
   }
@@ -258,6 +300,9 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     TResult Function()? loadCarTypes,
     TResult Function()? loadCarModels,
     TResult Function()? loadConnectors,
+    TResult Function(CarTypeModel carType)? selectCarType,
+    TResult Function(CarModel carModel)? selectCarModel,
+    TResult Function(ConnectorTypeModel connector)? selectConnector,
     required TResult orElse(),
   }) {
     if (loadCarModels != null) {
@@ -272,6 +317,9 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
     required TResult Function(_LoadCarModelsEvent value) loadCarModels,
     required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_SelectCarTypeEvent value) selectCarType,
+    required TResult Function(_SelectCarModelEvent value) selectCarModel,
+    required TResult Function(_SelectConnectorEvent value) selectConnector,
   }) {
     return loadCarModels(this);
   }
@@ -282,6 +330,9 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult? Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult? Function(_SelectConnectorEvent value)? selectConnector,
   }) {
     return loadCarModels?.call(this);
   }
@@ -292,6 +343,9 @@ class _$LoadCarModelsEventImpl implements _LoadCarModelsEvent {
     TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult Function(_SelectConnectorEvent value)? selectConnector,
     required TResult orElse(),
   }) {
     if (loadCarModels != null) {
@@ -350,6 +404,9 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     required TResult Function() loadCarTypes,
     required TResult Function() loadCarModels,
     required TResult Function() loadConnectors,
+    required TResult Function(CarTypeModel carType) selectCarType,
+    required TResult Function(CarModel carModel) selectCarModel,
+    required TResult Function(ConnectorTypeModel connector) selectConnector,
   }) {
     return loadConnectors();
   }
@@ -360,6 +417,9 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     TResult? Function()? loadCarTypes,
     TResult? Function()? loadCarModels,
     TResult? Function()? loadConnectors,
+    TResult? Function(CarTypeModel carType)? selectCarType,
+    TResult? Function(CarModel carModel)? selectCarModel,
+    TResult? Function(ConnectorTypeModel connector)? selectConnector,
   }) {
     return loadConnectors?.call();
   }
@@ -370,6 +430,9 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     TResult Function()? loadCarTypes,
     TResult Function()? loadCarModels,
     TResult Function()? loadConnectors,
+    TResult Function(CarTypeModel carType)? selectCarType,
+    TResult Function(CarModel carModel)? selectCarModel,
+    TResult Function(ConnectorTypeModel connector)? selectConnector,
     required TResult orElse(),
   }) {
     if (loadConnectors != null) {
@@ -384,6 +447,9 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
     required TResult Function(_LoadCarModelsEvent value) loadCarModels,
     required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_SelectCarTypeEvent value) selectCarType,
+    required TResult Function(_SelectCarModelEvent value) selectCarModel,
+    required TResult Function(_SelectConnectorEvent value) selectConnector,
   }) {
     return loadConnectors(this);
   }
@@ -394,6 +460,9 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult? Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult? Function(_SelectConnectorEvent value)? selectConnector,
   }) {
     return loadConnectors?.call(this);
   }
@@ -404,6 +473,9 @@ class _$LoadConnectorsEventImpl implements _LoadConnectorsEvent {
     TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
     TResult Function(_LoadCarModelsEvent value)? loadCarModels,
     TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult Function(_SelectConnectorEvent value)? selectConnector,
     required TResult orElse(),
   }) {
     if (loadConnectors != null) {
@@ -418,10 +490,551 @@ abstract class _LoadConnectorsEvent implements AddCarEvent {
 }
 
 /// @nodoc
+abstract class _$$SelectCarTypeEventImplCopyWith<$Res> {
+  factory _$$SelectCarTypeEventImplCopyWith(_$SelectCarTypeEventImpl value,
+          $Res Function(_$SelectCarTypeEventImpl) then) =
+      __$$SelectCarTypeEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CarTypeModel carType});
+
+  $CarTypeModelCopyWith<$Res> get carType;
+}
+
+/// @nodoc
+class __$$SelectCarTypeEventImplCopyWithImpl<$Res>
+    extends _$AddCarEventCopyWithImpl<$Res, _$SelectCarTypeEventImpl>
+    implements _$$SelectCarTypeEventImplCopyWith<$Res> {
+  __$$SelectCarTypeEventImplCopyWithImpl(_$SelectCarTypeEventImpl _value,
+      $Res Function(_$SelectCarTypeEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? carType = null,
+  }) {
+    return _then(_$SelectCarTypeEventImpl(
+      null == carType
+          ? _value.carType
+          : carType // ignore: cast_nullable_to_non_nullable
+              as CarTypeModel,
+    ));
+  }
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CarTypeModelCopyWith<$Res> get carType {
+    return $CarTypeModelCopyWith<$Res>(_value.carType, (value) {
+      return _then(_value.copyWith(carType: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SelectCarTypeEventImpl implements _SelectCarTypeEvent {
+  const _$SelectCarTypeEventImpl(this.carType);
+
+  @override
+  final CarTypeModel carType;
+
+  @override
+  String toString() {
+    return 'AddCarEvent.selectCarType(carType: $carType)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectCarTypeEventImpl &&
+            (identical(other.carType, carType) || other.carType == carType));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, carType);
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectCarTypeEventImplCopyWith<_$SelectCarTypeEventImpl> get copyWith =>
+      __$$SelectCarTypeEventImplCopyWithImpl<_$SelectCarTypeEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadCarTypes,
+    required TResult Function() loadCarModels,
+    required TResult Function() loadConnectors,
+    required TResult Function(CarTypeModel carType) selectCarType,
+    required TResult Function(CarModel carModel) selectCarModel,
+    required TResult Function(ConnectorTypeModel connector) selectConnector,
+  }) {
+    return selectCarType(carType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadCarTypes,
+    TResult? Function()? loadCarModels,
+    TResult? Function()? loadConnectors,
+    TResult? Function(CarTypeModel carType)? selectCarType,
+    TResult? Function(CarModel carModel)? selectCarModel,
+    TResult? Function(ConnectorTypeModel connector)? selectConnector,
+  }) {
+    return selectCarType?.call(carType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadCarTypes,
+    TResult Function()? loadCarModels,
+    TResult Function()? loadConnectors,
+    TResult Function(CarTypeModel carType)? selectCarType,
+    TResult Function(CarModel carModel)? selectCarModel,
+    TResult Function(ConnectorTypeModel connector)? selectConnector,
+    required TResult orElse(),
+  }) {
+    if (selectCarType != null) {
+      return selectCarType(carType);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
+    required TResult Function(_LoadCarModelsEvent value) loadCarModels,
+    required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_SelectCarTypeEvent value) selectCarType,
+    required TResult Function(_SelectCarModelEvent value) selectCarModel,
+    required TResult Function(_SelectConnectorEvent value) selectConnector,
+  }) {
+    return selectCarType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
+    TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
+    TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult? Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult? Function(_SelectConnectorEvent value)? selectConnector,
+  }) {
+    return selectCarType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
+    TResult Function(_LoadCarModelsEvent value)? loadCarModels,
+    TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult Function(_SelectConnectorEvent value)? selectConnector,
+    required TResult orElse(),
+  }) {
+    if (selectCarType != null) {
+      return selectCarType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectCarTypeEvent implements AddCarEvent {
+  const factory _SelectCarTypeEvent(final CarTypeModel carType) =
+      _$SelectCarTypeEventImpl;
+
+  CarTypeModel get carType;
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelectCarTypeEventImplCopyWith<_$SelectCarTypeEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectCarModelEventImplCopyWith<$Res> {
+  factory _$$SelectCarModelEventImplCopyWith(_$SelectCarModelEventImpl value,
+          $Res Function(_$SelectCarModelEventImpl) then) =
+      __$$SelectCarModelEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CarModel carModel});
+
+  $CarModelCopyWith<$Res> get carModel;
+}
+
+/// @nodoc
+class __$$SelectCarModelEventImplCopyWithImpl<$Res>
+    extends _$AddCarEventCopyWithImpl<$Res, _$SelectCarModelEventImpl>
+    implements _$$SelectCarModelEventImplCopyWith<$Res> {
+  __$$SelectCarModelEventImplCopyWithImpl(_$SelectCarModelEventImpl _value,
+      $Res Function(_$SelectCarModelEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? carModel = null,
+  }) {
+    return _then(_$SelectCarModelEventImpl(
+      null == carModel
+          ? _value.carModel
+          : carModel // ignore: cast_nullable_to_non_nullable
+              as CarModel,
+    ));
+  }
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CarModelCopyWith<$Res> get carModel {
+    return $CarModelCopyWith<$Res>(_value.carModel, (value) {
+      return _then(_value.copyWith(carModel: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SelectCarModelEventImpl implements _SelectCarModelEvent {
+  const _$SelectCarModelEventImpl(this.carModel);
+
+  @override
+  final CarModel carModel;
+
+  @override
+  String toString() {
+    return 'AddCarEvent.selectCarModel(carModel: $carModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectCarModelEventImpl &&
+            (identical(other.carModel, carModel) ||
+                other.carModel == carModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, carModel);
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectCarModelEventImplCopyWith<_$SelectCarModelEventImpl> get copyWith =>
+      __$$SelectCarModelEventImplCopyWithImpl<_$SelectCarModelEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadCarTypes,
+    required TResult Function() loadCarModels,
+    required TResult Function() loadConnectors,
+    required TResult Function(CarTypeModel carType) selectCarType,
+    required TResult Function(CarModel carModel) selectCarModel,
+    required TResult Function(ConnectorTypeModel connector) selectConnector,
+  }) {
+    return selectCarModel(carModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadCarTypes,
+    TResult? Function()? loadCarModels,
+    TResult? Function()? loadConnectors,
+    TResult? Function(CarTypeModel carType)? selectCarType,
+    TResult? Function(CarModel carModel)? selectCarModel,
+    TResult? Function(ConnectorTypeModel connector)? selectConnector,
+  }) {
+    return selectCarModel?.call(carModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadCarTypes,
+    TResult Function()? loadCarModels,
+    TResult Function()? loadConnectors,
+    TResult Function(CarTypeModel carType)? selectCarType,
+    TResult Function(CarModel carModel)? selectCarModel,
+    TResult Function(ConnectorTypeModel connector)? selectConnector,
+    required TResult orElse(),
+  }) {
+    if (selectCarModel != null) {
+      return selectCarModel(carModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
+    required TResult Function(_LoadCarModelsEvent value) loadCarModels,
+    required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_SelectCarTypeEvent value) selectCarType,
+    required TResult Function(_SelectCarModelEvent value) selectCarModel,
+    required TResult Function(_SelectConnectorEvent value) selectConnector,
+  }) {
+    return selectCarModel(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
+    TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
+    TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult? Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult? Function(_SelectConnectorEvent value)? selectConnector,
+  }) {
+    return selectCarModel?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
+    TResult Function(_LoadCarModelsEvent value)? loadCarModels,
+    TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult Function(_SelectConnectorEvent value)? selectConnector,
+    required TResult orElse(),
+  }) {
+    if (selectCarModel != null) {
+      return selectCarModel(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectCarModelEvent implements AddCarEvent {
+  const factory _SelectCarModelEvent(final CarModel carModel) =
+      _$SelectCarModelEventImpl;
+
+  CarModel get carModel;
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelectCarModelEventImplCopyWith<_$SelectCarModelEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectConnectorEventImplCopyWith<$Res> {
+  factory _$$SelectConnectorEventImplCopyWith(_$SelectConnectorEventImpl value,
+          $Res Function(_$SelectConnectorEventImpl) then) =
+      __$$SelectConnectorEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ConnectorTypeModel connector});
+
+  $ConnectorTypeModelCopyWith<$Res> get connector;
+}
+
+/// @nodoc
+class __$$SelectConnectorEventImplCopyWithImpl<$Res>
+    extends _$AddCarEventCopyWithImpl<$Res, _$SelectConnectorEventImpl>
+    implements _$$SelectConnectorEventImplCopyWith<$Res> {
+  __$$SelectConnectorEventImplCopyWithImpl(_$SelectConnectorEventImpl _value,
+      $Res Function(_$SelectConnectorEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? connector = null,
+  }) {
+    return _then(_$SelectConnectorEventImpl(
+      null == connector
+          ? _value.connector
+          : connector // ignore: cast_nullable_to_non_nullable
+              as ConnectorTypeModel,
+    ));
+  }
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConnectorTypeModelCopyWith<$Res> get connector {
+    return $ConnectorTypeModelCopyWith<$Res>(_value.connector, (value) {
+      return _then(_value.copyWith(connector: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SelectConnectorEventImpl implements _SelectConnectorEvent {
+  const _$SelectConnectorEventImpl(this.connector);
+
+  @override
+  final ConnectorTypeModel connector;
+
+  @override
+  String toString() {
+    return 'AddCarEvent.selectConnector(connector: $connector)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectConnectorEventImpl &&
+            (identical(other.connector, connector) ||
+                other.connector == connector));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, connector);
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectConnectorEventImplCopyWith<_$SelectConnectorEventImpl>
+      get copyWith =>
+          __$$SelectConnectorEventImplCopyWithImpl<_$SelectConnectorEventImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadCarTypes,
+    required TResult Function() loadCarModels,
+    required TResult Function() loadConnectors,
+    required TResult Function(CarTypeModel carType) selectCarType,
+    required TResult Function(CarModel carModel) selectCarModel,
+    required TResult Function(ConnectorTypeModel connector) selectConnector,
+  }) {
+    return selectConnector(connector);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadCarTypes,
+    TResult? Function()? loadCarModels,
+    TResult? Function()? loadConnectors,
+    TResult? Function(CarTypeModel carType)? selectCarType,
+    TResult? Function(CarModel carModel)? selectCarModel,
+    TResult? Function(ConnectorTypeModel connector)? selectConnector,
+  }) {
+    return selectConnector?.call(connector);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadCarTypes,
+    TResult Function()? loadCarModels,
+    TResult Function()? loadConnectors,
+    TResult Function(CarTypeModel carType)? selectCarType,
+    TResult Function(CarModel carModel)? selectCarModel,
+    TResult Function(ConnectorTypeModel connector)? selectConnector,
+    required TResult orElse(),
+  }) {
+    if (selectConnector != null) {
+      return selectConnector(connector);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadCarTypesEvent value) loadCarTypes,
+    required TResult Function(_LoadCarModelsEvent value) loadCarModels,
+    required TResult Function(_LoadConnectorsEvent value) loadConnectors,
+    required TResult Function(_SelectCarTypeEvent value) selectCarType,
+    required TResult Function(_SelectCarModelEvent value) selectCarModel,
+    required TResult Function(_SelectConnectorEvent value) selectConnector,
+  }) {
+    return selectConnector(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadCarTypesEvent value)? loadCarTypes,
+    TResult? Function(_LoadCarModelsEvent value)? loadCarModels,
+    TResult? Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult? Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult? Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult? Function(_SelectConnectorEvent value)? selectConnector,
+  }) {
+    return selectConnector?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadCarTypesEvent value)? loadCarTypes,
+    TResult Function(_LoadCarModelsEvent value)? loadCarModels,
+    TResult Function(_LoadConnectorsEvent value)? loadConnectors,
+    TResult Function(_SelectCarTypeEvent value)? selectCarType,
+    TResult Function(_SelectCarModelEvent value)? selectCarModel,
+    TResult Function(_SelectConnectorEvent value)? selectConnector,
+    required TResult orElse(),
+  }) {
+    if (selectConnector != null) {
+      return selectConnector(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectConnectorEvent implements AddCarEvent {
+  const factory _SelectConnectorEvent(final ConnectorTypeModel connector) =
+      _$SelectConnectorEventImpl;
+
+  ConnectorTypeModel get connector;
+
+  /// Create a copy of AddCarEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelectConnectorEventImplCopyWith<_$SelectConnectorEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$AddCarState {
   List<CarTypeModel> get carTypes => throw _privateConstructorUsedError;
   List<CarModel> get carModels => throw _privateConstructorUsedError;
   List<ConnectorTypeModel> get connectors => throw _privateConstructorUsedError;
+  CarTypeModel? get selectedCarType => throw _privateConstructorUsedError;
+  CarModel? get selectedCarModel => throw _privateConstructorUsedError;
+  ConnectorTypeModel? get selectedConnector =>
+      throw _privateConstructorUsedError;
 
   /// Create a copy of AddCarState
   /// with the given fields replaced by the non-null parameter values.
@@ -439,7 +1052,14 @@ abstract class $AddCarStateCopyWith<$Res> {
   $Res call(
       {List<CarTypeModel> carTypes,
       List<CarModel> carModels,
-      List<ConnectorTypeModel> connectors});
+      List<ConnectorTypeModel> connectors,
+      CarTypeModel? selectedCarType,
+      CarModel? selectedCarModel,
+      ConnectorTypeModel? selectedConnector});
+
+  $CarTypeModelCopyWith<$Res>? get selectedCarType;
+  $CarModelCopyWith<$Res>? get selectedCarModel;
+  $ConnectorTypeModelCopyWith<$Res>? get selectedConnector;
 }
 
 /// @nodoc
@@ -460,6 +1080,9 @@ class _$AddCarStateCopyWithImpl<$Res, $Val extends AddCarState>
     Object? carTypes = null,
     Object? carModels = null,
     Object? connectors = null,
+    Object? selectedCarType = freezed,
+    Object? selectedCarModel = freezed,
+    Object? selectedConnector = freezed,
   }) {
     return _then(_value.copyWith(
       carTypes: null == carTypes
@@ -474,7 +1097,62 @@ class _$AddCarStateCopyWithImpl<$Res, $Val extends AddCarState>
           ? _value.connectors
           : connectors // ignore: cast_nullable_to_non_nullable
               as List<ConnectorTypeModel>,
+      selectedCarType: freezed == selectedCarType
+          ? _value.selectedCarType
+          : selectedCarType // ignore: cast_nullable_to_non_nullable
+              as CarTypeModel?,
+      selectedCarModel: freezed == selectedCarModel
+          ? _value.selectedCarModel
+          : selectedCarModel // ignore: cast_nullable_to_non_nullable
+              as CarModel?,
+      selectedConnector: freezed == selectedConnector
+          ? _value.selectedConnector
+          : selectedConnector // ignore: cast_nullable_to_non_nullable
+              as ConnectorTypeModel?,
     ) as $Val);
+  }
+
+  /// Create a copy of AddCarState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CarTypeModelCopyWith<$Res>? get selectedCarType {
+    if (_value.selectedCarType == null) {
+      return null;
+    }
+
+    return $CarTypeModelCopyWith<$Res>(_value.selectedCarType!, (value) {
+      return _then(_value.copyWith(selectedCarType: value) as $Val);
+    });
+  }
+
+  /// Create a copy of AddCarState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CarModelCopyWith<$Res>? get selectedCarModel {
+    if (_value.selectedCarModel == null) {
+      return null;
+    }
+
+    return $CarModelCopyWith<$Res>(_value.selectedCarModel!, (value) {
+      return _then(_value.copyWith(selectedCarModel: value) as $Val);
+    });
+  }
+
+  /// Create a copy of AddCarState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConnectorTypeModelCopyWith<$Res>? get selectedConnector {
+    if (_value.selectedConnector == null) {
+      return null;
+    }
+
+    return $ConnectorTypeModelCopyWith<$Res>(_value.selectedConnector!,
+        (value) {
+      return _then(_value.copyWith(selectedConnector: value) as $Val);
+    });
   }
 }
 
@@ -489,7 +1167,17 @@ abstract class _$$AddCarStateImplCopyWith<$Res>
   $Res call(
       {List<CarTypeModel> carTypes,
       List<CarModel> carModels,
-      List<ConnectorTypeModel> connectors});
+      List<ConnectorTypeModel> connectors,
+      CarTypeModel? selectedCarType,
+      CarModel? selectedCarModel,
+      ConnectorTypeModel? selectedConnector});
+
+  @override
+  $CarTypeModelCopyWith<$Res>? get selectedCarType;
+  @override
+  $CarModelCopyWith<$Res>? get selectedCarModel;
+  @override
+  $ConnectorTypeModelCopyWith<$Res>? get selectedConnector;
 }
 
 /// @nodoc
@@ -508,6 +1196,9 @@ class __$$AddCarStateImplCopyWithImpl<$Res>
     Object? carTypes = null,
     Object? carModels = null,
     Object? connectors = null,
+    Object? selectedCarType = freezed,
+    Object? selectedCarModel = freezed,
+    Object? selectedConnector = freezed,
   }) {
     return _then(_$AddCarStateImpl(
       carTypes: null == carTypes
@@ -522,6 +1213,18 @@ class __$$AddCarStateImplCopyWithImpl<$Res>
           ? _value._connectors
           : connectors // ignore: cast_nullable_to_non_nullable
               as List<ConnectorTypeModel>,
+      selectedCarType: freezed == selectedCarType
+          ? _value.selectedCarType
+          : selectedCarType // ignore: cast_nullable_to_non_nullable
+              as CarTypeModel?,
+      selectedCarModel: freezed == selectedCarModel
+          ? _value.selectedCarModel
+          : selectedCarModel // ignore: cast_nullable_to_non_nullable
+              as CarModel?,
+      selectedConnector: freezed == selectedConnector
+          ? _value.selectedConnector
+          : selectedConnector // ignore: cast_nullable_to_non_nullable
+              as ConnectorTypeModel?,
     ));
   }
 }
@@ -532,7 +1235,10 @@ class _$AddCarStateImpl implements _AddCarState {
   const _$AddCarStateImpl(
       {final List<CarTypeModel> carTypes = const [],
       final List<CarModel> carModels = const [],
-      final List<ConnectorTypeModel> connectors = const []})
+      final List<ConnectorTypeModel> connectors = const [],
+      this.selectedCarType,
+      this.selectedCarModel,
+      this.selectedConnector})
       : _carTypes = carTypes,
         _carModels = carModels,
         _connectors = connectors;
@@ -565,8 +1271,15 @@ class _$AddCarStateImpl implements _AddCarState {
   }
 
   @override
+  final CarTypeModel? selectedCarType;
+  @override
+  final CarModel? selectedCarModel;
+  @override
+  final ConnectorTypeModel? selectedConnector;
+
+  @override
   String toString() {
-    return 'AddCarState(carTypes: $carTypes, carModels: $carModels, connectors: $connectors)';
+    return 'AddCarState(carTypes: $carTypes, carModels: $carModels, connectors: $connectors, selectedCarType: $selectedCarType, selectedCarModel: $selectedCarModel, selectedConnector: $selectedConnector)';
   }
 
   @override
@@ -578,7 +1291,13 @@ class _$AddCarStateImpl implements _AddCarState {
             const DeepCollectionEquality()
                 .equals(other._carModels, _carModels) &&
             const DeepCollectionEquality()
-                .equals(other._connectors, _connectors));
+                .equals(other._connectors, _connectors) &&
+            (identical(other.selectedCarType, selectedCarType) ||
+                other.selectedCarType == selectedCarType) &&
+            (identical(other.selectedCarModel, selectedCarModel) ||
+                other.selectedCarModel == selectedCarModel) &&
+            (identical(other.selectedConnector, selectedConnector) ||
+                other.selectedConnector == selectedConnector));
   }
 
   @override
@@ -586,7 +1305,10 @@ class _$AddCarStateImpl implements _AddCarState {
       runtimeType,
       const DeepCollectionEquality().hash(_carTypes),
       const DeepCollectionEquality().hash(_carModels),
-      const DeepCollectionEquality().hash(_connectors));
+      const DeepCollectionEquality().hash(_connectors),
+      selectedCarType,
+      selectedCarModel,
+      selectedConnector);
 
   /// Create a copy of AddCarState
   /// with the given fields replaced by the non-null parameter values.
@@ -601,7 +1323,10 @@ abstract class _AddCarState implements AddCarState {
   const factory _AddCarState(
       {final List<CarTypeModel> carTypes,
       final List<CarModel> carModels,
-      final List<ConnectorTypeModel> connectors}) = _$AddCarStateImpl;
+      final List<ConnectorTypeModel> connectors,
+      final CarTypeModel? selectedCarType,
+      final CarModel? selectedCarModel,
+      final ConnectorTypeModel? selectedConnector}) = _$AddCarStateImpl;
 
   @override
   List<CarTypeModel> get carTypes;
@@ -609,6 +1334,12 @@ abstract class _AddCarState implements AddCarState {
   List<CarModel> get carModels;
   @override
   List<ConnectorTypeModel> get connectors;
+  @override
+  CarTypeModel? get selectedCarType;
+  @override
+  CarModel? get selectedCarModel;
+  @override
+  ConnectorTypeModel? get selectedConnector;
 
   /// Create a copy of AddCarState
   /// with the given fields replaced by the non-null parameter values.
