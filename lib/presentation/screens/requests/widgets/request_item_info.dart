@@ -25,7 +25,8 @@ class RequestItemInfo extends StatelessWidget {
             child: Text(
               title ?? '',
               textAlign: TextAlign.center,
-              style: body10RegularTextStyle.copyWith(color: Colors.grey),
+              style: body10RegularTextStyle.copyWith(
+                  color: WattHubColors.greyColor),
               overflow: TextOverflow.clip,
             ),
           ),
