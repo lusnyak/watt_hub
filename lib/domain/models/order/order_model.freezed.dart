@@ -30,6 +30,7 @@ mixin _$OrderModel {
   String? get comment => throw _privateConstructorUsedError;
   UserModel? get creator => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'station')
   StationModel? get station => throw _privateConstructorUsedError;
   String? get reason => throw _privateConstructorUsedError;
 
@@ -57,7 +58,7 @@ abstract class $OrderModelCopyWith<$Res> {
       String? comment,
       UserModel? creator,
       String? status,
-      StationModel? station,
+      @JsonKey(name: 'station') StationModel? station,
       String? reason});
 
   $ConnectorTypeModelCopyWith<$Res>? get connectorType;
@@ -189,7 +190,7 @@ abstract class _$$OrderModelImplCopyWith<$Res>
       String? comment,
       UserModel? creator,
       String? status,
-      StationModel? station,
+      @JsonKey(name: 'station') StationModel? station,
       String? reason});
 
   @override
@@ -275,9 +276,8 @@ class _$OrderModelImpl implements _OrderModel {
       this.comment,
       this.creator,
       this.status,
-      this.station,
-      this.reason})
-      : _connectorType = connectorType;
+      @JsonKey(name: 'station') this.station,
+      this.reason});
 
   factory _$OrderModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderModelImplFromJson(json);
@@ -360,7 +360,7 @@ abstract class _OrderModel implements OrderModel {
       final String? comment,
       final UserModel? creator,
       final String? status,
-      final StationModel? station,
+      @JsonKey(name: 'station') final StationModel? station,
       final String? reason}) = _$OrderModelImpl;
 
   factory _OrderModel.fromJson(Map<String, dynamic> json) =
