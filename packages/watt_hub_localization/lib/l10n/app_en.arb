@@ -40,9 +40,8 @@
   "stationInfo": "Station Info",
   "carInfo": "Car Info",
   "name": "Name",
-  "street": "Street",
   "max": "Max",
-  "hourlyRateFull": "Hourly Rate"
+  "hourlyRateFull": "Hourly Rate",
   "location": "Location",
   "street": "Street:",
   "navigate": "Navigate",

@@ -82,7 +82,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get kilowatt => 'kw';
 
   @override
-  String get hourlyRate => 'Hourly rate:';
+  String get hourlyRate => 'hr';
 
   @override
   String get filter => 'Filter';
@@ -133,14 +133,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get name => 'Name';
 
   @override
-  String get street => 'Street';
-
-  @override
   String get max => 'Max';
 
   @override
   String get hourlyRateFull => 'Hourly Rate';
-  
+
   @override
   String get location => 'Location';
 

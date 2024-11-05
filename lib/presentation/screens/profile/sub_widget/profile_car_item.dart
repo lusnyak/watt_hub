@@ -28,8 +28,8 @@ class ProfileCarItem extends StatelessWidget {
                     style: body16SemiBoldTextStyle,
                   ).paddingOnly(bottom: 10.sp),
                   Text(carData.carModel.title),
-                  Text(carData.carType.title),
-                  Text(carData.connectorType.title),
+                  Text(carData.carType.title ?? ""),
+                  Text(carData.connectorType.title ?? ""),
                 ],
               ).expanded(),
               SizedBox(

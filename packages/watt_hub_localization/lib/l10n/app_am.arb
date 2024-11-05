@@ -40,8 +40,7 @@
   "stationInfo": "Կայանի տվյալներ",
   "carInfo": "Մեքենայի տվյալներ",
   "name": "Անուն",
-  "street": "Փողոց",
-  "hourlyRateFull": "Ժամավճար"
+  "hourlyRateFull": "Ժամավճար",
   "location": "Գտնվելու վայրը",
   "street": "Փողոց:",
   "navigate": "Նավարկել",

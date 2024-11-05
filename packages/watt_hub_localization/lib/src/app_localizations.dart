@@ -245,7 +245,7 @@ abstract class AppLocalizations {
   /// No description provided for @hourlyRate.
   ///
   /// In en, this message translates to:
-  /// **'Hourly rate:'**
+  /// **'hr'**
   String get hourlyRate;
 
   /// No description provided for @filter.
@@ -344,12 +344,6 @@ abstract class AppLocalizations {
   /// **'Name'**
   String get name;
 
-  /// No description provided for @street.
-  ///
-  /// In en, this message translates to:
-  /// **'Street'**
-  String get street;
-
   /// No description provided for @max.
   ///
   /// In en, this message translates to:
@@ -361,6 +355,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hourly Rate'**
   String get hourlyRateFull;
+
   /// No description provided for @location.
   ///
   /// In en, this message translates to:

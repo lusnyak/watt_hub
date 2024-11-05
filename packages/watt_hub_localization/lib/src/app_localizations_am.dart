@@ -134,10 +134,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get name => 'Անուն';
 
   @override
-  String get street => 'Փողոց';
-
-  @override
-  String get max => 'Մաքս';
+  String get max => 'Մաքս:';
 
   @override
   String get hourlyRateFull => 'Ժամավճար';
