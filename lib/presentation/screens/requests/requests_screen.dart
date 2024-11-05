@@ -43,7 +43,7 @@ class RequestsView extends StatelessWidget {
                 groupValue: state.maybeMap(
                   loaded: (state) => state.selectedOption,
                   loading: (state) => state.selectedOption,
-                  orElse: () => SegmentOption.my, // Fallback to a default
+                  orElse: () => SegmentOption.my,
                 ),
                 onValueChanged: (value) {
                   if (value != null) {

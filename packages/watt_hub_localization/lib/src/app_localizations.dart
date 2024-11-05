@@ -343,6 +343,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Station'**
   String get station;
+
+  /// No description provided for @chargingTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Charging time'**
+  String get chargingTime;
+
+  /// No description provided for @contactNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact number'**
+  String get contactNumber;
+
+  /// No description provided for @h.
+  ///
+  /// In en, this message translates to:
+  /// **'h'**
+  String get h;
+
+  /// No description provided for @cost.
+  ///
+  /// In en, this message translates to:
+  /// **'Cost'**
+  String get cost;
 }
 
 class _AppLocalizationsDelegate

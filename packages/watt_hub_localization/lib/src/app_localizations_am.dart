@@ -132,4 +132,16 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get station => 'Կայանատեղիի հարցումներ';
+
+  @override
+  String get chargingTime => 'Լիցքավորման ժամանակ';
+
+  @override
+  String get contactNumber => 'Կոնտակտային համար';
+
+  @override
+  String get h => 'ժ';
+
+  @override
+  String get cost => 'Արժեքը';
 }
