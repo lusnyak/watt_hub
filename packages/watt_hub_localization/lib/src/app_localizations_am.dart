@@ -225,8 +225,17 @@ class AppLocalizationsAm extends AppLocalizations {
   String get contactNumber => 'Կոնտակտային համար';
 
   @override
-  String get h => 'ժ';
+  String get hour => 'ժամ';
 
   @override
   String get cost => 'Արժեքը';
+
+  @override
+  String get maxPower => 'Առավելագույն հզորություն';
+
+  @override
+  String get duration => 'Տևողությունը';
+
+  @override
+  String get amount => 'Գումարը';
 }
