@@ -72,7 +72,7 @@ class MapContainer extends StatelessWidget {
                 child: Center(
                   child: Text(
                     markers.length.toString(),
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: WattHubColors.whiteColor),
                   ),
                 ),
               );
