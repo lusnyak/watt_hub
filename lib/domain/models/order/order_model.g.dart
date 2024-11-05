@@ -21,7 +21,7 @@ _$OrderModelImpl _$$OrderModelImplFromJson(Map<String, dynamic> json) =>
       creator: json['creator'] == null
           ? null
           : UserModel.fromJson(json['creator'] as Map<String, dynamic>),
-      status: json['status'] as String?,
+      status: $enumDecodeNullable(_$OrderStatusEnumMap, json['status']),
       station: json['station'] == null
           ? null
           : StationModel.fromJson(json['station'] as Map<String, dynamic>),
@@ -36,7 +36,14 @@ Map<String, dynamic> _$$OrderModelImplToJson(_$OrderModelImpl instance) =>
       'connector_type': instance.connectorType,
       'comment': instance.comment,
       'creator': instance.creator,
-      'status': instance.status,
+      'status': _$OrderStatusEnumMap[instance.status],
       'station': instance.station,
       'reason': instance.reason,
     };
+
+const _$OrderStatusEnumMap = {
+  OrderStatus.Pending: 'pending',
+  OrderStatus.Confirmed: 'confirmed',
+  OrderStatus.Completed: 'completed',
+  OrderStatus.Cancelled: 'cancelled',
+};
