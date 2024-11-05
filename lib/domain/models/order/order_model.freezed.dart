@@ -29,7 +29,8 @@ mixin _$OrderModel {
   ConnectorTypeModel? get connectorType => throw _privateConstructorUsedError;
   String? get comment => throw _privateConstructorUsedError;
   UserModel? get creator => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'status')
+  OrderStatus? get status => throw _privateConstructorUsedError;
   @JsonKey(name: 'station')
   StationModel? get station => throw _privateConstructorUsedError;
   String? get reason => throw _privateConstructorUsedError;
@@ -57,7 +58,7 @@ abstract class $OrderModelCopyWith<$Res> {
       @JsonKey(name: 'connector_type') ConnectorTypeModel? connectorType,
       String? comment,
       UserModel? creator,
-      String? status,
+      @JsonKey(name: 'status') OrderStatus? status,
       @JsonKey(name: 'station') StationModel? station,
       String? reason});
 
@@ -119,7 +120,7 @@ class _$OrderModelCopyWithImpl<$Res, $Val extends OrderModel>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as OrderStatus?,
       station: freezed == station
           ? _value.station
           : station // ignore: cast_nullable_to_non_nullable
@@ -189,7 +190,7 @@ abstract class _$$OrderModelImplCopyWith<$Res>
       @JsonKey(name: 'connector_type') ConnectorTypeModel? connectorType,
       String? comment,
       UserModel? creator,
-      String? status,
+      @JsonKey(name: 'status') OrderStatus? status,
       @JsonKey(name: 'station') StationModel? station,
       String? reason});
 
@@ -252,7 +253,7 @@ class __$$OrderModelImplCopyWithImpl<$Res>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as OrderStatus?,
       station: freezed == station
           ? _value.station
           : station // ignore: cast_nullable_to_non_nullable
@@ -275,7 +276,7 @@ class _$OrderModelImpl implements _OrderModel {
       @JsonKey(name: 'connector_type') this.connectorType,
       this.comment,
       this.creator,
-      this.status,
+      @JsonKey(name: 'status') this.status,
       @JsonKey(name: 'station') this.station,
       this.reason});
 
@@ -298,7 +299,8 @@ class _$OrderModelImpl implements _OrderModel {
   @override
   final UserModel? creator;
   @override
-  final String? status;
+  @JsonKey(name: 'status')
+  final OrderStatus? status;
   @override
   @JsonKey(name: 'station')
   final StationModel? station;
@@ -358,7 +360,7 @@ abstract class _OrderModel implements OrderModel {
       @JsonKey(name: 'connector_type') final ConnectorTypeModel? connectorType,
       final String? comment,
       final UserModel? creator,
-      final String? status,
+      @JsonKey(name: 'status') final OrderStatus? status,
       @JsonKey(name: 'station') final StationModel? station,
       final String? reason}) = _$OrderModelImpl;
 
@@ -381,7 +383,8 @@ abstract class _OrderModel implements OrderModel {
   @override
   UserModel? get creator;
   @override
-  String? get status;
+  @JsonKey(name: 'status')
+  OrderStatus? get status;
   @override
   @JsonKey(name: 'station')
   StationModel? get station;
