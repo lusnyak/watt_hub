@@ -36,40 +36,37 @@ class RequestsView extends StatelessWidget {
       ),
       child:
           BlocBuilder<RequestsBloc, RequestsState>(builder: (context, state) {
-        return state.maybeMap(
-            loading: (state) => const WHCircularSpin(),
-            loaded: (state) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    CupertinoSlidingSegmentedControl<SegmentOption>(
-                      groupValue: state.selectedOption,
-                      onValueChanged: (value) {
-                        if (value != null) {
-                          context
-                              .read<RequestsBloc>()
-                              .add(RequestsEvent.loadMyRequests(value));
-                        }
-                      },
-                      children: <SegmentOption, Widget>{
-                        SegmentOption.my: Text(context.localized.my)
-                            .paddingSymmetric(vertical: 8.h),
-                        SegmentOption.station: Text(context.localized.station)
-                            .paddingSymmetric(vertical: 8.h),
-                      },
-                    ).paddingOnly(top: 20.h),
-                    state.selectedOption == SegmentOption.my
-                        ? MyRequests(
-                            myRequestsData: state.myRequests,
-                          )
-                        : StationRequests(
-                            stationRequests: state.stationRequests,
-                          ),
-                  ],
-                ),
-            error: (state) => Center(
-                  child: Text(state.message),
-                ),
-            orElse: () => nil);
+        return state.when(
+          initial: () => nil, // or some placeholder widget
+          loading: () => const Center(child: WHCircularSpin()),
+          error: (message) => Center(
+            child: Text(message),
+          ),
+          loaded: (selectedOption, myRequests, stationRequests) => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              CupertinoSlidingSegmentedControl<SegmentOption>(
+                groupValue: selectedOption,
+                onValueChanged: (value) {
+                  if (value != null) {
+                    context
+                        .read<RequestsBloc>()
+                        .add(RequestsEvent.loadMyRequests(value));
+                  }
+                },
+                children: <SegmentOption, Widget>{
+                  SegmentOption.my: Text(context.localized.my)
+                      .paddingSymmetric(vertical: 8.h),
+                  SegmentOption.station: Text(context.localized.station)
+                      .paddingSymmetric(vertical: 8.h),
+                },
+              ).paddingOnly(top: 20.h),
+              selectedOption == SegmentOption.my
+                  ? MyRequests(myRequestsData: myRequests)
+                  : StationRequests(stationRequests: stationRequests),
+            ],
+          ),
+        );
       }).paddingSymmetric(horizontal: 20.0),
     );
   }
