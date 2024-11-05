@@ -84,5 +84,9 @@
   "addressNotFound":"Address not found.",
   "noLocationSelected":"No location selected. Please tap on the map.",
   "my": "My",
-  "station": "Station"
+  "station": "Station",
+  "chargingTime": "Charging time",
+  "contactNumber": "Contact number",
+  "h": "h",
+  "cost": "Cost"
 }
