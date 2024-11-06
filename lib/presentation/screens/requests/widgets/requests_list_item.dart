@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watt_hub/domain/enums/order_status/order_status_enum.dart';
 import 'package:watt_hub/presentation/screens/requests/widgets/request_item_info.dart';
+import 'package:watt_hub/presentation/screens/requests/widgets/requests_footer.dart';
 import 'package:watt_hub/utils/extensions/extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 

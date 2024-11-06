@@ -40,3 +40,11 @@ Map<String, dynamic> _$$OrderModelImplToJson(_$OrderModelImpl instance) =>
       'station': instance.station,
       'reason': instance.reason,
     };
+
+const _$OrderStatusEnumMap = {
+  OrderStatus.Pending: 'pending',
+  OrderStatus.Confirmed: 'confirmed',
+  OrderStatus.Completed: 'completed',
+  OrderStatus.Cancelled: 'cancelled',
+  OrderStatus.NotConfirmed: 'not confirmed',
+};
