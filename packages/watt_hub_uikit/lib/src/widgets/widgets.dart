@@ -7,3 +7,5 @@ export 'popup/popup.dart';
 export 'date_picker/date_picker.dart';
 export 'carousel_slider/carousel_slider.dart';
 export 'calendar/calendar.dart';
+export 'modal_bottom_sheet/modal_bottom_sheet.dart';
+export 'rating/rating_bar.dart';
