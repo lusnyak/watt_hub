@@ -46,4 +46,5 @@ const _$OrderStatusEnumMap = {
   OrderStatus.Confirmed: 'confirmed',
   OrderStatus.Completed: 'completed',
   OrderStatus.Cancelled: 'cancelled',
+  OrderStatus.NotConfirmed: 'not confirmed',
 };
