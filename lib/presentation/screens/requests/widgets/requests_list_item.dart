@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watt_hub/domain/enums/order_status/order_status_enum.dart';
 import 'package:watt_hub/presentation/screens/requests/widgets/request_item_info.dart';
+import 'package:watt_hub/utils/extensions/extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class RequestsListItem extends StatelessWidget {
@@ -30,7 +31,6 @@ class RequestsListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shadowColor: statusColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -50,7 +50,11 @@ class RequestsListItem extends StatelessWidget {
                   ),
                 ],
               ),
-              Text('${status?.name}'),
+              WHChip(
+                label: '${status?.name}',
+                backgroundColor: statusColor,
+              ),
+              // Text('${status?.name}'),
             ],
           ),
           const Divider(),
@@ -67,24 +71,24 @@ class RequestsListItem extends StatelessWidget {
               ),
               const SizedBox(height: 60, child: VerticalDivider()),
               RequestItemInfo(
-                title: 'Max Power',
+                title: context.localized.maxPower,
                 subTitle: '$kw k W',
               ),
               const SizedBox(height: 60, child: VerticalDivider()),
               RequestItemInfo(
-                title: 'Duration',
-                subTitle: '${expectedHour?.toInt()} hour',
+                title: context.localized.duration,
+                subTitle: '${expectedHour?.toInt()} ${context.localized.hour}',
               ),
               const SizedBox(height: 60, child: VerticalDivider()),
               RequestItemInfo(
-                title: 'Amount',
+                title: context.localized.amount,
                 subTitle: '\$${cost?.toDouble()}',
               ),
             ],
           ),
           const Divider(),
           WHOutlinedButton(
-            title: 'View',
+            title: context.localized.view,
             onPressed: () {},
           )
         ],
