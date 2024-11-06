@@ -19,6 +19,8 @@ class RequestsGroupList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final requestsData = stationRequests ?? myRequestsData;
+    final isStationRequests = stationRequests != null ? true : false;
+
     return GroupedListView<OrderModel, String>(
       elements: requestsData ?? [],
       groupBy: (element) => element.status!.name,
@@ -37,6 +39,7 @@ class RequestsGroupList extends StatelessWidget {
           statusColor: element.status!.color,
           status: element.status,
           kw: element.station?.kwt,
+          isStationRequests: isStationRequests,
         );
       },
     ).paddingSymmetric(vertical: 20.h).expanded();
