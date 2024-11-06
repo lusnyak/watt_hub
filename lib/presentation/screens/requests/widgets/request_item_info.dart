@@ -26,7 +26,8 @@ class RequestItemInfo extends StatelessWidget {
               title ?? '',
               textAlign: TextAlign.center,
               style: body10RegularTextStyle.copyWith(
-                  color: WattHubColors.greyColor),
+                color: WattHubColors.greyColor,
+              ),
               overflow: TextOverflow.clip,
             ),
           ),
@@ -36,7 +37,7 @@ class RequestItemInfo extends StatelessWidget {
                 style: body12RegularTextStyle,
               ),
         ],
-      ).expanded(),
-    );
+      ),
+    ).expanded();
   }
 }
