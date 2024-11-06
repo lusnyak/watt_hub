@@ -29,6 +29,7 @@ class AppRouter extends RootStackRouter {
   List<AutoRoute> get routes => [
         // AutoRoute(page: AppLoadingRoute.page, initial: true),
         AutoRoute(page: AppLoadingRoute.page),
+
         // AutoRoute(page: SplashRoute.page),
         AutoRoute(page: UikitExampleRoute.page),
 
