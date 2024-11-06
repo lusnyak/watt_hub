@@ -66,7 +66,11 @@ class RequestsView extends StatelessWidget {
                       const Center(child: Text('Welcome to Requests!')),
                   error: (message) => Center(child: Text(message)),
                   loaded: (selectedOption, myRequests, stationRequests) =>
-                      RequestsGroupList(stationRequests: stationRequests),
+                      selectedOption == SegmentOption.my
+                          ? RequestsGroupList(stationRequests: stationRequests)
+                          : RequestsGroupList(
+                              myRequestsData: myRequests,
+                            ),
                   orElse: () => nil,
                 ),
             ],
