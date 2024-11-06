@@ -9,3 +9,5 @@ export 'carousel_slider/carousel_slider.dart';
 export 'image_picker/image_picker.dart';
 export 'calendar/calendar.dart';
 export 'chip/wh_chip.dart';
+export 'modal_bottom_sheet/modal_bottom_sheet.dart';
+export 'rating/rating_bar.dart';

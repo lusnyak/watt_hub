@@ -97,6 +97,26 @@ TextStyle get body18SemiBoldTextStyle => GoogleFonts.urbanist(
       fontSize: 18.sp,
       color: WattHubColors.primaryBlackColor,
     );
+//22 size
+TextStyle get body22RegularTextStyle => GoogleFonts.urbanist(
+      fontWeight: FontWeight.w400,
+      height: 25.0 / 24.0,
+      fontSize: 22.sp,
+      color: WattHubColors.primaryBlackColor,
+    );
+TextStyle get body22MediumTextStyle => GoogleFonts.urbanist(
+      fontWeight: FontWeight.w500,
+      height: 25.0 / 24.0,
+      fontSize: 22.sp,
+      color: WattHubColors.primaryBlackColor,
+    );
+
+TextStyle get body22SemiBoldTextStyle => GoogleFonts.urbanist(
+      fontWeight: FontWeight.w600,
+      height: 25.0 / 24.0,
+      fontSize: 22.sp,
+      color: WattHubColors.primaryBlackColor,
+    );
 
 /// 24 size
 TextStyle get body24RegularTextStyle => GoogleFonts.urbanist(
