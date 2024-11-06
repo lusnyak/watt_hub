@@ -238,4 +238,52 @@ final List<Map<String, dynamic>> ordersData = [
     },
     'reason': 'Waiting for arrival',
   },
+  {
+    'id': 17,
+    'order_time': '2024-10-15 14:00:00',
+    'expected_hour': 1,
+    'connector_type': {
+      'id': 17,
+      'title': 'Tesla Supercharger',
+    },
+    'comment': 'Arriving soon, please hold the station.',
+    'creator': {
+      'id': 17,
+      'full_name': 'Chris Green',
+      'phone_number': '+4567891230',
+      'email': 'chris.green@example.com',
+    },
+    'status': 'not confirmed',
+    'station': {
+      'id': 17,
+      'latitude': 37.7749,
+      'longitude': -122.4194,
+      'start_time': '2023-10-01 06:00:00',
+      'end_time': '2023-10-01 23:00:00',
+      'connector_type': [
+        {
+          'id': 17,
+          'title': 'Tesla Supercharger',
+        },
+      ],
+      'hourly_rate': 25,
+      'kwt': 80,
+      'phone_number': '+5678901234',
+      'name': 'San Francisco Charging Station',
+      'image': [
+        'https://example.com/station7.jpg',
+        'https://example.com/station8.jpg',
+      ],
+      'address': '101 Market St, San Francisco, CA',
+      'reviews': [],
+      'average_rate': 4.7,
+      'user': {
+        'id': 18,
+        'full_name': 'Sarah Johnson',
+        'phone_number': '+6543217890',
+        'email': 'sarah.johnson@example.com',
+      },
+    },
+    'reason': 'Waiting for arrival',
+  },
 ];

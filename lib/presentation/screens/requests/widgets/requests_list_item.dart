@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watt_hub/domain/enums/order_status/order_status_enum.dart';
 import 'package:watt_hub/presentation/screens/requests/widgets/request_item_info.dart';
+import 'package:watt_hub/presentation/screens/requests/widgets/requests_footer.dart';
 import 'package:watt_hub/utils/extensions/extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
@@ -16,6 +17,7 @@ class RequestsListItem extends StatelessWidget {
     this.statusColor,
     this.status,
     this.kw,
+    this.isStationRequests,
   });
 
   final String? address;
@@ -27,6 +29,7 @@ class RequestsListItem extends StatelessWidget {
   final Color? statusColor;
   final OrderStatus? status;
   final num? kw;
+  final bool? isStationRequests;
 
   @override
   Widget build(BuildContext context) {
@@ -87,10 +90,7 @@ class RequestsListItem extends StatelessWidget {
             ],
           ),
           const Divider(),
-          WHOutlinedButton(
-            title: context.localized.view,
-            onPressed: () {},
-          )
+          RequestsFooter(status: status, isStationRequests: isStationRequests)
         ],
       ).paddingAll(20.r),
     ).paddingSymmetric(vertical: 10.h);

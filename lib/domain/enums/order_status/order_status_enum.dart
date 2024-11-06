@@ -12,4 +12,7 @@ enum OrderStatus {
 
   @JsonValue('cancelled')
   Cancelled,
+
+  @JsonValue('not confirmed')
+  NotConfirmed
 }
