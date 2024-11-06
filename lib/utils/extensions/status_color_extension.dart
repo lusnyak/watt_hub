@@ -6,7 +6,7 @@ extension OrderStatusColor on OrderStatus {
   Color get color {
     switch (this) {
       case OrderStatus.Pending:
-        return WattHubColors.yellowColor;
+        return WattHubColors.orangeColor;
       case OrderStatus.Confirmed:
         return WattHubColors.blueColor;
       case OrderStatus.Completed:

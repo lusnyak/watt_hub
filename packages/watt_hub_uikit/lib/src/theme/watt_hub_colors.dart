@@ -15,4 +15,5 @@ abstract class WattHubColors {
   static const greyColor = Colors.grey;
   static const transparentColor = Colors.transparent;
   static const amberColor = Colors.amber;
+  static const orangeColor = Colors.orange;
 }
