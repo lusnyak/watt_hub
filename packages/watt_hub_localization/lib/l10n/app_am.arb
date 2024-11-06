@@ -29,7 +29,7 @@
    "rating": "Rating",
    "chooseCar": "Choos Car Type",
    "chooseConnector": "Choose Connector",
-  "chooseAddress":"Ընտրեք հասցե",
+  "chooseAddress":"Ընտրել հասցե",
   "timePicker":"Ժամանակ ընտրող",
   "startTime":"Մեկնարկի ժամանակը",
   "endTime":"Ավարտի ժամանակը",
@@ -45,7 +45,7 @@
    "error":"սխալ",
     "start":"սկիզբ",
     "end":"վերջ",
-    "flutterMap":"Flutter քարտեզ",
+    "flutterMap":"Ընտրել հասցե",
     "addressNotFound.":"Հասցեն չի գտնվել.",
     "noLocationSelected":"Ոչ մի տեղ ընտրված չէ: Խնդրում ենք սեղմել քարտեզի վրա."
 }

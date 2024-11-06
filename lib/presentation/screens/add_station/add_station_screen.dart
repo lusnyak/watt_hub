@@ -5,10 +5,10 @@ import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.
 import 'package:watt_hub/presentation/screens/add_station/widgets/add_station_preview_images.dart';
 import 'package:watt_hub/presentation/screens/add_station/widgets/image_picker_upload_button.dart';
 import 'package:watt_hub/utils/extensions/extensions.dart';
-import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../config/locator/service_locator.dart';
+import '../../../domain/models/connector_type/connector_type_model.dart';
 import '../../../utils/helpers/data_helper.dart';
 import '../../../utils/helpers/time_helper_format.dart';
 
@@ -18,11 +18,24 @@ class AddStationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) =>
+          getIt<AddStationBlock>()..add(const AddStationEvent.started()),
+      child: const AddStationView(),
+    );
+  }
+}
 
+class AddStationView extends StatelessWidget {
+  const AddStationView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    TimeOfDay time = const TimeOfDay(hour: 18, minute: 00);
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).addStation,
-            style: body18SemiBoldTextStyle),
+        title:
+            Text(context.localized.addStation, style: body18SemiBoldTextStyle),
         centerTitle: true,
         leading: IconButton(
           onPressed: () => AutoRouter.of(context).push(const ProfileRoute()),
@@ -37,52 +50,62 @@ class AddStationScreen extends StatelessWidget {
               loading: () => const Center(child: WHCircularSpin()),
               error: (message) =>
                   Center(child: Text('${context.localized.error}: $message')),
-              loaded: (connectors, initialSelectedConnectorId, images,
-                  startTime, endTime, address) {
+              loaded: (connectors,isSelected, selectedConnectors, selectedList, selected, initialSelectedConnectorId,
+                  images, startTime, endTime, address) {
                 final currentImages = images ?? [];
                 final initialSelectedConnector = findById(connectors,
                     initialSelectedConnectorId, (connector) => connector.id);
+
                 return SingleChildScrollView(
                   child: Form(
                     key: context.read<AddStationBlock>().formkey,
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                          minHeight: MediaQuery.of(context).size.height),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          WHElevatedButton.secondary(
-                            title: AppLocalizations.of(context).chooseAddress,
-                            onPressed: () async {
-                              final address = await context.router.push<String>(
-                                  const ChooseStationAddressRoute());
-                              if (address != null) {
-                                context
-                                    .read<AddStationBlock>()
-                                    .add(AddStationEvent.getAddress(address));
-                                debugPrint("Selected address: $address");
-                              } else {
-                                debugPrint("No address selected.");
-                              }
-                            },
-                          ),
-                          SizedBox(
-                            height: 5.h,
-                          ),
-                          Text(address ?? "", style: body14MediumTextStyle),
-                          SizedBox(
-                            height: 20.h,
-                          ),
-                          Text(AppLocalizations.of(context).timePicker,
-                              style: body18SemiBoldTextStyle),
-                          SizedBox(
-                            height: 5.h,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(
-                                child: WHOutlinedButton(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        WHElevatedButton.secondary(
+                          title: context.localized.chooseAddress,
+                          onPressed: () async {
+                            final address = await context.router.push<String>(
+                                const ChooseStationAddressRoute());
+                            if (address != null) {
+                              context
+                                  .read<AddStationBlock>()
+                                  .add(AddStationEvent.getAddress(address));
+                            } else {
+                              debugPrint("No address selected.");
+                            }
+                          },
+                        ),
+                        5.h.heightBox,
+                        Text(address ?? "", style: body14MediumTextStyle),
+                        20.h.heightBox,
+                        Text(context.localized.timePicker,
+                            style: body18SemiBoldTextStyle),
+                        5.h.heightBox,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: WHOutlinedButton(
+                                  onPressed: () {
+                                    WhDatePicker.of(context)
+                                        .showTimePicker(initialTime: time)
+                                        .then(
+                                      (newDate) {
+                                        if (newDate != null) {
+                                          final formattedTime =
+                                              formatTimeOfDay(newDate);
+                                          context.read<AddStationBlock>().add(
+                                              AddStationEvent.startTimeSelected(
+                                                  formattedTime));
+                                        }
+                                      },
+                                    );
+                                  },
+                                  title: startTime ?? context.localized.start),
+                            ),
+                            20.w.widthBox,
+                            WHOutlinedButton(
                                     onPressed: () {
                                       WhDatePicker.of(context)
                                           .showTimePicker(initialTime: time)
@@ -91,33 +114,6 @@ class AddStationScreen extends StatelessWidget {
                                           if (newDate != null) {
                                             final formattedTime =
                                                 formatTimeOfDay(newDate);
-                                            context.read<AddStationBlock>().add(
-                                                AddStationEvent
-                                                    .startTimeSelected(
-                                                        formattedTime));
-
-                                          }
-                                        },
-                                      );
-                                    },
-                                    title:
-                                        "${context.localized.start} - ${startTime ?? ""}"),
-
-                              ),
-                              SizedBox(
-                                width: 20.w,
-                              ),
-                              Expanded(
-                                child: WHOutlinedButton(
-                                    onPressed: () {
-                                      WhDatePicker.of(context)
-                                          .showTimePicker(initialTime: time)
-                                          .then(
-                                        (newDate) {
-                                          if (newDate != null) {
-                                            final formattedTime =
-                                                formatTimeOfDay(newDate);
-
                                             context.read<AddStationBlock>().add(
                                                 AddStationEvent.endTimeSelected(
                                                     formattedTime));
@@ -125,103 +121,126 @@ class AddStationScreen extends StatelessWidget {
                                         },
                                       );
                                     },
-                                    title:
-                                        "${context.localized.end}-  ${endTime ?? ""}"),
-
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 10.h),
-                          WhDropDownButton(
-                            items: connectors,
-                            itemLabel: (connector) => connector.title,
-                            onChanged: (value) {
-                              if (value != null) {
-                                context.read<AddStationBlock>().add(
-                                    AddStationEvent.connectorTypeChangedEvent(
-                                        value));
-                              }
-                            },
-                            hintText: context.localized.chooseConnector,
-                            value: initialSelectedConnector,
-                          ),
-                          WHTextField.singleLine(
-                            controller: context
-                                .read<AddStationBlock>()
-                                .hourlyRateController,
-                            keyboardType: TextInputType.number,
-                            label: AppLocalizations.of(context).hourlyRate,
-                            hintText: AppLocalizations.of(context).hourlyRate,
-                          ),
-                          WHTextField.singleLine(
-                            controller: context
-                                .read<AddStationBlock>()
-                                .kilowattController,
-                            keyboardType: TextInputType.number,
-                            label: AppLocalizations.of(context).kilowatt,
-                            hintText: AppLocalizations.of(context).kilowatt,
-                          ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
-                          Text(AppLocalizations.of(context).contactInfo,
-                              style: body18SemiBoldTextStyle),
-                          WHTextField.singleLine(
-                            controller:
-                                context.read<AddStationBlock>().phoneController,
-                            keyboardType: TextInputType.phone,
-                            label: AppLocalizations.of(context).phone,
-                            hintText:
-                                AppLocalizations.of(context).yourPhoneNumber,
-                          ),
-                          WHTextField.singleLine(
-                            controller:
-                                context.read<AddStationBlock>().nameController,
-
-                            keyboardType: TextInputType.name,
-                            label: AppLocalizations.of(context).name,
-                            hintText: AppLocalizations.of(context).yourName,
-                          ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(AppLocalizations.of(context).stationImage,
-                                  style: body18SemiBoldTextStyle),
-                              if (currentImages.length < 5)
-                                WHImagePicker.multiple(
-                                  limit: 5 - currentImages.length,
-                                  onPicked: (file) {
+                                    title: endTime ?? context.localized.end)
+                                .expanded(),
+                          ],
+                        ),
+                        10.h.heightBox,
+                        WhMultiSelectDropDownButton(
+                          onTab: (connector) {
+                            context.read<AddStationBlock>().add(
+                                  AddStationEvent
+                                      .connectorMultiTypeChangedEvent(connector),
+                                );
+                          },
+                          items: connectors,
+                          hintText: context.localized.chooseConnector,
+                          itemLabel: (connector) => connector.title!,
+                          selectedItems: selectedList,
+                          isSelected:isSelected
+                        ),
+                        Wrap(
+                          spacing: 8.0,
+                          runSpacing: 4.0,
+                          children: [
+                            if (selectedList != [])
+                              for (var item in selectedList)
+                                Chip(
+                                  onDeleted: () {
                                     context.read<AddStationBlock>().add(
-                                        AddStationEvent.imagesSelected(file));
+                                          AddStationEvent
+                                              .deleteSelectedConnector(
+                                                  connector: item),
+                                        );
                                   },
-                                  child: const ImagePickerUploadButton(),
+                                  deleteIcon:
+                                      const Icon(Icons.dangerous_outlined),
+                                  label: Text(item.title ?? ""),
+                                  backgroundColor: Colors.blueAccent,
                                 ),
-                            ],
-                          ),
-                          if (currentImages.isNotEmpty)
-                            SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                height: 120.h,
-                                child: const Row(
-                                  children: [
-                                    Expanded(child: AddStationPreviewImages()),
-                                  ],
-                                ),
+                          ],
+                        ),
+                        WhDropDownButton(
+                          items: connectors,
+                          itemLabel: (connector) => connector.title!,
+                          onChanged: (value) {
+                            if (value != null) {
+                              context.read<AddStationBlock>().add(
+                                  AddStationEvent.connectorTypeChangedEvent(
+                                      value));
+                            }
+                          },
+                          hintText: context.localized.chooseConnector,
+                          value: initialSelectedConnector,
+                        ),
+                        WHTextField.singleLine(
+                          controller: context
+                              .read<AddStationBlock>()
+                              .hourlyRateController,
+                          keyboardType: TextInputType.number,
+                          label: context.localized.hourlyRate,
+                          hintText: context.localized.hourlyRate,
+                        ),
+                        WHTextField.singleLine(
+                          controller: context
+                              .read<AddStationBlock>()
+                              .kilowattController,
+                          keyboardType: TextInputType.number,
+                          label: context.localized.kilowatt,
+                          hintText: context.localized.kilowatt,
+                        ),
+                        20.h.heightBox,
+                        Text(context.localized.contactInfo,
+                            style: body18SemiBoldTextStyle),
+                        WHTextField.singleLine(
+                          controller:
+                              context.read<AddStationBlock>().phoneController,
+                          keyboardType: TextInputType.phone,
+                          label: context.localized.phone,
+                          hintText: context.localized.yourPhoneNumber,
+                        ),
+                        WHTextField.singleLine(
+                          controller:
+                              context.read<AddStationBlock>().nameController,
+                          keyboardType: TextInputType.name,
+                          label: context.localized.name,
+                          hintText: context.localized.yourName,
+                        ),
+                        20.h.heightBox,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(context.localized.stationImage,
+                                style: body18SemiBoldTextStyle),
+                            if (currentImages.length < 5)
+                              WHImagePicker.multiple(
+                                limit: 5 - currentImages.length,
+                                onPicked: (file) {
+                                  context.read<AddStationBlock>().add(
+                                      AddStationEvent.imagesSelected(file));
+                                },
+                                child: const ImagePickerUploadButton(),
+                              ),
+                          ],
+                        ),
+                        if (currentImages.isNotEmpty)
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              height: 120.h,
+                              child: const Row(
+                                children: [
+                                  Expanded(child: AddStationPreviewImages()),
+                                ],
                               ),
                             ),
-                          SizedBox(
-                            height: 20.h,
                           ),
-                          WHElevatedButton.primary(
-                            title: AppLocalizations.of(context).addStation,
-                          ),
-                        ],
-                      ),
+                        20.h.heightBox,
+                        WHElevatedButton.primary(
+                          title: context.localized.addStation,
+                        ),
+                      ],
                     ),
                   ),
                 );

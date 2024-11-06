@@ -54,7 +54,7 @@
   "error":"Error",
   "start":"Start",
   "end":"End",
-  "flutterMap":"Flutter Map",
+  "flutterMap":"Choose location",
   "addressNotFound":"Address not found.",
   "noLocationSelected":"No location selected. Please tap on the map."
 }

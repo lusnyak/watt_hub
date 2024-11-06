@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class WHImagePicker extends StatelessWidget {

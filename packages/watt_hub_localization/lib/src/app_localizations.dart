@@ -419,7 +419,7 @@ abstract class AppLocalizations {
   /// No description provided for @flutterMap.
   ///
   /// In en, this message translates to:
-  /// **'Flutter Map'**
+  /// **'Choose location'**
   String get flutterMap;
 
   /// No description provided for @addressNotFound.

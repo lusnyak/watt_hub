@@ -14,10 +14,11 @@ class AddStationPreviewImages extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.watch<AddStationBlock>().state;
     return state.maybeWhen(
-      loaded: (connectors, ni, images, startTime, endTime,address) {
+      loaded: (connectors,isSelected, selectedConnectors, selectedList, selected, initialSelectedConnectorId,
+          images, startTime, endTime, address) {
         if (images != null && images.isNotEmpty) {
           return SizedBox(
-            height: 100,
+            height: 100.h,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: images.length,
@@ -50,11 +51,11 @@ class AddStationPreviewImages extends StatelessWidget {
             ),
           );
         } else {
-          return const SizedBox(); // Return an empty SizedBox if there are no images
+          return const SizedBox();
         }
       },
       orElse: () =>
-      const SizedBox(), // Return an empty SizedBox in case of other states
+      const SizedBox(),
     );
   }
 

@@ -169,7 +169,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get end => 'End';
 
   @override
-  String get flutterMap => 'Flutter Map';
+  String get flutterMap => 'Choose location';
 
   @override
   String get addressNotFound => 'Address not found.';

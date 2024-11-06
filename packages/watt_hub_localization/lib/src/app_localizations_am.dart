@@ -128,7 +128,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get chooseConnector => 'Choose Connector';
 
   @override
-  String get chooseAddress => 'Ընտրեք հասցե';
+  String get chooseAddress => 'Ընտրել հասցե';
 
   @override
   String get timePicker => 'Ժամանակ ընտրող';
@@ -170,7 +170,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get end => 'վերջ';
 
   @override
-  String get flutterMap => 'Flutter քարտեզ';
+  String get flutterMap => 'Ընտրել հասցե';
 
   @override
   String get addressNotFound => 'Address not found.';

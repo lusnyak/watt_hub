@@ -13,7 +13,6 @@ part 'add_station_state.dart';
 
 part 'add_station_bloc.freezed.dart';
 
-
 @injectable
 class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
   final TextEditingController nameController = TextEditingController();
@@ -21,16 +20,18 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
   final TextEditingController hourlyRateController = TextEditingController();
   final TextEditingController kilowattController = TextEditingController();
   final formkey = GlobalKey<FormState>();
-
   AddStationBlock() : super(const AddStationState.initial()) {
+    final connectors = connectorsData
+        .map((connectorJson) => ConnectorTypeModel.fromJson(connectorJson))
+        .toList();
+
     on<AddStationEvent>((event, emit) async {
       await event.map(
         started: (_) async {
           emit(const AddStationState.loading());
           try {
             await Future.delayed(const Duration(seconds: 2));
-            emit(const AddStationState.loaded());
-
+            emit(AddStationState.loaded(connectors,false));
           } catch (e) {
             emit(AddStationState.error(e.toString()));
           }
@@ -40,11 +41,10 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
           if (currentState is _LoadedState) {
             final updatedImages = List<File>.from(currentState.images ?? [])
               ..addAll(e.images);
-            emit(AddStationState.loaded(images: updatedImages));
+            emit(currentState.copyWith(
+                images: updatedImages, connectors: currentState.connectors));
           } else {
-            emit(AddStationState.loaded(images: e.images));
-
-
+            emit(AddStationState.loaded(images: e.images, connectors,false));
           }
         },
         removeImage: (e) async {
@@ -53,17 +53,15 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
             final updatedImages = List<File>.from(loadedState.images ?? []);
             if (e.index >= 0 && e.index < updatedImages.length) {
               updatedImages.removeAt(e.index);
-              emit(AddStationState.loaded(images: updatedImages));
+              emit(loadedState.copyWith(
+                  images: updatedImages, connectors: connectors));
             }
           }
         },
-
-
-        getAddress: (e)async{
-          if(state is _LoadedState){
+        getAddress: (e) async {
+          if (state is _LoadedState) {
             final currentState = state as _LoadedState;
-            emit(currentState.copyWith(
-                address:e.address));
+            emit(currentState.copyWith(address: e.address));
           }
         },
         connectorTypeChangedEvent: (e) async {
@@ -85,15 +83,36 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
             emit(currentState.copyWith(endTime: e.endTime));
           }
         },
-        createStation: (e) {
+        createStation: (_CreateStationEvent value) {},
+
+        connectorMultiTypeChangedEvent: (e) async {
           if (state is _LoadedState) {
             final currentState = state as _LoadedState;
-            final createStationData = (
+            final selectedList = List<ConnectorTypeModel>.from(currentState.selectedList ?? []);
 
+           final isSelected =  selectedList.contains(e.selected);
+            if (isSelected) {
+              selectedList.remove(e.selected);
+            } else {
+              selectedList.add(e.selected);
+            }
+            emit(
+              currentState.copyWith(
+                selectedList: selectedList,
+                  isSelected:isSelected
+              ),
             );
           }
         },
 
+        deleteSelectedConnector: (e) async {
+          if (state is _LoadedState) {
+            final currentState = state as _LoadedState;
+            final updatedSelected = List<ConnectorTypeModel>.from(currentState.selectedList ?? []);;
+            updatedSelected.remove(e.connector);
+            emit(currentState.copyWith(selectedList: updatedSelected));
+          }
+        },
       );
     });
   }
