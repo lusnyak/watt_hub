@@ -16,19 +16,52 @@ class WHCalendar extends StatefulWidget {
   final DateTime? lastDate;
   final DateTime? selectedDate;
 
-  final Function(DateTime selectedDate, DateTime focusedDate) onDaySelected;
+  final Function(DateTime selectedDate) onDaySelected;
 
   @override
   State<WHCalendar> createState() => _WHCalendarState();
 }
 
 class _WHCalendarState extends State<WHCalendar> {
-  final CalendarFormat _calendarFormat = CalendarFormat.month;
-  DateTime focusedDay = DateTime.now();
-  DateTime selectedDay = DateTime.now();
+  PageController calendarController = PageController();
+  DateTime? focusedDay;
+  DateTime? selectedDay;
 
-  bool isSameMonth(DateTime date1, DateTime date2) {
-    return date1.year == date2.year && date1.month == date2.month;
+  @override
+  void initState() {
+    super.initState();
+    selectedDay = widget.selectedDate;
+  }
+
+  @override
+  void didUpdateWidget(covariant WHCalendar oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    selectedDay = widget.selectedDate;
+    if (mounted) setState(() {});
+  }
+
+  void _handleNextMonth() {
+    calendarController.nextPage(
+      duration: const Duration(milliseconds: 200),
+      curve: Curves.ease,
+    );
+  }
+
+  void _handlePreviousMonth() {
+    calendarController.previousPage(
+      duration: const Duration(milliseconds: 200),
+      curve: Curves.ease,
+    );
+  }
+
+  void onDaySelected(sDay, fDay) {
+    if (mounted) {
+      setState(() {
+        selectedDay = sDay;
+        focusedDay = fDay;
+      });
+    }
+    widget.onDaySelected.call(selectedDay!);
   }
 
   @override
@@ -36,36 +69,29 @@ class _WHCalendarState extends State<WHCalendar> {
     return Container(
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
-        color: WattHubColors.lightGrayColor,
+        color: WattHubColors.lighterGrayColor,
         border: Border.all(
           color: WattHubColors.lighterGrayColor,
-          width: 1.w,
+          width: 1.0,
         ),
         borderRadius: BorderRadius.circular(20.r),
       ),
       child: TableCalendar(
         rangeSelectionMode: RangeSelectionMode.disabled,
-        focusedDay: focusedDay,
         firstDay: widget.firstDate ?? DateTime.now(),
         lastDay: widget.lastDate ?? DateTime.utc(2030, 12, 31),
-        availableCalendarFormats: const {
-          CalendarFormat.month: 'Month',
+        focusedDay: focusedDay ?? DateTime.now(),
+        onCalendarCreated: (controller) {
+          calendarController = controller;
         },
         selectedDayPredicate: (day) {
           return isSameDay(widget.selectedDate, day);
         },
-        onDaySelected: (selectedDay, focusedDay) {
-          widget.onDaySelected(selectedDay, focusedDay);
-          setState(() {
-            this.focusedDay = selectedDay;
-          });
-        },
-        calendarFormat: _calendarFormat,
+        onDaySelected: onDaySelected,
+        calendarFormat: CalendarFormat.month,
         calendarStyle: CalendarStyle(
           outsideDaysVisible: false,
-          todayTextStyle: body12MediumTextStyle.copyWith(
-            color: WattHubColors.lighterGrayColor,
-          ),
+          todayTextStyle: body12MediumTextStyle,
           todayDecoration: const BoxDecoration(
             color: WattHubColors.primaryLightGreenColor,
             shape: BoxShape.circle,
@@ -75,10 +101,12 @@ class _WHCalendarState extends State<WHCalendar> {
             shape: BoxShape.circle,
           ),
         ),
-        onPageChanged: (focusedDay) {
-          setState(() {
-            this.focusedDay = focusedDay;
-          });
+        onPageChanged: (date) {
+          if (mounted) {
+            setState(() {
+              focusedDay = date;
+            });
+          }
         },
         calendarBuilders: CalendarBuilders(
           headerTitleBuilder: (context, date) {
@@ -88,45 +116,20 @@ class _WHCalendarState extends State<WHCalendar> {
                 Text(
                   DateFormat.yMMMM().format(date),
                   style: body18SemiBoldTextStyle,
-                ),
+                ).expanded(),
                 10.w.widthBox,
                 Row(
                   children: [
-                    IconButton(
-                      icon: const Icon(Icons.chevron_left),
-                      onPressed: () {
-                        DateTime firstDate = widget.firstDate ?? DateTime.now();
-                        DateTime previousFocusedDate = DateTime(
-                          focusedDay.year,
-                          focusedDay.month - 1,
-                        );
-                        if (previousFocusedDate.isAfter(firstDate)) {
-                          setState(() {
-                            focusedDay = previousFocusedDate;
-                          });
-                        }
-                      },
+                    InkWell(
+                      radius: 30.r,
+                      onTap: _handlePreviousMonth,
+                      child: const Icon(Icons.chevron_left),
                     ),
-                    IconButton(
-                      icon: const Icon(
-                        Icons.chevron_right,
-                        color: WattHubColors.primaryGreenColor,
-                      ),
-                      onPressed: () {
-                        DateTime lastDate =
-                            widget.lastDate ?? DateTime.utc(2030, 12, 31);
-                        DateTime nextFocusedDay = DateTime(
-                          focusedDay.year,
-                          focusedDay.month + 1,
-                        );
-
-                        if (nextFocusedDay.isBefore(lastDate) ||
-                            isSameMonth(nextFocusedDay, lastDate)) {
-                          setState(() {
-                            focusedDay = nextFocusedDay;
-                          });
-                        }
-                      },
+                    10.w.widthBox,
+                    InkWell(
+                      radius: 30.r,
+                      onTap: _handleNextMonth,
+                      child: const Icon(Icons.chevron_right),
                     ),
                   ],
                 ),
@@ -135,16 +138,15 @@ class _WHCalendarState extends State<WHCalendar> {
           },
         ),
         headerStyle: HeaderStyle(
-          titleCentered: true,
           leftChevronVisible: false,
           rightChevronVisible: false,
-          headerPadding: EdgeInsets.only(
-            bottom: 4.h,
-          ),
+          headerPadding: EdgeInsets.only(bottom: 10.h),
+          formatButtonVisible: false,
+          headerMargin: EdgeInsets.only(bottom: 10.h),
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
-                color: WattHubColors.lighterGrayColor,
+                color: WattHubColors.lightGrayColor,
                 width: 2.w,
               ),
             ),

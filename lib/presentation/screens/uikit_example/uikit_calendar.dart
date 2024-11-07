@@ -19,7 +19,7 @@ class _UikitCalendarState extends State<UikitCalendar> {
         children: [
           WHCalendar(
             selectedDate: _selectedDay,
-            onDaySelected: (selectedDate, focusedDate) {
+            onDaySelected: (selectedDate) {
               setState(() {
                 _selectedDay = selectedDate;
               });
