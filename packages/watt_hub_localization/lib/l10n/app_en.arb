@@ -91,5 +91,12 @@
   "cost": "Cost",
   "maxPower": "Max Power",
   "duration": "Duration",
-  "amount": "Amount"
+  "amount": "Amount",
+  "accept": "Accept",
+  "decline": "Decline",
+  "cancel": "Cancel",
+  "start": "Start",
+  "canceled": "Canceled",
+  "finished": "Finished",
+  "pending": "Pending"
 }

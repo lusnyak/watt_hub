@@ -238,4 +238,25 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get amount => 'Գումարը';
+
+  @override
+  String get accept => 'Ընդունել';
+
+  @override
+  String get decline => 'Մերժել';
+
+  @override
+  String get cancel => 'Չեղարկել';
+
+  @override
+  String get start => 'Սկսել';
+
+  @override
+  String get canceled => 'Չեղարկված';
+
+  @override
+  String get finished => 'Ավարտված';
+
+  @override
+  String get pending => 'Սպասման մեջ';
 }
