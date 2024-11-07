@@ -49,7 +49,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         currentLocation: location,
       ));
     } catch (e) {
-      emit(const HomeState.error("Failed to load stations"));
+      emit(HomeState.error("Failed to load stations - $e"));
     }
   }
 

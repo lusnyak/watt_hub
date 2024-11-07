@@ -34,6 +34,9 @@ class $AssetsImagesGen {
   AssetGenImage get popupSuccessfulImg =>
       const AssetGenImage('assets/images/popup_successful_img.png');
 
+  /// File path: assets/images/profile_image.png
+  AssetGenImage get profileImage => const AssetGenImage('assets/images/profile_image.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         logo,
@@ -41,7 +44,8 @@ class $AssetsImagesGen {
         onboardingSecondImg,
         onboardingThirdImg,
         popupLocationImg,
-        popupSuccessfulImg
+        popupSuccessfulImg,
+        profileImage
       ];
 }
 
@@ -85,7 +89,7 @@ class AssetGenImage {
     ImageRepeat repeat = ImageRepeat.noRepeat,
     Rect? centerSlice,
     bool matchTextDirection = false,
-    bool gaplessPlayback = false,
+    bool gaplessPlayback = true,
     bool isAntiAlias = false,
     @Deprecated('Do not specify package for a generated library asset') String? package = package,
     FilterQuality filterQuality = FilterQuality.low,
