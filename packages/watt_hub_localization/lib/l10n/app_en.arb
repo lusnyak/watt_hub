@@ -50,5 +50,9 @@
   "availableHours": "Available hours:",
   "connectorType": "Connector Type",
   "contact": "Contact",
-  "select": "Select"
+  "select": "Select",
+  "leave_review":"Leave a review",
+  "rating_bar_title": "Tap a star to rate",
+  "submit": "Submit",
+  "review_title": "Write a review"
 }

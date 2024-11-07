@@ -409,6 +409,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select'**
   String get select;
+
+  /// No description provided for @leave_review.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave a review'**
+  String get leave_review;
+
+  /// No description provided for @rating_bar_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a star to rate'**
+  String get rating_bar_title;
+
+  /// No description provided for @submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submit;
+
+  /// No description provided for @review_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a review'**
+  String get review_title;
 }
 
 class _AppLocalizationsDelegate
