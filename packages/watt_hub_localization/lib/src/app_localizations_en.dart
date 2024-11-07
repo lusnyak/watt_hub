@@ -152,4 +152,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get amount => 'Amount';
+
+  @override
+  String get accept => 'Accept';
+
+  @override
+  String get decline => 'Decline';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get start => 'Start';
+
+  @override
+  String get canceled => 'Canceled';
+
+  @override
+  String get finished => 'Finished';
+
+  @override
+  String get pending => 'Pending';
 }
