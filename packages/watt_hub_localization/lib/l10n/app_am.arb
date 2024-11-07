@@ -16,7 +16,6 @@
   "pleaseEnterEmail": "Խնդրում ենք մուտքագրել էլ․փոստ",
   "pleaseEnterAValidEmail": "Խնդրում ենք մուտքագրել վավեր էլ․փոստի հասցե",
    "home": "Home",
-   "requests": "Requests",
    "profile": "Profile",
    "noData": "No Data",
    "reviews": "reviews",
@@ -83,9 +82,16 @@
   "accept": "Ընդունել",
   "decline": "Մերժել",
   "cancel": "Չեղարկել",
-  "start": "Սկսել",
   "canceled": "Չեղարկված",
   "finished": "Ավարտված",
   "pending": "Սպասման մեջ",
-  "unknown": "Անհայտ"
+  "unknown": "Անհայտ",
+
+  "leave_review": "Թողնել մեկնաբանություն",
+  "rating_bar_title": "Հպեք աստղին՝ գնահատելու համար",
+  "submit": "Հաստատել",
+  "review_title": "Գրել ակնարկ"
+
+
+
 }

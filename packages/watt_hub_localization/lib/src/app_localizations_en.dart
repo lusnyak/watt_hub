@@ -58,6 +58,72 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pleaseEnterAValidEmail => 'Please enter a valid email';
 
   @override
+  String get account => 'Account';
+
+  @override
+  String get myCar => 'My Car';
+
+  @override
+  String get myStation => 'My Station';
+
+  @override
+  String get helpCenter => 'Help Center';
+
+  @override
+  String get about => 'About';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get fullName => 'Full Name';
+
+  @override
+  String get phone => 'Phone Number';
+
+  @override
+  String get personalInfo => 'Personal Info';
+
+  @override
+  String get stationInfo => 'Station Info';
+
+  @override
+  String get carInfo => 'Car Info';
+
+  @override
+  String get max => 'Max';
+
+  @override
+  String get hourlyRateFull => 'Hourly Rate';
+
+  @override
+  String get location => 'Location';
+
+  @override
+  String get street => 'Street:';
+
+  @override
+  String get navigate => 'Navigate';
+
+  @override
+  String get shareLocation => 'Share Location';
+
+  @override
+  String get serviceInformation => 'Service Information';
+
+  @override
+  String get availableHours => 'Available hours:';
+
+  @override
+  String get connectorType => 'Connector Type';
+
+  @override
+  String get contact => 'Contact';
+
+  @override
+  String get select => 'Select';
+
+  @override
   String get home => 'Home';
 
   @override
@@ -97,75 +163,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get chooseConnector => 'Choose Connector';
 
   @override
-  String get account => 'Account';
-
-  @override
-  String get myCar => 'My Car';
-
-  @override
-  String get myStation => 'My Station';
-
-  @override
-  String get helpCenter => 'Help Center';
-
-  @override
-  String get about => 'About';
-
-  @override
-  String get logout => 'Logout';
-
-  @override
-  String get fullName => 'Full Name';
-
-  @override
-  String get phone => 'Phone';
-
-  @override
-  String get personalInfo => 'Personal Info';
-
-  @override
-  String get stationInfo => 'Station Info';
-
-  @override
-  String get carInfo => 'Car Info';
-
-  @override
-  String get name => 'Name';
-
-  @override
-  String get max => 'Max';
-
-  @override
-  String get hourlyRateFull => 'Hourly Rate';
-
-  @override
-  String get location => 'Location';
-
-  @override
-  String get street => 'Street:';
-
-  @override
-  String get navigate => 'Navigate';
-
-  @override
-  String get shareLocation => 'Share Location';
-
-  @override
-  String get serviceInformation => 'Service Information';
-
-  @override
-  String get availableHours => 'Available hours:';
-
-  @override
-  String get connectorType => 'Connector Type';
-
-  @override
-  String get contact => 'Contact';
-
-  @override
-  String get select => 'Select';
-
-  @override
   String get chooseAddress => 'Choose an address';
 
   @override
@@ -182,6 +179,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get yourPhoneNumber => 'Enter your phone number';
+
+  @override
+  String get name => 'Name';
 
   @override
   String get yourName => 'Enter your name';
@@ -258,4 +258,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get unknown => 'Unknown';
+
+  @override
+  String get leave_review => 'Leave a review';
+
+  @override
+  String get rating_bar_title => 'Tap a star to rate';
+
+  @override
+  String get submit => 'Submit';
+
+  @override
+  String get review_title => 'Write a review';
 }

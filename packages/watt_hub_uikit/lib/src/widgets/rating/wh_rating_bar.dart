@@ -12,6 +12,7 @@ class WHRatingBar extends StatelessWidget {
     this.allowHalfRating = false,
     this.color = Colors.amber,
     this.icon = Icons.star_rate_rounded,
+    required this.onRatingUpdate,
   });
   final double initialRating;
   final double minRating;
@@ -21,6 +22,7 @@ class WHRatingBar extends StatelessWidget {
   final bool allowHalfRating;
   final Color color;
   final IconData icon;
+  final Function(double) onRatingUpdate;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class WHRatingBar extends StatelessWidget {
         color: color,
       ),
       onRatingUpdate: (rating) {
-        print(rating);
+        onRatingUpdate(rating);
       },
     );
   }

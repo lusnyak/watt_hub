@@ -194,6 +194,138 @@ abstract class AppLocalizations {
   /// **'Please enter a valid email'**
   String get pleaseEnterAValidEmail;
 
+  /// No description provided for @account.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
+
+  /// No description provided for @myCar.
+  ///
+  /// In en, this message translates to:
+  /// **'My Car'**
+  String get myCar;
+
+  /// No description provided for @myStation.
+  ///
+  /// In en, this message translates to:
+  /// **'My Station'**
+  String get myStation;
+
+  /// No description provided for @helpCenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Help Center'**
+  String get helpCenter;
+
+  /// No description provided for @about.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get about;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logout;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phone;
+
+  /// No description provided for @personalInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal Info'**
+  String get personalInfo;
+
+  /// No description provided for @stationInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Station Info'**
+  String get stationInfo;
+
+  /// No description provided for @carInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Car Info'**
+  String get carInfo;
+
+  /// No description provided for @max.
+  ///
+  /// In en, this message translates to:
+  /// **'Max'**
+  String get max;
+
+  /// No description provided for @hourlyRateFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Hourly Rate'**
+  String get hourlyRateFull;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @street.
+  ///
+  /// In en, this message translates to:
+  /// **'Street:'**
+  String get street;
+
+  /// No description provided for @navigate.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigate'**
+  String get navigate;
+
+  /// No description provided for @shareLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Location'**
+  String get shareLocation;
+
+  /// No description provided for @serviceInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Service Information'**
+  String get serviceInformation;
+
+  /// No description provided for @availableHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Available hours:'**
+  String get availableHours;
+
+  /// No description provided for @connectorType.
+  ///
+  /// In en, this message translates to:
+  /// **'Connector Type'**
+  String get connectorType;
+
+  /// No description provided for @contact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact'**
+  String get contact;
+
+  /// No description provided for @select.
+  ///
+  /// In en, this message translates to:
+  /// **'Select'**
+  String get select;
+
   /// No description provided for @home.
   ///
   /// In en, this message translates to:
@@ -272,144 +404,6 @@ abstract class AppLocalizations {
   /// **'Choose Connector'**
   String get chooseConnector;
 
-  /// No description provided for @account.
-  ///
-  /// In en, this message translates to:
-  /// **'Account'**
-  String get account;
-
-  /// No description provided for @myCar.
-  ///
-  /// In en, this message translates to:
-  /// **'My Car'**
-  String get myCar;
-
-  /// No description provided for @myStation.
-  ///
-  /// In en, this message translates to:
-  /// **'My Station'**
-  String get myStation;
-
-  /// No description provided for @helpCenter.
-  ///
-  /// In en, this message translates to:
-  /// **'Help Center'**
-  String get helpCenter;
-
-  /// No description provided for @about.
-  ///
-  /// In en, this message translates to:
-  /// **'About'**
-  String get about;
-
-  /// No description provided for @logout.
-  ///
-  /// In en, this message translates to:
-  /// **'Logout'**
-  String get logout;
-
-  /// No description provided for @fullName.
-  ///
-  /// In en, this message translates to:
-  /// **'Full Name'**
-  String get fullName;
-
-  /// No description provided for @phone.
-  ///
-  /// In en, this message translates to:
-  /// **'Phone'**
-  String get phone;
-
-  /// No description provided for @personalInfo.
-  ///
-  /// In en, this message translates to:
-  /// **'Personal Info'**
-  String get personalInfo;
-
-  /// No description provided for @stationInfo.
-  ///
-  /// In en, this message translates to:
-  /// **'Station Info'**
-  String get stationInfo;
-
-  /// No description provided for @carInfo.
-  ///
-  /// In en, this message translates to:
-  /// **'Car Info'**
-  String get carInfo;
-
-  /// No description provided for @name.
-  ///
-  /// In en, this message translates to:
-  /// **'Name'**
-  String get name;
-
-  /// No description provided for @max.
-  ///
-  /// In en, this message translates to:
-  /// **'Max'**
-  String get max;
-
-  /// No description provided for @hourlyRateFull.
-  ///
-  /// In en, this message translates to:
-  /// **'Hourly Rate'**
-  String get hourlyRateFull;
-
-  /// No description provided for @location.
-  ///
-  /// In en, this message translates to:
-  /// **'Location'**
-  String get location;
-
-  /// No description provided for @street.
-  ///
-  /// In en, this message translates to:
-  /// **'Street:'**
-  String get street;
-
-  /// No description provided for @navigate.
-  ///
-  /// In en, this message translates to:
-  /// **'Navigate'**
-  String get navigate;
-
-  /// No description provided for @shareLocation.
-  ///
-  /// In en, this message translates to:
-  /// **'Share Location'**
-  String get shareLocation;
-
-  /// No description provided for @serviceInformation.
-  ///
-  /// In en, this message translates to:
-  /// **'Service Information'**
-  String get serviceInformation;
-
-  /// No description provided for @availableHours.
-  ///
-  /// In en, this message translates to:
-  /// **'Available hours:'**
-  String get availableHours;
-
-  /// No description provided for @connectorType.
-  ///
-  /// In en, this message translates to:
-  /// **'Connector Type'**
-  String get connectorType;
-
-  /// No description provided for @contact.
-  ///
-  /// In en, this message translates to:
-  /// **'Contact'**
-  String get contact;
-
-  /// No description provided for @select.
-  ///
-  /// In en, this message translates to:
-  /// **'Select'**
-  String get select;
-
   /// No description provided for @chooseAddress.
   ///
   /// In en, this message translates to:
@@ -445,6 +439,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter your phone number'**
   String get yourPhoneNumber;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
 
   /// No description provided for @yourName.
   ///
@@ -595,6 +595,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unknown'**
   String get unknown;
+
+  /// No description provided for @leave_review.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave a review'**
+  String get leave_review;
+
+  /// No description provided for @rating_bar_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a star to rate'**
+  String get rating_bar_title;
+
+  /// No description provided for @submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submit;
+
+  /// No description provided for @review_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a review'**
+  String get review_title;
 }
 
 class _AppLocalizationsDelegate

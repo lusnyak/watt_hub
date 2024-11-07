@@ -59,6 +59,72 @@ class AppLocalizationsAm extends AppLocalizations {
       'Խնդրում ենք մուտքագրել վավեր էլ․փոստի հասցե';
 
   @override
+  String get account => 'Հաշիվ';
+
+  @override
+  String get myCar => 'Իմ մեքենան';
+
+  @override
+  String get myStation => 'Իմ կայանը';
+
+  @override
+  String get helpCenter => 'Օգնություն';
+
+  @override
+  String get about => 'WattHub-ի մասին';
+
+  @override
+  String get logout => 'Դուրս գալ';
+
+  @override
+  String get fullName => 'Անուն Ազգանուն';
+
+  @override
+  String get phone => 'Հեռախոսահամար';
+
+  @override
+  String get personalInfo => 'Անձնական տվյալներ';
+
+  @override
+  String get stationInfo => 'Կայանի տվյալներ';
+
+  @override
+  String get carInfo => 'Մեքենայի տվյալներ';
+
+  @override
+  String get max => 'Մաքս:';
+
+  @override
+  String get hourlyRateFull => 'Ժամավճար';
+
+  @override
+  String get location => 'Գտնվելու վայրը';
+
+  @override
+  String get street => 'Փողոց:';
+
+  @override
+  String get navigate => 'Նավարկել';
+
+  @override
+  String get shareLocation => 'Կիսվել վայրով';
+
+  @override
+  String get serviceInformation => 'Ծառայության տեղեկատվություն';
+
+  @override
+  String get availableHours => 'Հասանելի ժամեր:';
+
+  @override
+  String get connectorType => 'Միակցիչի տեսակը';
+
+  @override
+  String get contact => 'Կոնտակտային տվյալներ';
+
+  @override
+  String get select => 'Ընտրել';
+
+  @override
   String get home => 'Home';
 
   @override
@@ -98,75 +164,6 @@ class AppLocalizationsAm extends AppLocalizations {
   String get chooseConnector => 'Choose Connector';
 
   @override
-  String get account => 'Հաշիվ';
-
-  @override
-  String get myCar => 'Իմ մեքենան';
-
-  @override
-  String get myStation => 'Իմ կայանը';
-
-  @override
-  String get helpCenter => 'Օգնություն';
-
-  @override
-  String get about => 'WattHub-ի մասին';
-
-  @override
-  String get logout => 'Դուրս գալ';
-
-  @override
-  String get fullName => 'Անուն Ազգանուն';
-
-  @override
-  String get phone => 'Հեռախոսահամար';
-
-  @override
-  String get personalInfo => 'Անձնական տվյալներ';
-
-  @override
-  String get stationInfo => 'Կայանի տվյալներ';
-
-  @override
-  String get carInfo => 'Մեքենայի տվյալներ';
-
-  @override
-  String get name => 'Անուն';
-
-  @override
-  String get max => 'Մաքս:';
-
-  @override
-  String get hourlyRateFull => 'Ժամավճար';
-
-  @override
-  String get location => 'Գտնվելու վայրը';
-
-  @override
-  String get street => 'Փողոց:';
-
-  @override
-  String get navigate => 'Նավարկել';
-
-  @override
-  String get shareLocation => 'Կիսվել վայրով';
-
-  @override
-  String get serviceInformation => 'Ծառայության տեղեկատվություն';
-
-  @override
-  String get availableHours => 'Հասանելի ժամեր:';
-
-  @override
-  String get connectorType => 'Միակցիչի տեսակը';
-
-  @override
-  String get contact => 'Կոնտակտային տվյալներ';
-
-  @override
-  String get select => 'Ընտրել';
-
-  @override
   String get chooseAddress => 'Ընտրել հասցե';
 
   @override
@@ -185,6 +182,9 @@ class AppLocalizationsAm extends AppLocalizations {
   String get yourPhoneNumber => 'Մուտքագրեք ձեր հեռախոսահամարը';
 
   @override
+  String get name => 'Անուն';
+
+  @override
   String get yourName => 'Մուտքագրեք ձեր անունը';
 
   @override
@@ -197,7 +197,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get error => 'սխալ';
 
   @override
-  String get start => 'Սկսել';
+  String get start => 'սկիզբ';
 
   @override
   String get end => 'վերջ';
@@ -259,4 +259,16 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get unknown => 'Անհայտ';
+
+  @override
+  String get leave_review => 'Թողնել մեկնաբանություն';
+
+  @override
+  String get rating_bar_title => 'Հպեք աստղին՝ գնահատելու համար';
+
+  @override
+  String get submit => 'Հաստատել';
+
+  @override
+  String get review_title => 'Գրել ակնարկ';
 }
