@@ -10,7 +10,4 @@ abstract class WattHubColors {
   static const redColor = Color(0xFFF75555);
   static const lightGrayColor = Color(0xFFEFEFEF);
   static const lighterGrayColor = Color(0xFFFAFAFA);
-
 }
-// static const grayColor = Color(0xFFFAFAFA);
-// static const lightGray = Color(0xFFEFEFEF);
