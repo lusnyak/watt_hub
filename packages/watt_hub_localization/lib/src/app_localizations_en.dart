@@ -82,7 +82,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get kilowatt => 'kw';
 
   @override
-  String get hourlyRate => 'Hourly rate:';
+  String get hourlyRate => 'hr';
 
   @override
   String get filter => 'Filter';
@@ -95,6 +95,48 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get chooseConnector => 'Choose Connector';
+
+  @override
+  String get account => 'Account';
+
+  @override
+  String get myCar => 'My Car';
+
+  @override
+  String get myStation => 'My Station';
+
+  @override
+  String get helpCenter => 'Help Center';
+
+  @override
+  String get about => 'About';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get fullName => 'Full Name';
+
+  @override
+  String get phone => 'Phone Number';
+
+  @override
+  String get personalInfo => 'Personal Info';
+
+  @override
+  String get stationInfo => 'Station Info';
+
+  @override
+  String get carInfo => 'Car Info';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get max => 'Max';
+
+  @override
+  String get hourlyRateFull => 'Hourly Rate';
 
   @override
   String get location => 'Location';
@@ -110,9 +152,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get serviceInformation => 'Service Information';
-
-  @override
-  String get max => 'Max:';
 
   @override
   String get availableHours => 'Available hours:';
