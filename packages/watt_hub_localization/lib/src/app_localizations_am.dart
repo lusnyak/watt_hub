@@ -165,4 +165,16 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get select => 'Ընտրել';
+
+  @override
+  String get leave_review => 'Թողնել մեկնաբանություն';
+
+  @override
+  String get rating_bar_title => 'Հպեք աստղին՝ գնահատելու համար';
+
+  @override
+  String get submit => 'Հաստատել';
+
+  @override
+  String get review_title => 'Գրել ակնարկ';
 }

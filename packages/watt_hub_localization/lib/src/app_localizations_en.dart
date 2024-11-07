@@ -164,4 +164,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get select => 'Select';
+
+  @override
+  String get leave_review => 'Leave a review';
+
+  @override
+  String get rating_bar_title => 'Tap a star to rate';
+
+  @override
+  String get submit => 'Submit';
+
+  @override
+  String get review_title => 'Write a review';
 }
