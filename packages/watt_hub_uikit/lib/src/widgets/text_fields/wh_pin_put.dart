@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
 import 'package:watt_hub_uikit/src/theme/watt_hub_pin_put_styles.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
@@ -24,7 +25,7 @@ class WHPinPut extends StatelessWidget {
           border: isError != null && isError == false
               ? Border.all(color: WattHubColors.redColor)
               : Border.all(
-                  color: WattHubColors.grayColor,
+                  color: WattHubColors.lightGrayColor,
                 )),
       focusedPinTheme: defaultPinTheme.copyDecorationWith(
         border: Border.all(color: WattHubColors.primaryGreenColor),

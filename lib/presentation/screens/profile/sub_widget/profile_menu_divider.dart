@@ -11,7 +11,7 @@ class ProfileMenuDivider extends StatelessWidget {
       thickness: 2,
       indent: 0,
       endIndent: 0,
-      color: WattHubColors.grayColor,
+      color: WattHubColors.lightGrayColor,
     ).paddingSymmetric(vertical: 10);
   }
 }

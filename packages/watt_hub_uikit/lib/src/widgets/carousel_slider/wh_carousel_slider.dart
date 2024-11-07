@@ -64,7 +64,7 @@ class WHCarouselSliderState extends State<WHCarouselSlider> {
               imageUrl: urlImage,
               placeholder: (context, err) => Container(
                 decoration: const BoxDecoration(
-                  color: WattHubColors.lightGray,
+                  color: WattHubColors.lightGrayColor,
                 ),
                 alignment: Alignment.center,
                 child: const Icon(
@@ -74,7 +74,7 @@ class WHCarouselSliderState extends State<WHCarouselSlider> {
               ),
               errorWidget: (context, _, __) => Container(
                 decoration: const BoxDecoration(
-                  color: WattHubColors.lightGray,
+                  color: WattHubColors.lightGrayColor,
                 ),
                 alignment: Alignment.center,
                 child: const Icon(
@@ -83,9 +83,9 @@ class WHCarouselSliderState extends State<WHCarouselSlider> {
                 ),
               ),
               imageBuilder: (context, imageProvider) => Container(
-                color: WattHubColors.lightGray,
+                color: WattHubColors.lightGrayColor,
                 decoration: BoxDecoration(
-                  color: WattHubColors.lightGray,
+                  color: WattHubColors.lightGrayColor,
                   image: DecorationImage(
                     image: imageProvider,
                     fit: BoxFit.cover,
