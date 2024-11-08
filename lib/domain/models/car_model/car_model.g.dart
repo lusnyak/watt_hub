@@ -17,6 +17,8 @@ _$CarModelImpl _$$CarModelImplFromJson(Map<String, dynamic> json) =>
           CarModelTypeModel.fromJson(json['car_model'] as Map<String, dynamic>),
       images:
           (json['images'] as List<dynamic>).map((e) => e as String).toList(),
+      createdAt: DateTime.parse(json['created_at'] as String),
+      updatedAt: DateTime.parse(json['updated_at'] as String),
     );
 
 Map<String, dynamic> _$$CarModelImplToJson(_$CarModelImpl instance) =>
@@ -27,4 +29,6 @@ Map<String, dynamic> _$$CarModelImplToJson(_$CarModelImpl instance) =>
       'user': instance.user,
       'car_model': instance.carModel,
       'images': instance.images,
+      'created_at': instance.createdAt.toIso8601String(),
+      'updated_at': instance.updatedAt.toIso8601String(),
     };
