@@ -40,6 +40,8 @@ final List<Map<String, dynamic>> createdCarsData = [
       'phone_number': '+1234567890',
       'email': 'johndoe@example.com',
     },
+    'created_at': '2024-11-06T11:49:44.000Z',
+    'updated_at': '2024-11-06T11:49:44.000Z',
   },
   {
     'id': 2,
@@ -56,5 +58,7 @@ final List<Map<String, dynamic>> createdCarsData = [
       'phone_number': '+9876543210',
       'email': 'janesmith@example.com',
     },
+    'created_at': '2024-11-06T11:49:44.000Z',
+    'updated_at': '2024-11-06T11:49:44.000Z',
   },
 ];
