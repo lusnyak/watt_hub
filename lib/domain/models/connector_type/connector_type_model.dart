@@ -8,8 +8,11 @@ class ConnectorTypeModel with _$ConnectorTypeModel {
   const factory ConnectorTypeModel({
     required int id,
     String? title,
+
   }) = _ConnectorTypeModel;
 
   factory ConnectorTypeModel.fromJson(Map<String, dynamic> json) =>
       _$ConnectorTypeModelFromJson(json);
+
 }
+

@@ -34,6 +34,7 @@ class _ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: BlocBuilder<ProfileBloc, ProfileState>(builder: (context, state) {
         return state.when(
             initial: () => const SizedBox.shrink(),

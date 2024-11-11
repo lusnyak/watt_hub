@@ -50,6 +50,7 @@ class WHElevatedButton extends StatelessWidget {
         child: Text(
           title,
           style: textStyle,
+          maxLines: 2,
         ),
       );
 }

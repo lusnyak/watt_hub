@@ -176,4 +176,50 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get review_title => 'Write a review';
+
+  @override
+  String get chooseAddress => 'Choose an address';
+
+  @override
+  String get timePicker => 'Time picker';
+
+  @override
+  String get startTime => 'Start time';
+
+  @override
+  String get endTime => 'End time';
+
+  @override
+  String get contactInfo => 'Contact info';
+
+  @override
+  String get yourPhoneNumber => 'Enter your phone number';
+
+  @override
+  String get yourName => 'Enter your name';
+
+  @override
+  String get stationImage => 'Add station image';
+
+  @override
+  String get addStation => 'Add station';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get start => 'Start';
+
+  @override
+  String get end => 'End';
+
+  @override
+  String get flutterMap => 'Choose location';
+
+  @override
+  String get addressNotFound => 'Address not found.';
+
+  @override
+  String get noLocationSelected =>
+      'No location selected. Please tap on the map.';
 }

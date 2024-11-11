@@ -54,5 +54,20 @@
   "leave_review":"Leave a review",
   "rating_bar_title": "Tap a star to rate",
   "submit": "Submit",
-  "review_title": "Write a review"
+  "review_title": "Write a review",
+  "chooseAddress":"Choose an address",
+  "timePicker":"Time picker",
+  "startTime":"Start time",
+  "endTime":"End time",
+  "contactInfo":"Contact info",
+  "yourPhoneNumber":"Enter your phone number",
+  "yourName":"Enter your name",
+  "stationImage":"Add station image",
+  "addStation":"Add station",
+  "error":"Error",
+  "start":"Start",
+  "end":"End",
+  "flutterMap":"Choose location",
+  "addressNotFound":"Address not found.",
+  "noLocationSelected":"No location selected. Please tap on the map."
 }
