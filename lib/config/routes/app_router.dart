@@ -42,7 +42,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: SplashRoute.page, /*initial: true*/),
         AutoRoute(page: UikitExampleRoute.page, ),
         AutoRoute(page: OnboardingRoute.page),
-        AutoRoute(page: DashboardRoute.page,initial: true, children: [
+        AutoRoute(page: DashboardRoute.page, children: [
           AutoRoute(page: HomeRoute.page,),
           AutoRoute(page: RequestStationRoute.page),
           profileTap,
@@ -53,7 +53,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: FilterRoute.page),
         AutoRoute(page: StationInfoRoute.page),
         AutoRoute(page: DetailRoute.page),
-        AutoRoute(page: AddStationRoute.page,),
+        AutoRoute(page: AddStationRoute.page),
         AutoRoute(page: ChooseStationAddressRoute.page),
         AutoRoute(page: RequestUserRoute.page),
         AutoRoute(page: AddCarRoute.page),

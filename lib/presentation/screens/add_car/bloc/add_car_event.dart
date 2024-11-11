@@ -5,7 +5,8 @@ class AddCarEvent with _$AddCarEvent {
   const factory AddCarEvent.loadCarTypes() = _LoadCarTypesEvent;
   const factory AddCarEvent.loadCarModels() = _LoadCarModelsEvent;
   const factory AddCarEvent.loadConnectors() = _LoadConnectorsEvent;
-
+  const factory AddCarEvent.imagesSelected(File images) =
+  _ImagesSelectedEvent;
 
 
   const factory AddCarEvent.selectCarType(CarTypeModel carType) = _SelectCarTypeEvent;
