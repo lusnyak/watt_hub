@@ -16,12 +16,16 @@ AddStationModel _$AddStationModelFromJson(Map<String, dynamic> json) =>
       endTime: json['end_time'] == null
           ? null
           : DateTime.parse(json['end_time'] as String),
-      connectorTypeId: (json['connector_type_id'] as num?)?.toInt(),
+      connectorTypeId: (json['connector_type_id'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
       hourlyRate: json['hourly_rate'] as num?,
       phoneNumber: json['phone_number'] as String?,
       name: json['name'] as String?,
       address: json['address'] as String?,
       userId: (json['user_id'] as num?)?.toInt(),
+      image:
+          (json['image'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$AddStationModelToJson(AddStationModel instance) =>
@@ -36,4 +40,5 @@ Map<String, dynamic> _$AddStationModelToJson(AddStationModel instance) =>
       'name': instance.name,
       'address': instance.address,
       'user_id': instance.userId,
+      'image': instance.image,
     };

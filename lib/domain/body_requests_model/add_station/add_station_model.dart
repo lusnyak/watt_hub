@@ -8,12 +8,13 @@ class AddStationModel {
   final double? lng;
   final DateTime? startTime;
   final DateTime? endTime;
-  final int? connectorTypeId;
+  final List<int>? connectorTypeId;
   final num? hourlyRate;
   final String? phoneNumber;
   final String? name;
   final String? address;
   final int? userId;
+  final List<String>? image;
 
   AddStationModel({
     this.lat,
@@ -26,6 +27,7 @@ class AddStationModel {
     this.name,
     this.address,
     this.userId,
+    this.image,
   });
 
   factory AddStationModel.fromJson(Map<String, dynamic> json) =>

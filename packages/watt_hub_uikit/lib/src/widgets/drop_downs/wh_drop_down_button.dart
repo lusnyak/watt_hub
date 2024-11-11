@@ -67,7 +67,7 @@ class WhDropDownButton<T> extends StatelessWidget {
       underline: const Divider(
         height: 2,
         color:
-            WattHubColors.primaryGreenColor, // Change this to the desired color
+            WattHubColors.primaryGreenColor,
       ),
     );
   }

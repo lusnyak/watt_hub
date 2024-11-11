@@ -23,11 +23,12 @@ mixin _$AddStationEvent {
     required TResult Function(int index) removeImage,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function(String startTime) startTimeSelected,
-    required TResult Function(String endTime) endTimeSelected,
-    required TResult Function(String address) getAddress,
+    required TResult Function(DateTime startTime) startTimeSelected,
+    required TResult Function(DateTime endTime) endTimeSelected,
+    required TResult Function(String address, double latitude, double longitude)
+        getAddress,
     required TResult Function() createStation,
-    required TResult Function(ConnectorTypeModel selected)
+    required TResult Function(List<ConnectorTypeModel> selectedItems)
         connectorMultiTypeChangedEvent,
     required TResult Function(ConnectorTypeModel connector)
         deleteSelectedConnector,
@@ -40,11 +41,12 @@ mixin _$AddStationEvent {
     TResult? Function(int index)? removeImage,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function(String startTime)? startTimeSelected,
-    TResult? Function(String endTime)? endTimeSelected,
-    TResult? Function(String address)? getAddress,
+    TResult? Function(DateTime startTime)? startTimeSelected,
+    TResult? Function(DateTime endTime)? endTimeSelected,
+    TResult? Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult? Function()? createStation,
-    TResult? Function(ConnectorTypeModel selected)?
+    TResult? Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult? Function(ConnectorTypeModel connector)? deleteSelectedConnector,
   }) =>
@@ -56,11 +58,12 @@ mixin _$AddStationEvent {
     TResult Function(int index)? removeImage,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function(String startTime)? startTimeSelected,
-    TResult Function(String endTime)? endTimeSelected,
-    TResult Function(String address)? getAddress,
+    TResult Function(DateTime startTime)? startTimeSelected,
+    TResult Function(DateTime endTime)? endTimeSelected,
+    TResult Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult Function()? createStation,
-    TResult Function(ConnectorTypeModel selected)?
+    TResult Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult Function(ConnectorTypeModel connector)? deleteSelectedConnector,
     required TResult orElse(),
@@ -185,11 +188,12 @@ class _$StartedEventImpl implements _StartedEvent {
     required TResult Function(int index) removeImage,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function(String startTime) startTimeSelected,
-    required TResult Function(String endTime) endTimeSelected,
-    required TResult Function(String address) getAddress,
+    required TResult Function(DateTime startTime) startTimeSelected,
+    required TResult Function(DateTime endTime) endTimeSelected,
+    required TResult Function(String address, double latitude, double longitude)
+        getAddress,
     required TResult Function() createStation,
-    required TResult Function(ConnectorTypeModel selected)
+    required TResult Function(List<ConnectorTypeModel> selectedItems)
         connectorMultiTypeChangedEvent,
     required TResult Function(ConnectorTypeModel connector)
         deleteSelectedConnector,
@@ -205,11 +209,12 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult? Function(int index)? removeImage,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function(String startTime)? startTimeSelected,
-    TResult? Function(String endTime)? endTimeSelected,
-    TResult? Function(String address)? getAddress,
+    TResult? Function(DateTime startTime)? startTimeSelected,
+    TResult? Function(DateTime endTime)? endTimeSelected,
+    TResult? Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult? Function()? createStation,
-    TResult? Function(ConnectorTypeModel selected)?
+    TResult? Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult? Function(ConnectorTypeModel connector)? deleteSelectedConnector,
   }) {
@@ -224,11 +229,12 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult Function(int index)? removeImage,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function(String startTime)? startTimeSelected,
-    TResult Function(String endTime)? endTimeSelected,
-    TResult Function(String address)? getAddress,
+    TResult Function(DateTime startTime)? startTimeSelected,
+    TResult Function(DateTime endTime)? endTimeSelected,
+    TResult Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult Function()? createStation,
-    TResult Function(ConnectorTypeModel selected)?
+    TResult Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult Function(ConnectorTypeModel connector)? deleteSelectedConnector,
     required TResult orElse(),
@@ -386,11 +392,12 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     required TResult Function(int index) removeImage,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function(String startTime) startTimeSelected,
-    required TResult Function(String endTime) endTimeSelected,
-    required TResult Function(String address) getAddress,
+    required TResult Function(DateTime startTime) startTimeSelected,
+    required TResult Function(DateTime endTime) endTimeSelected,
+    required TResult Function(String address, double latitude, double longitude)
+        getAddress,
     required TResult Function() createStation,
-    required TResult Function(ConnectorTypeModel selected)
+    required TResult Function(List<ConnectorTypeModel> selectedItems)
         connectorMultiTypeChangedEvent,
     required TResult Function(ConnectorTypeModel connector)
         deleteSelectedConnector,
@@ -406,11 +413,12 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     TResult? Function(int index)? removeImage,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function(String startTime)? startTimeSelected,
-    TResult? Function(String endTime)? endTimeSelected,
-    TResult? Function(String address)? getAddress,
+    TResult? Function(DateTime startTime)? startTimeSelected,
+    TResult? Function(DateTime endTime)? endTimeSelected,
+    TResult? Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult? Function()? createStation,
-    TResult? Function(ConnectorTypeModel selected)?
+    TResult? Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult? Function(ConnectorTypeModel connector)? deleteSelectedConnector,
   }) {
@@ -425,11 +433,12 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
     TResult Function(int index)? removeImage,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function(String startTime)? startTimeSelected,
-    TResult Function(String endTime)? endTimeSelected,
-    TResult Function(String address)? getAddress,
+    TResult Function(DateTime startTime)? startTimeSelected,
+    TResult Function(DateTime endTime)? endTimeSelected,
+    TResult Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult Function()? createStation,
-    TResult Function(ConnectorTypeModel selected)?
+    TResult Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult Function(ConnectorTypeModel connector)? deleteSelectedConnector,
     required TResult orElse(),
@@ -590,11 +599,12 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     required TResult Function(int index) removeImage,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function(String startTime) startTimeSelected,
-    required TResult Function(String endTime) endTimeSelected,
-    required TResult Function(String address) getAddress,
+    required TResult Function(DateTime startTime) startTimeSelected,
+    required TResult Function(DateTime endTime) endTimeSelected,
+    required TResult Function(String address, double latitude, double longitude)
+        getAddress,
     required TResult Function() createStation,
-    required TResult Function(ConnectorTypeModel selected)
+    required TResult Function(List<ConnectorTypeModel> selectedItems)
         connectorMultiTypeChangedEvent,
     required TResult Function(ConnectorTypeModel connector)
         deleteSelectedConnector,
@@ -610,11 +620,12 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     TResult? Function(int index)? removeImage,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function(String startTime)? startTimeSelected,
-    TResult? Function(String endTime)? endTimeSelected,
-    TResult? Function(String address)? getAddress,
+    TResult? Function(DateTime startTime)? startTimeSelected,
+    TResult? Function(DateTime endTime)? endTimeSelected,
+    TResult? Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult? Function()? createStation,
-    TResult? Function(ConnectorTypeModel selected)?
+    TResult? Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult? Function(ConnectorTypeModel connector)? deleteSelectedConnector,
   }) {
@@ -629,11 +640,12 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
     TResult Function(int index)? removeImage,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function(String startTime)? startTimeSelected,
-    TResult Function(String endTime)? endTimeSelected,
-    TResult Function(String address)? getAddress,
+    TResult Function(DateTime startTime)? startTimeSelected,
+    TResult Function(DateTime endTime)? endTimeSelected,
+    TResult Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult Function()? createStation,
-    TResult Function(ConnectorTypeModel selected)?
+    TResult Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult Function(ConnectorTypeModel connector)? deleteSelectedConnector,
     required TResult orElse(),
@@ -813,11 +825,12 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     required TResult Function(int index) removeImage,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function(String startTime) startTimeSelected,
-    required TResult Function(String endTime) endTimeSelected,
-    required TResult Function(String address) getAddress,
+    required TResult Function(DateTime startTime) startTimeSelected,
+    required TResult Function(DateTime endTime) endTimeSelected,
+    required TResult Function(String address, double latitude, double longitude)
+        getAddress,
     required TResult Function() createStation,
-    required TResult Function(ConnectorTypeModel selected)
+    required TResult Function(List<ConnectorTypeModel> selectedItems)
         connectorMultiTypeChangedEvent,
     required TResult Function(ConnectorTypeModel connector)
         deleteSelectedConnector,
@@ -833,11 +846,12 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     TResult? Function(int index)? removeImage,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function(String startTime)? startTimeSelected,
-    TResult? Function(String endTime)? endTimeSelected,
-    TResult? Function(String address)? getAddress,
+    TResult? Function(DateTime startTime)? startTimeSelected,
+    TResult? Function(DateTime endTime)? endTimeSelected,
+    TResult? Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult? Function()? createStation,
-    TResult? Function(ConnectorTypeModel selected)?
+    TResult? Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult? Function(ConnectorTypeModel connector)? deleteSelectedConnector,
   }) {
@@ -852,11 +866,12 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     TResult Function(int index)? removeImage,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function(String startTime)? startTimeSelected,
-    TResult Function(String endTime)? endTimeSelected,
-    TResult Function(String address)? getAddress,
+    TResult Function(DateTime startTime)? startTimeSelected,
+    TResult Function(DateTime endTime)? endTimeSelected,
+    TResult Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult Function()? createStation,
-    TResult Function(ConnectorTypeModel selected)?
+    TResult Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult Function(ConnectorTypeModel connector)? deleteSelectedConnector,
     required TResult orElse(),
@@ -951,7 +966,7 @@ abstract class _$$StartTimeSelectedEventImplCopyWith<$Res> {
           $Res Function(_$StartTimeSelectedEventImpl) then) =
       __$$StartTimeSelectedEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String startTime});
+  $Res call({DateTime startTime});
 }
 
 /// @nodoc
@@ -974,7 +989,7 @@ class __$$StartTimeSelectedEventImplCopyWithImpl<$Res>
       null == startTime
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
     ));
   }
 }
@@ -985,7 +1000,7 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
   const _$StartTimeSelectedEventImpl(this.startTime);
 
   @override
-  final String startTime;
+  final DateTime startTime;
 
   @override
   String toString() {
@@ -1021,11 +1036,12 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
     required TResult Function(int index) removeImage,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function(String startTime) startTimeSelected,
-    required TResult Function(String endTime) endTimeSelected,
-    required TResult Function(String address) getAddress,
+    required TResult Function(DateTime startTime) startTimeSelected,
+    required TResult Function(DateTime endTime) endTimeSelected,
+    required TResult Function(String address, double latitude, double longitude)
+        getAddress,
     required TResult Function() createStation,
-    required TResult Function(ConnectorTypeModel selected)
+    required TResult Function(List<ConnectorTypeModel> selectedItems)
         connectorMultiTypeChangedEvent,
     required TResult Function(ConnectorTypeModel connector)
         deleteSelectedConnector,
@@ -1041,11 +1057,12 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
     TResult? Function(int index)? removeImage,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function(String startTime)? startTimeSelected,
-    TResult? Function(String endTime)? endTimeSelected,
-    TResult? Function(String address)? getAddress,
+    TResult? Function(DateTime startTime)? startTimeSelected,
+    TResult? Function(DateTime endTime)? endTimeSelected,
+    TResult? Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult? Function()? createStation,
-    TResult? Function(ConnectorTypeModel selected)?
+    TResult? Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult? Function(ConnectorTypeModel connector)? deleteSelectedConnector,
   }) {
@@ -1060,11 +1077,12 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
     TResult Function(int index)? removeImage,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function(String startTime)? startTimeSelected,
-    TResult Function(String endTime)? endTimeSelected,
-    TResult Function(String address)? getAddress,
+    TResult Function(DateTime startTime)? startTimeSelected,
+    TResult Function(DateTime endTime)? endTimeSelected,
+    TResult Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult Function()? createStation,
-    TResult Function(ConnectorTypeModel selected)?
+    TResult Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult Function(ConnectorTypeModel connector)? deleteSelectedConnector,
     required TResult orElse(),
@@ -1139,10 +1157,10 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
 }
 
 abstract class _StartTimeSelectedEvent implements AddStationEvent {
-  const factory _StartTimeSelectedEvent(final String startTime) =
+  const factory _StartTimeSelectedEvent(final DateTime startTime) =
       _$StartTimeSelectedEventImpl;
 
-  String get startTime;
+  DateTime get startTime;
 
   /// Create a copy of AddStationEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1157,7 +1175,7 @@ abstract class _$$EndTimeSelectedEventImplCopyWith<$Res> {
           $Res Function(_$EndTimeSelectedEventImpl) then) =
       __$$EndTimeSelectedEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String endTime});
+  $Res call({DateTime endTime});
 }
 
 /// @nodoc
@@ -1179,7 +1197,7 @@ class __$$EndTimeSelectedEventImplCopyWithImpl<$Res>
       null == endTime
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
     ));
   }
 }
@@ -1190,7 +1208,7 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
   const _$EndTimeSelectedEventImpl(this.endTime);
 
   @override
-  final String endTime;
+  final DateTime endTime;
 
   @override
   String toString() {
@@ -1226,11 +1244,12 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
     required TResult Function(int index) removeImage,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function(String startTime) startTimeSelected,
-    required TResult Function(String endTime) endTimeSelected,
-    required TResult Function(String address) getAddress,
+    required TResult Function(DateTime startTime) startTimeSelected,
+    required TResult Function(DateTime endTime) endTimeSelected,
+    required TResult Function(String address, double latitude, double longitude)
+        getAddress,
     required TResult Function() createStation,
-    required TResult Function(ConnectorTypeModel selected)
+    required TResult Function(List<ConnectorTypeModel> selectedItems)
         connectorMultiTypeChangedEvent,
     required TResult Function(ConnectorTypeModel connector)
         deleteSelectedConnector,
@@ -1246,11 +1265,12 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
     TResult? Function(int index)? removeImage,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function(String startTime)? startTimeSelected,
-    TResult? Function(String endTime)? endTimeSelected,
-    TResult? Function(String address)? getAddress,
+    TResult? Function(DateTime startTime)? startTimeSelected,
+    TResult? Function(DateTime endTime)? endTimeSelected,
+    TResult? Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult? Function()? createStation,
-    TResult? Function(ConnectorTypeModel selected)?
+    TResult? Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult? Function(ConnectorTypeModel connector)? deleteSelectedConnector,
   }) {
@@ -1265,11 +1285,12 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
     TResult Function(int index)? removeImage,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function(String startTime)? startTimeSelected,
-    TResult Function(String endTime)? endTimeSelected,
-    TResult Function(String address)? getAddress,
+    TResult Function(DateTime startTime)? startTimeSelected,
+    TResult Function(DateTime endTime)? endTimeSelected,
+    TResult Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult Function()? createStation,
-    TResult Function(ConnectorTypeModel selected)?
+    TResult Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult Function(ConnectorTypeModel connector)? deleteSelectedConnector,
     required TResult orElse(),
@@ -1344,10 +1365,10 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
 }
 
 abstract class _EndTimeSelectedEvent implements AddStationEvent {
-  const factory _EndTimeSelectedEvent(final String endTime) =
+  const factory _EndTimeSelectedEvent(final DateTime endTime) =
       _$EndTimeSelectedEventImpl;
 
-  String get endTime;
+  DateTime get endTime;
 
   /// Create a copy of AddStationEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1362,7 +1383,7 @@ abstract class _$$GetAddressEventImplCopyWith<$Res> {
           $Res Function(_$GetAddressEventImpl) then) =
       __$$GetAddressEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String address});
+  $Res call({String address, double latitude, double longitude});
 }
 
 /// @nodoc
@@ -1379,12 +1400,22 @@ class __$$GetAddressEventImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? address = null,
+    Object? latitude = null,
+    Object? longitude = null,
   }) {
     return _then(_$GetAddressEventImpl(
       null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
+      null == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      null == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -1392,14 +1423,18 @@ class __$$GetAddressEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetAddressEventImpl implements _GetAddressEvent {
-  const _$GetAddressEventImpl(this.address);
+  const _$GetAddressEventImpl(this.address, this.latitude, this.longitude);
 
   @override
   final String address;
+  @override
+  final double latitude;
+  @override
+  final double longitude;
 
   @override
   String toString() {
-    return 'AddStationEvent.getAddress(address: $address)';
+    return 'AddStationEvent.getAddress(address: $address, latitude: $latitude, longitude: $longitude)';
   }
 
   @override
@@ -1407,11 +1442,15 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAddressEventImpl &&
-            (identical(other.address, address) || other.address == address));
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address);
+  int get hashCode => Object.hash(runtimeType, address, latitude, longitude);
 
   /// Create a copy of AddStationEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1430,16 +1469,17 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
     required TResult Function(int index) removeImage,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function(String startTime) startTimeSelected,
-    required TResult Function(String endTime) endTimeSelected,
-    required TResult Function(String address) getAddress,
+    required TResult Function(DateTime startTime) startTimeSelected,
+    required TResult Function(DateTime endTime) endTimeSelected,
+    required TResult Function(String address, double latitude, double longitude)
+        getAddress,
     required TResult Function() createStation,
-    required TResult Function(ConnectorTypeModel selected)
+    required TResult Function(List<ConnectorTypeModel> selectedItems)
         connectorMultiTypeChangedEvent,
     required TResult Function(ConnectorTypeModel connector)
         deleteSelectedConnector,
   }) {
-    return getAddress(address);
+    return getAddress(address, latitude, longitude);
   }
 
   @override
@@ -1450,15 +1490,16 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
     TResult? Function(int index)? removeImage,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function(String startTime)? startTimeSelected,
-    TResult? Function(String endTime)? endTimeSelected,
-    TResult? Function(String address)? getAddress,
+    TResult? Function(DateTime startTime)? startTimeSelected,
+    TResult? Function(DateTime endTime)? endTimeSelected,
+    TResult? Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult? Function()? createStation,
-    TResult? Function(ConnectorTypeModel selected)?
+    TResult? Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult? Function(ConnectorTypeModel connector)? deleteSelectedConnector,
   }) {
-    return getAddress?.call(address);
+    return getAddress?.call(address, latitude, longitude);
   }
 
   @override
@@ -1469,17 +1510,18 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
     TResult Function(int index)? removeImage,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function(String startTime)? startTimeSelected,
-    TResult Function(String endTime)? endTimeSelected,
-    TResult Function(String address)? getAddress,
+    TResult Function(DateTime startTime)? startTimeSelected,
+    TResult Function(DateTime endTime)? endTimeSelected,
+    TResult Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult Function()? createStation,
-    TResult Function(ConnectorTypeModel selected)?
+    TResult Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult Function(ConnectorTypeModel connector)? deleteSelectedConnector,
     required TResult orElse(),
   }) {
     if (getAddress != null) {
-      return getAddress(address);
+      return getAddress(address, latitude, longitude);
     }
     return orElse();
   }
@@ -1548,9 +1590,13 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
 }
 
 abstract class _GetAddressEvent implements AddStationEvent {
-  const factory _GetAddressEvent(final String address) = _$GetAddressEventImpl;
+  const factory _GetAddressEvent(
+          final String address, final double latitude, final double longitude) =
+      _$GetAddressEventImpl;
 
   String get address;
+  double get latitude;
+  double get longitude;
 
   /// Create a copy of AddStationEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1605,11 +1651,12 @@ class _$CreateStationEventImpl implements _CreateStationEvent {
     required TResult Function(int index) removeImage,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function(String startTime) startTimeSelected,
-    required TResult Function(String endTime) endTimeSelected,
-    required TResult Function(String address) getAddress,
+    required TResult Function(DateTime startTime) startTimeSelected,
+    required TResult Function(DateTime endTime) endTimeSelected,
+    required TResult Function(String address, double latitude, double longitude)
+        getAddress,
     required TResult Function() createStation,
-    required TResult Function(ConnectorTypeModel selected)
+    required TResult Function(List<ConnectorTypeModel> selectedItems)
         connectorMultiTypeChangedEvent,
     required TResult Function(ConnectorTypeModel connector)
         deleteSelectedConnector,
@@ -1625,11 +1672,12 @@ class _$CreateStationEventImpl implements _CreateStationEvent {
     TResult? Function(int index)? removeImage,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function(String startTime)? startTimeSelected,
-    TResult? Function(String endTime)? endTimeSelected,
-    TResult? Function(String address)? getAddress,
+    TResult? Function(DateTime startTime)? startTimeSelected,
+    TResult? Function(DateTime endTime)? endTimeSelected,
+    TResult? Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult? Function()? createStation,
-    TResult? Function(ConnectorTypeModel selected)?
+    TResult? Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult? Function(ConnectorTypeModel connector)? deleteSelectedConnector,
   }) {
@@ -1644,11 +1692,12 @@ class _$CreateStationEventImpl implements _CreateStationEvent {
     TResult Function(int index)? removeImage,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function(String startTime)? startTimeSelected,
-    TResult Function(String endTime)? endTimeSelected,
-    TResult Function(String address)? getAddress,
+    TResult Function(DateTime startTime)? startTimeSelected,
+    TResult Function(DateTime endTime)? endTimeSelected,
+    TResult Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult Function()? createStation,
-    TResult Function(ConnectorTypeModel selected)?
+    TResult Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult Function(ConnectorTypeModel connector)? deleteSelectedConnector,
     required TResult orElse(),
@@ -1733,9 +1782,7 @@ abstract class _$$ConnectorMultiTypeChangedEventImplCopyWith<$Res> {
           $Res Function(_$ConnectorMultiTypeChangedEventImpl) then) =
       __$$ConnectorMultiTypeChangedEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ConnectorTypeModel selected});
-
-  $ConnectorTypeModelCopyWith<$Res> get selected;
+  $Res call({List<ConnectorTypeModel> selectedItems});
 }
 
 /// @nodoc
@@ -1753,24 +1800,14 @@ class __$$ConnectorMultiTypeChangedEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selected = null,
+    Object? selectedItems = null,
   }) {
     return _then(_$ConnectorMultiTypeChangedEventImpl(
-      null == selected
-          ? _value.selected
-          : selected // ignore: cast_nullable_to_non_nullable
-              as ConnectorTypeModel,
+      null == selectedItems
+          ? _value._selectedItems
+          : selectedItems // ignore: cast_nullable_to_non_nullable
+              as List<ConnectorTypeModel>,
     ));
-  }
-
-  /// Create a copy of AddStationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ConnectorTypeModelCopyWith<$Res> get selected {
-    return $ConnectorTypeModelCopyWith<$Res>(_value.selected, (value) {
-      return _then(_value.copyWith(selected: value));
-    });
   }
 }
 
@@ -1778,14 +1815,21 @@ class __$$ConnectorMultiTypeChangedEventImplCopyWithImpl<$Res>
 
 class _$ConnectorMultiTypeChangedEventImpl
     implements _ConnectorMultiTypeChangedEvent {
-  const _$ConnectorMultiTypeChangedEventImpl(this.selected);
+  const _$ConnectorMultiTypeChangedEventImpl(
+      final List<ConnectorTypeModel> selectedItems)
+      : _selectedItems = selectedItems;
 
+  final List<ConnectorTypeModel> _selectedItems;
   @override
-  final ConnectorTypeModel selected;
+  List<ConnectorTypeModel> get selectedItems {
+    if (_selectedItems is EqualUnmodifiableListView) return _selectedItems;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_selectedItems);
+  }
 
   @override
   String toString() {
-    return 'AddStationEvent.connectorMultiTypeChangedEvent(selected: $selected)';
+    return 'AddStationEvent.connectorMultiTypeChangedEvent(selectedItems: $selectedItems)';
   }
 
   @override
@@ -1793,12 +1837,13 @@ class _$ConnectorMultiTypeChangedEventImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConnectorMultiTypeChangedEventImpl &&
-            (identical(other.selected, selected) ||
-                other.selected == selected));
+            const DeepCollectionEquality()
+                .equals(other._selectedItems, _selectedItems));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selected);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_selectedItems));
 
   /// Create a copy of AddStationEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1818,16 +1863,17 @@ class _$ConnectorMultiTypeChangedEventImpl
     required TResult Function(int index) removeImage,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function(String startTime) startTimeSelected,
-    required TResult Function(String endTime) endTimeSelected,
-    required TResult Function(String address) getAddress,
+    required TResult Function(DateTime startTime) startTimeSelected,
+    required TResult Function(DateTime endTime) endTimeSelected,
+    required TResult Function(String address, double latitude, double longitude)
+        getAddress,
     required TResult Function() createStation,
-    required TResult Function(ConnectorTypeModel selected)
+    required TResult Function(List<ConnectorTypeModel> selectedItems)
         connectorMultiTypeChangedEvent,
     required TResult Function(ConnectorTypeModel connector)
         deleteSelectedConnector,
   }) {
-    return connectorMultiTypeChangedEvent(selected);
+    return connectorMultiTypeChangedEvent(selectedItems);
   }
 
   @override
@@ -1838,15 +1884,16 @@ class _$ConnectorMultiTypeChangedEventImpl
     TResult? Function(int index)? removeImage,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function(String startTime)? startTimeSelected,
-    TResult? Function(String endTime)? endTimeSelected,
-    TResult? Function(String address)? getAddress,
+    TResult? Function(DateTime startTime)? startTimeSelected,
+    TResult? Function(DateTime endTime)? endTimeSelected,
+    TResult? Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult? Function()? createStation,
-    TResult? Function(ConnectorTypeModel selected)?
+    TResult? Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult? Function(ConnectorTypeModel connector)? deleteSelectedConnector,
   }) {
-    return connectorMultiTypeChangedEvent?.call(selected);
+    return connectorMultiTypeChangedEvent?.call(selectedItems);
   }
 
   @override
@@ -1857,17 +1904,18 @@ class _$ConnectorMultiTypeChangedEventImpl
     TResult Function(int index)? removeImage,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function(String startTime)? startTimeSelected,
-    TResult Function(String endTime)? endTimeSelected,
-    TResult Function(String address)? getAddress,
+    TResult Function(DateTime startTime)? startTimeSelected,
+    TResult Function(DateTime endTime)? endTimeSelected,
+    TResult Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult Function()? createStation,
-    TResult Function(ConnectorTypeModel selected)?
+    TResult Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult Function(ConnectorTypeModel connector)? deleteSelectedConnector,
     required TResult orElse(),
   }) {
     if (connectorMultiTypeChangedEvent != null) {
-      return connectorMultiTypeChangedEvent(selected);
+      return connectorMultiTypeChangedEvent(selectedItems);
     }
     return orElse();
   }
@@ -1937,9 +1985,10 @@ class _$ConnectorMultiTypeChangedEventImpl
 
 abstract class _ConnectorMultiTypeChangedEvent implements AddStationEvent {
   const factory _ConnectorMultiTypeChangedEvent(
-      final ConnectorTypeModel selected) = _$ConnectorMultiTypeChangedEventImpl;
+          final List<ConnectorTypeModel> selectedItems) =
+      _$ConnectorMultiTypeChangedEventImpl;
 
-  ConnectorTypeModel get selected;
+  List<ConnectorTypeModel> get selectedItems;
 
   /// Create a copy of AddStationEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -2038,11 +2087,12 @@ class _$DeleteSelectedConnectorImpl implements _DeleteSelectedConnector {
     required TResult Function(int index) removeImage,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function(String startTime) startTimeSelected,
-    required TResult Function(String endTime) endTimeSelected,
-    required TResult Function(String address) getAddress,
+    required TResult Function(DateTime startTime) startTimeSelected,
+    required TResult Function(DateTime endTime) endTimeSelected,
+    required TResult Function(String address, double latitude, double longitude)
+        getAddress,
     required TResult Function() createStation,
-    required TResult Function(ConnectorTypeModel selected)
+    required TResult Function(List<ConnectorTypeModel> selectedItems)
         connectorMultiTypeChangedEvent,
     required TResult Function(ConnectorTypeModel connector)
         deleteSelectedConnector,
@@ -2058,11 +2108,12 @@ class _$DeleteSelectedConnectorImpl implements _DeleteSelectedConnector {
     TResult? Function(int index)? removeImage,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function(String startTime)? startTimeSelected,
-    TResult? Function(String endTime)? endTimeSelected,
-    TResult? Function(String address)? getAddress,
+    TResult? Function(DateTime startTime)? startTimeSelected,
+    TResult? Function(DateTime endTime)? endTimeSelected,
+    TResult? Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult? Function()? createStation,
-    TResult? Function(ConnectorTypeModel selected)?
+    TResult? Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult? Function(ConnectorTypeModel connector)? deleteSelectedConnector,
   }) {
@@ -2077,11 +2128,12 @@ class _$DeleteSelectedConnectorImpl implements _DeleteSelectedConnector {
     TResult Function(int index)? removeImage,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function(String startTime)? startTimeSelected,
-    TResult Function(String endTime)? endTimeSelected,
-    TResult Function(String address)? getAddress,
+    TResult Function(DateTime startTime)? startTimeSelected,
+    TResult Function(DateTime endTime)? endTimeSelected,
+    TResult Function(String address, double latitude, double longitude)?
+        getAddress,
     TResult Function()? createStation,
-    TResult Function(ConnectorTypeModel selected)?
+    TResult Function(List<ConnectorTypeModel> selectedItems)?
         connectorMultiTypeChangedEvent,
     TResult Function(ConnectorTypeModel connector)? deleteSelectedConnector,
     required TResult orElse(),
@@ -2178,15 +2230,16 @@ mixin _$AddStationState {
     required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -2197,15 +2250,16 @@ mixin _$AddStationState {
     TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)?
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -2216,15 +2270,16 @@ mixin _$AddStationState {
     TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)?
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -2323,15 +2378,16 @@ class _$InitialStateImpl implements _InitialState {
     required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)
         loaded,
   }) {
     return initial();
@@ -2345,15 +2401,16 @@ class _$InitialStateImpl implements _InitialState {
     TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)?
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
         loaded,
   }) {
     return initial?.call();
@@ -2367,15 +2424,16 @@ class _$InitialStateImpl implements _InitialState {
     TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)?
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
         loaded,
     required TResult orElse(),
   }) {
@@ -2473,15 +2531,16 @@ class _$LoadingStateImpl implements _LoadingState {
     required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)
         loaded,
   }) {
     return loading();
@@ -2495,15 +2554,16 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)?
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
         loaded,
   }) {
     return loading?.call();
@@ -2517,15 +2577,16 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)?
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
         loaded,
     required TResult orElse(),
   }) {
@@ -2650,15 +2711,16 @@ class _$ErrorStateImpl implements _ErrorState {
     required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)
         loaded,
   }) {
     return error(message);
@@ -2672,15 +2734,16 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)?
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
         loaded,
   }) {
     return error?.call(message);
@@ -2694,15 +2757,16 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)?
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
         loaded,
     required TResult orElse(),
   }) {
@@ -2770,15 +2834,16 @@ abstract class _$$LoadedStateImplCopyWith<$Res> {
   @useResult
   $Res call(
       {List<ConnectorTypeModel> connectors,
-      bool isSelected,
       ConnectorTypeModel? selectedConnectors,
       List<ConnectorTypeModel> selectedList,
       ConnectorTypeModel? selected,
       int? initialSelectedConnectorId,
       List<File>? images,
-      String? startTime,
-      String? endTime,
-      String? address});
+      DateTime? startTime,
+      DateTime? endTime,
+      String? address,
+      double? latitude,
+      double? longitude});
 
   $ConnectorTypeModelCopyWith<$Res>? get selectedConnectors;
   $ConnectorTypeModelCopyWith<$Res>? get selected;
@@ -2798,7 +2863,6 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? connectors = null,
-    Object? isSelected = null,
     Object? selectedConnectors = freezed,
     Object? selectedList = null,
     Object? selected = freezed,
@@ -2807,16 +2871,14 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
     Object? startTime = freezed,
     Object? endTime = freezed,
     Object? address = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
   }) {
     return _then(_$LoadedStateImpl(
       null == connectors
           ? _value._connectors
           : connectors // ignore: cast_nullable_to_non_nullable
               as List<ConnectorTypeModel>,
-      null == isSelected
-          ? _value.isSelected
-          : isSelected // ignore: cast_nullable_to_non_nullable
-              as bool,
       selectedConnectors: freezed == selectedConnectors
           ? _value.selectedConnectors
           : selectedConnectors // ignore: cast_nullable_to_non_nullable
@@ -2840,15 +2902,23 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
       startTime: freezed == startTime
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime?,
       endTime: freezed == endTime
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime?,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
+      latitude: freezed == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 
@@ -2885,8 +2955,7 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedStateImpl implements _LoadedState {
-  const _$LoadedStateImpl(
-      final List<ConnectorTypeModel> connectors, this.isSelected,
+  const _$LoadedStateImpl(final List<ConnectorTypeModel> connectors,
       {this.selectedConnectors,
       final List<ConnectorTypeModel> selectedList = const [],
       this.selected,
@@ -2894,7 +2963,9 @@ class _$LoadedStateImpl implements _LoadedState {
       final List<File>? images,
       this.startTime,
       this.endTime,
-      this.address})
+      this.address,
+      this.latitude,
+      this.longitude})
       : _connectors = connectors,
         _selectedList = selectedList,
         _images = images;
@@ -2907,8 +2978,6 @@ class _$LoadedStateImpl implements _LoadedState {
     return EqualUnmodifiableListView(_connectors);
   }
 
-  @override
-  final bool isSelected;
   @override
   final ConnectorTypeModel? selectedConnectors;
   final List<ConnectorTypeModel> _selectedList;
@@ -2935,15 +3004,19 @@ class _$LoadedStateImpl implements _LoadedState {
   }
 
   @override
-  final String? startTime;
+  final DateTime? startTime;
   @override
-  final String? endTime;
+  final DateTime? endTime;
   @override
   final String? address;
+  @override
+  final double? latitude;
+  @override
+  final double? longitude;
 
   @override
   String toString() {
-    return 'AddStationState.loaded(connectors: $connectors, isSelected: $isSelected, selectedConnectors: $selectedConnectors, selectedList: $selectedList, selected: $selected, initialSelectedConnectorId: $initialSelectedConnectorId, images: $images, startTime: $startTime, endTime: $endTime, address: $address)';
+    return 'AddStationState.loaded(connectors: $connectors, selectedConnectors: $selectedConnectors, selectedList: $selectedList, selected: $selected, initialSelectedConnectorId: $initialSelectedConnectorId, images: $images, startTime: $startTime, endTime: $endTime, address: $address, latitude: $latitude, longitude: $longitude)';
   }
 
   @override
@@ -2953,8 +3026,6 @@ class _$LoadedStateImpl implements _LoadedState {
             other is _$LoadedStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._connectors, _connectors) &&
-            (identical(other.isSelected, isSelected) ||
-                other.isSelected == isSelected) &&
             (identical(other.selectedConnectors, selectedConnectors) ||
                 other.selectedConnectors == selectedConnectors) &&
             const DeepCollectionEquality()
@@ -2969,14 +3040,17 @@ class _$LoadedStateImpl implements _LoadedState {
             (identical(other.startTime, startTime) ||
                 other.startTime == startTime) &&
             (identical(other.endTime, endTime) || other.endTime == endTime) &&
-            (identical(other.address, address) || other.address == address));
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_connectors),
-      isSelected,
       selectedConnectors,
       const DeepCollectionEquality().hash(_selectedList),
       selected,
@@ -2984,7 +3058,9 @@ class _$LoadedStateImpl implements _LoadedState {
       const DeepCollectionEquality().hash(_images),
       startTime,
       endTime,
-      address);
+      address,
+      latitude,
+      longitude);
 
   /// Create a copy of AddStationState
   /// with the given fields replaced by the non-null parameter values.
@@ -3002,20 +3078,20 @@ class _$LoadedStateImpl implements _LoadedState {
     required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)
         loaded,
   }) {
     return loaded(
         connectors,
-        isSelected,
         selectedConnectors,
         selectedList,
         selected,
@@ -3023,7 +3099,9 @@ class _$LoadedStateImpl implements _LoadedState {
         images,
         startTime,
         endTime,
-        address);
+        address,
+        latitude,
+        longitude);
   }
 
   @override
@@ -3034,20 +3112,20 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)?
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
         loaded,
   }) {
     return loaded?.call(
         connectors,
-        isSelected,
         selectedConnectors,
         selectedList,
         selected,
@@ -3055,7 +3133,9 @@ class _$LoadedStateImpl implements _LoadedState {
         images,
         startTime,
         endTime,
-        address);
+        address,
+        latitude,
+        longitude);
   }
 
   @override
@@ -3066,22 +3146,22 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
-            bool isSelected,
             ConnectorTypeModel? selectedConnectors,
             List<ConnectorTypeModel> selectedList,
             ConnectorTypeModel? selected,
             int? initialSelectedConnectorId,
             List<File>? images,
-            String? startTime,
-            String? endTime,
-            String? address)?
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
       return loaded(
           connectors,
-          isSelected,
           selectedConnectors,
           selectedList,
           selected,
@@ -3089,7 +3169,9 @@ class _$LoadedStateImpl implements _LoadedState {
           images,
           startTime,
           endTime,
-          address);
+          address,
+          latitude,
+          longitude);
     }
     return orElse();
   }
@@ -3133,27 +3215,29 @@ class _$LoadedStateImpl implements _LoadedState {
 }
 
 abstract class _LoadedState implements AddStationState {
-  const factory _LoadedState(
-      final List<ConnectorTypeModel> connectors, final bool isSelected,
+  const factory _LoadedState(final List<ConnectorTypeModel> connectors,
       {final ConnectorTypeModel? selectedConnectors,
       final List<ConnectorTypeModel> selectedList,
       final ConnectorTypeModel? selected,
       final int? initialSelectedConnectorId,
       final List<File>? images,
-      final String? startTime,
-      final String? endTime,
-      final String? address}) = _$LoadedStateImpl;
+      final DateTime? startTime,
+      final DateTime? endTime,
+      final String? address,
+      final double? latitude,
+      final double? longitude}) = _$LoadedStateImpl;
 
   List<ConnectorTypeModel> get connectors;
-  bool get isSelected;
   ConnectorTypeModel? get selectedConnectors;
   List<ConnectorTypeModel> get selectedList;
   ConnectorTypeModel? get selected;
   int? get initialSelectedConnectorId;
   List<File>? get images;
-  String? get startTime;
-  String? get endTime;
+  DateTime? get startTime;
+  DateTime? get endTime;
   String? get address;
+  double? get latitude;
+  double? get longitude;
 
   /// Create a copy of AddStationState
   /// with the given fields replaced by the non-null parameter values.

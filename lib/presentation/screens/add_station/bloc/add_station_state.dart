@@ -9,17 +9,16 @@ class AddStationState with _$AddStationState {
   const factory AddStationState.error(String message) = _ErrorState;
 
   const factory AddStationState.loaded(
-
-      List<ConnectorTypeModel> connectors,
-      bool isSelected,
-      {
-        ConnectorTypeModel? selectedConnectors,
-        @Default([]) List<ConnectorTypeModel> selectedList,
-        ConnectorTypeModel? selected,
-        int? initialSelectedConnectorId,
-        List<File>? images,
-        String? startTime,
-        String? endTime,
-        String? address,
-      }) = _LoadedState;
+    List<ConnectorTypeModel> connectors, {
+    ConnectorTypeModel? selectedConnectors,
+    @Default([]) List<ConnectorTypeModel> selectedList,
+    ConnectorTypeModel? selected,
+    int? initialSelectedConnectorId,
+    List<File>? images,
+    DateTime? startTime,
+    DateTime? endTime,
+    String? address,
+    double? latitude,
+    double? longitude,
+  }) = _LoadedState;
 }

@@ -8,8 +8,6 @@ import 'package:watt_hub/utils/extensions/extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../config/locator/service_locator.dart';
-import '../../../domain/models/connector_type/connector_type_model.dart';
-import '../../../utils/helpers/data_helper.dart';
 import '../../../utils/helpers/time_helper_format.dart';
 
 @RoutePage()
@@ -50,12 +48,20 @@ class AddStationView extends StatelessWidget {
               loading: () => const Center(child: WHCircularSpin()),
               error: (message) =>
                   Center(child: Text('${context.localized.error}: $message')),
-              loaded: (connectors,isSelected, selectedConnectors, selectedList, selected, initialSelectedConnectorId,
-                  images, startTime, endTime, address) {
+              loaded: (
+                connectors,
+                selectedConnectors,
+                selectedList,
+                selected,
+                initialSelectedConnectorId,
+                images,
+                startTime,
+                endTime,
+                address,
+                latitude,
+                longitude,
+              ) {
                 final currentImages = images ?? [];
-                final initialSelectedConnector = findById(connectors,
-                    initialSelectedConnectorId, (connector) => connector.id);
-
                 return SingleChildScrollView(
                   child: Form(
                     key: context.read<AddStationBlock>().formkey,
@@ -63,19 +69,23 @@ class AddStationView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         WHElevatedButton.secondary(
-                          title: context.localized.chooseAddress,
-                          onPressed: () async {
-                            final address = await context.router.push<String>(
-                                const ChooseStationAddressRoute());
-                            if (address != null) {
-                              context
-                                  .read<AddStationBlock>()
-                                  .add(AddStationEvent.getAddress(address));
-                            } else {
-                              debugPrint("No address selected.");
-                            }
-                          },
-                        ),
+                            title: context.localized.chooseAddress,
+                            onPressed: () async {
+                              final addressResult = await context.router
+                                  .push<Map<String, dynamic>>(
+                                const ChooseStationAddressRoute(),
+                              );
+
+                              if (addressResult != null) {
+                                final address = addressResult['address'];
+                                final latitude = addressResult['latitude'];
+                                final longitude = addressResult['longitude'];
+                                context.read<AddStationBlock>().add(
+                                      AddStationEvent.getAddress(
+                                          address, latitude, longitude),
+                                    );
+                              }
+                            }),
                         5.h.heightBox,
                         Text(address ?? "", style: body14MediumTextStyle),
                         20.h.heightBox,
@@ -86,58 +96,61 @@ class AddStationView extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
-                              child: WHOutlinedButton(
-                                  onPressed: () {
-                                    WhDatePicker.of(context)
-                                        .showTimePicker(initialTime: time)
-                                        .then(
-                                      (newDate) {
-                                        if (newDate != null) {
-                                          final formattedTime =
-                                              formatTimeOfDay(newDate);
-                                          context.read<AddStationBlock>().add(
-                                              AddStationEvent.startTimeSelected(
-                                                  formattedTime));
-                                        }
-                                      },
-                                    );
+                                child: WHOutlinedButton(
+                              onPressed: () {
+                                WhDatePicker.of(context)
+                                    .showTimePicker(initialTime: time)
+                                    .then(
+                                  (newDate) {
+                                    if (newDate != null) {
+                                      final formattedTime =
+                                          dateTimeFromTimeOfDay(newDate);
+                                      context.read<AddStationBlock>().add(
+                                          AddStationEvent.startTimeSelected(
+                                              formattedTime));
+                                    }
                                   },
-                                  title: startTime ?? context.localized.start),
-                            ),
+                                );
+                              },
+                              title: startTime != null
+                                  ? formatDateTime(startTime)
+                                  : context.localized.start,
+                            )),
                             20.w.widthBox,
                             WHOutlinedButton(
-                                    onPressed: () {
-                                      WhDatePicker.of(context)
-                                          .showTimePicker(initialTime: time)
-                                          .then(
-                                        (newDate) {
-                                          if (newDate != null) {
-                                            final formattedTime =
-                                                formatTimeOfDay(newDate);
-                                            context.read<AddStationBlock>().add(
-                                                AddStationEvent.endTimeSelected(
-                                                    formattedTime));
-                                          }
-                                        },
-                                      );
-                                    },
-                                    title: endTime ?? context.localized.end)
-                                .expanded(),
+                              onPressed: () {
+                                WhDatePicker.of(context)
+                                    .showTimePicker(initialTime: time)
+                                    .then(
+                                  (newDate) {
+                                    if (newDate != null) {
+                                      final formattedTime =
+                                          dateTimeFromTimeOfDay(newDate);
+                                      context.read<AddStationBlock>().add(
+                                          AddStationEvent.endTimeSelected(
+                                              formattedTime));
+                                    }
+                                  },
+                                );
+                              },
+                              title: endTime != null
+                                  ? formatDateTime(endTime)
+                                  : context.localized.start,
+                            ).expanded(),
                           ],
                         ),
                         10.h.heightBox,
                         WhMultiSelectDropDownButton(
-                          onTab: (connector) {
+                          onTab: (item) {
                             context.read<AddStationBlock>().add(
                                   AddStationEvent
-                                      .connectorMultiTypeChangedEvent(connector),
+                                      .connectorMultiTypeChangedEvent(item),
                                 );
                           },
                           items: connectors,
                           hintText: context.localized.chooseConnector,
                           itemLabel: (connector) => connector.title!,
                           selectedItems: selectedList,
-                          isSelected:isSelected
                         ),
                         Wrap(
                           spacing: 8.0,
@@ -159,19 +172,6 @@ class AddStationView extends StatelessWidget {
                                   backgroundColor: Colors.blueAccent,
                                 ),
                           ],
-                        ),
-                        WhDropDownButton(
-                          items: connectors,
-                          itemLabel: (connector) => connector.title!,
-                          onChanged: (value) {
-                            if (value != null) {
-                              context.read<AddStationBlock>().add(
-                                  AddStationEvent.connectorTypeChangedEvent(
-                                      value));
-                            }
-                          },
-                          hintText: context.localized.chooseConnector,
-                          value: initialSelectedConnector,
                         ),
                         WHTextField.singleLine(
                           controller: context
@@ -238,6 +238,11 @@ class AddStationView extends StatelessWidget {
                           ),
                         20.h.heightBox,
                         WHElevatedButton.primary(
+                          onPressed: () {
+                            context
+                                .read<AddStationBlock>()
+                                .add(const AddStationEvent.createStation());
+                          },
                           title: context.localized.addStation,
                         ),
                       ],

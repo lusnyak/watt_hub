@@ -14,8 +14,17 @@ class AddStationPreviewImages extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.watch<AddStationBlock>().state;
     return state.maybeWhen(
-      loaded: (connectors,isSelected, selectedConnectors, selectedList, selected, initialSelectedConnectorId,
-          images, startTime, endTime, address) {
+      loaded: (connectors,
+          selectedConnectors,
+          selectedList,
+          selected,
+          initialSelectedConnectorId,
+          images,
+          startTime,
+          endTime,
+          address,
+          latitude,
+          longitude,) {
         if (images != null && images.isNotEmpty) {
           return SizedBox(
             height: 100.h,

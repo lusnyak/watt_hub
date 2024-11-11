@@ -44,8 +44,8 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
                 options: MapOptions(
                   onTap: (tapPosition, point) {
                     context.read<ChooseStationAddressBloc>().add(
-                      ChooseStationAddressEvent.locationTapped(point),
-                    );
+                          ChooseStationAddressEvent.locationTapped(point),
+                        );
                   },
                   initialCenter: location ?? const LatLng(40.7942, 43.84528),
                   initialZoom: 18.0,
@@ -53,7 +53,7 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
                 children: [
                   TileLayer(
                     urlTemplate:
-                    'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                        'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                     userAgentPackageName: 'com.example.app',
                   ),
                   MarkerClusterLayerWidget(
@@ -64,19 +64,19 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
                       maxZoom: 15,
                       markers: location != null
                           ? [
-                        Marker(
-                          width: 80.w,
-                          height: 80.h,
-                          point: context
-                              .read<ChooseStationAddressBloc>()
-                              .clickedLocation!,
-                          child: Icon(
-                            Icons.location_on_outlined,
-                            size: 56.r,
-                            color: WattHubColors.primaryGreenColor,
-                          ),
-                        ),
-                      ]
+                              Marker(
+                                width: 80.w,
+                                height: 80.h,
+                                point: context
+                                    .read<ChooseStationAddressBloc>()
+                                    .clickedLocation!,
+                                child: Icon(
+                                  Icons.location_on_outlined,
+                                  size: 56.r,
+                                  color: WattHubColors.primaryGreenColor,
+                                ),
+                              ),
+                            ]
                           : [],
                       builder: (BuildContext context, List<Marker> markers) {
                         return Container(
@@ -103,33 +103,34 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           final bloc = context.read<ChooseStationAddressBloc>();
-          if (bloc.clickedLocation != null) {
-            final location = bloc.clickedLocation!;
+          final location = bloc.clickedLocation;
+
+          if (location != null) {
             bloc.add(
               ChooseStationAddressEvent.addressRequested(
-                location.latitude,
-                location.longitude,
-              ),
+                  location.latitude, location.longitude),
             );
+
             bloc.stream.listen((state) {
               final address = state.maybeWhen(
-                loaded: (address, _) => address,
-                orElse: () => null,
-              );
+                  loaded: (address, _) => address, orElse: () => null);
+
               if (address != null) {
-                context.router.maybePop(address);
+                final result = {
+                  'address': address,
+                  'latitude': location.latitude,
+                  'longitude': location.longitude,
+                };
+                context.router.maybePop(
+                   result);
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Address not found.')),
-                );
+                    const SnackBar(content: Text('Address not found.')));
               }
             });
           } else {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('No location selected. Please tap on the map.'),
-              ),
-            );
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                content: Text('No location selected. Please tap on the map.')));
           }
         },
         child: const Icon(Icons.check),
