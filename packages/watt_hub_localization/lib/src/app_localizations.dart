@@ -306,6 +306,7 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Hourly rate'**
+  /// **'hr'**
   String get hourlyRate;
 
   /// No description provided for @filter.
@@ -333,6 +334,91 @@ abstract class AppLocalizations {
   String get chooseConnector;
 
   /// No description provided for @chooseAddress.
+  /// No description provided for @account.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
+
+  /// No description provided for @myCar.
+  ///
+  /// In en, this message translates to:
+  /// **'My Car'**
+  String get myCar;
+
+  /// No description provided for @myStation.
+  ///
+  /// In en, this message translates to:
+  /// **'My Station'**
+  String get myStation;
+
+  /// No description provided for @helpCenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Help Center'**
+  String get helpCenter;
+
+  /// No description provided for @about.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get about;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logout;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phone;
+
+  /// No description provided for @personalInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal Info'**
+  String get personalInfo;
+
+  /// No description provided for @stationInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Station Info'**
+  String get stationInfo;
+
+  /// No description provided for @carInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Car Info'**
+  String get carInfo;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @max.
+  ///
+  /// In en, this message translates to:
+  /// **'Max'**
+  String get max;
+
+  /// No description provided for @hourlyRateFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Hourly Rate'**
+  String get hourlyRateFull;
+
+  /// No description provided for @location.
   ///
   /// In en, this message translates to:
   /// **'Choose an address'**
@@ -369,6 +455,7 @@ abstract class AppLocalizations {
   String get phone;
 
   /// No description provided for @yourPhoneNumber.
+  /// No description provided for @availableHours.
   ///
   /// In en, this message translates to:
   /// **'Enter your phone number'**

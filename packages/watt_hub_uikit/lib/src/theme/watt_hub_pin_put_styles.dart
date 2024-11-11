@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 PinTheme get defaultPinTheme => PinTheme(
@@ -12,7 +13,7 @@ PinTheme get defaultPinTheme => PinTheme(
         border: Border.all(
           color: const Color.fromRGBO(234, 239, 243, 1),
         ),
-        color: WattHubColors.grayColor,
+        color: WattHubColors.lightGrayColor,
         borderRadius: BorderRadius.circular(20),
       ),
     );

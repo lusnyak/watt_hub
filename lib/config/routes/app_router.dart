@@ -9,7 +9,9 @@ import 'package:watt_hub/presentation/screens/detail/detail_screen.dart';
 import 'package:watt_hub/presentation/screens/filter/filter_screen.dart';
 import 'package:watt_hub/presentation/screens/home/home_screen.dart';
 import 'package:watt_hub/presentation/screens/onboarding/onboarding_screen.dart';
+import 'package:watt_hub/presentation/screens/profile/profile_detail_screen.dart';
 import 'package:watt_hub/presentation/screens/profile/profile_screen.dart';
+import 'package:watt_hub/presentation/screens/profile/vehicle_list_screen.dart';
 import 'package:watt_hub/presentation/screens/request_station/request_station_screen.dart';
 import 'package:watt_hub/presentation/screens/request_user/request_user_screen.dart';
 import 'package:watt_hub/presentation/screens/sign_up/sign_up_screen.dart';
@@ -25,8 +27,7 @@ part 'app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: AppLoadingRoute.page, ),
-        // AutoRoute(page: SplashRoute.page),
+        AutoRoute(page: AppLoadingRoute.page, initial: true),
         AutoRoute(page: UikitExampleRoute.page),
         AutoRoute(page: SplashRoute.page, /*initial: true*/),
         AutoRoute(page: UikitExampleRoute.page, ),
@@ -34,7 +35,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: DashboardRoute.page,initial: true, children: [
           AutoRoute(page: HomeRoute.page,),
           AutoRoute(page: RequestStationRoute.page),
-          AutoRoute(page: ProfileRoute.page),
+          profileTap,
         ]),
         AutoRoute(page: SignUpRoute.page),
         AutoRoute(page: VerificationRoute.page),
@@ -48,3 +49,20 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: AddCarRoute.page),
       ];
 }
+
+@RoutePage(name: 'ProfileTap')
+class ProfileTapPage extends AutoRouter {
+  const ProfileTapPage({super.key});
+}
+
+final profileTap = AutoRoute(
+  page: ProfileTap.page,
+  children: [
+    AutoRoute(
+      page: ProfileRoute.page,
+      initial: true,
+    ),
+    AutoRoute(page: ProfileDetailRoute.page),
+    AutoRoute(page: VehicleListRoute.page),
+  ],
+);

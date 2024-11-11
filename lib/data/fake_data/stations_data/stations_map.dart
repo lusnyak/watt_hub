@@ -17,7 +17,7 @@ Map<String, dynamic> stationData = {
     "https://example.com/yerevan2.jpg",
   ],
   "address": "1 Abovyan St, Yerevan",
-  "reviews": ["Great charging speed!", "Convenient location."],
+  "reviews": [],
   "averageRate": 4.5,
   "user": {
     "id": 1,
@@ -44,7 +44,7 @@ List<Map<String, dynamic>> stationsData = [
       "https://example.com/yerevan2.jpg",
     ],
     "address": "1 Abovyan St, Yerevan",
-    "reviews": ["Great charging speed!", "Convenient location."],
+    "reviews": [],
     "averageRate": 4.5,
     "user": {
       "id": 1,
@@ -69,7 +69,7 @@ List<Map<String, dynamic>> stationsData = [
       "https://example.com/yerevan4.jpg",
     ],
     "address": "2 Mashtots Ave, Yerevan",
-    "reviews": ["Clean and fast charging.", "Friendly staff."],
+    "reviews": [],
     "averageRate": 4.0,
     "user": {
       "id": 2,
@@ -94,7 +94,7 @@ List<Map<String, dynamic>> stationsData = [
       "https://example.com/ejmiatsin2.jpg",
     ],
     "address": "3 Mkhitar Gosh St, Ejmiatsin",
-    "reviews": ["Nice place to charge!", "Good services."],
+    "reviews": [],
     "averageRate": 4.2,
     "user": {
       "id": 3,
@@ -119,7 +119,7 @@ List<Map<String, dynamic>> stationsData = [
       "https://example.com/gyumri2.jpg",
     ],
     "address": "4 Sayat Nova St, Gyumri",
-    "reviews": ["Best charging station in town!", "Fast and reliable."],
+    "reviews": [],
     "averageRate": 4.8,
     "user": {
       "id": 4,
@@ -144,7 +144,7 @@ List<Map<String, dynamic>> stationsData = [
       "https://example.com/vanadzor2.jpg",
     ],
     "address": "5 Tigran Mets Ave, Vanadzor",
-    "reviews": ["Excellent service!", "Charging is quick."],
+    "reviews": [],
     "averageRate": 4.3,
     "user": {
       "id": 5,
@@ -169,7 +169,7 @@ List<Map<String, dynamic>> stationsData = [
       "https://example.com/artashat2.jpg",
     ],
     "address": "6 Abovyan St, Artashat",
-    "reviews": ["Fast charging!", "Good ambiance."],
+    "reviews": [],
     "averageRate": 4.7,
     "user": {
       "id": 6,

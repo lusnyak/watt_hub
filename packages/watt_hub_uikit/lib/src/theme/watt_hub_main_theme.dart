@@ -13,7 +13,7 @@ ThemeData get lightTheme => ThemeData(
       primaryColor: WattHubColors.primaryGreenColor,
       elevatedButtonTheme: elevatedButtonStyle,
       inputDecorationTheme: inputDecorationTheme,
-      dividerTheme: const DividerThemeData(color: WattHubColors.grayColor),
+      dividerTheme: const DividerThemeData(color: WattHubColors.lightGrayColor),
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         systemOverlayStyle: SystemUiOverlayStyle(

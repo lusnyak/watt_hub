@@ -10,8 +10,7 @@ class AppLoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) =>
-          getIt<AppLoadingBloc>()..add(const AppLoadingEvent.getUser()),
+      create: (_) => getIt<AppLoadingBloc>()..add(const AppLoadingEvent.init()),
       child: const _AppLoadingView(),
     );
   }
@@ -24,43 +23,51 @@ class _AppLoadingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: BlocListener<AppLoadingBloc, AppLoadingState>(
+        child: BlocConsumer<AppLoadingBloc, AppLoadingState>(
           listener: (context, state) {
             state.maybeWhen(
               orElse: () {},
-              success: (userData) {
-                if (userData != null) {
-                  context.router.replace(const HomeRoute());
-                }
-              },
+              // success: (userData) {
+              //   if (userData != null) {
+              //     context.router.replace(const HomeRoute());
+              //   }
+              // },
               loadToOnboarding: () {
                 context.router.replace(const OnboardingRoute());
               },
               loadToHome: () {
+                context.router.replace(const HomeRoute());
+              },
+              loadToSignIn: () {
                 context.router.replace(const SignUpRoute());
               },
               error: (message) {
                 context.showSnackBar(message: message);
               },
-              connectionError: (message) {
-                context.showSnackBar(message: message);
+              noConnection: () {
+                context.showSnackBar(message: "No internet connection");
               },
             );
           },
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                WattHubAssets.images.logo.keyName,
-                height: 96.r,
-                width: 96.r,
-                fit: BoxFit.fitHeight,
-              ),
-              24.h.heightBox,
-              const WHCircularSpin(),
-            ],
-          ).toCenter(),
+          builder: (context, state) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  WattHubAssets.images.logo.keyName,
+                  height: 96.r,
+                  width: 96.r,
+                  fit: BoxFit.fitHeight,
+                ),
+                24.h.heightBox,
+                state.maybeWhen(
+                    orElse: () => const SizedBox.shrink(),
+                    noConnection: () =>   Text("WattHub our application uses the Internet. Please check your connection and try again!", textAlign: TextAlign.center, style: body18MediumTextStyle.copyWith(color: WattHubColors.redColor),).paddingSymmetric(horizontal: 20.w),
+                    loading: () => const WHCircularSpin()),
+              ],
+            ).toCenter();
+          },
         ),
       ),
     );

@@ -12,6 +12,7 @@ export 'package:geocoding/geocoding.dart';
 
 
 /// internal
+export 'package:smooth_page_indicator/smooth_page_indicator.dart';
 export 'src/widgets/widgets.dart';
 export 'src/assets/assets.dart';
 export 'src/theme/theme.dart';

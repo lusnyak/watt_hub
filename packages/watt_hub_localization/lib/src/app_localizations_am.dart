@@ -150,6 +150,51 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get name => 'Անուն';
+  
+  @override
+  String get account => 'Հաշիվ';
+
+  @override
+  String get myCar => 'Իմ մեքենան';
+
+  @override
+  String get myStation => 'Իմ կայանը';
+
+  @override
+  String get helpCenter => 'Օգնություն';
+
+  @override
+  String get about => 'WattHub-ի մասին';
+
+  @override
+  String get logout => 'Դուրս գալ';
+
+  @override
+  String get fullName => 'Անուն Ազգանուն';
+
+  @override
+  String get phone => 'Հեռախոսահամար';
+
+  @override
+  String get personalInfo => 'Անձնական տվյալներ';
+
+  @override
+  String get stationInfo => 'Կայանի տվյալներ';
+
+  @override
+  String get carInfo => 'Մեքենայի տվյալներ';
+
+  @override
+  String get name => 'Անուն';
+
+  @override
+  String get max => 'Մաքս:';
+
+  @override
+  String get hourlyRateFull => 'Ժամավճար';
+
+  @override
+  String get location => 'Գտնվելու վայրը';
 
   @override
   String get yourName => 'Մուտքագրեք ձեր անունը';
@@ -168,6 +213,9 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get end => 'վերջ';
+  
+  @override
+  String get availableHours => 'Հասանելի ժամեր:';
 
   @override
   String get flutterMap => 'Ընտրել հասցե';

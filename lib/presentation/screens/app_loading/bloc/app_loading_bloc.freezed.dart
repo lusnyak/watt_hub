@@ -18,39 +18,65 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AppLoadingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getUser,
-    required TResult Function() showConnection,
+    required TResult Function() init,
+    required TResult Function() checkTokenValidation,
+    required TResult Function() checkInternetConnection,
+    required TResult Function() observerConnection,
+    required TResult Function(bool isConnected) notifyConnectionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getUser,
-    TResult? Function()? showConnection,
+    TResult? Function()? init,
+    TResult? Function()? checkTokenValidation,
+    TResult? Function()? checkInternetConnection,
+    TResult? Function()? observerConnection,
+    TResult? Function(bool isConnected)? notifyConnectionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getUser,
-    TResult Function()? showConnection,
+    TResult Function()? init,
+    TResult Function()? checkTokenValidation,
+    TResult Function()? checkInternetConnection,
+    TResult Function()? observerConnection,
+    TResult Function(bool isConnected)? notifyConnectionStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetUserEvent value) getUser,
-    required TResult Function(_ShowConnectionEvent value) showConnection,
+    required TResult Function(_InitEvent value) init,
+    required TResult Function(_CheckTokenValidationEvent value)
+        checkTokenValidation,
+    required TResult Function(_CheckInternetConnectionEvent value)
+        checkInternetConnection,
+    required TResult Function(_ObserverConnectionEvent value)
+        observerConnection,
+    required TResult Function(_NotifyConnectionStatusEvent value)
+        notifyConnectionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetUserEvent value)? getUser,
-    TResult? Function(_ShowConnectionEvent value)? showConnection,
+    TResult? Function(_InitEvent value)? init,
+    TResult? Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult? Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult? Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult? Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetUserEvent value)? getUser,
-    TResult Function(_ShowConnectionEvent value)? showConnection,
+    TResult Function(_InitEvent value)? init,
+    TResult Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -78,18 +104,18 @@ class _$AppLoadingEventCopyWithImpl<$Res, $Val extends AppLoadingEvent>
 }
 
 /// @nodoc
-abstract class _$$GetUserEventImplCopyWith<$Res> {
-  factory _$$GetUserEventImplCopyWith(
-          _$GetUserEventImpl value, $Res Function(_$GetUserEventImpl) then) =
-      __$$GetUserEventImplCopyWithImpl<$Res>;
+abstract class _$$InitEventImplCopyWith<$Res> {
+  factory _$$InitEventImplCopyWith(
+          _$InitEventImpl value, $Res Function(_$InitEventImpl) then) =
+      __$$InitEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetUserEventImplCopyWithImpl<$Res>
-    extends _$AppLoadingEventCopyWithImpl<$Res, _$GetUserEventImpl>
-    implements _$$GetUserEventImplCopyWith<$Res> {
-  __$$GetUserEventImplCopyWithImpl(
-      _$GetUserEventImpl _value, $Res Function(_$GetUserEventImpl) _then)
+class __$$InitEventImplCopyWithImpl<$Res>
+    extends _$AppLoadingEventCopyWithImpl<$Res, _$InitEventImpl>
+    implements _$$InitEventImplCopyWith<$Res> {
+  __$$InitEventImplCopyWithImpl(
+      _$InitEventImpl _value, $Res Function(_$InitEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AppLoadingEvent
@@ -98,24 +124,24 @@ class __$$GetUserEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetUserEventImpl with DiagnosticableTreeMixin implements _GetUserEvent {
-  const _$GetUserEventImpl();
+class _$InitEventImpl with DiagnosticableTreeMixin implements _InitEvent {
+  const _$InitEventImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AppLoadingEvent.getUser()';
+    return 'AppLoadingEvent.init()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'AppLoadingEvent.getUser'));
+    properties.add(DiagnosticsProperty('type', 'AppLoadingEvent.init'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetUserEventImpl);
+        (other.runtimeType == runtimeType && other is _$InitEventImpl);
   }
 
   @override
@@ -124,30 +150,39 @@ class _$GetUserEventImpl with DiagnosticableTreeMixin implements _GetUserEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getUser,
-    required TResult Function() showConnection,
+    required TResult Function() init,
+    required TResult Function() checkTokenValidation,
+    required TResult Function() checkInternetConnection,
+    required TResult Function() observerConnection,
+    required TResult Function(bool isConnected) notifyConnectionStatus,
   }) {
-    return getUser();
+    return init();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getUser,
-    TResult? Function()? showConnection,
+    TResult? Function()? init,
+    TResult? Function()? checkTokenValidation,
+    TResult? Function()? checkInternetConnection,
+    TResult? Function()? observerConnection,
+    TResult? Function(bool isConnected)? notifyConnectionStatus,
   }) {
-    return getUser?.call();
+    return init?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getUser,
-    TResult Function()? showConnection,
+    TResult Function()? init,
+    TResult Function()? checkTokenValidation,
+    TResult Function()? checkInternetConnection,
+    TResult Function()? observerConnection,
+    TResult Function(bool isConnected)? notifyConnectionStatus,
     required TResult orElse(),
   }) {
-    if (getUser != null) {
-      return getUser();
+    if (init != null) {
+      return init();
     }
     return orElse();
   }
@@ -155,52 +190,71 @@ class _$GetUserEventImpl with DiagnosticableTreeMixin implements _GetUserEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetUserEvent value) getUser,
-    required TResult Function(_ShowConnectionEvent value) showConnection,
+    required TResult Function(_InitEvent value) init,
+    required TResult Function(_CheckTokenValidationEvent value)
+        checkTokenValidation,
+    required TResult Function(_CheckInternetConnectionEvent value)
+        checkInternetConnection,
+    required TResult Function(_ObserverConnectionEvent value)
+        observerConnection,
+    required TResult Function(_NotifyConnectionStatusEvent value)
+        notifyConnectionStatus,
   }) {
-    return getUser(this);
+    return init(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetUserEvent value)? getUser,
-    TResult? Function(_ShowConnectionEvent value)? showConnection,
+    TResult? Function(_InitEvent value)? init,
+    TResult? Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult? Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult? Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult? Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
   }) {
-    return getUser?.call(this);
+    return init?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetUserEvent value)? getUser,
-    TResult Function(_ShowConnectionEvent value)? showConnection,
+    TResult Function(_InitEvent value)? init,
+    TResult Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
     required TResult orElse(),
   }) {
-    if (getUser != null) {
-      return getUser(this);
+    if (init != null) {
+      return init(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetUserEvent implements AppLoadingEvent {
-  const factory _GetUserEvent() = _$GetUserEventImpl;
+abstract class _InitEvent implements AppLoadingEvent {
+  const factory _InitEvent() = _$InitEventImpl;
 }
 
 /// @nodoc
-abstract class _$$ShowConnectionEventImplCopyWith<$Res> {
-  factory _$$ShowConnectionEventImplCopyWith(_$ShowConnectionEventImpl value,
-          $Res Function(_$ShowConnectionEventImpl) then) =
-      __$$ShowConnectionEventImplCopyWithImpl<$Res>;
+abstract class _$$CheckTokenValidationEventImplCopyWith<$Res> {
+  factory _$$CheckTokenValidationEventImplCopyWith(
+          _$CheckTokenValidationEventImpl value,
+          $Res Function(_$CheckTokenValidationEventImpl) then) =
+      __$$CheckTokenValidationEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ShowConnectionEventImplCopyWithImpl<$Res>
-    extends _$AppLoadingEventCopyWithImpl<$Res, _$ShowConnectionEventImpl>
-    implements _$$ShowConnectionEventImplCopyWith<$Res> {
-  __$$ShowConnectionEventImplCopyWithImpl(_$ShowConnectionEventImpl _value,
-      $Res Function(_$ShowConnectionEventImpl) _then)
+class __$$CheckTokenValidationEventImplCopyWithImpl<$Res>
+    extends _$AppLoadingEventCopyWithImpl<$Res, _$CheckTokenValidationEventImpl>
+    implements _$$CheckTokenValidationEventImplCopyWith<$Res> {
+  __$$CheckTokenValidationEventImplCopyWithImpl(
+      _$CheckTokenValidationEventImpl _value,
+      $Res Function(_$CheckTokenValidationEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AppLoadingEvent
@@ -209,28 +263,28 @@ class __$$ShowConnectionEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ShowConnectionEventImpl
+class _$CheckTokenValidationEventImpl
     with DiagnosticableTreeMixin
-    implements _ShowConnectionEvent {
-  const _$ShowConnectionEventImpl();
+    implements _CheckTokenValidationEvent {
+  const _$CheckTokenValidationEventImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AppLoadingEvent.showConnection()';
+    return 'AppLoadingEvent.checkTokenValidation()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-        .add(DiagnosticsProperty('type', 'AppLoadingEvent.showConnection'));
+    properties.add(
+        DiagnosticsProperty('type', 'AppLoadingEvent.checkTokenValidation'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ShowConnectionEventImpl);
+            other is _$CheckTokenValidationEventImpl);
   }
 
   @override
@@ -239,30 +293,39 @@ class _$ShowConnectionEventImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getUser,
-    required TResult Function() showConnection,
+    required TResult Function() init,
+    required TResult Function() checkTokenValidation,
+    required TResult Function() checkInternetConnection,
+    required TResult Function() observerConnection,
+    required TResult Function(bool isConnected) notifyConnectionStatus,
   }) {
-    return showConnection();
+    return checkTokenValidation();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getUser,
-    TResult? Function()? showConnection,
+    TResult? Function()? init,
+    TResult? Function()? checkTokenValidation,
+    TResult? Function()? checkInternetConnection,
+    TResult? Function()? observerConnection,
+    TResult? Function(bool isConnected)? notifyConnectionStatus,
   }) {
-    return showConnection?.call();
+    return checkTokenValidation?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getUser,
-    TResult Function()? showConnection,
+    TResult Function()? init,
+    TResult Function()? checkTokenValidation,
+    TResult Function()? checkInternetConnection,
+    TResult Function()? observerConnection,
+    TResult Function(bool isConnected)? notifyConnectionStatus,
     required TResult orElse(),
   }) {
-    if (showConnection != null) {
-      return showConnection();
+    if (checkTokenValidation != null) {
+      return checkTokenValidation();
     }
     return orElse();
   }
@@ -270,37 +333,525 @@ class _$ShowConnectionEventImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetUserEvent value) getUser,
-    required TResult Function(_ShowConnectionEvent value) showConnection,
+    required TResult Function(_InitEvent value) init,
+    required TResult Function(_CheckTokenValidationEvent value)
+        checkTokenValidation,
+    required TResult Function(_CheckInternetConnectionEvent value)
+        checkInternetConnection,
+    required TResult Function(_ObserverConnectionEvent value)
+        observerConnection,
+    required TResult Function(_NotifyConnectionStatusEvent value)
+        notifyConnectionStatus,
   }) {
-    return showConnection(this);
+    return checkTokenValidation(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetUserEvent value)? getUser,
-    TResult? Function(_ShowConnectionEvent value)? showConnection,
+    TResult? Function(_InitEvent value)? init,
+    TResult? Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult? Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult? Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult? Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
   }) {
-    return showConnection?.call(this);
+    return checkTokenValidation?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetUserEvent value)? getUser,
-    TResult Function(_ShowConnectionEvent value)? showConnection,
+    TResult Function(_InitEvent value)? init,
+    TResult Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
     required TResult orElse(),
   }) {
-    if (showConnection != null) {
-      return showConnection(this);
+    if (checkTokenValidation != null) {
+      return checkTokenValidation(this);
     }
     return orElse();
   }
 }
 
-abstract class _ShowConnectionEvent implements AppLoadingEvent {
-  const factory _ShowConnectionEvent() = _$ShowConnectionEventImpl;
+abstract class _CheckTokenValidationEvent implements AppLoadingEvent {
+  const factory _CheckTokenValidationEvent() = _$CheckTokenValidationEventImpl;
+}
+
+/// @nodoc
+abstract class _$$CheckInternetConnectionEventImplCopyWith<$Res> {
+  factory _$$CheckInternetConnectionEventImplCopyWith(
+          _$CheckInternetConnectionEventImpl value,
+          $Res Function(_$CheckInternetConnectionEventImpl) then) =
+      __$$CheckInternetConnectionEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckInternetConnectionEventImplCopyWithImpl<$Res>
+    extends _$AppLoadingEventCopyWithImpl<$Res,
+        _$CheckInternetConnectionEventImpl>
+    implements _$$CheckInternetConnectionEventImplCopyWith<$Res> {
+  __$$CheckInternetConnectionEventImplCopyWithImpl(
+      _$CheckInternetConnectionEventImpl _value,
+      $Res Function(_$CheckInternetConnectionEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppLoadingEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CheckInternetConnectionEventImpl
+    with DiagnosticableTreeMixin
+    implements _CheckInternetConnectionEvent {
+  const _$CheckInternetConnectionEventImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AppLoadingEvent.checkInternetConnection()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+        DiagnosticsProperty('type', 'AppLoadingEvent.checkInternetConnection'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckInternetConnectionEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() checkTokenValidation,
+    required TResult Function() checkInternetConnection,
+    required TResult Function() observerConnection,
+    required TResult Function(bool isConnected) notifyConnectionStatus,
+  }) {
+    return checkInternetConnection();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function()? checkTokenValidation,
+    TResult? Function()? checkInternetConnection,
+    TResult? Function()? observerConnection,
+    TResult? Function(bool isConnected)? notifyConnectionStatus,
+  }) {
+    return checkInternetConnection?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? checkTokenValidation,
+    TResult Function()? checkInternetConnection,
+    TResult Function()? observerConnection,
+    TResult Function(bool isConnected)? notifyConnectionStatus,
+    required TResult orElse(),
+  }) {
+    if (checkInternetConnection != null) {
+      return checkInternetConnection();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitEvent value) init,
+    required TResult Function(_CheckTokenValidationEvent value)
+        checkTokenValidation,
+    required TResult Function(_CheckInternetConnectionEvent value)
+        checkInternetConnection,
+    required TResult Function(_ObserverConnectionEvent value)
+        observerConnection,
+    required TResult Function(_NotifyConnectionStatusEvent value)
+        notifyConnectionStatus,
+  }) {
+    return checkInternetConnection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitEvent value)? init,
+    TResult? Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult? Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult? Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult? Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
+  }) {
+    return checkInternetConnection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitEvent value)? init,
+    TResult Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
+    required TResult orElse(),
+  }) {
+    if (checkInternetConnection != null) {
+      return checkInternetConnection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CheckInternetConnectionEvent implements AppLoadingEvent {
+  const factory _CheckInternetConnectionEvent() =
+      _$CheckInternetConnectionEventImpl;
+}
+
+/// @nodoc
+abstract class _$$ObserverConnectionEventImplCopyWith<$Res> {
+  factory _$$ObserverConnectionEventImplCopyWith(
+          _$ObserverConnectionEventImpl value,
+          $Res Function(_$ObserverConnectionEventImpl) then) =
+      __$$ObserverConnectionEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ObserverConnectionEventImplCopyWithImpl<$Res>
+    extends _$AppLoadingEventCopyWithImpl<$Res, _$ObserverConnectionEventImpl>
+    implements _$$ObserverConnectionEventImplCopyWith<$Res> {
+  __$$ObserverConnectionEventImplCopyWithImpl(
+      _$ObserverConnectionEventImpl _value,
+      $Res Function(_$ObserverConnectionEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppLoadingEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ObserverConnectionEventImpl
+    with DiagnosticableTreeMixin
+    implements _ObserverConnectionEvent {
+  const _$ObserverConnectionEventImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AppLoadingEvent.observerConnection()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'AppLoadingEvent.observerConnection'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ObserverConnectionEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() checkTokenValidation,
+    required TResult Function() checkInternetConnection,
+    required TResult Function() observerConnection,
+    required TResult Function(bool isConnected) notifyConnectionStatus,
+  }) {
+    return observerConnection();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function()? checkTokenValidation,
+    TResult? Function()? checkInternetConnection,
+    TResult? Function()? observerConnection,
+    TResult? Function(bool isConnected)? notifyConnectionStatus,
+  }) {
+    return observerConnection?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? checkTokenValidation,
+    TResult Function()? checkInternetConnection,
+    TResult Function()? observerConnection,
+    TResult Function(bool isConnected)? notifyConnectionStatus,
+    required TResult orElse(),
+  }) {
+    if (observerConnection != null) {
+      return observerConnection();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitEvent value) init,
+    required TResult Function(_CheckTokenValidationEvent value)
+        checkTokenValidation,
+    required TResult Function(_CheckInternetConnectionEvent value)
+        checkInternetConnection,
+    required TResult Function(_ObserverConnectionEvent value)
+        observerConnection,
+    required TResult Function(_NotifyConnectionStatusEvent value)
+        notifyConnectionStatus,
+  }) {
+    return observerConnection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitEvent value)? init,
+    TResult? Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult? Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult? Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult? Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
+  }) {
+    return observerConnection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitEvent value)? init,
+    TResult Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
+    required TResult orElse(),
+  }) {
+    if (observerConnection != null) {
+      return observerConnection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ObserverConnectionEvent implements AppLoadingEvent {
+  const factory _ObserverConnectionEvent() = _$ObserverConnectionEventImpl;
+}
+
+/// @nodoc
+abstract class _$$NotifyConnectionStatusEventImplCopyWith<$Res> {
+  factory _$$NotifyConnectionStatusEventImplCopyWith(
+          _$NotifyConnectionStatusEventImpl value,
+          $Res Function(_$NotifyConnectionStatusEventImpl) then) =
+      __$$NotifyConnectionStatusEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isConnected});
+}
+
+/// @nodoc
+class __$$NotifyConnectionStatusEventImplCopyWithImpl<$Res>
+    extends _$AppLoadingEventCopyWithImpl<$Res,
+        _$NotifyConnectionStatusEventImpl>
+    implements _$$NotifyConnectionStatusEventImplCopyWith<$Res> {
+  __$$NotifyConnectionStatusEventImplCopyWithImpl(
+      _$NotifyConnectionStatusEventImpl _value,
+      $Res Function(_$NotifyConnectionStatusEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppLoadingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isConnected = null,
+  }) {
+    return _then(_$NotifyConnectionStatusEventImpl(
+      isConnected: null == isConnected
+          ? _value.isConnected
+          : isConnected // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NotifyConnectionStatusEventImpl
+    with DiagnosticableTreeMixin
+    implements _NotifyConnectionStatusEvent {
+  const _$NotifyConnectionStatusEventImpl({required this.isConnected});
+
+  @override
+  final bool isConnected;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AppLoadingEvent.notifyConnectionStatus(isConnected: $isConnected)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'AppLoadingEvent.notifyConnectionStatus'))
+      ..add(DiagnosticsProperty('isConnected', isConnected));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotifyConnectionStatusEventImpl &&
+            (identical(other.isConnected, isConnected) ||
+                other.isConnected == isConnected));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isConnected);
+
+  /// Create a copy of AppLoadingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotifyConnectionStatusEventImplCopyWith<_$NotifyConnectionStatusEventImpl>
+      get copyWith => __$$NotifyConnectionStatusEventImplCopyWithImpl<
+          _$NotifyConnectionStatusEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() checkTokenValidation,
+    required TResult Function() checkInternetConnection,
+    required TResult Function() observerConnection,
+    required TResult Function(bool isConnected) notifyConnectionStatus,
+  }) {
+    return notifyConnectionStatus(isConnected);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function()? checkTokenValidation,
+    TResult? Function()? checkInternetConnection,
+    TResult? Function()? observerConnection,
+    TResult? Function(bool isConnected)? notifyConnectionStatus,
+  }) {
+    return notifyConnectionStatus?.call(isConnected);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? checkTokenValidation,
+    TResult Function()? checkInternetConnection,
+    TResult Function()? observerConnection,
+    TResult Function(bool isConnected)? notifyConnectionStatus,
+    required TResult orElse(),
+  }) {
+    if (notifyConnectionStatus != null) {
+      return notifyConnectionStatus(isConnected);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitEvent value) init,
+    required TResult Function(_CheckTokenValidationEvent value)
+        checkTokenValidation,
+    required TResult Function(_CheckInternetConnectionEvent value)
+        checkInternetConnection,
+    required TResult Function(_ObserverConnectionEvent value)
+        observerConnection,
+    required TResult Function(_NotifyConnectionStatusEvent value)
+        notifyConnectionStatus,
+  }) {
+    return notifyConnectionStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitEvent value)? init,
+    TResult? Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult? Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult? Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult? Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
+  }) {
+    return notifyConnectionStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitEvent value)? init,
+    TResult Function(_CheckTokenValidationEvent value)? checkTokenValidation,
+    TResult Function(_CheckInternetConnectionEvent value)?
+        checkInternetConnection,
+    TResult Function(_ObserverConnectionEvent value)? observerConnection,
+    TResult Function(_NotifyConnectionStatusEvent value)?
+        notifyConnectionStatus,
+    required TResult orElse(),
+  }) {
+    if (notifyConnectionStatus != null) {
+      return notifyConnectionStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NotifyConnectionStatusEvent implements AppLoadingEvent {
+  const factory _NotifyConnectionStatusEvent(
+      {required final bool isConnected}) = _$NotifyConnectionStatusEventImpl;
+
+  bool get isConnected;
+
+  /// Create a copy of AppLoadingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NotifyConnectionStatusEventImplCopyWith<_$NotifyConnectionStatusEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -309,67 +860,73 @@ mixin _$AppLoadingState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel? userData) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
     required TResult Function() loadToOnboarding,
     required TResult Function() loadToHome,
-    required TResult Function(String message) connectionError,
+    required TResult Function() loadToSignIn,
+    required TResult Function() noConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel? userData)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
     TResult? Function()? loadToOnboarding,
     TResult? Function()? loadToHome,
-    TResult? Function(String message)? connectionError,
+    TResult? Function()? loadToSignIn,
+    TResult? Function()? noConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel? userData)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     TResult Function()? loadToOnboarding,
     TResult Function()? loadToHome,
-    TResult Function(String message)? connectionError,
+    TResult Function()? loadToSignIn,
+    TResult Function()? noConnection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppLoadingInitialState value) initial,
-    required TResult Function(AppLoadingLoadingState value) loading,
-    required TResult Function(AppLoadingSuccessState value) success,
-    required TResult Function(AppLoadingErrorState value) error,
-    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
-    required TResult Function(LoadToHomeState value) loadToHome,
-    required TResult Function(ConnectionError value) connectionError,
+    required TResult Function(_AppLoadingInitialState value) initial,
+    required TResult Function(_AppLoadingLoadingState value) loading,
+    required TResult Function(_AppLoadingSuccessState value) success,
+    required TResult Function(_AppLoadingErrorState value) error,
+    required TResult Function(_LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(_LoadToHomeState value) loadToHome,
+    required TResult Function(_LoadToSignInState value) loadToSignIn,
+    required TResult Function(_NoConnectionState value) noConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppLoadingInitialState value)? initial,
-    TResult? Function(AppLoadingLoadingState value)? loading,
-    TResult? Function(AppLoadingSuccessState value)? success,
-    TResult? Function(AppLoadingErrorState value)? error,
-    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult? Function(LoadToHomeState value)? loadToHome,
-    TResult? Function(ConnectionError value)? connectionError,
+    TResult? Function(_AppLoadingInitialState value)? initial,
+    TResult? Function(_AppLoadingLoadingState value)? loading,
+    TResult? Function(_AppLoadingSuccessState value)? success,
+    TResult? Function(_AppLoadingErrorState value)? error,
+    TResult? Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(_LoadToHomeState value)? loadToHome,
+    TResult? Function(_LoadToSignInState value)? loadToSignIn,
+    TResult? Function(_NoConnectionState value)? noConnection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppLoadingInitialState value)? initial,
-    TResult Function(AppLoadingLoadingState value)? loading,
-    TResult Function(AppLoadingSuccessState value)? success,
-    TResult Function(AppLoadingErrorState value)? error,
-    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult Function(LoadToHomeState value)? loadToHome,
-    TResult Function(ConnectionError value)? connectionError,
+    TResult Function(_AppLoadingInitialState value)? initial,
+    TResult Function(_AppLoadingLoadingState value)? loading,
+    TResult Function(_AppLoadingSuccessState value)? success,
+    TResult Function(_AppLoadingErrorState value)? error,
+    TResult Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(_LoadToHomeState value)? loadToHome,
+    TResult Function(_LoadToSignInState value)? loadToSignIn,
+    TResult Function(_NoConnectionState value)? noConnection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -421,7 +978,7 @@ class __$$AppLoadingInitialStateImplCopyWithImpl<$Res>
 
 class _$AppLoadingInitialStateImpl
     with DiagnosticableTreeMixin
-    implements AppLoadingInitialState {
+    implements _AppLoadingInitialState {
   const _$AppLoadingInitialStateImpl();
 
   @override
@@ -450,11 +1007,12 @@ class _$AppLoadingInitialStateImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel? userData) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
     required TResult Function() loadToOnboarding,
     required TResult Function() loadToHome,
-    required TResult Function(String message) connectionError,
+    required TResult Function() loadToSignIn,
+    required TResult Function() noConnection,
   }) {
     return initial();
   }
@@ -464,11 +1022,12 @@ class _$AppLoadingInitialStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel? userData)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
     TResult? Function()? loadToOnboarding,
     TResult? Function()? loadToHome,
-    TResult? Function(String message)? connectionError,
+    TResult? Function()? loadToSignIn,
+    TResult? Function()? noConnection,
   }) {
     return initial?.call();
   }
@@ -478,11 +1037,12 @@ class _$AppLoadingInitialStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel? userData)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     TResult Function()? loadToOnboarding,
     TResult Function()? loadToHome,
-    TResult Function(String message)? connectionError,
+    TResult Function()? loadToSignIn,
+    TResult Function()? noConnection,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -494,13 +1054,14 @@ class _$AppLoadingInitialStateImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppLoadingInitialState value) initial,
-    required TResult Function(AppLoadingLoadingState value) loading,
-    required TResult Function(AppLoadingSuccessState value) success,
-    required TResult Function(AppLoadingErrorState value) error,
-    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
-    required TResult Function(LoadToHomeState value) loadToHome,
-    required TResult Function(ConnectionError value) connectionError,
+    required TResult Function(_AppLoadingInitialState value) initial,
+    required TResult Function(_AppLoadingLoadingState value) loading,
+    required TResult Function(_AppLoadingSuccessState value) success,
+    required TResult Function(_AppLoadingErrorState value) error,
+    required TResult Function(_LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(_LoadToHomeState value) loadToHome,
+    required TResult Function(_LoadToSignInState value) loadToSignIn,
+    required TResult Function(_NoConnectionState value) noConnection,
   }) {
     return initial(this);
   }
@@ -508,13 +1069,14 @@ class _$AppLoadingInitialStateImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppLoadingInitialState value)? initial,
-    TResult? Function(AppLoadingLoadingState value)? loading,
-    TResult? Function(AppLoadingSuccessState value)? success,
-    TResult? Function(AppLoadingErrorState value)? error,
-    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult? Function(LoadToHomeState value)? loadToHome,
-    TResult? Function(ConnectionError value)? connectionError,
+    TResult? Function(_AppLoadingInitialState value)? initial,
+    TResult? Function(_AppLoadingLoadingState value)? loading,
+    TResult? Function(_AppLoadingSuccessState value)? success,
+    TResult? Function(_AppLoadingErrorState value)? error,
+    TResult? Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(_LoadToHomeState value)? loadToHome,
+    TResult? Function(_LoadToSignInState value)? loadToSignIn,
+    TResult? Function(_NoConnectionState value)? noConnection,
   }) {
     return initial?.call(this);
   }
@@ -522,13 +1084,14 @@ class _$AppLoadingInitialStateImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppLoadingInitialState value)? initial,
-    TResult Function(AppLoadingLoadingState value)? loading,
-    TResult Function(AppLoadingSuccessState value)? success,
-    TResult Function(AppLoadingErrorState value)? error,
-    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult Function(LoadToHomeState value)? loadToHome,
-    TResult Function(ConnectionError value)? connectionError,
+    TResult Function(_AppLoadingInitialState value)? initial,
+    TResult Function(_AppLoadingLoadingState value)? loading,
+    TResult Function(_AppLoadingSuccessState value)? success,
+    TResult Function(_AppLoadingErrorState value)? error,
+    TResult Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(_LoadToHomeState value)? loadToHome,
+    TResult Function(_LoadToSignInState value)? loadToSignIn,
+    TResult Function(_NoConnectionState value)? noConnection,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -538,8 +1101,8 @@ class _$AppLoadingInitialStateImpl
   }
 }
 
-abstract class AppLoadingInitialState implements AppLoadingState {
-  const factory AppLoadingInitialState() = _$AppLoadingInitialStateImpl;
+abstract class _AppLoadingInitialState implements AppLoadingState {
+  const factory _AppLoadingInitialState() = _$AppLoadingInitialStateImpl;
 }
 
 /// @nodoc
@@ -567,7 +1130,7 @@ class __$$AppLoadingLoadingStateImplCopyWithImpl<$Res>
 
 class _$AppLoadingLoadingStateImpl
     with DiagnosticableTreeMixin
-    implements AppLoadingLoadingState {
+    implements _AppLoadingLoadingState {
   const _$AppLoadingLoadingStateImpl();
 
   @override
@@ -596,11 +1159,12 @@ class _$AppLoadingLoadingStateImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel? userData) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
     required TResult Function() loadToOnboarding,
     required TResult Function() loadToHome,
-    required TResult Function(String message) connectionError,
+    required TResult Function() loadToSignIn,
+    required TResult Function() noConnection,
   }) {
     return loading();
   }
@@ -610,11 +1174,12 @@ class _$AppLoadingLoadingStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel? userData)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
     TResult? Function()? loadToOnboarding,
     TResult? Function()? loadToHome,
-    TResult? Function(String message)? connectionError,
+    TResult? Function()? loadToSignIn,
+    TResult? Function()? noConnection,
   }) {
     return loading?.call();
   }
@@ -624,11 +1189,12 @@ class _$AppLoadingLoadingStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel? userData)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     TResult Function()? loadToOnboarding,
     TResult Function()? loadToHome,
-    TResult Function(String message)? connectionError,
+    TResult Function()? loadToSignIn,
+    TResult Function()? noConnection,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -640,13 +1206,14 @@ class _$AppLoadingLoadingStateImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppLoadingInitialState value) initial,
-    required TResult Function(AppLoadingLoadingState value) loading,
-    required TResult Function(AppLoadingSuccessState value) success,
-    required TResult Function(AppLoadingErrorState value) error,
-    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
-    required TResult Function(LoadToHomeState value) loadToHome,
-    required TResult Function(ConnectionError value) connectionError,
+    required TResult Function(_AppLoadingInitialState value) initial,
+    required TResult Function(_AppLoadingLoadingState value) loading,
+    required TResult Function(_AppLoadingSuccessState value) success,
+    required TResult Function(_AppLoadingErrorState value) error,
+    required TResult Function(_LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(_LoadToHomeState value) loadToHome,
+    required TResult Function(_LoadToSignInState value) loadToSignIn,
+    required TResult Function(_NoConnectionState value) noConnection,
   }) {
     return loading(this);
   }
@@ -654,13 +1221,14 @@ class _$AppLoadingLoadingStateImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppLoadingInitialState value)? initial,
-    TResult? Function(AppLoadingLoadingState value)? loading,
-    TResult? Function(AppLoadingSuccessState value)? success,
-    TResult? Function(AppLoadingErrorState value)? error,
-    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult? Function(LoadToHomeState value)? loadToHome,
-    TResult? Function(ConnectionError value)? connectionError,
+    TResult? Function(_AppLoadingInitialState value)? initial,
+    TResult? Function(_AppLoadingLoadingState value)? loading,
+    TResult? Function(_AppLoadingSuccessState value)? success,
+    TResult? Function(_AppLoadingErrorState value)? error,
+    TResult? Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(_LoadToHomeState value)? loadToHome,
+    TResult? Function(_LoadToSignInState value)? loadToSignIn,
+    TResult? Function(_NoConnectionState value)? noConnection,
   }) {
     return loading?.call(this);
   }
@@ -668,13 +1236,14 @@ class _$AppLoadingLoadingStateImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppLoadingInitialState value)? initial,
-    TResult Function(AppLoadingLoadingState value)? loading,
-    TResult Function(AppLoadingSuccessState value)? success,
-    TResult Function(AppLoadingErrorState value)? error,
-    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult Function(LoadToHomeState value)? loadToHome,
-    TResult Function(ConnectionError value)? connectionError,
+    TResult Function(_AppLoadingInitialState value)? initial,
+    TResult Function(_AppLoadingLoadingState value)? loading,
+    TResult Function(_AppLoadingSuccessState value)? success,
+    TResult Function(_AppLoadingErrorState value)? error,
+    TResult Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(_LoadToHomeState value)? loadToHome,
+    TResult Function(_LoadToSignInState value)? loadToSignIn,
+    TResult Function(_NoConnectionState value)? noConnection,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -684,8 +1253,8 @@ class _$AppLoadingLoadingStateImpl
   }
 }
 
-abstract class AppLoadingLoadingState implements AppLoadingState {
-  const factory AppLoadingLoadingState() = _$AppLoadingLoadingStateImpl;
+abstract class _AppLoadingLoadingState implements AppLoadingState {
+  const factory _AppLoadingLoadingState() = _$AppLoadingLoadingStateImpl;
 }
 
 /// @nodoc
@@ -694,10 +1263,6 @@ abstract class _$$AppLoadingSuccessStateImplCopyWith<$Res> {
           _$AppLoadingSuccessStateImpl value,
           $Res Function(_$AppLoadingSuccessStateImpl) then) =
       __$$AppLoadingSuccessStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({UserModel? userData});
-
-  $UserModelCopyWith<$Res>? get userData;
 }
 
 /// @nodoc
@@ -711,90 +1276,49 @@ class __$$AppLoadingSuccessStateImplCopyWithImpl<$Res>
 
   /// Create a copy of AppLoadingState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userData = freezed,
-  }) {
-    return _then(_$AppLoadingSuccessStateImpl(
-      freezed == userData
-          ? _value.userData
-          : userData // ignore: cast_nullable_to_non_nullable
-              as UserModel?,
-    ));
-  }
-
-  /// Create a copy of AppLoadingState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserModelCopyWith<$Res>? get userData {
-    if (_value.userData == null) {
-      return null;
-    }
-
-    return $UserModelCopyWith<$Res>(_value.userData!, (value) {
-      return _then(_value.copyWith(userData: value));
-    });
-  }
 }
 
 /// @nodoc
 
 class _$AppLoadingSuccessStateImpl
     with DiagnosticableTreeMixin
-    implements AppLoadingSuccessState {
-  const _$AppLoadingSuccessStateImpl(this.userData);
-
-  @override
-  final UserModel? userData;
+    implements _AppLoadingSuccessState {
+  const _$AppLoadingSuccessStateImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AppLoadingState.success(userData: $userData)';
+    return 'AppLoadingState.success()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AppLoadingState.success'))
-      ..add(DiagnosticsProperty('userData', userData));
+    properties.add(DiagnosticsProperty('type', 'AppLoadingState.success'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppLoadingSuccessStateImpl &&
-            (identical(other.userData, userData) ||
-                other.userData == userData));
+            other is _$AppLoadingSuccessStateImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userData);
-
-  /// Create a copy of AppLoadingState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AppLoadingSuccessStateImplCopyWith<_$AppLoadingSuccessStateImpl>
-      get copyWith => __$$AppLoadingSuccessStateImplCopyWithImpl<
-          _$AppLoadingSuccessStateImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel? userData) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
     required TResult Function() loadToOnboarding,
     required TResult Function() loadToHome,
-    required TResult Function(String message) connectionError,
+    required TResult Function() loadToSignIn,
+    required TResult Function() noConnection,
   }) {
-    return success(userData);
+    return success();
   }
 
   @override
@@ -802,13 +1326,14 @@ class _$AppLoadingSuccessStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel? userData)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
     TResult? Function()? loadToOnboarding,
     TResult? Function()? loadToHome,
-    TResult? Function(String message)? connectionError,
+    TResult? Function()? loadToSignIn,
+    TResult? Function()? noConnection,
   }) {
-    return success?.call(userData);
+    return success?.call();
   }
 
   @override
@@ -816,15 +1341,16 @@ class _$AppLoadingSuccessStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel? userData)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     TResult Function()? loadToOnboarding,
     TResult Function()? loadToHome,
-    TResult Function(String message)? connectionError,
+    TResult Function()? loadToSignIn,
+    TResult Function()? noConnection,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(userData);
+      return success();
     }
     return orElse();
   }
@@ -832,13 +1358,14 @@ class _$AppLoadingSuccessStateImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppLoadingInitialState value) initial,
-    required TResult Function(AppLoadingLoadingState value) loading,
-    required TResult Function(AppLoadingSuccessState value) success,
-    required TResult Function(AppLoadingErrorState value) error,
-    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
-    required TResult Function(LoadToHomeState value) loadToHome,
-    required TResult Function(ConnectionError value) connectionError,
+    required TResult Function(_AppLoadingInitialState value) initial,
+    required TResult Function(_AppLoadingLoadingState value) loading,
+    required TResult Function(_AppLoadingSuccessState value) success,
+    required TResult Function(_AppLoadingErrorState value) error,
+    required TResult Function(_LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(_LoadToHomeState value) loadToHome,
+    required TResult Function(_LoadToSignInState value) loadToSignIn,
+    required TResult Function(_NoConnectionState value) noConnection,
   }) {
     return success(this);
   }
@@ -846,13 +1373,14 @@ class _$AppLoadingSuccessStateImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppLoadingInitialState value)? initial,
-    TResult? Function(AppLoadingLoadingState value)? loading,
-    TResult? Function(AppLoadingSuccessState value)? success,
-    TResult? Function(AppLoadingErrorState value)? error,
-    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult? Function(LoadToHomeState value)? loadToHome,
-    TResult? Function(ConnectionError value)? connectionError,
+    TResult? Function(_AppLoadingInitialState value)? initial,
+    TResult? Function(_AppLoadingLoadingState value)? loading,
+    TResult? Function(_AppLoadingSuccessState value)? success,
+    TResult? Function(_AppLoadingErrorState value)? error,
+    TResult? Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(_LoadToHomeState value)? loadToHome,
+    TResult? Function(_LoadToSignInState value)? loadToSignIn,
+    TResult? Function(_NoConnectionState value)? noConnection,
   }) {
     return success?.call(this);
   }
@@ -860,13 +1388,14 @@ class _$AppLoadingSuccessStateImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppLoadingInitialState value)? initial,
-    TResult Function(AppLoadingLoadingState value)? loading,
-    TResult Function(AppLoadingSuccessState value)? success,
-    TResult Function(AppLoadingErrorState value)? error,
-    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult Function(LoadToHomeState value)? loadToHome,
-    TResult Function(ConnectionError value)? connectionError,
+    TResult Function(_AppLoadingInitialState value)? initial,
+    TResult Function(_AppLoadingLoadingState value)? loading,
+    TResult Function(_AppLoadingSuccessState value)? success,
+    TResult Function(_AppLoadingErrorState value)? error,
+    TResult Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(_LoadToHomeState value)? loadToHome,
+    TResult Function(_LoadToSignInState value)? loadToSignIn,
+    TResult Function(_NoConnectionState value)? noConnection,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -876,17 +1405,8 @@ class _$AppLoadingSuccessStateImpl
   }
 }
 
-abstract class AppLoadingSuccessState implements AppLoadingState {
-  const factory AppLoadingSuccessState(final UserModel? userData) =
-      _$AppLoadingSuccessStateImpl;
-
-  UserModel? get userData;
-
-  /// Create a copy of AppLoadingState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AppLoadingSuccessStateImplCopyWith<_$AppLoadingSuccessStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+abstract class _AppLoadingSuccessState implements AppLoadingState {
+  const factory _AppLoadingSuccessState() = _$AppLoadingSuccessStateImpl;
 }
 
 /// @nodoc
@@ -926,7 +1446,7 @@ class __$$AppLoadingErrorStateImplCopyWithImpl<$Res>
 
 class _$AppLoadingErrorStateImpl
     with DiagnosticableTreeMixin
-    implements AppLoadingErrorState {
+    implements _AppLoadingErrorState {
   const _$AppLoadingErrorStateImpl(this.message);
 
   @override
@@ -971,11 +1491,12 @@ class _$AppLoadingErrorStateImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel? userData) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
     required TResult Function() loadToOnboarding,
     required TResult Function() loadToHome,
-    required TResult Function(String message) connectionError,
+    required TResult Function() loadToSignIn,
+    required TResult Function() noConnection,
   }) {
     return error(message);
   }
@@ -985,11 +1506,12 @@ class _$AppLoadingErrorStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel? userData)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
     TResult? Function()? loadToOnboarding,
     TResult? Function()? loadToHome,
-    TResult? Function(String message)? connectionError,
+    TResult? Function()? loadToSignIn,
+    TResult? Function()? noConnection,
   }) {
     return error?.call(message);
   }
@@ -999,11 +1521,12 @@ class _$AppLoadingErrorStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel? userData)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     TResult Function()? loadToOnboarding,
     TResult Function()? loadToHome,
-    TResult Function(String message)? connectionError,
+    TResult Function()? loadToSignIn,
+    TResult Function()? noConnection,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1015,13 +1538,14 @@ class _$AppLoadingErrorStateImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppLoadingInitialState value) initial,
-    required TResult Function(AppLoadingLoadingState value) loading,
-    required TResult Function(AppLoadingSuccessState value) success,
-    required TResult Function(AppLoadingErrorState value) error,
-    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
-    required TResult Function(LoadToHomeState value) loadToHome,
-    required TResult Function(ConnectionError value) connectionError,
+    required TResult Function(_AppLoadingInitialState value) initial,
+    required TResult Function(_AppLoadingLoadingState value) loading,
+    required TResult Function(_AppLoadingSuccessState value) success,
+    required TResult Function(_AppLoadingErrorState value) error,
+    required TResult Function(_LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(_LoadToHomeState value) loadToHome,
+    required TResult Function(_LoadToSignInState value) loadToSignIn,
+    required TResult Function(_NoConnectionState value) noConnection,
   }) {
     return error(this);
   }
@@ -1029,13 +1553,14 @@ class _$AppLoadingErrorStateImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppLoadingInitialState value)? initial,
-    TResult? Function(AppLoadingLoadingState value)? loading,
-    TResult? Function(AppLoadingSuccessState value)? success,
-    TResult? Function(AppLoadingErrorState value)? error,
-    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult? Function(LoadToHomeState value)? loadToHome,
-    TResult? Function(ConnectionError value)? connectionError,
+    TResult? Function(_AppLoadingInitialState value)? initial,
+    TResult? Function(_AppLoadingLoadingState value)? loading,
+    TResult? Function(_AppLoadingSuccessState value)? success,
+    TResult? Function(_AppLoadingErrorState value)? error,
+    TResult? Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(_LoadToHomeState value)? loadToHome,
+    TResult? Function(_LoadToSignInState value)? loadToSignIn,
+    TResult? Function(_NoConnectionState value)? noConnection,
   }) {
     return error?.call(this);
   }
@@ -1043,13 +1568,14 @@ class _$AppLoadingErrorStateImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppLoadingInitialState value)? initial,
-    TResult Function(AppLoadingLoadingState value)? loading,
-    TResult Function(AppLoadingSuccessState value)? success,
-    TResult Function(AppLoadingErrorState value)? error,
-    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult Function(LoadToHomeState value)? loadToHome,
-    TResult Function(ConnectionError value)? connectionError,
+    TResult Function(_AppLoadingInitialState value)? initial,
+    TResult Function(_AppLoadingLoadingState value)? loading,
+    TResult Function(_AppLoadingSuccessState value)? success,
+    TResult Function(_AppLoadingErrorState value)? error,
+    TResult Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(_LoadToHomeState value)? loadToHome,
+    TResult Function(_LoadToSignInState value)? loadToSignIn,
+    TResult Function(_NoConnectionState value)? noConnection,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1059,8 +1585,8 @@ class _$AppLoadingErrorStateImpl
   }
 }
 
-abstract class AppLoadingErrorState implements AppLoadingState {
-  const factory AppLoadingErrorState(final String message) =
+abstract class _AppLoadingErrorState implements AppLoadingState {
+  const factory _AppLoadingErrorState(final String message) =
       _$AppLoadingErrorStateImpl;
 
   String get message;
@@ -1096,7 +1622,7 @@ class __$$LoadToOnboardingStateImplCopyWithImpl<$Res>
 
 class _$LoadToOnboardingStateImpl
     with DiagnosticableTreeMixin
-    implements LoadToOnboardingState {
+    implements _LoadToOnboardingState {
   const _$LoadToOnboardingStateImpl();
 
   @override
@@ -1126,11 +1652,12 @@ class _$LoadToOnboardingStateImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel? userData) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
     required TResult Function() loadToOnboarding,
     required TResult Function() loadToHome,
-    required TResult Function(String message) connectionError,
+    required TResult Function() loadToSignIn,
+    required TResult Function() noConnection,
   }) {
     return loadToOnboarding();
   }
@@ -1140,11 +1667,12 @@ class _$LoadToOnboardingStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel? userData)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
     TResult? Function()? loadToOnboarding,
     TResult? Function()? loadToHome,
-    TResult? Function(String message)? connectionError,
+    TResult? Function()? loadToSignIn,
+    TResult? Function()? noConnection,
   }) {
     return loadToOnboarding?.call();
   }
@@ -1154,11 +1682,12 @@ class _$LoadToOnboardingStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel? userData)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     TResult Function()? loadToOnboarding,
     TResult Function()? loadToHome,
-    TResult Function(String message)? connectionError,
+    TResult Function()? loadToSignIn,
+    TResult Function()? noConnection,
     required TResult orElse(),
   }) {
     if (loadToOnboarding != null) {
@@ -1170,13 +1699,14 @@ class _$LoadToOnboardingStateImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppLoadingInitialState value) initial,
-    required TResult Function(AppLoadingLoadingState value) loading,
-    required TResult Function(AppLoadingSuccessState value) success,
-    required TResult Function(AppLoadingErrorState value) error,
-    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
-    required TResult Function(LoadToHomeState value) loadToHome,
-    required TResult Function(ConnectionError value) connectionError,
+    required TResult Function(_AppLoadingInitialState value) initial,
+    required TResult Function(_AppLoadingLoadingState value) loading,
+    required TResult Function(_AppLoadingSuccessState value) success,
+    required TResult Function(_AppLoadingErrorState value) error,
+    required TResult Function(_LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(_LoadToHomeState value) loadToHome,
+    required TResult Function(_LoadToSignInState value) loadToSignIn,
+    required TResult Function(_NoConnectionState value) noConnection,
   }) {
     return loadToOnboarding(this);
   }
@@ -1184,13 +1714,14 @@ class _$LoadToOnboardingStateImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppLoadingInitialState value)? initial,
-    TResult? Function(AppLoadingLoadingState value)? loading,
-    TResult? Function(AppLoadingSuccessState value)? success,
-    TResult? Function(AppLoadingErrorState value)? error,
-    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult? Function(LoadToHomeState value)? loadToHome,
-    TResult? Function(ConnectionError value)? connectionError,
+    TResult? Function(_AppLoadingInitialState value)? initial,
+    TResult? Function(_AppLoadingLoadingState value)? loading,
+    TResult? Function(_AppLoadingSuccessState value)? success,
+    TResult? Function(_AppLoadingErrorState value)? error,
+    TResult? Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(_LoadToHomeState value)? loadToHome,
+    TResult? Function(_LoadToSignInState value)? loadToSignIn,
+    TResult? Function(_NoConnectionState value)? noConnection,
   }) {
     return loadToOnboarding?.call(this);
   }
@@ -1198,13 +1729,14 @@ class _$LoadToOnboardingStateImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppLoadingInitialState value)? initial,
-    TResult Function(AppLoadingLoadingState value)? loading,
-    TResult Function(AppLoadingSuccessState value)? success,
-    TResult Function(AppLoadingErrorState value)? error,
-    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult Function(LoadToHomeState value)? loadToHome,
-    TResult Function(ConnectionError value)? connectionError,
+    TResult Function(_AppLoadingInitialState value)? initial,
+    TResult Function(_AppLoadingLoadingState value)? loading,
+    TResult Function(_AppLoadingSuccessState value)? success,
+    TResult Function(_AppLoadingErrorState value)? error,
+    TResult Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(_LoadToHomeState value)? loadToHome,
+    TResult Function(_LoadToSignInState value)? loadToSignIn,
+    TResult Function(_NoConnectionState value)? noConnection,
     required TResult orElse(),
   }) {
     if (loadToOnboarding != null) {
@@ -1214,8 +1746,8 @@ class _$LoadToOnboardingStateImpl
   }
 }
 
-abstract class LoadToOnboardingState implements AppLoadingState {
-  const factory LoadToOnboardingState() = _$LoadToOnboardingStateImpl;
+abstract class _LoadToOnboardingState implements AppLoadingState {
+  const factory _LoadToOnboardingState() = _$LoadToOnboardingStateImpl;
 }
 
 /// @nodoc
@@ -1241,7 +1773,7 @@ class __$$LoadToHomeStateImplCopyWithImpl<$Res>
 
 class _$LoadToHomeStateImpl
     with DiagnosticableTreeMixin
-    implements LoadToHomeState {
+    implements _LoadToHomeState {
   const _$LoadToHomeStateImpl();
 
   @override
@@ -1269,11 +1801,12 @@ class _$LoadToHomeStateImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel? userData) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
     required TResult Function() loadToOnboarding,
     required TResult Function() loadToHome,
-    required TResult Function(String message) connectionError,
+    required TResult Function() loadToSignIn,
+    required TResult Function() noConnection,
   }) {
     return loadToHome();
   }
@@ -1283,11 +1816,12 @@ class _$LoadToHomeStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel? userData)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
     TResult? Function()? loadToOnboarding,
     TResult? Function()? loadToHome,
-    TResult? Function(String message)? connectionError,
+    TResult? Function()? loadToSignIn,
+    TResult? Function()? noConnection,
   }) {
     return loadToHome?.call();
   }
@@ -1297,11 +1831,12 @@ class _$LoadToHomeStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel? userData)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     TResult Function()? loadToOnboarding,
     TResult Function()? loadToHome,
-    TResult Function(String message)? connectionError,
+    TResult Function()? loadToSignIn,
+    TResult Function()? noConnection,
     required TResult orElse(),
   }) {
     if (loadToHome != null) {
@@ -1313,13 +1848,14 @@ class _$LoadToHomeStateImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppLoadingInitialState value) initial,
-    required TResult Function(AppLoadingLoadingState value) loading,
-    required TResult Function(AppLoadingSuccessState value) success,
-    required TResult Function(AppLoadingErrorState value) error,
-    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
-    required TResult Function(LoadToHomeState value) loadToHome,
-    required TResult Function(ConnectionError value) connectionError,
+    required TResult Function(_AppLoadingInitialState value) initial,
+    required TResult Function(_AppLoadingLoadingState value) loading,
+    required TResult Function(_AppLoadingSuccessState value) success,
+    required TResult Function(_AppLoadingErrorState value) error,
+    required TResult Function(_LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(_LoadToHomeState value) loadToHome,
+    required TResult Function(_LoadToSignInState value) loadToSignIn,
+    required TResult Function(_NoConnectionState value) noConnection,
   }) {
     return loadToHome(this);
   }
@@ -1327,13 +1863,14 @@ class _$LoadToHomeStateImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppLoadingInitialState value)? initial,
-    TResult? Function(AppLoadingLoadingState value)? loading,
-    TResult? Function(AppLoadingSuccessState value)? success,
-    TResult? Function(AppLoadingErrorState value)? error,
-    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult? Function(LoadToHomeState value)? loadToHome,
-    TResult? Function(ConnectionError value)? connectionError,
+    TResult? Function(_AppLoadingInitialState value)? initial,
+    TResult? Function(_AppLoadingLoadingState value)? loading,
+    TResult? Function(_AppLoadingSuccessState value)? success,
+    TResult? Function(_AppLoadingErrorState value)? error,
+    TResult? Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(_LoadToHomeState value)? loadToHome,
+    TResult? Function(_LoadToSignInState value)? loadToSignIn,
+    TResult? Function(_NoConnectionState value)? noConnection,
   }) {
     return loadToHome?.call(this);
   }
@@ -1341,13 +1878,14 @@ class _$LoadToHomeStateImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppLoadingInitialState value)? initial,
-    TResult Function(AppLoadingLoadingState value)? loading,
-    TResult Function(AppLoadingSuccessState value)? success,
-    TResult Function(AppLoadingErrorState value)? error,
-    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult Function(LoadToHomeState value)? loadToHome,
-    TResult Function(ConnectionError value)? connectionError,
+    TResult Function(_AppLoadingInitialState value)? initial,
+    TResult Function(_AppLoadingLoadingState value)? loading,
+    TResult Function(_AppLoadingSuccessState value)? success,
+    TResult Function(_AppLoadingErrorState value)? error,
+    TResult Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(_LoadToHomeState value)? loadToHome,
+    TResult Function(_LoadToSignInState value)? loadToSignIn,
+    TResult Function(_NoConnectionState value)? noConnection,
     required TResult orElse(),
   }) {
     if (loadToHome != null) {
@@ -1357,98 +1895,69 @@ class _$LoadToHomeStateImpl
   }
 }
 
-abstract class LoadToHomeState implements AppLoadingState {
-  const factory LoadToHomeState() = _$LoadToHomeStateImpl;
+abstract class _LoadToHomeState implements AppLoadingState {
+  const factory _LoadToHomeState() = _$LoadToHomeStateImpl;
 }
 
 /// @nodoc
-abstract class _$$ConnectionErrorImplCopyWith<$Res> {
-  factory _$$ConnectionErrorImplCopyWith(_$ConnectionErrorImpl value,
-          $Res Function(_$ConnectionErrorImpl) then) =
-      __$$ConnectionErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
+abstract class _$$LoadToSignInStateImplCopyWith<$Res> {
+  factory _$$LoadToSignInStateImplCopyWith(_$LoadToSignInStateImpl value,
+          $Res Function(_$LoadToSignInStateImpl) then) =
+      __$$LoadToSignInStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ConnectionErrorImplCopyWithImpl<$Res>
-    extends _$AppLoadingStateCopyWithImpl<$Res, _$ConnectionErrorImpl>
-    implements _$$ConnectionErrorImplCopyWith<$Res> {
-  __$$ConnectionErrorImplCopyWithImpl(
-      _$ConnectionErrorImpl _value, $Res Function(_$ConnectionErrorImpl) _then)
+class __$$LoadToSignInStateImplCopyWithImpl<$Res>
+    extends _$AppLoadingStateCopyWithImpl<$Res, _$LoadToSignInStateImpl>
+    implements _$$LoadToSignInStateImplCopyWith<$Res> {
+  __$$LoadToSignInStateImplCopyWithImpl(_$LoadToSignInStateImpl _value,
+      $Res Function(_$LoadToSignInStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AppLoadingState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$ConnectionErrorImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$ConnectionErrorImpl
+class _$LoadToSignInStateImpl
     with DiagnosticableTreeMixin
-    implements ConnectionError {
-  const _$ConnectionErrorImpl(this.message);
-
-  @override
-  final String message;
+    implements _LoadToSignInState {
+  const _$LoadToSignInStateImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AppLoadingState.connectionError(message: $message)';
+    return 'AppLoadingState.loadToSignIn()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AppLoadingState.connectionError'))
-      ..add(DiagnosticsProperty('message', message));
+    properties.add(DiagnosticsProperty('type', 'AppLoadingState.loadToSignIn'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ConnectionErrorImpl &&
-            (identical(other.message, message) || other.message == message));
+        (other.runtimeType == runtimeType && other is _$LoadToSignInStateImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  /// Create a copy of AppLoadingState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ConnectionErrorImplCopyWith<_$ConnectionErrorImpl> get copyWith =>
-      __$$ConnectionErrorImplCopyWithImpl<_$ConnectionErrorImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserModel? userData) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
     required TResult Function() loadToOnboarding,
     required TResult Function() loadToHome,
-    required TResult Function(String message) connectionError,
+    required TResult Function() loadToSignIn,
+    required TResult Function() noConnection,
   }) {
-    return connectionError(message);
+    return loadToSignIn();
   }
 
   @override
@@ -1456,13 +1965,14 @@ class _$ConnectionErrorImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserModel? userData)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
     TResult? Function()? loadToOnboarding,
     TResult? Function()? loadToHome,
-    TResult? Function(String message)? connectionError,
+    TResult? Function()? loadToSignIn,
+    TResult? Function()? noConnection,
   }) {
-    return connectionError?.call(message);
+    return loadToSignIn?.call();
   }
 
   @override
@@ -1470,15 +1980,16 @@ class _$ConnectionErrorImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserModel? userData)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     TResult Function()? loadToOnboarding,
     TResult Function()? loadToHome,
-    TResult Function(String message)? connectionError,
+    TResult Function()? loadToSignIn,
+    TResult Function()? noConnection,
     required TResult orElse(),
   }) {
-    if (connectionError != null) {
-      return connectionError(message);
+    if (loadToSignIn != null) {
+      return loadToSignIn();
     }
     return orElse();
   }
@@ -1486,58 +1997,202 @@ class _$ConnectionErrorImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppLoadingInitialState value) initial,
-    required TResult Function(AppLoadingLoadingState value) loading,
-    required TResult Function(AppLoadingSuccessState value) success,
-    required TResult Function(AppLoadingErrorState value) error,
-    required TResult Function(LoadToOnboardingState value) loadToOnboarding,
-    required TResult Function(LoadToHomeState value) loadToHome,
-    required TResult Function(ConnectionError value) connectionError,
+    required TResult Function(_AppLoadingInitialState value) initial,
+    required TResult Function(_AppLoadingLoadingState value) loading,
+    required TResult Function(_AppLoadingSuccessState value) success,
+    required TResult Function(_AppLoadingErrorState value) error,
+    required TResult Function(_LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(_LoadToHomeState value) loadToHome,
+    required TResult Function(_LoadToSignInState value) loadToSignIn,
+    required TResult Function(_NoConnectionState value) noConnection,
   }) {
-    return connectionError(this);
+    return loadToSignIn(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppLoadingInitialState value)? initial,
-    TResult? Function(AppLoadingLoadingState value)? loading,
-    TResult? Function(AppLoadingSuccessState value)? success,
-    TResult? Function(AppLoadingErrorState value)? error,
-    TResult? Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult? Function(LoadToHomeState value)? loadToHome,
-    TResult? Function(ConnectionError value)? connectionError,
+    TResult? Function(_AppLoadingInitialState value)? initial,
+    TResult? Function(_AppLoadingLoadingState value)? loading,
+    TResult? Function(_AppLoadingSuccessState value)? success,
+    TResult? Function(_AppLoadingErrorState value)? error,
+    TResult? Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(_LoadToHomeState value)? loadToHome,
+    TResult? Function(_LoadToSignInState value)? loadToSignIn,
+    TResult? Function(_NoConnectionState value)? noConnection,
   }) {
-    return connectionError?.call(this);
+    return loadToSignIn?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppLoadingInitialState value)? initial,
-    TResult Function(AppLoadingLoadingState value)? loading,
-    TResult Function(AppLoadingSuccessState value)? success,
-    TResult Function(AppLoadingErrorState value)? error,
-    TResult Function(LoadToOnboardingState value)? loadToOnboarding,
-    TResult Function(LoadToHomeState value)? loadToHome,
-    TResult Function(ConnectionError value)? connectionError,
+    TResult Function(_AppLoadingInitialState value)? initial,
+    TResult Function(_AppLoadingLoadingState value)? loading,
+    TResult Function(_AppLoadingSuccessState value)? success,
+    TResult Function(_AppLoadingErrorState value)? error,
+    TResult Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(_LoadToHomeState value)? loadToHome,
+    TResult Function(_LoadToSignInState value)? loadToSignIn,
+    TResult Function(_NoConnectionState value)? noConnection,
     required TResult orElse(),
   }) {
-    if (connectionError != null) {
-      return connectionError(this);
+    if (loadToSignIn != null) {
+      return loadToSignIn(this);
     }
     return orElse();
   }
 }
 
-abstract class ConnectionError implements AppLoadingState {
-  const factory ConnectionError(final String message) = _$ConnectionErrorImpl;
+abstract class _LoadToSignInState implements AppLoadingState {
+  const factory _LoadToSignInState() = _$LoadToSignInStateImpl;
+}
 
-  String get message;
+/// @nodoc
+abstract class _$$NoConnectionStateImplCopyWith<$Res> {
+  factory _$$NoConnectionStateImplCopyWith(_$NoConnectionStateImpl value,
+          $Res Function(_$NoConnectionStateImpl) then) =
+      __$$NoConnectionStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NoConnectionStateImplCopyWithImpl<$Res>
+    extends _$AppLoadingStateCopyWithImpl<$Res, _$NoConnectionStateImpl>
+    implements _$$NoConnectionStateImplCopyWith<$Res> {
+  __$$NoConnectionStateImplCopyWithImpl(_$NoConnectionStateImpl _value,
+      $Res Function(_$NoConnectionStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AppLoadingState
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ConnectionErrorImplCopyWith<_$ConnectionErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+
+class _$NoConnectionStateImpl
+    with DiagnosticableTreeMixin
+    implements _NoConnectionState {
+  const _$NoConnectionStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AppLoadingState.noConnection()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AppLoadingState.noConnection'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NoConnectionStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String message) error,
+    required TResult Function() loadToOnboarding,
+    required TResult Function() loadToHome,
+    required TResult Function() loadToSignIn,
+    required TResult Function() noConnection,
+  }) {
+    return noConnection();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String message)? error,
+    TResult? Function()? loadToOnboarding,
+    TResult? Function()? loadToHome,
+    TResult? Function()? loadToSignIn,
+    TResult? Function()? noConnection,
+  }) {
+    return noConnection?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String message)? error,
+    TResult Function()? loadToOnboarding,
+    TResult Function()? loadToHome,
+    TResult Function()? loadToSignIn,
+    TResult Function()? noConnection,
+    required TResult orElse(),
+  }) {
+    if (noConnection != null) {
+      return noConnection();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AppLoadingInitialState value) initial,
+    required TResult Function(_AppLoadingLoadingState value) loading,
+    required TResult Function(_AppLoadingSuccessState value) success,
+    required TResult Function(_AppLoadingErrorState value) error,
+    required TResult Function(_LoadToOnboardingState value) loadToOnboarding,
+    required TResult Function(_LoadToHomeState value) loadToHome,
+    required TResult Function(_LoadToSignInState value) loadToSignIn,
+    required TResult Function(_NoConnectionState value) noConnection,
+  }) {
+    return noConnection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AppLoadingInitialState value)? initial,
+    TResult? Function(_AppLoadingLoadingState value)? loading,
+    TResult? Function(_AppLoadingSuccessState value)? success,
+    TResult? Function(_AppLoadingErrorState value)? error,
+    TResult? Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult? Function(_LoadToHomeState value)? loadToHome,
+    TResult? Function(_LoadToSignInState value)? loadToSignIn,
+    TResult? Function(_NoConnectionState value)? noConnection,
+  }) {
+    return noConnection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AppLoadingInitialState value)? initial,
+    TResult Function(_AppLoadingLoadingState value)? loading,
+    TResult Function(_AppLoadingSuccessState value)? success,
+    TResult Function(_AppLoadingErrorState value)? error,
+    TResult Function(_LoadToOnboardingState value)? loadToOnboarding,
+    TResult Function(_LoadToHomeState value)? loadToHome,
+    TResult Function(_LoadToSignInState value)? loadToSignIn,
+    TResult Function(_NoConnectionState value)? noConnection,
+    required TResult orElse(),
+  }) {
+    if (noConnection != null) {
+      return noConnection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NoConnectionState implements AppLoadingState {
+  const factory _NoConnectionState() = _$NoConnectionStateImpl;
 }
