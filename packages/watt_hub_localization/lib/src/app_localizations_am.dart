@@ -59,36 +59,6 @@ class AppLocalizationsAm extends AppLocalizations {
       'Խնդրում ենք մուտքագրել վավեր էլ․փոստի հասցե';
 
   @override
-  String get location => 'Location';
-
-  @override
-  String get street => 'Street:';
-
-  @override
-  String get navigate => 'Navigate';
-
-  @override
-  String get shareLocation => 'Share Location';
-
-  @override
-  String get serviceInformation => 'Service Information';
-
-  @override
-  String get max => 'Max:';
-
-  @override
-  String get availableHours => 'Available hours:';
-
-  @override
-  String get connectorType => 'Connector Type';
-
-  @override
-  String get contact => 'Contact';
-
-  @override
-  String get select => 'Select';
-
-  @override
   String get home => 'Home';
 
   @override
@@ -127,30 +97,6 @@ class AppLocalizationsAm extends AppLocalizations {
   @override
   String get chooseConnector => 'Choose Connector';
 
-  @override
-  String get chooseAddress => 'Ընտրել հասցե';
-
-  @override
-  String get timePicker => 'Ժամանակ ընտրող';
-
-  @override
-  String get startTime => 'Մեկնարկի ժամանակը';
-
-  @override
-  String get endTime => 'Ավարտի ժամանակը';
-
-  @override
-  String get contactInfo => 'Կոնտակտային տվյալներ';
-
-  @override
-  String get phone => 'Հեռախոս';
-
-  @override
-  String get yourPhoneNumber => 'Մուտքագրեք ձեր հեռախոսահամարը';
-
-  @override
-  String get name => 'Անուն';
-  
   @override
   String get account => 'Հաշիվ';
 
@@ -197,6 +143,48 @@ class AppLocalizationsAm extends AppLocalizations {
   String get location => 'Գտնվելու վայրը';
 
   @override
+  String get street => 'Փողոց:';
+
+  @override
+  String get navigate => 'Նավարկել';
+
+  @override
+  String get shareLocation => 'Կիսվել վայրով';
+
+  @override
+  String get serviceInformation => 'Ծառայության տեղեկատվություն';
+
+  @override
+  String get availableHours => 'Հասանելի ժամեր:';
+
+  @override
+  String get connectorType => 'Միակցիչի տեսակը';
+
+  @override
+  String get contact => 'Կոնտակտային տվյալներ';
+
+  @override
+  String get select => 'Ընտրել';
+
+  @override
+  String get chooseAddress => 'Ընտրել հասցե';
+
+  @override
+  String get timePicker => 'Ժամանակ ընտրող';
+
+  @override
+  String get startTime => 'Մեկնարկի ժամանակը';
+
+  @override
+  String get endTime => 'Ավարտի ժամանակը';
+
+  @override
+  String get contactInfo => 'Կոնտակտային տվյալներ';
+
+  @override
+  String get yourPhoneNumber => 'Մուտքագրեք ձեր հեռախոսահամարը';
+
+  @override
   String get yourName => 'Մուտքագրեք ձեր անունը';
 
   @override
@@ -213,9 +201,6 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get end => 'վերջ';
-  
-  @override
-  String get availableHours => 'Հասանելի ժամեր:';
 
   @override
   String get flutterMap => 'Ընտրել հասցե';

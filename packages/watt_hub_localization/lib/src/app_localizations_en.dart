@@ -58,36 +58,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pleaseEnterAValidEmail => 'Please enter a valid email';
 
   @override
-  String get location => 'Location';
-
-  @override
-  String get street => 'Street:';
-
-  @override
-  String get navigate => 'Navigate';
-
-  @override
-  String get shareLocation => 'Share Location';
-
-  @override
-  String get serviceInformation => 'Service Information';
-
-  @override
-  String get max => 'Max:';
-
-  @override
-  String get availableHours => 'Available hours:';
-
-  @override
-  String get connectorType => 'Connector Type';
-
-  @override
-  String get contact => 'Contact';
-
-  @override
-  String get select => 'Select';
-
-  @override
   String get home => 'Home';
 
   @override
@@ -113,9 +83,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hourlyRate => 'Hourly rate';
-  
-  @override
-  String get hourlyRate => 'hr';
 
   @override
   String get filter => 'Filter';
@@ -129,9 +96,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get chooseConnector => 'Choose Connector';
 
-  @override
-  String get chooseAddress => 'Choose an address';
-  
   @override
   String get account => 'Account';
 
@@ -154,7 +118,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get fullName => 'Full Name';
 
   @override
-  String get phone => 'Phone Number';
+  String get phone => 'Phone';
 
   @override
   String get personalInfo => 'Personal Info';
@@ -178,6 +142,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String get location => 'Location';
 
   @override
+  String get street => 'Street:';
+
+  @override
+  String get navigate => 'Navigate';
+
+  @override
+  String get shareLocation => 'Share Location';
+
+  @override
+  String get serviceInformation => 'Service Information';
+
+  @override
+  String get availableHours => 'Available hours:';
+
+  @override
+  String get connectorType => 'Connector Type';
+
+  @override
+  String get contact => 'Contact';
+
+  @override
+  String get select => 'Select';
+
+  @override
+  String get chooseAddress => 'Choose an address';
+
+  @override
   String get timePicker => 'Time picker';
 
   @override
@@ -190,16 +181,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get contactInfo => 'Contact info';
 
   @override
-  String get phone => 'Phone';
-
-  @override
   String get yourPhoneNumber => 'Enter your phone number';
-  
-  @override
-  String get availableHours => 'Available hours:';
-
-  @override
-  String get name => 'Name';
 
   @override
   String get yourName => 'Enter your name';
