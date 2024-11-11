@@ -53,6 +53,7 @@
   "select": "Select",
 
 
+
    
    
   "chooseAddress":"Choose an address",
@@ -73,9 +74,11 @@
   "end":"End",
   "flutterMap":"Choose location",
   "addressNotFound":"Address not found.",
-  "noLocationSelected":"No location selected. Please tap on the map."
-
+  "noLocationSelected":"No location selected. Please tap on the map.",
   "addCar": "Add Car",
   "carType": "Car Type",
   "carModel": "Car Model"
+
+
+}
 

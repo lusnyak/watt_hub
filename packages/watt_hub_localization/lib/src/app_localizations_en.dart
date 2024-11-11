@@ -166,8 +166,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get select => 'Select';
 
   @override
-
-
   String get chooseAddress => 'Choose an address';
 
   @override
@@ -213,7 +211,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noLocationSelected =>
       'No location selected. Please tap on the map.';
 
-
+  @override
   String get addCar => 'Add Car';
 
   @override
@@ -221,5 +219,4 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get carModel => 'Car Model';
-
 }

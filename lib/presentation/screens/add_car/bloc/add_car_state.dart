@@ -8,9 +8,11 @@ class AddCarState with _$AddCarState {
     @Default([]) List<ConnectorTypeModel> connectors,
 
 
+
     CarTypeModel? selectedCarType,
     CarModel? selectedCarModel,
     ConnectorTypeModel? selectedConnector,
+
 
 
   }) = _AddCarState;

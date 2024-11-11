@@ -29,8 +29,6 @@ import 'package:watt_hub/data/remote/user_remote/user_remote.dart' as _i87;
 import 'package:watt_hub/data/repository/auth_repository.dart' as _i441;
 import 'package:watt_hub/data/repository/station_repository.dart' as _i198;
 import 'package:watt_hub/data/repository/user_repository.dart' as _i468;
-import 'package:watt_hub/presentation/screens/add_car/bloc/add_car_bloc.dart'
-    as _i352;
 import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.dart'
     as _i767;
 import 'package:watt_hub/presentation/screens/app_loading/bloc/app_loading_bloc.dart'
@@ -65,7 +63,6 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final dioClient = _$DioClient();
     gh.factory<_i60.OtpService>(() => _i60.OtpService());
-    gh.factory<_i352.AddCarBloc>(() => _i352.AddCarBloc());
     gh.factory<_i767.AddStationBlock>(() => _i767.AddStationBlock());
     gh.factory<_i536.AppLoadingBloc>(() => _i536.AppLoadingBloc());
     gh.factory<_i474.ChooseStationAddressBloc>(

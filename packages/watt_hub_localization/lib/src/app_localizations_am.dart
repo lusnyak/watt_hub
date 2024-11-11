@@ -167,8 +167,6 @@ class AppLocalizationsAm extends AppLocalizations {
   String get select => 'Ընտրել';
 
   @override
-
-
   String get chooseAddress => 'Ընտրել հասցե';
 
   @override
@@ -214,7 +212,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get noLocationSelected =>
       'Ոչ մի տեղ ընտրված չէ: Խնդրում ենք սեղմել քարտեզի վրա.';
 
-
+  @override
   String get addCar => 'Ավելացնել մեքենա';
 
   @override
@@ -222,5 +220,4 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get carModel => 'Մեքենայի մոդելը';
-
 }

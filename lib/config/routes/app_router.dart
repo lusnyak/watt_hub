@@ -31,7 +31,9 @@ class AppRouter extends RootStackRouter {
 
 
 
+
         AutoRoute(page: AppLoadingRoute.page, initial: true),
+
 
 
 
