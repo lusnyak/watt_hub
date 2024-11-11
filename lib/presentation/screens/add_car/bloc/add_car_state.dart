@@ -6,6 +6,7 @@ class AddCarState with _$AddCarState {
     @Default([]) List<CarTypeModel> carTypes,
     @Default([]) List<CarModel> carModels,
     @Default([]) List<ConnectorTypeModel> connectors,
+    File? images,
     CarTypeModel? selectedCarType,
     CarModel? selectedCarModel,
     ConnectorTypeModel? selectedConnector,
