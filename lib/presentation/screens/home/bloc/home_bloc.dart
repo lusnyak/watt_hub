@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -42,6 +43,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       final stations = stationsData
           .map((stationJson) => StationModel.fromJson(stationJson))
           .toList();
+
+      debugPrint('$stations, stations');
 
       emit(HomeState.loaded(
         stations,

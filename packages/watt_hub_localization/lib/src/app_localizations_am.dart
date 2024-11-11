@@ -62,7 +62,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get home => 'Home';
 
   @override
-  String get requests => 'Requests';
+  String get requests => 'Հարցումներ';
 
   @override
   String get profile => 'Profile';
@@ -197,7 +197,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get error => 'սխալ';
 
   @override
-  String get start => 'սկիզբ';
+  String get start => 'Սկսել';
 
   @override
   String get end => 'վերջ';
@@ -211,4 +211,52 @@ class AppLocalizationsAm extends AppLocalizations {
   @override
   String get noLocationSelected =>
       'Ոչ մի տեղ ընտրված չէ: Խնդրում ենք սեղմել քարտեզի վրա.';
+
+  @override
+  String get my => 'Հարցումներ ինձ';
+
+  @override
+  String get station => 'Կայանատեղիի հարցումներ';
+
+  @override
+  String get chargingTime => 'Լիցքավորման ժամանակ';
+
+  @override
+  String get contactNumber => 'Կոնտակտային համար';
+
+  @override
+  String get hour => 'ժամ';
+
+  @override
+  String get cost => 'Արժեքը';
+
+  @override
+  String get maxPower => 'Առավելագույն հզորություն';
+
+  @override
+  String get duration => 'Տևողությունը';
+
+  @override
+  String get amount => 'Գումարը';
+
+  @override
+  String get accept => 'Ընդունել';
+
+  @override
+  String get decline => 'Մերժել';
+
+  @override
+  String get cancel => 'Չեղարկել';
+
+  @override
+  String get canceled => 'Չեղարկված';
+
+  @override
+  String get finished => 'Ավարտված';
+
+  @override
+  String get pending => 'Սպասման մեջ';
+
+  @override
+  String get unknown => 'Անհայտ';
 }

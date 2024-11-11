@@ -210,4 +210,52 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get noLocationSelected =>
       'No location selected. Please tap on the map.';
+
+  @override
+  String get my => 'My';
+
+  @override
+  String get station => 'Station';
+
+  @override
+  String get chargingTime => 'Charging time';
+
+  @override
+  String get contactNumber => 'Contact number';
+
+  @override
+  String get hour => 'hour';
+
+  @override
+  String get cost => 'Cost';
+
+  @override
+  String get maxPower => 'Max Power';
+
+  @override
+  String get duration => 'Duration';
+
+  @override
+  String get amount => 'Amount';
+
+  @override
+  String get accept => 'Accept';
+
+  @override
+  String get decline => 'Decline';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get canceled => 'Canceled';
+
+  @override
+  String get finished => 'Finished';
+
+  @override
+  String get pending => 'Pending';
+
+  @override
+  String get unknown => 'Unknown';
 }

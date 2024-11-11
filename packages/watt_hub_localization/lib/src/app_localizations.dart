@@ -499,6 +499,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No location selected. Please tap on the map.'**
   String get noLocationSelected;
+
+  /// No description provided for @my.
+  ///
+  /// In en, this message translates to:
+  /// **'My'**
+  String get my;
+
+  /// No description provided for @station.
+  ///
+  /// In en, this message translates to:
+  /// **'Station'**
+  String get station;
+
+  /// No description provided for @chargingTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Charging time'**
+  String get chargingTime;
+
+  /// No description provided for @contactNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact number'**
+  String get contactNumber;
+
+  /// No description provided for @hour.
+  ///
+  /// In en, this message translates to:
+  /// **'hour'**
+  String get hour;
+
+  /// No description provided for @cost.
+  ///
+  /// In en, this message translates to:
+  /// **'Cost'**
+  String get cost;
+
+  /// No description provided for @maxPower.
+  ///
+  /// In en, this message translates to:
+  /// **'Max Power'**
+  String get maxPower;
+
+  /// No description provided for @duration.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration'**
+  String get duration;
+
+  /// No description provided for @amount.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount'**
+  String get amount;
+
+  /// No description provided for @accept.
+  ///
+  /// In en, this message translates to:
+  /// **'Accept'**
+  String get accept;
+
+  /// No description provided for @decline.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline'**
+  String get decline;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @canceled.
+  ///
+  /// In en, this message translates to:
+  /// **'Canceled'**
+  String get canceled;
+
+  /// No description provided for @finished.
+  ///
+  /// In en, this message translates to:
+  /// **'Finished'**
+  String get finished;
+
+  /// No description provided for @pending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get pending;
+
+  /// No description provided for @unknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get unknown;
 }
 
 class _AppLocalizationsDelegate

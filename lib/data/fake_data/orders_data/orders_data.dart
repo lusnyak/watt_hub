@@ -13,8 +13,7 @@ final Map<String, dynamic> orderData = {
     'phone_number': '+1234567890',
     'email': 'johndoe@example.com',
   },
-  'status':
-      'Pending', // Example status, can be 'Pending', 'Completed', 'Cancelled', etc.
+  'status': 'Pending',
   'station': {
     'id': 1,
     'latitude': 40.7128,
@@ -49,7 +48,7 @@ final Map<String, dynamic> orderData = {
 final List<Map<String, dynamic>> ordersData = [
   {
     'id': 1,
-    'order_time': '2024-10-15T10:30:00Z',
+    'order_time': '2024-10-15 10:30:00',
     'expected_hour': 2,
     'connector_type': {
       'id': 2,
@@ -62,17 +61,19 @@ final List<Map<String, dynamic>> ordersData = [
       'phone_number': '+1234567890',
       'email': 'johndoe@example.com',
     },
-    'status': 'Pending', // Example status
+    'status': 'pending',
     'station': {
       'id': 1,
       'latitude': 40.7128,
       'longitude': -74.0060,
-      'start_time': '08:00',
-      'end_time': '20:00',
-      'connector_type': {
-        'id': 2,
-        'title': 'CCS Combo 2',
-      },
+      'start_time': '2023-10-01 08:00:00',
+      'end_time': '2023-10-01 20:00:00',
+      'connector_type': [
+        {
+          'id': 2,
+          'title': 'CCS Combo 2',
+        },
+      ],
       'hourly_rate': 10,
       'kwt': 50,
       'phone_number': '+1987654321',
@@ -95,7 +96,7 @@ final List<Map<String, dynamic>> ordersData = [
   },
   {
     'id': 2,
-    'order_time': '2024-10-15T11:00:00Z',
+    'order_time': '2024-10-15 11:00:00',
     'expected_hour': 1,
     'connector_type': {
       'id': 1,
@@ -108,17 +109,19 @@ final List<Map<String, dynamic>> ordersData = [
       'phone_number': '+1122334455',
       'email': 'alice.johnson@example.com',
     },
-    'status': 'Completed', // Example status
+    'status': 'confirmed',
     'station': {
       'id': 2,
       'latitude': 34.0522,
       'longitude': -118.2437,
-      'start_time': '07:00',
-      'end_time': '22:00',
-      'connector_type': {
-        'id': 1,
-        'title': 'Type 1',
-      },
+      'start_time': '2023-10-01 07:00:00',
+      'end_time': '2023-10-01 22:00:00',
+      'connector_type': [
+        {
+          'id': 1,
+          'title': 'Type 1',
+        },
+      ],
       'hourly_rate': 15,
       'kwt': 60,
       'phone_number': '+1098765432',
@@ -138,5 +141,149 @@ final List<Map<String, dynamic>> ordersData = [
       },
     },
     'reason': 'Station occupied',
+  },
+  {
+    'id': 3,
+    'order_time': '2024-10-15 12:30:00',
+    'expected_hour': 3,
+    'connector_type': {
+      'id': 3,
+      'title': 'CHAdeMO',
+    },
+    'comment': 'Need a fast charge for my vehicle.',
+    'creator': {
+      'id': 5,
+      'full_name': 'Emily Davis',
+      'phone_number': '+1231231234',
+      'email': 'emily.davis@example.com',
+    },
+    'status': 'completed',
+    'station': {
+      'id': 3,
+      'latitude': 41.8781,
+      'longitude': -87.6298,
+      'start_time': '2023-10-01 09:00:00',
+      'end_time': '2023-10-01 21:00:00',
+      'connector_type': [
+        {
+          'id': 3,
+          'title': 'CHAdeMO',
+        },
+      ],
+      'hourly_rate': 20,
+      'kwt': 70,
+      'phone_number': '+1987654322',
+      'name': 'Chicago Charging Station',
+      'image': [
+        'https://example.com/station5.jpg',
+        'https://example.com/station6.jpg',
+      ],
+      'address': '789 W Madison St, Chicago, IL',
+      'reviews': [],
+      'average_rate': 4.8,
+      'user': {
+        'id': 6,
+        'full_name': 'Michael Wilson',
+        'phone_number': '+3216549870',
+        'email': 'michael.wilson@example.com',
+      },
+    },
+    'reason': 'Sufficient charge received',
+  },
+  {
+    'id': 4,
+    'order_time': '2024-10-15 14:00:00',
+    'expected_hour': 1,
+    'connector_type': {
+      'id': 4,
+      'title': 'Tesla Supercharger',
+    },
+    'comment': 'Arriving soon, please hold the station.',
+    'creator': {
+      'id': 7,
+      'full_name': 'Chris Green',
+      'phone_number': '+4567891230',
+      'email': 'chris.green@example.com',
+    },
+    'status': 'cancelled',
+    'station': {
+      'id': 4,
+      'latitude': 37.7749,
+      'longitude': -122.4194,
+      'start_time': '2023-10-01 06:00:00',
+      'end_time': '2023-10-01 23:00:00',
+      'connector_type': [
+        {
+          'id': 4,
+          'title': 'Tesla Supercharger',
+        },
+      ],
+      'hourly_rate': 25,
+      'kwt': 80,
+      'phone_number': '+5678901234',
+      'name': 'San Francisco Charging Station',
+      'image': [
+        'https://example.com/station7.jpg',
+        'https://example.com/station8.jpg',
+      ],
+      'address': '101 Market St, San Francisco, CA',
+      'reviews': [],
+      'average_rate': 4.7,
+      'user': {
+        'id': 8,
+        'full_name': 'Sarah Johnson',
+        'phone_number': '+6543217890',
+        'email': 'sarah.johnson@example.com',
+      },
+    },
+    'reason': 'Waiting for arrival',
+  },
+  {
+    'id': 17,
+    'order_time': '2024-10-15 14:00:00',
+    'expected_hour': 1,
+    'connector_type': {
+      'id': 17,
+      'title': 'Tesla Supercharger',
+    },
+    'comment': 'Arriving soon, please hold the station.',
+    'creator': {
+      'id': 17,
+      'full_name': 'Chris Green',
+      'phone_number': '+4567891230',
+      'email': 'chris.green@example.com',
+    },
+    'status': 'not confirmed',
+    'station': {
+      'id': 17,
+      'latitude': 37.7749,
+      'longitude': -122.4194,
+      'start_time': '2023-10-01 06:00:00',
+      'end_time': '2023-10-01 23:00:00',
+      'connector_type': [
+        {
+          'id': 17,
+          'title': 'Tesla Supercharger',
+        },
+      ],
+      'hourly_rate': 25,
+      'kwt': 80,
+      'phone_number': '+5678901234',
+      'name': 'San Francisco Charging Station',
+      'image': [
+        'https://example.com/station7.jpg',
+        'https://example.com/station8.jpg',
+      ],
+      'address': '101 Market St, San Francisco, CA',
+      'reviews': [],
+      'average_rate': 4.7,
+      'user': {
+        'id': 18,
+        'full_name': 'Sarah Johnson',
+        'phone_number': '+6543217890',
+        'email': 'sarah.johnson@example.com',
+      },
+    },
+    'reason': 'Waiting for arrival',
   },
 ];

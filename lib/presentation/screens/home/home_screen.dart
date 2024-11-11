@@ -28,7 +28,7 @@ class _HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: WattHubColors.transparentColor,
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           leading: nil,

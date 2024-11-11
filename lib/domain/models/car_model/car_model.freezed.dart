@@ -26,6 +26,8 @@ mixin _$CarModel {
   UserModel get user => throw _privateConstructorUsedError;
   CarModelTypeModel get carModel => throw _privateConstructorUsedError;
   List<String> get images => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   /// Serializes this CarModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,7 +50,9 @@ abstract class $CarModelCopyWith<$Res> {
       ConnectorTypeModel connectorType,
       UserModel user,
       CarModelTypeModel carModel,
-      List<String> images});
+      List<String> images,
+      DateTime createdAt,
+      DateTime updatedAt});
 
   $CarTypeModelCopyWith<$Res> get carType;
   $ConnectorTypeModelCopyWith<$Res> get connectorType;
@@ -77,6 +81,8 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
     Object? user = null,
     Object? carModel = null,
     Object? images = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -103,6 +109,14 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 
@@ -161,7 +175,9 @@ abstract class _$$CarModelImplCopyWith<$Res>
       ConnectorTypeModel connectorType,
       UserModel user,
       CarModelTypeModel carModel,
-      List<String> images});
+      List<String> images,
+      DateTime createdAt,
+      DateTime updatedAt});
 
   @override
   $CarTypeModelCopyWith<$Res> get carType;
@@ -192,6 +208,8 @@ class __$$CarModelImplCopyWithImpl<$Res>
     Object? user = null,
     Object? carModel = null,
     Object? images = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$CarModelImpl(
       id: null == id
@@ -218,6 +236,14 @@ class __$$CarModelImplCopyWithImpl<$Res>
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -232,7 +258,9 @@ class _$CarModelImpl implements _CarModel {
       required this.connectorType,
       required this.user,
       required this.carModel,
-      required final List<String> images})
+      required final List<String> images,
+      required this.createdAt,
+      required this.updatedAt})
       : _images = images;
 
   factory _$CarModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -257,8 +285,13 @@ class _$CarModelImpl implements _CarModel {
   }
 
   @override
+  final DateTime createdAt;
+  @override
+  final DateTime updatedAt;
+
+  @override
   String toString() {
-    return 'CarModel(id: $id, carType: $carType, connectorType: $connectorType, user: $user, carModel: $carModel, images: $images)';
+    return 'CarModel(id: $id, carType: $carType, connectorType: $connectorType, user: $user, carModel: $carModel, images: $images, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -273,13 +306,25 @@ class _$CarModelImpl implements _CarModel {
             (identical(other.user, user) || other.user == user) &&
             (identical(other.carModel, carModel) ||
                 other.carModel == carModel) &&
-            const DeepCollectionEquality().equals(other._images, _images));
+            const DeepCollectionEquality().equals(other._images, _images) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, carType, connectorType, user,
-      carModel, const DeepCollectionEquality().hash(_images));
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      carType,
+      connectorType,
+      user,
+      carModel,
+      const DeepCollectionEquality().hash(_images),
+      createdAt,
+      updatedAt);
 
   /// Create a copy of CarModel
   /// with the given fields replaced by the non-null parameter values.
@@ -304,7 +349,9 @@ abstract class _CarModel implements CarModel {
       required final ConnectorTypeModel connectorType,
       required final UserModel user,
       required final CarModelTypeModel carModel,
-      required final List<String> images}) = _$CarModelImpl;
+      required final List<String> images,
+      required final DateTime createdAt,
+      required final DateTime updatedAt}) = _$CarModelImpl;
 
   factory _CarModel.fromJson(Map<String, dynamic> json) =
       _$CarModelImpl.fromJson;
@@ -321,6 +368,10 @@ abstract class _CarModel implements CarModel {
   CarModelTypeModel get carModel;
   @override
   List<String> get images;
+  @override
+  DateTime get createdAt;
+  @override
+  DateTime get updatedAt;
 
   /// Create a copy of CarModel
   /// with the given fields replaced by the non-null parameter values.

@@ -11,6 +11,7 @@ class StationListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('$stationListItem stationListItem');
     return InkWell(
       onTap: onTap,
       child: Card(
@@ -26,12 +27,12 @@ class StationListItem extends StatelessWidget {
               children: [
                 const Icon(
                   Icons.location_on,
-                  color: Colors.grey,
+                  color: WattHubColors.greyColor,
                 ),
                 4.w.widthBox,
                 Text(
                   stationListItem.address ?? '',
-                  style: const TextStyle(color: Colors.grey),
+                  style: const TextStyle(color: WattHubColors.greyColor),
                 ).expanded(),
               ],
             ),
@@ -45,17 +46,18 @@ class StationListItem extends StatelessWidget {
                     4.w.widthBox,
                     Text(
                       '${stationListItem.kwt} ${context.localized.kilowatt}',
-                      style: const TextStyle(color: Colors.grey),
+                      style: const TextStyle(color: WattHubColors.greyColor),
                     ),
                   ],
                 ),
                 Row(
                   children: [
-                    const Icon(Icons.attach_money, color: Colors.grey),
+                    const Icon(Icons.attach_money,
+                        color: WattHubColors.greyColor),
                     4.w.widthBox,
                     Text(
                       '\$${stationListItem.hourlyRate}/${context.localized.hourlyRate}',
-                      style: const TextStyle(color: Colors.grey),
+                      style: const TextStyle(color: WattHubColors.greyColor),
                     ),
                   ],
                 ),

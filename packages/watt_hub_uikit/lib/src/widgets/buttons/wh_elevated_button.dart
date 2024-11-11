@@ -7,12 +7,14 @@ class WHElevatedButton extends StatelessWidget {
     this.textStyle,
     this.onPressed,
     required this.style,
+    this.padding,
   });
 
   factory WHElevatedButton.primary({
     required String title,
     VoidCallback? onPressed,
     bool shadow = true,
+    EdgeInsets? padding,
   }) =>
       WHElevatedButton._(
         title: title,
@@ -20,21 +22,23 @@ class WHElevatedButton extends StatelessWidget {
           color: WattHubColors.whiteColor,
         ),
         style: primaryElevatedButtonStyle.copyWith(
-          elevation: WidgetStatePropertyAll(shadow ? 6 : 0),
-        ),
+            elevation: WidgetStatePropertyAll(shadow ? 6 : 0),
+            padding: WidgetStatePropertyAll(padding)),
         onPressed: onPressed,
       );
 
   factory WHElevatedButton.secondary({
     required String title,
     VoidCallback? onPressed,
+    EdgeInsets? padding,
   }) =>
       WHElevatedButton._(
         title: title,
         textStyle: body16MediumTextStyle.copyWith(
           color: WattHubColors.primaryGreenColor,
         ),
-        style: secondaryElevatedButtonStyle,
+        style: secondaryElevatedButtonStyle.copyWith(
+            padding: WidgetStatePropertyAll(padding)),
         onPressed: onPressed,
       );
 
@@ -42,6 +46,7 @@ class WHElevatedButton extends StatelessWidget {
   final TextStyle? textStyle;
   final VoidCallback? onPressed;
   final ButtonStyle style;
+  final EdgeInsets? padding;
 
   @override
   Widget build(BuildContext context) => ElevatedButton(
