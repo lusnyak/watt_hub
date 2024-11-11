@@ -20,11 +20,24 @@ class _DetailScreenState extends State<DetailScreen> {
   DateTime? _selectedDay;
   String selectedDurationString = '';
   String selectedTimeString = '';
+  final TextEditingController timeController = TextEditingController();
 
   void _onDaySelected(DateTime selectedDate) {
     setState(() {
       _selectedDay = selectedDate;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    timeController.text = selectedTimeString;
+  }
+
+  @override
+  void dispose() {
+    timeController.dispose();
+    super.dispose();
   }
 
   @override
@@ -56,7 +69,8 @@ class _DetailScreenState extends State<DetailScreen> {
               WHTextField.singleLine(
                 label: 'Select Arrival Time',
                 hintText: 'Select Arrival Time',
-                controller: TextEditingController(),
+                controller: timeController,
+                readonly: true,
                 onTap: () {
                   WhDatePicker.of(context)
                       .showTimePicker(
@@ -66,10 +80,17 @@ class _DetailScreenState extends State<DetailScreen> {
                     if (newDate != null) {
                       setState(() {
                         selectedTimeString = newDate.toDate().formattedTime();
+                        timeController.text = selectedTimeString;
                       });
                     }
                   });
                 },
+              ),
+              WhDropDownButton<String>(
+                hintText: 'Select Charging Duration',
+                items: getDurationList(15, 5),
+                itemLabel: (String el) => el,
+                onChanged: (value) {},
               ),
               WhDropDownButton<ConnectorTypeModel>(
                 hintText: "Select Connector Type Model",
@@ -81,33 +102,12 @@ class _DetailScreenState extends State<DetailScreen> {
                 itemLabel: (connector) => connector.title ?? "",
                 onChanged: (value) {},
               ),
-
-              WHTextField.singleLine(
-                label: 'Select Charging Duration',
-                hintText: 'Select Charging Duration',
-                controller: TextEditingController(),
-                onChanged: (value) => debugPrint(value),
-                onTap: () {
-                  WhDatePicker.of(context)
-                      .showTimePicker(
-                    initialTime: duration,
-                  )
-                      .then((newDate) {
-                    if (newDate != null) {
-                      setState(() {
-                        selectedDurationString =
-                            newDate.toDate().formattedTime();
-                      });
-                    }
-                  });
-                },
-              ),
               WHTextField.multiLine(
                 label: 'Comment',
                 hintText: 'Comment',
                 maxLines: 5,
                 controller: TextEditingController(),
-                onChanged: (value) => debugPrint(value),
+                onChanged: (value) {},
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter comment';
@@ -124,5 +124,16 @@ class _DetailScreenState extends State<DetailScreen> {
         ),
       ),
     );
+  }
+
+  List<String> getDurationList(int minute, int hour) {
+    List<String> durationList = [];
+    for (int i = minute; i <= hour * 60; i += 15) {
+      String hour = i ~/ 60 == 0 ? '' : '${i ~/ 60} h';
+      String minute = i % 60 == 0 ? '' : '${i % 60} min';
+      durationList.add("$hour $minute");
+    }
+
+    return durationList;
   }
 }

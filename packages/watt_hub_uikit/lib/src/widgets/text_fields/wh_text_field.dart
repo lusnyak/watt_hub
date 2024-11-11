@@ -4,7 +4,7 @@ import 'package:watt_hub_uikit/src/theme/theme.dart';
 import 'package:watt_hub_uikit/src/theme/watt_input_decorations.dart';
 
 class WHTextField extends StatelessWidget {
-   const WHTextField._({
+  const WHTextField._({
     this.label,
     this.hintText,
     this.controller,
@@ -15,6 +15,7 @@ class WHTextField extends StatelessWidget {
     this.inputFormatters,
     this.height,
     this.onTap,
+    this.readonly = false,
   });
 
   factory WHTextField.singleLine({
@@ -26,6 +27,7 @@ class WHTextField extends StatelessWidget {
     FormFieldValidator<String>? validator,
     List<TextInputFormatter>? inputFormatters,
     GestureTapCallback? onTap,
+    bool readonly = false,
   }) =>
       WHTextField._(
         label: label,
@@ -37,6 +39,7 @@ class WHTextField extends StatelessWidget {
         maxLines: 1,
         inputFormatters: inputFormatters,
         onTap: onTap,
+        readonly: readonly,
       );
 
   factory WHTextField.multiLine({
@@ -72,6 +75,8 @@ class WHTextField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final double? height;
   final GestureTapCallback? onTap;
+  final bool readonly;
+
   Widget _singleLine(BuildContext context) {
     return TextFormField(
       controller: controller,
@@ -86,6 +91,8 @@ class WHTextField extends StatelessWidget {
       onChanged: onChanged,
       validator: validator,
       onTapOutside: (evt) => FocusScope.of(context).unfocus(),
+      readOnly: readonly,
+      onTap:onTap,
     );
   }
 
