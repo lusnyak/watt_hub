@@ -28,22 +28,23 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
     try {
       await 2.delay();
 
-      final myRequests = ordersData
-          .map((orderJson) => OrderModel.fromJson(orderJson))
-          .toList();
-
-      final stationRequests = ordersData
-          .map((orderJson) => OrderModel.fromJson(orderJson))
-          .toList();
+      final myRequests = _fetchOrders();
+      final stationRequests = _fetchOrders();
 
       emit(RequestsState.loaded(
         myRequests: myRequests,
         stationRequests: stationRequests,
         selectedOption: event.selectedOption,
       ));
-    } catch (e) {
-      debugPrint('${e.toString()} e.toString()');
-      emit(const RequestsState.error("Failed to load requests"));
+    } catch (e, stackTrace) {
+      debugPrint('Error: ${e.toString()}, StackTrace: $stackTrace');
+      emit(const RequestsState.error(message: "Failed to load requests"));
     }
+  }
+
+  List<OrderModel> _fetchOrders() {
+    return ordersData
+        .map((orderJson) => OrderModel.fromJson(orderJson))
+        .toList();
   }
 }

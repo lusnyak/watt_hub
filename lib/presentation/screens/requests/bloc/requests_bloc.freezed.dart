@@ -623,7 +623,7 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
     Object? message = null,
   }) {
     return _then(_$ErrorStateImpl(
-      null == message
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -634,7 +634,7 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ErrorStateImpl implements ErrorState {
-  const _$ErrorStateImpl(this.message);
+  const _$ErrorStateImpl({required this.message});
 
   @override
   final String message;
@@ -745,7 +745,7 @@ class _$ErrorStateImpl implements ErrorState {
 }
 
 abstract class ErrorState implements RequestsState {
-  const factory ErrorState(final String message) = _$ErrorStateImpl;
+  const factory ErrorState({required final String message}) = _$ErrorStateImpl;
 
   String get message;
 

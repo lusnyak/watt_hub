@@ -19,12 +19,17 @@ class RequestsGroupList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final requestsData = stationRequests ?? myRequestsData;
-    final isStationRequests = stationRequests != null ? true : false;
+
+    if (requestsData == null || requestsData.isEmpty) {
+      return const Center(child: Text("No requests available")).expanded();
+    }
+
+    final isStationRequests = stationRequests != null;
 
     return GroupedListView<OrderModel, String>(
-      elements: requestsData ?? [],
-      groupBy: (element) => element.status!.name,
-      groupSeparatorBuilder: (String groupValue) => nil,
+      elements: requestsData,
+      groupBy: (element) => element.status?.name ?? context.localized.unknown,
+      groupSeparatorBuilder: (_) => 10.h.heightBox,
       itemBuilder: (context, element) {
         final totalCost = calculateTotalCost(
             element.station!.hourlyRate!.toDouble(),
@@ -42,6 +47,6 @@ class RequestsGroupList extends StatelessWidget {
           isStationRequests: isStationRequests,
         );
       },
-    ).paddingSymmetric(vertical: 20.h).expanded();
+    );
   }
 }

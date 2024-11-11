@@ -213,4 +213,7 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get pending => 'Սպասման մեջ';
+
+  @override
+  String get unknown => 'Անհայտ';
 }

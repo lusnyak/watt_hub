@@ -67,5 +67,6 @@
   "start": "Start",
   "canceled": "Canceled",
   "finished": "Finished",
-  "pending": "Pending"
+  "pending": "Pending",
+  "unknown": "Unknown"
 }

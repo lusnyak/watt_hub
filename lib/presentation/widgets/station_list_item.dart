@@ -11,6 +11,7 @@ class StationListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('$stationListItem stationListItem');
     return InkWell(
       onTap: onTap,
       child: Card(
@@ -51,7 +52,8 @@ class StationListItem extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    const Icon(Icons.attach_money, color: WattHubColors.greyColor),
+                    const Icon(Icons.attach_money,
+                        color: WattHubColors.greyColor),
                     4.w.widthBox,
                     Text(
                       '\$${stationListItem.hourlyRate}/${context.localized.hourlyRate}',
