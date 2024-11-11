@@ -33,50 +33,71 @@ class RequestsView extends StatelessWidget {
         ),
         backgroundColor: WattHubColors.whiteColor,
       ),
-      child: BlocBuilder<RequestsBloc, RequestsState>(
-        builder: (context, state) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              CupertinoSlidingSegmentedControl<SegmentOption>(
-                groupValue: state.maybeMap(
-                  loaded: (state) => state.selectedOption,
-                  loading: (state) => state.selectedOption,
-                  orElse: () => SegmentOption.my,
-                ),
-                onValueChanged: (value) {
-                  if (value != null) {
-                    context
-                        .read<RequestsBloc>()
-                        .add(RequestsEvent.loadMyRequests(value));
-                  }
-                },
-                children: <SegmentOption, Widget>{
-                  SegmentOption.my: Text(context.localized.my)
-                      .paddingSymmetric(vertical: 8.h),
-                  SegmentOption.station: Text(context.localized.station)
-                      .paddingSymmetric(vertical: 8.h),
-                },
-              ).paddingOnly(top: 20.h),
-              if (state is LoadingState)
-                const Center(child: WHCircularSpin()).expanded()
-              else
-                state.maybeWhen(
-                  initial: () =>
-                      const Center(child: Text('Welcome to Requests!')),
-                  error: (message) => Center(child: Text(message)),
-                  loaded: (selectedOption, myRequests, stationRequests) =>
-                      selectedOption == SegmentOption.my
-                          ? RequestsGroupList(stationRequests: stationRequests)
-                          : RequestsGroupList(
-                              myRequestsData: myRequests,
-                            ),
-                  orElse: () => nil,
-                ),
-            ],
-          );
-        },
-      ).paddingSymmetric(horizontal: 20.0),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _SegmentedControl(),
+            20.h.heightBox,
+            _RequestsContent().expanded(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SegmentedControl extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<RequestsBloc, RequestsState>(
+      buildWhen: (previous, current) =>
+          current is LoadedState || current is LoadingState,
+      builder: (context, state) {
+        final selectedOption = state.maybeMap(
+          loaded: (state) => state.selectedOption,
+          loading: (state) => state.selectedOption,
+          orElse: () => SegmentOption.my,
+        );
+
+        return CupertinoSlidingSegmentedControl<SegmentOption>(
+          groupValue: selectedOption,
+          onValueChanged: (value) {
+            if (value != null) {
+              context
+                  .read<RequestsBloc>()
+                  .add(RequestsEvent.loadMyRequests(value));
+            }
+          },
+          children: <SegmentOption, Widget>{
+            SegmentOption.my:
+                Text(context.localized.my).paddingSymmetric(vertical: 8.h),
+            SegmentOption.station:
+                Text(context.localized.station).paddingSymmetric(vertical: 8.h),
+          },
+        ).paddingOnly(top: 20.h);
+      },
+    );
+  }
+}
+
+class _RequestsContent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<RequestsBloc, RequestsState>(
+      builder: (context, state) {
+        return state.when(
+          initial: () => nil,
+          loading: (segmentOption) => const Center(child: WHCircularSpin()),
+          error: (message) => Center(child: Text(message)),
+          loaded: (selectedOption, myRequests, stationRequests) {
+            return selectedOption == SegmentOption.my
+                ? RequestsGroupList(myRequestsData: myRequests)
+                : RequestsGroupList(stationRequests: stationRequests);
+          },
+        );
+      },
     );
   }
 }

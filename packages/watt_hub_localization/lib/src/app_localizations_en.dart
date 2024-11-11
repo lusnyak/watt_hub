@@ -255,4 +255,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pending => 'Pending';
+
+  @override
+  String get unknown => 'Unknown';
 }

@@ -92,6 +92,6 @@ class RequestsListItem extends StatelessWidget {
           RequestsFooter(status: status, isStationRequests: isStationRequests)
         ],
       ).paddingAll(20.r),
-    ).paddingSymmetric(vertical: 10.h);
+    );
   }
 }
