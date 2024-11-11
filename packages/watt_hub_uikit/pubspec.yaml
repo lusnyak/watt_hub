@@ -21,8 +21,12 @@ dependencies:
   intl: ^0.19.0
   carousel_slider: ^5.0.0
   cached_network_image: ^3.4.1
+  image_picker: ^1.1.2
+  permission_handler: ^10.2.0
+  image_picker_android:
+  image_picker_platform_interface:
+  geocoding: ^3.0.0
   table_calendar: ^3.1.2
-
 
 
 

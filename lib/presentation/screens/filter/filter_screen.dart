@@ -11,7 +11,7 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 @RoutePage()
 class FilterScreen extends StatelessWidget {
   const FilterScreen({super.key});
-
+ 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -23,7 +23,6 @@ class FilterScreen extends StatelessWidget {
 
 class FilterView extends StatelessWidget {
   const FilterView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,3 +105,4 @@ class FilterView extends StatelessWidget {
     );
   }
 }
+ 
