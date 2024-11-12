@@ -18,7 +18,7 @@ class WHImagePicker extends StatelessWidget {
     required Widget child,
     ValueChanged<List<File>>? onPicked,
   }) {
-    if(limit >1) {
+    if (limit > 1) {
       return WHImagePicker._(
         key: key,
         limit: limit,
@@ -26,9 +26,9 @@ class WHImagePicker extends StatelessWidget {
         child: child,
       );
     }
-    return  WHImagePicker._(
+    return WHImagePicker._(
       key: key,
-      onPickedFile: (file){
+      onPickedFile: (file) {
         onPicked?.call([file]);
       },
       single: true,

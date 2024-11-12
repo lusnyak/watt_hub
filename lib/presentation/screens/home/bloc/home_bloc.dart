@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -27,24 +26,25 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_LoadFiltersEvent>(_onLoadFilters);
   }
 
-  Future<LatLng?> _initializeLocation() async {
-    final location = await _locationManager.getCurrentLocation();
-    if (location != null) {
-      return location;
-    }
-    return null;
+  Future<LatLng?> _initializeLocation(emit) async {
+    final location =
+        await _locationManager.getCurrentLocation().then((location) {
+      if (location != null) {
+        return location;
+      }
+    }).catchError((e) => emit(HomeState.error(e.message.toString())));
+
+    return location;
   }
 
   Future<void> _onLoadStation(event, emit) async {
     emit(const HomeState.loading());
-    try {
-      final location = await _initializeLocation();
+    final location = await _initializeLocation(emit);
 
+    try {
       final stations = stationsData
           .map((stationJson) => StationModel.fromJson(stationJson))
           .toList();
-
-      debugPrint('$stations, stations');
 
       emit(HomeState.loaded(
         stations,
@@ -63,8 +63,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       final loadedState = state as LoadedState;
       emit(HomeState.loaded(loadedState.stations,
           isList: !loadedState.isList, currentLocation: event.currentLocation));
-    } else {
-      emit(const HomeState.viewChanged(true));
     }
   }
 
