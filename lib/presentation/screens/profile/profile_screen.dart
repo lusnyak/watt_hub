@@ -34,11 +34,10 @@ class _ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: BlocBuilder<ProfileBloc, ProfileState>(builder: (context, state) {
         return state.when(
             initial: () => const SizedBox.shrink(),
-            loading: () => const Center(child: WHCircularSpin()),
+            loading: () => const WHCircularSpin().toCenter(),
             error: (message) => Center(child: Text('Error: $message')),
             loaded: (
               profileData,

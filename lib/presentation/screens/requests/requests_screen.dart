@@ -89,7 +89,7 @@ class _RequestsContent extends StatelessWidget {
       builder: (context, state) {
         return state.when(
           initial: () => nil,
-          loading: (segmentOption) => const Center(child: WHCircularSpin()),
+          loading: (segmentOption) => const WHCircularSpin().toCenter(),
           error: (message) => Center(child: Text(message)),
           loaded: (selectedOption, myRequests, stationRequests) {
             return selectedOption == SegmentOption.my

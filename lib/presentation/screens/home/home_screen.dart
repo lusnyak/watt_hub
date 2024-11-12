@@ -17,7 +17,6 @@ class HomeScreen extends StatelessWidget {
     return BlocProvider(
       create: (_) => getIt<HomeBloc>()..add(const HomeEvent.loadStationEvent()),
       child: const _HomeView(),
-
     );
   }
 }
@@ -28,82 +27,88 @@ class _HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: WattHubColors.transparentColor,
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          leading: nil,
-          actions: [
-            WHIconButton.primary(
-              icon: const Icon(Icons.filter_alt),
-              onPressed: () => context.router.push(const FilterRoute()),
-            ).paddingOnly(right: 20.w),
-          ],
-        ),
-        body: SafeArea(
-          top: false,
-          child: BlocBuilder<HomeBloc, HomeState>(
-            builder: (context, state) {
-              return state.when(
-                initial: () => const SizedBox.shrink(),
-                loading: () => const Center(child: WHCircularSpin()),
-                error: (message) => Center(child: Text(message)),
-                viewChanged: (isList) => nil,
-                loaded: (
-                  stations,
-                  isList,
-                  currentLocation,
-                  isMapReady,
-                ) {
-                  return isList
-                      ? MapContainer(
-                          chargingStations: stations,
-                          currentLocation: currentLocation,
-                        )
-                      : StationsList(
-                          stationsList: stations,
-                          currentLocation: currentLocation,
-                        );
-                },
-              );
-            },
-          ),
-        ),
-        floatingActionButton: BlocBuilder<HomeBloc, HomeState>(
+      backgroundColor: WattHubColors.transparentColor,
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        leading: null,
+        actions: [
+          WHIconButton.primary(
+            icon: const Icon(Icons.filter_alt),
+            onPressed: () => context.router.push(const FilterRoute()),
+          ).paddingOnly(right: 20.w),
+        ],
+      ),
+      body: SafeArea(
+        top: false,
+        child: BlocConsumer<HomeBloc, HomeState>(
+          listener: (context, state) {
+            if (state is ErrorState) {
+              context.showSnackBar(
+                  message: state.message,
+                  duration: const Duration(seconds: 45));
+            }
+          },
           builder: (context, state) {
-            final isList = state is LoadedState ? state.isList : true;
-            final currentLocation =
-                state is LoadedState ? state.currentLocation : null;
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                if (state.maybeMap(
-                  loaded: (_) => isList,
-                  orElse: () => false,
-                ))
-                  FloatingActionButton(
-                    heroTag: "location",
-                    onPressed: () {
-                      context
-                          .read<HomeBloc>()
-                          .add(HomeEvent.centerLocationEvent(currentLocation));
-                    },
-                    child: const Icon(Icons.my_location_outlined),
-                  ),
-                20.widthBox,
+            return state.maybeWhen(
+              orElse: () => nil,
+              loading: () => const WHCircularSpin().toCenter(),
+              loaded: (
+                stations,
+                isList,
+                currentLocation,
+                isMapReady,
+              ) {
+                return isList
+                    ? MapContainer(
+                        chargingStations: stations,
+                        currentLocation: currentLocation,
+                      )
+                    : StationsList(
+                        stationsList: stations,
+                        currentLocation: currentLocation,
+                      );
+              },
+            );
+          },
+        ),
+      ),
+      floatingActionButton: BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) {
+          final isList = state is LoadedState ? state.isList : true;
+          final currentLocation =
+              state is LoadedState ? state.currentLocation : null;
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              if (state.maybeMap(
+                loaded: (_) => isList,
+                orElse: () => false,
+              ))
                 FloatingActionButton(
-                  heroTag: "list",
+                  heroTag: "location",
                   onPressed: () {
                     context
                         .read<HomeBloc>()
-                        .add(HomeEvent.toggleViewEvent(currentLocation));
+                        .add(HomeEvent.centerLocationEvent(currentLocation));
                   },
-                  child: Icon(
-                    isList ? Icons.list : Icons.map,
-                  ),
+                  child: const Icon(Icons.my_location_outlined),
                 ),
-              ],
-            );
-          },
-        ));
+              20.widthBox,
+              FloatingActionButton(
+                heroTag: "list",
+                onPressed: () {
+                  context
+                      .read<HomeBloc>()
+                      .add(HomeEvent.toggleViewEvent(currentLocation));
+                },
+                child: Icon(
+                  isList ? Icons.list : Icons.map,
+                ),
+              ),
+            ],
+          );
+        },
+      ),
+    );
   }
 }

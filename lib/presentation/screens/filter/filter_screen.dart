@@ -11,7 +11,7 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 @RoutePage()
 class FilterScreen extends StatelessWidget {
   const FilterScreen({super.key});
- 
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -37,7 +37,7 @@ class FilterView extends StatelessWidget {
           builder: (context, state) {
             return state.when(
               initial: () => nil,
-              loading: () => const Center(child: CircularProgressIndicator()),
+              loading: () => const CircularProgressIndicator().toCenter(),
               error: (message) => Center(child: Text('Error: $message')),
               loaded: (
                 connectors,
@@ -105,4 +105,3 @@ class FilterView extends StatelessWidget {
     );
   }
 }
- 
