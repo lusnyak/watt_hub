@@ -33,7 +33,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'We have sent an OTP code to email address. Enter the OTP code below to continue.';
 
   @override
-  String get didntReceiveEmail => 'Didn\'t receive email?';
+  String get didntReceiveEmail => 'Didn\'t rFeceive email?';
 
   @override
   String get pleaseAgree =>
@@ -267,4 +267,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get review_title => 'Write a review';
+
+  @override
+  String get name => 'Name';
 }

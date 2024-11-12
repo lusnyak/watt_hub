@@ -268,4 +268,7 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get review_title => 'Գրել ակնարկ';
+
+  @override
+  String get name => 'Անուն';
 }

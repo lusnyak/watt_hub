@@ -149,7 +149,7 @@ abstract class AppLocalizations {
   /// No description provided for @didntReceiveEmail.
   ///
   /// In en, this message translates to:
-  /// **'Didn\'t receive email?'**
+  /// **'Didn\'t rFeceive email?'**
   String get didntReceiveEmail;
 
   /// No description provided for @pleaseAgree.
@@ -613,6 +613,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Write a review'**
   String get review_title;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
 }
 
 class _AppLocalizationsDelegate

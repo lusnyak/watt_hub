@@ -7,7 +7,7 @@
   "continueText": "Continue",
   "otpCodeVerification": "OTP code verification ",
   "sentAnOtpCode": "We have sent an OTP code to email address. Enter the OTP code below to continue.",
-  "didntReceiveEmail": "Didn't receive email?",
+  "didntReceiveEmail": "Didn't rFeceive email?",
   "pleaseAgree": "Please agree to the terms and enter a valid email.",
   "privacyPolicy": "Privacy Policy ",
   "iAagreeToWattHub": "I agree to WattHub ",
@@ -84,5 +84,6 @@
   "leave_review":"Leave a review",
   "rating_bar_title": "Tap a star to rate",
   "submit": "Submit",
-  "review_title": "Write a review"
+  "review_title": "Write a review",
+  "name": "Name"
 }
