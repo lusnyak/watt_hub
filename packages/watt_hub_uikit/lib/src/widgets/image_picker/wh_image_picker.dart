@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class WHImagePicker extends StatelessWidget {
   const WHImagePicker._({
@@ -19,7 +18,7 @@ class WHImagePicker extends StatelessWidget {
     required Widget child,
     ValueChanged<List<File>>? onPicked,
   }) {
-    if(limit >1) {
+    if (limit > 1) {
       return WHImagePicker._(
         key: key,
         limit: limit,
@@ -27,9 +26,9 @@ class WHImagePicker extends StatelessWidget {
         child: child,
       );
     }
-    return  WHImagePicker._(
+    return WHImagePicker._(
       key: key,
-      onPickedFile: (file){
+      onPickedFile: (file) {
         onPicked?.call([file]);
       },
       single: true,

@@ -1,8 +1,10 @@
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 
+typedef Coordinate = LatLng;
+
 class LocationManager {
-  Future<bool> requrestPermission() async {
+  Future<bool> requestPermission() async {
     LocationPermission permission = await Geolocator.requestPermission();
     if (permission == LocationPermission.denied ||
         permission == LocationPermission.deniedForever) {
@@ -11,15 +13,14 @@ class LocationManager {
     return true;
   }
 
-  Future<LatLng?> getCurrentLocation() async {
-    bool permissionGranted = await requrestPermission();
-    if (!permissionGranted) return null;
-
+  Future<Coordinate?> getCurrentLocation() async {
     try {
+      bool permissionGranted = await requestPermission();
+      if (!permissionGranted) return null;
       Position position = await Geolocator.getCurrentPosition();
-      return LatLng(position.latitude, position.longitude);
+      return Coordinate(position.latitude, position.longitude);
     } catch (e) {
-      return null;
+      throw Exception('Failed to get current location: $e');
     }
   }
 }
