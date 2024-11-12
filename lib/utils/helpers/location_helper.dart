@@ -15,7 +15,7 @@ class LocationManager {
 
   /// TODO: Jora -  LatLng verbepoxel sepakani
   ///  throw sepakan exeptiond  - not required
-  Future<LatLng?> getCurrentLocation() async {
+  Future<Coordinate?> getCurrentLocation() async {
     try {
       bool permissionGranted = await requestPermission();
       if (!permissionGranted) return null;
