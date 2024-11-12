@@ -26,16 +26,11 @@ part 'app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: AppLoadingRoute.page),
+        AutoRoute(page: AppLoadingRoute.page, initial: true),
         AutoRoute(page: UikitExampleRoute.page),
-        AutoRoute(
-          page: SplashRoute.page, /*initial: true*/
-        ),
-        AutoRoute(
-          page: UikitExampleRoute.page,
-        ),
+        AutoRoute(page: UikitExampleRoute.page),
         AutoRoute(page: OnboardingRoute.page),
-        AutoRoute(page: DashboardRoute.page, initial: true, children: [
+        AutoRoute(page: DashboardRoute.page, children: [
           AutoRoute(page: HomeRoute.page),
           AutoRoute(page: RequestsRoute.page),
           profileTap,
@@ -46,9 +41,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: FilterRoute.page),
         AutoRoute(page: StationInfoRoute.page),
         AutoRoute(page: DetailRoute.page),
-        AutoRoute(
-          page: AddStationRoute.page,
-        ),
+        AutoRoute(page: AddStationRoute.page),
         AutoRoute(page: ChooseStationAddressRoute.page),
         AutoRoute(page: AddCarRoute.page),
       ];
