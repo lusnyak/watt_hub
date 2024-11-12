@@ -371,13 +371,13 @@ abstract class AppLocalizations {
   /// No description provided for @kilowatt.
   ///
   /// In en, this message translates to:
-  /// **'Kilowatt'**
+  /// **'kw'**
   String get kilowatt;
 
   /// No description provided for @hourlyRate.
   ///
   /// In en, this message translates to:
-  /// **'Hourly rate'**
+  /// **'hr'**
   String get hourlyRate;
 
   /// No description provided for @filter.
@@ -439,12 +439,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter your phone number'**
   String get yourPhoneNumber;
-
-  /// No description provided for @name.
-  ///
-  /// In en, this message translates to:
-  /// **'Name'**
-  String get name;
 
   /// No description provided for @yourName.
   ///

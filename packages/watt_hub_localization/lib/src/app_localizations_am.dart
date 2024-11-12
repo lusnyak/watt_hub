@@ -182,9 +182,6 @@ class AppLocalizationsAm extends AppLocalizations {
   String get yourPhoneNumber => 'Մուտքագրեք ձեր հեռախոսահամարը';
 
   @override
-  String get name => 'Անուն';
-
-  @override
   String get yourName => 'Մուտքագրեք ձեր անունը';
 
   @override

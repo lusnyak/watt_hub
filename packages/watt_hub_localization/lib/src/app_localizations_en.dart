@@ -145,10 +145,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get book => 'Book';
 
   @override
-  String get kilowatt => 'Kilowatt';
+  String get kilowatt => 'kw';
 
   @override
-  String get hourlyRate => 'Hourly rate';
+  String get hourlyRate => 'hr';
 
   @override
   String get filter => 'Filter';
@@ -179,9 +179,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get yourPhoneNumber => 'Enter your phone number';
-
-  @override
-  String get name => 'Name';
 
   @override
   String get yourName => 'Enter your name';
