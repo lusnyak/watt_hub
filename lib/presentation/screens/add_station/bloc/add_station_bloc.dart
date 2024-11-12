@@ -102,7 +102,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
           if (state is _LoadedState) {
             final currentState = state as _LoadedState;
             final updatedSelected =
-                List<ConnectorTypeModel>.from(currentState.selectedList ?? []);
+                List<ConnectorTypeModel>.from(currentState.selectedList);
             updatedSelected.remove(e.connector);
             emit(currentState.copyWith(selectedList: updatedSelected));
           }

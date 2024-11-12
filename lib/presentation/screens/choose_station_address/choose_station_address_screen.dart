@@ -26,7 +26,7 @@ class ChooseStationAddressScreen extends StatelessWidget {
 }
 
 class _ChooseStationAddressScreenBody extends StatelessWidget {
-  const _ChooseStationAddressScreenBody({super.key});
+  const _ChooseStationAddressScreenBody();
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +35,10 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
       body: BlocBuilder<ChooseStationAddressBloc, ChooseStationAddressState>(
         builder: (context, state) {
           return state.when(
-            initial: () => Container(),
+            initial: () => Container(), /// TODO: - Vlad - miavorel kam naxnakan ekran cuyc tal
             loading: () => const Center(child: WHCircularSpin()),
             error: (message) =>
-                Center(child: Text('${context.localized.error}: $message')),
+                Center(child: Text('${context.localized.error}: $message')), /// TODO: - hanel listeri mej
             loaded: (address, location) {
               return FlutterMap(
                 options: MapOptions(
@@ -56,6 +56,7 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
                         'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                     userAgentPackageName: 'com.example.app',
                   ),
+                  /// TODO: -  poxel layery chihst layerov  (MarkerLayer)
                   MarkerClusterLayerWidget(
                     options: MarkerClusterLayerOptions(
                       maxClusterRadius: 45,
@@ -110,27 +111,31 @@ class _ChooseStationAddressScreenBody extends StatelessWidget {
               ChooseStationAddressEvent.addressRequested(
                   location.latitude, location.longitude),
             );
-
+            context.showSnackBar(message: "message");
+            /// TODO: Vlad - poxarinel bloc listerov, ogtagorcel BlocConsumer
             bloc.stream.listen((state) {
               final address = state.maybeWhen(
                   loaded: (address, _) => address, orElse: () => null);
 
               if (address != null) {
+                /// TODO: - darcnel model
                 final result = {
                   'address': address,
                   'latitude': location.latitude,
                   'longitude': location.longitude,
                 };
-                context.router.maybePop(
-                   result);
+                if(context.mounted) {
+                  context.router.maybePop(
+                      result);
+                }
               } else {
-                ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Address not found.')));
+                if(context.mounted) {
+                  context.showSnackBar(message: "Address not found.");
+                }
               }
             });
           } else {
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                content: Text('No location selected. Please tap on the map.')));
+            context.showSnackBar(message: "No location selected. Please tap on the map.");
           }
         },
         child: const Icon(Icons.check),

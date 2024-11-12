@@ -76,14 +76,17 @@ class AddStationView extends StatelessWidget {
                                 const ChooseStationAddressRoute(),
                               );
 
+                              /// TODO: Vlad - poxel objecti
                               if (addressResult != null) {
                                 final address = addressResult['address'];
                                 final latitude = addressResult['latitude'];
                                 final longitude = addressResult['longitude'];
-                                context.read<AddStationBlock>().add(
-                                      AddStationEvent.getAddress(
-                                          address, latitude, longitude),
-                                    );
+                                if(context.mounted) {
+                                  context.read<AddStationBlock>().add(
+                                    AddStationEvent.getAddress(
+                                        address, latitude, longitude),
+                                  );
+                                }
                               }
                             }),
                         5.h.heightBox,
@@ -105,9 +108,11 @@ class AddStationView extends StatelessWidget {
                                     if (newDate != null) {
                                       final formattedTime =
                                           dateTimeFromTimeOfDay(newDate);
-                                      context.read<AddStationBlock>().add(
-                                          AddStationEvent.startTimeSelected(
-                                              formattedTime));
+                                      if(context.mounted) {
+                                        context.read<AddStationBlock>().add(
+                                            AddStationEvent.startTimeSelected(
+                                                formattedTime));
+                                      }
                                     }
                                   },
                                 );
@@ -118,17 +123,19 @@ class AddStationView extends StatelessWidget {
                             )),
                             20.w.widthBox,
                             WHOutlinedButton(
-                              onPressed: () {
-                                WhDatePicker.of(context)
+                              onPressed: () async {
+                               await WhDatePicker.of(context)
                                     .showTimePicker(initialTime: time)
                                     .then(
                                   (newDate) {
                                     if (newDate != null) {
                                       final formattedTime =
                                           dateTimeFromTimeOfDay(newDate);
-                                      context.read<AddStationBlock>().add(
-                                          AddStationEvent.endTimeSelected(
-                                              formattedTime));
+                                      if(context.mounted) {
+                                        context.read<AddStationBlock>().add(
+                                            AddStationEvent.endTimeSelected(
+                                                formattedTime));
+                                      }
                                     }
                                   },
                                 );
@@ -153,8 +160,8 @@ class AddStationView extends StatelessWidget {
                           selectedItems: selectedList,
                         ),
                         Wrap(
-                          spacing: 8.0,
-                          runSpacing: 4.0,
+                          spacing: 8.w,
+                          runSpacing: 4.w,
                           children: [
                             if (selectedList != [])
                               for (var item in selectedList)

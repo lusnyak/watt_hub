@@ -1,11 +1,9 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
-
-import '../bloc/add_station_bloc.dart';
 
 class AddStationPreviewImages extends StatelessWidget {
   const AddStationPreviewImages({super.key});
@@ -14,17 +12,19 @@ class AddStationPreviewImages extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.watch<AddStationBlock>().state;
     return state.maybeWhen(
-      loaded: (connectors,
-          selectedConnectors,
-          selectedList,
-          selected,
-          initialSelectedConnectorId,
-          images,
-          startTime,
-          endTime,
-          address,
-          latitude,
-          longitude,) {
+      loaded: (
+        connectors,
+        selectedConnectors,
+        selectedList,
+        selected,
+        initialSelectedConnectorId,
+        images,
+        startTime,
+        endTime,
+        address,
+        latitude,
+        longitude,
+      ) {
         if (images != null && images.isNotEmpty) {
           return SizedBox(
             height: 100.h,
@@ -63,9 +63,7 @@ class AddStationPreviewImages extends StatelessWidget {
           return const SizedBox();
         }
       },
-      orElse: () =>
-      const SizedBox(),
+      orElse: () => const SizedBox(),
     );
   }
-
 }

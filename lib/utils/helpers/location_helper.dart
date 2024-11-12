@@ -2,7 +2,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 
 class LocationManager {
-  Future<bool> requrestPermission() async {
+  Future<bool> requestPermission() async {
     LocationPermission permission = await Geolocator.requestPermission();
     if (permission == LocationPermission.denied ||
         permission == LocationPermission.deniedForever) {
@@ -11,8 +11,10 @@ class LocationManager {
     return true;
   }
 
+  /// TODO: Jora -  LatLng verbepoxel sepakani
+  ///  throw sepakan exeptiond  - not required
   Future<LatLng?> getCurrentLocation() async {
-    bool permissionGranted = await requrestPermission();
+    bool permissionGranted = await requestPermission();
     if (!permissionGranted) return null;
 
     try {
