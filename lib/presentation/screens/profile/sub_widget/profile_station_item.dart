@@ -14,32 +14,24 @@ class ProfileStationItem extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: roundedBorder14,
           border: Border.all(color: WattHubColors.primaryLightGreenColor)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            context.localized.stationInfo,
-            style: body16SemiBoldTextStyle,
-          ).paddingOnly(bottom: 10.sp),
-          Text('${context.localized.name}: ${stationData.name}'),
-          Text('${context.localized.street}: ${stationData.address}'),
-          Text('${context.localized.max}: ${stationData.kwt}kWt'),
-          Text(
-              '${context.localized.hourlyRateFull}: ${stationData.hourlyRate}\$'),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.end,
+      child: WHSlidable(
+          behindActionIcon: Icons.edit,
+          endActionIcon: Icons.delete,
+          slidableItem: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const InkWell(
-                child: Icon(Icons.mode_edit_outlined),
-              ),
-              20.w.widthBox,
-              const InkWell(child: Icon(Icons.delete_outline_outlined)),
+              Text(
+                context.localized.stationInfo,
+                style: body16SemiBoldTextStyle,
+              ).paddingOnly(bottom: 10.sp),
+              Text('${context.localized.name}: ${stationData.name}'),
+              Text('${context.localized.street}: ${stationData.address}'),
+              Text('${context.localized.max}: ${stationData.kwt}kWt'),
+              Text(
+                  '${context.localized.hourlyRateFull}: ${stationData.hourlyRate}\$'),
             ],
-          )
-        ],
-      ),
+          )),
     ).paddingOnly(bottom: 10.sp);
   }
 }
