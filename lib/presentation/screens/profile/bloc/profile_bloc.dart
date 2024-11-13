@@ -1,7 +1,5 @@
 import 'package:watt_hub/config/config.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watt_hub/data/fake_data/create_cars_data/created_cars_data.dart';
-import 'package:watt_hub/data/fake_data/stations_data/stations_map.dart';
 import 'package:watt_hub/data/fake_data/users_data/users_data.dart';
 import 'package:watt_hub/domain/models/car_model/car_model.dart';
 import 'package:watt_hub/domain/models/station/station_model.dart';

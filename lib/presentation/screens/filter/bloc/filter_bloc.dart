@@ -1,4 +1,3 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/local/local.dart';
 import 'package:watt_hub/data/fake_data/car_types_data/car_types_data.dart';

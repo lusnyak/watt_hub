@@ -3,7 +3,6 @@ import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/local/onboarding_data/onboarding_data.dart';
 import 'package:watt_hub/data/local/shared_preferences/shared_preferences_service.dart';
 import 'package:watt_hub/domain/models/onboarding/onboarding_model.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'onboarding_event.dart';
 

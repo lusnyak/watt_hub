@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.dart';
@@ -37,11 +35,13 @@ class AddStationPreviewImages extends StatelessWidget {
                   height: 100.r,
                   margin: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
-                    image: DecorationImage(fit: BoxFit.cover, image: FileImage(images[index], ))
-                  ),
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: FileImage(
+                            images[index],
+                          ))),
                   child: InkWell(
-                    child: const Icon(Icons.cancel,
-                        color: Colors.red),
+                    child: const Icon(Icons.cancel, color: Colors.red),
                     onTap: () => context
                         .read<AddStationBlock>()
                         .add(AddStationEvent.removeImage(index)),

@@ -1,4 +1,3 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/fake_data/connectors_data/connectors_data.dart';
 import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watt_hub_uikit/src/theme/theme.dart';
 import 'package:watt_hub_uikit/src/widgets/circular_spin/circular_spin.dart';
 
@@ -58,7 +57,7 @@ class WHElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) => ElevatedButton(
         onPressed: onPressed,
         style: style,
-        child: loading ? WHCircularSpin(size: 24.0, color: WattHubColors.whiteColor,) : Text(
+        child: loading ? const WHCircularSpin(size: 24.0, color: WattHubColors.whiteColor,) : Text(
           title,
           style: textStyle,
           maxLines: 2,
