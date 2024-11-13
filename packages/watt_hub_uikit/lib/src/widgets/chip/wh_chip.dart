@@ -11,19 +11,18 @@ class WHChip extends StatelessWidget {
 
   final String? label;
   final Color? backgroundColor;
-  final Function()? onDeleted;
+  final VoidCallback? onDeleted;
 
   @override
   Widget build(BuildContext context) {
     return Chip(
-      padding: EdgeInsets.zero,
+      labelPadding: EdgeInsets.zero,
+      deleteIcon: const Icon(Icons.close).paddingOnly(left: 2.w),
       backgroundColor: backgroundColor,
       side: BorderSide(color: backgroundColor ?? WattHubColors.whiteColor),
-      label: Text(
-        label ?? '',
-        style: body10RegularTextStyle.copyWith(color: WattHubColors.whiteColor),
-      ),
+      label: Text(label ?? ''),
       onDeleted: onDeleted,
+      visualDensity: VisualDensity.compact,
     );
   }
 }

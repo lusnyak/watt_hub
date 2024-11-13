@@ -27,34 +27,25 @@ class AddStationPreviewImages extends StatelessWidget {
       ) {
         if (images != null && images.isNotEmpty) {
           return SizedBox(
-            height: 100.h,
+            height: 120.h,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: images.length,
               itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Stack(
-                    children: [
-                      Image.file(
-                        height: 100.h,
-                        width: 85.w,
-                        File(images[index].path),
-                        fit: BoxFit.cover,
-                      ),
-                      Positioned(
-                        top: -11,
-                        right: -11,
-                        child: IconButton(
-                          icon: const Icon(Icons.dangerous_outlined,
-                              color: Colors.red),
-                          onPressed: () => context
-                              .read<AddStationBlock>()
-                              .add(AddStationEvent.removeImage(index)),
-                        ),
-                      ),
-                    ],
+                return Container(
+                  width: 100.r,
+                  height: 100.r,
+                  margin: const EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(fit: BoxFit.cover, image: FileImage(images[index], ))
                   ),
+                  child: InkWell(
+                    child: const Icon(Icons.cancel,
+                        color: Colors.red),
+                    onTap: () => context
+                        .read<AddStationBlock>()
+                        .add(AddStationEvent.removeImage(index)),
+                  ).alignAtTopRight(),
                 );
               },
             ),

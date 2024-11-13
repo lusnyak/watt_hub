@@ -20,9 +20,10 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       emit(const ProfileState.loading());
       try {
         final myUserData = UserModel.fromJson(userData);
-        final List<StationModel> myStationData = stationsData
-            .map((station) => StationModel.fromJson(station))
-            .toList();
+        final List<StationModel> myStationData = <StationModel>[];
+        // stationsData
+        //     .map((station) => StationModel.fromJson(station))
+        //     .toList();
         final List<CarModel> myCarData =
             createdCarsData.map((car) => CarModel.fromJson(car)).toList();
         emit(ProfileState.loaded(

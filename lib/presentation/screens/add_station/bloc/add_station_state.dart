@@ -6,7 +6,9 @@ class AddStationState with _$AddStationState {
 
   const factory AddStationState.loading() = _LoadingState;
 
-  const factory AddStationState.error(String message) = _ErrorState;
+  const factory AddStationState.loadCreateStation() = _LoadCreateStationState;
+
+  const factory AddStationState.error(String message) = ErrorState;
 
   const factory AddStationState.loaded(
     List<ConnectorTypeModel> connectors, {
