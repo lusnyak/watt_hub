@@ -30,7 +30,7 @@ class ProfileCarItem extends StatelessWidget {
                         context.localized.carInfo,
                         style: body16SemiBoldTextStyle,
                       ).paddingOnly(bottom: 10.sp),
-                      Text(carData.carModel.title),
+                      Text("${carData.carModel.title} . ${carData.carType.title}"),
                       Text(carData.carType.title ?? ""),
                       Text(carData.connectorType.title ?? ""),
                     ],

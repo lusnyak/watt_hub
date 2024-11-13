@@ -14,6 +14,8 @@ part 'profile_bloc.freezed.dart';
 @injectable
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ProfileBloc() : super(const ProfileState.initial()) {
+
+    /// TODO: - load Profile data from api,
     on<_LoadProfileEvent>((event, emit) async {
       emit(const ProfileState.loading());
       try {

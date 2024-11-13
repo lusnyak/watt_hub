@@ -11,7 +11,6 @@ import 'package:watt_hub/presentation/screens/home/home_screen.dart';
 import 'package:watt_hub/presentation/screens/onboarding/onboarding_screen.dart';
 import 'package:watt_hub/presentation/screens/profile/profile_detail_screen.dart';
 import 'package:watt_hub/presentation/screens/profile/profile_screen.dart';
-import 'package:watt_hub/presentation/screens/profile/vehicle_list_screen.dart';
 import 'package:watt_hub/presentation/screens/requests/requests_screen.dart';
 import 'package:watt_hub/presentation/screens/sign_up/sign_up_screen.dart';
 import 'package:watt_hub/presentation/screens/splash/splash_screen.dart';
@@ -60,6 +59,5 @@ final profileTap = AutoRoute(
       initial: true,
     ),
     AutoRoute(page: ProfileDetailRoute.page),
-    AutoRoute(page: VehicleListRoute.page),
   ],
 );

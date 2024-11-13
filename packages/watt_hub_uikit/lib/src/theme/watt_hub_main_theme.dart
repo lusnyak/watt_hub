@@ -10,6 +10,7 @@ ThemeData get lightTheme => ThemeData(
         primary: WattHubColors.primaryGreenColor,
         secondary: WattHubColors.primaryLightGreenColor,
       ),
+      splashColor: WattHubColors.primaryLightGreenColor,
       primaryColor: WattHubColors.primaryGreenColor,
       elevatedButtonTheme: elevatedButtonStyle,
       inputDecorationTheme: inputDecorationTheme,
@@ -53,6 +54,9 @@ ThemeData get lightTheme => ThemeData(
         labelStyle: body12RegularTextStyle.copyWith(
           color: WattHubColors.whiteColor,
         ),
+      ),
+      listTileTheme: const ListTileThemeData(
+        selectedColor: WattHubColors.primaryLightGreenColor,
       ),
     );
 

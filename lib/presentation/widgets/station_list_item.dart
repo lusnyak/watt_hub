@@ -3,8 +3,13 @@ import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
+/// TODO: Refactoring - Marieta
 class StationListItem extends StatelessWidget {
-  const StationListItem({super.key, required this.stationListItem, this.onTap});
+  const StationListItem({
+    super.key,
+    required this.stationListItem,
+    this.onTap,
+  });
 
   final StationModel stationListItem;
   final GestureTapCallback? onTap;

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
+/// TODO: create bloc for screen,
+///
 @RoutePage()
 class ProfileDetailScreen extends StatelessWidget {
   const ProfileDetailScreen({super.key});
@@ -27,6 +29,8 @@ class ProfileDetailScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            WHImagePicker.single(child:
+                /// TODO: - separate to uikit element
             ClipRRect(
               borderRadius: roundedBorder50, // Makes the image round
               child: Image.asset(
@@ -35,7 +39,7 @@ class ProfileDetailScreen extends StatelessWidget {
                 height: 200.h,
                 fit: BoxFit.cover, // Ensures the image fills the container
               ),
-            ).alignAtCenter().paddingSymmetric(vertical: 10),
+            )).alignAtCenter().paddingSymmetric(vertical: 10),
             WHTextField.singleLine(
                     label: context.localized.fullName,
                     hintText: context.localized.fullName)
