@@ -44,8 +44,8 @@ class _HomeView extends StatelessWidget {
           listener: (context, state) {
             if (state is ErrorState) {
               context.showSnackBar(
-                  message: state.message,
-                  duration: const Duration(seconds: 45));
+                message: state.message,
+              );
             }
           },
           builder: (context, state) {
