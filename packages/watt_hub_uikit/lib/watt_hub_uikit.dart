@@ -7,6 +7,7 @@ export 'package:cupertino_icons/cupertino_icons.dart';
 export 'package:smooth_page_indicator/smooth_page_indicator.dart';
 export 'package:permission_handler/permission_handler.dart';
 export 'package:geocoding/geocoding.dart';
+export 'package:grouped_list/grouped_list.dart';
 
 /// internal
 export 'src/widgets/widgets.dart';
