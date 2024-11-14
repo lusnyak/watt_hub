@@ -9,6 +9,7 @@ import 'package:watt_hub/utils/extensions/extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../config/locator/service_locator.dart';
+import '../../../domain/models/choose_station_address/choose_station_address_model.dart';
 import '../../../utils/helpers/time_helper_format.dart';
 
 @RoutePage()
@@ -31,9 +32,10 @@ class AddStationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<AddStationBlock>();
-    TimeOfDay time = const TimeOfDay(hour: 18, minute: 00);
+
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           context.localized.addStation,
         ),
@@ -45,29 +47,24 @@ class AddStationView extends StatelessWidget {
             if (state is ErrorState) {
               context.showSnackBar(message: state.message);
             }
-            // state.maybeWhen(
-            //     orElse: () {},
-            //     error: (message) {
-            //       context.showSnackBar(message: message);
-            //     });
           },
           builder: (context, state) {
             return state.maybeWhen(
                 orElse: () => nil,
                 loading: () => const Center(child: WHCircularSpin()),
-                // error: (message) =>
-                //     Center(child: Text('${context.localized.error}: $message')),
-                loaded: (connectors,
-                    selectedConnectors,
-                    selectedList,
-                    selected,
-                    initialSelectedConnectorId,
-                    images,
-                    startTime,
-                    endTime,
-                    address,
-                    latitude,
-                    longitude,) {
+                loaded: (
+                  connectors,
+                  selectedConnectors,
+                  selectedList,
+                  selected,
+                  initialSelectedConnectorId,
+                  images,
+                  startTime,
+                  endTime,
+                  address,
+                  latitude,
+                  longitude,
+                ) {
                   final currentImages = images ?? [];
                   return SingleChildScrollView(
                     padding: EdgeInsets.all(20.r),
@@ -86,13 +83,16 @@ class AddStationView extends StatelessWidget {
 
                                 /// TODO: Vlad - poxel objecti
                                 if (addressResult != null) {
-                                  final address = addressResult['address'];
-                                  final latitude = addressResult['latitude'];
-                                  final longitude = addressResult['longitude'];
+                                  final getAddressData =
+                                      ChooseStationAddressModel.fromJson(
+                                          addressResult);
                                   if (context.mounted) {
                                     bloc.add(
                                       AddStationEvent.getAddress(
-                                          address, latitude, longitude),
+                                        getAddressData.address,
+                                        getAddressData.latitude,
+                                        getAddressData.longitude,
+                                      ),
                                     );
                                   }
                                 }
@@ -103,92 +103,18 @@ class AddStationView extends StatelessWidget {
                           Text(context.localized.timePicker,
                               style: body18SemiBoldTextStyle),
                           5.h.heightBox,
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(
-                                  child: WHOutlinedButton(
-                                onPressed: () {
-                                  WhDatePicker.of(context)
-                                      .showTimePicker(initialTime: time)
-                                      .then(
-                                    (newDate) {
-                                      if (newDate != null) {
-                                        final formattedTime =
-                                            dateTimeFromTimeOfDay(newDate);
-                                        if (context.mounted) {
-                                          bloc.add(
-                                              AddStationEvent.startTimeSelected(
-                                                  formattedTime));
-                                        }
-                                      }
-                                    },
-                                  );
-                                },
-                                title: startTime != null
-                                    ? formatDateTime(startTime)
-                                    : context.localized.start,
-                              )),
-                              20.w.widthBox,
-                              WHOutlinedButton(
-                                onPressed: () async {
-                                  await WhDatePicker.of(context)
-                                      .showTimePicker(initialTime: time)
-                                      .then(
-                                    (newDate) {
-                                      if (newDate != null) {
-                                        final formattedTime =
-                                            dateTimeFromTimeOfDay(newDate);
-                                        if (context.mounted) {
-                                          bloc.add(
-                                              AddStationEvent.endTimeSelected(
-                                                  formattedTime));
-                                        }
-                                      }
-                                    },
-                                  );
-                                },
-                                title: endTime != null
-                                    ? formatDateTime(endTime)
-                                    : context.localized.start,
-                              ).expanded(),
-                            ],
+                          datePicker(
+                            context,
+                            startTime: startTime,
+                            endTime: endTime,
                           ),
                           10.h.heightBox,
                           connectorTypes(context,
                               connectors: connectors,
                               selectedList: selectedList),
-                          WHTextField.singleLine(
-                            controller: context
-                                .read<AddStationBlock>()
-                                .hourlyRateController,
-                            keyboardType: TextInputType.number,
-                            label: context.localized.hourlyRate,
-                            hintText: context.localized.hourlyRate,
-                          ),
-                          WHTextField.singleLine(
-                            controller: context
-                                .read<AddStationBlock>()
-                                .kilowattController,
-                            keyboardType: TextInputType.number,
-                            label: context.localized.kilowatt,
-                            hintText: context.localized.kilowatt,
-                          ),
+                          kilowattHourlyRate(context),
                           20.h.heightBox,
-                          Text(context.localized.contactInfo,
-                              style: body18SemiBoldTextStyle),
-                          WHTextField.singleLine(
-                            controller: bloc.phoneController,
-                            keyboardType: TextInputType.phone,
-                            label: context.localized.phone,
-                            hintText: context.localized.yourPhoneNumber,
-                          ),
-                          WHTextField.singleLine(
-                            controller: bloc.nameController,
-                            keyboardType: TextInputType.name,
-                            label: context.localized.name,
-                            hintText: context.localized.yourName,
-                          ),
+                          contactInfo(context),
                           20.h.heightBox,
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -227,6 +153,97 @@ class AddStationView extends StatelessWidget {
           },
         ),
       ),
+    );
+  }
+
+  Widget datePicker(BuildContext context,
+      {DateTime? startTime, DateTime? endTime}) {
+    final bloc = context.read<AddStationBlock>();
+    TimeOfDay time = const TimeOfDay(hour: 18, minute: 00);
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(
+            child: WHOutlinedButton(
+          onPressed: () {
+            WhDatePicker.of(context).showTimePicker(initialTime: time).then(
+              (newDate) {
+                if (newDate != null) {
+                  final formattedTime = dateTimeFromTimeOfDay(newDate);
+                  if (context.mounted) {
+                    bloc.add(AddStationEvent.startTimeSelected(formattedTime));
+                  }
+                }
+              },
+            );
+          },
+          title: startTime != null
+              ? formatDateTime(startTime)
+              : context.localized.start,
+        )),
+        20.w.widthBox,
+        WHOutlinedButton(
+          onPressed: () async {
+            await WhDatePicker.of(context)
+                .showTimePicker(initialTime: time)
+                .then(
+              (newDate) {
+                if (newDate != null) {
+                  final formattedTime = dateTimeFromTimeOfDay(newDate);
+                  if (context.mounted) {
+                    bloc.add(AddStationEvent.endTimeSelected(formattedTime));
+                  }
+                }
+              },
+            );
+          },
+          title: endTime != null
+              ? formatDateTime(endTime)
+              : context.localized.start,
+        ).expanded(),
+      ],
+    );
+  }
+
+  Widget kilowattHourlyRate(BuildContext context) {
+    // final bloc = context.read<AddStationBlock>();
+    return Column(
+      children: [
+        WHTextField.singleLine(
+          controller: context.read<AddStationBlock>().hourlyRateController,
+          keyboardType: TextInputType.number,
+          label: context.localized.hourlyRate,
+          hintText: context.localized.hourlyRate,
+        ),
+        WHTextField.singleLine(
+          controller: context.read<AddStationBlock>().kilowattController,
+          keyboardType: TextInputType.number,
+          label: context.localized.kilowatt,
+          hintText: context.localized.kilowatt,
+        ),
+      ],
+    );
+  }
+
+  Widget contactInfo(BuildContext context) {
+    final bloc = context.read<AddStationBlock>();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(context.localized.contactInfo, style: body18SemiBoldTextStyle),
+        WHTextField.singleLine(
+          controller: bloc.phoneController,
+          keyboardType: TextInputType.phone,
+          label: context.localized.phone,
+          hintText: context.localized.yourPhoneNumber,
+        ),
+        WHTextField.singleLine(
+          controller: bloc.nameController,
+          keyboardType: TextInputType.name,
+          label: context.localized.name,
+          hintText: context.localized.yourName,
+        ),
+      ],
     );
   }
 

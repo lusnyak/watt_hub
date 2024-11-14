@@ -25,7 +25,8 @@ mixin _$AddStationEvent {
         connectorTypeChangedEvent,
     required TResult Function(DateTime startTime) startTimeSelected,
     required TResult Function(DateTime endTime) endTimeSelected,
-    required TResult Function(String address, double latitude, double longitude)
+    required TResult Function(
+            String? address, double? latitude, double? longitude)
         getAddress,
     required TResult Function() createStation,
     required TResult Function(List<ConnectorTypeModel> selectedItems)
@@ -43,7 +44,7 @@ mixin _$AddStationEvent {
         connectorTypeChangedEvent,
     TResult? Function(DateTime startTime)? startTimeSelected,
     TResult? Function(DateTime endTime)? endTimeSelected,
-    TResult? Function(String address, double latitude, double longitude)?
+    TResult? Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult? Function()? createStation,
     TResult? Function(List<ConnectorTypeModel> selectedItems)?
@@ -60,7 +61,7 @@ mixin _$AddStationEvent {
         connectorTypeChangedEvent,
     TResult Function(DateTime startTime)? startTimeSelected,
     TResult Function(DateTime endTime)? endTimeSelected,
-    TResult Function(String address, double latitude, double longitude)?
+    TResult Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult Function()? createStation,
     TResult Function(List<ConnectorTypeModel> selectedItems)?
@@ -190,7 +191,8 @@ class _$StartedEventImpl implements _StartedEvent {
         connectorTypeChangedEvent,
     required TResult Function(DateTime startTime) startTimeSelected,
     required TResult Function(DateTime endTime) endTimeSelected,
-    required TResult Function(String address, double latitude, double longitude)
+    required TResult Function(
+            String? address, double? latitude, double? longitude)
         getAddress,
     required TResult Function() createStation,
     required TResult Function(List<ConnectorTypeModel> selectedItems)
@@ -211,7 +213,7 @@ class _$StartedEventImpl implements _StartedEvent {
         connectorTypeChangedEvent,
     TResult? Function(DateTime startTime)? startTimeSelected,
     TResult? Function(DateTime endTime)? endTimeSelected,
-    TResult? Function(String address, double latitude, double longitude)?
+    TResult? Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult? Function()? createStation,
     TResult? Function(List<ConnectorTypeModel> selectedItems)?
@@ -231,7 +233,7 @@ class _$StartedEventImpl implements _StartedEvent {
         connectorTypeChangedEvent,
     TResult Function(DateTime startTime)? startTimeSelected,
     TResult Function(DateTime endTime)? endTimeSelected,
-    TResult Function(String address, double latitude, double longitude)?
+    TResult Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult Function()? createStation,
     TResult Function(List<ConnectorTypeModel> selectedItems)?
@@ -394,7 +396,8 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
         connectorTypeChangedEvent,
     required TResult Function(DateTime startTime) startTimeSelected,
     required TResult Function(DateTime endTime) endTimeSelected,
-    required TResult Function(String address, double latitude, double longitude)
+    required TResult Function(
+            String? address, double? latitude, double? longitude)
         getAddress,
     required TResult Function() createStation,
     required TResult Function(List<ConnectorTypeModel> selectedItems)
@@ -415,7 +418,7 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
         connectorTypeChangedEvent,
     TResult? Function(DateTime startTime)? startTimeSelected,
     TResult? Function(DateTime endTime)? endTimeSelected,
-    TResult? Function(String address, double latitude, double longitude)?
+    TResult? Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult? Function()? createStation,
     TResult? Function(List<ConnectorTypeModel> selectedItems)?
@@ -435,7 +438,7 @@ class _$ImagesSelectedEventImpl implements _ImagesSelectedEvent {
         connectorTypeChangedEvent,
     TResult Function(DateTime startTime)? startTimeSelected,
     TResult Function(DateTime endTime)? endTimeSelected,
-    TResult Function(String address, double latitude, double longitude)?
+    TResult Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult Function()? createStation,
     TResult Function(List<ConnectorTypeModel> selectedItems)?
@@ -601,7 +604,8 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
         connectorTypeChangedEvent,
     required TResult Function(DateTime startTime) startTimeSelected,
     required TResult Function(DateTime endTime) endTimeSelected,
-    required TResult Function(String address, double latitude, double longitude)
+    required TResult Function(
+            String? address, double? latitude, double? longitude)
         getAddress,
     required TResult Function() createStation,
     required TResult Function(List<ConnectorTypeModel> selectedItems)
@@ -622,7 +626,7 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
         connectorTypeChangedEvent,
     TResult? Function(DateTime startTime)? startTimeSelected,
     TResult? Function(DateTime endTime)? endTimeSelected,
-    TResult? Function(String address, double latitude, double longitude)?
+    TResult? Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult? Function()? createStation,
     TResult? Function(List<ConnectorTypeModel> selectedItems)?
@@ -642,7 +646,7 @@ class _$RemoveImageEventImpl implements _RemoveImageEvent {
         connectorTypeChangedEvent,
     TResult Function(DateTime startTime)? startTimeSelected,
     TResult Function(DateTime endTime)? endTimeSelected,
-    TResult Function(String address, double latitude, double longitude)?
+    TResult Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult Function()? createStation,
     TResult Function(List<ConnectorTypeModel> selectedItems)?
@@ -827,7 +831,8 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
         connectorTypeChangedEvent,
     required TResult Function(DateTime startTime) startTimeSelected,
     required TResult Function(DateTime endTime) endTimeSelected,
-    required TResult Function(String address, double latitude, double longitude)
+    required TResult Function(
+            String? address, double? latitude, double? longitude)
         getAddress,
     required TResult Function() createStation,
     required TResult Function(List<ConnectorTypeModel> selectedItems)
@@ -848,7 +853,7 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
         connectorTypeChangedEvent,
     TResult? Function(DateTime startTime)? startTimeSelected,
     TResult? Function(DateTime endTime)? endTimeSelected,
-    TResult? Function(String address, double latitude, double longitude)?
+    TResult? Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult? Function()? createStation,
     TResult? Function(List<ConnectorTypeModel> selectedItems)?
@@ -868,7 +873,7 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
         connectorTypeChangedEvent,
     TResult Function(DateTime startTime)? startTimeSelected,
     TResult Function(DateTime endTime)? endTimeSelected,
-    TResult Function(String address, double latitude, double longitude)?
+    TResult Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult Function()? createStation,
     TResult Function(List<ConnectorTypeModel> selectedItems)?
@@ -1038,7 +1043,8 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
         connectorTypeChangedEvent,
     required TResult Function(DateTime startTime) startTimeSelected,
     required TResult Function(DateTime endTime) endTimeSelected,
-    required TResult Function(String address, double latitude, double longitude)
+    required TResult Function(
+            String? address, double? latitude, double? longitude)
         getAddress,
     required TResult Function() createStation,
     required TResult Function(List<ConnectorTypeModel> selectedItems)
@@ -1059,7 +1065,7 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
         connectorTypeChangedEvent,
     TResult? Function(DateTime startTime)? startTimeSelected,
     TResult? Function(DateTime endTime)? endTimeSelected,
-    TResult? Function(String address, double latitude, double longitude)?
+    TResult? Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult? Function()? createStation,
     TResult? Function(List<ConnectorTypeModel> selectedItems)?
@@ -1079,7 +1085,7 @@ class _$StartTimeSelectedEventImpl implements _StartTimeSelectedEvent {
         connectorTypeChangedEvent,
     TResult Function(DateTime startTime)? startTimeSelected,
     TResult Function(DateTime endTime)? endTimeSelected,
-    TResult Function(String address, double latitude, double longitude)?
+    TResult Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult Function()? createStation,
     TResult Function(List<ConnectorTypeModel> selectedItems)?
@@ -1246,7 +1252,8 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
         connectorTypeChangedEvent,
     required TResult Function(DateTime startTime) startTimeSelected,
     required TResult Function(DateTime endTime) endTimeSelected,
-    required TResult Function(String address, double latitude, double longitude)
+    required TResult Function(
+            String? address, double? latitude, double? longitude)
         getAddress,
     required TResult Function() createStation,
     required TResult Function(List<ConnectorTypeModel> selectedItems)
@@ -1267,7 +1274,7 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
         connectorTypeChangedEvent,
     TResult? Function(DateTime startTime)? startTimeSelected,
     TResult? Function(DateTime endTime)? endTimeSelected,
-    TResult? Function(String address, double latitude, double longitude)?
+    TResult? Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult? Function()? createStation,
     TResult? Function(List<ConnectorTypeModel> selectedItems)?
@@ -1287,7 +1294,7 @@ class _$EndTimeSelectedEventImpl implements _EndTimeSelectedEvent {
         connectorTypeChangedEvent,
     TResult Function(DateTime startTime)? startTimeSelected,
     TResult Function(DateTime endTime)? endTimeSelected,
-    TResult Function(String address, double latitude, double longitude)?
+    TResult Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult Function()? createStation,
     TResult Function(List<ConnectorTypeModel> selectedItems)?
@@ -1383,7 +1390,7 @@ abstract class _$$GetAddressEventImplCopyWith<$Res> {
           $Res Function(_$GetAddressEventImpl) then) =
       __$$GetAddressEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String address, double latitude, double longitude});
+  $Res call({String? address, double? latitude, double? longitude});
 }
 
 /// @nodoc
@@ -1399,23 +1406,23 @@ class __$$GetAddressEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? address = null,
-    Object? latitude = null,
-    Object? longitude = null,
+    Object? address = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
   }) {
     return _then(_$GetAddressEventImpl(
-      null == address
+      freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == latitude
+              as String?,
+      freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      null == longitude
+              as double?,
+      freezed == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ));
   }
 }
@@ -1426,11 +1433,11 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
   const _$GetAddressEventImpl(this.address, this.latitude, this.longitude);
 
   @override
-  final String address;
+  final String? address;
   @override
-  final double latitude;
+  final double? latitude;
   @override
-  final double longitude;
+  final double? longitude;
 
   @override
   String toString() {
@@ -1471,7 +1478,8 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
         connectorTypeChangedEvent,
     required TResult Function(DateTime startTime) startTimeSelected,
     required TResult Function(DateTime endTime) endTimeSelected,
-    required TResult Function(String address, double latitude, double longitude)
+    required TResult Function(
+            String? address, double? latitude, double? longitude)
         getAddress,
     required TResult Function() createStation,
     required TResult Function(List<ConnectorTypeModel> selectedItems)
@@ -1492,7 +1500,7 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
         connectorTypeChangedEvent,
     TResult? Function(DateTime startTime)? startTimeSelected,
     TResult? Function(DateTime endTime)? endTimeSelected,
-    TResult? Function(String address, double latitude, double longitude)?
+    TResult? Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult? Function()? createStation,
     TResult? Function(List<ConnectorTypeModel> selectedItems)?
@@ -1512,7 +1520,7 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
         connectorTypeChangedEvent,
     TResult Function(DateTime startTime)? startTimeSelected,
     TResult Function(DateTime endTime)? endTimeSelected,
-    TResult Function(String address, double latitude, double longitude)?
+    TResult Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult Function()? createStation,
     TResult Function(List<ConnectorTypeModel> selectedItems)?
@@ -1590,13 +1598,12 @@ class _$GetAddressEventImpl implements _GetAddressEvent {
 }
 
 abstract class _GetAddressEvent implements AddStationEvent {
-  const factory _GetAddressEvent(
-          final String address, final double latitude, final double longitude) =
-      _$GetAddressEventImpl;
+  const factory _GetAddressEvent(final String? address, final double? latitude,
+      final double? longitude) = _$GetAddressEventImpl;
 
-  String get address;
-  double get latitude;
-  double get longitude;
+  String? get address;
+  double? get latitude;
+  double? get longitude;
 
   /// Create a copy of AddStationEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1653,7 +1660,8 @@ class _$CreateStationEventImpl implements _CreateStationEvent {
         connectorTypeChangedEvent,
     required TResult Function(DateTime startTime) startTimeSelected,
     required TResult Function(DateTime endTime) endTimeSelected,
-    required TResult Function(String address, double latitude, double longitude)
+    required TResult Function(
+            String? address, double? latitude, double? longitude)
         getAddress,
     required TResult Function() createStation,
     required TResult Function(List<ConnectorTypeModel> selectedItems)
@@ -1674,7 +1682,7 @@ class _$CreateStationEventImpl implements _CreateStationEvent {
         connectorTypeChangedEvent,
     TResult? Function(DateTime startTime)? startTimeSelected,
     TResult? Function(DateTime endTime)? endTimeSelected,
-    TResult? Function(String address, double latitude, double longitude)?
+    TResult? Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult? Function()? createStation,
     TResult? Function(List<ConnectorTypeModel> selectedItems)?
@@ -1694,7 +1702,7 @@ class _$CreateStationEventImpl implements _CreateStationEvent {
         connectorTypeChangedEvent,
     TResult Function(DateTime startTime)? startTimeSelected,
     TResult Function(DateTime endTime)? endTimeSelected,
-    TResult Function(String address, double latitude, double longitude)?
+    TResult Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult Function()? createStation,
     TResult Function(List<ConnectorTypeModel> selectedItems)?
@@ -1865,7 +1873,8 @@ class _$ConnectorMultiTypeChangedEventImpl
         connectorTypeChangedEvent,
     required TResult Function(DateTime startTime) startTimeSelected,
     required TResult Function(DateTime endTime) endTimeSelected,
-    required TResult Function(String address, double latitude, double longitude)
+    required TResult Function(
+            String? address, double? latitude, double? longitude)
         getAddress,
     required TResult Function() createStation,
     required TResult Function(List<ConnectorTypeModel> selectedItems)
@@ -1886,7 +1895,7 @@ class _$ConnectorMultiTypeChangedEventImpl
         connectorTypeChangedEvent,
     TResult? Function(DateTime startTime)? startTimeSelected,
     TResult? Function(DateTime endTime)? endTimeSelected,
-    TResult? Function(String address, double latitude, double longitude)?
+    TResult? Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult? Function()? createStation,
     TResult? Function(List<ConnectorTypeModel> selectedItems)?
@@ -1906,7 +1915,7 @@ class _$ConnectorMultiTypeChangedEventImpl
         connectorTypeChangedEvent,
     TResult Function(DateTime startTime)? startTimeSelected,
     TResult Function(DateTime endTime)? endTimeSelected,
-    TResult Function(String address, double latitude, double longitude)?
+    TResult Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult Function()? createStation,
     TResult Function(List<ConnectorTypeModel> selectedItems)?
@@ -2089,7 +2098,8 @@ class _$DeleteSelectedConnectorImpl implements _DeleteSelectedConnector {
         connectorTypeChangedEvent,
     required TResult Function(DateTime startTime) startTimeSelected,
     required TResult Function(DateTime endTime) endTimeSelected,
-    required TResult Function(String address, double latitude, double longitude)
+    required TResult Function(
+            String? address, double? latitude, double? longitude)
         getAddress,
     required TResult Function() createStation,
     required TResult Function(List<ConnectorTypeModel> selectedItems)
@@ -2110,7 +2120,7 @@ class _$DeleteSelectedConnectorImpl implements _DeleteSelectedConnector {
         connectorTypeChangedEvent,
     TResult? Function(DateTime startTime)? startTimeSelected,
     TResult? Function(DateTime endTime)? endTimeSelected,
-    TResult? Function(String address, double latitude, double longitude)?
+    TResult? Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult? Function()? createStation,
     TResult? Function(List<ConnectorTypeModel> selectedItems)?
@@ -2130,7 +2140,7 @@ class _$DeleteSelectedConnectorImpl implements _DeleteSelectedConnector {
         connectorTypeChangedEvent,
     TResult Function(DateTime startTime)? startTimeSelected,
     TResult Function(DateTime endTime)? endTimeSelected,
-    TResult Function(String address, double latitude, double longitude)?
+    TResult Function(String? address, double? latitude, double? longitude)?
         getAddress,
     TResult Function()? createStation,
     TResult Function(List<ConnectorTypeModel> selectedItems)?

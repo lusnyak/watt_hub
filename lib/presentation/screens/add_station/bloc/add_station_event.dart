@@ -18,7 +18,8 @@ class AddStationEvent with _$AddStationEvent {
   const factory AddStationEvent.endTimeSelected(DateTime endTime) =
       _EndTimeSelectedEvent;
 
-  const factory AddStationEvent.getAddress(String address,double latitude, double longitude) = _GetAddressEvent;
+  const factory AddStationEvent.getAddress(
+      String? address, double? latitude, double? longitude) = _GetAddressEvent;
 
   const factory AddStationEvent.createStation() = _CreateStationEvent;
 

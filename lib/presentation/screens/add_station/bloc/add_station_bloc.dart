@@ -63,7 +63,6 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
           }
         },
         getAddress: (e) async {
-          debugPrint("$e ee");
           if (state is _LoadedState) {
             final currentState = state as _LoadedState;
             emit(currentState.copyWith(
@@ -81,6 +80,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
         },
         startTimeSelected: (e) async {
           if (state is _LoadedState) {
+            debugPrint("$e eee");
             final currentState = state as _LoadedState;
             emit(currentState.copyWith(startTime: e.startTime));
           }
@@ -113,7 +113,6 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
         createStation: (_CreateStationEvent value) async {
           if (state is _LoadedState) {
             final currentState = state as _LoadedState;
-            debugPrint("$currentState curenstate");
             final latitude = currentState.latitude;
             final longitude = currentState.longitude;
             final name = nameController.text;

@@ -46,7 +46,7 @@ mixin _$ChooseStationAddressState {
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
     required TResult Function(_ErrorState value) error,
-    required TResult Function(LoadedState value) loaded,
+    required TResult Function(_LoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,7 +54,7 @@ mixin _$ChooseStationAddressState {
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
     TResult? Function(_ErrorState value)? error,
-    TResult? Function(LoadedState value)? loaded,
+    TResult? Function(_LoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,7 +62,7 @@ mixin _$ChooseStationAddressState {
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
     TResult Function(_ErrorState value)? error,
-    TResult Function(LoadedState value)? loaded,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -171,7 +171,7 @@ class _$InitialStateImpl implements _InitialState {
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
     required TResult Function(_ErrorState value) error,
-    required TResult Function(LoadedState value) loaded,
+    required TResult Function(_LoadedState value) loaded,
   }) {
     return initial(this);
   }
@@ -182,7 +182,7 @@ class _$InitialStateImpl implements _InitialState {
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
     TResult? Function(_ErrorState value)? error,
-    TResult? Function(LoadedState value)? loaded,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -193,7 +193,7 @@ class _$InitialStateImpl implements _InitialState {
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
     TResult Function(_ErrorState value)? error,
-    TResult Function(LoadedState value)? loaded,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -288,7 +288,7 @@ class _$LoadingStateImpl implements _LoadingState {
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
     required TResult Function(_ErrorState value) error,
-    required TResult Function(LoadedState value) loaded,
+    required TResult Function(_LoadedState value) loaded,
   }) {
     return loading(this);
   }
@@ -299,7 +299,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
     TResult? Function(_ErrorState value)? error,
-    TResult? Function(LoadedState value)? loaded,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -310,7 +310,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
     TResult Function(_ErrorState value)? error,
-    TResult Function(LoadedState value)? loaded,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -432,7 +432,7 @@ class _$ErrorStateImpl implements _ErrorState {
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
     required TResult Function(_ErrorState value) error,
-    required TResult Function(LoadedState value) loaded,
+    required TResult Function(_LoadedState value) loaded,
   }) {
     return error(this);
   }
@@ -443,7 +443,7 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
     TResult? Function(_ErrorState value)? error,
-    TResult? Function(LoadedState value)? loaded,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
     return error?.call(this);
   }
@@ -454,7 +454,7 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
     TResult Function(_ErrorState value)? error,
-    TResult Function(LoadedState value)? loaded,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -516,7 +516,7 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadedStateImpl implements LoadedState {
+class _$LoadedStateImpl implements _LoadedState {
   const _$LoadedStateImpl({this.address, this.location});
 
   @override
@@ -593,7 +593,7 @@ class _$LoadedStateImpl implements LoadedState {
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
     required TResult Function(_ErrorState value) error,
-    required TResult Function(LoadedState value) loaded,
+    required TResult Function(_LoadedState value) loaded,
   }) {
     return loaded(this);
   }
@@ -604,7 +604,7 @@ class _$LoadedStateImpl implements LoadedState {
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
     TResult? Function(_ErrorState value)? error,
-    TResult? Function(LoadedState value)? loaded,
+    TResult? Function(_LoadedState value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -615,7 +615,7 @@ class _$LoadedStateImpl implements LoadedState {
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
     TResult Function(_ErrorState value)? error,
-    TResult Function(LoadedState value)? loaded,
+    TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -625,8 +625,8 @@ class _$LoadedStateImpl implements LoadedState {
   }
 }
 
-abstract class LoadedState implements ChooseStationAddressState {
-  const factory LoadedState({final String? address, final LatLng? location}) =
+abstract class _LoadedState implements ChooseStationAddressState {
+  const factory _LoadedState({final String? address, final LatLng? location}) =
       _$LoadedStateImpl;
 
   String? get address;
@@ -647,7 +647,6 @@ mixin _$ChooseStationAddressEvent {
     required TResult Function(LatLng location) locationTapped,
     required TResult Function(double latitude, double longitude)
         addressRequested,
-    required TResult Function() initializeLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -655,7 +654,6 @@ mixin _$ChooseStationAddressEvent {
     TResult? Function()? started,
     TResult? Function(LatLng location)? locationTapped,
     TResult? Function(double latitude, double longitude)? addressRequested,
-    TResult? Function()? initializeLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -663,7 +661,6 @@ mixin _$ChooseStationAddressEvent {
     TResult Function()? started,
     TResult Function(LatLng location)? locationTapped,
     TResult Function(double latitude, double longitude)? addressRequested,
-    TResult Function()? initializeLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -672,8 +669,6 @@ mixin _$ChooseStationAddressEvent {
     required TResult Function(_StartedEvent value) started,
     required TResult Function(_LocationTappedEvent value) locationTapped,
     required TResult Function(_AddressRequestedEvent value) addressRequested,
-    required TResult Function(_InitializeLocationEvent value)
-        initializeLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -681,7 +676,6 @@ mixin _$ChooseStationAddressEvent {
     TResult? Function(_StartedEvent value)? started,
     TResult? Function(_LocationTappedEvent value)? locationTapped,
     TResult? Function(_AddressRequestedEvent value)? addressRequested,
-    TResult? Function(_InitializeLocationEvent value)? initializeLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -689,7 +683,6 @@ mixin _$ChooseStationAddressEvent {
     TResult Function(_StartedEvent value)? started,
     TResult Function(_LocationTappedEvent value)? locationTapped,
     TResult Function(_AddressRequestedEvent value)? addressRequested,
-    TResult Function(_InitializeLocationEvent value)? initializeLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -762,7 +755,6 @@ class _$StartedEventImpl implements _StartedEvent {
     required TResult Function(LatLng location) locationTapped,
     required TResult Function(double latitude, double longitude)
         addressRequested,
-    required TResult Function() initializeLocation,
   }) {
     return started();
   }
@@ -773,7 +765,6 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult? Function()? started,
     TResult? Function(LatLng location)? locationTapped,
     TResult? Function(double latitude, double longitude)? addressRequested,
-    TResult? Function()? initializeLocation,
   }) {
     return started?.call();
   }
@@ -784,7 +775,6 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult Function()? started,
     TResult Function(LatLng location)? locationTapped,
     TResult Function(double latitude, double longitude)? addressRequested,
-    TResult Function()? initializeLocation,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -799,8 +789,6 @@ class _$StartedEventImpl implements _StartedEvent {
     required TResult Function(_StartedEvent value) started,
     required TResult Function(_LocationTappedEvent value) locationTapped,
     required TResult Function(_AddressRequestedEvent value) addressRequested,
-    required TResult Function(_InitializeLocationEvent value)
-        initializeLocation,
   }) {
     return started(this);
   }
@@ -811,7 +799,6 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult? Function(_StartedEvent value)? started,
     TResult? Function(_LocationTappedEvent value)? locationTapped,
     TResult? Function(_AddressRequestedEvent value)? addressRequested,
-    TResult? Function(_InitializeLocationEvent value)? initializeLocation,
   }) {
     return started?.call(this);
   }
@@ -822,7 +809,6 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult Function(_StartedEvent value)? started,
     TResult Function(_LocationTappedEvent value)? locationTapped,
     TResult Function(_AddressRequestedEvent value)? addressRequested,
-    TResult Function(_InitializeLocationEvent value)? initializeLocation,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -911,7 +897,6 @@ class _$LocationTappedEventImpl implements _LocationTappedEvent {
     required TResult Function(LatLng location) locationTapped,
     required TResult Function(double latitude, double longitude)
         addressRequested,
-    required TResult Function() initializeLocation,
   }) {
     return locationTapped(location);
   }
@@ -922,7 +907,6 @@ class _$LocationTappedEventImpl implements _LocationTappedEvent {
     TResult? Function()? started,
     TResult? Function(LatLng location)? locationTapped,
     TResult? Function(double latitude, double longitude)? addressRequested,
-    TResult? Function()? initializeLocation,
   }) {
     return locationTapped?.call(location);
   }
@@ -933,7 +917,6 @@ class _$LocationTappedEventImpl implements _LocationTappedEvent {
     TResult Function()? started,
     TResult Function(LatLng location)? locationTapped,
     TResult Function(double latitude, double longitude)? addressRequested,
-    TResult Function()? initializeLocation,
     required TResult orElse(),
   }) {
     if (locationTapped != null) {
@@ -948,8 +931,6 @@ class _$LocationTappedEventImpl implements _LocationTappedEvent {
     required TResult Function(_StartedEvent value) started,
     required TResult Function(_LocationTappedEvent value) locationTapped,
     required TResult Function(_AddressRequestedEvent value) addressRequested,
-    required TResult Function(_InitializeLocationEvent value)
-        initializeLocation,
   }) {
     return locationTapped(this);
   }
@@ -960,7 +941,6 @@ class _$LocationTappedEventImpl implements _LocationTappedEvent {
     TResult? Function(_StartedEvent value)? started,
     TResult? Function(_LocationTappedEvent value)? locationTapped,
     TResult? Function(_AddressRequestedEvent value)? addressRequested,
-    TResult? Function(_InitializeLocationEvent value)? initializeLocation,
   }) {
     return locationTapped?.call(this);
   }
@@ -971,7 +951,6 @@ class _$LocationTappedEventImpl implements _LocationTappedEvent {
     TResult Function(_StartedEvent value)? started,
     TResult Function(_LocationTappedEvent value)? locationTapped,
     TResult Function(_AddressRequestedEvent value)? addressRequested,
-    TResult Function(_InitializeLocationEvent value)? initializeLocation,
     required TResult orElse(),
   }) {
     if (locationTapped != null) {
@@ -1079,7 +1058,6 @@ class _$AddressRequestedEventImpl implements _AddressRequestedEvent {
     required TResult Function(LatLng location) locationTapped,
     required TResult Function(double latitude, double longitude)
         addressRequested,
-    required TResult Function() initializeLocation,
   }) {
     return addressRequested(latitude, longitude);
   }
@@ -1090,7 +1068,6 @@ class _$AddressRequestedEventImpl implements _AddressRequestedEvent {
     TResult? Function()? started,
     TResult? Function(LatLng location)? locationTapped,
     TResult? Function(double latitude, double longitude)? addressRequested,
-    TResult? Function()? initializeLocation,
   }) {
     return addressRequested?.call(latitude, longitude);
   }
@@ -1101,7 +1078,6 @@ class _$AddressRequestedEventImpl implements _AddressRequestedEvent {
     TResult Function()? started,
     TResult Function(LatLng location)? locationTapped,
     TResult Function(double latitude, double longitude)? addressRequested,
-    TResult Function()? initializeLocation,
     required TResult orElse(),
   }) {
     if (addressRequested != null) {
@@ -1116,8 +1092,6 @@ class _$AddressRequestedEventImpl implements _AddressRequestedEvent {
     required TResult Function(_StartedEvent value) started,
     required TResult Function(_LocationTappedEvent value) locationTapped,
     required TResult Function(_AddressRequestedEvent value) addressRequested,
-    required TResult Function(_InitializeLocationEvent value)
-        initializeLocation,
   }) {
     return addressRequested(this);
   }
@@ -1128,7 +1102,6 @@ class _$AddressRequestedEventImpl implements _AddressRequestedEvent {
     TResult? Function(_StartedEvent value)? started,
     TResult? Function(_LocationTappedEvent value)? locationTapped,
     TResult? Function(_AddressRequestedEvent value)? addressRequested,
-    TResult? Function(_InitializeLocationEvent value)? initializeLocation,
   }) {
     return addressRequested?.call(this);
   }
@@ -1139,7 +1112,6 @@ class _$AddressRequestedEventImpl implements _AddressRequestedEvent {
     TResult Function(_StartedEvent value)? started,
     TResult Function(_LocationTappedEvent value)? locationTapped,
     TResult Function(_AddressRequestedEvent value)? addressRequested,
-    TResult Function(_InitializeLocationEvent value)? initializeLocation,
     required TResult orElse(),
   }) {
     if (addressRequested != null) {
@@ -1162,127 +1134,4 @@ abstract class _AddressRequestedEvent implements ChooseStationAddressEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddressRequestedEventImplCopyWith<_$AddressRequestedEventImpl>
       get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$InitializeLocationEventImplCopyWith<$Res> {
-  factory _$$InitializeLocationEventImplCopyWith(
-          _$InitializeLocationEventImpl value,
-          $Res Function(_$InitializeLocationEventImpl) then) =
-      __$$InitializeLocationEventImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitializeLocationEventImplCopyWithImpl<$Res>
-    extends _$ChooseStationAddressEventCopyWithImpl<$Res,
-        _$InitializeLocationEventImpl>
-    implements _$$InitializeLocationEventImplCopyWith<$Res> {
-  __$$InitializeLocationEventImplCopyWithImpl(
-      _$InitializeLocationEventImpl _value,
-      $Res Function(_$InitializeLocationEventImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ChooseStationAddressEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$InitializeLocationEventImpl implements _InitializeLocationEvent {
-  const _$InitializeLocationEventImpl();
-
-  @override
-  String toString() {
-    return 'ChooseStationAddressEvent.initializeLocation()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InitializeLocationEventImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(LatLng location) locationTapped,
-    required TResult Function(double latitude, double longitude)
-        addressRequested,
-    required TResult Function() initializeLocation,
-  }) {
-    return initializeLocation();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(LatLng location)? locationTapped,
-    TResult? Function(double latitude, double longitude)? addressRequested,
-    TResult? Function()? initializeLocation,
-  }) {
-    return initializeLocation?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(LatLng location)? locationTapped,
-    TResult Function(double latitude, double longitude)? addressRequested,
-    TResult Function()? initializeLocation,
-    required TResult orElse(),
-  }) {
-    if (initializeLocation != null) {
-      return initializeLocation();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_StartedEvent value) started,
-    required TResult Function(_LocationTappedEvent value) locationTapped,
-    required TResult Function(_AddressRequestedEvent value) addressRequested,
-    required TResult Function(_InitializeLocationEvent value)
-        initializeLocation,
-  }) {
-    return initializeLocation(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_StartedEvent value)? started,
-    TResult? Function(_LocationTappedEvent value)? locationTapped,
-    TResult? Function(_AddressRequestedEvent value)? addressRequested,
-    TResult? Function(_InitializeLocationEvent value)? initializeLocation,
-  }) {
-    return initializeLocation?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_StartedEvent value)? started,
-    TResult Function(_LocationTappedEvent value)? locationTapped,
-    TResult Function(_AddressRequestedEvent value)? addressRequested,
-    TResult Function(_InitializeLocationEvent value)? initializeLocation,
-    required TResult orElse(),
-  }) {
-    if (initializeLocation != null) {
-      return initializeLocation(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _InitializeLocationEvent implements ChooseStationAddressEvent {
-  const factory _InitializeLocationEvent() = _$InitializeLocationEventImpl;
 }
