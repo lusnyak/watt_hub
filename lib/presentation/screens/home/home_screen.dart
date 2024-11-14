@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
+import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:watt_hub/presentation/screens/home/widgets/map_container.dart';
 import 'package:watt_hub/presentation/widgets/stations_list.dart';
@@ -49,26 +50,33 @@ class _HomeView extends StatelessWidget {
             }
           },
           builder: (context, state) {
-            return state.maybeWhen(
-              orElse: () => nil,
-              loading: () => const WHCircularSpin().toCenter(),
-              loaded: (
-                stations,
-                isList,
-                currentLocation,
-                isMapReady,
-              ) {
-                return isList
-                    ? MapContainer(
-                        chargingStations: stations,
-                        currentLocation: currentLocation,
-                      )
-                    : StationsList(
-                        stationsList: stations,
-                        currentLocation: currentLocation,
-                      );
-              },
+            final (stations, isList, currentLocation, isMapReady) =
+                state.maybeMap(
+              loaded: (state) => (
+                state.stations,
+                state.isList,
+                state.currentLocation,
+                state.isMapReady
+              ),
+              orElse: () => (<StationModel>[], false, null, false),
             );
+
+            final isLoading =
+                state.maybeMap(orElse: () => false, loading: (_) => true);
+
+            if (isLoading) {
+              return const WHCircularSpin().toCenter();
+            }
+
+            return isList
+                ? MapContainer(
+                    chargingStations: stations,
+                    currentLocation: currentLocation,
+                  )
+                : StationsList(
+                    stationsList: stations,
+                    currentLocation: currentLocation,
+                  );
           },
         ),
       ),

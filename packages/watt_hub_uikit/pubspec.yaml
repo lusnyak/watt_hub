@@ -27,8 +27,7 @@ dependencies:
   image_picker_platform_interface:
   geocoding: ^3.0.0
   table_calendar: ^3.1.2
-
-
+  grouped_list: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -37,7 +36,6 @@ dev_dependencies:
   flutter_gen: ^5.7.0
   flutter_gen_runner: ^5.7.0
   build_runner: ^2.4.13
-
 
 flutter:
   uses-material-design: true

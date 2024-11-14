@@ -18,7 +18,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final LocationManager _locationManager = LocationManager();
   final MapController mapController = MapController();
 
-  HomeBloc() : super(const HomeState.initial()) {
+  HomeBloc() : super(const HomeState.loading()) {
     on<_LoadStationEvent>(_onLoadStation);
     on<_ToggleViewEvent>(_onToggleView);
     on<_CenterLocationEvent>(_onCenterLocation);
