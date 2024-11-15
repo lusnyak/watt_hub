@@ -32,6 +32,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: DashboardRoute.page,  children: [
           AutoRoute(page: HomeRoute.page),
           AutoRoute(page: RequestsRoute.page),
+
           profileTap,
         ]),
         AutoRoute(page: SignUpRoute.page),
