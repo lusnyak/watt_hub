@@ -1,29 +1,20 @@
 part of 'detail_bloc.dart';
 
-class DetailState {
-  final DateTime? selectedDay;
-  final String selectedTime;
-  final String selectedDuration;
-  final ConnectorTypeModel? selectedConnectorType;
+@freezed
+class DetailState with _$DetailState {
+  const factory DetailState({
+    required DateTime? selectedDay,
+    required String selectedTime,
+    required String selectedDuration,
+    required ConnectorTypeModel? selectedConnectorType,
+    required TextEditingController timeController, // TextEditingController բլոկի մեջ
+  }) = _DetailState;
 
-  DetailState({
-    this.selectedDay,
-    this.selectedTime = '',
-    this.selectedDuration = '',
-    this.selectedConnectorType,
-  });
-
-  DetailState copyWith({
-    DateTime? selectedDay,
-    String? selectedTime,
-    String? selectedDuration,
-    ConnectorTypeModel? selectedConnectorType,
-  }) {
-    return DetailState(
-      selectedDay: selectedDay ?? this.selectedDay,
-      selectedTime: selectedTime ?? this.selectedTime,
-      selectedDuration: selectedDuration ?? this.selectedDuration,
-      selectedConnectorType: selectedConnectorType ?? this.selectedConnectorType,
-    );
-  }
+  factory DetailState.initial() => DetailState(
+    selectedDay: null,
+    selectedTime: '',
+    selectedDuration: '',
+    selectedConnectorType: null,
+    timeController: TextEditingController(), // Ինիցիալիզացնել այստեղ
+  );
 }
