@@ -9,5 +9,5 @@ class FilterEvent with _$FilterEvent {
       _CarTypeChangedEvent;
   const factory FilterEvent.connectorTypeChangedEvent(
       ConnectorTypeModel? selectedConnector) = _ConnectorTypeChangedEvent;
-  const factory FilterEvent.applyFiltersEvent() = _ApplyFiltersEvent;
+  const factory FilterEvent.applyFiltersEvent(VoidCallback? filterCallBack) = _ApplyFiltersEvent;
 }

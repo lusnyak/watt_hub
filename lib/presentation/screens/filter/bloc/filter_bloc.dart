@@ -1,8 +1,8 @@
+import 'package:flutter/widgets.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/local/local.dart';
 import 'package:watt_hub/data/fake_data/car_types_data/car_types_data.dart';
 import 'package:watt_hub/data/fake_data/connectors_data/connectors_data.dart';
-import 'package:watt_hub/data/local/filter_storage/filter_storage_impl.dart';
 import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
 import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
 import 'package:watt_hub/domain/models/filter/filter_model.dart';
@@ -39,9 +39,7 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
       emit(FilterState.loaded(
         connectors,
         cars,
-        initialRating: filterData?.rating,
-        initialSelectedCarId: filterData?.carId,
-        initialSelectedConnectorId: filterData?.connectorId,
+        filterData,
       ));
     } catch (e) {
       emit(const FilterState.error('Failed to load filter data'));
@@ -52,7 +50,9 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
       _SliderValueChangedEvent event, Emitter<FilterState> emit) {
     if (state is _LoadedState) {
       final currentState = state as _LoadedState;
-      emit(currentState.copyWith(initialRating: event.newValue));
+      final updatedFilterData =
+          currentState.filterData?.copyWith(rating: event.newValue);
+      emit(currentState.copyWith(filterData: updatedFilterData));
     }
   }
 
@@ -60,7 +60,9 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
       _CarTypeChangedEvent event, Emitter<FilterState> emit) {
     if (state is _LoadedState) {
       final currentState = state as _LoadedState;
-      emit(currentState.copyWith(initialSelectedCarId: event.selectedCar?.id));
+      final updatedFilterData =
+          currentState.filterData?.copyWith(carId: event.selectedCar?.id);
+      emit(currentState.copyWith(filterData: updatedFilterData));
     }
   }
 
@@ -68,8 +70,9 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
       _ConnectorTypeChangedEvent event, Emitter<FilterState> emit) {
     if (state is _LoadedState) {
       final currentState = state as _LoadedState;
-      emit(currentState.copyWith(
-          initialSelectedConnectorId: event.selectedConnector?.id));
+      final updatedFilterData = currentState.filterData
+          ?.copyWith(connectorId: event.selectedConnector?.id);
+      emit(currentState.copyWith(filterData: updatedFilterData));
     }
   }
 
@@ -78,13 +81,11 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
     if (state is _LoadedState) {
       final currentState = state as _LoadedState;
 
-      final filterData = FilterModel(
-        connectorId: currentState.initialSelectedConnectorId,
-        carId: currentState.initialSelectedCarId,
-        rating: currentState.initialRating,
-      );
+      final filterData = currentState.filterData ?? const FilterModel();
 
-      await FilterStorageImpl().saveFilterData(filterData);
+      await getIt<FilterStorage>().saveFilterData(filterData).whenComplete(() {
+        event.filterCallBack?.call();
+      });
     }
   }
 }

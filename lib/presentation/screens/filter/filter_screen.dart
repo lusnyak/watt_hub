@@ -11,7 +11,7 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 @RoutePage()
 class FilterScreen extends StatelessWidget {
   const FilterScreen({super.key});
- 
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -33,76 +33,78 @@ class FilterView extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: BlocBuilder<FilterBloc, FilterState>(
+        child: BlocConsumer<FilterBloc, FilterState>(
+          listener: (context, state) {
+            if (state is FilterErrorState) {
+              context.showSnackBar(message: state.message);
+            }
+          },
           builder: (context, state) {
-            return state.when(
-              initial: () => nil,
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (message) => Center(child: Text('Error: $message')),
-              loaded: (
-                connectors,
-                cars,
-                initialSelectedCarId,
-                initialSelectedConnectorId,
-                initialRating,
-              ) {
-                final initialSelectedCar = findById(
-                  cars,
-                  initialSelectedCarId,
-                  (car) => car.id,
-                );
-                final initialSelectedConnector = findById(connectors,
-                    initialSelectedConnectorId, (connector) => connector.id);
-
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    WhDropDownButton(
-                      items: cars,
-                      itemLabel: (car) => car.title ?? '',
-                      onChanged: (value) {
-                        if (value != null) {
-                          context
-                              .read<FilterBloc>()
-                              .add(FilterEvent.carTypeChangedEvent(value));
-                        }
-                      },
-                      hintText: context.localized.chooseCar,
-                      value: initialSelectedCar,
-                    ),
-                    40.h.heightBox,
-                    WhDropDownButton(
-                      items: connectors,
-                      itemLabel: (connector) => connector.title ?? '',
-                      onChanged: (value) {
-                        if (value != null) {
-                          context.read<FilterBloc>().add(
-                              FilterEvent.connectorTypeChangedEvent(value));
-                        }
-                      },
-                      hintText: context.localized.chooseConnector,
-                      value: initialSelectedConnector,
-                    ),
-                    40.h.heightBox,
-                    FilterSlider(currentSliderValue: initialRating),
-                    const Spacer(),
-                    WHElevatedButton.primary(
-                      title: context.localized.filter,
-                      onPressed: () {
-                        context
-                            .read<FilterBloc>()
-                            .add(const FilterEvent.applyFiltersEvent());
-                        context.router.maybePop();
-                      },
-                    )
-                  ],
-                ).paddingAll(20.r);
-              },
+            final (
+              connectors,
+              cars,
+              filterData,
+            ) = state.maybeWhen(
+              orElse: () => ([], [], null),
+              loaded: (connectors, cars, filterData) =>
+                  (connectors, cars, filterData),
             );
+
+            final initialSelectedCar = findById(
+              cars,
+              filterData?.carId,
+              (car) => car.id,
+            );
+            final initialSelectedConnector = findById(connectors,
+                filterData?.connectorId, (connector) => connector.id);
+
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                WhDropDownButton(
+                  items: cars,
+                  itemLabel: (car) => car.title ?? '',
+                  onChanged: (value) {
+                    if (value != null) {
+                      context
+                          .read<FilterBloc>()
+                          .add(FilterEvent.carTypeChangedEvent(value));
+                    }
+                  },
+                  hintText: context.localized.chooseCar,
+                  value: initialSelectedCar,
+                ),
+                40.h.heightBox,
+                WhDropDownButton(
+                  items: connectors,
+                  itemLabel: (connector) => connector.title ?? '',
+                  onChanged: (value) {
+                    if (value != null) {
+                      context
+                          .read<FilterBloc>()
+                          .add(FilterEvent.connectorTypeChangedEvent(value));
+                    }
+                  },
+                  hintText: context.localized.chooseConnector,
+                  value: initialSelectedConnector,
+                ),
+                40.h.heightBox,
+                FilterSlider(currentSliderValue: filterData?.rating),
+                const Spacer(),
+                WHElevatedButton.primary(
+                  title: context.localized.filter,
+                  onPressed: () {
+                    context.read<FilterBloc>().add(
+                          FilterEvent.applyFiltersEvent(
+                              () => context.router.maybePop()),
+                        );
+                  },
+                )
+              ],
+            ).paddingAll(20.r);
           },
         ),
       ),
     );
   }
 }
- 

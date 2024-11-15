@@ -5,6 +5,7 @@ import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart';
+import 'package:watt_hub/presentation/widgets/tile_layer.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 import 'station_info_modal.dart';
 
@@ -27,10 +28,7 @@ class MapContainer extends StatelessWidget {
         initialZoom: 18.0,
       ),
       children: [
-        TileLayer(
-          urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-          userAgentPackageName: 'com.example.app',
-        ),
+        const MapTileLayer(),
         MarkerClusterLayerWidget(
           options: MarkerClusterLayerOptions(
             maxClusterRadius: 45,
@@ -69,12 +67,11 @@ class MapContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.r),
                   color: WattHubColors.primaryGreenColor,
                 ),
-                child: Center(
-                  child: Text(
-                    markers.length.toString(),
-                    style: const TextStyle(color: WattHubColors.whiteColor),
-                  ),
-                ),
+                child: Text(
+                  markers.length.toString(),
+                  style: body12RegularTextStyle.copyWith(
+                      color: WattHubColors.whiteColor),
+                ).toCenter(),
               );
             },
           ),
