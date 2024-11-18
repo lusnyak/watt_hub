@@ -62,34 +62,7 @@ class _ProfileView extends StatelessWidget {
                       _carSection(context, carsData),
                       _stationSection(context, stationsData),
                       const Divider(),
-                      ProfileMenuItem(
-                        title: context.localized.helpCenter,
-                        iconLeading: Icons.sticky_note_2_outlined,
-                        onTap: () {},
-                        iconTrailing: Icons.chevron_right_outlined,
-                      ),
-                      ProfileMenuItem(
-                        title: context.localized.privacyPolicy,
-                        iconLeading: Icons.lock_outline_sharp,
-                        onTap: () async {
-                          await launchURL(AppConstants.privacyPolicyUrl);
-                        },
-                        iconTrailing: Icons.chevron_right_outlined,
-                      ),
-                      ProfileMenuItem(
-                        title: context.localized.about,
-                        iconLeading: Icons.info_outlined,
-                        onTap: () {},
-                        iconTrailing: Icons.chevron_right_outlined,
-                      ),
-                      ProfileMenuItem(
-                        title: context.localized.logout,
-                        iconLeading: Icons.logout_rounded,
-                        onTap: () {},
-
-                        /// TODO: -- implement logout - Marieta
-                        colorTile: WattHubColors.redColor,
-                      ),
+                      _profileMenuItems(context),
                     ],
                   ).paddingAll(20.r),
                 ),

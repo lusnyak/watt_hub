@@ -53,6 +53,7 @@ class _HomeView extends StatelessWidget {
                   currentLocation,
                   isMapReady,
                 ) {
+                  debugPrint('${stations.runtimeType} stations.runtimeType');
                   return isList
                       ? MapContainer(
                           chargingStations: stations,
