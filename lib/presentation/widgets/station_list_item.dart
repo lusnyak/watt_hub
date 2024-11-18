@@ -97,4 +97,57 @@ class StationListItem extends StatelessWidget {
       ],
     );
   }
+
+  Widget _buildLocationRow() {
+    return Row(
+      children: [
+        const Icon(
+          Icons.location_on,
+          color: WattHubColors.greyColor,
+        ),
+        SizedBox(width: 4.w),
+        Text(
+          stationListItem.address ?? '',
+          style: const TextStyle(color: WattHubColors.greyColor),
+        ).expanded(),
+      ],
+    );
+  }
+
+  Widget _buildDetailsRow(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        _buildKilowattInfo(context),
+        _buildHourlyRateInfo(context),
+      ],
+    );
+  }
+
+  Widget _buildKilowattInfo(BuildContext context) {
+    return Row(
+      children: [
+        const Icon(Icons.electric_car, color: Colors.green),
+        SizedBox(width: 4.w),
+        Text(
+          '${stationListItem.kwt} ${context.localized.kilowatt}',
+          style: const TextStyle(color: WattHubColors.greyColor),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildHourlyRateInfo(BuildContext context) {
+    return Row(
+      children: [
+        const Icon(Icons.attach_money, color: WattHubColors.greyColor),
+        SizedBox(width: 4.w),
+        Text(
+          '\$${stationListItem.hourlyRate}/${context.localized.hourlyRate}',
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(color: WattHubColors.greyColor),
+        ).flexible(),
+      ],
+    ).expanded();
+  }
 }
