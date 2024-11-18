@@ -7,7 +7,7 @@ import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/car_info_list.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/conditional_expansion_tile.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_item.dart';
-import 'package:watt_hub/presentation/screens/profile/sub_widget/station_info_list.dart';
+import 'package:watt_hub/presentation/widgets/empty_widget.dart';
 import 'package:watt_hub/utils/constants/constants.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub/utils/helpers/helpers.dart';
@@ -76,27 +76,20 @@ class _ProfileView extends StatelessWidget {
                         dense: true,
                         visualDensity:
                             const VisualDensity(vertical: 4, horizontal: 4),
-                        leading: ClipRRect(
-                          borderRadius:
-                              roundedBorder50, // Makes the image round
-                          child: Image.asset(
-                            WattHubAssets.images.profileImage
-                                .keyName, //Default, Now user model don't have image property
-                            width: 60.w,
-                            height: 60.h,
-                            fit: BoxFit.cover,
+                        leading: Container(
+                          width: 60.r,
+                          height: 60.r,
+                          decoration: const BoxDecoration(
+                            color: WattHubColors.primaryLightGreenColor1,
+                            // image: DecorationImage(image: AssetImage(WattHubAssets.images.profileImage.keyName), fit: BoxFit.cover),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.person,
+                            color: WattHubColors.primaryGreenColor,
+                            size: 32.r,
                           ),
                         ),
-                        // leading: Container(
-                        //   width: 60.r,
-                        //   height: 60.r,
-                        //   decoration: const BoxDecoration(
-                        //     color: WattHubColors.primaryLightGreenColor1,
-                        //     // image: DecorationImage(image: AssetImage(WattHubAssets.images.profileImage.keyName), fit: BoxFit.cover),
-                        //     shape: BoxShape.circle,
-                        //   ),
-                        //   child: Icon(Icons.person, color: WattHubColors.primaryGreenColor, size: 32.r,),
-                        // ),
                         trailing: Icon(
                           Icons.chevron_right_outlined,
                           size: 40.sp,
@@ -122,9 +115,10 @@ class _ProfileView extends StatelessWidget {
                           iconLeading: Icons.charging_station_outlined,
                           children: [
                             if (stationsData != null && stationsData.isNotEmpty)
-                              StationInfoList(
-                                stationsData: stationsData,
-                              ),
+                              // StationInfoList(
+                              //   stationsData: stationsData,
+                              // ),
+                              StationsList.slidable(stationsList: stationsData),
                           ],
                           onTap: () {
                             if (stationsData!.isEmpty) {
@@ -132,7 +126,6 @@ class _ProfileView extends StatelessWidget {
                                   .push(const AddStationRoute());
                             }
                           }),
-                      // const ProfileMenuDivider(),
                       const Divider(),
                       ProfileMenuItem(
                         title: context.localized.helpCenter,
