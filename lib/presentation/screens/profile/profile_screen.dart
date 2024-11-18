@@ -101,7 +101,6 @@ class _ProfileView extends StatelessWidget {
           onTap: () async {
             await getIt<FilterStorage>().deleteFilterData();
             await getIt<TokenStorage>().deleteToken();
-
             if (context.mounted) {
               context.router.replace(const SignUpRoute());
             }

@@ -146,8 +146,8 @@ class StationListItem extends StatelessWidget {
           '\$${stationListItem.hourlyRate}/${context.localized.hourlyRate}',
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(color: WattHubColors.greyColor),
-        ).flexible(),
+        ),
       ],
-    ).expanded();
+    );
   }
 }

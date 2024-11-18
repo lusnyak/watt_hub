@@ -37,7 +37,6 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
   ) async {
     emit(const AppLoadingState.loading());
     await ConnectivityChecker().checkConnectivity().then((connected) {
-      debugPrint(connected.toString());
       add(AppLoadingEvent.notifyConnectionStatus(isConnected: connected));
     });
   }
