@@ -29,17 +29,14 @@ class ProfileDetailScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            WHImagePicker.single(child:
-                /// TODO: - separate to uikit element
-            ClipRRect(
-              borderRadius: roundedBorder50, // Makes the image round
-              child: Image.asset(
-                WattHubAssets.images.profileImage.keyName,
-                width: 200.w,
-                height: 200.h,
-                fit: BoxFit.cover, // Ensures the image fills the container
+            WHImagePicker.single(
+              /// TODO: - separate to uikit element - done
+              child: WhCircleAvatar(
+                width: 200,
+                height: 200,
+                image: WattHubAssets.images.profileImage.keyName,
               ),
-            )).alignAtCenter().paddingSymmetric(vertical: 10),
+            ).alignAtCenter().paddingSymmetric(vertical: 10),
             WHTextField.singleLine(
                     label: context.localized.fullName,
                     hintText: context.localized.fullName)

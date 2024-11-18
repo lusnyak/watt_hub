@@ -3,16 +3,18 @@ import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
-/// TODO: Refactoring - Marieta
+/// TODO: Refactoring - Marieta - done
 class StationListItem extends StatelessWidget {
   const StationListItem({
     super.key,
     required this.stationListItem,
     this.onTap,
+    this.isBorder = false,
   });
 
   final StationModel stationListItem;
   final GestureTapCallback? onTap;
+  final bool isBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +24,13 @@ class StationListItem extends StatelessWidget {
         padding: paddingV20H10,
         decoration: BoxDecoration(
             borderRadius: roundedBorder14,
-            border: Border.all(color: WattHubColors.primaryLightGreenColor)),
+            border: Border.all(
+              color: isBorder
+                  ? WattHubColors.primaryLightGreenColor
+                  : WattHubColors.transparentColor,
+            )),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
               stationListItem.name ?? '',
@@ -82,14 +88,13 @@ class StationListItem extends StatelessWidget {
   Widget _buildHourlyRateInfo(BuildContext context) {
     return Row(
       children: [
-        const Icon(Icons.attach_money, color: WattHubColors.greyColor),
-        SizedBox(width: 4.w),
+        // const Icon(Icons.attach_money, color: WattHubColors.greyColor),
         Text(
           '\$${stationListItem.hourlyRate}/${context.localized.hourlyRate}',
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(color: WattHubColors.greyColor),
-        ).flexible(),
+        ),
       ],
-    ).expanded();
+    );
   }
 }
