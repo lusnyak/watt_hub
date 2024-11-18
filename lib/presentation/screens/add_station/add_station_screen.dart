@@ -80,7 +80,6 @@ class AddStationView extends StatelessWidget {
                                     .push<Map<String, dynamic>>(
                                   const ChooseStationAddressRoute(),
                                 );
-
                                 /// TODO: Vlad - poxel objecti
                                 if (addressResult != null) {
                                   final getAddressData =

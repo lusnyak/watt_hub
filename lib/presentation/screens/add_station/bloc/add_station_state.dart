@@ -11,7 +11,7 @@ class AddStationState with _$AddStationState {
   const factory AddStationState.error(String message) = ErrorState;
 
   const factory AddStationState.loaded(
-      List<ConnectorTypeModel> connectors, {
+        List<ConnectorTypeModel> connectors, {
         ConnectorTypeModel? selectedConnectors,
         @Default([]) List<ConnectorTypeModel> selectedList,
         ConnectorTypeModel? selected,
