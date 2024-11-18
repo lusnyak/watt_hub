@@ -11,7 +11,6 @@ class ConnectivityChecker {
 
   Future<bool> checkConnectivity() async {
     final connectivityResults = await Connectivity().checkConnectivity();
-    debugPrint(connectivityResults.toString());
     return !connectivityResults.contains(ConnectivityResult.none);
   }
 

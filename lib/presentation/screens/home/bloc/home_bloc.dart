@@ -44,8 +44,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           .map((stationJson) => StationModel.fromJson(stationJson))
           .toList();
 
-      debugPrint('$stations, stations');
-
       emit(HomeState.loaded(
         stations,
         isList: true,
