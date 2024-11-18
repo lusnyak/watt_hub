@@ -18,27 +18,30 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$DetailEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() loadDetail,
     required TResult Function(DateTime selectedDate) daySelected,
     required TResult Function(String selectedTime) timeSelected,
-    required TResult Function(String selectedDuration) durationSelected,
+    required TResult Function(int selectedDuration) durationSelected,
     required TResult Function(ConnectorTypeModel selectedConnectorType)
         connectorTypeSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadDetail,
     TResult? Function(DateTime selectedDate)? daySelected,
     TResult? Function(String selectedTime)? timeSelected,
-    TResult? Function(String selectedDuration)? durationSelected,
+    TResult? Function(int selectedDuration)? durationSelected,
     TResult? Function(ConnectorTypeModel selectedConnectorType)?
         connectorTypeSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadDetail,
     TResult Function(DateTime selectedDate)? daySelected,
     TResult Function(String selectedTime)? timeSelected,
-    TResult Function(String selectedDuration)? durationSelected,
+    TResult Function(int selectedDuration)? durationSelected,
     TResult Function(ConnectorTypeModel selectedConnectorType)?
         connectorTypeSelected,
     required TResult orElse(),
@@ -46,27 +49,30 @@ mixin _$DetailEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DaySelected value) daySelected,
-    required TResult Function(TimeSelected value) timeSelected,
-    required TResult Function(DurationSelected value) durationSelected,
-    required TResult Function(ConnectorTypeSelected value)
+    required TResult Function(_LoadDetailEvent value) loadDetail,
+    required TResult Function(_DaySelectedEvent value) daySelected,
+    required TResult Function(_TimeSelectedEvent value) timeSelected,
+    required TResult Function(_DurationSelectedEvent value) durationSelected,
+    required TResult Function(_ConnectorTypeSelectedEvent value)
         connectorTypeSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DaySelected value)? daySelected,
-    TResult? Function(TimeSelected value)? timeSelected,
-    TResult? Function(DurationSelected value)? durationSelected,
-    TResult? Function(ConnectorTypeSelected value)? connectorTypeSelected,
+    TResult? Function(_LoadDetailEvent value)? loadDetail,
+    TResult? Function(_DaySelectedEvent value)? daySelected,
+    TResult? Function(_TimeSelectedEvent value)? timeSelected,
+    TResult? Function(_DurationSelectedEvent value)? durationSelected,
+    TResult? Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DaySelected value)? daySelected,
-    TResult Function(TimeSelected value)? timeSelected,
-    TResult Function(DurationSelected value)? durationSelected,
-    TResult Function(ConnectorTypeSelected value)? connectorTypeSelected,
+    TResult Function(_LoadDetailEvent value)? loadDetail,
+    TResult Function(_DaySelectedEvent value)? daySelected,
+    TResult Function(_TimeSelectedEvent value)? timeSelected,
+    TResult Function(_DurationSelectedEvent value)? durationSelected,
+    TResult Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -94,20 +100,147 @@ class _$DetailEventCopyWithImpl<$Res, $Val extends DetailEvent>
 }
 
 /// @nodoc
-abstract class _$$DaySelectedImplCopyWith<$Res> {
-  factory _$$DaySelectedImplCopyWith(
-          _$DaySelectedImpl value, $Res Function(_$DaySelectedImpl) then) =
-      __$$DaySelectedImplCopyWithImpl<$Res>;
+abstract class _$$LoadDetailEventImplCopyWith<$Res> {
+  factory _$$LoadDetailEventImplCopyWith(_$LoadDetailEventImpl value,
+          $Res Function(_$LoadDetailEventImpl) then) =
+      __$$LoadDetailEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadDetailEventImplCopyWithImpl<$Res>
+    extends _$DetailEventCopyWithImpl<$Res, _$LoadDetailEventImpl>
+    implements _$$LoadDetailEventImplCopyWith<$Res> {
+  __$$LoadDetailEventImplCopyWithImpl(
+      _$LoadDetailEventImpl _value, $Res Function(_$LoadDetailEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadDetailEventImpl implements _LoadDetailEvent {
+  const _$LoadDetailEventImpl();
+
+  @override
+  String toString() {
+    return 'DetailEvent.loadDetail()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadDetailEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadDetail,
+    required TResult Function(DateTime selectedDate) daySelected,
+    required TResult Function(String selectedTime) timeSelected,
+    required TResult Function(int selectedDuration) durationSelected,
+    required TResult Function(ConnectorTypeModel selectedConnectorType)
+        connectorTypeSelected,
+  }) {
+    return loadDetail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadDetail,
+    TResult? Function(DateTime selectedDate)? daySelected,
+    TResult? Function(String selectedTime)? timeSelected,
+    TResult? Function(int selectedDuration)? durationSelected,
+    TResult? Function(ConnectorTypeModel selectedConnectorType)?
+        connectorTypeSelected,
+  }) {
+    return loadDetail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadDetail,
+    TResult Function(DateTime selectedDate)? daySelected,
+    TResult Function(String selectedTime)? timeSelected,
+    TResult Function(int selectedDuration)? durationSelected,
+    TResult Function(ConnectorTypeModel selectedConnectorType)?
+        connectorTypeSelected,
+    required TResult orElse(),
+  }) {
+    if (loadDetail != null) {
+      return loadDetail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadDetailEvent value) loadDetail,
+    required TResult Function(_DaySelectedEvent value) daySelected,
+    required TResult Function(_TimeSelectedEvent value) timeSelected,
+    required TResult Function(_DurationSelectedEvent value) durationSelected,
+    required TResult Function(_ConnectorTypeSelectedEvent value)
+        connectorTypeSelected,
+  }) {
+    return loadDetail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadDetailEvent value)? loadDetail,
+    TResult? Function(_DaySelectedEvent value)? daySelected,
+    TResult? Function(_TimeSelectedEvent value)? timeSelected,
+    TResult? Function(_DurationSelectedEvent value)? durationSelected,
+    TResult? Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
+  }) {
+    return loadDetail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadDetailEvent value)? loadDetail,
+    TResult Function(_DaySelectedEvent value)? daySelected,
+    TResult Function(_TimeSelectedEvent value)? timeSelected,
+    TResult Function(_DurationSelectedEvent value)? durationSelected,
+    TResult Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
+    required TResult orElse(),
+  }) {
+    if (loadDetail != null) {
+      return loadDetail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadDetailEvent implements DetailEvent {
+  const factory _LoadDetailEvent() = _$LoadDetailEventImpl;
+}
+
+/// @nodoc
+abstract class _$$DaySelectedEventImplCopyWith<$Res> {
+  factory _$$DaySelectedEventImplCopyWith(_$DaySelectedEventImpl value,
+          $Res Function(_$DaySelectedEventImpl) then) =
+      __$$DaySelectedEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime selectedDate});
 }
 
 /// @nodoc
-class __$$DaySelectedImplCopyWithImpl<$Res>
-    extends _$DetailEventCopyWithImpl<$Res, _$DaySelectedImpl>
-    implements _$$DaySelectedImplCopyWith<$Res> {
-  __$$DaySelectedImplCopyWithImpl(
-      _$DaySelectedImpl _value, $Res Function(_$DaySelectedImpl) _then)
+class __$$DaySelectedEventImplCopyWithImpl<$Res>
+    extends _$DetailEventCopyWithImpl<$Res, _$DaySelectedEventImpl>
+    implements _$$DaySelectedEventImplCopyWith<$Res> {
+  __$$DaySelectedEventImplCopyWithImpl(_$DaySelectedEventImpl _value,
+      $Res Function(_$DaySelectedEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of DetailEvent
@@ -117,7 +250,7 @@ class __$$DaySelectedImplCopyWithImpl<$Res>
   $Res call({
     Object? selectedDate = null,
   }) {
-    return _then(_$DaySelectedImpl(
+    return _then(_$DaySelectedEventImpl(
       null == selectedDate
           ? _value.selectedDate
           : selectedDate // ignore: cast_nullable_to_non_nullable
@@ -128,8 +261,8 @@ class __$$DaySelectedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DaySelectedImpl implements DaySelected {
-  const _$DaySelectedImpl(this.selectedDate);
+class _$DaySelectedEventImpl implements _DaySelectedEvent {
+  const _$DaySelectedEventImpl(this.selectedDate);
 
   @override
   final DateTime selectedDate;
@@ -143,7 +276,7 @@ class _$DaySelectedImpl implements DaySelected {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DaySelectedImpl &&
+            other is _$DaySelectedEventImpl &&
             (identical(other.selectedDate, selectedDate) ||
                 other.selectedDate == selectedDate));
   }
@@ -156,15 +289,17 @@ class _$DaySelectedImpl implements DaySelected {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DaySelectedImplCopyWith<_$DaySelectedImpl> get copyWith =>
-      __$$DaySelectedImplCopyWithImpl<_$DaySelectedImpl>(this, _$identity);
+  _$$DaySelectedEventImplCopyWith<_$DaySelectedEventImpl> get copyWith =>
+      __$$DaySelectedEventImplCopyWithImpl<_$DaySelectedEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() loadDetail,
     required TResult Function(DateTime selectedDate) daySelected,
     required TResult Function(String selectedTime) timeSelected,
-    required TResult Function(String selectedDuration) durationSelected,
+    required TResult Function(int selectedDuration) durationSelected,
     required TResult Function(ConnectorTypeModel selectedConnectorType)
         connectorTypeSelected,
   }) {
@@ -174,9 +309,10 @@ class _$DaySelectedImpl implements DaySelected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadDetail,
     TResult? Function(DateTime selectedDate)? daySelected,
     TResult? Function(String selectedTime)? timeSelected,
-    TResult? Function(String selectedDuration)? durationSelected,
+    TResult? Function(int selectedDuration)? durationSelected,
     TResult? Function(ConnectorTypeModel selectedConnectorType)?
         connectorTypeSelected,
   }) {
@@ -186,9 +322,10 @@ class _$DaySelectedImpl implements DaySelected {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadDetail,
     TResult Function(DateTime selectedDate)? daySelected,
     TResult Function(String selectedTime)? timeSelected,
-    TResult Function(String selectedDuration)? durationSelected,
+    TResult Function(int selectedDuration)? durationSelected,
     TResult Function(ConnectorTypeModel selectedConnectorType)?
         connectorTypeSelected,
     required TResult orElse(),
@@ -202,10 +339,11 @@ class _$DaySelectedImpl implements DaySelected {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DaySelected value) daySelected,
-    required TResult Function(TimeSelected value) timeSelected,
-    required TResult Function(DurationSelected value) durationSelected,
-    required TResult Function(ConnectorTypeSelected value)
+    required TResult Function(_LoadDetailEvent value) loadDetail,
+    required TResult Function(_DaySelectedEvent value) daySelected,
+    required TResult Function(_TimeSelectedEvent value) timeSelected,
+    required TResult Function(_DurationSelectedEvent value) durationSelected,
+    required TResult Function(_ConnectorTypeSelectedEvent value)
         connectorTypeSelected,
   }) {
     return daySelected(this);
@@ -214,10 +352,11 @@ class _$DaySelectedImpl implements DaySelected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DaySelected value)? daySelected,
-    TResult? Function(TimeSelected value)? timeSelected,
-    TResult? Function(DurationSelected value)? durationSelected,
-    TResult? Function(ConnectorTypeSelected value)? connectorTypeSelected,
+    TResult? Function(_LoadDetailEvent value)? loadDetail,
+    TResult? Function(_DaySelectedEvent value)? daySelected,
+    TResult? Function(_TimeSelectedEvent value)? timeSelected,
+    TResult? Function(_DurationSelectedEvent value)? durationSelected,
+    TResult? Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
   }) {
     return daySelected?.call(this);
   }
@@ -225,10 +364,11 @@ class _$DaySelectedImpl implements DaySelected {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DaySelected value)? daySelected,
-    TResult Function(TimeSelected value)? timeSelected,
-    TResult Function(DurationSelected value)? durationSelected,
-    TResult Function(ConnectorTypeSelected value)? connectorTypeSelected,
+    TResult Function(_LoadDetailEvent value)? loadDetail,
+    TResult Function(_DaySelectedEvent value)? daySelected,
+    TResult Function(_TimeSelectedEvent value)? timeSelected,
+    TResult Function(_DurationSelectedEvent value)? durationSelected,
+    TResult Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
     required TResult orElse(),
   }) {
     if (daySelected != null) {
@@ -238,33 +378,34 @@ class _$DaySelectedImpl implements DaySelected {
   }
 }
 
-abstract class DaySelected implements DetailEvent {
-  const factory DaySelected(final DateTime selectedDate) = _$DaySelectedImpl;
+abstract class _DaySelectedEvent implements DetailEvent {
+  const factory _DaySelectedEvent(final DateTime selectedDate) =
+      _$DaySelectedEventImpl;
 
   DateTime get selectedDate;
 
   /// Create a copy of DetailEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DaySelectedImplCopyWith<_$DaySelectedImpl> get copyWith =>
+  _$$DaySelectedEventImplCopyWith<_$DaySelectedEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TimeSelectedImplCopyWith<$Res> {
-  factory _$$TimeSelectedImplCopyWith(
-          _$TimeSelectedImpl value, $Res Function(_$TimeSelectedImpl) then) =
-      __$$TimeSelectedImplCopyWithImpl<$Res>;
+abstract class _$$TimeSelectedEventImplCopyWith<$Res> {
+  factory _$$TimeSelectedEventImplCopyWith(_$TimeSelectedEventImpl value,
+          $Res Function(_$TimeSelectedEventImpl) then) =
+      __$$TimeSelectedEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String selectedTime});
 }
 
 /// @nodoc
-class __$$TimeSelectedImplCopyWithImpl<$Res>
-    extends _$DetailEventCopyWithImpl<$Res, _$TimeSelectedImpl>
-    implements _$$TimeSelectedImplCopyWith<$Res> {
-  __$$TimeSelectedImplCopyWithImpl(
-      _$TimeSelectedImpl _value, $Res Function(_$TimeSelectedImpl) _then)
+class __$$TimeSelectedEventImplCopyWithImpl<$Res>
+    extends _$DetailEventCopyWithImpl<$Res, _$TimeSelectedEventImpl>
+    implements _$$TimeSelectedEventImplCopyWith<$Res> {
+  __$$TimeSelectedEventImplCopyWithImpl(_$TimeSelectedEventImpl _value,
+      $Res Function(_$TimeSelectedEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of DetailEvent
@@ -274,7 +415,7 @@ class __$$TimeSelectedImplCopyWithImpl<$Res>
   $Res call({
     Object? selectedTime = null,
   }) {
-    return _then(_$TimeSelectedImpl(
+    return _then(_$TimeSelectedEventImpl(
       null == selectedTime
           ? _value.selectedTime
           : selectedTime // ignore: cast_nullable_to_non_nullable
@@ -285,8 +426,8 @@ class __$$TimeSelectedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TimeSelectedImpl implements TimeSelected {
-  const _$TimeSelectedImpl(this.selectedTime);
+class _$TimeSelectedEventImpl implements _TimeSelectedEvent {
+  const _$TimeSelectedEventImpl(this.selectedTime);
 
   @override
   final String selectedTime;
@@ -300,7 +441,7 @@ class _$TimeSelectedImpl implements TimeSelected {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TimeSelectedImpl &&
+            other is _$TimeSelectedEventImpl &&
             (identical(other.selectedTime, selectedTime) ||
                 other.selectedTime == selectedTime));
   }
@@ -313,15 +454,17 @@ class _$TimeSelectedImpl implements TimeSelected {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TimeSelectedImplCopyWith<_$TimeSelectedImpl> get copyWith =>
-      __$$TimeSelectedImplCopyWithImpl<_$TimeSelectedImpl>(this, _$identity);
+  _$$TimeSelectedEventImplCopyWith<_$TimeSelectedEventImpl> get copyWith =>
+      __$$TimeSelectedEventImplCopyWithImpl<_$TimeSelectedEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() loadDetail,
     required TResult Function(DateTime selectedDate) daySelected,
     required TResult Function(String selectedTime) timeSelected,
-    required TResult Function(String selectedDuration) durationSelected,
+    required TResult Function(int selectedDuration) durationSelected,
     required TResult Function(ConnectorTypeModel selectedConnectorType)
         connectorTypeSelected,
   }) {
@@ -331,9 +474,10 @@ class _$TimeSelectedImpl implements TimeSelected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadDetail,
     TResult? Function(DateTime selectedDate)? daySelected,
     TResult? Function(String selectedTime)? timeSelected,
-    TResult? Function(String selectedDuration)? durationSelected,
+    TResult? Function(int selectedDuration)? durationSelected,
     TResult? Function(ConnectorTypeModel selectedConnectorType)?
         connectorTypeSelected,
   }) {
@@ -343,9 +487,10 @@ class _$TimeSelectedImpl implements TimeSelected {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadDetail,
     TResult Function(DateTime selectedDate)? daySelected,
     TResult Function(String selectedTime)? timeSelected,
-    TResult Function(String selectedDuration)? durationSelected,
+    TResult Function(int selectedDuration)? durationSelected,
     TResult Function(ConnectorTypeModel selectedConnectorType)?
         connectorTypeSelected,
     required TResult orElse(),
@@ -359,10 +504,11 @@ class _$TimeSelectedImpl implements TimeSelected {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DaySelected value) daySelected,
-    required TResult Function(TimeSelected value) timeSelected,
-    required TResult Function(DurationSelected value) durationSelected,
-    required TResult Function(ConnectorTypeSelected value)
+    required TResult Function(_LoadDetailEvent value) loadDetail,
+    required TResult Function(_DaySelectedEvent value) daySelected,
+    required TResult Function(_TimeSelectedEvent value) timeSelected,
+    required TResult Function(_DurationSelectedEvent value) durationSelected,
+    required TResult Function(_ConnectorTypeSelectedEvent value)
         connectorTypeSelected,
   }) {
     return timeSelected(this);
@@ -371,10 +517,11 @@ class _$TimeSelectedImpl implements TimeSelected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DaySelected value)? daySelected,
-    TResult? Function(TimeSelected value)? timeSelected,
-    TResult? Function(DurationSelected value)? durationSelected,
-    TResult? Function(ConnectorTypeSelected value)? connectorTypeSelected,
+    TResult? Function(_LoadDetailEvent value)? loadDetail,
+    TResult? Function(_DaySelectedEvent value)? daySelected,
+    TResult? Function(_TimeSelectedEvent value)? timeSelected,
+    TResult? Function(_DurationSelectedEvent value)? durationSelected,
+    TResult? Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
   }) {
     return timeSelected?.call(this);
   }
@@ -382,10 +529,11 @@ class _$TimeSelectedImpl implements TimeSelected {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DaySelected value)? daySelected,
-    TResult Function(TimeSelected value)? timeSelected,
-    TResult Function(DurationSelected value)? durationSelected,
-    TResult Function(ConnectorTypeSelected value)? connectorTypeSelected,
+    TResult Function(_LoadDetailEvent value)? loadDetail,
+    TResult Function(_DaySelectedEvent value)? daySelected,
+    TResult Function(_TimeSelectedEvent value)? timeSelected,
+    TResult Function(_DurationSelectedEvent value)? durationSelected,
+    TResult Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
     required TResult orElse(),
   }) {
     if (timeSelected != null) {
@@ -395,33 +543,35 @@ class _$TimeSelectedImpl implements TimeSelected {
   }
 }
 
-abstract class TimeSelected implements DetailEvent {
-  const factory TimeSelected(final String selectedTime) = _$TimeSelectedImpl;
+abstract class _TimeSelectedEvent implements DetailEvent {
+  const factory _TimeSelectedEvent(final String selectedTime) =
+      _$TimeSelectedEventImpl;
 
   String get selectedTime;
 
   /// Create a copy of DetailEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TimeSelectedImplCopyWith<_$TimeSelectedImpl> get copyWith =>
+  _$$TimeSelectedEventImplCopyWith<_$TimeSelectedEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DurationSelectedImplCopyWith<$Res> {
-  factory _$$DurationSelectedImplCopyWith(_$DurationSelectedImpl value,
-          $Res Function(_$DurationSelectedImpl) then) =
-      __$$DurationSelectedImplCopyWithImpl<$Res>;
+abstract class _$$DurationSelectedEventImplCopyWith<$Res> {
+  factory _$$DurationSelectedEventImplCopyWith(
+          _$DurationSelectedEventImpl value,
+          $Res Function(_$DurationSelectedEventImpl) then) =
+      __$$DurationSelectedEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String selectedDuration});
+  $Res call({int selectedDuration});
 }
 
 /// @nodoc
-class __$$DurationSelectedImplCopyWithImpl<$Res>
-    extends _$DetailEventCopyWithImpl<$Res, _$DurationSelectedImpl>
-    implements _$$DurationSelectedImplCopyWith<$Res> {
-  __$$DurationSelectedImplCopyWithImpl(_$DurationSelectedImpl _value,
-      $Res Function(_$DurationSelectedImpl) _then)
+class __$$DurationSelectedEventImplCopyWithImpl<$Res>
+    extends _$DetailEventCopyWithImpl<$Res, _$DurationSelectedEventImpl>
+    implements _$$DurationSelectedEventImplCopyWith<$Res> {
+  __$$DurationSelectedEventImplCopyWithImpl(_$DurationSelectedEventImpl _value,
+      $Res Function(_$DurationSelectedEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of DetailEvent
@@ -431,22 +581,22 @@ class __$$DurationSelectedImplCopyWithImpl<$Res>
   $Res call({
     Object? selectedDuration = null,
   }) {
-    return _then(_$DurationSelectedImpl(
+    return _then(_$DurationSelectedEventImpl(
       null == selectedDuration
           ? _value.selectedDuration
           : selectedDuration // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$DurationSelectedImpl implements DurationSelected {
-  const _$DurationSelectedImpl(this.selectedDuration);
+class _$DurationSelectedEventImpl implements _DurationSelectedEvent {
+  const _$DurationSelectedEventImpl(this.selectedDuration);
 
   @override
-  final String selectedDuration;
+  final int selectedDuration;
 
   @override
   String toString() {
@@ -457,7 +607,7 @@ class _$DurationSelectedImpl implements DurationSelected {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DurationSelectedImpl &&
+            other is _$DurationSelectedEventImpl &&
             (identical(other.selectedDuration, selectedDuration) ||
                 other.selectedDuration == selectedDuration));
   }
@@ -470,16 +620,17 @@ class _$DurationSelectedImpl implements DurationSelected {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DurationSelectedImplCopyWith<_$DurationSelectedImpl> get copyWith =>
-      __$$DurationSelectedImplCopyWithImpl<_$DurationSelectedImpl>(
-          this, _$identity);
+  _$$DurationSelectedEventImplCopyWith<_$DurationSelectedEventImpl>
+      get copyWith => __$$DurationSelectedEventImplCopyWithImpl<
+          _$DurationSelectedEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() loadDetail,
     required TResult Function(DateTime selectedDate) daySelected,
     required TResult Function(String selectedTime) timeSelected,
-    required TResult Function(String selectedDuration) durationSelected,
+    required TResult Function(int selectedDuration) durationSelected,
     required TResult Function(ConnectorTypeModel selectedConnectorType)
         connectorTypeSelected,
   }) {
@@ -489,9 +640,10 @@ class _$DurationSelectedImpl implements DurationSelected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadDetail,
     TResult? Function(DateTime selectedDate)? daySelected,
     TResult? Function(String selectedTime)? timeSelected,
-    TResult? Function(String selectedDuration)? durationSelected,
+    TResult? Function(int selectedDuration)? durationSelected,
     TResult? Function(ConnectorTypeModel selectedConnectorType)?
         connectorTypeSelected,
   }) {
@@ -501,9 +653,10 @@ class _$DurationSelectedImpl implements DurationSelected {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadDetail,
     TResult Function(DateTime selectedDate)? daySelected,
     TResult Function(String selectedTime)? timeSelected,
-    TResult Function(String selectedDuration)? durationSelected,
+    TResult Function(int selectedDuration)? durationSelected,
     TResult Function(ConnectorTypeModel selectedConnectorType)?
         connectorTypeSelected,
     required TResult orElse(),
@@ -517,10 +670,11 @@ class _$DurationSelectedImpl implements DurationSelected {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DaySelected value) daySelected,
-    required TResult Function(TimeSelected value) timeSelected,
-    required TResult Function(DurationSelected value) durationSelected,
-    required TResult Function(ConnectorTypeSelected value)
+    required TResult Function(_LoadDetailEvent value) loadDetail,
+    required TResult Function(_DaySelectedEvent value) daySelected,
+    required TResult Function(_TimeSelectedEvent value) timeSelected,
+    required TResult Function(_DurationSelectedEvent value) durationSelected,
+    required TResult Function(_ConnectorTypeSelectedEvent value)
         connectorTypeSelected,
   }) {
     return durationSelected(this);
@@ -529,10 +683,11 @@ class _$DurationSelectedImpl implements DurationSelected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DaySelected value)? daySelected,
-    TResult? Function(TimeSelected value)? timeSelected,
-    TResult? Function(DurationSelected value)? durationSelected,
-    TResult? Function(ConnectorTypeSelected value)? connectorTypeSelected,
+    TResult? Function(_LoadDetailEvent value)? loadDetail,
+    TResult? Function(_DaySelectedEvent value)? daySelected,
+    TResult? Function(_TimeSelectedEvent value)? timeSelected,
+    TResult? Function(_DurationSelectedEvent value)? durationSelected,
+    TResult? Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
   }) {
     return durationSelected?.call(this);
   }
@@ -540,10 +695,11 @@ class _$DurationSelectedImpl implements DurationSelected {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DaySelected value)? daySelected,
-    TResult Function(TimeSelected value)? timeSelected,
-    TResult Function(DurationSelected value)? durationSelected,
-    TResult Function(ConnectorTypeSelected value)? connectorTypeSelected,
+    TResult Function(_LoadDetailEvent value)? loadDetail,
+    TResult Function(_DaySelectedEvent value)? daySelected,
+    TResult Function(_TimeSelectedEvent value)? timeSelected,
+    TResult Function(_DurationSelectedEvent value)? durationSelected,
+    TResult Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
     required TResult orElse(),
   }) {
     if (durationSelected != null) {
@@ -553,25 +709,25 @@ class _$DurationSelectedImpl implements DurationSelected {
   }
 }
 
-abstract class DurationSelected implements DetailEvent {
-  const factory DurationSelected(final String selectedDuration) =
-      _$DurationSelectedImpl;
+abstract class _DurationSelectedEvent implements DetailEvent {
+  const factory _DurationSelectedEvent(final int selectedDuration) =
+      _$DurationSelectedEventImpl;
 
-  String get selectedDuration;
+  int get selectedDuration;
 
   /// Create a copy of DetailEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DurationSelectedImplCopyWith<_$DurationSelectedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DurationSelectedEventImplCopyWith<_$DurationSelectedEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ConnectorTypeSelectedImplCopyWith<$Res> {
-  factory _$$ConnectorTypeSelectedImplCopyWith(
-          _$ConnectorTypeSelectedImpl value,
-          $Res Function(_$ConnectorTypeSelectedImpl) then) =
-      __$$ConnectorTypeSelectedImplCopyWithImpl<$Res>;
+abstract class _$$ConnectorTypeSelectedEventImplCopyWith<$Res> {
+  factory _$$ConnectorTypeSelectedEventImplCopyWith(
+          _$ConnectorTypeSelectedEventImpl value,
+          $Res Function(_$ConnectorTypeSelectedEventImpl) then) =
+      __$$ConnectorTypeSelectedEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ConnectorTypeModel selectedConnectorType});
 
@@ -579,11 +735,12 @@ abstract class _$$ConnectorTypeSelectedImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ConnectorTypeSelectedImplCopyWithImpl<$Res>
-    extends _$DetailEventCopyWithImpl<$Res, _$ConnectorTypeSelectedImpl>
-    implements _$$ConnectorTypeSelectedImplCopyWith<$Res> {
-  __$$ConnectorTypeSelectedImplCopyWithImpl(_$ConnectorTypeSelectedImpl _value,
-      $Res Function(_$ConnectorTypeSelectedImpl) _then)
+class __$$ConnectorTypeSelectedEventImplCopyWithImpl<$Res>
+    extends _$DetailEventCopyWithImpl<$Res, _$ConnectorTypeSelectedEventImpl>
+    implements _$$ConnectorTypeSelectedEventImplCopyWith<$Res> {
+  __$$ConnectorTypeSelectedEventImplCopyWithImpl(
+      _$ConnectorTypeSelectedEventImpl _value,
+      $Res Function(_$ConnectorTypeSelectedEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of DetailEvent
@@ -593,7 +750,7 @@ class __$$ConnectorTypeSelectedImplCopyWithImpl<$Res>
   $Res call({
     Object? selectedConnectorType = null,
   }) {
-    return _then(_$ConnectorTypeSelectedImpl(
+    return _then(_$ConnectorTypeSelectedEventImpl(
       null == selectedConnectorType
           ? _value.selectedConnectorType
           : selectedConnectorType // ignore: cast_nullable_to_non_nullable
@@ -615,8 +772,8 @@ class __$$ConnectorTypeSelectedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ConnectorTypeSelectedImpl implements ConnectorTypeSelected {
-  const _$ConnectorTypeSelectedImpl(this.selectedConnectorType);
+class _$ConnectorTypeSelectedEventImpl implements _ConnectorTypeSelectedEvent {
+  const _$ConnectorTypeSelectedEventImpl(this.selectedConnectorType);
 
   @override
   final ConnectorTypeModel selectedConnectorType;
@@ -630,7 +787,7 @@ class _$ConnectorTypeSelectedImpl implements ConnectorTypeSelected {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ConnectorTypeSelectedImpl &&
+            other is _$ConnectorTypeSelectedEventImpl &&
             (identical(other.selectedConnectorType, selectedConnectorType) ||
                 other.selectedConnectorType == selectedConnectorType));
   }
@@ -643,16 +800,17 @@ class _$ConnectorTypeSelectedImpl implements ConnectorTypeSelected {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ConnectorTypeSelectedImplCopyWith<_$ConnectorTypeSelectedImpl>
-      get copyWith => __$$ConnectorTypeSelectedImplCopyWithImpl<
-          _$ConnectorTypeSelectedImpl>(this, _$identity);
+  _$$ConnectorTypeSelectedEventImplCopyWith<_$ConnectorTypeSelectedEventImpl>
+      get copyWith => __$$ConnectorTypeSelectedEventImplCopyWithImpl<
+          _$ConnectorTypeSelectedEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() loadDetail,
     required TResult Function(DateTime selectedDate) daySelected,
     required TResult Function(String selectedTime) timeSelected,
-    required TResult Function(String selectedDuration) durationSelected,
+    required TResult Function(int selectedDuration) durationSelected,
     required TResult Function(ConnectorTypeModel selectedConnectorType)
         connectorTypeSelected,
   }) {
@@ -662,9 +820,10 @@ class _$ConnectorTypeSelectedImpl implements ConnectorTypeSelected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadDetail,
     TResult? Function(DateTime selectedDate)? daySelected,
     TResult? Function(String selectedTime)? timeSelected,
-    TResult? Function(String selectedDuration)? durationSelected,
+    TResult? Function(int selectedDuration)? durationSelected,
     TResult? Function(ConnectorTypeModel selectedConnectorType)?
         connectorTypeSelected,
   }) {
@@ -674,9 +833,10 @@ class _$ConnectorTypeSelectedImpl implements ConnectorTypeSelected {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadDetail,
     TResult Function(DateTime selectedDate)? daySelected,
     TResult Function(String selectedTime)? timeSelected,
-    TResult Function(String selectedDuration)? durationSelected,
+    TResult Function(int selectedDuration)? durationSelected,
     TResult Function(ConnectorTypeModel selectedConnectorType)?
         connectorTypeSelected,
     required TResult orElse(),
@@ -690,10 +850,11 @@ class _$ConnectorTypeSelectedImpl implements ConnectorTypeSelected {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DaySelected value) daySelected,
-    required TResult Function(TimeSelected value) timeSelected,
-    required TResult Function(DurationSelected value) durationSelected,
-    required TResult Function(ConnectorTypeSelected value)
+    required TResult Function(_LoadDetailEvent value) loadDetail,
+    required TResult Function(_DaySelectedEvent value) daySelected,
+    required TResult Function(_TimeSelectedEvent value) timeSelected,
+    required TResult Function(_DurationSelectedEvent value) durationSelected,
+    required TResult Function(_ConnectorTypeSelectedEvent value)
         connectorTypeSelected,
   }) {
     return connectorTypeSelected(this);
@@ -702,10 +863,11 @@ class _$ConnectorTypeSelectedImpl implements ConnectorTypeSelected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DaySelected value)? daySelected,
-    TResult? Function(TimeSelected value)? timeSelected,
-    TResult? Function(DurationSelected value)? durationSelected,
-    TResult? Function(ConnectorTypeSelected value)? connectorTypeSelected,
+    TResult? Function(_LoadDetailEvent value)? loadDetail,
+    TResult? Function(_DaySelectedEvent value)? daySelected,
+    TResult? Function(_TimeSelectedEvent value)? timeSelected,
+    TResult? Function(_DurationSelectedEvent value)? durationSelected,
+    TResult? Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
   }) {
     return connectorTypeSelected?.call(this);
   }
@@ -713,10 +875,11 @@ class _$ConnectorTypeSelectedImpl implements ConnectorTypeSelected {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DaySelected value)? daySelected,
-    TResult Function(TimeSelected value)? timeSelected,
-    TResult Function(DurationSelected value)? durationSelected,
-    TResult Function(ConnectorTypeSelected value)? connectorTypeSelected,
+    TResult Function(_LoadDetailEvent value)? loadDetail,
+    TResult Function(_DaySelectedEvent value)? daySelected,
+    TResult Function(_TimeSelectedEvent value)? timeSelected,
+    TResult Function(_DurationSelectedEvent value)? durationSelected,
+    TResult Function(_ConnectorTypeSelectedEvent value)? connectorTypeSelected,
     required TResult orElse(),
   }) {
     if (connectorTypeSelected != null) {
@@ -726,34 +889,83 @@ class _$ConnectorTypeSelectedImpl implements ConnectorTypeSelected {
   }
 }
 
-abstract class ConnectorTypeSelected implements DetailEvent {
-  const factory ConnectorTypeSelected(
+abstract class _ConnectorTypeSelectedEvent implements DetailEvent {
+  const factory _ConnectorTypeSelectedEvent(
           final ConnectorTypeModel selectedConnectorType) =
-      _$ConnectorTypeSelectedImpl;
+      _$ConnectorTypeSelectedEventImpl;
 
   ConnectorTypeModel get selectedConnectorType;
 
   /// Create a copy of DetailEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ConnectorTypeSelectedImplCopyWith<_$ConnectorTypeSelectedImpl>
+  _$$ConnectorTypeSelectedEventImplCopyWith<_$ConnectorTypeSelectedEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$DetailState {
-  DateTime? get selectedDay => throw _privateConstructorUsedError;
-  String get selectedTime => throw _privateConstructorUsedError;
-  String get selectedDuration => throw _privateConstructorUsedError;
-  ConnectorTypeModel? get selectedConnectorType =>
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)
+        loaded,
+    required TResult Function(String error) error,
+  }) =>
       throw _privateConstructorUsedError;
-  TextEditingController get timeController =>
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)?
+        loaded,
+    TResult? Function(String error)? error,
+  }) =>
       throw _privateConstructorUsedError;
-
-  /// Create a copy of DetailState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $DetailStateCopyWith<DetailState> get copyWith =>
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)?
+        loaded,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DetailLoadingState value) loading,
+    required TResult Function(_DetailLoadedState value) loaded,
+    required TResult Function(_DetailErrorState value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DetailLoadingState value)? loading,
+    TResult? Function(_DetailLoadedState value)? loaded,
+    TResult? Function(_DetailErrorState value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DetailLoadingState value)? loading,
+    TResult Function(_DetailLoadedState value)? loaded,
+    TResult Function(_DetailErrorState value)? error,
+    required TResult orElse(),
+  }) =>
       throw _privateConstructorUsedError;
 }
 
@@ -762,15 +974,6 @@ abstract class $DetailStateCopyWith<$Res> {
   factory $DetailStateCopyWith(
           DetailState value, $Res Function(DetailState) then) =
       _$DetailStateCopyWithImpl<$Res, DetailState>;
-  @useResult
-  $Res call(
-      {DateTime? selectedDay,
-      String selectedTime,
-      String selectedDuration,
-      ConnectorTypeModel? selectedConnectorType,
-      TextEditingController timeController});
-
-  $ConnectorTypeModelCopyWith<$Res>? get selectedConnectorType;
 }
 
 /// @nodoc
@@ -785,37 +988,194 @@ class _$DetailStateCopyWithImpl<$Res, $Val extends DetailState>
 
   /// Create a copy of DetailState
   /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$DetailLoadingStateImplCopyWith<$Res> {
+  factory _$$DetailLoadingStateImplCopyWith(_$DetailLoadingStateImpl value,
+          $Res Function(_$DetailLoadingStateImpl) then) =
+      __$$DetailLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DetailLoadingStateImplCopyWithImpl<$Res>
+    extends _$DetailStateCopyWithImpl<$Res, _$DetailLoadingStateImpl>
+    implements _$$DetailLoadingStateImplCopyWith<$Res> {
+  __$$DetailLoadingStateImplCopyWithImpl(_$DetailLoadingStateImpl _value,
+      $Res Function(_$DetailLoadingStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DetailState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$DetailLoadingStateImpl implements _DetailLoadingState {
+  const _$DetailLoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'DetailState.loading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DetailLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)
+        loaded,
+    required TResult Function(String error) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)?
+        loaded,
+    TResult? Function(String error)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)?
+        loaded,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DetailLoadingState value) loading,
+    required TResult Function(_DetailLoadedState value) loaded,
+    required TResult Function(_DetailErrorState value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DetailLoadingState value)? loading,
+    TResult? Function(_DetailLoadedState value)? loaded,
+    TResult? Function(_DetailErrorState value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DetailLoadingState value)? loading,
+    TResult Function(_DetailLoadedState value)? loaded,
+    TResult Function(_DetailErrorState value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DetailLoadingState implements DetailState {
+  const factory _DetailLoadingState() = _$DetailLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$DetailLoadedStateImplCopyWith<$Res> {
+  factory _$$DetailLoadedStateImplCopyWith(_$DetailLoadedStateImpl value,
+          $Res Function(_$DetailLoadedStateImpl) then) =
+      __$$DetailLoadedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {DateTime? selectedDate,
+      String? selectedTime,
+      int? selectedDuration,
+      ConnectorTypeModel? selectedConnectorType,
+      List<ConnectorTypeModel>? connectorTypes});
+
+  $ConnectorTypeModelCopyWith<$Res>? get selectedConnectorType;
+}
+
+/// @nodoc
+class __$$DetailLoadedStateImplCopyWithImpl<$Res>
+    extends _$DetailStateCopyWithImpl<$Res, _$DetailLoadedStateImpl>
+    implements _$$DetailLoadedStateImplCopyWith<$Res> {
+  __$$DetailLoadedStateImplCopyWithImpl(_$DetailLoadedStateImpl _value,
+      $Res Function(_$DetailLoadedStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DetailState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedDay = freezed,
-    Object? selectedTime = null,
-    Object? selectedDuration = null,
+    Object? selectedDate = freezed,
+    Object? selectedTime = freezed,
+    Object? selectedDuration = freezed,
     Object? selectedConnectorType = freezed,
-    Object? timeController = null,
+    Object? connectorTypes = freezed,
   }) {
-    return _then(_value.copyWith(
-      selectedDay: freezed == selectedDay
-          ? _value.selectedDay
-          : selectedDay // ignore: cast_nullable_to_non_nullable
+    return _then(_$DetailLoadedStateImpl(
+      selectedDate: freezed == selectedDate
+          ? _value.selectedDate
+          : selectedDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      selectedTime: null == selectedTime
+      selectedTime: freezed == selectedTime
           ? _value.selectedTime
           : selectedTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      selectedDuration: null == selectedDuration
+              as String?,
+      selectedDuration: freezed == selectedDuration
           ? _value.selectedDuration
           : selectedDuration // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int?,
       selectedConnectorType: freezed == selectedConnectorType
           ? _value.selectedConnectorType
           : selectedConnectorType // ignore: cast_nullable_to_non_nullable
               as ConnectorTypeModel?,
-      timeController: null == timeController
-          ? _value.timeController
-          : timeController // ignore: cast_nullable_to_non_nullable
-              as TextEditingController,
-    ) as $Val);
+      connectorTypes: freezed == connectorTypes
+          ? _value._connectorTypes
+          : connectorTypes // ignore: cast_nullable_to_non_nullable
+              as List<ConnectorTypeModel>?,
+    ));
   }
 
   /// Create a copy of DetailState
@@ -829,36 +1189,207 @@ class _$DetailStateCopyWithImpl<$Res, $Val extends DetailState>
 
     return $ConnectorTypeModelCopyWith<$Res>(_value.selectedConnectorType!,
         (value) {
-      return _then(_value.copyWith(selectedConnectorType: value) as $Val);
+      return _then(_value.copyWith(selectedConnectorType: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$DetailStateImplCopyWith<$Res>
-    implements $DetailStateCopyWith<$Res> {
-  factory _$$DetailStateImplCopyWith(
-          _$DetailStateImpl value, $Res Function(_$DetailStateImpl) then) =
-      __$$DetailStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {DateTime? selectedDay,
-      String selectedTime,
-      String selectedDuration,
-      ConnectorTypeModel? selectedConnectorType,
-      TextEditingController timeController});
+
+class _$DetailLoadedStateImpl implements _DetailLoadedState {
+  const _$DetailLoadedStateImpl(
+      {this.selectedDate,
+      this.selectedTime,
+      this.selectedDuration,
+      this.selectedConnectorType,
+      final List<ConnectorTypeModel>? connectorTypes})
+      : _connectorTypes = connectorTypes;
 
   @override
-  $ConnectorTypeModelCopyWith<$Res>? get selectedConnectorType;
+  final DateTime? selectedDate;
+  @override
+  final String? selectedTime;
+  @override
+  final int? selectedDuration;
+  @override
+  final ConnectorTypeModel? selectedConnectorType;
+  final List<ConnectorTypeModel>? _connectorTypes;
+  @override
+  List<ConnectorTypeModel>? get connectorTypes {
+    final value = _connectorTypes;
+    if (value == null) return null;
+    if (_connectorTypes is EqualUnmodifiableListView) return _connectorTypes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'DetailState.loaded(selectedDate: $selectedDate, selectedTime: $selectedTime, selectedDuration: $selectedDuration, selectedConnectorType: $selectedConnectorType, connectorTypes: $connectorTypes)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DetailLoadedStateImpl &&
+            (identical(other.selectedDate, selectedDate) ||
+                other.selectedDate == selectedDate) &&
+            (identical(other.selectedTime, selectedTime) ||
+                other.selectedTime == selectedTime) &&
+            (identical(other.selectedDuration, selectedDuration) ||
+                other.selectedDuration == selectedDuration) &&
+            (identical(other.selectedConnectorType, selectedConnectorType) ||
+                other.selectedConnectorType == selectedConnectorType) &&
+            const DeepCollectionEquality()
+                .equals(other._connectorTypes, _connectorTypes));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      selectedDate,
+      selectedTime,
+      selectedDuration,
+      selectedConnectorType,
+      const DeepCollectionEquality().hash(_connectorTypes));
+
+  /// Create a copy of DetailState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DetailLoadedStateImplCopyWith<_$DetailLoadedStateImpl> get copyWith =>
+      __$$DetailLoadedStateImplCopyWithImpl<_$DetailLoadedStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)
+        loaded,
+    required TResult Function(String error) error,
+  }) {
+    return loaded(selectedDate, selectedTime, selectedDuration,
+        selectedConnectorType, connectorTypes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)?
+        loaded,
+    TResult? Function(String error)? error,
+  }) {
+    return loaded?.call(selectedDate, selectedTime, selectedDuration,
+        selectedConnectorType, connectorTypes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)?
+        loaded,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(selectedDate, selectedTime, selectedDuration,
+          selectedConnectorType, connectorTypes);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DetailLoadingState value) loading,
+    required TResult Function(_DetailLoadedState value) loaded,
+    required TResult Function(_DetailErrorState value) error,
+  }) {
+    return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DetailLoadingState value)? loading,
+    TResult? Function(_DetailLoadedState value)? loaded,
+    TResult? Function(_DetailErrorState value)? error,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DetailLoadingState value)? loading,
+    TResult Function(_DetailLoadedState value)? loaded,
+    TResult Function(_DetailErrorState value)? error,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DetailLoadedState implements DetailState {
+  const factory _DetailLoadedState(
+          {final DateTime? selectedDate,
+          final String? selectedTime,
+          final int? selectedDuration,
+          final ConnectorTypeModel? selectedConnectorType,
+          final List<ConnectorTypeModel>? connectorTypes}) =
+      _$DetailLoadedStateImpl;
+
+  DateTime? get selectedDate;
+  String? get selectedTime;
+  int? get selectedDuration;
+  ConnectorTypeModel? get selectedConnectorType;
+  List<ConnectorTypeModel>? get connectorTypes;
+
+  /// Create a copy of DetailState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DetailLoadedStateImplCopyWith<_$DetailLoadedStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class __$$DetailStateImplCopyWithImpl<$Res>
-    extends _$DetailStateCopyWithImpl<$Res, _$DetailStateImpl>
-    implements _$$DetailStateImplCopyWith<$Res> {
-  __$$DetailStateImplCopyWithImpl(
-      _$DetailStateImpl _value, $Res Function(_$DetailStateImpl) _then)
+abstract class _$$DetailErrorStateImplCopyWith<$Res> {
+  factory _$$DetailErrorStateImplCopyWith(_$DetailErrorStateImpl value,
+          $Res Function(_$DetailErrorStateImpl) then) =
+      __$$DetailErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$DetailErrorStateImplCopyWithImpl<$Res>
+    extends _$DetailStateCopyWithImpl<$Res, _$DetailErrorStateImpl>
+    implements _$$DetailErrorStateImplCopyWith<$Res> {
+  __$$DetailErrorStateImplCopyWithImpl(_$DetailErrorStateImpl _value,
+      $Res Function(_$DetailErrorStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of DetailState
@@ -866,116 +1397,145 @@ class __$$DetailStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedDay = freezed,
-    Object? selectedTime = null,
-    Object? selectedDuration = null,
-    Object? selectedConnectorType = freezed,
-    Object? timeController = null,
+    Object? error = null,
   }) {
-    return _then(_$DetailStateImpl(
-      selectedDay: freezed == selectedDay
-          ? _value.selectedDay
-          : selectedDay // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      selectedTime: null == selectedTime
-          ? _value.selectedTime
-          : selectedTime // ignore: cast_nullable_to_non_nullable
+    return _then(_$DetailErrorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
               as String,
-      selectedDuration: null == selectedDuration
-          ? _value.selectedDuration
-          : selectedDuration // ignore: cast_nullable_to_non_nullable
-              as String,
-      selectedConnectorType: freezed == selectedConnectorType
-          ? _value.selectedConnectorType
-          : selectedConnectorType // ignore: cast_nullable_to_non_nullable
-              as ConnectorTypeModel?,
-      timeController: null == timeController
-          ? _value.timeController
-          : timeController // ignore: cast_nullable_to_non_nullable
-              as TextEditingController,
     ));
   }
 }
 
 /// @nodoc
 
-class _$DetailStateImpl implements _DetailState {
-  const _$DetailStateImpl(
-      {required this.selectedDay,
-      required this.selectedTime,
-      required this.selectedDuration,
-      required this.selectedConnectorType,
-      required this.timeController});
+class _$DetailErrorStateImpl implements _DetailErrorState {
+  const _$DetailErrorStateImpl(this.error);
 
   @override
-  final DateTime? selectedDay;
-  @override
-  final String selectedTime;
-  @override
-  final String selectedDuration;
-  @override
-  final ConnectorTypeModel? selectedConnectorType;
-  @override
-  final TextEditingController timeController;
+  final String error;
 
   @override
   String toString() {
-    return 'DetailState(selectedDay: $selectedDay, selectedTime: $selectedTime, selectedDuration: $selectedDuration, selectedConnectorType: $selectedConnectorType, timeController: $timeController)';
+    return 'DetailState.error(error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DetailStateImpl &&
-            (identical(other.selectedDay, selectedDay) ||
-                other.selectedDay == selectedDay) &&
-            (identical(other.selectedTime, selectedTime) ||
-                other.selectedTime == selectedTime) &&
-            (identical(other.selectedDuration, selectedDuration) ||
-                other.selectedDuration == selectedDuration) &&
-            (identical(other.selectedConnectorType, selectedConnectorType) ||
-                other.selectedConnectorType == selectedConnectorType) &&
-            (identical(other.timeController, timeController) ||
-                other.timeController == timeController));
+            other is _$DetailErrorStateImpl &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedDay, selectedTime,
-      selectedDuration, selectedConnectorType, timeController);
+  int get hashCode => Object.hash(runtimeType, error);
 
   /// Create a copy of DetailState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DetailStateImplCopyWith<_$DetailStateImpl> get copyWith =>
-      __$$DetailStateImplCopyWithImpl<_$DetailStateImpl>(this, _$identity);
+  _$$DetailErrorStateImplCopyWith<_$DetailErrorStateImpl> get copyWith =>
+      __$$DetailErrorStateImplCopyWithImpl<_$DetailErrorStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)
+        loaded,
+    required TResult Function(String error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)?
+        loaded,
+    TResult? Function(String error)? error,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(
+            DateTime? selectedDate,
+            String? selectedTime,
+            int? selectedDuration,
+            ConnectorTypeModel? selectedConnectorType,
+            List<ConnectorTypeModel>? connectorTypes)?
+        loaded,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DetailLoadingState value) loading,
+    required TResult Function(_DetailLoadedState value) loaded,
+    required TResult Function(_DetailErrorState value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DetailLoadingState value)? loading,
+    TResult? Function(_DetailLoadedState value)? loaded,
+    TResult? Function(_DetailErrorState value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DetailLoadingState value)? loading,
+    TResult Function(_DetailLoadedState value)? loaded,
+    TResult Function(_DetailErrorState value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _DetailState implements DetailState {
-  const factory _DetailState(
-      {required final DateTime? selectedDay,
-      required final String selectedTime,
-      required final String selectedDuration,
-      required final ConnectorTypeModel? selectedConnectorType,
-      required final TextEditingController timeController}) = _$DetailStateImpl;
+abstract class _DetailErrorState implements DetailState {
+  const factory _DetailErrorState(final String error) = _$DetailErrorStateImpl;
 
-  @override
-  DateTime? get selectedDay;
-  @override
-  String get selectedTime;
-  @override
-  String get selectedDuration;
-  @override
-  ConnectorTypeModel? get selectedConnectorType;
-  @override
-  TextEditingController get timeController;
+  String get error;
 
   /// Create a copy of DetailState
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DetailStateImplCopyWith<_$DetailStateImpl> get copyWith =>
+  _$$DetailErrorStateImplCopyWith<_$DetailErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

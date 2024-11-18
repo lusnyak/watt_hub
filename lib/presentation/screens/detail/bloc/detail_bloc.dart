@@ -1,37 +1,59 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
-import '../../../../domain/models/connector_type/connector_type_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
+import '../../../../domain/models/connector_type/connector_type_model.dart';
+
 part 'detail_event.dart';
+
 part 'detail_state.dart';
+
 part 'detail_bloc.freezed.dart';
+
+@injectable
 class DetailBloc extends Bloc<DetailEvent, DetailState> {
-  final TextEditingController timeController;
-  final TextEditingController commentController;
-  DetailBloc()
-      : timeController = TextEditingController(),
-        commentController=TextEditingController(),
-        super(DetailState.initial()) {
-    on<DaySelected>((event, emit) {
-      emit(state.copyWith(selectedDay: event.selectedDate));
-    });
+  final TextEditingController timeController = TextEditingController();
+  final TextEditingController commentController = TextEditingController();
 
-    on<TimeSelected>((event, emit) {
-      timeController.text = event.selectedTime;
-      emit(state.copyWith(selectedTime: event.selectedTime));
-    });
-    on<DurationSelected>((event, emit) {
-      emit(state.copyWith(selectedDuration: event.selectedDuration));
-    });
-    on<ConnectorTypeSelected>((event, emit) {
-      emit(state.copyWith(selectedConnectorType: event.selectedConnectorType));
-    });
-  }
+  DetailBloc() : super(const DetailState.loaded()) {
+    on<DetailEvent>((event, emit) async {
+      await event.map(
+        loadDetail: (_) {
 
-  @override
-  Future<void> close() {
-    timeController.dispose();
-    commentController.dispose();
-    return super.close();
+          /// zapros cinnector types
+          ///
+          // emit(const DetailState.loading());
+
+          emit(const DetailState.loaded(
+
+          ));
+        },
+        daySelected: (e) async {
+          final currentState = state;
+          if (currentState is _DetailLoadedState) {
+            emit(currentState.copyWith(selectedDate: e.selectedDate));
+          }
+        },
+        timeSelected: (e) async {
+          final currentState = state;
+          if (currentState is _DetailLoadedState) {
+            emit(currentState.copyWith(selectedTime: e.selectedTime));
+          }
+        },
+        durationSelected: (e) async {
+          final currentState = state;
+          if (currentState is _DetailLoadedState) {
+            emit(currentState.copyWith(selectedDuration: e.selectedDuration));
+          }
+        },
+        connectorTypeSelected: (e) async {
+          final currentState = state;
+          if (currentState is _DetailLoadedState) {
+            emit(currentState.copyWith(
+                selectedConnectorType: e.selectedConnectorType));
+          }
+        },
+      );
+    });
   }
 }

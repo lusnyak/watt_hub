@@ -2,19 +2,14 @@ part of 'detail_bloc.dart';
 
 @freezed
 class DetailState with _$DetailState {
-  const factory DetailState({
-    required DateTime? selectedDay,
-    required String selectedTime,
-    required String selectedDuration,
-    required ConnectorTypeModel? selectedConnectorType,
-    required TextEditingController timeController, // TextEditingController բլոկի մեջ
-  }) = _DetailState;
+  const factory DetailState.loading() = _DetailLoadingState;
+  const factory DetailState.loaded({
+     DateTime? selectedDate,
+     String? selectedTime,
+     int? selectedDuration,
+    ConnectorTypeModel? selectedConnectorType,
+    List<ConnectorTypeModel>? connectorTypes,
+  }) = _DetailLoadedState;
 
-  factory DetailState.initial() => DetailState(
-    selectedDay: null,
-    selectedTime: '',
-    selectedDuration: '',
-    selectedConnectorType: null,
-    timeController: TextEditingController(), // Ինիցիալիզացնել այստեղ
-  );
+  const factory DetailState.error(String error) = _DetailErrorState;
 }
