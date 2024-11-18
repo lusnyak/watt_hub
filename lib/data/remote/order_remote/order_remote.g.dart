@@ -145,7 +145,7 @@ class _OrderRemoteApi implements OrderRemoteApi {
     )
         .compose(
           _dio.options,
-          '/car/user/${id}',
+          '/order/${id}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -178,7 +178,7 @@ class _OrderRemoteApi implements OrderRemoteApi {
     )
         .compose(
           _dio.options,
-          '/car/user/{id}',
+          '/order/my',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -213,7 +213,7 @@ class _OrderRemoteApi implements OrderRemoteApi {
     )
         .compose(
           _dio.options,
-          '/car/user/${id}',
+          '/order/user/${id}',
           queryParameters: queryParameters,
           data: _data,
         )
