@@ -29,6 +29,7 @@ import 'package:watt_hub/data/remote/station_remote/station_remote.dart'
     as _i920;
 import 'package:watt_hub/data/remote/user_remote/user_remote.dart' as _i87;
 import 'package:watt_hub/data/repository/auth_repository.dart' as _i441;
+import 'package:watt_hub/data/repository/connector_repository.dart' as _i463;
 import 'package:watt_hub/data/repository/station_repository.dart' as _i198;
 import 'package:watt_hub/data/repository/user_repository.dart' as _i468;
 import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.dart'
@@ -85,6 +86,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i441.AuthRepository>(() => _i441.AuthRepository());
     gh.lazySingleton<_i198.StationRepository>(() => _i198.StationRepository());
     gh.lazySingleton<_i468.UserRepository>(() => _i468.UserRepository());
+    gh.lazySingleton<_i463.ConnectorRepository>(
+        () => _i463.ConnectorRepository());
     gh.factory<_i231.TokenStorage>(() => _i957.TokenStorageImpl());
     gh.lazySingleton<_i1029.AuthRemoteApi>(
         () => _i1029.AuthRemoteApi(gh<_i361.Dio>()));
