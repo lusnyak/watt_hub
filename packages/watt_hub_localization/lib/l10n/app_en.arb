@@ -51,11 +51,6 @@
   "connectorType": "Connector Type",
   "contact": "Contact",
   "select": "Select",
-
-
-
-   
-   
   "chooseAddress":"Choose an address",
   "timePicker":"Time picker",
   "startTime":"Start time",
@@ -77,8 +72,7 @@
   "noLocationSelected":"No location selected. Please tap on the map.",
   "addCar": "Add Car",
   "carType": "Car Type",
-  "carModel": "Car Model"
-
-
+  "carModel": "Car Model",
+  "addCarImage":"Add car image"
 }
 

@@ -517,6 +517,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Car Model'**
   String get carModel;
+
+  /// No description provided for @addCarImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Add car image'**
+  String get addCarImage;
 }
 
 class _AppLocalizationsDelegate
