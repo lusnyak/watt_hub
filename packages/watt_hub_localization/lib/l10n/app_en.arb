@@ -102,5 +102,6 @@
   "unknown": "Unknown",
   "addCar": "Add Car",
   "carType": "Car Type",
-  "carModel": "Car Model"
+  "carModel": "Car Model",
+  "addCarImage":"Add car image"
 }

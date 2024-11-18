@@ -267,4 +267,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get carModel => 'Car Model';
+
+  @override
+  String get addCarImage => 'Add car image';
 }

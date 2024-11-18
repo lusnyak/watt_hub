@@ -268,4 +268,7 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get carModel => 'Մեքենայի մոդելը';
+
+  @override
+  String get addCarImage => 'Ավելացնել մեքենայի պատկերը';
 }

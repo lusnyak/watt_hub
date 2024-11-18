@@ -29,7 +29,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         emit(ProfileState.loaded(
             userData: myUserData,
             stationsData: myStationData,
-            carsData: myCarData));
+            carsData: []));
       } catch (error) {
         emit(ProfileState.error(error.toString())); // Emit error state
       }
