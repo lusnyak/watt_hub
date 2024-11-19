@@ -1,6 +1,4 @@
 import 'dart:io';
-
-
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/fake_data/car_models_data/car_models_data.dart';
 import 'package:watt_hub/data/fake_data/car_types_data/car_types_data.dart';
