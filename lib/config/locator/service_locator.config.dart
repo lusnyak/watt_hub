@@ -43,6 +43,8 @@ import 'package:watt_hub/presentation/screens/onboarding/bloc/onboarding_bloc.da
     as _i764;
 import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart'
     as _i177;
+import 'package:watt_hub/presentation/screens/profile_detail/bloc/profile_detail_bloc.dart'
+    as _i593;
 import 'package:watt_hub/presentation/screens/requests/bloc/requests_bloc.dart'
     as _i845;
 import 'package:watt_hub/presentation/screens/sign_up/bloc/sign_up_bloc.dart'
@@ -73,6 +75,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
     gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
     gh.factory<_i177.ProfileBloc>(() => _i177.ProfileBloc());
+    gh.factory<_i593.ProfileDetailBloc>(() => _i593.ProfileDetailBloc());
     gh.factory<_i845.RequestsBloc>(() => _i845.RequestsBloc());
     gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
     gh.factory<_i400.StationInfoBloc>(() => _i400.StationInfoBloc());

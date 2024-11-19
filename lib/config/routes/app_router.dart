@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
+import 'package:watt_hub/domain/models/user/user_model.dart';
 import 'package:watt_hub/presentation/screens/add_car/add_car_screen.dart';
 import 'package:watt_hub/presentation/screens/add_station/add_station_screen.dart';
 import 'package:watt_hub/presentation/screens/app_loading/app_loading_screen.dart';
@@ -9,7 +10,7 @@ import 'package:watt_hub/presentation/screens/detail/detail_screen.dart';
 import 'package:watt_hub/presentation/screens/filter/filter_screen.dart';
 import 'package:watt_hub/presentation/screens/home/home_screen.dart';
 import 'package:watt_hub/presentation/screens/onboarding/onboarding_screen.dart';
-import 'package:watt_hub/presentation/screens/profile/profile_detail_screen.dart';
+import 'package:watt_hub/presentation/screens/profile_detail/profile_detail_screen.dart';
 import 'package:watt_hub/presentation/screens/profile/profile_screen.dart';
 import 'package:watt_hub/presentation/screens/requests/requests_screen.dart';
 import 'package:watt_hub/presentation/screens/sign_up/sign_up_screen.dart';

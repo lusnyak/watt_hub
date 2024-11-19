@@ -15,7 +15,7 @@ class SharedPreferencesService {
 
   bool onBoardingLaunch() =>
       _sharedPrefs?.getBool(SharedPreferencesService.onBoardingLaunchKey) ??
-          false;
+      false;
 
   setOnBoardingLaunch(bool value) async => await _sharedPrefs?.setBool(
       SharedPreferencesService.onBoardingLaunchKey, value);
