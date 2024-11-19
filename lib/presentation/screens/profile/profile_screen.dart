@@ -98,4 +98,115 @@ class _ProfileView extends StatelessWidget {
       }),
     );
   }
+
+  Column _profileMenuItems(BuildContext context) {
+    return Column(
+      children: [
+        ProfileMenuItem(
+          title: context.localized.helpCenter,
+          iconLeading: Icons.sticky_note_2_outlined,
+          onTap: () {},
+          iconTrailing: Icons.chevron_right_outlined,
+        ),
+        ProfileMenuItem(
+          title: context.localized.privacyPolicy,
+          iconLeading: Icons.lock_outline_sharp,
+          onTap: () async {
+            await launchURL(AppConstants.privacyPolicyUrl);
+          },
+          iconTrailing: Icons.chevron_right_outlined,
+        ),
+        ProfileMenuItem(
+          title: context.localized.about,
+          iconLeading: Icons.info_outlined,
+          onTap: () {},
+          iconTrailing: Icons.chevron_right_outlined,
+        ),
+        ProfileMenuItem(
+          title: context.localized.logout,
+          iconLeading: Icons.logout_rounded,
+          onTap: () async {
+            await getIt<FilterStorage>().deleteFilterData();
+            await getIt<TokenStorage>().deleteToken();
+
+            if (context.mounted) {
+              context.router.replace(const SignUpRoute());
+            }
+          },
+
+          /// TODO: -- implement logout - Marieta
+          colorTile: WattHubColors.redColor,
+        ),
+      ],
+    );
+  }
+
+  Widget _infoSection(BuildContext context, UserModel profileData) {
+    return ListTile(
+      splashColor: WattHubColors.primaryLightGreenColor,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+      contentPadding: paddingV20,
+      onTap: () {
+        context.router.push(ProfileDetailRoute(userData: profileData));
+      },
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(profileData.fullName ?? '', style: body16SemiBoldTextStyle),
+          12.h.heightBox,
+          Text(profileData.phoneNumber ?? '', style: body14RegularTextStyle),
+        ],
+      ),
+      horizontalTitleGap: 20,
+      dense: true,
+      visualDensity: const VisualDensity(vertical: 4, horizontal: 4),
+      leading: WhCircleAvatar(
+        image: WattHubAssets.images.profileImage.keyName,
+      ),
+      trailing: Icon(
+        Icons.chevron_right_outlined,
+        size: 40.sp,
+      ),
+    );
+  }
+
+  Widget _stationSection(
+      BuildContext context, List<StationModel>? stationsData) {
+    return ConditionalExpansionTile(
+        title: context.localized.myStation,
+        iconLeading: Icons.charging_station_outlined,
+        children: [
+          if (stationsData != null && stationsData.isNotEmpty)
+            // StationInfoList(
+            //   stationsData: stationsData,
+            // ),
+            StationsList.slidable(
+              dataList: stationsData,
+            ),
+        ],
+        onTap: () {
+          if (stationsData!.isEmpty) {
+            AutoRouter.of(context).push(const AddStationRoute());
+          }
+        });
+  }
+
+  Widget _carSection(BuildContext context, List<CarModel>? carsData) {
+    return ConditionalExpansionTile(
+      title: context.localized.myCar,
+      iconLeading: Icons.local_taxi_sharp,
+      children: [
+        if (carsData != null && carsData.isNotEmpty)
+          StationsList.slidable(
+            dataList: carsData,
+            isCar: true,
+          ),
+      ],
+      onTap: () {
+        if (carsData!.isEmpty) {
+          AutoRouter.of(context).push(const AddCarRoute());
+        }
+      },
+    );
+  }
 }
