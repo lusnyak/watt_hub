@@ -17,7 +17,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> retrieveData(BuildContext context) async {
     if (!context.mounted) return;
-    bool? isOnBoard = SharedPreferencesService.instance.onBoardingLaunch();
+    bool isOnBoard = SharedPreferencesService.instance.onBoardingLaunch();
     if (isOnBoard) {
       AutoRouter.of(context).replace(const SignUpRoute());
     } else {
