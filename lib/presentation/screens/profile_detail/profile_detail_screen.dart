@@ -60,6 +60,7 @@ class ProfileDetailView extends StatelessWidget {
         );
       }, builder: (context, state) {
         final profileDetailState = context.read<ProfileDetailBloc>();
+
         return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
