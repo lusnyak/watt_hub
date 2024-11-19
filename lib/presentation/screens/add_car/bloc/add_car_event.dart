@@ -8,7 +8,6 @@ class AddCarEvent with _$AddCarEvent {
 
   const factory AddCarEvent.loadConnectors() = _LoadConnectorsEvent;
 
-
   const factory AddCarEvent.imagesSelected(File images) = _ImagesSelectedEvent;
 
   const factory AddCarEvent.removeImages() = _removeImagesEvent;

@@ -6,7 +6,6 @@ import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
 import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
-
 import '../add_station/widgets/image_picker_upload_button.dart';
 import 'bloc/add_car_bloc.dart';
 
