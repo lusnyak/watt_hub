@@ -32,11 +32,11 @@ class _AppLoadingView extends StatelessWidget {
               //     context.router.replace(const HomeRoute());
               //   }
               // },
-              loadToOnboarding: () {
-                context.router.replace(const OnboardingRoute());
-              },
               loadToHome: () {
                 context.router.replace(const HomeRoute());
+              },
+              loadToOnboarding: () {
+                context.router.replace(const OnboardingRoute());
               },
               loadToSignIn: () {
                 context.router.replace(const SignUpRoute());
@@ -63,7 +63,12 @@ class _AppLoadingView extends StatelessWidget {
                 24.h.heightBox,
                 state.maybeWhen(
                     orElse: () => const SizedBox.shrink(),
-                    noConnection: () =>   Text("WattHub our application uses the Internet. Please check your connection and try again!", textAlign: TextAlign.center, style: body18MediumTextStyle.copyWith(color: WattHubColors.redColor),).paddingSymmetric(horizontal: 20.w),
+                    noConnection: () => Text(
+                          "WattHub our application uses the Internet. Please check your connection and try again!",
+                          textAlign: TextAlign.center,
+                          style: body18MediumTextStyle.copyWith(
+                              color: WattHubColors.redColor),
+                        ).paddingSymmetric(horizontal: 20.w),
                     loading: () => const WHCircularSpin()),
               ],
             ).toCenter();

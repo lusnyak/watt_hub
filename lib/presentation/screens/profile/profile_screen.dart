@@ -101,6 +101,10 @@ class _ProfileView extends StatelessWidget {
           onTap: () async {
             await getIt<FilterStorage>().deleteFilterData();
             await getIt<TokenStorage>().deleteToken();
+
+            if (context.mounted) {
+              context.router.replace(const SignUpRoute());
+            }
           },
 
           /// TODO: -- implement logout - Marieta
@@ -116,7 +120,7 @@ class _ProfileView extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
       contentPadding: paddingV20,
       onTap: () {
-        AutoRouter.of(context).push(const ProfileDetailRoute());
+        context.router.push(ProfileDetailRoute(userData: profileData));
       },
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
