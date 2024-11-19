@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class WHAnimatedSmoothIndicator extends StatelessWidget {
@@ -9,9 +10,11 @@ class WHAnimatedSmoothIndicator extends StatelessWidget {
   final double dotHeight;
   final double dotWidth;
   final double spacing;
+  final PageController? controller;
 
   const WHAnimatedSmoothIndicator({
     super.key,
+    this.controller,
     required this.activeIndex,
     required this.count,
     this.activeDotColor = WattHubColors.primaryGreenColor,

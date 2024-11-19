@@ -16,3 +16,9 @@ RoundedRectangleBorder get roundedBorderShape14 =>
     RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.r));
 BorderRadiusGeometry get roundedBorder14 => BorderRadius.circular(14.r);
 BorderRadiusGeometry get roundedBorder50 => BorderRadius.circular(50.r);
+
+BorderRadius get leftRoundedBorder => BorderRadius.only(
+    bottomLeft: Radius.circular(15.r), topLeft: Radius.circular(15.r));
+
+BorderRadius get rightRoundedBorder => BorderRadius.only(
+    bottomRight: Radius.circular(15.r), topRight: Radius.circular(15.r));

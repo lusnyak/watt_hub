@@ -6,6 +6,11 @@ import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:watt_hub/presentation/widgets/station_list_item.dart';
 
+// context.read<HomeBloc>().add(
+// HomeEvent.centerOnStation(stationItem, currentLocation),
+// )
+
+/// TODO: Refactoring - Marieta
 class StationsList extends StatelessWidget {
   final List<StationModel> stationsList;
   final LatLng? currentLocation;

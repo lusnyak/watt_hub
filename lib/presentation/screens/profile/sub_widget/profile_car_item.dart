@@ -14,47 +14,39 @@ class ProfileCarItem extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: roundedBorder14,
           border: Border.all(color: WattHubColors.primaryLightGreenColor)),
-      child: Column(
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: WHSlidable(
+          behindActionIcon: Icons.edit,
+          endActionIcon: Icons.delete,
+          slidableItem: Column(
             children: [
-              Column(
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    context.localized.carInfo,
-                    style: body16SemiBoldTextStyle,
-                  ).paddingOnly(bottom: 10.sp),
-                  Text(carData.carModel.title),
-                  Text(carData.carType.title ?? ""),
-                  Text(carData.connectorType.title ?? ""),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        context.localized.carInfo,
+                        style: body16SemiBoldTextStyle,
+                      ).paddingOnly(bottom: 10.sp),
+                      Text("${carData.carModel.title} . ${carData.carType.title}"),
+                      Text(carData.carType.title ?? ""),
+                      Text(carData.connectorType.title ?? ""),
+                    ],
+                  ).expanded(),
+                  SizedBox(
+                    width: 50.w,
+                    height: 50.h,
+                    child: Image.network(
+                      carData.images.first,
+                    ),
+                    // child: WattHubAssets.images.profileImage.image(),
+                  )
                 ],
-              ).expanded(),
-              SizedBox(
-                width: 50.w,
-                height: 50.h,
-                child: Image.network(
-                  carData.images.first,
-                ),
-                // child: WattHubAssets.images.profileImage.image(),
-              )
-            ],
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              const InkWell(
-                child: Icon(Icons.mode_edit_outlined),
               ),
-              20.widthBox,
-              const InkWell(child: Icon(Icons.delete_outline_outlined)),
             ],
-          )
-        ],
-      ),
+          )),
     ).paddingOnly(bottom: 10);
   }
 }

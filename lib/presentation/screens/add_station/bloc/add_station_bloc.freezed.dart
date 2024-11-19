@@ -2227,6 +2227,7 @@ mixin _$AddStationState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() loadCreateStation,
     required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
@@ -2247,6 +2248,7 @@ mixin _$AddStationState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? loadCreateStation,
     TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
@@ -2267,6 +2269,7 @@ mixin _$AddStationState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? loadCreateStation,
     TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
@@ -2288,7 +2291,8 @@ mixin _$AddStationState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadCreateStationState value) loadCreateStation,
+    required TResult Function(ErrorState value) error,
     required TResult Function(_LoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -2296,7 +2300,8 @@ mixin _$AddStationState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult? Function(ErrorState value)? error,
     TResult? Function(_LoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -2304,7 +2309,8 @@ mixin _$AddStationState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult Function(ErrorState value)? error,
     TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) =>
@@ -2375,6 +2381,7 @@ class _$InitialStateImpl implements _InitialState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() loadCreateStation,
     required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
@@ -2398,6 +2405,7 @@ class _$InitialStateImpl implements _InitialState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? loadCreateStation,
     TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
@@ -2421,6 +2429,7 @@ class _$InitialStateImpl implements _InitialState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? loadCreateStation,
     TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
@@ -2448,7 +2457,8 @@ class _$InitialStateImpl implements _InitialState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadCreateStationState value) loadCreateStation,
+    required TResult Function(ErrorState value) error,
     required TResult Function(_LoadedState value) loaded,
   }) {
     return initial(this);
@@ -2459,7 +2469,8 @@ class _$InitialStateImpl implements _InitialState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult? Function(ErrorState value)? error,
     TResult? Function(_LoadedState value)? loaded,
   }) {
     return initial?.call(this);
@@ -2470,7 +2481,8 @@ class _$InitialStateImpl implements _InitialState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult Function(ErrorState value)? error,
     TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
@@ -2528,6 +2540,7 @@ class _$LoadingStateImpl implements _LoadingState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() loadCreateStation,
     required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
@@ -2551,6 +2564,7 @@ class _$LoadingStateImpl implements _LoadingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? loadCreateStation,
     TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
@@ -2574,6 +2588,7 @@ class _$LoadingStateImpl implements _LoadingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? loadCreateStation,
     TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
@@ -2601,7 +2616,8 @@ class _$LoadingStateImpl implements _LoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadCreateStationState value) loadCreateStation,
+    required TResult Function(ErrorState value) error,
     required TResult Function(_LoadedState value) loaded,
   }) {
     return loading(this);
@@ -2612,7 +2628,8 @@ class _$LoadingStateImpl implements _LoadingState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult? Function(ErrorState value)? error,
     TResult? Function(_LoadedState value)? loaded,
   }) {
     return loading?.call(this);
@@ -2623,7 +2640,8 @@ class _$LoadingStateImpl implements _LoadingState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult Function(ErrorState value)? error,
     TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
@@ -2636,6 +2654,168 @@ class _$LoadingStateImpl implements _LoadingState {
 
 abstract class _LoadingState implements AddStationState {
   const factory _LoadingState() = _$LoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadCreateStationStateImplCopyWith<$Res> {
+  factory _$$LoadCreateStationStateImplCopyWith(
+          _$LoadCreateStationStateImpl value,
+          $Res Function(_$LoadCreateStationStateImpl) then) =
+      __$$LoadCreateStationStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadCreateStationStateImplCopyWithImpl<$Res>
+    extends _$AddStationStateCopyWithImpl<$Res, _$LoadCreateStationStateImpl>
+    implements _$$LoadCreateStationStateImplCopyWith<$Res> {
+  __$$LoadCreateStationStateImplCopyWithImpl(
+      _$LoadCreateStationStateImpl _value,
+      $Res Function(_$LoadCreateStationStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AddStationState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadCreateStationStateImpl implements _LoadCreateStationState {
+  const _$LoadCreateStationStateImpl();
+
+  @override
+  String toString() {
+    return 'AddStationState.loadCreateStation()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadCreateStationStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loadCreateStation,
+    required TResult Function(String message) error,
+    required TResult Function(
+            List<ConnectorTypeModel> connectors,
+            ConnectorTypeModel? selectedConnectors,
+            List<ConnectorTypeModel> selectedList,
+            ConnectorTypeModel? selected,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)
+        loaded,
+  }) {
+    return loadCreateStation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loadCreateStation,
+    TResult? Function(String message)? error,
+    TResult? Function(
+            List<ConnectorTypeModel> connectors,
+            ConnectorTypeModel? selectedConnectors,
+            List<ConnectorTypeModel> selectedList,
+            ConnectorTypeModel? selected,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
+        loaded,
+  }) {
+    return loadCreateStation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loadCreateStation,
+    TResult Function(String message)? error,
+    TResult Function(
+            List<ConnectorTypeModel> connectors,
+            ConnectorTypeModel? selectedConnectors,
+            List<ConnectorTypeModel> selectedList,
+            ConnectorTypeModel? selected,
+            int? initialSelectedConnectorId,
+            List<File>? images,
+            DateTime? startTime,
+            DateTime? endTime,
+            String? address,
+            double? latitude,
+            double? longitude)?
+        loaded,
+    required TResult orElse(),
+  }) {
+    if (loadCreateStation != null) {
+      return loadCreateStation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialState value) initial,
+    required TResult Function(_LoadingState value) loading,
+    required TResult Function(_LoadCreateStationState value) loadCreateStation,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(_LoadedState value) loaded,
+  }) {
+    return loadCreateStation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialState value)? initial,
+    TResult? Function(_LoadingState value)? loading,
+    TResult? Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(_LoadedState value)? loaded,
+  }) {
+    return loadCreateStation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialState value)? initial,
+    TResult Function(_LoadingState value)? loading,
+    TResult Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult Function(ErrorState value)? error,
+    TResult Function(_LoadedState value)? loaded,
+    required TResult orElse(),
+  }) {
+    if (loadCreateStation != null) {
+      return loadCreateStation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadCreateStationState implements AddStationState {
+  const factory _LoadCreateStationState() = _$LoadCreateStationStateImpl;
 }
 
 /// @nodoc
@@ -2673,7 +2853,7 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorStateImpl implements _ErrorState {
+class _$ErrorStateImpl implements ErrorState {
   const _$ErrorStateImpl(this.message);
 
   @override
@@ -2708,6 +2888,7 @@ class _$ErrorStateImpl implements _ErrorState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() loadCreateStation,
     required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
@@ -2731,6 +2912,7 @@ class _$ErrorStateImpl implements _ErrorState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? loadCreateStation,
     TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
@@ -2754,6 +2936,7 @@ class _$ErrorStateImpl implements _ErrorState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? loadCreateStation,
     TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
@@ -2781,7 +2964,8 @@ class _$ErrorStateImpl implements _ErrorState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadCreateStationState value) loadCreateStation,
+    required TResult Function(ErrorState value) error,
     required TResult Function(_LoadedState value) loaded,
   }) {
     return error(this);
@@ -2792,7 +2976,8 @@ class _$ErrorStateImpl implements _ErrorState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult? Function(ErrorState value)? error,
     TResult? Function(_LoadedState value)? loaded,
   }) {
     return error?.call(this);
@@ -2803,7 +2988,8 @@ class _$ErrorStateImpl implements _ErrorState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult Function(ErrorState value)? error,
     TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
@@ -2814,8 +3000,8 @@ class _$ErrorStateImpl implements _ErrorState {
   }
 }
 
-abstract class _ErrorState implements AddStationState {
-  const factory _ErrorState(final String message) = _$ErrorStateImpl;
+abstract class ErrorState implements AddStationState {
+  const factory ErrorState(final String message) = _$ErrorStateImpl;
 
   String get message;
 
@@ -3075,6 +3261,7 @@ class _$LoadedStateImpl implements _LoadedState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() loadCreateStation,
     required TResult Function(String message) error,
     required TResult Function(
             List<ConnectorTypeModel> connectors,
@@ -3109,6 +3296,7 @@ class _$LoadedStateImpl implements _LoadedState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? loadCreateStation,
     TResult? Function(String message)? error,
     TResult? Function(
             List<ConnectorTypeModel> connectors,
@@ -3143,6 +3331,7 @@ class _$LoadedStateImpl implements _LoadedState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? loadCreateStation,
     TResult Function(String message)? error,
     TResult Function(
             List<ConnectorTypeModel> connectors,
@@ -3181,7 +3370,8 @@ class _$LoadedStateImpl implements _LoadedState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(_LoadCreateStationState value) loadCreateStation,
+    required TResult Function(ErrorState value) error,
     required TResult Function(_LoadedState value) loaded,
   }) {
     return loaded(this);
@@ -3192,7 +3382,8 @@ class _$LoadedStateImpl implements _LoadedState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult? Function(ErrorState value)? error,
     TResult? Function(_LoadedState value)? loaded,
   }) {
     return loaded?.call(this);
@@ -3203,7 +3394,8 @@ class _$LoadedStateImpl implements _LoadedState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(_LoadCreateStationState value)? loadCreateStation,
+    TResult Function(ErrorState value)? error,
     TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {

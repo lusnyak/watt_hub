@@ -34,11 +34,10 @@ class _ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: BlocBuilder<ProfileBloc, ProfileState>(builder: (context, state) {
         return state.when(
             initial: () => const SizedBox.shrink(),
-            loading: () => const Center(child: WHCircularSpin()),
+            loading: () => const WHCircularSpin().toCenter(),
             error: (message) => Center(child: Text('Error: $message')),
             loaded: (
               profileData,
@@ -48,14 +47,13 @@ class _ProfileView extends StatelessWidget {
               return SafeArea(
                 child: SingleChildScrollView(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
                         context.localized.account,
                         textAlign: TextAlign.start,
                         style: body24SemiBoldTextStyle,
-                      ).paddingLTRB(0.sp, 20.sp, 20.sp, 20.sp),
+                      ).paddingLTRB(0, 20.h, 20.w, 20.h),
                       ListTile(
                         splashColor: WattHubColors.primaryLightGreenColor,
                         shape: RoundedRectangleBorder(
@@ -90,12 +88,22 @@ class _ProfileView extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
+                        // leading: Container(
+                        //   width: 60.r,
+                        //   height: 60.r,
+                        //   decoration: const BoxDecoration(
+                        //     color: WattHubColors.primaryLightGreenColor1,
+                        //     // image: DecorationImage(image: AssetImage(WattHubAssets.images.profileImage.keyName), fit: BoxFit.cover),
+                        //     shape: BoxShape.circle,
+                        //   ),
+                        //   child: Icon(Icons.person, color: WattHubColors.primaryGreenColor, size: 32.r,),
+                        // ),
                         trailing: Icon(
                           Icons.chevron_right_outlined,
                           size: 40.sp,
                         ),
                       ),
-                      const ProfileMenuDivider(),
+                      const Divider(),
                       ConditionalExpansionTile(
                           title: context.localized.myCar,
                           iconLeading: Icons.local_taxi_sharp,
@@ -125,11 +133,12 @@ class _ProfileView extends StatelessWidget {
                                   .push(const AddStationRoute());
                             }
                           }),
-                      const ProfileMenuDivider(),
+                      // const ProfileMenuDivider(),
+                      const Divider(),
                       ProfileMenuItem(
                         title: context.localized.helpCenter,
                         iconLeading: Icons.sticky_note_2_outlined,
-                        onTap: () => {},
+                        onTap: () {},
                         iconTrailing: Icons.chevron_right_outlined,
                       ),
                       ProfileMenuItem(
@@ -143,21 +152,22 @@ class _ProfileView extends StatelessWidget {
                       ProfileMenuItem(
                         title: context.localized.about,
                         iconLeading: Icons.info_outlined,
-                        onTap: () => {},
+                        onTap: () {},
                         iconTrailing: Icons.chevron_right_outlined,
                       ),
                       ProfileMenuItem(
                         title: context.localized.logout,
                         iconLeading: Icons.logout_rounded,
-                        onTap: () => {},
+                        onTap: ()  {}, /// TODO: -- implement logout - Marieta
                         colorTile: WattHubColors.redColor,
                       ),
                     ],
-                  ).paddingAll(24.0.sp),
+                  ).paddingAll(20.r),
                 ),
               );
             });
       }),
     );
   }
+
 }

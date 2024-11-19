@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:latlong2/latlong.dart';
-import '../../../../config/config.dart';
+import 'package:watt_hub/config/config.dart';
+// import '../../../../config/config.dart';
 import '../../../../utils/helpers/location_helper.dart';
 
 part 'choose_station_address_state.dart';
@@ -13,6 +14,8 @@ part 'choose_station_address_bloc.freezed.dart';
 @injectable
 class ChooseStationAddressBloc
     extends Bloc<ChooseStationAddressEvent, ChooseStationAddressState> {
+  /// TODO: - Vlad - texapoxel state (ChooseStationAddressState) mej
+  ///
   LatLng? clickedLocation;
 
   final LocationManager _locationManager = LocationManager();
@@ -66,6 +69,7 @@ class ChooseStationAddressBloc
     });
   }
 
+  /// TODO: - arandznacnel arandzin helper kam extensioni mej (geolocator)
   Future<String?> getAddress(double latitude, double longitude) async {
     try {
       List<Placemark> placemarks =

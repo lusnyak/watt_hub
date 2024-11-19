@@ -352,25 +352,6 @@ class UikitExampleRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [VehicleListScreen]
-class VehicleListRoute extends PageRouteInfo<void> {
-  const VehicleListRoute({List<PageRouteInfo>? children})
-      : super(
-          VehicleListRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'VehicleListRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const VehicleListScreen();
-    },
-  );
-}
-
-/// generated route for
 /// [VerificationScreen]
 class VerificationRoute extends PageRouteInfo<VerificationRouteArgs> {
   VerificationRoute({
