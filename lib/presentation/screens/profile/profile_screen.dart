@@ -6,7 +6,6 @@ import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/car_info_list.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/conditional_expansion_tile.dart';
-import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_divider.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_item.dart';
 import 'package:watt_hub/presentation/screens/profile/sub_widget/station_info_list.dart';
 import 'package:watt_hub/utils/constants/constants.dart';
@@ -158,7 +157,9 @@ class _ProfileView extends StatelessWidget {
                       ProfileMenuItem(
                         title: context.localized.logout,
                         iconLeading: Icons.logout_rounded,
-                        onTap: ()  {}, /// TODO: -- implement logout - Marieta
+                        onTap: () {},
+
+                        /// TODO: -- implement logout - Marieta
                         colorTile: WattHubColors.redColor,
                       ),
                     ],
@@ -169,5 +170,4 @@ class _ProfileView extends StatelessWidget {
       }),
     );
   }
-
 }
