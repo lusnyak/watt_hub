@@ -54,14 +54,20 @@ class _HomeView extends StatelessWidget {
                   currentLocation,
                   isMapReady,
                 ) {
+                  debugPrint('${stations.runtimeType} stations.runtimeType');
                   return isList
                       ? MapContainer(
                           chargingStations: stations,
                           currentLocation: currentLocation,
                         )
                       : StationsList(
-                          stationsList: stations,
-                          currentLocation: currentLocation,
+                          dataList: stations,
+                          onTap: (stationItem) {
+                            context.read<HomeBloc>().add(
+                                  HomeEvent.centerOnStation(
+                                      stationItem, currentLocation),
+                                );
+                          },
                         );
                 },
               );
