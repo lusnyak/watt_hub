@@ -60,15 +60,10 @@ class ProfileDetailView extends StatelessWidget {
         );
       }, builder: (context, state) {
         final profileDetailState = context.read<ProfileDetailBloc>();
-        final profileData = state.maybeMap(
-          orElse: () => null,
-          loaded: (user) => user,
-        );
         return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text('${profileData?.user.fullName}'),
               WHImagePicker.single(
                 /// TODO: - separate to uikit element - done
                 child: WhCircleAvatar(
