@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watt_hub/domain/models/car_model/car_model.dart';
 import 'package:watt_hub/domain/models/station/station_model.dart';
-import 'package:watt_hub/presentation/screens/profile/widgets/profile_car_item.dart';
+import 'package:watt_hub/presentation/widgets/profile_car_item.dart';
 import 'package:watt_hub/presentation/widgets/station_list_item.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
