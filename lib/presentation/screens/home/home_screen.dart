@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/config/routes/app_router.dart';
 import 'package:watt_hub/config/locator/service_locator.dart';
-import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:watt_hub/presentation/screens/home/widgets/map_container.dart';
 import 'package:watt_hub/presentation/widgets/stations_list.dart';
