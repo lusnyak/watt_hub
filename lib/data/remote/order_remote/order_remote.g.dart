@@ -24,32 +24,19 @@ class _OrderRemoteApi implements OrderRemoteApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-<<<<<<< HEAD
   Future<dynamic> orderCancelled(int id) async {
-=======
-  Future<OrderModel?> getOrderById(String id) async {
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-<<<<<<< HEAD
     final _options = _setStreamType<dynamic>(Options(
       method: 'PUT',
-=======
-    final _options = _setStreamType<OrderModel>(Options(
-      method: 'GET',
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-<<<<<<< HEAD
           '/order/${id}/cancelled',
-=======
-          '/car/user/${id}',
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
           queryParameters: queryParameters,
           data: _data,
         )
@@ -58,49 +45,25 @@ class _OrderRemoteApi implements OrderRemoteApi {
           _dio.options.baseUrl,
           baseUrl,
         )));
-<<<<<<< HEAD
     final _result = await _dio.fetch(_options);
     final _value = _result.data;
-=======
-    final _result = await _dio.fetch<Map<String, dynamic>?>(_options);
-    late OrderModel? _value;
-    try {
-      _value = _result.data == null ? null : OrderModel.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
     return _value;
   }
 
   @override
-<<<<<<< HEAD
   Future<dynamic> orderDeclined(int id) async {
-=======
-  Future<List<OrderModel>?> getMyOrder() async {
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-<<<<<<< HEAD
     final _options = _setStreamType<dynamic>(Options(
       method: 'PUT',
-=======
-    final _options = _setStreamType<List<OrderModel>>(Options(
-      method: 'GET',
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-<<<<<<< HEAD
           '/order/${id}/declined',
-=======
-          '/car/user/{id}',
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
           queryParameters: queryParameters,
           data: _data,
         )
@@ -109,51 +72,25 @@ class _OrderRemoteApi implements OrderRemoteApi {
           _dio.options.baseUrl,
           baseUrl,
         )));
-<<<<<<< HEAD
     final _result = await _dio.fetch(_options);
     final _value = _result.data;
-=======
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<OrderModel>? _value;
-    try {
-      _value = _result.data
-          ?.map((dynamic i) => OrderModel.fromJson(i as Map<String, dynamic>))
-          .toList();
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
     return _value;
   }
 
   @override
-<<<<<<< HEAD
   Future<dynamic> orderUpdate(int id) async {
-=======
-  Future<List<OrderModel>?> getUserOrders(String id) async {
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-<<<<<<< HEAD
     final _options = _setStreamType<dynamic>(Options(
       method: 'PUT',
-=======
-    final _options = _setStreamType<List<OrderModel>>(Options(
-      method: 'GET',
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-<<<<<<< HEAD
           '/order/${id}',
-=======
-          '/car/user/${id}',
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
           queryParameters: queryParameters,
           data: _data,
         )
@@ -162,7 +99,6 @@ class _OrderRemoteApi implements OrderRemoteApi {
           _dio.options.baseUrl,
           baseUrl,
         )));
-<<<<<<< HEAD
     final _result = await _dio.fetch(_options);
     final _value = _result.data;
     return _value;
@@ -193,7 +129,64 @@ class _OrderRemoteApi implements OrderRemoteApi {
         )));
     final _result = await _dio.fetch(_options);
     final _value = _result.data;
-=======
+    return _value;
+  }
+
+  @override
+  Future<OrderModel?> getOrderById(String id) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<OrderModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/car/user/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>?>(_options);
+    late OrderModel? _value;
+    try {
+      _value = _result.data == null ? null : OrderModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<List<OrderModel>?> getMyOrder() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<OrderModel>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/car/user/{id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
     final _result = await _dio.fetch<List<dynamic>>(_options);
     late List<OrderModel>? _value;
     try {
@@ -204,7 +197,41 @@ class _OrderRemoteApi implements OrderRemoteApi {
       errorLogger?.logError(e, s, _options);
       rethrow;
     }
->>>>>>> aa449d766be275154376c3fb6bf92529b3c2e397
+    return _value;
+  }
+
+  @override
+  Future<List<OrderModel>?> getUserOrders(String id) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<OrderModel>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/car/user/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<OrderModel>? _value;
+    try {
+      _value = _result.data
+          ?.map((dynamic i) => OrderModel.fromJson(i as Map<String, dynamic>))
+          .toList();
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 

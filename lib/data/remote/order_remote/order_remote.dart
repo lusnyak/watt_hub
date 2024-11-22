@@ -31,12 +31,12 @@ abstract class OrderRemoteApi {
   @POST(EndPoints.createOrder)
   Future<dynamic> addOrder(@Body() AddOrderModel orderData);
 
-  @GET(EndPoints.getUserCars)
+  @GET(EndPoints.orderId)
   Future<OrderModel?> getOrderById(@Path("id") String id);
 
-  @GET(EndPoints.getUserCars)
+  @GET(EndPoints.orderMy)
   Future<List<OrderModel>?> getMyOrder();
 
-  @GET(EndPoints.getUserCars)
+  @GET(EndPoints.userOrder)
   Future<List<OrderModel>?> getUserOrders(@Path("id") String id);
 }
