@@ -20,20 +20,24 @@ OrderModel _$OrderModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OrderModel {
-  int? get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  UserModel? get creator => throw _privateConstructorUsedError;
+  CarModel? get car => throw _privateConstructorUsedError;
+  @JsonKey(name: 'station')
+  StationModel? get station => throw _privateConstructorUsedError;
+  @JsonKey(name: 'status')
+  OrderStatus? get status => throw _privateConstructorUsedError;
+  double? get price => throw _privateConstructorUsedError;
   @JsonKey(name: 'order_time')
   DateTime? get orderTime => throw _privateConstructorUsedError;
   @JsonKey(name: 'expected_hour')
   double? get expectedHour => throw _privateConstructorUsedError;
+  String? get comment => throw _privateConstructorUsedError;
+  String? get reason => throw _privateConstructorUsedError;
   @JsonKey(name: 'connector_type')
   ConnectorTypeModel? get connectorType => throw _privateConstructorUsedError;
-  String? get comment => throw _privateConstructorUsedError;
-  UserModel? get creator => throw _privateConstructorUsedError;
-  @JsonKey(name: 'status')
-  OrderStatus? get status => throw _privateConstructorUsedError;
-  @JsonKey(name: 'station')
-  StationModel? get station => throw _privateConstructorUsedError;
-  String? get reason => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   /// Serializes this OrderModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -52,19 +56,24 @@ abstract class $OrderModelCopyWith<$Res> {
       _$OrderModelCopyWithImpl<$Res, OrderModel>;
   @useResult
   $Res call(
-      {int? id,
+      {int id,
+      UserModel? creator,
+      CarModel? car,
+      @JsonKey(name: 'station') StationModel? station,
+      @JsonKey(name: 'status') OrderStatus? status,
+      double? price,
       @JsonKey(name: 'order_time') DateTime? orderTime,
       @JsonKey(name: 'expected_hour') double? expectedHour,
-      @JsonKey(name: 'connector_type') ConnectorTypeModel? connectorType,
       String? comment,
-      UserModel? creator,
-      @JsonKey(name: 'status') OrderStatus? status,
-      @JsonKey(name: 'station') StationModel? station,
-      String? reason});
+      String? reason,
+      @JsonKey(name: 'connector_type') ConnectorTypeModel? connectorType,
+      DateTime? createdAt,
+      DateTime? updatedAt});
 
-  $ConnectorTypeModelCopyWith<$Res>? get connectorType;
   $UserModelCopyWith<$Res>? get creator;
+  $CarModelCopyWith<$Res>? get car;
   $StationModelCopyWith<$Res>? get station;
+  $ConnectorTypeModelCopyWith<$Res>? get connectorType;
 }
 
 /// @nodoc
@@ -82,21 +91,45 @@ class _$OrderModelCopyWithImpl<$Res, $Val extends OrderModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
+    Object? creator = freezed,
+    Object? car = freezed,
+    Object? station = freezed,
+    Object? status = freezed,
+    Object? price = freezed,
     Object? orderTime = freezed,
     Object? expectedHour = freezed,
-    Object? connectorType = freezed,
     Object? comment = freezed,
-    Object? creator = freezed,
-    Object? status = freezed,
-    Object? station = freezed,
     Object? reason = freezed,
+    Object? connectorType = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
+      creator: freezed == creator
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as UserModel?,
+      car: freezed == car
+          ? _value.car
+          : car // ignore: cast_nullable_to_non_nullable
+              as CarModel?,
+      station: freezed == station
+          ? _value.station
+          : station // ignore: cast_nullable_to_non_nullable
+              as StationModel?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as OrderStatus?,
+      price: freezed == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double?,
       orderTime: freezed == orderTime
           ? _value.orderTime
           : orderTime // ignore: cast_nullable_to_non_nullable
@@ -105,45 +138,27 @@ class _$OrderModelCopyWithImpl<$Res, $Val extends OrderModel>
           ? _value.expectedHour
           : expectedHour // ignore: cast_nullable_to_non_nullable
               as double?,
-      connectorType: freezed == connectorType
-          ? _value.connectorType
-          : connectorType // ignore: cast_nullable_to_non_nullable
-              as ConnectorTypeModel?,
       comment: freezed == comment
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      creator: freezed == creator
-          ? _value.creator
-          : creator // ignore: cast_nullable_to_non_nullable
-              as UserModel?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as OrderStatus?,
-      station: freezed == station
-          ? _value.station
-          : station // ignore: cast_nullable_to_non_nullable
-              as StationModel?,
       reason: freezed == reason
           ? _value.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String?,
+      connectorType: freezed == connectorType
+          ? _value.connectorType
+          : connectorType // ignore: cast_nullable_to_non_nullable
+              as ConnectorTypeModel?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
-  }
-
-  /// Create a copy of OrderModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ConnectorTypeModelCopyWith<$Res>? get connectorType {
-    if (_value.connectorType == null) {
-      return null;
-    }
-
-    return $ConnectorTypeModelCopyWith<$Res>(_value.connectorType!, (value) {
-      return _then(_value.copyWith(connectorType: value) as $Val);
-    });
   }
 
   /// Create a copy of OrderModel
@@ -164,6 +179,20 @@ class _$OrderModelCopyWithImpl<$Res, $Val extends OrderModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
+  $CarModelCopyWith<$Res>? get car {
+    if (_value.car == null) {
+      return null;
+    }
+
+    return $CarModelCopyWith<$Res>(_value.car!, (value) {
+      return _then(_value.copyWith(car: value) as $Val);
+    });
+  }
+
+  /// Create a copy of OrderModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
   $StationModelCopyWith<$Res>? get station {
     if (_value.station == null) {
       return null;
@@ -171,6 +200,20 @@ class _$OrderModelCopyWithImpl<$Res, $Val extends OrderModel>
 
     return $StationModelCopyWith<$Res>(_value.station!, (value) {
       return _then(_value.copyWith(station: value) as $Val);
+    });
+  }
+
+  /// Create a copy of OrderModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConnectorTypeModelCopyWith<$Res>? get connectorType {
+    if (_value.connectorType == null) {
+      return null;
+    }
+
+    return $ConnectorTypeModelCopyWith<$Res>(_value.connectorType!, (value) {
+      return _then(_value.copyWith(connectorType: value) as $Val);
     });
   }
 }
@@ -184,22 +227,28 @@ abstract class _$$OrderModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? id,
+      {int id,
+      UserModel? creator,
+      CarModel? car,
+      @JsonKey(name: 'station') StationModel? station,
+      @JsonKey(name: 'status') OrderStatus? status,
+      double? price,
       @JsonKey(name: 'order_time') DateTime? orderTime,
       @JsonKey(name: 'expected_hour') double? expectedHour,
-      @JsonKey(name: 'connector_type') ConnectorTypeModel? connectorType,
       String? comment,
-      UserModel? creator,
-      @JsonKey(name: 'status') OrderStatus? status,
-      @JsonKey(name: 'station') StationModel? station,
-      String? reason});
+      String? reason,
+      @JsonKey(name: 'connector_type') ConnectorTypeModel? connectorType,
+      DateTime? createdAt,
+      DateTime? updatedAt});
 
-  @override
-  $ConnectorTypeModelCopyWith<$Res>? get connectorType;
   @override
   $UserModelCopyWith<$Res>? get creator;
   @override
+  $CarModelCopyWith<$Res>? get car;
+  @override
   $StationModelCopyWith<$Res>? get station;
+  @override
+  $ConnectorTypeModelCopyWith<$Res>? get connectorType;
 }
 
 /// @nodoc
@@ -215,21 +264,45 @@ class __$$OrderModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
+    Object? creator = freezed,
+    Object? car = freezed,
+    Object? station = freezed,
+    Object? status = freezed,
+    Object? price = freezed,
     Object? orderTime = freezed,
     Object? expectedHour = freezed,
-    Object? connectorType = freezed,
     Object? comment = freezed,
-    Object? creator = freezed,
-    Object? status = freezed,
-    Object? station = freezed,
     Object? reason = freezed,
+    Object? connectorType = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_$OrderModelImpl(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
+      creator: freezed == creator
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as UserModel?,
+      car: freezed == car
+          ? _value.car
+          : car // ignore: cast_nullable_to_non_nullable
+              as CarModel?,
+      station: freezed == station
+          ? _value.station
+          : station // ignore: cast_nullable_to_non_nullable
+              as StationModel?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as OrderStatus?,
+      price: freezed == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double?,
       orderTime: freezed == orderTime
           ? _value.orderTime
           : orderTime // ignore: cast_nullable_to_non_nullable
@@ -238,30 +311,26 @@ class __$$OrderModelImplCopyWithImpl<$Res>
           ? _value.expectedHour
           : expectedHour // ignore: cast_nullable_to_non_nullable
               as double?,
-      connectorType: freezed == connectorType
-          ? _value.connectorType
-          : connectorType // ignore: cast_nullable_to_non_nullable
-              as ConnectorTypeModel?,
       comment: freezed == comment
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      creator: freezed == creator
-          ? _value.creator
-          : creator // ignore: cast_nullable_to_non_nullable
-              as UserModel?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as OrderStatus?,
-      station: freezed == station
-          ? _value.station
-          : station // ignore: cast_nullable_to_non_nullable
-              as StationModel?,
       reason: freezed == reason
           ? _value.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String?,
+      connectorType: freezed == connectorType
+          ? _value.connectorType
+          : connectorType // ignore: cast_nullable_to_non_nullable
+              as ConnectorTypeModel?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -270,21 +339,37 @@ class __$$OrderModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OrderModelImpl implements _OrderModel {
   const _$OrderModelImpl(
-      {this.id,
+      {required this.id,
+      this.creator,
+      this.car,
+      @JsonKey(name: 'station') this.station,
+      @JsonKey(name: 'status') this.status,
+      this.price,
       @JsonKey(name: 'order_time') this.orderTime,
       @JsonKey(name: 'expected_hour') this.expectedHour,
-      @JsonKey(name: 'connector_type') this.connectorType,
       this.comment,
-      this.creator,
-      @JsonKey(name: 'status') this.status,
-      @JsonKey(name: 'station') this.station,
-      this.reason});
+      this.reason,
+      @JsonKey(name: 'connector_type') this.connectorType,
+      this.createdAt,
+      this.updatedAt});
 
   factory _$OrderModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderModelImplFromJson(json);
 
   @override
-  final int? id;
+  final int id;
+  @override
+  final UserModel? creator;
+  @override
+  final CarModel? car;
+  @override
+  @JsonKey(name: 'station')
+  final StationModel? station;
+  @override
+  @JsonKey(name: 'status')
+  final OrderStatus? status;
+  @override
+  final double? price;
   @override
   @JsonKey(name: 'order_time')
   final DateTime? orderTime;
@@ -292,24 +377,20 @@ class _$OrderModelImpl implements _OrderModel {
   @JsonKey(name: 'expected_hour')
   final double? expectedHour;
   @override
+  final String? comment;
+  @override
+  final String? reason;
+  @override
   @JsonKey(name: 'connector_type')
   final ConnectorTypeModel? connectorType;
   @override
-  final String? comment;
+  final DateTime? createdAt;
   @override
-  final UserModel? creator;
-  @override
-  @JsonKey(name: 'status')
-  final OrderStatus? status;
-  @override
-  @JsonKey(name: 'station')
-  final StationModel? station;
-  @override
-  final String? reason;
+  final DateTime? updatedAt;
 
   @override
   String toString() {
-    return 'OrderModel(id: $id, orderTime: $orderTime, expectedHour: $expectedHour, connectorType: $connectorType, comment: $comment, creator: $creator, status: $status, station: $station, reason: $reason)';
+    return 'OrderModel(id: $id, creator: $creator, car: $car, station: $station, status: $status, price: $price, orderTime: $orderTime, expectedHour: $expectedHour, comment: $comment, reason: $reason, connectorType: $connectorType, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -318,23 +399,42 @@ class _$OrderModelImpl implements _OrderModel {
         (other.runtimeType == runtimeType &&
             other is _$OrderModelImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.creator, creator) || other.creator == creator) &&
+            (identical(other.car, car) || other.car == car) &&
+            (identical(other.station, station) || other.station == station) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.price, price) || other.price == price) &&
             (identical(other.orderTime, orderTime) ||
                 other.orderTime == orderTime) &&
             (identical(other.expectedHour, expectedHour) ||
                 other.expectedHour == expectedHour) &&
+            (identical(other.comment, comment) || other.comment == comment) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
             (identical(other.connectorType, connectorType) ||
                 other.connectorType == connectorType) &&
-            (identical(other.comment, comment) || other.comment == comment) &&
-            (identical(other.creator, creator) || other.creator == creator) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.station, station) || other.station == station) &&
-            (identical(other.reason, reason) || other.reason == reason));
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, orderTime, expectedHour,
-      connectorType, comment, creator, status, station, reason);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      creator,
+      car,
+      station,
+      status,
+      price,
+      orderTime,
+      expectedHour,
+      comment,
+      reason,
+      connectorType,
+      createdAt,
+      updatedAt);
 
   /// Create a copy of OrderModel
   /// with the given fields replaced by the non-null parameter values.
@@ -354,21 +454,37 @@ class _$OrderModelImpl implements _OrderModel {
 
 abstract class _OrderModel implements OrderModel {
   const factory _OrderModel(
-      {final int? id,
+      {required final int id,
+      final UserModel? creator,
+      final CarModel? car,
+      @JsonKey(name: 'station') final StationModel? station,
+      @JsonKey(name: 'status') final OrderStatus? status,
+      final double? price,
       @JsonKey(name: 'order_time') final DateTime? orderTime,
       @JsonKey(name: 'expected_hour') final double? expectedHour,
-      @JsonKey(name: 'connector_type') final ConnectorTypeModel? connectorType,
       final String? comment,
-      final UserModel? creator,
-      @JsonKey(name: 'status') final OrderStatus? status,
-      @JsonKey(name: 'station') final StationModel? station,
-      final String? reason}) = _$OrderModelImpl;
+      final String? reason,
+      @JsonKey(name: 'connector_type') final ConnectorTypeModel? connectorType,
+      final DateTime? createdAt,
+      final DateTime? updatedAt}) = _$OrderModelImpl;
 
   factory _OrderModel.fromJson(Map<String, dynamic> json) =
       _$OrderModelImpl.fromJson;
 
   @override
-  int? get id;
+  int get id;
+  @override
+  UserModel? get creator;
+  @override
+  CarModel? get car;
+  @override
+  @JsonKey(name: 'station')
+  StationModel? get station;
+  @override
+  @JsonKey(name: 'status')
+  OrderStatus? get status;
+  @override
+  double? get price;
   @override
   @JsonKey(name: 'order_time')
   DateTime? get orderTime;
@@ -376,20 +492,16 @@ abstract class _OrderModel implements OrderModel {
   @JsonKey(name: 'expected_hour')
   double? get expectedHour;
   @override
+  String? get comment;
+  @override
+  String? get reason;
+  @override
   @JsonKey(name: 'connector_type')
   ConnectorTypeModel? get connectorType;
   @override
-  String? get comment;
+  DateTime? get createdAt;
   @override
-  UserModel? get creator;
-  @override
-  @JsonKey(name: 'status')
-  OrderStatus? get status;
-  @override
-  @JsonKey(name: 'station')
-  StationModel? get station;
-  @override
-  String? get reason;
+  DateTime? get updatedAt;
 
   /// Create a copy of OrderModel
   /// with the given fields replaced by the non-null parameter values.
