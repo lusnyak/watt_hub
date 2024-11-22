@@ -14,4 +14,11 @@ abstract class UserRemoteApi {
 
   @GET(EndPoints.usersMe)
   Future<UserModel?> usersMe();
+
+  @PUT(EndPoints.usersEdit)
+  Future<dynamic> edit(
+    @Path("id") int id,
+    @Field('full_name') String? fullName,
+    @Field('phone_number') String? phoneNumber,
+  );
 }
