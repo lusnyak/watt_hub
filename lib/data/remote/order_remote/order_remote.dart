@@ -3,6 +3,7 @@ import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/config/network/constants/constants.dart';
 import 'package:watt_hub/config/network/constants/end_points.dart';
 import 'package:watt_hub/domain/body_requests_model/add_order/add_order_model.dart';
+import 'package:watt_hub/domain/models/order/order_model.dart';
 
 part 'order_remote.g.dart';
 
@@ -29,4 +30,13 @@ abstract class OrderRemoteApi {
 
   @POST(EndPoints.createOrder)
   Future<dynamic> addOrder(@Body() AddOrderModel orderData);
+
+  @GET(EndPoints.getUserCars)
+  Future<OrderModel?> getOrderById(@Path("id") String id);
+
+  @GET(EndPoints.getUserCars)
+  Future<List<OrderModel>?> getMyOrder();
+
+  @GET(EndPoints.getUserCars)
+  Future<List<OrderModel>?> getUserOrders(@Path("id") String id);
 }
