@@ -8,4 +8,5 @@ abstract class EndPoints {
   static const String stationsFilter = '/stations/filter';
   static const String stationMy = '/stations/my';
   static const String userStations = '/stations/user/{id}';
+  static const String connectorTypes = '/connector-types';
 }
