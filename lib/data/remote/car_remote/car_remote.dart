@@ -4,8 +4,7 @@ import 'package:watt_hub/config/network/constants/constants.dart';
 import 'package:watt_hub/config/network/constants/end_points.dart';
 import 'package:watt_hub/domain/models/car_model/car_model.dart';
 import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
-
-import '../../../domain/models/my_car_model/my_car_model.dart';
+import 'package:watt_hub/domain/models/my_car_model/my_car_model.dart';
 
 part 'car_remote.g.dart';
 

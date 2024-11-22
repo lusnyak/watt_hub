@@ -3,13 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'package:watt_hub/data/remote/car_remote/car_remote.dart';
-
-import '../../../../config/locator/service_locator.dart';
-import '../../../../data/fake_data/connectors_data/connectors_data.dart';
-import '../../../../data/repository/station_repository.dart';
-import '../../../../domain/body_requests_model/add_station/add_station_model.dart';
-import '../../../../domain/models/connector_type/connector_type_model.dart';
+import 'package:watt_hub/config/locator/service_locator.dart';
+import 'package:watt_hub/data/fake_data/connectors_data/connectors_data.dart';
+import 'package:watt_hub/data/repository/station_repository.dart';
+import 'package:watt_hub/domain/body_requests_model/add_station/add_station_model.dart';
+import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
 
 part 'add_station_event.dart';
 
