@@ -44,16 +44,10 @@ class OrderRepository {
   Future<bool> addOrder(AddOrderModel orderData) {
     return getIt<OrderRemoteApi>().addOrder(orderData).then((response) {
       return response.statusCode == 200 || response.statusCode == 204;
-<<<<<<< HEAD
     }).catchError(
       (error) {
         return false;
       },
     );
-=======
-    }).catchError((error) {
-      return false;
-    });
->>>>>>> 1c1aed311189299cdfcc26a14801f0a12c714a6f
   }
 }
