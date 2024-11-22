@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:watt_hub/data/remote/car_remote/car_remote.dart';
 
 import '../../../../config/locator/service_locator.dart';
 import '../../../../data/fake_data/connectors_data/connectors_data.dart';
@@ -35,6 +36,57 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
           emit(const AddStationState.loading());
           try {
             await Future.delayed(const Duration(seconds: 2));
+
+            /// working
+            // try {
+            //   final carTypesGet = await getIt<CarRemoteApi>()
+            //       .carTypes();
+            //   // emit(AddStationState.success(result));
+            //   debugPrint("$carTypesGet carTypesGet");
+            // } catch (e) {
+            //   emit(AddStationState.error(e.toString()));
+            // }
+            /// working
+//             try {
+//               final carModelsGet = await getIt<CarRemoteApi>()
+//                   .carModels();
+//               // emit(AddStationState.success(result));
+//               debugPrint("$carModelsGet carModelsGet");
+//             } catch (e) {
+//               emit(AddStationState.error(e.toString()));
+//             }
+
+            /// working
+            // try {
+            //   final getCars = await getIt<CarRemoteApi>()
+            //       .getCars();
+            //   // emit(AddStationState.success(result));
+            //   debugPrint("$getCars getCarsgetCars");
+            // } catch (e) {
+            //   emit(AddStationState.error(e.toString()));
+            // }
+
+            // working
+            // try {
+            //   final getMyCar = await getIt<CarRemoteApi>()
+            //       .getMyCar();
+            //   // emit(AddStationState.success(result));
+            //   debugPrint("$getMyCar getMyCar");
+            // } catch (e) {
+            //   emit(AddStationState.error(e.toString()));
+            // }
+
+            //working
+            // try {
+            //   final getUserCars = await getIt<CarRemoteApi>()
+            //       .getUserCars("47");
+            //   // emit(AddStationState.success(result));
+            //   debugPrint("$getUserCars getUserCars");
+            // } catch (e) {
+            //   emit(AddStationState.error(e.toString()));
+            // }
+            //
+
             emit(AddStationState.loaded(connectors));
           } catch (e) {
             emit(AddStationState.error(e.toString()));

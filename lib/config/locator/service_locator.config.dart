@@ -23,12 +23,14 @@ import 'package:watt_hub/data/local/token_storage/token_storage.dart' as _i231;
 import 'package:watt_hub/data/local/token_storage/token_storage_impl.dart'
     as _i957;
 import 'package:watt_hub/data/remote/auth_remote/auth_remote.dart' as _i1029;
+import 'package:watt_hub/data/remote/car_remote/car_remote.dart' as _i725;
 import 'package:watt_hub/data/remote/connector_remote/connector_remote.dart'
     as _i690;
 import 'package:watt_hub/data/remote/station_remote/station_remote.dart'
     as _i920;
 import 'package:watt_hub/data/remote/user_remote/user_remote.dart' as _i87;
 import 'package:watt_hub/data/repository/auth_repository.dart' as _i441;
+import 'package:watt_hub/data/repository/car_repository.dart' as _i101;
 import 'package:watt_hub/data/repository/connector_repository.dart' as _i463;
 import 'package:watt_hub/data/repository/station_repository.dart' as _i198;
 import 'package:watt_hub/data/repository/user_repository.dart' as _i468;
@@ -78,7 +80,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
     gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
     gh.factory<_i177.ProfileBloc>(() => _i177.ProfileBloc());
-    gh.factory<_i593.ProfileDetailBloc>(() => _i593.ProfileDetailBloc());
     gh.factory<_i845.RequestsBloc>(() => _i845.RequestsBloc());
     gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
     gh.factory<_i400.StationInfoBloc>(() => _i400.StationInfoBloc());
@@ -92,6 +93,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i468.UserRepository>(() => _i468.UserRepository());
     gh.lazySingleton<_i463.ConnectorRepository>(
         () => _i463.ConnectorRepository());
+    gh.lazySingleton<_i101.CarRepository>(() => _i101.CarRepository());
     gh.factory<_i231.TokenStorage>(() => _i957.TokenStorageImpl());
     gh.lazySingleton<_i1029.AuthRemoteApi>(
         () => _i1029.AuthRemoteApi(gh<_i361.Dio>()));
@@ -101,6 +103,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i87.UserRemoteApi(gh<_i361.Dio>()));
     gh.lazySingleton<_i690.ConnectorRemoteApi>(
         () => _i690.ConnectorRemoteApi(gh<_i361.Dio>()));
+    gh.lazySingleton<_i725.CarRemoteApi>(
+        () => _i725.CarRemoteApi(gh<_i361.Dio>()));
     gh.factory<_i749.FilterStorage>(() => _i309.FilterStorageImpl());
     return this;
   }
