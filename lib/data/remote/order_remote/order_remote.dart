@@ -38,5 +38,6 @@ abstract class OrderRemoteApi {
   Future<List<OrderModel>?> getMyOrder();
 
   @GET(EndPoints.userOrder)
+  @GET(EndPoints.getUserCars)
   Future<List<OrderModel>?> getUserOrders(@Path("id") String id);
 }
