@@ -9,4 +9,10 @@ abstract class EndPoints {
   static const String stationMy = '/stations/my';
   static const String userStations = '/stations/user/{id}';
   static const String usersEdit = '/users/{id}';
+  static const String carTypes = "/car-types";
+  static const String carModels = "/car-models";
+  static const String getCars = "/car/";
+  static const String getMyCar = "/car/my";
+  static const String getUserCars = "/car/user/{id}";
+  static const String addCar = "/car/";
 }
