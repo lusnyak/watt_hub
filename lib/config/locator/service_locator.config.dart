@@ -76,24 +76,21 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i536.AppLoadingBloc>(() => _i536.AppLoadingBloc());
     gh.factory<_i474.ChooseStationAddressBloc>(
         () => _i474.ChooseStationAddressBloc());
-    gh.factory<_i293.FilterBloc>(() => _i293.FilterBloc());
-    gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
-    gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
-    gh.factory<_i177.ProfileBloc>(() => _i177.ProfileBloc());
+    gh.factory<_i536.AppLoadingBloc>(() => _i536.AppLoadingBloc());
     gh.factory<_i845.RequestsBloc>(() => _i845.RequestsBloc());
     gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
     gh.factory<_i400.StationInfoBloc>(() => _i400.StationInfoBloc());
     gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
-    gh.factory<_i593.ProfileDetailBloc>(() => _i593.ProfileDetailBloc());
+    gh.factory<_i177.ProfileBloc>(() => _i177.ProfileBloc());
+    gh.factory<_i293.FilterBloc>(() => _i293.FilterBloc());
+    gh.factory<_i141.SignUpBloc>(() => _i141.SignUpBloc());
+    gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
+    gh.factory<_i767.AddStationBlock>(() => _i767.AddStationBlock());
     gh.lazySingleton<_i618.ConnectivityChecker>(
         () => _i618.ConnectivityChecker());
     gh.lazySingleton<_i361.Dio>(() => dioClient.dio());
     gh.lazySingleton<_i441.AuthRepository>(() => _i441.AuthRepository());
     gh.lazySingleton<_i198.StationRepository>(() => _i198.StationRepository());
-    gh.lazySingleton<_i468.UserRepository>(() => _i468.UserRepository());
-    gh.lazySingleton<_i463.ConnectorRepository>(
-        () => _i463.ConnectorRepository());
-    gh.lazySingleton<_i101.CarRepository>(() => _i101.CarRepository());
     gh.factory<_i231.TokenStorage>(() => _i957.TokenStorageImpl());
     gh.lazySingleton<_i1029.AuthRemoteApi>(
         () => _i1029.AuthRemoteApi(gh<_i361.Dio>()));
@@ -101,10 +98,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i920.StationRemoteApi(gh<_i361.Dio>()));
     gh.lazySingleton<_i87.UserRemoteApi>(
         () => _i87.UserRemoteApi(gh<_i361.Dio>()));
-    gh.lazySingleton<_i690.ConnectorRemoteApi>(
-        () => _i690.ConnectorRemoteApi(gh<_i361.Dio>()));
-    gh.lazySingleton<_i725.CarRemoteApi>(
-        () => _i725.CarRemoteApi(gh<_i361.Dio>()));
+    gh.lazySingleton<_i1029.AuthRemoteApi>(
+        () => _i1029.AuthRemoteApi(gh<_i361.Dio>()));
     gh.factory<_i749.FilterStorage>(() => _i309.FilterStorageImpl());
     return this;
   }
