@@ -14,6 +14,8 @@ class WHTextField extends StatelessWidget {
     this.validator,
     this.inputFormatters,
     this.height,
+    this.onTap,
+    this.readonly = false,
   });
 
   factory WHTextField.singleLine({
@@ -24,6 +26,8 @@ class WHTextField extends StatelessWidget {
     TextInputType? keyboardType,
     FormFieldValidator<String>? validator,
     List<TextInputFormatter>? inputFormatters,
+    GestureTapCallback? onTap,
+    bool readonly = false,
   }) =>
       WHTextField._(
         label: label,
@@ -34,6 +38,8 @@ class WHTextField extends StatelessWidget {
         validator: validator,
         maxLines: 1,
         inputFormatters: inputFormatters,
+        onTap: onTap,
+        readonly: readonly,
       );
 
   factory WHTextField.multiLine({
@@ -68,6 +74,8 @@ class WHTextField extends StatelessWidget {
   final FormFieldValidator<String>? validator;
   final List<TextInputFormatter>? inputFormatters;
   final double? height;
+  final GestureTapCallback? onTap;
+  final bool readonly;
 
   Widget _singleLine(BuildContext context) {
     return TextFormField(
@@ -83,6 +91,8 @@ class WHTextField extends StatelessWidget {
       onChanged: onChanged,
       validator: validator,
       onTapOutside: (evt) => FocusScope.of(context).unfocus(),
+      readOnly: readonly,
+      onTap:onTap,
     );
   }
 
