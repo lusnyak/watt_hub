@@ -11,7 +11,7 @@ import 'package:watt_hub/domain/models/user/user_model.dart';
 import 'package:watt_hub/presentation/screens/profile/bloc/profile_bloc.dart';
 import 'package:watt_hub/presentation/screens/profile/widgets/conditional_expansion_tile.dart';
 import 'package:watt_hub/presentation/screens/profile/widgets/profile_menu_item.dart';
-import 'package:watt_hub/presentation/widgets/empty_widget.dart';
+import 'package:watt_hub/presentation/widgets/stations_list.dart';
 import 'package:watt_hub/utils/constants/constants.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub/utils/helpers/helpers.dart';

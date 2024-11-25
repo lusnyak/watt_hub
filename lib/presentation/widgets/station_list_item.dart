@@ -19,31 +19,30 @@ class StationListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
-      child: Container(
-        padding: paddingV20H10,
-        decoration: BoxDecoration(
-            borderRadius: roundedBorder14,
-            border: Border.all(
-              color: isBorder
-                  ? WattHubColors.primaryLightGreenColor
-                  : WattHubColors.transparentColor,
-            )),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              stationListItem.name ?? '',
-              style: body18SemiBoldTextStyle,
-            ),
-            SizedBox(height: 8.h),
-            _buildLocationRow(),
-            SizedBox(height: 8.h),
-            _buildDetailsRow(context),
-          ],
-        ),
-      ),
-    );
+        onTap: onTap,
+        child: Container(
+          padding: paddingV20H10,
+          decoration: BoxDecoration(
+              borderRadius: roundedBorder14,
+              border: Border.all(
+                color: isBorder
+                    ? WattHubColors.primaryLightGreenColor
+                    : WattHubColors.transparentColor,
+              )),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                stationListItem.name ?? '',
+                style: body18SemiBoldTextStyle,
+              ),
+              SizedBox(height: 8.h),
+              _buildLocationRow(),
+              SizedBox(height: 8.h),
+              _buildDetailsRow(context),
+            ],
+          ),
+        ));
   }
 
   Widget _buildLocationRow() {

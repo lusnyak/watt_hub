@@ -11,4 +11,14 @@ class UserRepository {
       return null;
     });
   }
+
+  Future<bool> edit(int id, String? fullName, String? phoneNumber) {
+    return getIt<UserRemoteApi>()
+        .edit(id, fullName, phoneNumber)
+        .then((response) {
+      return response.statusCode == 200 || response.statusCode == 204;
+    }).catchError((error) {
+      return false;
+    });
+  }
 }
