@@ -149,7 +149,7 @@ abstract class AppLocalizations {
   /// No description provided for @didntReceiveEmail.
   ///
   /// In en, this message translates to:
-  /// **'Didn\'t receive email?'**
+  /// **'Didn\'t rFeceive email?'**
   String get didntReceiveEmail;
 
   /// No description provided for @pleaseAgree.
@@ -193,84 +193,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please enter a valid email'**
   String get pleaseEnterAValidEmail;
-
-  /// No description provided for @home.
-  ///
-  /// In en, this message translates to:
-  /// **'Home'**
-  String get home;
-
-  /// No description provided for @requests.
-  ///
-  /// In en, this message translates to:
-  /// **'Requests'**
-  String get requests;
-
-  /// No description provided for @profile.
-  ///
-  /// In en, this message translates to:
-  /// **'Profile'**
-  String get profile;
-
-  /// No description provided for @noData.
-  ///
-  /// In en, this message translates to:
-  /// **'No Data'**
-  String get noData;
-
-  /// No description provided for @reviews.
-  ///
-  /// In en, this message translates to:
-  /// **'reviews'**
-  String get reviews;
-
-  /// No description provided for @view.
-  ///
-  /// In en, this message translates to:
-  /// **'View'**
-  String get view;
-
-  /// No description provided for @book.
-  ///
-  /// In en, this message translates to:
-  /// **'Book'**
-  String get book;
-
-  /// No description provided for @kilowatt.
-  ///
-  /// In en, this message translates to:
-  /// **'Kilowatt'**
-  String get kilowatt;
-
-  /// No description provided for @hourlyRate.
-  ///
-  /// In en, this message translates to:
-  /// **'Hourly rate'**
-  String get hourlyRate;
-
-  /// No description provided for @filter.
-  ///
-  /// In en, this message translates to:
-  /// **'Filter'**
-  String get filter;
-
-  /// No description provided for @rating.
-  ///
-  /// In en, this message translates to:
-  /// **'Rating'**
-  String get rating;
-
-  /// No description provided for @chooseCar.
-  ///
-  /// In en, this message translates to:
-  /// **'Choos Car Type'**
-  String get chooseCar;
-
-  /// No description provided for @chooseConnector.
-  ///
-  /// In en, this message translates to:
-  /// **'Choose Connector'**
-  String get chooseConnector;
 
   /// No description provided for @account.
   ///
@@ -317,7 +239,7 @@ abstract class AppLocalizations {
   /// No description provided for @phone.
   ///
   /// In en, this message translates to:
-  /// **'Phone'**
+  /// **'Phone Number'**
   String get phone;
 
   /// No description provided for @personalInfo.
@@ -337,12 +259,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Car Info'**
   String get carInfo;
-
-  /// No description provided for @name.
-  ///
-  /// In en, this message translates to:
-  /// **'Name'**
-  String get name;
 
   /// No description provided for @max.
   ///
@@ -409,6 +325,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select'**
   String get select;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @requests.
+  ///
+  /// In en, this message translates to:
+  /// **'Requests'**
+  String get requests;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @noData.
+  ///
+  /// In en, this message translates to:
+  /// **'No Data'**
+  String get noData;
+
+  /// No description provided for @reviews.
+  ///
+  /// In en, this message translates to:
+  /// **'reviews'**
+  String get reviews;
+
+  /// No description provided for @view.
+  ///
+  /// In en, this message translates to:
+  /// **'View'**
+  String get view;
+
+  /// No description provided for @book.
+  ///
+  /// In en, this message translates to:
+  /// **'Book'**
+  String get book;
+
+  /// No description provided for @kilowatt.
+  ///
+  /// In en, this message translates to:
+  /// **'kw'**
+  String get kilowatt;
+
+  /// No description provided for @hourlyRate.
+  ///
+  /// In en, this message translates to:
+  /// **'hr'**
+  String get hourlyRate;
+
+  /// No description provided for @filter.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter'**
+  String get filter;
+
+  /// No description provided for @rating.
+  ///
+  /// In en, this message translates to:
+  /// **'Rating'**
+  String get rating;
+
+  /// No description provided for @chooseCar.
+  ///
+  /// In en, this message translates to:
+  /// **'Choos Car Type'**
+  String get chooseCar;
+
+  /// No description provided for @chooseConnector.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Connector'**
+  String get chooseConnector;
 
   /// No description provided for @chooseAddress.
   ///
@@ -596,6 +590,35 @@ abstract class AppLocalizations {
   /// **'Unknown'**
   String get unknown;
 
+  /// No description provided for @leave_review.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave a review'**
+  String get leave_review;
+
+  /// No description provided for @rating_bar_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a star to rate'**
+  String get rating_bar_title;
+
+  /// No description provided for @submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submit;
+
+  /// No description provided for @review_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a review'**
+  String get review_title;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
   /// No description provided for @addCar.
   ///
   /// In en, this message translates to:

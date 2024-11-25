@@ -16,7 +16,6 @@
   "pleaseEnterEmail": "Խնդրում ենք մուտքագրել էլ․փոստ",
   "pleaseEnterAValidEmail": "Խնդրում ենք մուտքագրել վավեր էլ․փոստի հասցե",
    "home": "Home",
-   "requests": "Requests",
    "profile": "Profile",
    "noData": "No Data",
    "reviews": "reviews",
@@ -58,7 +57,6 @@
   "personalInfo": "Անձնական տվյալներ",
   "stationInfo": "Կայանի տվյալներ",
   "carInfo": "Մեքենայի տվյալներ",
-  "name": "Անուն",
   "hourlyRateFull": "Ժամավճար",
   "location": "Գտնվելու վայրը",
   "street": "Փողոց:",
@@ -83,14 +81,19 @@
   "accept": "Ընդունել",
   "decline": "Մերժել",
   "cancel": "Չեղարկել",
-  "start": "Սկսել",
   "canceled": "Չեղարկված",
   "finished": "Ավարտված",
   "pending": "Սպասման մեջ",
   "unknown": "Անհայտ",
+
+  "leave_review": "Թողնել մեկնաբանություն",
+  "rating_bar_title": "Հպեք աստղին՝ գնահատելու համար",
+  "submit": "Հաստատել",
+  "review_title": "Գրել ակնարկ",
+ 
   "addCar": "Ավելացնել մեքենա",
   "carType": "Մեքենայի տեսակը",
   "carModel": "Մեքենայի մոդելը",
   "addCarImage":"Ավելացնել մեքենայի պատկերը"
-
+ 
 }

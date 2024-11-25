@@ -33,7 +33,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'We have sent an OTP code to email address. Enter the OTP code below to continue.';
 
   @override
-  String get didntReceiveEmail => 'Didn\'t receive email?';
+  String get didntReceiveEmail => 'Didn\'t rFeceive email?';
 
   @override
   String get pleaseAgree =>
@@ -58,45 +58,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pleaseEnterAValidEmail => 'Please enter a valid email';
 
   @override
-  String get home => 'Home';
-
-  @override
-  String get requests => 'Requests';
-
-  @override
-  String get profile => 'Profile';
-
-  @override
-  String get noData => 'No Data';
-
-  @override
-  String get reviews => 'reviews';
-
-  @override
-  String get view => 'View';
-
-  @override
-  String get book => 'Book';
-
-  @override
-  String get kilowatt => 'Kilowatt';
-
-  @override
-  String get hourlyRate => 'Hourly rate';
-
-  @override
-  String get filter => 'Filter';
-
-  @override
-  String get rating => 'Rating';
-
-  @override
-  String get chooseCar => 'Choos Car Type';
-
-  @override
-  String get chooseConnector => 'Choose Connector';
-
-  @override
   String get account => 'Account';
 
   @override
@@ -118,7 +79,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get fullName => 'Full Name';
 
   @override
-  String get phone => 'Phone';
+  String get phone => 'Phone Number';
 
   @override
   String get personalInfo => 'Personal Info';
@@ -128,9 +89,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get carInfo => 'Car Info';
-
-  @override
-  String get name => 'Name';
 
   @override
   String get max => 'Max';
@@ -164,6 +122,45 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get select => 'Select';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get requests => 'Requests';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get noData => 'No Data';
+
+  @override
+  String get reviews => 'reviews';
+
+  @override
+  String get view => 'View';
+
+  @override
+  String get book => 'Book';
+
+  @override
+  String get kilowatt => 'kw';
+
+  @override
+  String get hourlyRate => 'hr';
+
+  @override
+  String get filter => 'Filter';
+
+  @override
+  String get rating => 'Rating';
+
+  @override
+  String get chooseCar => 'Choos Car Type';
+
+  @override
+  String get chooseConnector => 'Choose Connector';
 
   @override
   String get chooseAddress => 'Choose an address';
@@ -260,6 +257,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get unknown => 'Unknown';
 
   @override
+  String get leave_review => 'Leave a review';
+
+  @override
+  String get rating_bar_title => 'Tap a star to rate';
+
+  @override
+  String get submit => 'Submit';
+
+  @override
+  String get review_title => 'Write a review';
+
+  @override
+  String get name => 'Name';
+
   String get addCar => 'Add Car';
 
   @override
@@ -270,4 +281,5 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addCarImage => 'Add car image';
+
 }
