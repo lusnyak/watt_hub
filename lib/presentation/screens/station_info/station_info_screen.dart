@@ -114,7 +114,7 @@ class _StationInfoView extends StatelessWidget {
             style: body18SemiBoldTextStyle),
         Text("${AppLocalizations.of(context).max} 3.7kWt",
             style: body16RegularTextStyle),
-        Text("${AppLocalizations.of(context).hourlyRate} 10\$",
+        Text("${AppLocalizations.of(context).hourlyRateFull} 10\$",
             style: body16RegularTextStyle),
         Text("${AppLocalizations.of(context).availableHours} 10:00-18:00",
             style: body16RegularTextStyle),

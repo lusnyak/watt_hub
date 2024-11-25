@@ -12,3 +12,4 @@ export 'chip/wh_chip.dart';
 export 'modal_bottom_sheet/modal_bottom_sheet.dart';
 export 'rating/rating_bar.dart';
 export 'slidable/slidable.dart';
+export 'circle_avatar/circle_avatar.dart';

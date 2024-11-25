@@ -258,6 +258,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get unknown => 'Անհայտ';
 
   @override
+
   String get leave_review => 'Թողնել մեկնաբանություն';
 
   @override
@@ -271,4 +272,15 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get name => 'Անուն';
+  
+  String get addCar => 'Ավելացնել մեքենա';
+
+  @override
+  String get carType => 'Մեքենայի տեսակը';
+
+  @override
+  String get carModel => 'Մեքենայի մոդելը';
+
+  @override
+  String get addCarImage => 'Ավելացնել մեքենայի պատկերը';
 }

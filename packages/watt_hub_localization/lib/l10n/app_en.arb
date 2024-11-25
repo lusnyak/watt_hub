@@ -85,5 +85,9 @@
   "rating_bar_title": "Tap a star to rate",
   "submit": "Submit",
   "review_title": "Write a review",
-  "name": "Name"
+  "name": "Name",
+  "addCar": "Add Car",
+  "carType": "Car Type",
+  "carModel": "Car Model",
+  "addCarImage":"Add car image"
 }
