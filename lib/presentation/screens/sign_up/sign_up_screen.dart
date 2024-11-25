@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
+import 'package:watt_hub/data/local/shared_preferences/shared_preferences_service.dart';
 import 'package:watt_hub/utils/utils.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
@@ -25,6 +26,8 @@ class _SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool? isOnBoard = SharedPreferencesService.instance.onBoardingLaunch();
+    debugPrint('$isOnBoard isOnBoard');
     final signUpBloc = context.read<SignUpBloc>();
 
     return Scaffold(
@@ -93,8 +96,8 @@ class _SignUpView extends StatelessWidget {
                         WHTextField.singleLine(
                           controller: signUpBloc.emailController,
                           onChanged: (value) {
-                            signUpBloc.add( SignUpEvent.emailChanged(value)
-                           ,
+                            signUpBloc.add(
+                              SignUpEvent.emailChanged(value),
                             );
                           },
                           label: AppLocalizations.of(context).emailAddress,
@@ -113,7 +116,7 @@ class _SignUpView extends StatelessWidget {
                               onChanged: (bool? value) {
                                 if (value != null) {
                                   signUpBloc.add(
-                                      SignUpEvent.checkboxChanged(value),
+                                    SignUpEvent.checkboxChanged(value),
                                   );
                                 }
                               },

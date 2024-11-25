@@ -182,10 +182,17 @@ class OnboardingRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [ProfileDetailScreen]
-class ProfileDetailRoute extends PageRouteInfo<void> {
-  const ProfileDetailRoute({List<PageRouteInfo>? children})
-      : super(
+class ProfileDetailRoute extends PageRouteInfo<ProfileDetailRouteArgs> {
+  ProfileDetailRoute({
+    Key? key,
+    UserModel? userData,
+    List<PageRouteInfo>? children,
+  }) : super(
           ProfileDetailRoute.name,
+          args: ProfileDetailRouteArgs(
+            key: key,
+            userData: userData,
+          ),
           initialChildren: children,
         );
 
@@ -194,9 +201,30 @@ class ProfileDetailRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const ProfileDetailScreen();
+      final args = data.argsAs<ProfileDetailRouteArgs>(
+          orElse: () => const ProfileDetailRouteArgs());
+      return ProfileDetailScreen(
+        key: args.key,
+        userData: args.userData,
+      );
     },
   );
+}
+
+class ProfileDetailRouteArgs {
+  const ProfileDetailRouteArgs({
+    this.key,
+    this.userData,
+  });
+
+  final Key? key;
+
+  final UserModel? userData;
+
+  @override
+  String toString() {
+    return 'ProfileDetailRouteArgs{key: $key, userData: $userData}';
+  }
 }
 
 /// generated route for

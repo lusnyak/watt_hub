@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:watt_hub/presentation/screens/profile/sub_widget/profile_menu_item.dart';
+import 'package:watt_hub/presentation/screens/profile/widgets/profile_menu_item.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class ConditionalExpansionTile extends StatelessWidget {

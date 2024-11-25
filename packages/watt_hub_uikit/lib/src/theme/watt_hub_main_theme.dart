@@ -34,7 +34,7 @@ ThemeData get lightTheme => ThemeData(
         thumbColor: WattHubColors.primaryGreenColor,
       ),
       cardTheme: CardTheme(
-        elevation: 4,
+        elevation: 1,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.r),
         ),
