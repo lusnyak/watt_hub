@@ -99,5 +99,9 @@
   "canceled": "Canceled",
   "finished": "Finished",
   "pending": "Pending",
-  "unknown": "Unknown"
+  "unknown": "Unknown",
+  "addCar": "Add Car",
+  "carType": "Car Type",
+  "carModel": "Car Model",
+  "addCarImage":"Add car image"
 }
