@@ -9,7 +9,7 @@ part 'review_model.g.dart';
 class ReviewModel with _$ReviewModel {
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory ReviewModel({
-    required int id,
+    int? id,
     int? rate,
     String? message,
     UserModel? user,

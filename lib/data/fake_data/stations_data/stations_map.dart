@@ -1,14 +1,14 @@
 Map<String, dynamic> stationData = {
   "id": 1,
-  "latitude": 40.1792,
-  "longitude": 44.4991,
+  "lat": 40.1792,
+  "lng": 44.4991,
   "start_time": "2023-10-01 08:00:00",
   "end_time": "2023-10-01 20:00:00",
   "connector_type": {
     "id": 1,
     "title": "Type 2",
   },
-  "hourly_rate": 5,
+  "hourly_rate": '5',
   "kwt": 20,
   "phone_number": "+37412345678",
   "name": "Charging Station Yerevan 1",
@@ -43,14 +43,14 @@ Map<String, dynamic> stationData = {
 List<Map<String, dynamic>> stationsData = [
   {
     "id": 1,
-    "latitude": 40.1792,
-    "longitude": 44.4991,
+    "lat": 40.1792,
+    "lng": 44.4991,
     "start_time": "2023-10-01T08:00:00",
     "end_time": "2023-10-01T20:00:00",
     "connector_type": [
       {"id": 1, "title": "Type 2"}
     ],
-    "hourly_rate": 5,
+    "hourly_rate": '5',
     "kwt": 20,
     "phone_number": "+37412345678",
     "name": "Charging Station Yerevan 1",
@@ -95,14 +95,14 @@ List<Map<String, dynamic>> stationsData = [
   },
   {
     "id": 2,
-    "latitude": 40.1892,
-    "longitude": 44.5115,
+    "lat": 40.1892,
+    "lng": 44.5115,
     "start_time": "2023-10-01T07:00:00",
     "end_time": "2023-10-01T22:00:00",
     "connector_type": [
       {"id": 2, "title": "CHAdeMO"}
     ],
-    "hourly_rate": 4,
+    "hourly_rate": '4',
     "kwt": 15,
     "phone_number": "+37412345679",
     "name": "Charging Station Yerevan 2",
@@ -147,14 +147,14 @@ List<Map<String, dynamic>> stationsData = [
   },
   {
     "id": 3,
-    "latitude": 40.5805,
-    "longitude": 44.5130,
+    "lat": 40.5805,
+    "lng": 44.5130,
     "start_time": "2023-10-01T09:00:00",
     "end_time": "2023-10-01T19:00:00",
     "connector_type": [
       {"id": 3, "title": "Type 1"}
     ],
-    "hourly_rate": 3,
+    "hourly_rate": '3',
     "kwt": 10,
     "phone_number": "+37412345680",
     "name": "Charging Station Ejmiatsin",
@@ -191,7 +191,7 @@ List<Map<String, dynamic>> stationsData = [
     ],
     "average_rate": 4.2,
     "user": {
-      "id": 3,
+      "id": '3',
       "full_name": "Vardan Hovhannisyan",
       "phone_number": "+37498765430",
       "email": "vardan.hovhannisyan@example.com"
@@ -199,14 +199,14 @@ List<Map<String, dynamic>> stationsData = [
   },
   {
     "id": 4,
-    "latitude": 40.3488,
-    "longitude": 40.2076,
+    "lat": 40.3488,
+    "lng": 40.2076,
     "start_time": "2023-10-01T06:00:00",
     "end_time": "2023-10-01T20:00:00",
     "connector_type": [
       {"id": 1, "title": "Type 2"}
     ],
-    "hourly_rate": 5,
+    "hourly_rate": '5',
     "kwt": 25,
     "phone_number": "+37412345681",
     "name": "Charging Station Gyumri 1",
@@ -251,14 +251,14 @@ List<Map<String, dynamic>> stationsData = [
   },
   {
     "id": 5,
-    "latitude": 40.5649,
-    "longitude": 44.3448,
+    "lat": 40.5649,
+    "lng": 44.3448,
     "start_time": "2023-10-01T10:00:00",
     "end_time": "2023-10-01T21:00:00",
     "connector_type": [
       {"id": 2, "title": "CHAdeMO"}
     ],
-    "hourly_rate": 4,
+    "hourly_rate": '4',
     "kwt": 18,
     "phone_number": "+37412345682",
     "name": "Charging Station Vanadzor",
@@ -291,14 +291,14 @@ List<Map<String, dynamic>> stationsData = [
   },
   {
     "id": 6,
-    "latitude": 40.2060,
-    "longitude": 44.5093,
+    "lat": 40.2060,
+    "lng": 44.5093,
     "start_time": "2023-10-01T08:30:00",
     "end_time": "2023-10-01T22:30:00",
     "connector_type": [
       {"id": 3, "title": "Type 1"}
     ],
-    "hourly_rate": 6,
+    "hourly_rate": '6',
     "kwt": 30,
     "phone_number": "+37412345683",
     "name": "Charging Station Artashat",

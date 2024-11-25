@@ -8,7 +8,7 @@ part of 'order_model.dart';
 
 _$OrderModelImpl _$$OrderModelImplFromJson(Map<String, dynamic> json) =>
     _$OrderModelImpl(
-      id: (json['id'] as num).toInt(),
+      id: (json['id'] as num?)?.toInt(),
       creator: json['creator'] == null
           ? null
           : UserModel.fromJson(json['creator'] as Map<String, dynamic>),

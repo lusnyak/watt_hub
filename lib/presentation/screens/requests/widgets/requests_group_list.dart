@@ -31,7 +31,7 @@ class RequestsGroupList extends StatelessWidget {
       groupSeparatorBuilder: (_) => 10.h.heightBox,
       itemBuilder: (context, element) {
         final totalCost = calculateTotalCost(
-            element.station!.hourlyRate!.toDouble(),
+            10.toDouble(), // element.station!.hourlyRate!.toDouble()
             element.expectedHour!.toInt());
         return RequestsListItem(
           address: element.station?.address,
@@ -42,7 +42,7 @@ class RequestsGroupList extends StatelessWidget {
           cost: totalCost,
           statusColor: element.status!.color,
           status: element.status,
-          kw: element.station?.kwt,
+          kw: 20, // element.station?.kwt
           isStationRequests: isStationRequests,
         );
       },

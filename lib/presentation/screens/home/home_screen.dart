@@ -100,9 +100,13 @@ class _HomeView extends StatelessWidget {
                   : StationsList(
                       dataList: stations,
                       onTap: (stationItem) {
+                        debugPrint('$stationItem stationItem');
+                        debugPrint("$currentLocation currentLocation");
                         context.read<HomeBloc>().add(
                               HomeEvent.centerOnStation(
-                                  stationItem, currentLocation),
+                                stationItem,
+                                currentLocation,
+                              ),
                             );
                       },
                     );

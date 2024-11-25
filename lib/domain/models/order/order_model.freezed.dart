@@ -20,7 +20,7 @@ OrderModel _$OrderModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OrderModel {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   UserModel? get creator => throw _privateConstructorUsedError;
   CarModel? get car => throw _privateConstructorUsedError;
   @JsonKey(name: 'station')
@@ -56,7 +56,7 @@ abstract class $OrderModelCopyWith<$Res> {
       _$OrderModelCopyWithImpl<$Res, OrderModel>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       UserModel? creator,
       CarModel? car,
       @JsonKey(name: 'station') StationModel? station,
@@ -91,7 +91,7 @@ class _$OrderModelCopyWithImpl<$Res, $Val extends OrderModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? creator = freezed,
     Object? car = freezed,
     Object? station = freezed,
@@ -106,10 +106,10 @@ class _$OrderModelCopyWithImpl<$Res, $Val extends OrderModel>
     Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       creator: freezed == creator
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
@@ -227,7 +227,7 @@ abstract class _$$OrderModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       UserModel? creator,
       CarModel? car,
       @JsonKey(name: 'station') StationModel? station,
@@ -264,7 +264,7 @@ class __$$OrderModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? creator = freezed,
     Object? car = freezed,
     Object? station = freezed,
@@ -279,10 +279,10 @@ class __$$OrderModelImplCopyWithImpl<$Res>
     Object? updatedAt = freezed,
   }) {
     return _then(_$OrderModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       creator: freezed == creator
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
@@ -339,7 +339,7 @@ class __$$OrderModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OrderModelImpl implements _OrderModel {
   const _$OrderModelImpl(
-      {required this.id,
+      {this.id,
       this.creator,
       this.car,
       @JsonKey(name: 'station') this.station,
@@ -357,7 +357,7 @@ class _$OrderModelImpl implements _OrderModel {
       _$$OrderModelImplFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final UserModel? creator;
   @override
@@ -454,7 +454,7 @@ class _$OrderModelImpl implements _OrderModel {
 
 abstract class _OrderModel implements OrderModel {
   const factory _OrderModel(
-      {required final int id,
+      {final int? id,
       final UserModel? creator,
       final CarModel? car,
       @JsonKey(name: 'station') final StationModel? station,
@@ -472,7 +472,7 @@ abstract class _OrderModel implements OrderModel {
       _$OrderModelImpl.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   UserModel? get creator;
   @override
