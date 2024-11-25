@@ -60,7 +60,7 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
     event,
     emit,
   ) async {
-    if(event.isConnected) {
+    if (event.isConnected) {
       await getUserData(emit);
     } else {
       emit(const AppLoadingState.noConnection());
@@ -86,10 +86,10 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
       add(const AppLoadingEvent.checkInternetConnection());
     } else {
       bool isOnBoard = SharedPreferencesService.instance.onBoardingLaunch();
-      if (!isOnBoard) {
-        emit(const AppLoadingState.loadToOnboarding());
-      } else {
+      if (isOnBoard) {
         emit(const AppLoadingState.loadToSignIn());
+      } else {
+        emit(const AppLoadingState.loadToOnboarding());
       }
     }
   }
