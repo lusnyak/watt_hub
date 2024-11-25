@@ -80,7 +80,6 @@ class _WhMultiSelectDropDownButtonState<T>
               final isSelected = selectedItems.contains(item);
               return InkWell(
                 onTap: () {
-                  debugPrint("$selectedItems selected");
                   if (mounted) {
                     setState(() {
                       if (isSelected) {

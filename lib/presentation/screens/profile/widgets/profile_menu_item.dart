@@ -7,13 +7,15 @@ class ProfileMenuItem extends StatelessWidget {
   final IconData? iconTrailing;
   final VoidCallback? onTap;
   final Color? colorTile;
-  const ProfileMenuItem(
-      {super.key,
-      required this.title,
-      required this.iconLeading,
-      required this.onTap,
-      this.iconTrailing,
-      this.colorTile});
+
+  const ProfileMenuItem({
+    super.key,
+    required this.title,
+    required this.iconLeading,
+    required this.onTap,
+    this.iconTrailing,
+    this.colorTile,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +28,9 @@ class ProfileMenuItem extends StatelessWidget {
       onTap: onTap,
       title:
           Text(title, style: body16RegularTextStyle.copyWith(color: colorTile)),
-      leading: ClipRRect(
-        borderRadius: roundedBorder50, // Makes the image round
-        child: Icon(
-          iconLeading,
-          size: 40,
-        ),
+      leading: Icon(
+        iconLeading,
+        size: 40.0,
       ),
       trailing: Icon(
         iconTrailing,

@@ -12,12 +12,11 @@ class ProfileCarItem extends StatelessWidget {
     return Container(
       padding: paddingV20H10,
       decoration: BoxDecoration(
-          borderRadius: roundedBorder14,
-          border: Border.all(color: WattHubColors.primaryLightGreenColor)),
+        borderRadius: roundedBorder14,
+      ),
       child: Column(
         children: [
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
@@ -27,7 +26,7 @@ class ProfileCarItem extends StatelessWidget {
                     context.localized.carInfo,
                     style: body16SemiBoldTextStyle,
                   ).paddingOnly(bottom: 10.sp),
-                  Text(carData.carModel.title),
+                  Text("${carData.carModel.title} . ${carData.carType.title}"),
                   Text(carData.carType.title ?? ""),
                   Text(carData.connectorType.title ?? ""),
                 ],
@@ -42,17 +41,6 @@ class ProfileCarItem extends StatelessWidget {
               )
             ],
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              const InkWell(
-                child: Icon(Icons.mode_edit_outlined),
-              ),
-              20.widthBox,
-              const InkWell(child: Icon(Icons.delete_outline_outlined)),
-            ],
-          )
         ],
       ),
     ).paddingOnly(bottom: 10);

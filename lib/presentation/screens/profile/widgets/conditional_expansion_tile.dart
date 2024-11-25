@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watt_hub/presentation/screens/profile/widgets/profile_menu_item.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class ConditionalExpansionTile extends StatelessWidget {
@@ -41,23 +42,11 @@ class ConditionalExpansionTile extends StatelessWidget {
             ),
             children: children,
           )
-        : ListTile(
-            splashColor: WattHubColors.primaryLightGreenColor,
-            contentPadding: paddingH10,
-            shape: roundedBorderShape14,
-            title: Text(
-              title,
-              style: body16RegularTextStyle,
-            ),
-            trailing: Icon(
-              iconTrailing,
-              size: 30,
-            ),
-            leading: Icon(
-              iconLeading,
-              size: 40,
-            ),
-            onTap: onTap, // If no onTap provided, do nothing
+        : ProfileMenuItem(
+            title: title,
+            iconLeading: iconLeading,
+            onTap: onTap,
+            iconTrailing: iconTrailing,
           );
   }
 }

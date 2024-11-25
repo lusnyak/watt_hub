@@ -13,4 +13,6 @@ cd packages/watt_hub_uikit && fvm flutter pub get && fvm flutter packages pub ru
 ## WattHub localizations codes generates commands:
 cd packages/watt_hub_localization && fvm flutter pub get && fvm flutter gen-l10n
 
- 
+## WattHub splash screen generate command:
+fvm flutter pub get && fvm flutter pub run flutter_launcher_icons
+fvm flutter pub get && fvm flutter pub run flutter_native_splash:create

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
+import 'package:watt_hub/domain/models/user/user_model.dart';
 import 'package:watt_hub/presentation/screens/add_car/add_car_screen.dart';
 import 'package:watt_hub/presentation/screens/add_station/add_station_screen.dart';
 import 'package:watt_hub/presentation/screens/app_loading/app_loading_screen.dart';
@@ -9,9 +10,8 @@ import 'package:watt_hub/presentation/screens/detail/detail_screen.dart';
 import 'package:watt_hub/presentation/screens/filter/filter_screen.dart';
 import 'package:watt_hub/presentation/screens/home/home_screen.dart';
 import 'package:watt_hub/presentation/screens/onboarding/onboarding_screen.dart';
-import 'package:watt_hub/presentation/screens/profile/profile_detail_screen.dart';
+import 'package:watt_hub/presentation/screens/profile_detail/profile_detail_screen.dart';
 import 'package:watt_hub/presentation/screens/profile/profile_screen.dart';
-import 'package:watt_hub/presentation/screens/profile/vehicle_list_screen.dart';
 import 'package:watt_hub/presentation/screens/requests/requests_screen.dart';
 import 'package:watt_hub/presentation/screens/sign_up/sign_up_screen.dart';
 import 'package:watt_hub/presentation/screens/splash/splash_screen.dart';
@@ -26,10 +26,11 @@ part 'app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: AppLoadingRoute.page, /*initial: true*/),
-        AutoRoute(page: UikitExampleRoute.page,initial: true),
+        AutoRoute(page: AppLoadingRoute.page, initial: true),
+        AutoRoute(page: UikitExampleRoute.page),
+        AutoRoute(page: UikitExampleRoute.page),
         AutoRoute(page: OnboardingRoute.page),
-        AutoRoute(page: DashboardRoute.page,  children: [
+        AutoRoute(page: DashboardRoute.page, children: [
           AutoRoute(page: HomeRoute.page),
           AutoRoute(page: RequestsRoute.page),
 
@@ -41,9 +42,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: FilterRoute.page),
         AutoRoute(page: StationInfoRoute.page),
         AutoRoute(page: DetailRoute.page),
-        AutoRoute(
-          page: AddStationRoute.page,
-        ),
+        AutoRoute(page: AddStationRoute.page),
         AutoRoute(page: ChooseStationAddressRoute.page),
         AutoRoute(page: AddCarRoute.page),
       ];
@@ -62,6 +61,5 @@ final profileTap = AutoRoute(
       initial: true,
     ),
     AutoRoute(page: ProfileDetailRoute.page),
-    AutoRoute(page: VehicleListRoute.page),
   ],
 );

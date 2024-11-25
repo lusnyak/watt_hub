@@ -1,5 +1,4 @@
 import 'package:watt_hub/config/config.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:watt_hub/data/fake_data/create_cars_data/created_cars_data.dart';
 import 'package:watt_hub/data/fake_data/stations_data/stations_map.dart';
 import 'package:watt_hub/data/fake_data/users_data/users_data.dart';
@@ -16,6 +15,7 @@ part 'profile_bloc.freezed.dart';
 @injectable
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ProfileBloc() : super(const ProfileState.initial()) {
+    /// TODO: - load Profile data from api,
     on<_LoadProfileEvent>((event, emit) async {
       emit(const ProfileState.loading());
       try {

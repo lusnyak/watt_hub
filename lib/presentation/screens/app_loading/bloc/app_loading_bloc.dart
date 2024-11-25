@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/local/shared_preferences/shared_preferences_service.dart';
 import 'package:watt_hub/data/local/token_storage/token_storage.dart';
@@ -28,6 +28,7 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
   ) async {
     emit(const AppLoadingState.loading());
     add(const AppLoadingEvent.checkTokenValidation());
+    FlutterNativeSplash.remove();
   }
 
   Future<void> _checkedInternetConnection(
@@ -59,7 +60,7 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
     event,
     emit,
   ) async {
-    if(event.isConnected) {
+    if (event.isConnected) {
       await getUserData(emit);
     } else {
       emit(const AppLoadingState.noConnection());
@@ -85,10 +86,10 @@ class AppLoadingBloc extends Bloc<AppLoadingEvent, AppLoadingState> {
       add(const AppLoadingEvent.checkInternetConnection());
     } else {
       bool isOnBoard = SharedPreferencesService.instance.onBoardingLaunch();
-      if (!isOnBoard) {
-        emit(const AppLoadingState.loadToOnboarding());
-      } else {
+      if (isOnBoard) {
         emit(const AppLoadingState.loadToSignIn());
+      } else {
+        emit(const AppLoadingState.loadToOnboarding());
       }
     }
   }

@@ -1,7 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
 
 class WhDropDownButton<T> extends StatelessWidget {
   const WhDropDownButton({
@@ -67,8 +66,7 @@ class WhDropDownButton<T> extends StatelessWidget {
       onChanged: onChanged,
       underline: const Divider(
         height: 2,
-        color:
-            WattHubColors.primaryGreenColor,
+        color: WattHubColors.primaryGreenColor,
       ),
     );
   }

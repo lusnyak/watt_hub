@@ -66,7 +66,10 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
           debugPrint("$e ee");
           if (state is _LoadedState) {
             final currentState = state as _LoadedState;
-            emit(currentState.copyWith(address: e.address,longitude: e.longitude,latitude: e.latitude));
+            emit(currentState.copyWith(
+                address: e.address,
+                longitude: e.longitude,
+                latitude: e.latitude));
           }
         },
         connectorTypeChangedEvent: (e) async {
@@ -102,7 +105,7 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
           if (state is _LoadedState) {
             final currentState = state as _LoadedState;
             final updatedSelected =
-                List<ConnectorTypeModel>.from(currentState.selectedList ?? []);
+                List<ConnectorTypeModel>.from(currentState.selectedList);
             updatedSelected.remove(e.connector);
             emit(currentState.copyWith(selectedList: updatedSelected));
           }
@@ -115,11 +118,14 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
             final longitude = currentState.longitude;
             final name = nameController.text;
             final phone = phoneController.text;
-            final hourlyRate =  double.tryParse(hourlyRateController.text);
+            final hourlyRate = double.tryParse(hourlyRateController.text);
             final startTime = currentState.startTime;
             final endTime = currentState.endTime;
-            final connectorTypeId = currentState.selectedList.map((item)=>item.id).toList();
-            final image = currentState.images?.map((item)=> item.path.toString()).toList();
+            final connectorTypeId =
+                currentState.selectedList.map((item) => item.id).toList();
+            final image = currentState.images
+                ?.map((item) => item.path.toString())
+                .toList();
             final address = currentState.address;
             // final userId = currentState.userId;
 
@@ -136,16 +142,17 @@ class AddStationBlock extends Bloc<AddStationEvent, AddStationState> {
               image: image,
               userId: 2,
             );
+            // emit(const AddStationState.loadCreateStation());
             try {
-              final  createStation =   await getIt<StationRepository>().addOwnStation(createStationData);
+              final createStation = await getIt<StationRepository>()
+                  .addOwnStation(createStationData);
               // emit(AddStationState.success(result));
-debugPrint("$createStation createStation");
+              debugPrint("$createStation createStation");
             } catch (e) {
               emit(AddStationState.error(e.toString()));
             }
           }
         },
-
       );
     });
   }

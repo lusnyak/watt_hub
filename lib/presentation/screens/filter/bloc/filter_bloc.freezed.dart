@@ -23,7 +23,7 @@ mixin _$FilterEvent {
     required TResult Function(CarTypeModel? selectedCar) carTypeChangedEvent,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function() applyFiltersEvent,
+    required TResult Function(VoidCallback? filterCallBack) applyFiltersEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,7 +33,7 @@ mixin _$FilterEvent {
     TResult? Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function()? applyFiltersEvent,
+    TResult? Function(VoidCallback? filterCallBack)? applyFiltersEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,7 +43,7 @@ mixin _$FilterEvent {
     TResult Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function()? applyFiltersEvent,
+    TResult Function(VoidCallback? filterCallBack)? applyFiltersEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -148,7 +148,7 @@ class _$StartedEventImpl implements _StartedEvent {
     required TResult Function(CarTypeModel? selectedCar) carTypeChangedEvent,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function() applyFiltersEvent,
+    required TResult Function(VoidCallback? filterCallBack) applyFiltersEvent,
   }) {
     return startedEvent();
   }
@@ -161,7 +161,7 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult? Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function()? applyFiltersEvent,
+    TResult? Function(VoidCallback? filterCallBack)? applyFiltersEvent,
   }) {
     return startedEvent?.call();
   }
@@ -174,7 +174,7 @@ class _$StartedEventImpl implements _StartedEvent {
     TResult Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function()? applyFiltersEvent,
+    TResult Function(VoidCallback? filterCallBack)? applyFiltersEvent,
     required TResult orElse(),
   }) {
     if (startedEvent != null) {
@@ -309,7 +309,7 @@ class _$SliderValueChangedEventImpl implements _SliderValueChangedEvent {
     required TResult Function(CarTypeModel? selectedCar) carTypeChangedEvent,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function() applyFiltersEvent,
+    required TResult Function(VoidCallback? filterCallBack) applyFiltersEvent,
   }) {
     return sliderValueChangedEvent(newValue);
   }
@@ -322,7 +322,7 @@ class _$SliderValueChangedEventImpl implements _SliderValueChangedEvent {
     TResult? Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function()? applyFiltersEvent,
+    TResult? Function(VoidCallback? filterCallBack)? applyFiltersEvent,
   }) {
     return sliderValueChangedEvent?.call(newValue);
   }
@@ -335,7 +335,7 @@ class _$SliderValueChangedEventImpl implements _SliderValueChangedEvent {
     TResult Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function()? applyFiltersEvent,
+    TResult Function(VoidCallback? filterCallBack)? applyFiltersEvent,
     required TResult orElse(),
   }) {
     if (sliderValueChangedEvent != null) {
@@ -493,7 +493,7 @@ class _$CarTypeChangedEventImpl implements _CarTypeChangedEvent {
     required TResult Function(CarTypeModel? selectedCar) carTypeChangedEvent,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function() applyFiltersEvent,
+    required TResult Function(VoidCallback? filterCallBack) applyFiltersEvent,
   }) {
     return carTypeChangedEvent(selectedCar);
   }
@@ -506,7 +506,7 @@ class _$CarTypeChangedEventImpl implements _CarTypeChangedEvent {
     TResult? Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function()? applyFiltersEvent,
+    TResult? Function(VoidCallback? filterCallBack)? applyFiltersEvent,
   }) {
     return carTypeChangedEvent?.call(selectedCar);
   }
@@ -519,7 +519,7 @@ class _$CarTypeChangedEventImpl implements _CarTypeChangedEvent {
     TResult Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function()? applyFiltersEvent,
+    TResult Function(VoidCallback? filterCallBack)? applyFiltersEvent,
     required TResult orElse(),
   }) {
     if (carTypeChangedEvent != null) {
@@ -680,7 +680,7 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     required TResult Function(CarTypeModel? selectedCar) carTypeChangedEvent,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function() applyFiltersEvent,
+    required TResult Function(VoidCallback? filterCallBack) applyFiltersEvent,
   }) {
     return connectorTypeChangedEvent(selectedConnector);
   }
@@ -693,7 +693,7 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     TResult? Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function()? applyFiltersEvent,
+    TResult? Function(VoidCallback? filterCallBack)? applyFiltersEvent,
   }) {
     return connectorTypeChangedEvent?.call(selectedConnector);
   }
@@ -706,7 +706,7 @@ class _$ConnectorTypeChangedEventImpl implements _ConnectorTypeChangedEvent {
     TResult Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function()? applyFiltersEvent,
+    TResult Function(VoidCallback? filterCallBack)? applyFiltersEvent,
     required TResult orElse(),
   }) {
     if (connectorTypeChangedEvent != null) {
@@ -779,6 +779,8 @@ abstract class _$$ApplyFiltersEventImplCopyWith<$Res> {
   factory _$$ApplyFiltersEventImplCopyWith(_$ApplyFiltersEventImpl value,
           $Res Function(_$ApplyFiltersEventImpl) then) =
       __$$ApplyFiltersEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({VoidCallback? filterCallBack});
 }
 
 /// @nodoc
@@ -791,26 +793,53 @@ class __$$ApplyFiltersEventImplCopyWithImpl<$Res>
 
   /// Create a copy of FilterEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? filterCallBack = freezed,
+  }) {
+    return _then(_$ApplyFiltersEventImpl(
+      freezed == filterCallBack
+          ? _value.filterCallBack
+          : filterCallBack // ignore: cast_nullable_to_non_nullable
+              as VoidCallback?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ApplyFiltersEventImpl implements _ApplyFiltersEvent {
-  const _$ApplyFiltersEventImpl();
+  const _$ApplyFiltersEventImpl(this.filterCallBack);
+
+  @override
+  final VoidCallback? filterCallBack;
 
   @override
   String toString() {
-    return 'FilterEvent.applyFiltersEvent()';
+    return 'FilterEvent.applyFiltersEvent(filterCallBack: $filterCallBack)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ApplyFiltersEventImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ApplyFiltersEventImpl &&
+            (identical(other.filterCallBack, filterCallBack) ||
+                other.filterCallBack == filterCallBack));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, filterCallBack);
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ApplyFiltersEventImplCopyWith<_$ApplyFiltersEventImpl> get copyWith =>
+      __$$ApplyFiltersEventImplCopyWithImpl<_$ApplyFiltersEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -820,9 +849,9 @@ class _$ApplyFiltersEventImpl implements _ApplyFiltersEvent {
     required TResult Function(CarTypeModel? selectedCar) carTypeChangedEvent,
     required TResult Function(ConnectorTypeModel? selectedConnector)
         connectorTypeChangedEvent,
-    required TResult Function() applyFiltersEvent,
+    required TResult Function(VoidCallback? filterCallBack) applyFiltersEvent,
   }) {
-    return applyFiltersEvent();
+    return applyFiltersEvent(filterCallBack);
   }
 
   @override
@@ -833,9 +862,9 @@ class _$ApplyFiltersEventImpl implements _ApplyFiltersEvent {
     TResult? Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult? Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult? Function()? applyFiltersEvent,
+    TResult? Function(VoidCallback? filterCallBack)? applyFiltersEvent,
   }) {
-    return applyFiltersEvent?.call();
+    return applyFiltersEvent?.call(filterCallBack);
   }
 
   @override
@@ -846,11 +875,11 @@ class _$ApplyFiltersEventImpl implements _ApplyFiltersEvent {
     TResult Function(CarTypeModel? selectedCar)? carTypeChangedEvent,
     TResult Function(ConnectorTypeModel? selectedConnector)?
         connectorTypeChangedEvent,
-    TResult Function()? applyFiltersEvent,
+    TResult Function(VoidCallback? filterCallBack)? applyFiltersEvent,
     required TResult orElse(),
   }) {
     if (applyFiltersEvent != null) {
-      return applyFiltersEvent();
+      return applyFiltersEvent(filterCallBack);
     }
     return orElse();
   }
@@ -901,7 +930,16 @@ class _$ApplyFiltersEventImpl implements _ApplyFiltersEvent {
 }
 
 abstract class _ApplyFiltersEvent implements FilterEvent {
-  const factory _ApplyFiltersEvent() = _$ApplyFiltersEventImpl;
+  const factory _ApplyFiltersEvent(final VoidCallback? filterCallBack) =
+      _$ApplyFiltersEventImpl;
+
+  VoidCallback? get filterCallBack;
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ApplyFiltersEventImplCopyWith<_$ApplyFiltersEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -911,12 +949,8 @@ mixin _$FilterState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)
+    required TResult Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -925,12 +959,8 @@ mixin _$FilterState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)?
+    TResult? Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -939,12 +969,8 @@ mixin _$FilterState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)?
+    TResult Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -953,7 +979,7 @@ mixin _$FilterState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(FilterErrorState value) error,
     required TResult Function(_LoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -961,7 +987,7 @@ mixin _$FilterState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
+    TResult? Function(FilterErrorState value)? error,
     TResult? Function(_LoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -969,7 +995,7 @@ mixin _$FilterState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(FilterErrorState value)? error,
     TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) =>
@@ -1041,12 +1067,8 @@ class _$InitialStateImpl implements _InitialState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)
+    required TResult Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)
         loaded,
   }) {
     return initial();
@@ -1058,12 +1080,8 @@ class _$InitialStateImpl implements _InitialState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)?
+    TResult? Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)?
         loaded,
   }) {
     return initial?.call();
@@ -1075,12 +1093,8 @@ class _$InitialStateImpl implements _InitialState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)?
+    TResult Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1095,7 +1109,7 @@ class _$InitialStateImpl implements _InitialState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(FilterErrorState value) error,
     required TResult Function(_LoadedState value) loaded,
   }) {
     return initial(this);
@@ -1106,7 +1120,7 @@ class _$InitialStateImpl implements _InitialState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
+    TResult? Function(FilterErrorState value)? error,
     TResult? Function(_LoadedState value)? loaded,
   }) {
     return initial?.call(this);
@@ -1117,7 +1131,7 @@ class _$InitialStateImpl implements _InitialState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(FilterErrorState value)? error,
     TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
@@ -1176,12 +1190,8 @@ class _$LoadingStateImpl implements _LoadingState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)
+    required TResult Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)
         loaded,
   }) {
     return loading();
@@ -1193,12 +1203,8 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)?
+    TResult? Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)?
         loaded,
   }) {
     return loading?.call();
@@ -1210,12 +1216,8 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)?
+    TResult Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1230,7 +1232,7 @@ class _$LoadingStateImpl implements _LoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(FilterErrorState value) error,
     required TResult Function(_LoadedState value) loaded,
   }) {
     return loading(this);
@@ -1241,7 +1243,7 @@ class _$LoadingStateImpl implements _LoadingState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
+    TResult? Function(FilterErrorState value)? error,
     TResult? Function(_LoadedState value)? loaded,
   }) {
     return loading?.call(this);
@@ -1252,7 +1254,7 @@ class _$LoadingStateImpl implements _LoadingState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(FilterErrorState value)? error,
     TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
@@ -1268,20 +1270,20 @@ abstract class _LoadingState implements FilterState {
 }
 
 /// @nodoc
-abstract class _$$ErrorStateImplCopyWith<$Res> {
-  factory _$$ErrorStateImplCopyWith(
-          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
-      __$$ErrorStateImplCopyWithImpl<$Res>;
+abstract class _$$FilterErrorStateImplCopyWith<$Res> {
+  factory _$$FilterErrorStateImplCopyWith(_$FilterErrorStateImpl value,
+          $Res Function(_$FilterErrorStateImpl) then) =
+      __$$FilterErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$ErrorStateImplCopyWithImpl<$Res>
-    extends _$FilterStateCopyWithImpl<$Res, _$ErrorStateImpl>
-    implements _$$ErrorStateImplCopyWith<$Res> {
-  __$$ErrorStateImplCopyWithImpl(
-      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
+class __$$FilterErrorStateImplCopyWithImpl<$Res>
+    extends _$FilterStateCopyWithImpl<$Res, _$FilterErrorStateImpl>
+    implements _$$FilterErrorStateImplCopyWith<$Res> {
+  __$$FilterErrorStateImplCopyWithImpl(_$FilterErrorStateImpl _value,
+      $Res Function(_$FilterErrorStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of FilterState
@@ -1291,7 +1293,7 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$ErrorStateImpl(
+    return _then(_$FilterErrorStateImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -1302,8 +1304,8 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorStateImpl implements _ErrorState {
-  const _$ErrorStateImpl(this.message);
+class _$FilterErrorStateImpl implements FilterErrorState {
+  const _$FilterErrorStateImpl(this.message);
 
   @override
   final String message;
@@ -1317,7 +1319,7 @@ class _$ErrorStateImpl implements _ErrorState {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorStateImpl &&
+            other is _$FilterErrorStateImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -1329,8 +1331,9 @@ class _$ErrorStateImpl implements _ErrorState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
-      __$$ErrorStateImplCopyWithImpl<_$ErrorStateImpl>(this, _$identity);
+  _$$FilterErrorStateImplCopyWith<_$FilterErrorStateImpl> get copyWith =>
+      __$$FilterErrorStateImplCopyWithImpl<_$FilterErrorStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1338,12 +1341,8 @@ class _$ErrorStateImpl implements _ErrorState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)
+    required TResult Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)
         loaded,
   }) {
     return error(message);
@@ -1355,12 +1354,8 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)?
+    TResult? Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)?
         loaded,
   }) {
     return error?.call(message);
@@ -1372,12 +1367,8 @@ class _$ErrorStateImpl implements _ErrorState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)?
+    TResult Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1392,7 +1383,7 @@ class _$ErrorStateImpl implements _ErrorState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(FilterErrorState value) error,
     required TResult Function(_LoadedState value) loaded,
   }) {
     return error(this);
@@ -1403,7 +1394,7 @@ class _$ErrorStateImpl implements _ErrorState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
+    TResult? Function(FilterErrorState value)? error,
     TResult? Function(_LoadedState value)? loaded,
   }) {
     return error?.call(this);
@@ -1414,7 +1405,7 @@ class _$ErrorStateImpl implements _ErrorState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(FilterErrorState value)? error,
     TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
@@ -1425,15 +1416,15 @@ class _$ErrorStateImpl implements _ErrorState {
   }
 }
 
-abstract class _ErrorState implements FilterState {
-  const factory _ErrorState(final String message) = _$ErrorStateImpl;
+abstract class FilterErrorState implements FilterState {
+  const factory FilterErrorState(final String message) = _$FilterErrorStateImpl;
 
   String get message;
 
   /// Create a copy of FilterState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
+  _$$FilterErrorStateImplCopyWith<_$FilterErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1446,9 +1437,9 @@ abstract class _$$LoadedStateImplCopyWith<$Res> {
   $Res call(
       {List<ConnectorTypeModel> connectors,
       List<CarTypeModel> cars,
-      int? initialSelectedCarId,
-      int? initialSelectedConnectorId,
-      double? initialRating});
+      FilterModel? filterData});
+
+  $FilterModelCopyWith<$Res>? get filterData;
 }
 
 /// @nodoc
@@ -1466,9 +1457,7 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
   $Res call({
     Object? connectors = null,
     Object? cars = null,
-    Object? initialSelectedCarId = freezed,
-    Object? initialSelectedConnectorId = freezed,
-    Object? initialRating = freezed,
+    Object? filterData = freezed,
   }) {
     return _then(_$LoadedStateImpl(
       null == connectors
@@ -1479,30 +1468,33 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
           ? _value._cars
           : cars // ignore: cast_nullable_to_non_nullable
               as List<CarTypeModel>,
-      initialSelectedCarId: freezed == initialSelectedCarId
-          ? _value.initialSelectedCarId
-          : initialSelectedCarId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      initialSelectedConnectorId: freezed == initialSelectedConnectorId
-          ? _value.initialSelectedConnectorId
-          : initialSelectedConnectorId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      initialRating: freezed == initialRating
-          ? _value.initialRating
-          : initialRating // ignore: cast_nullable_to_non_nullable
-              as double?,
+      freezed == filterData
+          ? _value.filterData
+          : filterData // ignore: cast_nullable_to_non_nullable
+              as FilterModel?,
     ));
+  }
+
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $FilterModelCopyWith<$Res>? get filterData {
+    if (_value.filterData == null) {
+      return null;
+    }
+
+    return $FilterModelCopyWith<$Res>(_value.filterData!, (value) {
+      return _then(_value.copyWith(filterData: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$LoadedStateImpl implements _LoadedState {
-  const _$LoadedStateImpl(
-      final List<ConnectorTypeModel> connectors, final List<CarTypeModel> cars,
-      {this.initialSelectedCarId,
-      this.initialSelectedConnectorId,
-      this.initialRating})
+  const _$LoadedStateImpl(final List<ConnectorTypeModel> connectors,
+      final List<CarTypeModel> cars, this.filterData)
       : _connectors = connectors,
         _cars = cars;
 
@@ -1523,15 +1515,11 @@ class _$LoadedStateImpl implements _LoadedState {
   }
 
   @override
-  final int? initialSelectedCarId;
-  @override
-  final int? initialSelectedConnectorId;
-  @override
-  final double? initialRating;
+  final FilterModel? filterData;
 
   @override
   String toString() {
-    return 'FilterState.loaded(connectors: $connectors, cars: $cars, initialSelectedCarId: $initialSelectedCarId, initialSelectedConnectorId: $initialSelectedConnectorId, initialRating: $initialRating)';
+    return 'FilterState.loaded(connectors: $connectors, cars: $cars, filterData: $filterData)';
   }
 
   @override
@@ -1542,14 +1530,8 @@ class _$LoadedStateImpl implements _LoadedState {
             const DeepCollectionEquality()
                 .equals(other._connectors, _connectors) &&
             const DeepCollectionEquality().equals(other._cars, _cars) &&
-            (identical(other.initialSelectedCarId, initialSelectedCarId) ||
-                other.initialSelectedCarId == initialSelectedCarId) &&
-            (identical(other.initialSelectedConnectorId,
-                    initialSelectedConnectorId) ||
-                other.initialSelectedConnectorId ==
-                    initialSelectedConnectorId) &&
-            (identical(other.initialRating, initialRating) ||
-                other.initialRating == initialRating));
+            (identical(other.filterData, filterData) ||
+                other.filterData == filterData));
   }
 
   @override
@@ -1557,9 +1539,7 @@ class _$LoadedStateImpl implements _LoadedState {
       runtimeType,
       const DeepCollectionEquality().hash(_connectors),
       const DeepCollectionEquality().hash(_cars),
-      initialSelectedCarId,
-      initialSelectedConnectorId,
-      initialRating);
+      filterData);
 
   /// Create a copy of FilterState
   /// with the given fields replaced by the non-null parameter values.
@@ -1575,16 +1555,11 @@ class _$LoadedStateImpl implements _LoadedState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)
+    required TResult Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)
         loaded,
   }) {
-    return loaded(connectors, cars, initialSelectedCarId,
-        initialSelectedConnectorId, initialRating);
+    return loaded(connectors, cars, filterData);
   }
 
   @override
@@ -1593,16 +1568,11 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)?
+    TResult? Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)?
         loaded,
   }) {
-    return loaded?.call(connectors, cars, initialSelectedCarId,
-        initialSelectedConnectorId, initialRating);
+    return loaded?.call(connectors, cars, filterData);
   }
 
   @override
@@ -1611,18 +1581,13 @@ class _$LoadedStateImpl implements _LoadedState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(
-            List<ConnectorTypeModel> connectors,
-            List<CarTypeModel> cars,
-            int? initialSelectedCarId,
-            int? initialSelectedConnectorId,
-            double? initialRating)?
+    TResult Function(List<ConnectorTypeModel> connectors,
+            List<CarTypeModel> cars, FilterModel? filterData)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(connectors, cars, initialSelectedCarId,
-          initialSelectedConnectorId, initialRating);
+      return loaded(connectors, cars, filterData);
     }
     return orElse();
   }
@@ -1632,7 +1597,7 @@ class _$LoadedStateImpl implements _LoadedState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialState value) initial,
     required TResult Function(_LoadingState value) loading,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(FilterErrorState value) error,
     required TResult Function(_LoadedState value) loaded,
   }) {
     return loaded(this);
@@ -1643,7 +1608,7 @@ class _$LoadedStateImpl implements _LoadedState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialState value)? initial,
     TResult? Function(_LoadingState value)? loading,
-    TResult? Function(_ErrorState value)? error,
+    TResult? Function(FilterErrorState value)? error,
     TResult? Function(_LoadedState value)? loaded,
   }) {
     return loaded?.call(this);
@@ -1654,7 +1619,7 @@ class _$LoadedStateImpl implements _LoadedState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialState value)? initial,
     TResult Function(_LoadingState value)? loading,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(FilterErrorState value)? error,
     TResult Function(_LoadedState value)? loaded,
     required TResult orElse(),
   }) {
@@ -1667,16 +1632,13 @@ class _$LoadedStateImpl implements _LoadedState {
 
 abstract class _LoadedState implements FilterState {
   const factory _LoadedState(
-      final List<ConnectorTypeModel> connectors, final List<CarTypeModel> cars,
-      {final int? initialSelectedCarId,
-      final int? initialSelectedConnectorId,
-      final double? initialRating}) = _$LoadedStateImpl;
+      final List<ConnectorTypeModel> connectors,
+      final List<CarTypeModel> cars,
+      final FilterModel? filterData) = _$LoadedStateImpl;
 
   List<ConnectorTypeModel> get connectors;
   List<CarTypeModel> get cars;
-  int? get initialSelectedCarId;
-  int? get initialSelectedConnectorId;
-  double? get initialRating;
+  FilterModel? get filterData;
 
   /// Create a copy of FilterState
   /// with the given fields replaced by the non-null parameter values.

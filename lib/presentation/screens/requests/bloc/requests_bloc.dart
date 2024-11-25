@@ -35,8 +35,7 @@ class RequestsBloc extends Bloc<RequestsEvent, RequestsState> {
         stationRequests: stationRequests,
         selectedOption: event.selectedOption,
       ));
-    } catch (e, stackTrace) {
-      debugPrint('Error: ${e.toString()}, StackTrace: $stackTrace');
+    } catch (e) {
       emit(const RequestsState.error(message: "Failed to load requests"));
     }
   }
