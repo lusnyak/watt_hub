@@ -14,9 +14,9 @@ class StationRepository {
   /// verabervum e bolorin - done
   ///
   Future<List<StationModel>?> getAllStations() async {
-    return await getIt<StationRemoteApi>()
-        .stations()
-        .catchError((_) => <StationModel>[]);
+    return await getIt<StationRemoteApi>().stations().catchError((e) {
+      return <StationModel>[];
+    });
   }
 
   Future<List<StationModel>?> getFilteredStations(

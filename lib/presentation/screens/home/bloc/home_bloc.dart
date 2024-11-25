@@ -1,9 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:watt_hub/data/fake_data/stations_data/stations_map.dart';
+import 'package:watt_hub/config/locator/service_locator.dart';
+import 'package:watt_hub/data/repository/station_repository.dart';
 import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/utils/helpers/location_helper.dart';
 
@@ -42,16 +44,20 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     final location = await _initializeLocation(emit);
 
     try {
-      final stations = stationsData
-          .map((stationJson) => StationModel.fromJson(stationJson))
-          .toList();
+      // final stations = stationsData
+      //     .map((stationJson) => StationModel.fromJson(stationJson))
+      //     .toList();
+
+      final remoteStations = await getIt<StationRepository>().getAllStations();
+      debugPrint('$remoteStations remoteStations');
 
       emit(HomeState.loaded(
-        stations,
+        remoteStations!, // stations
         isList: true,
         currentLocation: location,
       ));
     } catch (e) {
+      debugPrint('${e.toString()} remoteStationsError');
       emit(HomeState.error("Failed to load stations - $e"));
     }
   }
@@ -75,16 +81,20 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   void _onCenterOnStation(event, emit) {
     final stationLocation = LatLng(
-      event.station.latitude,
-      event.station.longitude,
+      event.station.lat,
+      event.station.lng,
     );
+    final currentState = state;
 
     mapController.move(stationLocation, 18.0);
 
-    final stations = stationsData
-        .map((stationJson) => StationModel.fromJson(stationJson))
-        .toList();
-
-    emit(HomeState.loaded(stations, currentLocation: event.currentLocation));
+    if (currentState is LoadedState) {
+      emit(
+        currentState.copyWith(
+          currentLocation: event.currentLocation,
+          isList: true,
+        ),
+      );
+    }
   }
 }

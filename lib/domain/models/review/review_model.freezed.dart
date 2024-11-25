@@ -20,7 +20,7 @@ ReviewModel _$ReviewModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ReviewModel {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   int? get rate => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
   UserModel? get user => throw _privateConstructorUsedError;
@@ -43,7 +43,7 @@ abstract class $ReviewModelCopyWith<$Res> {
       _$ReviewModelCopyWithImpl<$Res, ReviewModel>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       int? rate,
       String? message,
       UserModel? user,
@@ -68,17 +68,17 @@ class _$ReviewModelCopyWithImpl<$Res, $Val extends ReviewModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? rate = freezed,
     Object? message = freezed,
     Object? user = freezed,
     Object? station = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       rate: freezed == rate
           ? _value.rate
           : rate // ignore: cast_nullable_to_non_nullable
@@ -136,7 +136,7 @@ abstract class _$$ReviewModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       int? rate,
       String? message,
       UserModel? user,
@@ -161,17 +161,17 @@ class __$$ReviewModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? rate = freezed,
     Object? message = freezed,
     Object? user = freezed,
     Object? station = freezed,
   }) {
     return _then(_$ReviewModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       rate: freezed == rate
           ? _value.rate
           : rate // ignore: cast_nullable_to_non_nullable
@@ -197,13 +197,13 @@ class __$$ReviewModelImplCopyWithImpl<$Res>
 @JsonSerializable(fieldRename: FieldRename.snake)
 class _$ReviewModelImpl implements _ReviewModel {
   const _$ReviewModelImpl(
-      {required this.id, this.rate, this.message, this.user, this.station});
+      {this.id, this.rate, this.message, this.user, this.station});
 
   factory _$ReviewModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ReviewModelImplFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final int? rate;
   @override
@@ -253,7 +253,7 @@ class _$ReviewModelImpl implements _ReviewModel {
 
 abstract class _ReviewModel implements ReviewModel {
   const factory _ReviewModel(
-      {required final int id,
+      {final int? id,
       final int? rate,
       final String? message,
       final UserModel? user,
@@ -263,7 +263,7 @@ abstract class _ReviewModel implements ReviewModel {
       _$ReviewModelImpl.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   int? get rate;
   @override
