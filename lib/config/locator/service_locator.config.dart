@@ -36,12 +36,16 @@ import 'package:watt_hub/data/repository/connector_repository.dart' as _i463;
 import 'package:watt_hub/data/repository/order_repository.dart' as _i757;
 import 'package:watt_hub/data/repository/station_repository.dart' as _i198;
 import 'package:watt_hub/data/repository/user_repository.dart' as _i468;
+import 'package:watt_hub/presentation/screens/add_car/bloc/add_car_bloc.dart'
+    as _i352;
 import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.dart'
     as _i767;
 import 'package:watt_hub/presentation/screens/app_loading/bloc/app_loading_bloc.dart'
     as _i536;
 import 'package:watt_hub/presentation/screens/choose_station_address/bloc/choose_station_address_bloc.dart'
     as _i474;
+import 'package:watt_hub/presentation/screens/detail/bloc/detail_bloc.dart'
+    as _i424;
 import 'package:watt_hub/presentation/screens/filter/bloc/filter_bloc.dart'
     as _i293;
 import 'package:watt_hub/presentation/screens/home/bloc/home_bloc.dart'
@@ -78,6 +82,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i536.AppLoadingBloc>(() => _i536.AppLoadingBloc());
     gh.factory<_i474.ChooseStationAddressBloc>(
         () => _i474.ChooseStationAddressBloc());
+    gh.factory<_i536.AppLoadingBloc>(() => _i536.AppLoadingBloc());
+    gh.factory<_i845.RequestsBloc>(() => _i845.RequestsBloc());
+    gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
+    gh.factory<_i352.AddCarBloc>(() => _i352.AddCarBloc());
+    gh.factory<_i177.ProfileBloc>(() => _i177.ProfileBloc());
     gh.factory<_i293.FilterBloc>(() => _i293.FilterBloc());
     gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
     gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
@@ -87,6 +96,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i400.StationInfoBloc>(() => _i400.StationInfoBloc());
     gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
     gh.factory<_i593.ProfileDetailBloc>(() => _i593.ProfileDetailBloc());
+    gh.factory<_i424.DetailBloc>(() => _i424.DetailBloc());
     gh.lazySingleton<_i618.ConnectivityChecker>(
         () => _i618.ConnectivityChecker());
     gh.lazySingleton<_i361.Dio>(() => dioClient.dio());

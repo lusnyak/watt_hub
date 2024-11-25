@@ -259,4 +259,16 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get unknown => 'Անհայտ';
+
+  @override
+  String get addCar => 'Ավելացնել մեքենա';
+
+  @override
+  String get carType => 'Մեքենայի տեսակը';
+
+  @override
+  String get carModel => 'Մեքենայի մոդելը';
+
+  @override
+  String get addCarImage => 'Ավելացնել մեքենայի պատկերը';
 }
