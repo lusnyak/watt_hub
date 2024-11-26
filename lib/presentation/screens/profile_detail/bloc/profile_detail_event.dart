@@ -6,4 +6,5 @@ class ProfileDetailEvent with _$ProfileDetailEvent {
     String? initialFullName,
     String? initialPhoneNumber,
   }) = LoadProfileEvent;
+  const factory ProfileDetailEvent.updateProfile(int? id,) = UpdateProfileEvent;
 }

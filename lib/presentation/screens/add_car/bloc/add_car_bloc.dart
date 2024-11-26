@@ -11,9 +11,7 @@ import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart'
 import 'package:watt_hub/presentation/screens/add_car/view_model/add_car_view_model.dart';
 
 part 'add_car_bloc.freezed.dart';
-
 part 'add_car_event.dart';
-
 part 'add_car_state.dart';
 
 @injectable
