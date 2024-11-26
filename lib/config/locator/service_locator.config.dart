@@ -82,11 +82,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i536.AppLoadingBloc>(() => _i536.AppLoadingBloc());
     gh.factory<_i474.ChooseStationAddressBloc>(
         () => _i474.ChooseStationAddressBloc());
-    gh.factory<_i536.AppLoadingBloc>(() => _i536.AppLoadingBloc());
-    gh.factory<_i845.RequestsBloc>(() => _i845.RequestsBloc());
-    gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
-    gh.factory<_i352.AddCarBloc>(() => _i352.AddCarBloc());
-    gh.factory<_i177.ProfileBloc>(() => _i177.ProfileBloc());
     gh.factory<_i293.FilterBloc>(() => _i293.FilterBloc());
     gh.factory<_i944.HomeBloc>(() => _i944.HomeBloc());
     gh.factory<_i764.OnboardingBloc>(() => _i764.OnboardingBloc());
@@ -96,6 +91,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i400.StationInfoBloc>(() => _i400.StationInfoBloc());
     gh.factory<_i298.VerificationBloc>(() => _i298.VerificationBloc());
     gh.factory<_i593.ProfileDetailBloc>(() => _i593.ProfileDetailBloc());
+    gh.factory<_i352.AddCarBloc>(() => _i352.AddCarBloc());
     gh.factory<_i424.DetailBloc>(() => _i424.DetailBloc());
     gh.lazySingleton<_i618.ConnectivityChecker>(
         () => _i618.ConnectivityChecker());

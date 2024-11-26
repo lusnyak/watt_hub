@@ -37,38 +37,45 @@ class _ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<ProfileBloc, ProfileState>(builder: (context, state) {
-        return state.when(
-            initial: () => const SizedBox.shrink(),
-            loading: () => const WHCircularSpin().toCenter(),
-            error: (message) => Center(child: Text('Error: $message')),
-            loaded: (
-              profileData,
-              stationsData,
-              carsData,
-            ) {
-              return SafeArea(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Text(
-                        context.localized.account,
-                        textAlign: TextAlign.start,
-                        style: body24SemiBoldTextStyle,
-                      ).paddingLTRB(0, 20.h, 20.w, 20.h),
-                      _infoSection(context, profileData),
-                      const Divider(),
-                      _carSection(context, carsData),
-                      _stationSection(context, stationsData),
-                      const Divider(),
-                      _profileMenuItems(context),
-                    ],
-                  ).paddingAll(20.r),
-                ),
-              );
-            });
-      }),
+      body: BlocConsumer<ProfileBloc, ProfileState>(
+          listener: (
+            context,
+            state,
+          ) {},
+          builder: (
+            context,
+            state,
+          ) {
+            final (userData, stationsData, carsData) = state.maybeMap(
+              loaded: (state) => (
+                state.userData,
+                state.stationsData,
+                state.carsData,
+              ),
+              orElse: () => (null, <StationModel>[], <CarModel>[]),
+            );
+
+            return SafeArea(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      context.localized.account,
+                      textAlign: TextAlign.start,
+                      style: body24SemiBoldTextStyle,
+                    ).paddingLTRB(0, 20.h, 20.w, 20.h),
+                    _infoSection(context, userData),
+                    const Divider(),
+                    _carSection(context, carsData),
+                    _stationSection(context, stationsData),
+                    const Divider(),
+                    _profileMenuItems(context),
+                  ],
+                ).paddingAll(20.r),
+              ),
+            );
+          }),
     );
   }
 
@@ -106,28 +113,36 @@ class _ProfileView extends StatelessWidget {
               context.router.replace(const SignUpRoute());
             }
           },
-
-          /// TODO: -- implement logout - Marieta
           colorTile: WattHubColors.redColor,
         ),
       ],
     );
   }
 
-  Widget _infoSection(BuildContext context, UserModel profileData) {
+  Widget _infoSection(BuildContext context, UserModel? profileData) {
     return ListTile(
       splashColor: WattHubColors.primaryLightGreenColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
       contentPadding: paddingV20,
       onTap: () {
-        context.router.push(ProfileDetailRoute(userData: profileData));
+        context.router
+            .push(ProfileDetailRoute(userData: profileData))
+            .then((value) {
+          if (value is bool && value) {
+            if (context.mounted) {
+              context
+                  .read<ProfileBloc>()
+                  .add(const ProfileEvent.loadUserData());
+            }
+          }
+        });
       },
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(profileData.fullName ?? '', style: body16SemiBoldTextStyle),
+          Text(profileData?.fullName ?? '', style: body16SemiBoldTextStyle),
           12.h.heightBox,
-          Text(profileData.phoneNumber ?? '', style: body14RegularTextStyle),
+          Text(profileData?.phoneNumber ?? '', style: body14RegularTextStyle),
         ],
       ),
       horizontalTitleGap: 20,
