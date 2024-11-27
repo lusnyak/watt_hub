@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
-import 'package:watt_hub/domain/models/car/car_model.dart';
+import 'package:watt_hub/domain/models/car_model/car_model.dart';
 import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
 import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
 import 'package:watt_hub_localization/watt_hub_localization.dart';
@@ -45,7 +45,7 @@ class _AddCarView extends StatelessWidget {
             children: [
               dropDownsSection(context, state),
               20.h.heightBox,
-              uploadCarImage(context,state),
+              uploadCarImage(context, state),
               10.h.heightBox,
               if (state.images != null) showCareImage(context, state),
               20.h.heightBox,
@@ -87,7 +87,7 @@ Widget dropDownsSection(BuildContext context, state) {
                 );
           }
         },
-        itemLabel: (carModel) => carModel.title ?? "",
+        itemLabel: (carModel) => carModel.name ?? "",
         items: state.carModels,
         hintText: AppLocalizations.of(context).carModel,
       ),
@@ -109,20 +109,20 @@ Widget dropDownsSection(BuildContext context, state) {
   );
 }
 
-Widget uploadCarImage(BuildContext context,state) {
+Widget uploadCarImage(BuildContext context, state) {
   final currentImages = state.images ?? "";
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       Text(AppLocalizations.of(context).addCarImage,
           style: body18SemiBoldTextStyle),
-      if(currentImages == "")
-      WHImagePicker.single(
-        onPicked: (file) {
-          context.read<AddCarBloc>().add(AddCarEvent.imagesSelected(file));
-        },
-        child: const ImagePickerUploadButton(),
-      ),
+      if (currentImages == "")
+        WHImagePicker.single(
+          onPicked: (file) {
+            context.read<AddCarBloc>().add(AddCarEvent.imagesSelected(file));
+          },
+          child: const ImagePickerUploadButton(),
+        ),
     ],
   );
 }

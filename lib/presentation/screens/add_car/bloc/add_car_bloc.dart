@@ -3,7 +3,7 @@ import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/fake_data/car_models_data/car_models_data.dart';
 import 'package:watt_hub/data/fake_data/car_types_data/car_types_data.dart';
 import 'package:watt_hub/data/fake_data/connectors_data/connectors_data.dart';
-import 'package:watt_hub/domain/models/car/car_model.dart';
+import 'package:watt_hub/domain/models/car_model/car_model.dart';
 import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
 import 'package:watt_hub/domain/models/connector_type/connector_type_model.dart';
 

@@ -6,7 +6,7 @@ part 'car_type_model.g.dart';
 @freezed
 class CarTypeModel with _$CarTypeModel {
   const factory CarTypeModel({
-    required int id,
+    int? id,
     String? title,
   }) = _CarTypeModel;
 

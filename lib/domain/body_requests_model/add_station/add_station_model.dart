@@ -8,7 +8,7 @@ class AddStationModel {
   final double? lng;
   final DateTime? startTime;
   final DateTime? endTime;
-  final List<int>? connectorTypeId;
+  final dynamic connectorTypeId; // List<int>?
   final num? hourlyRate;
   final String? phoneNumber;
   final String? name;

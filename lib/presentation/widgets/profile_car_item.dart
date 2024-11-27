@@ -9,6 +9,7 @@ class ProfileCarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('$carData carData.connectorTypes?.title');
     return Container(
       padding: paddingV20H10,
       decoration: BoxDecoration(
@@ -26,19 +27,19 @@ class ProfileCarItem extends StatelessWidget {
                     context.localized.carInfo,
                     style: body16SemiBoldTextStyle,
                   ).paddingOnly(bottom: 10.sp),
-                  Text("${carData.carModel.title} . ${carData.carType.title}"),
-                  Text(carData.carType.title ?? ""),
-                  Text(carData.connectorType.title ?? ""),
+                  Text("${carData.model?.title} . ${carData.type?.title}"),
+                  Text(carData.type?.title ?? ""),
+                  Text(carData.connectorTypes?.title ?? ""),
                 ],
               ).expanded(),
-              SizedBox(
-                width: 50.w,
-                height: 50.h,
-                child: Image.network(
-                  carData.images.first,
-                ),
-                // child: WattHubAssets.images.profileImage.image(),
-              )
+              // SizedBox(
+              //   width: 50.w,
+              //   height: 50.h,
+              //   child: Image.network(
+              //     carData.images.first,
+              //   ),
+              //   // child: WattHubAssets.images.profileImage.image(),
+              // )
             ],
           ),
         ],

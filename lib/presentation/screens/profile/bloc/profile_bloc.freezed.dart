@@ -295,9 +295,8 @@ mixin _$ProfileState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(UserModel? userData,
-            List<StationModel>? stationsData, List<CarModel>? carsData)
+            List<StationModel>? stationsData, CarModel? carsData)
         loaded,
-    required TResult Function(UserModel? userData) userDataLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -306,9 +305,8 @@ mixin _$ProfileState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
+            CarModel? carsData)?
         loaded,
-    TResult? Function(UserModel? userData)? userDataLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -317,9 +315,8 @@ mixin _$ProfileState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
+            CarModel? carsData)?
         loaded,
-    TResult Function(UserModel? userData)? userDataLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -329,7 +326,6 @@ mixin _$ProfileState {
     required TResult Function(_ProfileLoadingState value) loading,
     required TResult Function(_ProfileErrorState value) error,
     required TResult Function(_ProfileLoadedState value) loaded,
-    required TResult Function(_UserDataLoaded value) userDataLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -338,7 +334,6 @@ mixin _$ProfileState {
     TResult? Function(_ProfileLoadingState value)? loading,
     TResult? Function(_ProfileErrorState value)? error,
     TResult? Function(_ProfileLoadedState value)? loaded,
-    TResult? Function(_UserDataLoaded value)? userDataLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -347,7 +342,6 @@ mixin _$ProfileState {
     TResult Function(_ProfileLoadingState value)? loading,
     TResult Function(_ProfileErrorState value)? error,
     TResult Function(_ProfileLoadedState value)? loaded,
-    TResult Function(_UserDataLoaded value)? userDataLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -420,9 +414,8 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(UserModel? userData,
-            List<StationModel>? stationsData, List<CarModel>? carsData)
+            List<StationModel>? stationsData, CarModel? carsData)
         loaded,
-    required TResult Function(UserModel? userData) userDataLoaded,
   }) {
     return initial();
   }
@@ -434,9 +427,8 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
+            CarModel? carsData)?
         loaded,
-    TResult? Function(UserModel? userData)? userDataLoaded,
   }) {
     return initial?.call();
   }
@@ -448,9 +440,8 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
+            CarModel? carsData)?
         loaded,
-    TResult Function(UserModel? userData)? userDataLoaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -466,7 +457,6 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
     required TResult Function(_ProfileLoadingState value) loading,
     required TResult Function(_ProfileErrorState value) error,
     required TResult Function(_ProfileLoadedState value) loaded,
-    required TResult Function(_UserDataLoaded value) userDataLoaded,
   }) {
     return initial(this);
   }
@@ -478,7 +468,6 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
     TResult? Function(_ProfileLoadingState value)? loading,
     TResult? Function(_ProfileErrorState value)? error,
     TResult? Function(_ProfileLoadedState value)? loaded,
-    TResult? Function(_UserDataLoaded value)? userDataLoaded,
   }) {
     return initial?.call(this);
   }
@@ -490,7 +479,6 @@ class _$ProfileInitialStateImpl implements _ProfileInitialState {
     TResult Function(_ProfileLoadingState value)? loading,
     TResult Function(_ProfileErrorState value)? error,
     TResult Function(_ProfileLoadedState value)? loaded,
-    TResult Function(_UserDataLoaded value)? userDataLoaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -550,9 +538,8 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(UserModel? userData,
-            List<StationModel>? stationsData, List<CarModel>? carsData)
+            List<StationModel>? stationsData, CarModel? carsData)
         loaded,
-    required TResult Function(UserModel? userData) userDataLoaded,
   }) {
     return loading();
   }
@@ -564,9 +551,8 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
+            CarModel? carsData)?
         loaded,
-    TResult? Function(UserModel? userData)? userDataLoaded,
   }) {
     return loading?.call();
   }
@@ -578,9 +564,8 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
+            CarModel? carsData)?
         loaded,
-    TResult Function(UserModel? userData)? userDataLoaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -596,7 +581,6 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
     required TResult Function(_ProfileLoadingState value) loading,
     required TResult Function(_ProfileErrorState value) error,
     required TResult Function(_ProfileLoadedState value) loaded,
-    required TResult Function(_UserDataLoaded value) userDataLoaded,
   }) {
     return loading(this);
   }
@@ -608,7 +592,6 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
     TResult? Function(_ProfileLoadingState value)? loading,
     TResult? Function(_ProfileErrorState value)? error,
     TResult? Function(_ProfileLoadedState value)? loaded,
-    TResult? Function(_UserDataLoaded value)? userDataLoaded,
   }) {
     return loading?.call(this);
   }
@@ -620,7 +603,6 @@ class _$ProfileLoadingStateImpl implements _ProfileLoadingState {
     TResult Function(_ProfileLoadingState value)? loading,
     TResult Function(_ProfileErrorState value)? error,
     TResult Function(_ProfileLoadedState value)? loaded,
-    TResult Function(_UserDataLoaded value)? userDataLoaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -707,9 +689,8 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(UserModel? userData,
-            List<StationModel>? stationsData, List<CarModel>? carsData)
+            List<StationModel>? stationsData, CarModel? carsData)
         loaded,
-    required TResult Function(UserModel? userData) userDataLoaded,
   }) {
     return error(message);
   }
@@ -721,9 +702,8 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
+            CarModel? carsData)?
         loaded,
-    TResult? Function(UserModel? userData)? userDataLoaded,
   }) {
     return error?.call(message);
   }
@@ -735,9 +715,8 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
+            CarModel? carsData)?
         loaded,
-    TResult Function(UserModel? userData)? userDataLoaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -753,7 +732,6 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
     required TResult Function(_ProfileLoadingState value) loading,
     required TResult Function(_ProfileErrorState value) error,
     required TResult Function(_ProfileLoadedState value) loaded,
-    required TResult Function(_UserDataLoaded value) userDataLoaded,
   }) {
     return error(this);
   }
@@ -765,7 +743,6 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
     TResult? Function(_ProfileLoadingState value)? loading,
     TResult? Function(_ProfileErrorState value)? error,
     TResult? Function(_ProfileLoadedState value)? loaded,
-    TResult? Function(_UserDataLoaded value)? userDataLoaded,
   }) {
     return error?.call(this);
   }
@@ -777,7 +754,6 @@ class _$ProfileErrorStateImpl implements _ProfileErrorState {
     TResult Function(_ProfileLoadingState value)? loading,
     TResult Function(_ProfileErrorState value)? error,
     TResult Function(_ProfileLoadedState value)? loaded,
-    TResult Function(_UserDataLoaded value)? userDataLoaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -809,9 +785,10 @@ abstract class _$$ProfileLoadedStateImplCopyWith<$Res> {
   $Res call(
       {UserModel? userData,
       List<StationModel>? stationsData,
-      List<CarModel>? carsData});
+      CarModel? carsData});
 
   $UserModelCopyWith<$Res>? get userData;
+  $CarModelCopyWith<$Res>? get carsData;
 }
 
 /// @nodoc
@@ -841,9 +818,9 @@ class __$$ProfileLoadedStateImplCopyWithImpl<$Res>
           : stationsData // ignore: cast_nullable_to_non_nullable
               as List<StationModel>?,
       carsData: freezed == carsData
-          ? _value._carsData
+          ? _value.carsData
           : carsData // ignore: cast_nullable_to_non_nullable
-              as List<CarModel>?,
+              as CarModel?,
     ));
   }
 
@@ -860,17 +837,28 @@ class __$$ProfileLoadedStateImplCopyWithImpl<$Res>
       return _then(_value.copyWith(userData: value));
     });
   }
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CarModelCopyWith<$Res>? get carsData {
+    if (_value.carsData == null) {
+      return null;
+    }
+
+    return $CarModelCopyWith<$Res>(_value.carsData!, (value) {
+      return _then(_value.copyWith(carsData: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
   const _$ProfileLoadedStateImpl(
-      {this.userData,
-      final List<StationModel>? stationsData,
-      final List<CarModel>? carsData})
-      : _stationsData = stationsData,
-        _carsData = carsData;
+      {this.userData, final List<StationModel>? stationsData, this.carsData})
+      : _stationsData = stationsData;
 
   @override
   final UserModel? userData;
@@ -884,15 +872,8 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<CarModel>? _carsData;
   @override
-  List<CarModel>? get carsData {
-    final value = _carsData;
-    if (value == null) return null;
-    if (_carsData is EqualUnmodifiableListView) return _carsData;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  final CarModel? carsData;
 
   @override
   String toString() {
@@ -908,15 +889,13 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
                 other.userData == userData) &&
             const DeepCollectionEquality()
                 .equals(other._stationsData, _stationsData) &&
-            const DeepCollectionEquality().equals(other._carsData, _carsData));
+            (identical(other.carsData, carsData) ||
+                other.carsData == carsData));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      userData,
-      const DeepCollectionEquality().hash(_stationsData),
-      const DeepCollectionEquality().hash(_carsData));
+  int get hashCode => Object.hash(runtimeType, userData,
+      const DeepCollectionEquality().hash(_stationsData), carsData);
 
   /// Create a copy of ProfileState
   /// with the given fields replaced by the non-null parameter values.
@@ -934,9 +913,8 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
     required TResult Function() loading,
     required TResult Function(String message) error,
     required TResult Function(UserModel? userData,
-            List<StationModel>? stationsData, List<CarModel>? carsData)
+            List<StationModel>? stationsData, CarModel? carsData)
         loaded,
-    required TResult Function(UserModel? userData) userDataLoaded,
   }) {
     return loaded(userData, stationsData, carsData);
   }
@@ -948,9 +926,8 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
     TResult? Function()? loading,
     TResult? Function(String message)? error,
     TResult? Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
+            CarModel? carsData)?
         loaded,
-    TResult? Function(UserModel? userData)? userDataLoaded,
   }) {
     return loaded?.call(userData, stationsData, carsData);
   }
@@ -962,9 +939,8 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
     TResult Function()? loading,
     TResult Function(String message)? error,
     TResult Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
+            CarModel? carsData)?
         loaded,
-    TResult Function(UserModel? userData)? userDataLoaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -980,7 +956,6 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
     required TResult Function(_ProfileLoadingState value) loading,
     required TResult Function(_ProfileErrorState value) error,
     required TResult Function(_ProfileLoadedState value) loaded,
-    required TResult Function(_UserDataLoaded value) userDataLoaded,
   }) {
     return loaded(this);
   }
@@ -992,7 +967,6 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
     TResult? Function(_ProfileLoadingState value)? loading,
     TResult? Function(_ProfileErrorState value)? error,
     TResult? Function(_ProfileLoadedState value)? loaded,
-    TResult? Function(_UserDataLoaded value)? userDataLoaded,
   }) {
     return loaded?.call(this);
   }
@@ -1004,7 +978,6 @@ class _$ProfileLoadedStateImpl implements _ProfileLoadedState {
     TResult Function(_ProfileLoadingState value)? loading,
     TResult Function(_ProfileErrorState value)? error,
     TResult Function(_ProfileLoadedState value)? loaded,
-    TResult Function(_UserDataLoaded value)? userDataLoaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -1018,198 +991,15 @@ abstract class _ProfileLoadedState implements ProfileState {
   const factory _ProfileLoadedState(
       {final UserModel? userData,
       final List<StationModel>? stationsData,
-      final List<CarModel>? carsData}) = _$ProfileLoadedStateImpl;
+      final CarModel? carsData}) = _$ProfileLoadedStateImpl;
 
   UserModel? get userData;
   List<StationModel>? get stationsData;
-  List<CarModel>? get carsData;
+  CarModel? get carsData;
 
   /// Create a copy of ProfileState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProfileLoadedStateImplCopyWith<_$ProfileLoadedStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UserDataLoadedImplCopyWith<$Res> {
-  factory _$$UserDataLoadedImplCopyWith(_$UserDataLoadedImpl value,
-          $Res Function(_$UserDataLoadedImpl) then) =
-      __$$UserDataLoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({UserModel? userData});
-
-  $UserModelCopyWith<$Res>? get userData;
-}
-
-/// @nodoc
-class __$$UserDataLoadedImplCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res, _$UserDataLoadedImpl>
-    implements _$$UserDataLoadedImplCopyWith<$Res> {
-  __$$UserDataLoadedImplCopyWithImpl(
-      _$UserDataLoadedImpl _value, $Res Function(_$UserDataLoadedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ProfileState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userData = freezed,
-  }) {
-    return _then(_$UserDataLoadedImpl(
-      userData: freezed == userData
-          ? _value.userData
-          : userData // ignore: cast_nullable_to_non_nullable
-              as UserModel?,
-    ));
-  }
-
-  /// Create a copy of ProfileState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserModelCopyWith<$Res>? get userData {
-    if (_value.userData == null) {
-      return null;
-    }
-
-    return $UserModelCopyWith<$Res>(_value.userData!, (value) {
-      return _then(_value.copyWith(userData: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$UserDataLoadedImpl implements _UserDataLoaded {
-  const _$UserDataLoadedImpl({required this.userData});
-
-  @override
-  final UserModel? userData;
-
-  @override
-  String toString() {
-    return 'ProfileState.userDataLoaded(userData: $userData)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserDataLoadedImpl &&
-            (identical(other.userData, userData) ||
-                other.userData == userData));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, userData);
-
-  /// Create a copy of ProfileState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserDataLoadedImplCopyWith<_$UserDataLoadedImpl> get copyWith =>
-      __$$UserDataLoadedImplCopyWithImpl<_$UserDataLoadedImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) error,
-    required TResult Function(UserModel? userData,
-            List<StationModel>? stationsData, List<CarModel>? carsData)
-        loaded,
-    required TResult Function(UserModel? userData) userDataLoaded,
-  }) {
-    return userDataLoaded(userData);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String message)? error,
-    TResult? Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
-        loaded,
-    TResult? Function(UserModel? userData)? userDataLoaded,
-  }) {
-    return userDataLoaded?.call(userData);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? error,
-    TResult Function(UserModel? userData, List<StationModel>? stationsData,
-            List<CarModel>? carsData)?
-        loaded,
-    TResult Function(UserModel? userData)? userDataLoaded,
-    required TResult orElse(),
-  }) {
-    if (userDataLoaded != null) {
-      return userDataLoaded(userData);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ProfileInitialState value) initial,
-    required TResult Function(_ProfileLoadingState value) loading,
-    required TResult Function(_ProfileErrorState value) error,
-    required TResult Function(_ProfileLoadedState value) loaded,
-    required TResult Function(_UserDataLoaded value) userDataLoaded,
-  }) {
-    return userDataLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ProfileInitialState value)? initial,
-    TResult? Function(_ProfileLoadingState value)? loading,
-    TResult? Function(_ProfileErrorState value)? error,
-    TResult? Function(_ProfileLoadedState value)? loaded,
-    TResult? Function(_UserDataLoaded value)? userDataLoaded,
-  }) {
-    return userDataLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ProfileInitialState value)? initial,
-    TResult Function(_ProfileLoadingState value)? loading,
-    TResult Function(_ProfileErrorState value)? error,
-    TResult Function(_ProfileLoadedState value)? loaded,
-    TResult Function(_UserDataLoaded value)? userDataLoaded,
-    required TResult orElse(),
-  }) {
-    if (userDataLoaded != null) {
-      return userDataLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UserDataLoaded implements ProfileState {
-  const factory _UserDataLoaded({required final UserModel? userData}) =
-      _$UserDataLoadedImpl;
-
-  UserModel? get userData;
-
-  /// Create a copy of ProfileState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserDataLoadedImplCopyWith<_$UserDataLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

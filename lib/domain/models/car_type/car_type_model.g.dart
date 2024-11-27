@@ -8,7 +8,7 @@ part of 'car_type_model.dart';
 
 _$CarTypeModelImpl _$$CarTypeModelImplFromJson(Map<String, dynamic> json) =>
     _$CarTypeModelImpl(
-      id: (json['id'] as num).toInt(),
+      id: (json['id'] as num?)?.toInt(),
       title: json['title'] as String?,
     );
 

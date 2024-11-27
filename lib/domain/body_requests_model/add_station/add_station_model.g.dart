@@ -16,9 +16,7 @@ AddStationModel _$AddStationModelFromJson(Map<String, dynamic> json) =>
       endTime: json['end_time'] == null
           ? null
           : DateTime.parse(json['end_time'] as String),
-      connectorTypeId: (json['connector_type_id'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      connectorTypeId: json['connector_type_id'],
       hourlyRate: json['hourly_rate'] as num?,
       phoneNumber: json['phone_number'] as String?,
       name: json['name'] as String?,
