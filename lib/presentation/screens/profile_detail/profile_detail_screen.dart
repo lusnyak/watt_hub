@@ -63,12 +63,6 @@ class ProfileDetailView extends StatelessWidget {
             error: (message) => context.showSnackBar(message: message),
             updated: (isUpdated) {
               context.router.maybePop(isUpdated);
-
-              // WHPopup.of(context).show(
-              //   title: 'Congratulations',
-              //   subTitle: 'Updated',
-              // );
-              // context.router.push(const ProfileRoute());
             });
       }, builder: (context, state) {
         final profileDetailState = context.read<ProfileDetailBloc>();

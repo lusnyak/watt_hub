@@ -20,18 +20,21 @@ mixin _$ProfileEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() loadProfile,
     required TResult Function() loadUserData,
+    required TResult Function() loadCarData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadProfile,
     TResult? Function()? loadUserData,
+    TResult? Function()? loadCarData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadProfile,
     TResult Function()? loadUserData,
+    TResult Function()? loadCarData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$ProfileEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadProfileEvent value) loadProfile,
     required TResult Function(_LoadUserDataEvent value) loadUserData,
+    required TResult Function(_LoadCarDataEvent value) loadCarData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadProfileEvent value)? loadProfile,
     TResult? Function(_LoadUserDataEvent value)? loadUserData,
+    TResult? Function(_LoadCarDataEvent value)? loadCarData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadProfileEvent value)? loadProfile,
     TResult Function(_LoadUserDataEvent value)? loadUserData,
+    TResult Function(_LoadCarDataEvent value)? loadCarData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +126,7 @@ class _$LoadProfileEventImpl implements _LoadProfileEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() loadProfile,
     required TResult Function() loadUserData,
+    required TResult Function() loadCarData,
   }) {
     return loadProfile();
   }
@@ -129,6 +136,7 @@ class _$LoadProfileEventImpl implements _LoadProfileEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadProfile,
     TResult? Function()? loadUserData,
+    TResult? Function()? loadCarData,
   }) {
     return loadProfile?.call();
   }
@@ -138,6 +146,7 @@ class _$LoadProfileEventImpl implements _LoadProfileEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadProfile,
     TResult Function()? loadUserData,
+    TResult Function()? loadCarData,
     required TResult orElse(),
   }) {
     if (loadProfile != null) {
@@ -151,6 +160,7 @@ class _$LoadProfileEventImpl implements _LoadProfileEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadProfileEvent value) loadProfile,
     required TResult Function(_LoadUserDataEvent value) loadUserData,
+    required TResult Function(_LoadCarDataEvent value) loadCarData,
   }) {
     return loadProfile(this);
   }
@@ -160,6 +170,7 @@ class _$LoadProfileEventImpl implements _LoadProfileEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadProfileEvent value)? loadProfile,
     TResult? Function(_LoadUserDataEvent value)? loadUserData,
+    TResult? Function(_LoadCarDataEvent value)? loadCarData,
   }) {
     return loadProfile?.call(this);
   }
@@ -169,6 +180,7 @@ class _$LoadProfileEventImpl implements _LoadProfileEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadProfileEvent value)? loadProfile,
     TResult Function(_LoadUserDataEvent value)? loadUserData,
+    TResult Function(_LoadCarDataEvent value)? loadCarData,
     required TResult orElse(),
   }) {
     if (loadProfile != null) {
@@ -225,6 +237,7 @@ class _$LoadUserDataEventImpl implements _LoadUserDataEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() loadProfile,
     required TResult Function() loadUserData,
+    required TResult Function() loadCarData,
   }) {
     return loadUserData();
   }
@@ -234,6 +247,7 @@ class _$LoadUserDataEventImpl implements _LoadUserDataEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadProfile,
     TResult? Function()? loadUserData,
+    TResult? Function()? loadCarData,
   }) {
     return loadUserData?.call();
   }
@@ -243,6 +257,7 @@ class _$LoadUserDataEventImpl implements _LoadUserDataEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadProfile,
     TResult Function()? loadUserData,
+    TResult Function()? loadCarData,
     required TResult orElse(),
   }) {
     if (loadUserData != null) {
@@ -256,6 +271,7 @@ class _$LoadUserDataEventImpl implements _LoadUserDataEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadProfileEvent value) loadProfile,
     required TResult Function(_LoadUserDataEvent value) loadUserData,
+    required TResult Function(_LoadCarDataEvent value) loadCarData,
   }) {
     return loadUserData(this);
   }
@@ -265,6 +281,7 @@ class _$LoadUserDataEventImpl implements _LoadUserDataEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadProfileEvent value)? loadProfile,
     TResult? Function(_LoadUserDataEvent value)? loadUserData,
+    TResult? Function(_LoadCarDataEvent value)? loadCarData,
   }) {
     return loadUserData?.call(this);
   }
@@ -274,6 +291,7 @@ class _$LoadUserDataEventImpl implements _LoadUserDataEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadProfileEvent value)? loadProfile,
     TResult Function(_LoadUserDataEvent value)? loadUserData,
+    TResult Function(_LoadCarDataEvent value)? loadCarData,
     required TResult orElse(),
   }) {
     if (loadUserData != null) {
@@ -285,6 +303,117 @@ class _$LoadUserDataEventImpl implements _LoadUserDataEvent {
 
 abstract class _LoadUserDataEvent implements ProfileEvent {
   const factory _LoadUserDataEvent() = _$LoadUserDataEventImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadCarDataEventImplCopyWith<$Res> {
+  factory _$$LoadCarDataEventImplCopyWith(_$LoadCarDataEventImpl value,
+          $Res Function(_$LoadCarDataEventImpl) then) =
+      __$$LoadCarDataEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadCarDataEventImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$LoadCarDataEventImpl>
+    implements _$$LoadCarDataEventImplCopyWith<$Res> {
+  __$$LoadCarDataEventImplCopyWithImpl(_$LoadCarDataEventImpl _value,
+      $Res Function(_$LoadCarDataEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadCarDataEventImpl implements _LoadCarDataEvent {
+  const _$LoadCarDataEventImpl();
+
+  @override
+  String toString() {
+    return 'ProfileEvent.loadCarData()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadCarDataEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadProfile,
+    required TResult Function() loadUserData,
+    required TResult Function() loadCarData,
+  }) {
+    return loadCarData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loadProfile,
+    TResult? Function()? loadUserData,
+    TResult? Function()? loadCarData,
+  }) {
+    return loadCarData?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadProfile,
+    TResult Function()? loadUserData,
+    TResult Function()? loadCarData,
+    required TResult orElse(),
+  }) {
+    if (loadCarData != null) {
+      return loadCarData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadProfileEvent value) loadProfile,
+    required TResult Function(_LoadUserDataEvent value) loadUserData,
+    required TResult Function(_LoadCarDataEvent value) loadCarData,
+  }) {
+    return loadCarData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadProfileEvent value)? loadProfile,
+    TResult? Function(_LoadUserDataEvent value)? loadUserData,
+    TResult? Function(_LoadCarDataEvent value)? loadCarData,
+  }) {
+    return loadCarData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadProfileEvent value)? loadProfile,
+    TResult Function(_LoadUserDataEvent value)? loadUserData,
+    TResult Function(_LoadCarDataEvent value)? loadCarData,
+    required TResult orElse(),
+  }) {
+    if (loadCarData != null) {
+      return loadCarData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadCarDataEvent implements ProfileEvent {
+  const factory _LoadCarDataEvent() = _$LoadCarDataEventImpl;
 }
 
 /// @nodoc
