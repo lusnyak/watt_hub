@@ -8,6 +8,8 @@ EdgeInsets get paddingH10 => EdgeInsets.symmetric(vertical: 10.h);
 EdgeInsets get paddingV20H10 =>
     EdgeInsets.symmetric(vertical: 20.h, horizontal: 10.w);
 
+EdgeInsets get paddingAll20 => EdgeInsets.all(20.r);
+
 //Radius and borders
 RoundedRectangleBorder get roundedBorder6 =>
     RoundedRectangleBorder(borderRadius: BorderRadius.circular(6.r));
