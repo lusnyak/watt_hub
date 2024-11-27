@@ -9,7 +9,7 @@ part of 'connector_type_model.dart';
 _$ConnectorTypeModelImpl _$$ConnectorTypeModelImplFromJson(
         Map<String, dynamic> json) =>
     _$ConnectorTypeModelImpl(
-      id: (json['id'] as num).toInt(),
+      id: (json['id'] as num?)?.toInt(),
       title: json['title'] as String?,
     );
 

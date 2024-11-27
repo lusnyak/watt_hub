@@ -20,7 +20,7 @@ ConnectorTypeModel _$ConnectorTypeModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ConnectorTypeModel {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
 
   /// Serializes this ConnectorTypeModel to a JSON map.
@@ -39,7 +39,7 @@ abstract class $ConnectorTypeModelCopyWith<$Res> {
           ConnectorTypeModel value, $Res Function(ConnectorTypeModel) then) =
       _$ConnectorTypeModelCopyWithImpl<$Res, ConnectorTypeModel>;
   @useResult
-  $Res call({int id, String? title});
+  $Res call({int? id, String? title});
 }
 
 /// @nodoc
@@ -57,14 +57,14 @@ class _$ConnectorTypeModelCopyWithImpl<$Res, $Val extends ConnectorTypeModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? title = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -81,7 +81,7 @@ abstract class _$$ConnectorTypeModelImplCopyWith<$Res>
       __$$ConnectorTypeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String? title});
+  $Res call({int? id, String? title});
 }
 
 /// @nodoc
@@ -97,14 +97,14 @@ class __$$ConnectorTypeModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? title = freezed,
   }) {
     return _then(_$ConnectorTypeModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -116,13 +116,13 @@ class __$$ConnectorTypeModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ConnectorTypeModelImpl implements _ConnectorTypeModel {
-  const _$ConnectorTypeModelImpl({required this.id, this.title});
+  const _$ConnectorTypeModelImpl({this.id, this.title});
 
   factory _$ConnectorTypeModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConnectorTypeModelImplFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final String? title;
 
@@ -162,14 +162,14 @@ class _$ConnectorTypeModelImpl implements _ConnectorTypeModel {
 }
 
 abstract class _ConnectorTypeModel implements ConnectorTypeModel {
-  const factory _ConnectorTypeModel(
-      {required final int id, final String? title}) = _$ConnectorTypeModelImpl;
+  const factory _ConnectorTypeModel({final int? id, final String? title}) =
+      _$ConnectorTypeModelImpl;
 
   factory _ConnectorTypeModel.fromJson(Map<String, dynamic> json) =
       _$ConnectorTypeModelImpl.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   String? get title;
 

@@ -1,5 +1,7 @@
+import 'package:flutter/widgets.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/fake_data/stations_data/stations_map.dart';
+import 'package:watt_hub/data/repository/car_repository.dart';
 import 'package:watt_hub/data/repository/user_repository.dart';
 import 'package:watt_hub/domain/models/car_model/car_model.dart';
 import 'package:watt_hub/domain/models/station/station_model.dart';
@@ -29,13 +31,16 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       emit(const ProfileState.loading());
       try {
         final myUserData = await getIt<UserRepository>().getMe();
+        final carData = await getIt<CarRepository>().getMyCar();
+        debugPrint('$carData carData');
+
         final List<StationModel> myStationData = stationsData
             .map((station) => StationModel.fromJson(station))
             .toList();
         emit(ProfileState.loaded(
           userData: myUserData,
           stationsData: myStationData,
-          carsData: [],
+          carsData: carData,
         ));
       } catch (error) {
         emit(ProfileState.error(error.toString()));

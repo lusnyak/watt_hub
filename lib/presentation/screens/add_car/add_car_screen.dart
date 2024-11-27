@@ -71,23 +71,19 @@ class _AddCarView extends StatelessWidget {
               },
             );
           },
-
           builder: (context, state) {
             final carState = state.maybeWhen(
-              orElse: () => AddCarViewModel(
-                carTypes: [],
-                carModels: [],
-                connectors: [],
-                images: null,
-                selectedCarType: null,
-                selectedCarModel: null,
-                selectedConnector: null,
-                addCar: null,
-              ),
-              loaded: (
-                  AddCarViewModel? addCarData
-              ) =>( addCarData )
-            );
+                orElse: () => AddCarViewModel(
+                      carTypes: [],
+                      carModels: [],
+                      connectors: [],
+                      images: null,
+                      selectedCarType: null,
+                      selectedCarModel: null,
+                      selectedConnector: null,
+                      addCar: null,
+                    ),
+                loaded: (AddCarViewModel? addCarData) => (addCarData));
 
             return Padding(
               padding: EdgeInsets.all(20.w),

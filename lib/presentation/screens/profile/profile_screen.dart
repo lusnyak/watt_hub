@@ -52,7 +52,7 @@ class _ProfileView extends StatelessWidget {
                 state.stationsData,
                 state.carsData,
               ),
-              orElse: () => (null, <StationModel>[], <CarModel>[]),
+              orElse: () => (null, <StationModel>[], null),
             );
 
             return SafeArea(
@@ -179,19 +179,20 @@ class _ProfileView extends StatelessWidget {
         });
   }
 
-  Widget _carSection(BuildContext context, List<CarModel>? carsData) {
+  Widget _carSection(BuildContext context, CarModel? carsData) {
+    final carsDataList = [carsData];
     return ConditionalExpansionTile(
       title: context.localized.myCar,
       iconLeading: Icons.local_taxi_sharp,
       children: [
-        if (carsData != null && carsData.isNotEmpty)
+        if (carsData != null)
           StationsList.slidable(
-            dataList: carsData,
+            dataList: carsDataList,
             isCar: true,
           ),
       ],
       onTap: () {
-        if (carsData!.isEmpty) {
+        if (carsDataList.isEmpty) {
           AutoRouter.of(context).push(const AddCarRoute());
         }
       },
