@@ -57,10 +57,15 @@ class WHElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) => ElevatedButton(
         onPressed: onPressed,
         style: style,
-        child: loading ? const WHCircularSpin(size: 24.0, color: WattHubColors.whiteColor,) : Text(
-          title,
-          style: textStyle,
-          maxLines: 2,
-        ),
+        child: loading
+            ? const WHCircularSpin(
+                size: 24.0,
+                color: WattHubColors.whiteColor,
+              )
+            : Text(
+                title,
+                style: textStyle,
+                maxLines: 2,
+              ),
       );
 }
