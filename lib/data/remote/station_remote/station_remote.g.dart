@@ -130,13 +130,13 @@ class _StationRemoteApi implements StationRemoteApi {
   }
 
   @override
-  Future<StationModel?> addStation(AddStationModel stationData) async {
+  Future<AddStationModel?> addStation(AddStationModel stationData) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(stationData.toJson());
-    final _options = _setStreamType<StationModel>(Options(
+    final _options = _setStreamType<AddStationModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -153,10 +153,10 @@ class _StationRemoteApi implements StationRemoteApi {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>?>(_options);
-    late StationModel? _value;
+    late AddStationModel? _value;
     try {
       _value =
-          _result.data == null ? null : StationModel.fromJson(_result.data!);
+          _result.data == null ? null : AddStationModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

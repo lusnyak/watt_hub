@@ -54,7 +54,6 @@ class ChooseStationAddressBloc
           emit(const ChooseStationAddressState.loading());
           try {
             final location = await _locationManager.getCurrentLocation();
-            debugPrint("Current location: $location");
             if (location != null) {
               clickedLocation = location;
               emit(ChooseStationAddressState.loaded(location: clickedLocation));
@@ -75,10 +74,11 @@ class ChooseStationAddressBloc
       List<Placemark> placemarks =
       await placemarkFromCoordinates(latitude, longitude);
       Placemark placemark = placemarks[0];
-      return "${placemark.street}, ${placemark.locality}, ${placemark.postalCode}, ${placemark.country}";
+      return "${placemark.street} ${placemark.locality} ";
     } catch (e) {
       debugPrint("Error getting address: $e");
       return null;
     }
   }
 }
+///${placemark.country}

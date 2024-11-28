@@ -8,15 +8,20 @@ class AddStationModel {
   final double? lng;
   final DateTime? startTime;
   final DateTime? endTime;
-  final List<int>? connectorTypeId;
-  final num? hourlyRate;
+  // final List<int>? connectorTypeId;
+  final dynamic connectorTypeId;
+  // final num? hourlyRate;
+  final dynamic hourlyRate;
   final String? phoneNumber;
   final String? name;
   final String? address;
   final int? userId;
-  final List<String>? image;
+  // final List<String>? image;
+  final dynamic image;
+  final num? kwt;
 
-  AddStationModel({
+  AddStationModel( {
+    this.kwt,
     this.lat,
     this.lng,
     this.startTime,

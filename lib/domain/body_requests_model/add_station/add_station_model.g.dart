@@ -8,6 +8,7 @@ part of 'add_station_model.dart';
 
 AddStationModel _$AddStationModelFromJson(Map<String, dynamic> json) =>
     AddStationModel(
+      kwt: json['kwt'] as num?,
       lat: (json['lat'] as num?)?.toDouble(),
       lng: (json['lng'] as num?)?.toDouble(),
       startTime: json['start_time'] == null
@@ -16,16 +17,13 @@ AddStationModel _$AddStationModelFromJson(Map<String, dynamic> json) =>
       endTime: json['end_time'] == null
           ? null
           : DateTime.parse(json['end_time'] as String),
-      connectorTypeId: (json['connector_type_id'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      hourlyRate: json['hourly_rate'] as num?,
+      connectorTypeId: json['connector_type_id'],
+      hourlyRate: json['hourly_rate'],
       phoneNumber: json['phone_number'] as String?,
       name: json['name'] as String?,
       address: json['address'] as String?,
       userId: (json['user_id'] as num?)?.toInt(),
-      image:
-          (json['image'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      image: json['image'],
     );
 
 Map<String, dynamic> _$AddStationModelToJson(AddStationModel instance) =>
@@ -41,4 +39,5 @@ Map<String, dynamic> _$AddStationModelToJson(AddStationModel instance) =>
       'address': instance.address,
       'user_id': instance.userId,
       'image': instance.image,
+      'kwt': instance.kwt,
     };

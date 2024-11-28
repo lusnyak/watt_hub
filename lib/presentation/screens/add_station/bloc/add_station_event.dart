@@ -5,7 +5,7 @@ class AddStationEvent with _$AddStationEvent {
   const factory AddStationEvent.started() = _StartedEvent;
 
   const factory AddStationEvent.imagesSelected(List<File> images) =
-      _ImagesSelectedEvent;
+  _ImagesSelectedEvent;
 
   const factory AddStationEvent.removeImage(int index) = _RemoveImageEvent;
 
@@ -13,12 +13,13 @@ class AddStationEvent with _$AddStationEvent {
       ConnectorTypeModel? selectedConnector) = _ConnectorTypeChangedEvent;
 
   const factory AddStationEvent.startTimeSelected(DateTime startTime) =
-      _StartTimeSelectedEvent;
+  _StartTimeSelectedEvent;
 
   const factory AddStationEvent.endTimeSelected(DateTime endTime) =
-      _EndTimeSelectedEvent;
+  _EndTimeSelectedEvent;
 
-  const factory AddStationEvent.getAddress(String address,double latitude, double longitude) = _GetAddressEvent;
+  const factory AddStationEvent.getAddress(
+      String? address, double? latitude, double? longitude) = _GetAddressEvent;
 
   const factory AddStationEvent.createStation() = _CreateStationEvent;
 

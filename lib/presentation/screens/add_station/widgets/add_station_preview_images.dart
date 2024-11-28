@@ -1,34 +1,38 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watt_hub/presentation/screens/add_station/bloc/add_station_bloc.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 class AddStationPreviewImages extends StatelessWidget {
-  const AddStationPreviewImages({super.key});
-
+  const AddStationPreviewImages( {super.key, required this.images });
+final List<File>? images;
   @override
   Widget build(BuildContext context) {
-    final state = context.watch<AddStationBlock>().state;
-    return state.maybeWhen(
-      loaded: (
-        connectors,
-        selectedConnectors,
-        selectedList,
-        selected,
-        initialSelectedConnectorId,
-        images,
-        startTime,
-        endTime,
-        address,
-        latitude,
-        longitude,
-      ) {
-        if (images != null && images.isNotEmpty) {
+    debugPrint("$images images");
+    // final state = context.watch<AddStationBlock>().state;
+    // return state.maybeWhen(
+    //   loaded: (
+    //     connectors,
+    //     selectedConnectors,
+    //     selectedList,
+    //     selected,
+    //     initialSelectedConnectorId,
+    //     images,
+    //     startTime,
+    //     endTime,
+    //     address,
+    //     latitude,
+    //     longitude,
+    //       createStation
+    //   ) {
+        if (images != null && images!.isNotEmpty) {
           return SizedBox(
             height: 120.h,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: images.length,
+              itemCount: images?.length,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                   width: 100.r,
@@ -38,7 +42,7 @@ class AddStationPreviewImages extends StatelessWidget {
                       image: DecorationImage(
                           fit: BoxFit.cover,
                           image: FileImage(
-                            images[index],
+                            images![index],
                           ))),
                   child: InkWell(
                     child: const Icon(Icons.cancel, color: Colors.red),
@@ -53,8 +57,8 @@ class AddStationPreviewImages extends StatelessWidget {
         } else {
           return const SizedBox();
         }
-      },
-      orElse: () => const SizedBox(),
-    );
+    //   },
+    //   orElse: () => const SizedBox(),
+    // );
   }
 }
