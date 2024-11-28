@@ -7,7 +7,9 @@ import 'package:watt_hub_uikit/watt_hub_uikit.dart';
 
 @RoutePage()
 class StationInfoScreen extends StatelessWidget {
-  const StationInfoScreen({super.key});
+  const StationInfoScreen({super.key, this.id});
+
+  final int? id;
 
   @override
   Widget build(BuildContext context) {
