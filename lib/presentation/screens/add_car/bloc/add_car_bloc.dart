@@ -27,7 +27,9 @@ class AddCarBloc extends Bloc<AddCarEvent, AddCarState> {
             final carTypes = await fetchCarTypes();
             final currentState = state;
             if (currentState is _AddCarState) {
-              final addCarData = currentState.addCarData?.copyWith(carTypes: carTypes) ?? AddCarViewModel(carTypes: carTypes);
+              final addCarData =
+                  currentState.addCarData?.copyWith(carTypes: carTypes) ??
+                      AddCarViewModel(carTypes: carTypes);
               emit(currentState.copyWith(addCarData: addCarData));
             }
           },
@@ -35,8 +37,9 @@ class AddCarBloc extends Bloc<AddCarEvent, AddCarState> {
             final carModels = await fetchCarModels();
             final currentState = state;
             if (currentState is _AddCarState) {
-              final carModelsData = currentState.addCarData?.copyWith(carModels:carModels)
-                  ?? AddCarViewModel(carModels: carModels);
+              final carModelsData =
+                  currentState.addCarData?.copyWith(carModels: carModels) ??
+                      AddCarViewModel(carModels: carModels);
               emit(
                 currentState.copyWith(addCarData: carModelsData),
               );
@@ -46,8 +49,9 @@ class AddCarBloc extends Bloc<AddCarEvent, AddCarState> {
             final connectors = await fetchConnectors();
             final currentState = state;
             if (currentState is _AddCarState) {
-              final connectorsData = currentState.addCarData?.copyWith(connectors:connectors)
-                  ?? AddCarViewModel(connectors: connectors);
+              final connectorsData =
+                  currentState.addCarData?.copyWith(connectors: connectors) ??
+                      AddCarViewModel(connectors: connectors);
               emit(
                 currentState.copyWith(addCarData: connectorsData),
               );
@@ -56,50 +60,53 @@ class AddCarBloc extends Bloc<AddCarEvent, AddCarState> {
           selectCarType: (e) async {
             final currentState = state;
             if (currentState is _AddCarState) {
-              final selectedCarType = currentState.addCarData?.copyWith(selectedCarType: e.carType)
-                  ?? AddCarViewModel(selectedCarType: e.carType);
+              final selectedCarType = currentState.addCarData
+                      ?.copyWith(selectedCarType: e.carType) ??
+                  AddCarViewModel(selectedCarType: e.carType);
               emit(
-                currentState.copyWith(addCarData:selectedCarType),
+                currentState.copyWith(addCarData: selectedCarType),
               );
             }
           },
           imagesSelected: (e) async {
             final currentState = state;
             if (currentState is _AddCarState) {
-              final imagesData = currentState.addCarData?.copyWith(images:  e.images)
-                  ?? AddCarViewModel(images: e.images);
+              final imagesData =
+                  currentState.addCarData?.copyWith(images: e.images) ??
+                      AddCarViewModel(images: e.images);
               emit(
-                currentState.copyWith(
-                 addCarData: imagesData
-                ),
+                currentState.copyWith(addCarData: imagesData),
               );
             }
           },
           selectCarModel: (e) async {
             final currentState = state;
             if (currentState is _AddCarState) {
-              final selectedCarModelData = currentState.addCarData?.copyWith(selectedCarModel: e.carModel)
-                  ?? AddCarViewModel(selectedCarModel:e.carModel);
+              final selectedCarModelData = currentState.addCarData
+                      ?.copyWith(selectedCarModel: e.carModel) ??
+                  AddCarViewModel(selectedCarModel: e.carModel);
               emit(
-                currentState.copyWith(addCarData:selectedCarModelData),
+                currentState.copyWith(addCarData: selectedCarModelData),
               );
             }
           },
           selectConnector: (e) async {
             final currentState = state;
             if (currentState is _AddCarState) {
-              final selectedConnectorData = currentState.addCarData?.copyWith(selectedConnector: e.connector)
-                  ?? AddCarViewModel(selectedConnector:e.connector);
+              final selectedConnectorData = currentState.addCarData
+                      ?.copyWith(selectedConnector: e.connector) ??
+                  AddCarViewModel(selectedConnector: e.connector);
               emit(
-                currentState.copyWith(addCarData:selectedConnectorData),
+                currentState.copyWith(addCarData: selectedConnectorData),
               );
             }
           },
           removeImages: (_removeImagesEvent value) {
             final currentState = state;
             if (currentState is _AddCarState) {
-              final imagesData = currentState.addCarData?.copyWith(images: null)
-                  ?? AddCarViewModel(images:null);
+              final imagesData =
+                  currentState.addCarData?.copyWith(images: null) ??
+                      AddCarViewModel(images: null);
               emit(
                 currentState.copyWith(addCarData: imagesData),
               );
@@ -108,9 +115,10 @@ class AddCarBloc extends Bloc<AddCarEvent, AddCarState> {
           createCar: (_CreateCarEvent value) async {
             if (state is _AddCarState) {
               final currentState = state as _AddCarState;
-              final connectorTypeId =  currentState.addCarData?.selectedConnector?.id;
-              final carTypeId =  currentState.addCarData?.selectedCarType?.id;
-              final image =  currentState.addCarData?.images.toString();
+              final connectorTypeId =
+                  currentState.addCarData?.selectedConnector?.id;
+              final carTypeId = currentState.addCarData?.selectedCarType?.id;
+              final image = currentState.addCarData?.images.toString();
               final carModelId = currentState.addCarData?.selectedCarModel?.id;
               const name = "hello";
               // final userId = currentState.userId;
@@ -125,9 +133,11 @@ class AddCarBloc extends Bloc<AddCarEvent, AddCarState> {
               );
 
               try {
-                final addCar = await getIt<CarRepository>().addCar(createCarData);
-                final addCarResponse = currentState.addCarData?.copyWith(addCar: addCar)
-                    ?? AddCarViewModel(addCar:addCar);
+                final addCar =
+                    await getIt<CarRepository>().addCar(createCarData);
+                final addCarResponse =
+                    currentState.addCarData?.copyWith(addCar: addCar) ??
+                        AddCarViewModel(addCar: addCar);
                 emit(currentState.copyWith(addCarData: addCarResponse));
               } catch (e) {
                 return e;
