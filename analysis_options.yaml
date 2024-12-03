@@ -12,6 +12,7 @@ analyzer:
     invalid_annotation_target: ignore
     constant_identifier_names: ignore
     unused_field: ignore
+    invalid_return_type_for_catch_error: ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:

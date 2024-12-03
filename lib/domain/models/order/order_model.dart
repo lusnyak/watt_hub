@@ -11,7 +11,7 @@ part 'order_model.g.dart';
 @freezed
 class OrderModel with _$OrderModel {
   const factory OrderModel({
-    required int id,
+    int? id,
     UserModel? creator,
     CarModel? car,
     @JsonKey(name: 'station') StationModel? station,

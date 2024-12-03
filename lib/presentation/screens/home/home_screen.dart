@@ -27,88 +27,105 @@ class _HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: WattHubColors.transparentColor,
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          leading: nil,
-          actions: [
-            WHIconButton.primary(
-              icon: const Icon(Icons.filter_alt),
-              onPressed: () => context.router.push(const FilterRoute()),
-            ).paddingOnly(right: 20.w),
-          ],
-        ),
-        body: SafeArea(
-          top: false,
-          child: BlocBuilder<HomeBloc, HomeState>(
-            builder: (context, state) {
-              return state.when(
-                initial: () => const SizedBox.shrink(),
-                loading: () => const Center(child: WHCircularSpin()),
-                error: (message) => Center(child: Text(message)),
-                viewChanged: (isList) => nil,
-                loaded: (
-                  stations,
-                  isList,
-                  currentLocation,
-                  isMapReady,
-                ) {
-                  debugPrint('${stations.runtimeType} stations.runtimeType');
-                  return isList
-                      ? MapContainer(
-                          chargingStations: stations,
-                          currentLocation: currentLocation,
-                        )
-                      : StationsList(
-                          dataList: stations,
-                          onTap: (stationItem) {
-                            context.read<HomeBloc>().add(
-                                  HomeEvent.centerOnStation(
-                                      stationItem, currentLocation),
-                                );
-                          },
-                        );
+      backgroundColor: WattHubColors.transparentColor,
+      extendBodyBehindAppBar: true,
+      appBar: _appBar(context),
+      body: _homeContent(),
+      floatingActionButton: _homeFooter(),
+    );
+  }
+
+  BlocBuilder<HomeBloc, HomeState> _homeFooter() {
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (context, state) {
+        final isList = state is LoadedState ? state.isList : true;
+        final currentLocation =
+            state is LoadedState ? state.currentLocation : null;
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            if (state.maybeMap(
+              loaded: (_) => isList,
+              orElse: () => false,
+            ))
+              FloatingActionButton(
+                heroTag: "location",
+                onPressed: () {
+                  context
+                      .read<HomeBloc>()
+                      .add(HomeEvent.centerLocationEvent(currentLocation));
                 },
-              );
+                child: const Icon(Icons.my_location_outlined),
+              ),
+            20.widthBox,
+            FloatingActionButton(
+              heroTag: "list",
+              onPressed: () {
+                context
+                    .read<HomeBloc>()
+                    .add(HomeEvent.toggleViewEvent(currentLocation));
+              },
+              child: Icon(
+                isList ? Icons.list : Icons.map,
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  SafeArea _homeContent() {
+    return SafeArea(
+      top: false,
+      child: BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) {
+          return state.when(
+            initial: () => const SizedBox.shrink(),
+            loading: () => const Center(child: WHCircularSpin()),
+            error: (message) => Center(child: Text(message)),
+            viewChanged: (isList) => nil,
+            loaded: (
+              stations,
+              isList,
+              currentLocation,
+              isMapReady,
+            ) {
+              debugPrint('${stations.runtimeType} stations.runtimeType');
+              return isList
+                  ? MapContainer(
+                      chargingStations: stations,
+                      currentLocation: currentLocation,
+                    )
+                  : StationsList(
+                      dataList: stations,
+                      onTap: (stationItem) {
+                        debugPrint('$stationItem stationItem');
+                        debugPrint("$currentLocation currentLocation");
+                        context.read<HomeBloc>().add(
+                              HomeEvent.centerOnStation(
+                                stationItem,
+                                currentLocation,
+                              ),
+                            );
+                      },
+                    );
             },
-          ),
-        ),
-        floatingActionButton: BlocBuilder<HomeBloc, HomeState>(
-          builder: (context, state) {
-            final isList = state is LoadedState ? state.isList : true;
-            final currentLocation =
-                state is LoadedState ? state.currentLocation : null;
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                if (state.maybeMap(
-                  loaded: (_) => isList,
-                  orElse: () => false,
-                ))
-                  FloatingActionButton(
-                    heroTag: "location",
-                    onPressed: () {
-                      context
-                          .read<HomeBloc>()
-                          .add(HomeEvent.centerLocationEvent(currentLocation));
-                    },
-                    child: const Icon(Icons.my_location_outlined),
-                  ),
-                20.widthBox,
-                FloatingActionButton(
-                  heroTag: "list",
-                  onPressed: () {
-                    context
-                        .read<HomeBloc>()
-                        .add(HomeEvent.toggleViewEvent(currentLocation));
-                  },
-                  child: Icon(
-                    isList ? Icons.list : Icons.map,
-                  ),
-                ),
-              ],
-            );
-          },
-        ));
+          );
+        },
+      ),
+    );
+  }
+
+  AppBar _appBar(BuildContext context) {
+    return AppBar(
+      leading: nil,
+      actions: [
+        WHIconButton.primary(
+          icon: const Icon(Icons.filter_alt),
+          onPressed: () => context.router.push(const FilterRoute()),
+        ).paddingOnly(right: 20.w),
+      ],
+    );
   }
 }

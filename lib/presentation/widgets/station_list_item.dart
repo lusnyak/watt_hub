@@ -77,7 +77,7 @@ class StationListItem extends StatelessWidget {
         const Icon(Icons.electric_car, color: Colors.green),
         SizedBox(width: 4.w),
         Text(
-          '${stationListItem.kwt} ${context.localized.kilowatt}',
+          '${20} ${context.localized.kilowatt}', // stationListItem.kwt
           style: const TextStyle(color: WattHubColors.greyColor),
         ),
       ],

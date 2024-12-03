@@ -324,10 +324,17 @@ class SplashRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [StationInfoScreen]
-class StationInfoRoute extends PageRouteInfo<void> {
-  const StationInfoRoute({List<PageRouteInfo>? children})
-      : super(
+class StationInfoRoute extends PageRouteInfo<StationInfoRouteArgs> {
+  StationInfoRoute({
+    Key? key,
+    int? id,
+    List<PageRouteInfo>? children,
+  }) : super(
           StationInfoRoute.name,
+          args: StationInfoRouteArgs(
+            key: key,
+            id: id,
+          ),
           initialChildren: children,
         );
 
@@ -336,9 +343,30 @@ class StationInfoRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const StationInfoScreen();
+      final args = data.argsAs<StationInfoRouteArgs>(
+          orElse: () => const StationInfoRouteArgs());
+      return StationInfoScreen(
+        key: args.key,
+        id: args.id,
+      );
     },
   );
+}
+
+class StationInfoRouteArgs {
+  const StationInfoRouteArgs({
+    this.key,
+    this.id,
+  });
+
+  final Key? key;
+
+  final int? id;
+
+  @override
+  String toString() {
+    return 'StationInfoRouteArgs{key: $key, id: $id}';
+  }
 }
 
 /// generated route for

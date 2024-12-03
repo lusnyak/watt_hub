@@ -29,6 +29,18 @@ class MapContainer extends StatelessWidget {
       ),
       children: [
         const MapTileLayer(),
+        MarkerLayer(markers: [
+          Marker(
+            width: 80.w,
+            height: 80.h,
+            point: currentLocation ?? const LatLng(0, 0),
+            child: Icon(
+              Icons.location_on_outlined,
+              size: 56.r,
+              color: WattHubColors.primaryGreenColor,
+            ),
+          ),
+        ]),
         MarkerClusterLayerWidget(
           options: MarkerClusterLayerOptions(
             maxClusterRadius: 45,
@@ -40,7 +52,7 @@ class MapContainer extends StatelessWidget {
                 Marker(
                   width: 56.w,
                   height: 56.h,
-                  point: LatLng(station.latitude, station.longitude),
+                  point: LatLng(station.lat ?? 45.34, station.lng ?? 45.64),
                   child: GestureDetector(
                     onTap: () => showStationInfo(context, station),
                     child: Icon(
@@ -50,16 +62,6 @@ class MapContainer extends StatelessWidget {
                     ),
                   ),
                 ),
-              Marker(
-                width: 80.w,
-                height: 80.h,
-                point: currentLocation ?? const LatLng(0, 0),
-                child: Icon(
-                  Icons.location_on_outlined,
-                  size: 56.r,
-                  color: WattHubColors.primaryGreenColor,
-                ),
-              ),
             ],
             builder: (context, markers) {
               return Container(

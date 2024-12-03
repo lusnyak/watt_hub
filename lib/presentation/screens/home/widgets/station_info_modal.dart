@@ -60,7 +60,8 @@ void showStationInfo(BuildContext context, StationModel station) {
             children: [
               WHOutlinedButton(
                 title: context.localized.view,
-                onPressed: () => context.router.push(const StationInfoRoute()),
+                onPressed: () =>
+                    context.router.push(StationInfoRoute(id: station.id)),
               ).expanded(),
               10.w.widthBox,
               WHElevatedButton.primary(
