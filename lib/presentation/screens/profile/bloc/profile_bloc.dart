@@ -8,7 +8,6 @@ import 'package:watt_hub/domain/models/car_model/car_model.dart';
 import 'package:watt_hub/domain/models/station/station_model.dart';
 import 'package:watt_hub/domain/models/user/user_model.dart';
 
-
 part 'profile_event.dart';
 
 part 'profile_state.dart';
@@ -30,9 +29,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         // final List<CarModel> myCarData =
         //     createdCarsData.map((car) => CarModel.fromJson(car)).toList();
         emit(ProfileState.loaded(
-            userData: myUserData,
-            stationsData: [] ,
-            carsData: []));
+            userData: myUserData, stationsData: [], carsData: []));
       } catch (error) {
         emit(ProfileState.error(error.toString())); // Emit error state
       }
