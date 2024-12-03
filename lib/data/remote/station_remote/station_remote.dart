@@ -33,7 +33,7 @@ abstract class StationRemoteApi {
   Future<StationModel?> stationsId(@Path("id") String id);
 
   @POST(EndPoints.addStation)
-  Future<StationModel?> addStation(@Body() AddStationModel stationData);
+  Future<AddStationModel?> addStation(@Body() AddStationModel stationData);
 
   @GET(EndPoints.stationMy)
   Future<StationModel?> stationMy();

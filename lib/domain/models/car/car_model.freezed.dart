@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-CarModel _$CarModelFromJson(Map<String, dynamic> json) {
-  return _CarModel.fromJson(json);
+CarModelJson _$CarModelJsonFromJson(Map<String, dynamic> json) {
+  return _CarModelJson.fromJson(json);
 }
 
 /// @nodoc
-mixin _$CarModel {
+mixin _$CarModelJson {
   int? get id => throw _privateConstructorUsedError;
   CarTypeModel? get carType => throw _privateConstructorUsedError;
   ConnectorTypeModel? get connectorType => throw _privateConstructorUsedError;
@@ -27,20 +27,21 @@ mixin _$CarModel {
   UserModel? get user => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
 
-  /// Serializes this CarModel to a JSON map.
+  /// Serializes this CarModelJson to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of CarModel
+  /// Create a copy of CarModelJson
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $CarModelCopyWith<CarModel> get copyWith =>
+  $CarModelJsonCopyWith<CarModelJson> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CarModelCopyWith<$Res> {
-  factory $CarModelCopyWith(CarModel value, $Res Function(CarModel) then) =
-      _$CarModelCopyWithImpl<$Res, CarModel>;
+abstract class $CarModelJsonCopyWith<$Res> {
+  factory $CarModelJsonCopyWith(
+          CarModelJson value, $Res Function(CarModelJson) then) =
+      _$CarModelJsonCopyWithImpl<$Res, CarModelJson>;
   @useResult
   $Res call(
       {int? id,
@@ -56,16 +57,16 @@ abstract class $CarModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
-    implements $CarModelCopyWith<$Res> {
-  _$CarModelCopyWithImpl(this._value, this._then);
+class _$CarModelJsonCopyWithImpl<$Res, $Val extends CarModelJson>
+    implements $CarModelJsonCopyWith<$Res> {
+  _$CarModelJsonCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of CarModel
+  /// Create a copy of CarModelJson
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -105,7 +106,7 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
     ) as $Val);
   }
 
-  /// Create a copy of CarModel
+  /// Create a copy of CarModelJson
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -119,7 +120,7 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
     });
   }
 
-  /// Create a copy of CarModel
+  /// Create a copy of CarModelJson
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -133,7 +134,7 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
     });
   }
 
-  /// Create a copy of CarModel
+  /// Create a copy of CarModelJson
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -149,11 +150,11 @@ class _$CarModelCopyWithImpl<$Res, $Val extends CarModel>
 }
 
 /// @nodoc
-abstract class _$$CarModelImplCopyWith<$Res>
-    implements $CarModelCopyWith<$Res> {
-  factory _$$CarModelImplCopyWith(
-          _$CarModelImpl value, $Res Function(_$CarModelImpl) then) =
-      __$$CarModelImplCopyWithImpl<$Res>;
+abstract class _$$CarModelJsonImplCopyWith<$Res>
+    implements $CarModelJsonCopyWith<$Res> {
+  factory _$$CarModelJsonImplCopyWith(
+          _$CarModelJsonImpl value, $Res Function(_$CarModelJsonImpl) then) =
+      __$$CarModelJsonImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -173,14 +174,14 @@ abstract class _$$CarModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CarModelImplCopyWithImpl<$Res>
-    extends _$CarModelCopyWithImpl<$Res, _$CarModelImpl>
-    implements _$$CarModelImplCopyWith<$Res> {
-  __$$CarModelImplCopyWithImpl(
-      _$CarModelImpl _value, $Res Function(_$CarModelImpl) _then)
+class __$$CarModelJsonImplCopyWithImpl<$Res>
+    extends _$CarModelJsonCopyWithImpl<$Res, _$CarModelJsonImpl>
+    implements _$$CarModelJsonImplCopyWith<$Res> {
+  __$$CarModelJsonImplCopyWithImpl(
+      _$CarModelJsonImpl _value, $Res Function(_$CarModelJsonImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CarModel
+  /// Create a copy of CarModelJson
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -192,7 +193,7 @@ class __$$CarModelImplCopyWithImpl<$Res>
     Object? user = freezed,
     Object? title = freezed,
   }) {
-    return _then(_$CarModelImpl(
+    return _then(_$CarModelJsonImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -224,8 +225,8 @@ class __$$CarModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$CarModelImpl implements _CarModel {
-  const _$CarModelImpl(
+class _$CarModelJsonImpl implements _CarModelJson {
+  const _$CarModelJsonImpl(
       {this.id,
       this.carType,
       this.connectorType,
@@ -234,8 +235,8 @@ class _$CarModelImpl implements _CarModel {
       this.title})
       : _images = images;
 
-  factory _$CarModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CarModelImplFromJson(json);
+  factory _$CarModelJsonImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CarModelJsonImplFromJson(json);
 
   @override
   final int? id;
@@ -260,14 +261,14 @@ class _$CarModelImpl implements _CarModel {
 
   @override
   String toString() {
-    return 'CarModel(id: $id, carType: $carType, connectorType: $connectorType, images: $images, user: $user, title: $title)';
+    return 'CarModelJson(id: $id, carType: $carType, connectorType: $connectorType, images: $images, user: $user, title: $title)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CarModelImpl &&
+            other is _$CarModelJsonImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.carType, carType) || other.carType == carType) &&
             (identical(other.connectorType, connectorType) ||
@@ -282,33 +283,33 @@ class _$CarModelImpl implements _CarModel {
   int get hashCode => Object.hash(runtimeType, id, carType, connectorType,
       const DeepCollectionEquality().hash(_images), user, title);
 
-  /// Create a copy of CarModel
+  /// Create a copy of CarModelJson
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CarModelImplCopyWith<_$CarModelImpl> get copyWith =>
-      __$$CarModelImplCopyWithImpl<_$CarModelImpl>(this, _$identity);
+  _$$CarModelJsonImplCopyWith<_$CarModelJsonImpl> get copyWith =>
+      __$$CarModelJsonImplCopyWithImpl<_$CarModelJsonImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CarModelImplToJson(
+    return _$$CarModelJsonImplToJson(
       this,
     );
   }
 }
 
-abstract class _CarModel implements CarModel {
-  const factory _CarModel(
+abstract class _CarModelJson implements CarModelJson {
+  const factory _CarModelJson(
       {final int? id,
       final CarTypeModel? carType,
       final ConnectorTypeModel? connectorType,
       final List<String>? images,
       final UserModel? user,
-      final String? title}) = _$CarModelImpl;
+      final String? title}) = _$CarModelJsonImpl;
 
-  factory _CarModel.fromJson(Map<String, dynamic> json) =
-      _$CarModelImpl.fromJson;
+  factory _CarModelJson.fromJson(Map<String, dynamic> json) =
+      _$CarModelJsonImpl.fromJson;
 
   @override
   int? get id;
@@ -323,10 +324,10 @@ abstract class _CarModel implements CarModel {
   @override
   String? get title;
 
-  /// Create a copy of CarModel
+  /// Create a copy of CarModelJson
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CarModelImplCopyWith<_$CarModelImpl> get copyWith =>
+  _$$CarModelJsonImplCopyWith<_$CarModelJsonImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

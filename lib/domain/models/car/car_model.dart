@@ -7,17 +7,17 @@ part 'car_model.freezed.dart';
 part 'car_model.g.dart';
 
 @freezed
-class CarModel with _$CarModel {
+class CarModelJson with _$CarModelJson {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory CarModel({
+  const factory CarModelJson({
     int? id,
     CarTypeModel? carType,
     ConnectorTypeModel? connectorType,
     List<String>? images,
     UserModel? user,
     String? title,
-  }) = _CarModel;
+  }) = _CarModelJson;
 
-  factory CarModel.fromJson(Map<String, dynamic> json) =>
-      _$CarModelFromJson(json);
+  factory CarModelJson.fromJson(Map<String, dynamic> json) =>
+      _$CarModelJsonFromJson(json);
 }

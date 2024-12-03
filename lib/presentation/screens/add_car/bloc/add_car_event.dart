@@ -15,9 +15,12 @@ class AddCarEvent with _$AddCarEvent {
   const factory AddCarEvent.selectCarType(CarTypeModel carType) =
       _SelectCarTypeEvent;
 
-  const factory AddCarEvent.selectCarModel(CarModel carModel) =
+  const factory AddCarEvent.selectCarModel(CarModelJson carModel) =
       _SelectCarModelEvent;
 
   const factory AddCarEvent.selectConnector(ConnectorTypeModel connector) =
       _SelectConnectorEvent;
+
+  const factory AddCarEvent.createCar() = _CreateCarEvent;
+
 }

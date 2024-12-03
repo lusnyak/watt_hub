@@ -20,7 +20,7 @@ CarTypeModel _$CarTypeModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CarTypeModel {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
 
   /// Serializes this CarTypeModel to a JSON map.
@@ -39,7 +39,7 @@ abstract class $CarTypeModelCopyWith<$Res> {
           CarTypeModel value, $Res Function(CarTypeModel) then) =
       _$CarTypeModelCopyWithImpl<$Res, CarTypeModel>;
   @useResult
-  $Res call({int id, String? title});
+  $Res call({int? id, String? title});
 }
 
 /// @nodoc
@@ -57,14 +57,14 @@ class _$CarTypeModelCopyWithImpl<$Res, $Val extends CarTypeModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? title = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -81,7 +81,7 @@ abstract class _$$CarTypeModelImplCopyWith<$Res>
       __$$CarTypeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String? title});
+  $Res call({int? id, String? title});
 }
 
 /// @nodoc
@@ -97,14 +97,14 @@ class __$$CarTypeModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? title = freezed,
   }) {
     return _then(_$CarTypeModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -116,13 +116,13 @@ class __$$CarTypeModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CarTypeModelImpl implements _CarTypeModel {
-  const _$CarTypeModelImpl({required this.id, this.title});
+  const _$CarTypeModelImpl({this.id, this.title});
 
   factory _$CarTypeModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CarTypeModelImplFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final String? title;
 
@@ -161,14 +161,14 @@ class _$CarTypeModelImpl implements _CarTypeModel {
 }
 
 abstract class _CarTypeModel implements CarTypeModel {
-  const factory _CarTypeModel({required final int id, final String? title}) =
+  const factory _CarTypeModel({final int? id, final String? title}) =
       _$CarTypeModelImpl;
 
   factory _CarTypeModel.fromJson(Map<String, dynamic> json) =
       _$CarTypeModelImpl.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   String? get title;
 
