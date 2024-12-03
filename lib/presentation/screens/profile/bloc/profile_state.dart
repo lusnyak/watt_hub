@@ -9,8 +9,8 @@ class ProfileState with _$ProfileState {
   const factory ProfileState.error(String message) = _ProfileErrorState;
 
   const factory ProfileState.loaded({
-    required UserModel userData,
+    UserModel? userData,
     List<StationModel>? stationsData,
-    List<CarModel>? carsData,
+    CarModel? carsData,
   }) = _ProfileLoadedState;
 }

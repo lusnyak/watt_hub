@@ -20,7 +20,7 @@ class AddStationModel {
   final dynamic image;
   final num? kwt;
 
-  AddStationModel( {
+  AddStationModel({
     this.kwt,
     this.lat,
     this.lng,

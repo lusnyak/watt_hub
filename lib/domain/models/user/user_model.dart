@@ -7,7 +7,7 @@ part 'user_model.g.dart';
 class UserModel with _$UserModel {
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory UserModel({
-    required int id,
+    int? id,
     String? fullName,
     String? phoneNumber,
     String? email,

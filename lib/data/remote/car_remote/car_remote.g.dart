@@ -129,12 +129,12 @@ class _CarRemoteApi implements CarRemoteApi {
   }
 
   @override
-  Future<MyCarModel?> getMyCar() async {
+  Future<CarModel?> getMyCar() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<MyCarModel>(Options(
+    final _options = _setStreamType<CarModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -151,9 +151,9 @@ class _CarRemoteApi implements CarRemoteApi {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>?>(_options);
-    late MyCarModel? _value;
+    late CarModel? _value;
     try {
-      _value = _result.data == null ? null : MyCarModel.fromJson(_result.data!);
+      _value = _result.data == null ? null : CarModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -162,12 +162,12 @@ class _CarRemoteApi implements CarRemoteApi {
   }
 
   @override
-  Future<MyCarModel?> getUserCars(String id) async {
+  Future<CarModel?> getUserCars(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<MyCarModel>(Options(
+    final _options = _setStreamType<CarModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -184,9 +184,9 @@ class _CarRemoteApi implements CarRemoteApi {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>?>(_options);
-    late MyCarModel? _value;
+    late CarModel? _value;
     try {
-      _value = _result.data == null ? null : MyCarModel.fromJson(_result.data!);
+      _value = _result.data == null ? null : CarModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

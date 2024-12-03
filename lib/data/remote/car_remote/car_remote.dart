@@ -6,7 +6,6 @@ import 'package:watt_hub/domain/body_requests_model/add_car/add_car_model.dart';
 import 'package:watt_hub/domain/models/car_add_response/car_add_response_model.dart';
 import 'package:watt_hub/domain/models/car_model/car_model.dart';
 import 'package:watt_hub/domain/models/car_type/car_type_model.dart';
-import 'package:watt_hub/domain/models/my_car_model/my_car_model.dart';
 
 part 'car_remote.g.dart';
 
@@ -26,10 +25,10 @@ abstract class CarRemoteApi {
   Future<List<CarModel>?> getCars();
 
   @GET(EndPoints.getMyCar)
-  Future<MyCarModel?> getMyCar();
+  Future<CarModel?> getMyCar();
 
   @GET(EndPoints.getUserCars)
-  Future<MyCarModel?> getUserCars(@Path("id") String id);
+  Future<CarModel?> getUserCars(@Path("id") String id);
 
   @POST(EndPoints.addCar)
   Future<CarAddResponseModel?> addCar(@Body() AddCarModel addCarData);

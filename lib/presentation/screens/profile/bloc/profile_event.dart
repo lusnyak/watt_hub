@@ -3,4 +3,6 @@ part of 'profile_bloc.dart';
 @freezed
 class ProfileEvent with _$ProfileEvent {
   const factory ProfileEvent.loadProfile() = _LoadProfileEvent;
+  const factory ProfileEvent.loadUserData() = _LoadUserDataEvent;
+  const factory ProfileEvent.loadCarData() = _LoadCarDataEvent;
 }

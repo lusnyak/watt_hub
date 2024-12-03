@@ -6,7 +6,7 @@ part 'connector_type_model.g.dart';
 @freezed
 class ConnectorTypeModel with _$ConnectorTypeModel {
   const factory ConnectorTypeModel({
-    required int id,
+    int? id,
     String? title,
 
   }) = _ConnectorTypeModel;

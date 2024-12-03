@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/data/local/token_storage/token_storage.dart';
 import 'package:watt_hub/data/remote/user_remote/user_remote.dart';
+import 'package:watt_hub/domain/body_requests_model/edit_user/edit_user_model.dart';
 import 'package:watt_hub/domain/models/user/user_model.dart';
 
 @lazySingleton
@@ -12,11 +14,10 @@ class UserRepository {
     });
   }
 
-  Future<bool> edit(int id, String? fullName, String? phoneNumber) {
-    return getIt<UserRemoteApi>()
-        .edit(id, fullName, phoneNumber)
-        .then((response) {
-      return response.statusCode == 200 || response.statusCode == 204;
+  Future<bool> edit(int id, EditUserModel? editData) {
+    return getIt<UserRemoteApi>().edit(id, editData).then((response) {
+      debugPrint('Response: $response');
+      return true;
     }).catchError((error) {
       return false;
     });

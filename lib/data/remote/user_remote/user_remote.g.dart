@@ -58,19 +58,15 @@ class _UserRemoteApi implements UserRemoteApi {
 
   @override
   Future<dynamic> edit(
-    int id,
-    String? fullName,
-    String? phoneNumber,
+    int? id,
+    EditUserModel? editData,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = {
-      'full_name': fullName,
-      'phone_number': phoneNumber,
-    };
-    _data.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    _data.addAll(editData?.toJson() ?? <String, dynamic>{});
     final _options = _setStreamType<dynamic>(Options(
       method: 'PUT',
       headers: _headers,

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:watt_hub/domain/models/car_model/car_model.dart';
 import 'package:watt_hub/utils/utils.dart';
@@ -24,20 +25,20 @@ class ProfileCarItem extends StatelessWidget {
                 children: [
                   Text(
                     context.localized.carInfo,
-                    style: body16SemiBoldTextStyle,
-                  ).paddingOnly(bottom: 10.sp),
-                  Text("${carData.carModel.title} . ${carData.carType.title}"),
-                  Text(carData.carType.title ?? ""),
-                  Text(carData.connectorType.title ?? ""),
+                    style: body18SemiBoldTextStyle,
+                  ).paddingOnly(bottom: 10.h),
+                  Text(carData.type?.title ?? ""),
+                  Text("${carData.model?.title}"),
+                  Text(carData.connectorTypes?.title ?? ""),
                 ],
               ).expanded(),
               SizedBox(
                 width: 50.w,
                 height: 50.h,
-                child: Image.network(
-                  carData.images.first,
-                ),
-                // child: WattHubAssets.images.profileImage.image(),
+                // child: Image.network(
+                //   carData.images.first,
+                // ),
+                child: const Icon(CupertinoIcons.car_detailed),
               )
             ],
           ),

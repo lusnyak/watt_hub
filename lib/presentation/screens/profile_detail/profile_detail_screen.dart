@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:watt_hub/config/config.dart';
 import 'package:watt_hub/domain/models/user/user_model.dart';
 import 'package:watt_hub/presentation/screens/profile_detail/bloc/profile_detail_bloc.dart';
 import 'package:watt_hub/utils/extensions/localization_extensions.dart';
 import 'package:watt_hub_uikit/watt_hub_uikit.dart';
-
-/// TODO: create bloc for screen,
 
 @RoutePage()
 class ProfileDetailScreen extends StatelessWidget {
@@ -26,15 +25,15 @@ class ProfileDetailScreen extends StatelessWidget {
             initialPhoneNumber: userData?.phoneNumber,
           ),
         ),
-      child: const ProfileDetailView(),
+      child: ProfileDetailView(id: userData?.id),
     );
   }
 }
 
 class ProfileDetailView extends StatelessWidget {
-  const ProfileDetailView({
-    super.key,
-  });
+  const ProfileDetailView({super.key, this.id});
+
+  final int? id;
 
   @override
   Widget build(BuildContext context) {
@@ -48,16 +47,23 @@ class ProfileDetailView extends StatelessWidget {
           },
         ),
         actions: [
-          const Icon(Icons.mode_edit_outlined)
-              .paddingSymmetric(horizontal: 20.w)
+          IconButton(
+            onPressed: () {
+              context.read<ProfileDetailBloc>().add(UpdateProfileEvent(id));
+            },
+            icon: const Icon(Icons.mode_edit_outlined)
+                .paddingSymmetric(horizontal: 20.w),
+          )
         ],
       ),
       body: BlocConsumer<ProfileDetailBloc, ProfileDetailState>(
           listener: (context, state) {
         state.maybeWhen(
-          orElse: () => nil,
-          error: (message) => context.showSnackBar(message: message),
-        );
+            orElse: () => nil,
+            error: (message) => context.showSnackBar(message: message),
+            updated: (isUpdated) {
+              context.router.maybePop(isUpdated);
+            });
       }, builder: (context, state) {
         final profileDetailState = context.read<ProfileDetailBloc>();
         return Column(
@@ -65,7 +71,6 @@ class ProfileDetailView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               WHImagePicker.single(
-                /// TODO: - separate to uikit element - done
                 child: WhCircleAvatar(
                   width: 200,
                   height: 200,
@@ -81,10 +86,17 @@ class ProfileDetailView extends StatelessWidget {
               ),
               WHTextField.singleLine(
                 label: context.localized.phone,
+                keyboardType: TextInputType.phone,
+                inputFormatters: [
+                  FilteringTextInputFormatter.allow(RegExp(r'[0-9+]')),
+                ],
                 hintText: "+374 93123456",
                 controller: profileDetailState.phoneController,
               ).paddingOnly(bottom: 10),
-            ]).paddingSymmetric(horizontal: 24, vertical: 20);
+            ]).paddingSymmetric(
+          horizontal: 24,
+          vertical: 20,
+        );
       }),
     );
   }

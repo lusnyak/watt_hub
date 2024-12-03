@@ -5,5 +5,6 @@ class ProfileDetailState with _$ProfileDetailState {
   const factory ProfileDetailState.initial() = _InitialState;
   const factory ProfileDetailState.loading() = _LoadingState;
   const factory ProfileDetailState.loaded(UserModel user) = _LoadedState;
+  const factory ProfileDetailState.updated(bool isUpdated) = _UpdateState;
   const factory ProfileDetailState.error(String message) = _ErrorState;
 }
